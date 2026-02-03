@@ -1,0 +1,146 @@
+.header {
+    position: sticky;
+    top: 0;
+    background: white;
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) 0;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-md);
+    text-decoration: none;
+    color: var(--color-gray-900);
+    transition: transform var(--transition-base);
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.logoImage {
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.logoTextContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.logoText {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.logoSubtext {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-gray-600);
+    letter-spacing: 0.5px;
+}
+
+.mobileMenuButton {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+}
+
+.hamburger {
+    width: 25px;
+    height: 3px;
+    background: var(--color-gray-800);
+    margin: 3px 0;
+    transition: all var(--transition-base);
+    border-radius: 2px;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    list-style: none;
+    margin: 0;
+}
+
+.navLinks li a {
+    font-weight: 600;
+    color: var(--color-gray-700);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+.navLinks li a:not(.btn):hover {
+    color: var(--color-primary);
+}
+
+.navLinks li a:not(.btn)::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width var(--transition-base);
+}
+
+.navLinks li a:not(.btn):hover::after {
+    width: 100%;
+}
+
+.ctaItem {
+    margin-left: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+    .mobileMenuButton {
+        display: flex;
+    }
+
+    .navLinks {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 250px;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: var(--spacing-xl);
+        gap: var(--spacing-lg);
+        box-shadow: var(--shadow-xl);
+        transition: right var(--transition-slow);
+    }
+
+    .navLinksOpen {
+        right: 0;
+    }
+
+    .ctaItem {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .ctaItem .btn {
+        width: 100%;
+    }
+}

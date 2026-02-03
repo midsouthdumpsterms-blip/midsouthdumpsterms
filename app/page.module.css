@@ -1,0 +1,235 @@
+.hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    color: white;
+    padding: calc(var(--spacing-3xl) * 2) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+    opacity: 0.5;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.heroContent h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.heroSubtext {
+    font-size: 1.375rem;
+    margin-bottom: var(--spacing-2xl);
+    opacity: 0.95;
+}
+
+.heroButtons {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.heroFeatures {
+    display: flex;
+    gap: var(--spacing-xl);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.checkmark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    font-size: 1.125rem;
+}
+
+.sizesSection {
+    background: white;
+}
+
+.sizeComparison {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(to bottom, transparent, var(--color-gray-50), transparent);
+    border-radius: var(--radius-xl);
+}
+
+.comparisonImage {
+    width: 100%;
+    height: auto;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: block;
+    border-radius: var(--radius-lg);
+}
+
+.comparisonDisclaimer {
+    margin-top: var(--spacing-md);
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+    font-style: italic;
+}
+
+.sizesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+}
+
+.serviceAreasSection {
+    background: var(--color-gray-100);
+}
+
+.citiesGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+}
+
+.cityCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    background: white;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--color-gray-800);
+    font-weight: 600;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.cityCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    color: var(--color-primary);
+}
+
+.cityName {
+    font-size: 1.125rem;
+}
+
+.cityArrow {
+    font-size: 1.5rem;
+    transition: transform var(--transition-base);
+}
+
+.cityCard:hover .cityArrow {
+    transform: translateX(5px);
+}
+
+.faqSection {
+    background: white;
+}
+
+.faqList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.faqItem {
+    padding: var(--spacing-xl);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-xl);
+    border-left: 4px solid var(--color-primary);
+}
+
+.faqItem h3 {
+    color: var(--color-gray-900);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.faqItem p {
+    color: var(--color-gray-700);
+    margin: 0;
+    line-height: 1.7;
+}
+
+.ctaSection {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
+    color: white;
+    padding: calc(var(--spacing-3xl) * 1.5) 0;
+}
+
+.ctaSection h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.ctaButtons {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+}
+
+@media (max-width: 1024px) {
+    .heroContent h1 {
+        font-size: 2.75rem;
+    }
+
+    .sizesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .citiesGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .heroContent h1 {
+        font-size: 2.25rem;
+    }
+
+    .heroSubtext {
+        font-size: 1.125rem;
+    }
+
+    .heroButtons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .citiesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ctaButtons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

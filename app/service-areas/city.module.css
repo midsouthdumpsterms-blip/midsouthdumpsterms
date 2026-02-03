@@ -1,0 +1,76 @@
+.heroSection {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: white;
+    padding: calc(var(--spacing-3xl) * 1.5) 0;
+    text-align: center;
+}
+
+.heroSection h1 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+}
+
+.heroSubtext {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    margin-bottom: var(--spacing-xl);
+}
+
+.heroButtons {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sizesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
+}
+
+.contentSection {
+    background: var(--color-gray-100);
+}
+
+.benefitsList,
+.projectsList {
+    list-style: none;
+    padding: 0;
+}
+
+.benefitsList li,
+.projectsList li {
+    padding: var(--spacing-sm) 0;
+    color: var(--color-gray-700);
+    font-size: 1.0625rem;
+}
+
+.benefitsList li {
+    font-weight: 600;
+}
+
+.ctaSection {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
+    color: white;
+    padding: var(--spacing-3xl) 0;
+}
+
+.ctaSection h2 {
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    .sizesGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroButtons {
+        flex-direction: column;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}

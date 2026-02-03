@@ -1,0 +1,111 @@
+.card {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.popular {
+    border-color: var(--color-secondary);
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    right: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-light));
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+    font-size: 0.875rem;
+    box-shadow: var(--shadow-md);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--color-gray-200);
+}
+
+.header h3 {
+    color: var(--color-primary);
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.capacity {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-xs);
+}
+
+.weight {
+    font-size: 1rem;
+    color: var(--color-gray-600);
+    margin: 0;
+}
+
+.pricing {
+    background: var(--color-gray-50);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.priceRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-xs) 0;
+    font-weight: 600;
+}
+
+.price {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.idealFor h4 {
+    font-size: 1rem;
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-sm);
+}
+
+.idealFor ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.idealFor li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) 0;
+    color: var(--color-gray-700);
+}
+
+.checkIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: var(--color-secondary);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 900;
+}

@@ -1,0 +1,79 @@
+.heroSection {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: white;
+    padding: calc(var(--spacing-3xl) * 1.5) 0;
+    text-align: center;
+}
+
+.heroSection h1 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+}
+
+.heroSubtext {
+    font-size: 1.25rem;
+    opacity: 0.95;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    margin: var(--spacing-3xl) 0;
+}
+
+.areaCard {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+    color: var(--color-gray-800);
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+}
+
+.areaCard:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
+}
+
+.areaCard h2 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.areaCard p {
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-md);
+}
+
+.learnMore {
+    display: inline-block;
+    color: var(--color-primary);
+    font-weight: 600;
+    transition: transform var(--transition-fast);
+}
+
+.areaCard:hover .learnMore {
+    transform: translateX(5px);
+}
+
+.ctaSection {
+    background: var(--color-gray-100);
+    padding: var(--spacing-3xl) 0;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
