@@ -17,14 +17,14 @@ const blogPosts = [
         category: 'Guides',
     },
     {
-        slug: 'what-can-you-throw-in-dumpster',
+        slug: 'what-can-i-put-in-a-dumpster',
         title: 'What Can You Throw in a Dumpster Rental?',
         excerpt: 'Learn what items are acceptable and prohibited in dumpster rentals to avoid extra fees and ensure proper disposal.',
         date: '2024-01-10',
         category: 'Tips',
     },
     {
-        slug: 'dumpster-rental-home-renovation',
+        slug: 'dumpster-rental-guide-for-home-renovations',
         title: 'Dumpster Rental Guide for Home Renovations',
         excerpt: 'Planning a home renovation? Discover how to manage debris efficiently with the right dumpster rental.',
         date: '2024-01-05',
