@@ -17,7 +17,8 @@ export default function HomeRenovationDumpsterGuide() {
     const articleSchema = generateArticleSchema(
         'Dumpster Rental Guide for Home Renovations',
         'Planning a home renovation? Learn how to choose the right dumpster size, where to place it, and how to save money on waste disposal.',
-        '2026-01-28'
+        '2026-01-28',
+        'https://midsouthdumpsterms.com/images/real-dumpsters/dumpster-trailer-grey.jpg'
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([

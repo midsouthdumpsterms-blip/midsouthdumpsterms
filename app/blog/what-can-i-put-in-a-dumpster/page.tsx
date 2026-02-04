@@ -17,7 +17,8 @@ export default function WhatCanIPutInADumpster() {
     const articleSchema = generateArticleSchema(
         'What Can I Put in a Dumpster? A Complete Guide',
         'Confused about what you can and cannot throw in a roll-off dumpster? Check out our complete guide to permitted and prohibited items in Mississippi.',
-        '2026-02-03'
+        '2026-02-03',
+        'https://midsouthdumpsterms.com/images/blog/what-can-i-put-in-dumpster.jpg'
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([

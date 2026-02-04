@@ -8,6 +8,8 @@ export interface LocalBusinessSchema {
     url: string;
     telephone: string;
     email?: string;
+    image?: string;
+    logo?: string;
     address: {
         '@type': string;
         streetAddress: string;
@@ -39,6 +41,8 @@ export function generateLocalBusinessSchema(): LocalBusinessSchema {
         description: 'Affordable dumpster rentals in Central Mississippi. 10, 15, 20-yard roll-off dumpsters with same-day delivery available.',
         url: 'https://midsouthdumpsterms.com',
         telephone: '+16013167891',
+        image: 'https://midsouthdumpsterms.com/images/dumpster-trailer-grey.jpg',
+        logo: 'https://midsouthdumpsterms.com/icon.png',
         address: {
             '@type': 'PostalAddress',
             streetAddress: '3080 B John R Lynch St',
@@ -164,12 +168,14 @@ export interface ArticleSchema {
     };
     datePublished: string;
     dateModified?: string;
+    image?: string;
 }
 
 export function generateArticleSchema(
     headline: string,
     description: string,
     datePublished: string,
+    image?: string,
     dateModified?: string
 ): ArticleSchema {
     return {
@@ -177,6 +183,7 @@ export function generateArticleSchema(
         '@type': 'Article',
         headline,
         description,
+        image: image || 'https://midsouthdumpsterms.com/opengraph-image.jpg',
         author: {
             '@type': 'Organization',
             name: 'Mid South Dumpster Rentals, LLC',

@@ -13,7 +13,8 @@ export default function BlogPost() {
     const articleSchema = generateArticleSchema(
         'How to Choose the Right Dumpster Size for Your Project',
         'Comprehensive guide to selecting the perfect dumpster size for your project.',
-        '2024-01-15'
+        '2024-01-15',
+        'https://midsouthdumpsterms.com/images/blog/size-capacity-infographic.png'
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
