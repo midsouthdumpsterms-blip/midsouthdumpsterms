@@ -36,20 +36,11 @@ export const metadata: Metadata = {
         title: 'Mid South Dumpster Rentals | Jackson, MS',
         description:
             'Affordable roll-off dumpster rentals in Central Mississippi. 10, 15, 20-yard dumpsters available. Same-day delivery. Book online or call 601-316-7891.',
-        images: [
-            {
-                url: '/images/og-image.jpg',
-                width: 1200,
-                height: 630,
-                alt: 'Mid South Dumpster Rentals - Jackson, MS',
-            },
-        ],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Mid South Dumpster Rentals | Jackson, MS',
         description: 'Affordable dumpster rentals in Central Mississippi. Same-day delivery available.',
-        images: ['/images/og-image.jpg'],
     },
     robots: {
         index: true,
@@ -61,9 +52,6 @@ export const metadata: Metadata = {
             'max-image-preview': 'large',
             'max-snippet': -1,
         },
-    },
-    verification: {
-        google: 'YOUR_GOOGLE_VERIFICATION_CODE', // User needs to add this from Google Search Console
     },
 }
 
