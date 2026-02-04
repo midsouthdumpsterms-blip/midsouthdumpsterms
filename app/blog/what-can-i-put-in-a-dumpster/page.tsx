@@ -26,9 +26,6 @@ export default function WhatCanIPutInADumpster() {
                     src="/images/blog/what-can-i-put-in-dumpster.jpg"
                     alt="Dumpster filled with household debris"
                     className={styles.heroImage}
-                    onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                    }}
                 />
 
                 <div className={styles.content}>
