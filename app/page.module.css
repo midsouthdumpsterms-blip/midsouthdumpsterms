@@ -78,8 +78,8 @@
 
 .sizeComparison {
     text-align: center;
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-md) 0;
+    margin-bottom: var(--spacing-sm);
+    padding: 0.5rem 0;
     background: linear-gradient(to bottom, transparent, var(--color-gray-50), transparent);
     border-radius: var(--radius-xl);
 }

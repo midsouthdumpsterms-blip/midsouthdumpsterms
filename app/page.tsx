@@ -98,7 +98,7 @@ export default function Home() {
             <section className={styles.sizesSection}>
                 <div className="container">
                     <h2 className="text-center">Choose Your Dumpster Size</h2>
-                    <p className="text-center" style={{ fontSize: '1.125rem', color: 'var(--color-gray-600)', marginBottom: 'var(--spacing-xl)' }}>
+                    <p className="text-center" style={{ fontSize: '1.125rem', color: 'var(--color-gray-600)', marginBottom: 'var(--spacing-md)' }}>
                         Perfect for residential, commercial, and construction projects
                     </p>
 
