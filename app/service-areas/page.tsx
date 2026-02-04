@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from './service-areas.module.css'
 
@@ -29,8 +30,14 @@ const serviceAreas = [
 ]
 
 export default function ServiceAreas() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://midsouthdumpsterms.com' },
+        { name: 'Service Areas', url: 'https://midsouthdumpsterms.com/service-areas' },
+    ])
+
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
             <section className={styles.heroSection}>
                 <div className="container">
                     <h1>Our Service Areas</h1>

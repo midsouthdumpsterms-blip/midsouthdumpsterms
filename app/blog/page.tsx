@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from './blog.module.css'
 
 export const metadata: Metadata = {
