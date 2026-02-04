@@ -63,5 +63,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'weekly',
             priority: 0.7,
         },
+        {
+            url: `${baseUrl}/blog/what-can-i-put-in-a-dumpster`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/dumpster-rental-guide-for-home-renovations`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
     ]
 }
