@@ -58,10 +58,16 @@ export default function Footer() {
                             rel="noopener noreferrer"
                             className="btn btn-secondary"
                             style={{ width: '100%', marginBottom: 'var(--spacing-md)' }}
+                            aria-label="Book dumpster rental online"
                         >
                             Book Online
-                        </a>
-                        <a href="tel:6013167891" className="btn btn-outline" style={{ width: '100%' }}>
+                        </a>{' '}
+                        <a
+                            href="tel:6013167891"
+                            className="btn btn-outline"
+                            style={{ width: '100%' }}
+                            aria-label="Call Mid South Dumpster Rentals at 601-316-7891"
+                        >
                             Call 601-316-7891
                         </a>
                     </div>
@@ -69,9 +75,6 @@ export default function Footer() {
 
                 <div className={styles.footerBottom}>
                     <p>&copy; {currentYear} Mid South Dumpster Rentals, LLC. All rights reserved.</p>
-                    <p className={styles.credits}>
-                        Website optimized for search engines and local visibility
-                    </p>
                 </div>
             </div>
         </footer>
