@@ -17,12 +17,27 @@ export default function Contact() {
         e.preventDefault()
         setStatus('sending')
 
-        // In a real implementation, this would send to an API endpoint
-        // For now, we'll just simulate success
-        setTimeout(() => {
-            setStatus('success')
-            setFormData({ name: '', email: '', phone: '', message: '' })
-        }, 1000)
+        try {
+            const response = await fetch('https://formspree.io/f/midsouthdumpsterms@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                setStatus('success')
+                setFormData({ name: '', email: '', phone: '', message: '' })
+            } else {
+                setStatus('error')
+                alert("There was a problem sending your message. Please try again or call us directly.")
+            }
+        } catch (error) {
+            setStatus('error')
+            alert("There was a problem sending your message. Please try again or call us directly.")
+        }
     }
 
     return (
@@ -59,6 +74,7 @@ export default function Contact() {
                                     <label htmlFor="email">Email *</label>
                                     <input
                                         type="email"
+                                        name="email"
                                         id="email"
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
