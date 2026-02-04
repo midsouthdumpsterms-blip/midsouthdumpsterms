@@ -22,6 +22,12 @@ export default function HomeRenovationDumpsterGuide() {
                     <p className={styles.date}>Published on January 28, 2026</p>
                 </header>
 
+                <img
+                    src="/images/real-dumpsters/dumpster-trailer-grey.jpg"
+                    alt="Mid South Dumpster Rental delivery for home renovation"
+                    className={styles.heroImage}
+                />
+
                 <div className={styles.content}>
                     <p>
                         Renovating your home is exciting, but it creates a massive amount of debris. From old cabinets and ripped-up flooring to drywall and tile,
