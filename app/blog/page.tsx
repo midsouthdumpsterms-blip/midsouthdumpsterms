@@ -34,8 +34,14 @@ const blogPosts = [
 ]
 
 export default function Blog() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://midsouthdumpsterms.com' },
+        { name: 'Blog', url: 'https://midsouthdumpsterms.com/blog' },
+    ])
+
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
             <section className={styles.heroSection}>
                 <div className="container">
                     <h1>Blog & Resources</h1>
