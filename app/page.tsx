@@ -24,7 +24,7 @@ const faqData = [
     {
         question: 'How much does dumpster rental cost?',
         answer:
-            '10-yard dumpsters start at $349/day, 15-yard at $399/day, and 20-yard at $449/day. Weekly rentals available at discounted rates.',
+            'We offer competitive pricing on 10-yard, 15-yard, and 20-yard dumpsters with flexible rental periods. Call us at 601-316-7891 or book online for an instant quote tailored to your project needs.',
     },
     {
         question: 'What areas do you serve?',
