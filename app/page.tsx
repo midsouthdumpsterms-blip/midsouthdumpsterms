@@ -105,7 +105,7 @@ export default function Home() {
                     {/* Size Comparison Visual */}
                     <div className={styles.sizeComparison}>
                         <Image
-                            src="/images/dumpster-size-comparison.png"
+                            src="/images/dumpster-size-comparison-original.png"
                             alt="Visual comparison of 10 yard, 15 yard, and 20 yard dumpster sizes with person for scale"
                             width={1200}
                             height={400}
