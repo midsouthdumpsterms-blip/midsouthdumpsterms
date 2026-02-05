@@ -32,7 +32,7 @@ const galleryImages = [
     {
         src: '/images/gallery/clean-dumpster-delivery-flowood-blue.jpg',
         alt: '20 Yard Dumpster In Flowood, MS',
-        caption: 'Our signature bright blue dumpsters standing out in Flowood. Easy to load, easy to see, and ready for a weekend garage cleanout.'
+        caption: 'Our clean grey dumpsters delivered to Flowood. Easy to load, easy to see, and ready for a weekend garage cleanout.'
     },
     {
         src: '/images/gallery/15-yard-dumpster-clinton-ms-rental.jpg',
