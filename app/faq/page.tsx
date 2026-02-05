@@ -1,14 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import styles from './faq.module.css'
 
-export const metadata: Metadata = {
-    title: 'FAQ - Dumpster Rental Questions | Mid South Dumpster Rentals',
-    description: 'Common questions about dumpster rental in Jackson, MS. Pricing, weight limits, what you can throw away, rental periods, and more.',
-}
 
 const faqs = [
     {
