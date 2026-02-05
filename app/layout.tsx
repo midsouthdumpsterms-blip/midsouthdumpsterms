@@ -3,6 +3,7 @@ import './globals.css'
 import { generateLocalBusinessSchema, injectSchema } from '@/lib/schema'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import MobileCallBar from '@/components/MobileCallBar'
 import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
@@ -74,6 +75,7 @@ export default function RootLayout({
                 <Header />
                 <main>{children}</main>
                 <Footer />
+                <MobileCallBar />
                 <Analytics />
             </body>
         </html>
