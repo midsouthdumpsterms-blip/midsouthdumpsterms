@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import styles from './gallery.module.css'
 
 export const metadata: Metadata = {
     title: 'Project Gallery | Dumpster Rentals in Jackson, MS & Surrounding Areas',
@@ -16,12 +17,12 @@ const galleryImages = [
     {
         src: '/images/gallery/roll-off-dumpster-madison-ms-clean.jpg',
         alt: 'Clean roll-off dumpster in Madison, MS driveway',
-        caption: 'A pristine 15-yard roll-off dumpster delivered to a residence in Madison. We take pride in keeping our equipment clean and rust-free so it doesn’t look like an eyesore in your driveway.'
+        caption: 'A pristine 15-yard roll-off dumpster delivered to a residence in Madison. We take pride in keeping our equipment clean and rust-free so it does not look like an eyesore in your driveway.'
     },
     {
         src: '/images/gallery/residential-dumpster-rental-brandon-driveway.jpg',
         alt: 'Driveway safe dumpster rental in Brandon, MS',
-        caption: 'Notice the wooden boards under the wheels? That’s our standard "Driveway Protection System" in action in Brandon, ensuring your concrete stays scratch-free.'
+        caption: 'Notice the wooden boards under the wheels? That is our standard "Driveway Protection System" in action in Brandon, ensuring your concrete stays scratch-free.'
     },
     {
         src: '/images/gallery/construction-dumpster-pearl-ms-site.jpg',
@@ -75,7 +76,7 @@ const galleryImages = [
     },
     {
         src: '/images/gallery/reliable-waste-management-ms-delivery.jpg',
-        alt: 'Reliable generic waste management',
+        alt: 'Reliable waste management delivery',
         caption: 'Consistency is key. We drop off on time and pick up when you call. Professional service from start to finish.'
     },
     {
@@ -118,51 +119,48 @@ export default function GalleryPage() {
     }
 
     return (
-        <div className="container py-20">
+        <div className={styles.container}>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
             />
 
-            <div className="text-center max-w-3xl mx-auto mb-16">
-                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                    See Our <span className="text-primary">Dumpsters in Action</span>
+            <div className={styles.header}>
+                <h1 className={styles.title}>
+                    See Our <span className={styles.titleAccent}>Dumpsters in Action</span>
                 </h1>
-                <p className="text-xl text-gray-600">
+                <p className={styles.subtitle}>
                     From driveway-safe residential projects to commercial construction sites,
                     see why Central Mississippi trusts us for their waste disposal needs.
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className={styles.gallery}>
                 {galleryImages.map((image, index) => (
-                    <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                        <div className="relative h-64 w-full bg-gray-100">
+                    <div key={index} className={styles.card}>
+                        <div className={styles.imageContainer}>
                             <Image
                                 src={image.src}
                                 alt={image.alt}
                                 fill
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                className="object-cover"
+                                className={styles.image}
                             />
                         </div>
-                        <div className="p-6">
-                            <h3 className="font-bold text-lg mb-2 text-gray-800">{image.alt}</h3>
-                            <p className="text-gray-600 text-sm leading-relaxed">{image.caption}</p>
+                        <div className={styles.cardContent}>
+                            <h3 className={styles.cardTitle}>{image.alt}</h3>
+                            <p className={styles.cardCaption}>{image.caption}</p>
                         </div>
                     </div>
                 ))}
             </div>
 
-            <div className="mt-16 text-center bg-gray-50 rounded-3xl p-12">
-                <h2 className="text-3xl font-bold mb-4">Ready to start your project?</h2>
-                <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-                    You've seen the proof. Now get the service. Book your dumpster online today for same-day delivery.
+            <div className={styles.cta}>
+                <h2 className={styles.ctaTitle}>Ready to start your project?</h2>
+                <p className={styles.ctaText}>
+                    You have seen the proof. Now get the service. Book your dumpster online today for same-day delivery.
                 </p>
-                <Link
-                    href="/#booking"
-                    className="inline-block bg-primary text-white text-lg font-bold py-4 px-8 rounded-full hover:bg-primary-dark transition-transform hover:scale-105 shadow-xl"
-                >
+                <Link href="/#booking" className={styles.ctaButton}>
                     Book Your Dumpster Now
                 </Link>
             </div>
