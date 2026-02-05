@@ -41,8 +41,8 @@ const galleryImages = [
     },
     {
         src: '/images/gallery/20-yard-dumpster-rental-ridgeland-project.jpg',
-        alt: '20 Yard Dumpster for Ridgeland roofing project',
-        caption: 'A heavy-duty 20-yard dumpster placed for a roofing replacement in Ridgeland. Handles shingles and sheathing with ease.'
+        alt: '10 Yard Dumpster for Ridgeland roofing project',
+        caption: 'A compact 10-yard dumpster placed for a roofing replacement in Ridgeland. Perfect size for residential roofing projects with shingles and sheathing.'
     },
     {
         src: '/images/gallery/home-renovation-dumpster-terry-backyard.jpg',
