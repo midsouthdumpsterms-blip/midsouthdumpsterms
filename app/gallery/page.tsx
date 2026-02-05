@@ -20,9 +20,9 @@ const galleryImages = [
         caption: 'A pristine 15-yard roll-off dumpster delivered to a residence in Madison. We take pride in keeping our equipment clean and rust-free so it does not look like an eyesore in your driveway.'
     },
     {
-        src: '/images/gallery/residential-dumpster-rental-brandon-driveway.jpg',
-        alt: 'Driveway safe dumpster rental in Brandon, MS',
-        caption: 'Notice the wooden boards under the wheels? That is our standard "Driveway Protection System" in action in Brandon, ensuring your concrete stays scratch-free.'
+        src: '/images/gallery/driveway-safe-dumpster-gluckstadt-boards.jpg',
+        alt: 'Driveway protection for dumpster in Gluckstadt',
+        caption: 'Notice the wooden boards under the wheels? That is our standard driveway protection system in action, ensuring your concrete stays scratch-free.'
     },
     {
         src: '/images/gallery/construction-dumpster-pearl-ms-site.jpg',
@@ -45,24 +45,9 @@ const galleryImages = [
         caption: 'A heavy-duty 20-yard dumpster placed for a roofing replacement in Ridgeland. Handles shingles and sheathing with ease.'
     },
     {
-        src: '/images/gallery/waste-disposal-jackson-mississippi-service.jpg',
-        alt: 'Waste disposal service in Jackson, MS',
-        caption: 'Reliable waste management delivered to your doorstep. We handle the heavy hauling so you can focus on the project.'
-    },
-    {
-        src: '/images/gallery/local-dumpster-service-byram-truck.jpg',
-        alt: 'Dumpster delivery truck in Byram, MS',
-        caption: 'Our specialized hook-lift truck delivering a container in Byram. The hook-lift system allows us to place dumpsters in tighter spots than traditional cable trucks.'
-    },
-    {
         src: '/images/gallery/home-renovation-dumpster-terry-backyard.jpg',
         alt: 'Home renovation dumpster in Terry, MS',
         caption: 'Clearing out a backyard shed in Terry? Our dumpsters are perfect for landscaping debris, old furniture, and general junk removal.'
-    },
-    {
-        src: '/images/gallery/driveway-safe-dumpster-gluckstadt-boards.jpg',
-        alt: 'Driveway protection for dumpster in Gluckstadt',
-        caption: 'Another safe delivery in Gluckstadt. We treat your property like our own, always checking for overhead lines and placing protection boards.'
     },
     {
         src: '/images/gallery/same-day-dumpster-rental-canton.jpg',
