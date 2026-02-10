@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import BookingButton from '@/components/BookingButton'
 import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from './about.module.css'
 
@@ -106,9 +107,7 @@ export default function About() {
                         Experience the Mid South difference. Book your dumpster rental today.
                     </p>
                     <div style={{ display: 'flex', gap: 'var(--spacing-lg)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <a href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF" target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-lg">
-                            Book Online
-                        </a>
+                        <BookingButton label="Book Now" location="About Page CTA" />
                         <a href="/contact" className="btn btn-outline btn-lg">
                             Contact Us
                         </a>

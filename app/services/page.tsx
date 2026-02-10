@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import BookingButton from '@/components/BookingButton'
 import { generateServiceSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import styles from './services.module.css'
@@ -143,14 +144,7 @@ export default function Services() {
                         <a href="tel:6013167891" className="btn btn-primary btn-lg">
                             Call Now
                         </a>
-                        <a
-                            href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn btn-secondary btn-lg"
-                        >
-                            Book Online
-                        </a>
+                        <BookingButton label="Book Now" location="Services Page CTA" />
                     </div>
                 </div>
             </section>

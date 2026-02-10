@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import BookingButton from '@/components/BookingButton'
 import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from './contact.module.css'
 import ContactForm from './ContactForm'

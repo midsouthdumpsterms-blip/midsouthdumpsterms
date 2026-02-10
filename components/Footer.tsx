@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BookingButton from './BookingButton'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -50,18 +51,15 @@ export default function Footer() {
                         </ul>
                     </div>
 
+
                     <div className={styles.footerCol}>
                         <h4>Book Now</h4>
-                        <a
-                            href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <BookingButton
+                            label="Book Online"
+                            location="Footer"
                             className="btn btn-secondary"
                             style={{ width: '100%', marginBottom: 'var(--spacing-md)' }}
-                            aria-label="Book dumpster rental online"
-                        >
-                            Book Online
-                        </a>{' '}
+                        />
                         <a
                             href="tel:6013167891"
                             className="btn btn-outline"

@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
+import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
@@ -39,9 +40,7 @@ export default function ClintonPage() {
                         Fast, affordable roll-off dumpster delivery throughout Clinton and surrounding areas
                     </p>
                     <div className={styles.heroButtons}>
-                        <a href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF" target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-lg">
-                            Book Clinton Dumpster
-                        </a>
+                        <BookingButton label="Book Clinton Dumpster" location="Clinton Service Area Hero" />
                         <a href="tel:6013167891" className="btn btn-outline btn-lg">
                             Call 601-316-7891
                         </a>
@@ -98,9 +97,7 @@ export default function ClintonPage() {
                     <p style={{ fontSize: '1.125rem', marginBottom: 'var(--spacing-xl)' }}>
                         Book online now or call 601-316-7891 for same-day service
                     </p>
-                    <a href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF" target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-lg">
-                        Book Now
-                    </a>
+                    <BookingButton label="Book Now" location="Clinton Service Area CTA" />
                 </div>
             </section>
         </>

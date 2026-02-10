@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import BookingButton from '@/components/BookingButton'
 import Link from 'next/link'
 import styles from './faq.module.css'
 

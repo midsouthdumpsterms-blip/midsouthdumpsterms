@@ -1,3 +1,6 @@
+'use client'
+
+import { trackBookingClick } from '@/lib/analytics'
 import styles from './DumpsterSizeCard.module.css'
 
 interface DumpsterSizeCardProps {
@@ -17,6 +20,10 @@ export default function DumpsterSizeCard({
     idealFor,
     popular = false,
 }: DumpsterSizeCardProps) {
+    const handleBookingClick = () => {
+        trackBookingClick(`Book ${size} Yard Dumpster`, 'Dumpster Size Card')
+    }
+
     return (
         <div className={`${styles.card} ${popular ? styles.popular : ''}`}>
             {popular && <div className={styles.badge}>Most Popular</div>}
@@ -52,6 +59,7 @@ export default function DumpsterSizeCard({
                 rel="noopener noreferrer"
                 className="btn btn-primary"
                 style={{ width: '100%', marginTop: 'var(--spacing-lg)' }}
+                onClick={handleBookingClick}
             >
                 Book {size} Yard Dumpster
             </a>

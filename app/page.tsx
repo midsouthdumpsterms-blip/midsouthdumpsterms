@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import { generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
+import BookingButton from '@/components/BookingButton'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -64,14 +65,7 @@ export default function Home() {
                             10, 15, & 20-yard roll-off dumpsters. Same-day delivery available. Serving Central Mississippi.
                         </p>
                         <div className={styles.heroButtons}>
-                            <a
-                                href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-secondary btn-lg"
-                            >
-                                Book Now Online
-                            </a>
+                            <BookingButton label="Book Now Online" location="Homepage Hero" />
                             <a href="tel:6013167891" className="btn btn-outline btn-lg">
                                 Call 601-316-7891
                             </a>
@@ -111,6 +105,7 @@ export default function Home() {
                             height={400}
                             className={styles.comparisonImage}
                             priority
+                            fetchPriority="high"
                         />
                         <p className={styles.comparisonDisclaimer}>
                             <em>* Visual size estimation for reference only. Actual dumpster dimensions may vary.</em>
@@ -191,14 +186,7 @@ export default function Home() {
                         Book your dumpster rental online in minutes or call us at 601-316-7891
                     </p>
                     <div className={styles.ctaButtons}>
-                        <a
-                            href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn btn-secondary btn-lg"
-                        >
-                            Book Online Now
-                        </a>
+                        <BookingButton label="Book Online Now" location="Homepage CTA" />
                         <a href="/contact" className="btn btn-outline btn-lg">
                             Contact Us
                         </a>
