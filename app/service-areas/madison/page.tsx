@@ -76,7 +76,7 @@ export default function MadisonPage() {
                         </div>
                         <div>
                             <h2>Perfect For Madison Projects</h2>
-                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Madison, we have the right dumpster size for your needs.</p>
+                            <p>Whether you're renovating a home in Reunion, clearing out an estate in Lake Caroline, managing a construction project in Annandale or Providence, we have the right dumpster size for your needs.</p>
                             <p><strong>Common uses in Madison:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>

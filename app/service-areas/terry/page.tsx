@@ -76,7 +76,7 @@ export default function TerryPage() {
                         </div>
                         <div>
                             <h2>Perfect For Terry Projects</h2>
-                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Terry, we have the right dumpster size for your needs.</p>
+                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Terry or along Highway 27, we have the right dumpster size for your needs.</p>
                             <p><strong>Common uses in Terry:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>

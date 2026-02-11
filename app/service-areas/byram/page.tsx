@@ -76,7 +76,7 @@ export default function ByramPage() {
                         </div>
                         <div>
                             <h2>Perfect For Byram Projects</h2>
-                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Byram, we have the right dumpster size for your needs.</p>
+                            <p>Whether you're renovating a home in the Siwell Road area, clearing out an estate, or managing a construction project in Byram, we have the right dumpster size for your needs.</p>
                             <p><strong>Common uses in Byram:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>

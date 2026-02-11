@@ -76,7 +76,7 @@ export default function FlowoodPage() {
                         </div>
                         <div>
                             <h2>Perfect For Flowood Projects</h2>
-                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Flowood, we have the right dumpster size for your needs.</p>
+                            <p>Whether you're renovating a home in Kensington, clearing out an estate in Castlewoods, managing a construction project in Laurelwood or Laurelwood Estates, we have the right dumpster size for your needs.</p>
                             <p><strong>Common uses in Flowood:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>

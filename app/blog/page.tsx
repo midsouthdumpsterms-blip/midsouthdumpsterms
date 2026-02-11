@@ -11,6 +11,20 @@ export const metadata: Metadata = {
 
 const blogPosts = [
     {
+        slug: 'dumpster-rental-prices-jackson-ms',
+        title: 'Dumpster Rental Prices in Jackson MS | 2024 Cost Guide',
+        excerpt: 'Complete guide to dumpster rental costs in Jackson and Central Mississippi. Compare prices, learn about fees, and get tips to save money.',
+        date: '2024-02-05',
+        category: 'Local Guides',
+    },
+    {
+        slug: 'home-renovation-dumpster-guide-central-ms',
+        title: 'Dumpster Rental for Home Renovations in Central MS',
+        excerpt: 'Planning a renovation in Jackson, Madison, or Brandon? Learn how to choose the right dumpster size and manage debris efficiently.',
+        date: '2024-02-01',
+        category: 'Home Improvement',
+    },
+    {
         slug: 'how-to-choose-dumpster-size',
         title: 'How to Choose the Right Dumpster Size for Your Project',
         excerpt: 'Not sure which dumpster size you need? Our comprehensive guide helps you select the perfect dumpster for your project.',

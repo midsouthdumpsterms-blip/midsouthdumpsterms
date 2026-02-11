@@ -76,7 +76,7 @@ export default function BrandonPage() {
                         </div>
                         <div>
                             <h2>Perfect For Brandon Projects</h2>
-                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Brandon, we have the right dumpster size for your needs.</p>
+                            <p>Whether you're renovating a home in Crossgates, clearing out an estate in Winner's Circle, managing a construction project in Reservoir Point, or working on a property in Shiloh, Castlewoods, or Pinebrook, we have the right dumpster size for your needs.</p>
                             <p><strong>Common uses in Brandon:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>

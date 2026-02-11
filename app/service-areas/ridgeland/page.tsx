@@ -76,7 +76,7 @@ export default function RidgelandPage() {
                         </div>
                         <div>
                             <h2>Perfect For Ridgeland Projects</h2>
-                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Ridgeland, we have the right dumpster size for your needs.</p>
+                            <p>Whether you're renovating a home in Highland Colony, clearing out an estate, or managing a construction project in Ridgeland, we have the right dumpster size for your needs.</p>
                             <p><strong>Common uses in Ridgeland:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
