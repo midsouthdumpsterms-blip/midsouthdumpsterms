@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
+import TrustBadges from '@/components/TrustBadges'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -138,6 +139,9 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            {/* Trust Badges Section */}
+            <TrustBadges />
 
             {/* Service Areas Section */}
             <section className={styles.serviceAreasSection}>
