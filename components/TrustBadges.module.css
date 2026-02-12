@@ -1,5 +1,5 @@
 .trustBadges {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
     padding: var(--spacing-3xl) 0;
     color: white;
 }
@@ -16,7 +16,7 @@
     text-align: center;
     padding: var(--spacing-lg);
     background: rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--radius-lg);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
