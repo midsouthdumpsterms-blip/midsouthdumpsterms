@@ -5,12 +5,12 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Brandon MS | Roll-Off Dumpsters in Brandon',
+    title: 'Dumpster Rentals Brandon MS | Crossgates Area',
     description:
-        'Affordable dumpster rentals in Brandon, Mississippi. 10, 15, 20-yard roll-off dumpsters. Same-day delivery. Serving all of Brandon, MS. Call 601-316-7891 or book online.',
+        'Serving Crossgates, Winner\'s Circle & Reservoir Point with affordable dumpster rentals. 10-20 yard sizes, same-day delivery. Residential & commercial. Book online now.',
     openGraph: {
         title: 'Dumpster Rentals in Brandon, MS | Mid South',
-        description: 'Fast, affordable dumpster rentals in Brandon, Mississippi.',
+        description: 'Serving Crossgates, Winner\'s Circle & Reservoir Point with same-day dumpster delivery.',
         url: 'https://midsouthdumpsterms.com/service-areas/brandon',
     },
 }

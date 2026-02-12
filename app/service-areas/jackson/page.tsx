@@ -5,12 +5,12 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Jackson MS | Roll-Off Dumpsters in Jackson',
+    title: 'Dumpster Rentals Jackson MS | Same-Day Service',
     description:
-        'Affordable dumpster rentals in Jackson, Mississippi. 10, 15, 20-yard roll-off dumpsters. Same-day delivery. Serving all of Jackson, MS. Call 601-316-7891 or book online.',
+        'Serving Fondren, Belhaven & Northeast Jackson with 10-20 yard dumpsters. Same-day delivery, flat-rate pricing. Perfect for home renovations & construction. Call 601-316-7891.',
     openGraph: {
         title: 'Dumpster Rentals in Jackson, MS | Mid South',
-        description: 'Fast, affordable dumpster rentals in Jackson, Mississippi.',
+        description: 'Serving Fondren, Belhaven & Northeast Jackson with same-day dumpster delivery.',
         url: 'https://midsouthdumpsterms.com/service-areas/jackson',
     },
 }

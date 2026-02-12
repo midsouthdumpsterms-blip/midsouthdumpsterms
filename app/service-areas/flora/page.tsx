@@ -5,12 +5,12 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Flora MS | Roll-Off Dumpsters in Flora',
+    title: 'Dumpster Rentals Flora MS | Madison County Area',
     description:
-        'Affordable dumpster rentals in Flora, Mississippi. 10, 15, 20-yard roll-off dumpsters. Same-day delivery. Serving all of Flora, MS. Call 601-316-7891 or book online.',
+        'Affordable dumpster rentals for Flora & surrounding Madison County. 10-20 yard roll-offs with same-day delivery. Residential & commercial service.',
     openGraph: {
         title: 'Dumpster Rentals in Flora, MS | Mid South',
-        description: 'Fast, affordable dumpster rentals in Flora, Mississippi.',
+        description: 'Serving Flora & Madison County with same-day dumpster delivery.',
         url: 'https://midsouthdumpsterms.com/service-areas/flora',
     },
 }

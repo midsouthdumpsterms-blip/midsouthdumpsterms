@@ -5,12 +5,12 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Terry MS | Roll-Off Dumpsters in Terry',
+    title: 'Dumpster Rentals Terry MS | Highway 27 Corridor',
     description:
-        'Affordable dumpster rentals in Terry, Mississippi. 10, 15, 20-yard roll-off dumpsters. Same-day delivery. Serving all of Terry, MS. Call 601-316-7891 or book online.',
+        'Serving Terry & Highway 27 corridor with reliable dumpster rentals. 10-20 yard sizes for home projects & construction. Same-day delivery available.',
     openGraph: {
         title: 'Dumpster Rentals in Terry, MS | Mid South',
-        description: 'Fast, affordable dumpster rentals in Terry, Mississippi.',
+        description: 'Serving Terry & Highway 27 corridor with same-day dumpster delivery.',
         url: 'https://midsouthdumpsterms.com/service-areas/terry',
     },
 }

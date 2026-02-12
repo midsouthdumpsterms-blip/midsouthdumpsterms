@@ -5,12 +5,12 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Canton MS | Roll-Off Dumpsters in Canton',
+    title: 'Dumpster Rentals Canton MS | Madison County Service',
     description:
-        'Affordable dumpster rentals in Canton, Mississippi. 10, 15, 20-yard roll-off dumpsters. Same-day delivery. Serving all of Canton, MS. Call 601-316-7891 or book online.',
+        'Serving Canton & Madison County with affordable dumpster rentals. 10-20 yard sizes for home renovations, cleanouts & construction. Call 601-316-7891.',
     openGraph: {
         title: 'Dumpster Rentals in Canton, MS | Mid South',
-        description: 'Fast, affordable dumpster rentals in Canton, Mississippi.',
+        description: 'Serving Canton & Madison County with same-day dumpster delivery.',
         url: 'https://midsouthdumpsterms.com/service-areas/canton',
     },
 }

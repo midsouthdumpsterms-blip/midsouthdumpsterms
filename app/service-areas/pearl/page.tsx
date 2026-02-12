@@ -5,12 +5,12 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Pearl MS | Roll-Off Dumpsters in Pearl',
+    title: 'Dumpster Rentals Pearl MS | Residential & Commercial',
     description:
-        'Affordable dumpster rentals in Pearl, Mississippi. 10, 15, 20-yard roll-off dumpsters. Same-day delivery. Serving all of Pearl, MS. Call 601-316-7891 or book online.',
+        'Affordable dumpster rentals in Pearl & Rankin County. 10-20 yard sizes for home cleanouts, roofing & construction. Same-day delivery. Book online.',
     openGraph: {
         title: 'Dumpster Rentals in Pearl, MS | Mid South',
-        description: 'Fast, affordable dumpster rentals in Pearl, Mississippi.',
+        description: 'Serving Pearl & Rankin County with same-day dumpster delivery.',
         url: 'https://midsouthdumpsterms.com/service-areas/pearl',
     },
 }

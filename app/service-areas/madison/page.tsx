@@ -5,12 +5,12 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Madison MS | Roll-Off Dumpsters in Madison',
+    title: 'Dumpster Rentals Madison MS | Reunion & Annandale',
     description:
-        'Affordable dumpster rentals in Madison, Mississippi. 10, 15, 20-yard roll-off dumpsters. Same-day delivery. Serving all of Madison, MS. Call 601-316-7891 or book online.',
+        'Premium dumpster rental service for Reunion, Lake Caroline & Annandale. 10-20 yard roll-off dumpsters with transparent pricing. Same-day delivery available.',
     openGraph: {
         title: 'Dumpster Rentals in Madison, MS | Mid South',
-        description: 'Fast, affordable dumpster rentals in Madison, Mississippi.',
+        description: 'Serving Reunion, Lake Caroline & Annandale with same-day dumpster delivery.',
         url: 'https://midsouthdumpsterms.com/service-areas/madison',
     },
 }

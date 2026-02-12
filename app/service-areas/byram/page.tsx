@@ -5,12 +5,12 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Byram MS | Roll-Off Dumpsters in Byram',
+    title: 'Dumpster Rentals Byram MS | Siwell Road Service',
     description:
-        'Affordable dumpster rentals in Byram, Mississippi. 10, 15, 20-yard roll-off dumpsters. Same-day delivery. Serving all of Byram, MS. Call 601-316-7891 or book online.',
+        'Professional dumpster rentals for Byram & Siwell Road area. 10-20 yard roll-offs with transparent pricing. Perfect for renovations, cleanouts & construction.',
     openGraph: {
         title: 'Dumpster Rentals in Byram, MS | Mid South',
-        description: 'Fast, affordable dumpster rentals in Byram, Mississippi.',
+        description: 'Serving Byram & Siwell Road area with same-day dumpster delivery.',
         url: 'https://midsouthdumpsterms.com/service-areas/byram',
     },
 }

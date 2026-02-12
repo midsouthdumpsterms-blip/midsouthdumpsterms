@@ -5,12 +5,12 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Gluckstadt MS | Roll-Off Dumpsters in Gluckstadt',
+    title: 'Dumpster Rentals Gluckstadt MS | Fast-Growing Community',
     description:
-        'Affordable dumpster rentals in Gluckstadt, Mississippi. 10, 15, 20-yard roll-off dumpsters. Same-day delivery. Serving all of Gluckstadt, MS. Call 601-316-7891 or book online.',
+        'Serving Mississippi\'s fastest-growing municipality with reliable dumpster rentals. 10-20 yard sizes for new construction & home projects. Same-day delivery.',
     openGraph: {
         title: 'Dumpster Rentals in Gluckstadt, MS | Mid South',
-        description: 'Fast, affordable dumpster rentals in Gluckstadt, Mississippi.',
+        description: 'Serving Gluckstadt\'s fast-growing community with same-day dumpster delivery.',
         url: 'https://midsouthdumpsterms.com/service-areas/gluckstadt',
     },
 }

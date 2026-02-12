@@ -5,12 +5,12 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Ridgeland MS | Roll-Off Dumpsters in Ridgeland',
+    title: 'Dumpster Rentals Ridgeland MS | Highland Colony Area',
     description:
-        'Affordable dumpster rentals in Ridgeland, Mississippi. 10, 15, 20-yard roll-off dumpsters. Same-day delivery. Serving all of Ridgeland, MS. Call 601-316-7891 or book online.',
+        'Professional dumpster rentals for Highland Colony & Ridgeland. 10-20 yard roll-offs with same-day delivery. Transparent pricing, no hidden fees.',
     openGraph: {
         title: 'Dumpster Rentals in Ridgeland, MS | Mid South',
-        description: 'Fast, affordable dumpster rentals in Ridgeland, Mississippi.',
+        description: 'Serving Highland Colony & Ridgeland with same-day dumpster delivery.',
         url: 'https://midsouthdumpsterms.com/service-areas/ridgeland',
     },
 }

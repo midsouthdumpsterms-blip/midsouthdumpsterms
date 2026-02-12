@@ -5,12 +5,12 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Flowood MS | Roll-Off Dumpsters in Flowood',
+    title: 'Dumpster Rentals Flowood MS | Kensington & Lakeland',
     description:
-        'Affordable dumpster rentals in Flowood, Mississippi. 10, 15, 20-yard roll-off dumpsters. Same-day delivery. Serving all of Flowood, MS. Call 601-316-7891 or book online.',
+        'Serving Kensington, Castlewoods & Laurelwood with reliable dumpster rentals. 10-20 yard sizes for renovations & construction. Call 601-316-7891 today.',
     openGraph: {
         title: 'Dumpster Rentals in Flowood, MS | Mid South',
-        description: 'Fast, affordable dumpster rentals in Flowood, Mississippi.',
+        description: 'Serving Kensington, Castlewoods & Laurelwood with same-day dumpster delivery.',
         url: 'https://midsouthdumpsterms.com/service-areas/flowood',
     },
 }

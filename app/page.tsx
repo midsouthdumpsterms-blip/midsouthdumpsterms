@@ -7,12 +7,12 @@ import TrustBadges from '@/components/TrustBadges'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Jackson MS | Affordable Roll-Off Dumpsters | Mid South',
+    title: 'Dumpster Rentals Jackson MS | Same-Day Delivery',
     description:
-        'Affordable dumpster rentals in Jackson, MS. 10, 15, 20-yard roll-off dumpsters. Same-day delivery available. Serving Central Mississippi. Book online or call 601-316-7891.',
+        'Affordable 10, 15 & 20-yard dumpster rentals in Jackson, MS. Same-day delivery, transparent pricing, no hidden fees. Serving Central MS. Call 601-316-7891 or book online.',
     openGraph: {
         title: 'Mid South Dumpster Rentals | Jackson, MS',
-        description: 'Affordable roll-off dumpster rentals in Central Mississippi.',
+        description: 'Affordable roll-off dumpster rentals in Central Mississippi with same-day delivery.',
         url: 'https://midsouthdumpsterms.com',
     },
 }
