@@ -19,7 +19,9 @@ export default function TerryPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
         'Professional roll-off dumpster rentals in Terry, MS. Available in 10, 15, and 20-yard sizes for residential, commercial, and construction projects.',
-        'Terry, MS'
+        'Terry',
+        undefined,
+        ['39170']
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
@@ -88,6 +90,18 @@ export default function TerryPage() {
                             </ul>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Neighborhoods We Serve in Terry</h2>
+                    <p>
+                        We proudly serve all neighborhoods throughout Terry, a charming town in Hinds County along the Highway 27 corridor. Whether you're in <strong>South Fork Estates</strong>, <strong>Cedarstone</strong>, <strong>Terry Park</strong>, <strong>Shadow Ridge</strong>, <strong>Indian Hills</strong>, <strong>Terry Place</strong>, or the <strong>George Road & Midway Road</strong> areas, we deliver fast, reliable dumpster rental service to your location.
+                    </p>
+                    <p>
+                        Terry's mix of historic homes and newer subdivisions creates a unique community atmosphere. From rural properties with larger yards to established neighborhoods, we're here to support your renovation, construction, and cleanup projects with professional dumpster rental service.
+                    </p>
                 </div>
             </section>
 
