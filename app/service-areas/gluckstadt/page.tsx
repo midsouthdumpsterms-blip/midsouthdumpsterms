@@ -19,7 +19,9 @@ export default function GluckstadtPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
         'Professional roll-off dumpster rentals in Gluckstadt, MS. Available in 10, 15, and 20-yard sizes for residential, commercial, and construction projects.',
-        'Gluckstadt, MS'
+        'Gluckstadt',
+        undefined,
+        ['39110']
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
@@ -88,6 +90,18 @@ export default function GluckstadtPage() {
                             </ul>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Serving Gluckstadt's Growing Community</h2>
+                    <p>
+                        We proudly serve Gluckstadt, Mississippi's fastest-growing municipality. As one of the newest cities in Madison County, Gluckstadt is experiencing rapid residential and commercial development, and we're here to support that growth with professional dumpster rental service.
+                    </p>
+                    <p>
+                        Whether you're building a new home, developing a commercial property, or working on renovation projects in this dynamic community, Mid South Dumpster Rentals provides the reliable waste management solutions you need.
+                    </p>
                 </div>
             </section>
 

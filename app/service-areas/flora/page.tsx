@@ -19,7 +19,9 @@ export default function FloraPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
         'Professional roll-off dumpster rentals in Flora, MS. Available in 10, 15, and 20-yard sizes for residential, commercial, and construction projects.',
-        'Flora, MS'
+        'Flora',
+        undefined,
+        ['39071']
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
@@ -88,6 +90,18 @@ export default function FloraPage() {
                             </ul>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Neighborhoods We Serve in Flora</h2>
+                    <p>
+                        We proudly serve all neighborhoods throughout Flora, a charming community in Madison County. Whether you're working on a project in Flora's residential areas or commercial districts, we deliver fast, reliable dumpster rental service to your location.
+                    </p>
+                    <p>
+                        Flora's small-town atmosphere and convenient location make it a wonderful place to live and work. We're committed to providing professional dumpster rental service for all your project needs.
+                    </p>
                 </div>
             </section>
 

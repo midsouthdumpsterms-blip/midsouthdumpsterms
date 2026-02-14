@@ -5,29 +5,29 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Flowood MS | Kensington & Lakeland',
+    title: 'Dumpster Rentals Richland MS | Rankin County Area',
     description:
-        'Serving Kensington, Castlewoods & Laurelwood with reliable dumpster rentals. 10-20 yard sizes for renovations & construction. Call 601-316-7891 today.',
+        'Professional dumpster rentals for Richland & Rankin County. 10-20 yard roll-offs with same-day delivery. Residential & commercial service. Book online.',
     openGraph: {
-        title: 'Dumpster Rentals in Flowood, MS | Mid South',
-        description: 'Serving Kensington, Castlewoods & Laurelwood with same-day dumpster delivery.',
-        url: 'https://midsouthdumpsterms.com/service-areas/flowood',
+        title: 'Dumpster Rentals in Richland, MS | Mid South',
+        description: 'Serving Richland & Rankin County with same-day dumpster delivery.',
+        url: 'https://midsouthdumpsterms.com/service-areas/richland',
     },
 }
 
-export default function FlowoodPage() {
+export default function RichlandPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
-        'Professional roll-off dumpster rentals in Flowood, MS. Available in 10, 15, and 20-yard sizes for residential, commercial, and construction projects.',
-        'Flowood',
+        'Professional roll-off dumpster rentals in Richland, MS. Available in 10, 15, and 20-yard sizes for residential, commercial, and construction projects.',
+        'Richland',
         undefined,
-        ['39232']
+        ['39218']
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', url: 'https://midsouthdumpsterms.com' },
         { name: 'Service Areas', url: 'https://midsouthdumpsterms.com/service-areas' },
-        { name: 'Flowood', url: 'https://midsouthdumpsterms.com/service-areas/flowood' },
+        { name: 'Richland', url: 'https://midsouthdumpsterms.com/service-areas/richland' },
     ])
 
     return (
@@ -37,12 +37,12 @@ export default function FlowoodPage() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Dumpster Rentals in Flowood, MS</h1>
+                    <h1>Dumpster Rentals in Richland, MS</h1>
                     <p className={styles.heroSubtext}>
-                        Fast, affordable roll-off dumpster delivery throughout Flowood and surrounding areas
+                        Fast, affordable roll-off dumpster delivery throughout Richland and surrounding areas
                     </p>
                     <div className={styles.heroButtons}>
-                        <BookingButton label="Book Flowood Dumpster" location="Flowood Service Area Hero" />
+                        <BookingButton label="Book Richland Dumpster" location="Richland Service Area Hero" />
                         <a href="tel:6013167891" className="btn btn-outline btn-lg">
                             Call 601-316-7891
                         </a>
@@ -52,7 +52,7 @@ export default function FlowoodPage() {
 
             <section>
                 <div className="container">
-                    <h2 className="text-center">Dumpster Sizes Available in Flowood</h2>
+                    <h2 className="text-center">Dumpster Sizes Available in Richland</h2>
                     <div className={styles.sizesGrid}>
                         <DumpsterSizeCard size="10" capacity="4 Pickup Truck Loads" weight="1 Ton Included" pricing={{ '1 Day': '$349', '3 Day': '$379', '7 Day': '$399' }} idealFor={['Small Cleanouts', 'Garage Cleanup', 'Minor Renovations', 'Yard Debris']} />
                         <DumpsterSizeCard size="15" capacity="6 Pickup Truck Loads" weight="2 Tons Included" pricing={{ '1 Day': '$399', '3 Day': '$429', '7 Day': '$449' }} idealFor={['Home Renovations', 'Roofing Projects', 'Estate Cleanouts', 'Medium Construction']} popular />
@@ -65,10 +65,10 @@ export default function FlowoodPage() {
                 <div className="container">
                     <div className="grid grid-2">
                         <div>
-                            <h2>Why Choose Us in Flowood?</h2>
+                            <h2>Why Choose Us in Richland?</h2>
                             <ul className={styles.benefitsList}>
                                 <li>✓ Same-day delivery available</li>
-                                <li>✓ Serving Flowood and Rankin County</li>
+                                <li>✓ Serving Richland and Rankin County</li>
                                 <li>✓ Transparent pricing with no hidden fees</li>
                                 <li>✓ 10, 15, and 20-yard dumpsters</li>
                                 <li>✓ Residential and commercial service</li>
@@ -77,9 +77,9 @@ export default function FlowoodPage() {
                             </ul>
                         </div>
                         <div>
-                            <h2>Perfect For Flowood Projects</h2>
-                            <p>Whether you're renovating a home in Kensington, clearing out an estate in Castlewoods, managing a construction project in Laurelwood or Laurelwood Estates, we have the right dumpster size for your needs.</p>
-                            <p><strong>Common uses in Flowood:</strong></p>
+                            <h2>Perfect For Richland Projects</h2>
+                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Richland, we have the right dumpster size for your needs.</p>
+                            <p><strong>Common uses in Richland:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
                                 <li>Construction and demolition</li>
@@ -95,23 +95,23 @@ export default function FlowoodPage() {
 
             <section className={styles.contentSection}>
                 <div className="container">
-                    <h2>Neighborhoods We Serve in Flowood</h2>
+                    <h2>Neighborhoods We Serve in Richland</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Flowood, a thriving city in Rankin County. Whether you're in <strong>Lakewood</strong>, <strong>Lakeland/Lost Estates</strong>, <strong>Traditions</strong>, <strong>Lester Heights</strong>, <strong>Lebedge Lake</strong>, <strong>Kensington</strong>, <strong>Lakeland East</strong>, or <strong>Ruby Hills</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly serve all neighborhoods throughout Richland, a vibrant community in Rankin County. Whether you're in <strong>Dogwood Place</strong>, <strong>Natchez Terrace</strong>, <strong>Monterey Woods</strong>, <strong>Richland East</strong>, or <strong>Castlewood</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
-                        Flowood's prime location and growing business district make it one of the metro area's most dynamic communities. We're here to support your residential and commercial projects with professional dumpster rental service.
+                        Richland's established neighborhoods and convenient location make it a desirable place to live and work. We're here to support your home improvement and construction projects with professional dumpster rental service.
                     </p>
                 </div>
             </section>
 
             <section className={styles.ctaSection}>
                 <div className="container text-center">
-                    <h2>Ready to Rent a Dumpster in Flowood?</h2>
+                    <h2>Ready to Rent a Dumpster in Richland?</h2>
                     <p style={{ fontSize: '1.125rem', marginBottom: 'var(--spacing-xl)' }}>
                         Book online now or call 601-316-7891 for same-day service
                     </p>
-                    <BookingButton label="Book Now" location="Flowood Service Area CTA" />
+                    <BookingButton label="Book Now" location="Richland Service Area CTA" />
                 </div>
             </section>
         </>

@@ -90,7 +90,7 @@ export interface ServiceSchema {
         '@type': string;
         name: string;
     };
-    areaServed: string;
+    areaServed: string | object[];
     description: string;
     offers?: {
         '@type': string;
@@ -104,8 +104,32 @@ export function generateServiceSchema(
     serviceType: string,
     description: string,
     city?: string,
-    offers?: { price: string; description: string }[]
+    offers?: { price: string; description: string }[],
+    zipCodes?: string[]
 ): ServiceSchema {
+    let areaServed: string | object[];
+
+    if (zipCodes && zipCodes.length > 0) {
+        // Create detailed areaServed with city and zip codes
+        areaServed = [
+            {
+                '@type': 'City',
+                name: city || 'Central Mississippi',
+                containedInPlace: {
+                    '@type': 'State',
+                    name: 'Mississippi'
+                }
+            },
+            ...zipCodes.map(zip => ({
+                '@type': 'PostalCode',
+                postalCode: zip
+            }))
+        ];
+    } else {
+        // Fallback to simple string
+        areaServed = city || 'Central Mississippi';
+    }
+
     return {
         '@context': 'https://schema.org',
         '@type': 'Service',
@@ -114,7 +138,7 @@ export function generateServiceSchema(
             '@type': 'LocalBusiness',
             name: 'Mid South Dumpster Rentals, LLC',
         },
-        areaServed: city || 'Central Mississippi',
+        areaServed,
         description,
         offers: offers?.map((offer) => ({
             '@type': 'Offer',

@@ -19,7 +19,9 @@ export default function CantonPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
         'Professional roll-off dumpster rentals in Canton, MS. Available in 10, 15, and 20-yard sizes for residential, commercial, and construction projects.',
-        'Canton, MS'
+        'Canton',
+        undefined,
+        ['39046']
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
@@ -88,6 +90,18 @@ export default function CantonPage() {
                             </ul>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Neighborhoods We Serve in Canton</h2>
+                    <p>
+                        We proudly serve all neighborhoods throughout Canton, a historic city in Madison County. Whether you're in <strong>Chestnut Hill</strong>, <strong>Kearney Park</strong>, <strong>Springwood</strong>, <strong>Wrecks Cul</strong>, <strong>Heartland Estates</strong>, or <strong>Woodlands of Flora</strong>, we deliver fast, reliable dumpster rental service to your location.
+                    </p>
+                    <p>
+                        Canton's rich history and growing community make it a unique place in Central Mississippi. We're here to support your renovation, construction, and cleanup projects with professional dumpster rental service.
+                    </p>
                 </div>
             </section>
 

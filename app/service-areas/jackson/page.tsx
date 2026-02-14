@@ -19,7 +19,9 @@ export default function JacksonPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
         'Professional roll-off dumpster rentals in Jackson, MS. Available in 10, 15, and 20-yard sizes for residential, commercial, and construction projects.',
-        'Jackson, MS'
+        'Jackson',
+        undefined,
+        ['39201', '39202', '39203', '39204', '39206', '39209', '39211', '39212', '39213', '39216', '39217']
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
@@ -88,6 +90,18 @@ export default function JacksonPage() {
                             </ul>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Neighborhoods We Serve in Jackson</h2>
+                    <p>
+                        We proudly serve all neighborhoods throughout Jackson, Mississippi's capital city. Whether you're in the historic charm of <strong>Belhaven</strong> or <strong>Fondren</strong>, the growing communities of <strong>Presidential Hills</strong>, <strong>Northpointe</strong>, or <strong>Pear Orchard</strong>, or anywhere else in the Jackson metro area, we deliver fast, reliable dumpster rental service to your location.
+                    </p>
+                    <p>
+                        From <strong>Alta Woods</strong> and <strong>Cedar Hills</strong> to <strong>Wildwood</strong>, <strong>Reunion</strong>, and <strong>Lake Caroline</strong>, our service covers every corner of Jackson. We also serve <strong>Tougaloo</strong>, <strong>Fondren Hill Place</strong>, <strong>The Veranda</strong>, <strong>Dinsmore</strong>, and <strong>Old Town</strong>, ensuring that no matter where your project is located, Mid South Dumpster Rentals has you covered.
+                    </p>
                 </div>
             </section>
 

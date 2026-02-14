@@ -19,7 +19,9 @@ export default function MadisonPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
         'Professional roll-off dumpster rentals in Madison, MS. Available in 10, 15, and 20-yard sizes for residential, commercial, and construction projects.',
-        'Madison, MS'
+        'Madison',
+        undefined,
+        ['39110']
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
@@ -88,6 +90,18 @@ export default function MadisonPage() {
                             </ul>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Neighborhoods We Serve in Madison</h2>
+                    <p>
+                        We proudly serve all neighborhoods throughout Madison, one of Mississippi's premier communities. Whether you're in the upscale developments of <strong>Bridgewater</strong>, <strong>Lake Harbour</strong>, or <strong>The Veranda</strong>, or the charming areas of <strong>Old Town</strong> and <strong>Dinsmore</strong>, we deliver fast, reliable dumpster rental service to your location.
+                    </p>
+                    <p>
+                        Madison is known for its beautiful neighborhoods and well-maintained properties, and we're committed to providing service that matches the quality standards of this exceptional community.
+                    </p>
                 </div>
             </section>
 

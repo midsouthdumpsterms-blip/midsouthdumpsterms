@@ -19,7 +19,9 @@ export default function PearlPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
         'Professional roll-off dumpster rentals in Pearl, MS. Available in 10, 15, and 20-yard sizes for residential, commercial, and construction projects.',
-        'Pearl, MS'
+        'Pearl',
+        undefined,
+        ['39208']
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
@@ -88,6 +90,18 @@ export default function PearlPage() {
                             </ul>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Neighborhoods We Serve in Pearl</h2>
+                    <p>
+                        We proudly serve all neighborhoods throughout Pearl, a vibrant city in Rankin County. Whether you're in <strong>Harvey Crossing</strong>, <strong>Deerfield</strong>, <strong>Pauline Creek</strong>, <strong>Rangelon Hills</strong>, <strong>The Links of Madison</strong>, or <strong>Parkbridge</strong>, we deliver fast, reliable dumpster rental service to your location.
+                    </p>
+                    <p>
+                        Pearl's diverse neighborhoods and central location make it a hub for residential and commercial activity. We're here to support your projects with dependable dumpster rental service throughout the Pearl area.
+                    </p>
                 </div>
             </section>
 

@@ -19,7 +19,9 @@ export default function BrandonPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
         'Professional roll-off dumpster rentals in Brandon, MS. Available in 10, 15, and 20-yard sizes for residential, commercial, and construction projects.',
-        'Brandon, MS'
+        'Brandon',
+        undefined,
+        ['39042', '39047', '39043']
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
@@ -88,6 +90,18 @@ export default function BrandonPage() {
                             </ul>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Neighborhoods We Serve in Brandon</h2>
+                    <p>
+                        We proudly serve all neighborhoods throughout Brandon, a rapidly growing city in Rankin County. Whether you're in <strong>Lake Dockery</strong>, <strong>Lake Shiloh</strong>, <strong>Greenfield Estates</strong>, <strong>Crossgates</strong>, <strong>Deerfield</strong>, or <strong>Byram Estates</strong>, we deliver fast, reliable dumpster rental service to your location.
+                    </p>
+                    <p>
+                        Brandon's thriving community and expanding development make it one of the metro area's most desirable locations. We're here to support your projects with professional dumpster rental service tailored to Brandon's needs.
+                    </p>
                 </div>
             </section>
 

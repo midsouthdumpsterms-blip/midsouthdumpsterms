@@ -19,7 +19,9 @@ export default function RidgelandPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
         'Professional roll-off dumpster rentals in Ridgeland, MS. Available in 10, 15, and 20-yard sizes for residential, commercial, and construction projects.',
-        'Ridgeland, MS'
+        'Ridgeland',
+        undefined,
+        ['39157']
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
@@ -88,6 +90,18 @@ export default function RidgelandPage() {
                             </ul>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Neighborhoods We Serve in Ridgeland</h2>
+                    <p>
+                        We proudly serve all neighborhoods throughout Ridgeland, a thriving city in Madison County. Whether you're in <strong>Woodlands</strong>, <strong>Green Acres</strong>, <strong>Dinsmoor</strong>, <strong>Countyline</strong>, <strong>Oakwood</strong>, <strong>College Hills</strong>, or <strong>Hunter's Ridge</strong>, we deliver fast, reliable dumpster rental service to your location.
+                    </p>
+                    <p>
+                        From residential renovations to commercial construction projects, Mid South Dumpster Rentals is your trusted partner for waste management throughout Ridgeland's diverse neighborhoods.
+                    </p>
                 </div>
             </section>
 
