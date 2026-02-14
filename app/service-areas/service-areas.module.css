@@ -20,16 +20,15 @@
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-xl);
     margin: var(--spacing-3xl) 0;
-    justify-items: center;
 }
 
-/* Center the last row if it has fewer than 3 items */
-.grid>*:nth-last-child(-n+2):nth-child(3n+1) {
-    grid-column: 2 / 3;
+/* Center the last 2 items when there are exactly 14 items (4 full rows + 2) */
+.grid>*:nth-child(13) {
+    grid-column-start: 2;
 }
 
-.grid>*:nth-last-child(1):nth-child(3n+2) {
-    grid-column: 2 / 4;
+.grid>*:nth-child(14) {
+    grid-column-start: 3;
 }
 
 .areaCard {
