@@ -6,7 +6,7 @@ import styles from './service-areas.module.css'
 export const metadata: Metadata = {
     title: 'Service Areas | Central Mississippi Dumpster Rental Coverage',
     description:
-        'Mid South Dumpster Rentals serves Jackson, Brandon, Clinton, Flowood, Pearl, Ridgeland, Madison, Flora, Canton, Terry, Byram, Gluckstadt, and surrounding Central Mississippi areas.',
+        'Mid South Dumpster Rentals serves Jackson, Brandon, Clinton, Flowood, Pearl, Ridgeland, Madison, Flora, Florence, Canton, Terry, Byram, Richland, Gluckstadt, and surrounding Central Mississippi areas.',
     openGraph: {
         title: 'Service Areas | Mid South Dumpster Rentals',
         description: 'Dumpster rental service coverage across Central Mississippi.',
@@ -23,9 +23,11 @@ const serviceAreas = [
     { city: 'Ridgeland', state: 'MS', description: 'Convenient dumpster rentals serving Ridgeland' },
     { city: 'Madison', state: 'MS', description: 'Top-rated dumpster rental service in Madison' },
     { city: 'Flora', state: 'MS', description: 'Affordable dumpster rentals for Flora area projects' },
+    { city: 'Florence', state: 'MS', description: 'Reliable dumpster rental service for Florence and Rankin County' },
     { city: 'Canton', state: 'MS', description: 'Expert dumpster rental services in Canton' },
     { city: 'Terry', state: 'MS', description: 'Quality dumpster rentals serving Terry and surrounding areas' },
     { city: 'Byram', state: 'MS', description: 'Professional waste disposal solutions in Byram' },
+    { city: 'Richland', state: 'MS', description: 'Professional dumpster rentals for Richland neighborhoods' },
     { city: 'Gluckstadt', state: 'MS', description: 'Dependable dumpster rental service for Gluckstadt' },
 ]
 
