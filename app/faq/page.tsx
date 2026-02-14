@@ -97,9 +97,9 @@ For the best protection, place the dumpster on a flat, stable surface like concr
         question: "What areas do you serve?",
         answer: `We serve Jackson, MS and surrounding areas including:
 
-• Madison, Brandon, Pearl, Flowood
-• Ridgeland, Clinton, Byram, Terry
-• Canton, Gluckstadt, and more
+• Madison, Brandon, Pearl, Flowood, Florence
+• Ridgeland, Clinton, Byram, Terry, Richland
+• Canton, Flora, Gluckstadt, and more
 
 Not sure if we serve your area? Give us a call at **(601) 316-7891**.`
     }
