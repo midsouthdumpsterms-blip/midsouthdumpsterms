@@ -4,6 +4,7 @@
     background: white;
     box-shadow: var(--shadow-md);
     z-index: 1000;
+    overflow-x: hidden;
 }
 
 .nav {
@@ -119,7 +120,7 @@
     .navLinks {
         position: fixed;
         top: 70px;
-        right: -100%;
+        right: 0;
         width: 250px;
         height: calc(100vh - 70px);
         background: white;
@@ -128,11 +129,14 @@
         padding: var(--spacing-xl);
         gap: var(--spacing-lg);
         box-shadow: var(--shadow-xl);
-        transition: right var(--transition-slow);
+        transition: transform var(--transition-slow), visibility var(--transition-slow);
+        transform: translateX(100%);
+        visibility: hidden;
     }
 
     .navLinksOpen {
-        right: 0;
+        transform: translateX(0);
+        visibility: visible;
     }
 
     .ctaItem {

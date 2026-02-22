@@ -22,13 +22,15 @@
     margin: var(--spacing-3xl) 0;
 }
 
-/* Center the last 2 items when there are exactly 14 items (4 full rows + 2) */
-.grid>*:nth-child(13) {
-    grid-column-start: 2;
-}
+/* Center the last 2 items on desktop when there are exactly 14 items (4 full rows + 2) */
+@media (min-width: 1025px) {
+    .grid>*:nth-child(13) {
+        grid-column-start: 2;
+    }
 
-.grid>*:nth-child(14) {
-    grid-column-start: 3;
+    .grid>*:nth-child(14) {
+        grid-column-start: 3;
+    }
 }
 
 .areaCard {
