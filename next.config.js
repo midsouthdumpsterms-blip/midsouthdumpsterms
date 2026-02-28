@@ -23,6 +23,17 @@ const nextConfig = {
     experimental: {
         optimizePackageImports: ['@vercel/analytics'], // Tree-shake specific packages
     },
+
+    // 301 Redirects - capture orphaned traffic from old ad campaigns
+    async redirects() {
+        return [
+            {
+                source: '/booking',
+                destination: '/',
+                permanent: true, // 301 redirect - passes SEO authority to homepage
+            },
+        ]
+    },
 }
 
 module.exports = nextConfig

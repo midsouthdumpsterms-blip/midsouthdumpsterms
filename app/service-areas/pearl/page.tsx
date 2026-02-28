@@ -5,7 +5,7 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Pearl MS | Residential & Commercial',
+    title: 'Roll-Off Dumpster Rentals Pearl MS | Residential & Commercial',
     description:
         'Affordable dumpster rentals in Pearl & Rankin County. 10-20 yard sizes for home cleanouts, roofing & construction. Same-day delivery. Book online.',
     openGraph: {
@@ -37,7 +37,7 @@ export default function PearlPage() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Dumpster Rentals in Pearl, MS</h1>
+                    <h1>Roll-Off Dumpster Rentals in Pearl, MS</h1>
                     <p className={styles.heroSubtext}>
                         Fast, affordable roll-off dumpster delivery throughout Pearl and surrounding areas
                     </p>
@@ -100,7 +100,7 @@ export default function PearlPage() {
                         We proudly serve all neighborhoods throughout Pearl, a vibrant city in Rankin County. Whether you're in <strong>Harvey Crossing</strong>, <strong>Deerfield</strong>, <strong>Pauline Creek</strong>, <strong>Rangelon Hills</strong>, <strong>The Links of Madison</strong>, or <strong>Parkbridge</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
-                        Pearl's diverse neighborhoods and central location make it a hub for residential and commercial activity. We're here to support your projects with dependable dumpster rental service throughout the Pearl area.
+                        Pearl's diverse neighborhoods and central location make it a hub for residential and commercial activity. We're here to support your projects with dependable roll-off dumpster rental service throughout the Pearl area. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Pearl customers.
                     </p>
                 </div>
             </section>

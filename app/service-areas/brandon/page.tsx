@@ -5,7 +5,7 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Brandon MS | Crossgates Area',
+    title: 'Roll-Off Dumpster Rentals Brandon MS | Crossgates Area',
     description:
         'Serving Crossgates, Winner\'s Circle & Reservoir Point with affordable dumpster rentals. 10-20 yard sizes, same-day delivery. Residential & commercial. Book online now.',
     openGraph: {
@@ -37,7 +37,7 @@ export default function BrandonPage() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Dumpster Rentals in Brandon, MS</h1>
+                    <h1>Roll-Off Dumpster Rentals in Brandon, MS</h1>
                     <p className={styles.heroSubtext}>
                         Fast, affordable roll-off dumpster delivery throughout Brandon and surrounding areas
                     </p>
@@ -100,7 +100,7 @@ export default function BrandonPage() {
                         We proudly serve all neighborhoods throughout Brandon, a rapidly growing city in Rankin County. Whether you're in <strong>Lake Dockery</strong>, <strong>Lake Shiloh</strong>, <strong>Greenfield Estates</strong>, <strong>Crossgates</strong>, <strong>Deerfield</strong>, or <strong>Byram Estates</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
-                        Brandon's thriving community and expanding development make it one of the metro area's most desirable locations. We're here to support your projects with professional dumpster rental service tailored to Brandon's needs.
+                        Brandon's thriving community and expanding development make it one of the metro area's most desirable locations. We're here to support your projects with professional roll-off dumpster rental service tailored to Brandon's needs. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Brandon customers.
                     </p>
                 </div>
             </section>

@@ -5,7 +5,7 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Madison MS | Reunion & Annandale',
+    title: 'Roll-Off Dumpster Rentals Madison MS | Reunion & Annandale',
     description:
         'Premium dumpster rental service for Reunion, Lake Caroline & Annandale. 10-20 yard roll-off dumpsters with transparent pricing. Same-day delivery available.',
     openGraph: {
@@ -37,7 +37,7 @@ export default function MadisonPage() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Dumpster Rentals in Madison, MS</h1>
+                    <h1>Roll-Off Dumpster Rentals in Madison, MS</h1>
                     <p className={styles.heroSubtext}>
                         Fast, affordable roll-off dumpster delivery throughout Madison and surrounding areas
                     </p>
@@ -100,7 +100,7 @@ export default function MadisonPage() {
                         We proudly serve all neighborhoods throughout Madison, one of Mississippi's premier communities. Whether you're in the upscale developments of <strong>Bridgewater</strong>, <strong>Lake Harbour</strong>, or <strong>The Veranda</strong>, or the charming areas of <strong>Old Town</strong> and <strong>Dinsmore</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
-                        Madison is known for its beautiful neighborhoods and well-maintained properties, and we're committed to providing service that matches the quality standards of this exceptional community.
+                        Madison is known for its beautiful neighborhoods and well-maintained properties, and we're committed to providing roll-off dumpster rental service that matches the quality standards of this exceptional community. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Madison customers.
                     </p>
                 </div>
             </section>
