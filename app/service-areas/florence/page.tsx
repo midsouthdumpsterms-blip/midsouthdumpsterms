@@ -97,7 +97,7 @@ export default function FlorencePage() {
                 <div className="container">
                     <h2>Neighborhoods We Serve in Florence</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Florence, a growing community in Rankin County. Whether you're in <strong>Ebony</strong>, <strong>E Rankin Hills</strong>, <strong>Triangle Areas</strong>, <strong>Egglesfield</strong>, <strong>Piney Valley</strong>, <strong>Stoneridge</strong>, <strong>Memphis Park</strong>, or <strong>Bermuda Estates</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly serve all neighborhoods throughout Florence, a growing community in Rankin County. Whether you're in <strong>Cleary</strong>, <strong>Southern Oaks</strong>, <strong>Triangle Acres</strong>, <strong>Eaglewood</strong>, <strong>Deer Valley</strong>, <strong>Stonebrook</strong>, <strong>Hemphill Park</strong>, or <strong>Burnside Estates</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
                         Florence's convenient location and residential communities make it a great place for families and businesses. We're committed to providing professional dumpster rental service for all your project needs.

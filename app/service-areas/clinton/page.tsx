@@ -97,7 +97,7 @@ export default function ClintonPage() {
                 <div className="container">
                     <h2>Neighborhoods We Serve in Clinton</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Clinton, a vibrant city in Hinds County. Whether you're in <strong>Castle Woods</strong>, <strong>Gardens of Azalea</strong>, <strong>Madkin Hills</strong>, <strong>Champions</strong>, <strong>Crossview Plantation</strong>, <strong>Bellegrove</strong>, <strong>Watercrest</strong>, <strong>Copperfield</strong>, or <strong>Glen Arbor</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly serve all neighborhoods throughout Clinton, a vibrant city in Hinds County. Whether you're in <strong>Woodmoor</strong>, <strong>Green Acres</strong>, <strong>Pinehaven Estates</strong>, <strong>Olde Town District</strong>, <strong>Countrywood</strong>, <strong>Oakhurst</strong>, <strong>College Hills</strong>, or <strong>Hunter's Ridge</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
                         Clinton's family-friendly neighborhoods and growing community make it a great place to live and work. We're here to support your home improvement and construction projects with professional dumpster rental service.

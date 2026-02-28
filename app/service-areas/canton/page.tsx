@@ -97,7 +97,7 @@ export default function CantonPage() {
                 <div className="container">
                     <h2>Neighborhoods We Serve in Canton</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Canton, a historic city in Madison County. Whether you're in <strong>Chestnut Hill</strong>, <strong>Kearney Park</strong>, <strong>Springwood</strong>, <strong>Wrecks Cul</strong>, <strong>Heartland Estates</strong>, or <strong>Woodlands of Flora</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly serve all neighborhoods throughout Canton, a historic city in Madison County. Whether you're in <strong>Harvey Crossing</strong>, <strong>Deerfield</strong>, <strong>Panther Creek</strong>, <strong>Hampton Hills</strong>, <strong>The Links of Madison</strong>, or <strong>Bainbridge</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
                         Canton's rich history and growing community make it a unique place in Central Mississippi. We're here to support your renovation, construction, and cleanup projects with professional dumpster rental service.

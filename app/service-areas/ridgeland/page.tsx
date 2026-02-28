@@ -97,7 +97,7 @@ export default function RidgelandPage() {
                 <div className="container">
                     <h2>Neighborhoods We Serve in Ridgeland</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Ridgeland, a thriving city in Madison County. Whether you're in <strong>Woodlands</strong>, <strong>Green Acres</strong>, <strong>Dinsmoor</strong>, <strong>Countyline</strong>, <strong>Oakwood</strong>, <strong>College Hills</strong>, or <strong>Hunter's Ridge</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly serve all neighborhoods throughout Ridgeland, a thriving city in Madison County. Whether you're in <strong>Bridgewater</strong>, <strong>Lake Harbor</strong>, <strong>Old Town</strong>, <strong>The Township</strong>, or <strong>Dinsmor</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
                         From residential renovations to commercial construction projects, Mid South Dumpster Rentals is your trusted partner for waste management throughout Ridgeland's diverse neighborhoods.

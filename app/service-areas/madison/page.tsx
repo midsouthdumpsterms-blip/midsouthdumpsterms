@@ -97,10 +97,10 @@ export default function MadisonPage() {
                 <div className="container">
                     <h2>Neighborhoods We Serve in Madison</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Madison, one of Mississippi's premier communities. Whether you're in the upscale developments of <strong>Bridgewater</strong>, <strong>Lake Harbour</strong>, or <strong>The Veranda</strong>, or the charming areas of <strong>Old Town</strong> and <strong>Dinsmore</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly serve all neighborhoods throughout Madison, one of Mississippi's premier communities. Whether you're in <strong>Reunion</strong>, <strong>Lake Caroline</strong>, <strong>Annandale</strong>, <strong>Lost Rabbit</strong>, or <strong>Woodland Estates</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
-                        Madison is known for its beautiful neighborhoods and well-maintained properties, and we're committed to providing roll-off dumpster rental service that matches the quality standards of this exceptional community. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Madison customers.
+                        From <strong>Georgetown</strong> to <strong>Germantown</strong> and beyond, we're committed to providing roll-off dumpster rental service that matches the quality standards of this exceptional community. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Madison customers.
                     </p>
                 </div>
             </section>

@@ -97,7 +97,7 @@ export default function TerryPage() {
                 <div className="container">
                     <h2>Neighborhoods We Serve in Terry</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Terry, a charming town in Hinds County along the Highway 27 corridor. Whether you're in <strong>South Fork Estates</strong>, <strong>Cedarstone</strong>, <strong>Terry Park</strong>, <strong>Shadow Ridge</strong>, <strong>Indian Hills</strong>, <strong>Terry Place</strong>, or the <strong>George Road & Midway Road</strong> areas, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly serve all neighborhoods throughout Terry, a charming town in Hinds County along the Highway 27 corridor. Whether you're in <strong>Terry Park</strong>, <strong>South Fork Estates</strong>, <strong>Cedarstone</strong>, or <strong>Downtown Terry</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
                         Terry's mix of historic homes and newer subdivisions creates a unique community atmosphere. From rural properties with larger yards to established neighborhoods, we're here to support your renovation, construction, and cleanup projects with professional dumpster rental service.

@@ -97,7 +97,7 @@ export default function BrandonPage() {
                 <div className="container">
                     <h2>Neighborhoods We Serve in Brandon</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Brandon, a rapidly growing city in Rankin County. Whether you're in <strong>Lake Dockery</strong>, <strong>Lake Shiloh</strong>, <strong>Greenfield Estates</strong>, <strong>Crossgates</strong>, <strong>Deerfield</strong>, or <strong>Byram Estates</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly serve all neighborhoods throughout Brandon, a rapidly growing city in Rankin County. Whether you're in <strong>Castle Woods</strong>, <strong>Gardens of Manship</strong>, <strong>Hidden Hills</strong>, <strong>Crossgates</strong>, <strong>Crossview Plantation</strong>, <strong>Bellegrove</strong>, <strong>Waterwood</strong>, <strong>Copperfield</strong>, or <strong>Glen Arbor</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
                         Brandon's thriving community and expanding development make it one of the metro area's most desirable locations. We're here to support your projects with professional roll-off dumpster rental service tailored to Brandon's needs. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Brandon customers.

@@ -97,7 +97,7 @@ export default function FlowoodPage() {
                 <div className="container">
                     <h2>Neighborhoods We Serve in Flowood</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Flowood, a thriving city in Rankin County. Whether you're in <strong>Lakewood</strong>, <strong>Lakeland/Lost Estates</strong>, <strong>Traditions</strong>, <strong>Lester Heights</strong>, <strong>Lebedge Lake</strong>, <strong>Kensington</strong>, <strong>Lakeland East</strong>, or <strong>Ruby Hills</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly serve all neighborhoods throughout Flowood, a thriving city in Rankin County. Whether you're in <strong>Laurelwood</strong>, <strong>Laurelwood Estates</strong>, <strong>Traditions</strong>, <strong>Latter Rayne</strong>, <strong>Lineage Lake</strong>, <strong>Kensington</strong>, <strong>Lakeland East</strong>, or <strong>Aubry Hills</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
                         Flowood's prime location and growing business district make it one of the metro area's most dynamic communities. We're here to support your residential and commercial projects with professional dumpster rental service.

@@ -97,7 +97,7 @@ export default function FloraPage() {
                 <div className="container">
                     <h2>Neighborhoods We Serve in Flora</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Flora, a charming community in Madison County. Whether you're working on a project in Flora's residential areas or commercial districts, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly serve all neighborhoods throughout Flora, a charming community in Madison County. Whether you're in <strong>Chestnut Hill</strong>, <strong>Kearney Park</strong>, <strong>Springwood</strong>, <strong>Weeks End</strong>, <strong>Heartland Estates</strong>, or <strong>Woodlands of Flora</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
                         Flora's small-town atmosphere and convenient location make it a wonderful place to live and work. We're committed to providing professional dumpster rental service for all your project needs.

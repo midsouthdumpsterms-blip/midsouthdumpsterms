@@ -97,7 +97,7 @@ export default function RichlandPage() {
                 <div className="container">
                     <h2>Neighborhoods We Serve in Richland</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Richland, a vibrant community in Rankin County. Whether you're in <strong>Dogwood Place</strong>, <strong>Natchez Terrace</strong>, <strong>Monterey Woods</strong>, <strong>Richland East</strong>, or <strong>Castlewood</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly serve all neighborhoods throughout Richland, a vibrant community in Rankin County. Whether you're in <strong>Bluebird</strong>, <strong>Bradford Place</strong>, <strong>Bullock Forrest</strong>, <strong>Monterey Woods</strong>, <strong>Richland East</strong>, or <strong>Southwind</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
                         Richland's established neighborhoods and convenient location make it a desirable place to live and work. We're here to support your home improvement and construction projects with professional dumpster rental service.
