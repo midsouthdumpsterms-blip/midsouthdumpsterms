@@ -60,7 +60,7 @@ export default function Home() {
                 <div className="container">
                     <div className={styles.heroContent}>
                         <h1 className="animate-fade-in">
-                            Affordable Dumpster Rentals in Jackson, MS
+                            Affordable Roll-Off Dumpster Rentals in Jackson, MS
                         </h1>
                         <p className={styles.heroSubtext}>
                             10, 15, & 20-yard roll-off dumpsters. Same-day delivery available. Serving Central Mississippi.

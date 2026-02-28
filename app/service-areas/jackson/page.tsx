@@ -100,7 +100,7 @@ export default function JacksonPage() {
                         We proudly serve all neighborhoods throughout Jackson, Mississippi's capital city. Whether you're in the historic charm of <strong>Belhaven</strong> or <strong>Fondren</strong>, the growing communities of <strong>Presidential Hills</strong>, <strong>Northpointe</strong>, or <strong>Pear Orchard</strong>, or anywhere else in the Jackson metro area, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
-                        From <strong>Alta Woods</strong> and <strong>Cedar Hills</strong> to <strong>Wildwood</strong>, <strong>Reunion</strong>, and <strong>Lake Caroline</strong>, our service covers every corner of Jackson. We also serve <strong>Tougaloo</strong>, <strong>Fondren Hill Place</strong>, <strong>The Veranda</strong>, <strong>Dinsmore</strong>, and <strong>Old Town</strong>, ensuring that no matter where your project is located, Mid South Dumpster Rentals has you covered.
+                        From <strong>Alta Woods</strong> and <strong>Cedar Hills</strong> to <strong>Wildwood</strong>, <strong>Reunion</strong>, and <strong>Lake Caroline</strong>, our service covers every corner of Jackson. We also serve <strong>Tougaloo</strong>, <strong>Fondren Hill Place</strong>, <strong>The Veranda</strong>, <strong>Dinsmore</strong>, and <strong>Old Town</strong>, ensuring that no matter where your project is located, Mid South Dumpster Rentals has you covered. Visit nuestro [perfil de Google Business](https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA) para ver más reseñas y fotos de nuestros proyectos en Jackson.
                     </p>
                 </div>
             </section>
