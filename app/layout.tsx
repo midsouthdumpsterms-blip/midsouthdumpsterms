@@ -4,6 +4,7 @@ import { generateLocalBusinessSchema, injectSchema } from '@/lib/schema'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MobileCallBar from '@/components/MobileCallBar'
+import GoogleReviewsBadge from '@/components/GoogleReviewsBadge'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -11,11 +12,11 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 export const metadata: Metadata = {
     metadataBase: new URL('https://midsouthdumpsterms.com'),
     title: {
-        default: 'Dumpster Rentals Jackson MS | Affordable Roll-Off Dumpsters | Mid South',
+        default: 'Dumpster Rental Jackson MS | From $349 | Same-Day Delivery',
         template: '%s | Mid South Dumpster Rentals',
     },
     description:
-        'Affordable dumpster rentals in Jackson, MS. 10, 15, 20-yard roll-off dumpsters. Same-day delivery available. Serving Central Mississippi. Book online or call 601-316-7891.',
+        "Jackson's local dumpster rental company. 10, 15 & 20-yard roll-offs from $349. Same-day delivery available 7 days a week. Serving Central MS. Call 601-316-7891.",
     keywords: [
         'dumpster rental jackson ms',
         'roll off dumpster jackson',
@@ -92,6 +93,7 @@ export default function RootLayout({
                 <main>{children}</main>
                 <Footer />
                 <MobileCallBar />
+                <GoogleReviewsBadge />
                 <Analytics />
                 <SpeedInsights />
             </body>
