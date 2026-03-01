@@ -22,8 +22,8 @@ export default function Header() {
                             priority
                         />
                         <div className={styles.logoTextContainer}>
-                            <span className={styles.logoText}>Mid South</span>
-                            <span className={styles.logoSubtext}>Dumpster Rentals</span>
+                            <span className={styles.logoText}>Mid South Dumpster Rentals</span>
+                            <span className={styles.logoSubtext}>LLC</span>
                         </div>
                     </Link>
 
