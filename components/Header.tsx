@@ -16,8 +16,8 @@ export default function Header() {
                         <Image
                             src="/images/logo.png"
                             alt="Mid South Dumpster Rentals - Same Day Service"
-                            width={80}
-                            height={80}
+                            width={52}
+                            height={52}
                             className={styles.logoImage}
                             priority
                         />
