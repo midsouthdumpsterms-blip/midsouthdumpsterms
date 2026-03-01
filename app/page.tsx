@@ -21,27 +21,32 @@ const faqData = [
     {
         question: 'What sizes of dumpsters do you offer?',
         answer:
-            'We offer 10-yard, 15-yard, and 20-yard dumpsters to accommodate projects of all sizes, from small cleanouts to large construction jobs.',
+            'We offer 10-yard, 15-yard, and 20-yard roll-off dumpsters. The 10-yard holds about 4 pickup truck loads and is perfect for small cleanouts. The 15-yard (our most popular) holds 6 pickup truck loads and suits most home renovation projects. The 20-yard holds 8 pickup truck loads and handles large construction or demolition jobs.',
     },
     {
-        question: 'How much does dumpster rental cost?',
+        question: 'How much does dumpster rental cost in Jackson, MS?',
         answer:
-            'We offer competitive pricing on 10-yard, 15-yard, and 20-yard dumpsters with flexible rental periods. Call us at 601-316-7891 or book online for an instant quote tailored to your project needs.',
+            'Our flat-rate prices include delivery, pickup, and disposal with no hidden fees. 10-yard dumpster: from $349 (1 day) to $399 (7 days), includes 1 ton. 15-yard dumpster: from $399 (1 day) to $449 (7 days), includes 2 tons. 20-yard dumpster: from $449 (1 day) to $499 (7 days), includes 3 tons. Overage is $55/ton for 10 and 15-yard containers.',
     },
     {
         question: 'What areas do you serve?',
         answer:
-            'We serve Jackson, Brandon, Clinton, Flowood, Pearl, Ridgeland, Madison, Flora, Canton, Terry, Byram, Gluckstadt, and surrounding Central Mississippi areas.',
+            'We serve the entire Central Mississippi tri-county area including Jackson, Brandon, Clinton, Flowood, Pearl, Ridgeland, Madison, Flora, Canton, Terry, Byram, Gluckstadt, Florence, and Richland — 7 days a week.',
     },
     {
         question: 'Can I get same-day delivery?',
         answer:
-            'Yes! We offer same-day delivery when you book early. Call us at 601-316-7891 to check availability for same-day service.',
+            'Yes! Same-day delivery is available 7 days a week when you call before noon. Call us at 601-316-7891 or book online to check same-day availability in your area.',
+    },
+    {
+        question: 'What makes Mid South Dumpster Rentals different from other companies in Central MS?',
+        answer:
+            'Mid South Dumpster Rentals is locally owned and operated in Jackson, MS. We offer flat-rate pricing with no hidden fees, same-day delivery available 7 days a week, online booking 24/7, and we serve the entire tri-county area (Hinds, Madison, and Rankin counties). Our prices start at $349 and include delivery, pickup, and disposal.',
     },
     {
         question: 'What can I throw in the dumpster?',
         answer:
-            'You can dispose of construction debris, furniture, household waste, yard waste, and more. Prohibited items include hazardous materials, liquids, tires, batteries, and refrigerators.',
+            'You can dispose of construction debris, furniture, household waste, yard waste, lumber, drywall, roofing shingles, carpet, and more. Prohibited items include hazardous materials, liquids, tires, batteries, refrigerators with refrigerant, electronics, and food waste.',
     },
 ]
 

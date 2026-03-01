@@ -5,12 +5,12 @@ import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import styles from './services.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rental Services | 10, 15, 20 Yard Dumpsters',
+    title: { absolute: 'Dumpster Rental Prices Jackson MS | $349–$499 | Mid South' },
     description:
-        'Comprehensive dumpster rental services in Central Mississippi. 10-yard, 15-yard, and 20-yard roll-off dumpsters for residential, commercial, and construction projects.',
+        '10-yard from $349 · 15-yard from $399 · 20-yard from $449. Same-day delivery available. No hidden fees. Serving Jackson, Brandon, Madison & Central MS. Call 601-316-7891.',
     openGraph: {
-        title: 'Dumpster Rental Services | Mid South Dumpster Rentals',
-        description: 'Affordable dumpster rentals for all project sizes.',
+        title: 'Dumpster Rental Prices Jackson MS | Mid South Dumpster Rentals',
+        description: '10, 15 & 20-yard roll-off dumpsters from $349. Same-day delivery. No hidden fees.',
         url: 'https://midsouthdumpsterms.com/services',
     },
 }

@@ -4,16 +4,18 @@ import Link from 'next/link'
 import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rental Prices in Jackson MS | 2024 Cost Guide',
+    title: 'Dumpster Rental Prices in Jackson MS | 2026 Cost Guide',
     description:
-        'Complete guide to dumpster rental prices in Jackson, Mississippi. Compare 10, 15, and 20-yard dumpster costs, learn about pricing factors, and get tips to save money on your rental.',
+        'Complete guide to dumpster rental prices in Jackson, Mississippi. Compare 10, 15, and 20-yard dumpster costs from Mid South Dumpster Rentals. Flat-rate pricing starts at $349 with no hidden fees. Updated March 2026.',
 }
 
 export default function BlogPost() {
     const articleSchema = generateArticleSchema(
-        'Dumpster Rental Prices in Jackson MS | 2024 Cost Guide',
+        'Dumpster Rental Prices in Jackson MS | 2026 Cost Guide',
         'Complete guide to dumpster rental prices in Jackson, Mississippi and Central MS.',
-        '2024-02-01'
+        '2026-03-01',
+        undefined,
+        '2026-03-01'
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
@@ -33,8 +35,8 @@ export default function BlogPost() {
 
                     <header className={styles.header}>
                         <span className={styles.category}>Local Guides</span>
-                        <h1>Dumpster Rental Prices in Jackson MS: 2024 Cost Guide</h1>
-                        <p className={styles.meta}>Published February 1, 2024</p>
+                        <h1>Dumpster Rental Prices in Jackson MS: 2026 Cost Guide</h1>
+                        <p className={styles.meta}>Updated March 1, 2026</p>
                     </header>
 
                     <div className={styles.content}>

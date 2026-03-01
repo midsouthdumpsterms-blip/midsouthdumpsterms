@@ -4,9 +4,9 @@ import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from './about.module.css'
 
 export const metadata: Metadata = {
-    title: 'About Us | Mid South Dumpster Rentals',
+    title: 'About Mid South Dumpster Rentals | Jackson, MS Local Dumpster Company',
     description:
-        'Learn about Mid South Dumpster Rentals, your trusted local dumpster rental provider in Central Mississippi. Quality service, transparent pricing, and reliable delivery.',
+        'Mid South Dumpster Rentals is a locally-owned, licensed & insured dumpster rental company in Jackson, MS. Serving the entire Central Mississippi tri-county area (Hinds, Madison, Rankin) with 10, 15, and 20-yard roll-off dumpsters. Same-day delivery 7 days a week.',
 }
 
 export default function About() {
@@ -33,10 +33,13 @@ export default function About() {
                         <div>
                             <h2>Who We Are</h2>
                             <p>
-                                Mid South Dumpster Rentals, LLC is a locally-owned and operated dumpster rental company proudly serving Central Mississippi. We're dedicated to providing reliable, affordable, and convenient waste disposal solutions for residential, commercial, and construction projects of any size.
+                                Mid South Dumpster Rentals, LLC is a locally-owned and operated dumpster rental company proudly serving Central Mississippi. We&apos;re a family-owned business dedicated to providing reliable, affordable, and convenient waste disposal solutions for residential, commercial, and construction projects of any size.
                             </p>
                             <p>
-                                Our commitment is simple: deliver quality dumpsters on time, provide transparent pricing, and offer exceptional customer service. Whether you're a homeowner tackling a weekend project or a contractor managing a large construction site, we have the right solution for you.
+                                We serve the entire tri-county area — Hinds County (Jackson, Clinton, Terry, Byram), Madison County (Madison, Ridgeland, Canton, Flora, Gluckstadt), and Rankin County (Brandon, Flowood, Pearl, Florence, Richland) — 7 days a week with same-day delivery available when you call before noon.
+                            </p>
+                            <p>
+                                Our commitment is simple: deliver quality dumpsters on time, provide transparent flat-rate pricing with no hidden fees, and offer exceptional customer service. Whether you&apos;re a homeowner tackling a weekend project or a contractor managing a large construction site, we have the right solution for you.
                             </p>
                         </div>
                         <div className={styles.infoCard}>
@@ -51,11 +54,19 @@ export default function About() {
                             </div>
                             <div className={styles.infoItem}>
                                 <strong>Hours:</strong>
-                                <p>7AM - 7PM<br />7 Days a Week</p>
+                                <p>7AM – 7PM<br />7 Days a Week</p>
                             </div>
                             <div className={styles.infoItem}>
                                 <strong>Service Area:</strong>
-                                <p>Central Mississippi</p>
+                                <p>Hinds, Madison &amp; Rankin Counties<br />(Central Mississippi tri-county area)</p>
+                            </div>
+                            <div className={styles.infoItem}>
+                                <strong>Licensed &amp; Insured:</strong>
+                                <p>Fully licensed and insured for your protection</p>
+                            </div>
+                            <div className={styles.infoItem}>
+                                <strong>Google Rating:</strong>
+                                <p>⭐ 5.0 stars</p>
                             </div>
                         </div>
                     </div>

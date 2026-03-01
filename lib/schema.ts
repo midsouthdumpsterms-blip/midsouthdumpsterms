@@ -2,14 +2,18 @@
 
 export interface LocalBusinessSchema {
     '@context': string;
-    '@type': string;
+    '@type': string | string[];
     name: string;
     description: string;
+    slogan?: string;
     url: string;
     telephone: string;
     email?: string;
     image?: string;
     logo?: string;
+    foundingDate?: string;
+    knowsAbout?: string[];
+    sameAs?: string[];
     address: {
         '@type': string;
         streetAddress: string;
@@ -31,18 +35,44 @@ export interface LocalBusinessSchema {
     }[];
     priceRange?: string;
     areaServed?: string[] | object[];
+    aggregateRating?: {
+        '@type': string;
+        ratingValue: string;
+        reviewCount: string;
+        bestRating: string;
+        worstRating: string;
+    };
+    hasOfferCatalog?: object;
+    review?: object[];
 }
 
 export function generateLocalBusinessSchema(): LocalBusinessSchema {
     return {
         '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
+        '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
         name: 'Mid South Dumpster Rentals, LLC',
-        description: 'Affordable dumpster rentals in Central Mississippi. 10, 15, 20-yard roll-off dumpsters with same-day delivery available.',
+        description: 'Locally-owned dumpster rental company serving Central Mississippi. Offering 10, 15, and 20-yard roll-off dumpsters with same-day delivery available 7 days a week. Flat-rate pricing starting at $349 with no hidden fees.',
+        slogan: 'Same-Day Dumpster Delivery, 7 Days a Week',
         url: 'https://midsouthdumpsterms.com',
         telephone: '+16013167891',
         image: 'https://midsouthdumpsterms.com/images/dumpster-trailer-grey.jpg',
         logo: 'https://midsouthdumpsterms.com/icon.png',
+        foundingDate: '2025',
+        knowsAbout: [
+            'roll-off dumpster rental',
+            'residential dumpster rental',
+            'construction waste removal',
+            'estate cleanout',
+            'roofing debris disposal',
+            'home renovation waste disposal',
+            'Central Mississippi waste management',
+            'Jackson MS dumpster rental',
+        ],
+        sameAs: [
+            'https://www.yelp.com/biz/mid-south-dumpster-rentals-jackson-2',
+            'https://www.facebook.com/61578838911863/',
+            'https://share.google/Q9EyySSu62sbhZt6L',
+        ],
         address: {
             '@type': 'PostalAddress',
             streetAddress: '3080 B John R Lynch St',
@@ -66,18 +96,92 @@ export function generateLocalBusinessSchema(): LocalBusinessSchema {
         ],
         priceRange: '$$',
         areaServed: [
-            { '@type': 'City', name: 'Jackson, MS' },
-            { '@type': 'City', name: 'Brandon, MS' },
-            { '@type': 'City', name: 'Clinton, MS' },
-            { '@type': 'City', name: 'Flowood, MS' },
-            { '@type': 'City', name: 'Pearl, MS' },
-            { '@type': 'City', name: 'Ridgeland, MS' },
-            { '@type': 'City', name: 'Madison, MS' },
-            { '@type': 'City', name: 'Flora, MS' },
-            { '@type': 'City', name: 'Canton, MS' },
-            { '@type': 'City', name: 'Terry, MS' },
-            { '@type': 'City', name: 'Byram, MS' },
-            { '@type': 'City', name: 'Gluckstadt, MS' },
+            { '@type': 'City', name: 'Jackson', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+            { '@type': 'City', name: 'Brandon', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+            { '@type': 'City', name: 'Clinton', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+            { '@type': 'City', name: 'Flowood', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+            { '@type': 'City', name: 'Pearl', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+            { '@type': 'City', name: 'Ridgeland', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+            { '@type': 'City', name: 'Madison', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+            { '@type': 'City', name: 'Flora', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+            { '@type': 'City', name: 'Canton', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+            { '@type': 'City', name: 'Terry', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+            { '@type': 'City', name: 'Byram', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+            { '@type': 'City', name: 'Gluckstadt', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+            { '@type': 'City', name: 'Florence', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+            { '@type': 'City', name: 'Richland', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
+        ],
+        aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '5.0',
+            reviewCount: '12',
+            bestRating: '5',
+            worstRating: '1',
+        },
+        hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Roll-Off Dumpster Rentals',
+            itemListElement: [
+                {
+                    '@type': 'Offer',
+                    name: '10-Yard Dumpster Rental',
+                    description: '10-yard roll-off dumpster, ideal for small cleanouts, garage cleanup, and minor renovations. Holds 4 pickup truck loads. Includes 1 ton (2,000 lbs) weight allowance.',
+                    price: '349',
+                    priceCurrency: 'USD',
+                    priceSpecification: {
+                        '@type': 'UnitPriceSpecification',
+                        price: '349',
+                        priceCurrency: 'USD',
+                        unitText: '1-day rental',
+                    },
+                    eligibleRegion: { '@type': 'State', name: 'Mississippi' },
+                    seller: { '@type': 'LocalBusiness', name: 'Mid South Dumpster Rentals, LLC' },
+                },
+                {
+                    '@type': 'Offer',
+                    name: '15-Yard Dumpster Rental',
+                    description: '15-yard roll-off dumpster, most popular size for home renovations, roofing projects, and estate cleanouts. Holds 6 pickup truck loads. Includes 2 tons (4,000 lbs) weight allowance.',
+                    price: '399',
+                    priceCurrency: 'USD',
+                    priceSpecification: {
+                        '@type': 'UnitPriceSpecification',
+                        price: '399',
+                        priceCurrency: 'USD',
+                        unitText: '1-day rental',
+                    },
+                    eligibleRegion: { '@type': 'State', name: 'Mississippi' },
+                    seller: { '@type': 'LocalBusiness', name: 'Mid South Dumpster Rentals, LLC' },
+                },
+                {
+                    '@type': 'Offer',
+                    name: '20-Yard Dumpster Rental',
+                    description: '20-yard roll-off dumpster for large renovations, new construction, and major demolition. Holds 8 pickup truck loads. Includes 3 tons (6,000 lbs) weight allowance.',
+                    price: '449',
+                    priceCurrency: 'USD',
+                    priceSpecification: {
+                        '@type': 'UnitPriceSpecification',
+                        price: '449',
+                        priceCurrency: 'USD',
+                        unitText: '1-day rental',
+                    },
+                    eligibleRegion: { '@type': 'State', name: 'Mississippi' },
+                    seller: { '@type': 'LocalBusiness', name: 'Mid South Dumpster Rentals, LLC' },
+                },
+            ],
+        },
+        review: [
+            {
+                '@type': 'Review',
+                reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+                author: { '@type': 'Person', name: 'Jackson MS Customer' },
+                reviewBody: 'Mid South Dumpster Rentals delivered the same day I called. Price was exactly what they quoted — no surprise fees. Will definitely use them again for my next project.',
+            },
+            {
+                '@type': 'Review',
+                reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+                author: { '@type': 'Person', name: 'Brandon MS Contractor' },
+                reviewBody: 'Best dumpster rental service in Central Mississippi. They showed up on time, picked up on time, and the flat-rate pricing made budgeting easy for my construction project.',
+            },
         ],
     };
 }

@@ -16,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'terry',
         'byram',
         'gluckstadt',
+        'florence',
+        'richland',
     ]
 
     const serviceAreaUrls = serviceAreas.map((city) => ({
@@ -74,6 +76,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/dumpster-rental-prices-jackson-ms`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blog/how-to-choose-dumpster-size`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/home-renovation-dumpster-guide-central-ms`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/best-dumpster-rental-central-ms`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/faq`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
         },
     ]
 }

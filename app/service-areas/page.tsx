@@ -4,12 +4,12 @@ import Link from 'next/link'
 import styles from './service-areas.module.css'
 
 export const metadata: Metadata = {
-    title: 'Service Areas | Central Mississippi Dumpster Rental Coverage',
+    title: { absolute: 'Dumpster Rental Near Me | Jackson, Brandon, Madison MS' },
     description:
-        'Mid South Dumpster Rentals serves Jackson, Brandon, Clinton, Flowood, Pearl, Ridgeland, Madison, Flora, Florence, Canton, Terry, Byram, Richland, Gluckstadt, and surrounding Central Mississippi areas.',
+        'Same-day dumpster rentals in Jackson, Brandon, Clinton, Madison, Pearl, Ridgeland & more. 14 Central Mississippi cities served. From $349. Call 601-316-7891.',
     openGraph: {
-        title: 'Service Areas | Mid South Dumpster Rentals',
-        description: 'Dumpster rental service coverage across Central Mississippi.',
+        title: 'Dumpster Rental Near Me | Mid South Dumpster Rentals',
+        description: 'Same-day dumpster rentals across 14 Central Mississippi cities. From $349.',
         url: 'https://midsouthdumpsterms.com/service-areas',
     },
 }
