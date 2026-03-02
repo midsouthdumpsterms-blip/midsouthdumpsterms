@@ -53,9 +53,15 @@ export default function Services() {
         'Roll-off dumpster rentals for residential, commercial, and construction projects in Central Mississippi. Available in 10, 15, and 20-yard sizes.',
         'Central Mississippi',
         [
-            { price: '349', description: '10 Yard Dumpster - 1 Day Rental' },
-            { price: '399', description: '15 Yard Dumpster - 1 Day Rental' },
-            { price: '449', description: '20 Yard Dumpster - 1 Day Rental' },
+            { price: '349', description: '10 Yard Dumpster - 1 Day Rental (Includes 1 ton)' },
+            { price: '379', description: '10 Yard Dumpster - 3 Day Rental (Includes 1 ton)' },
+            { price: '399', description: '10 Yard Dumpster - 7 Day Rental (Includes 1 ton) - Overage $55/ton' },
+            { price: '399', description: '15 Yard Dumpster - 1 Day Rental (Includes 2 tons)' },
+            { price: '429', description: '15 Yard Dumpster - 3 Day Rental (Includes 2 tons)' },
+            { price: '449', description: '15 Yard Dumpster - 7 Day Rental (Includes 2 tons) - Overage $55/ton' },
+            { price: '449', description: '20 Yard Dumpster - 1 Day Rental (Includes 3 tons)' },
+            { price: '479', description: '20 Yard Dumpster - 3 Day Rental (Includes 3 tons)' },
+            { price: '499', description: '20 Yard Dumpster - 7 Day Rental (Includes 3 tons) - Hard limit 6,000 lbs' },
         ]
     )
 

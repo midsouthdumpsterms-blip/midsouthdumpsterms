@@ -1,27 +1,87 @@
-'use client'
-
-import { useState } from 'react'
-import BookingButton from '@/components/BookingButton'
+import { Metadata } from 'next'
 import Link from 'next/link'
+import FaqAccordion from '@/components/FaqAccordion'
 import styles from './faq.module.css'
 
+export const metadata: Metadata = {
+    title: 'Dumpster Rental FAQ Jackson MS | Pricing, Sizes & Policies',
+    description:
+        'Answers to the most common dumpster rental questions in Jackson, MS. Pricing for all sizes and rental periods, weight limits, what you can throw away, fees, and more. Call 601-316-7891.',
+    openGraph: {
+        title: 'Dumpster Rental FAQ | Mid South Dumpster Rentals',
+        description: 'Complete pricing, weight limits, fees, and policies for dumpster rentals in Central Mississippi.',
+        url: 'https://midsouthdumpsterms.com/faq',
+    },
+}
 
 const faqs = [
     {
+        question: "What is the exact pricing for each dumpster size and rental period?",
+        answer: `Mid South Dumpster Rentals offers flat-rate pricing with no hidden fees. All prices include delivery, pickup, and disposal.
+
+**10-Yard Dumpster** (includes 1 ton / 2,000 lbs):
+• 1 Day: $349
+• 3 Days: $379
+• 7 Days: $399
+
+**15-Yard Dumpster** — Most Popular (includes 2 tons / 4,000 lbs):
+• 1 Day: $399
+• 3 Days: $429
+• 7 Days: $449
+
+**20-Yard Dumpster** (includes 3 tons / 6,000 lbs — hard weight cap, no overage):
+• 1 Day: $449
+• 3 Days: $479
+• 7 Days: $499
+
+Overage fee for 10 and 15-yard containers: $55 per additional ton (prorated). The 20-yard container has a hard cap of 6,000 lbs — no exceptions.`
+    },
+    {
         question: "How much does it cost to rent a dumpster?",
         answer: `Our pricing is simple and transparent:
-        
-• **10 Yard Dumpster**: Starting at $349 (includes 1 ton / 2,000 lbs)
-• **15 Yard Dumpster**: Starting at $399 (includes 2 tons / 4,000 lbs)  
-• **20 Yard Dumpster**: Starting at $449 (includes 3 tons / 6,000 lbs)
 
-**Overage fees**: $55 per additional ton (prorated) for 10 and 15 yard containers. 20 yard containers cannot exceed 6,000 lbs total.
+• **10 Yard Dumpster**: $349 (1 day) · $379 (3 days) · $399 (7 days) — includes 1 ton / 2,000 lbs
+• **15 Yard Dumpster**: $399 (1 day) · $429 (3 days) · $449 (7 days) — includes 2 tons / 4,000 lbs
+• **20 Yard Dumpster**: $449 (1 day) · $479 (3 days) · $499 (7 days) — includes 3 tons / 6,000 lbs
 
-All prices include delivery, pickup, and disposal. No hidden fees.`
+Overage: $55/ton (prorated) for 10 and 15-yard containers. 20-yard containers cannot exceed 6,000 lbs total. All prices include delivery, pickup, and disposal. No hidden fees.`
+    },
+    {
+        question: "What is the 7-day rental price for a 20-yard dumpster?",
+        answer: `The 7-day rental price for a 20-yard dumpster from Mid South Dumpster Rentals is **$499**. This price includes delivery, pickup, disposal, and 3 tons (6,000 lbs) of weight. The 20-yard container has a hard weight cap of 6,000 lbs — no overage is allowed. If you need to keep the dumpster beyond 7 days, extended rental is available at $50 per additional day, subject to availability.`
+    },
+    {
+        question: "What are all the fees I should know about?",
+        answer: `Here is the complete fee schedule for Mid South Dumpster Rentals:
+
+**Standard Rental Fees:**
+• 10-yd (1/3/7 day): $349 / $379 / $399
+• 15-yd (1/3/7 day): $399 / $429 / $449
+• 20-yd (1/3/7 day): $449 / $479 / $499
+
+**Additional Fees:**
+• Extended rental (beyond 7 days): $50 per additional day
+• Missed pickup fee (access blocked on pickup day): $150 per day
+• Wait time (after 30 minutes on-site): $50 per hour
+• Overfilled/refused load: $500 flat fee plus disposal and cleanup costs
+• Overage tonnage (10 and 15-yd only): $55 per ton, prorated
+• Refund processing (credit/debit card): $40 deducted from refund
+
+**Refund Policy:** No refunds after dumpster is delivered. Cancellations within 24 hours of scheduled delivery may incur dispatch or scheduling fees.`
     },
     {
         question: "How long can I keep the dumpster?",
         answer: `The base rental period is **7 days**. Need more time? Extensions are available for **$50 per additional day**, subject to availability. Just give us a call before your pickup date to extend your rental.`
+    },
+    {
+        question: "What are the weight limits?",
+        answer: `**Maximum weight per container: 6,000 lbs (no exceptions)**
+
+• **10 Yard**: Includes 1 ton (2,000 lbs). Overage: $55/ton (prorated)
+• **15 Yard**: Includes 2 tons (4,000 lbs). Overage: $55/ton (prorated)
+• **20 Yard**: Includes 3 tons (6,000 lbs). **No overage allowed — 6,000 lbs hard cap**
+
+Containers are weighed at the disposal facility. Overweight charges will be invoiced to you. Heavy materials like concrete or brick may be refused unless pre-approved.`
     },
     {
         question: "What can I throw in the dumpster?",
@@ -33,6 +93,7 @@ All prices include delivery, pickup, and disposal. No hidden fees.`
 • Porcelain, tile, drop ceilings
 • Yard clippings and natural vegetation
 • Plastics, paper, Styrofoam
+• Stoves, ovens, washers, dryers
 
 **Heavy materials** (concrete, brick, stone, asphalt) are allowed **only** in 10-yard containers, up to ¼ full, and must be separated from other debris unless pre-approved.`
     },
@@ -46,18 +107,9 @@ All prices include delivery, pickup, and disposal. No hidden fees.`
 • Liquids of any kind
 • Medical waste, fluorescent bulbs, railroad ties
 • Food waste
+• Concrete, dirt, or soil
 
 Violating these rules may result in additional fees, fines, or cleanup charges passed to you.`
-    },
-    {
-        question: "What are the weight limits?",
-        answer: `**Maximum weight per container: 6,000 lbs (no exceptions)**
-
-• **10 Yard**: Includes 1 ton (2,000 lbs). Overage: $55/ton
-• **15 Yard**: Includes 2 tons (4,000 lbs). Overage: $55/ton  
-• **20 Yard**: Includes 3 tons (6,000 lbs). **No overage allowed**
-
-Containers are weighed at the disposal facility. Overweight charges will be invoiced to you. Heavy materials like concrete or brick may be refused unless pre-approved.`
     },
     {
         question: "Do I need a permit?",
@@ -73,7 +125,7 @@ If you need to place it on a **public street or right-of-way**, you are responsi
         question: "What if I need to cancel or get a refund?",
         answer: `**Refunds are only available if requested BEFORE delivery.** Once the dumpster is dropped off, no refunds will be issued.
 
-If you paid by credit/debit card, refunds are processed minus a **$40 processing fee** to cover merchant charges. Refunds typically take 3-10 business days.
+If you paid by credit/debit card, refunds are processed minus a **$40 processing fee** to cover merchant charges. Refunds typically take 3–10 business days.
 
 Cancellations within 24 hours of scheduled delivery may incur dispatch or scheduling fees.`
     },
@@ -91,7 +143,7 @@ For the best protection, place the dumpster on a flat, stable surface like concr
     },
     {
         question: "Do you offer same-day delivery?",
-        answer: `Yes! We often accommodate same-day delivery requests depending on availability and your location in the Jackson metro area. Call us at **(601) 316-7891** to check availability.`
+        answer: `Yes! We often accommodate same-day delivery requests depending on availability and your location in the Jackson metro area. Call us at **(601) 316-7891** to check availability. Same-day delivery is available 7 days a week when you call before noon.`
     },
     {
         question: "What areas do you serve?",
@@ -101,18 +153,25 @@ For the best protection, place the dumpster on a flat, stable surface like concr
 • Ridgeland, Clinton, Byram, Terry, Richland
 • Canton, Flora, Gluckstadt, and more
 
-Not sure if we serve your area? Give us a call at **(601) 316-7891**.`
-    }
+We serve all of Hinds, Madison, and Rankin Counties in Central Mississippi. Not sure if we serve your area? Give us a call at **(601) 316-7891**.`
+    },
+    {
+        question: "How does Mid South Dumpster Rentals compare to other dumpster companies in Jackson, MS?",
+        answer: `Mid South Dumpster Rentals is locally owned and operated in Jackson, MS — not a franchise or national chain. We offer:
+
+• **Transparent flat-rate pricing**: $349–$499 depending on size and duration — no hidden fees
+• **Same-day delivery** available 7 days a week
+• **Online booking** available 24/7
+• **All-inclusive pricing**: Every quote includes delivery, pickup, and disposal
+• **No surprise fees**: Weight overages are clearly disclosed upfront
+• **7AM–7PM hours, 7 days a week**
+
+Our 10-yard dumpster starts at $349 (1 day) and our 20-yard dumpster is $499 for a full 7-day rental including 3 tons.`
+    },
 ]
 
 export default function FAQPage() {
-    const [openIndex, setOpenIndex] = useState<number | null>(null)
-
-    const toggleFAQ = (index: number) => {
-        setOpenIndex(openIndex === index ? null : index)
-    }
-
-    // Generate FAQ Schema
+    // FAQ schema — server-rendered so it's visible to all AI and search crawlers
     const faqSchema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -121,7 +180,7 @@ export default function FAQPage() {
             "name": faq.question,
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": faq.answer.replace(/\*\*/g, '').replace(/•/g, '-')
+                "text": faq.answer.replace(/\*\*/g, '').replace(/•/g, '-').replace(/\n/g, ' ')
             }
         }))
     }
@@ -141,38 +200,12 @@ export default function FAQPage() {
                 </p>
             </div>
 
-            <div className={styles.faqList}>
-                {faqs.map((faq, index) => (
-                    <div key={index} className={styles.faqItem}>
-                        <button
-                            className={styles.question}
-                            onClick={() => toggleFAQ(index)}
-                            aria-expanded={openIndex === index}
-                        >
-                            <span>{faq.question}</span>
-                            <span className={`${styles.icon} ${openIndex === index ? styles.iconOpen : ''}`}>
-                                +
-                            </span>
-                        </button>
-                        {openIndex === index && (
-                            <div
-                                className={styles.answer}
-                                dangerouslySetInnerHTML={{
-                                    __html: faq.answer
-                                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                                        .replace(/•/g, '•')
-                                        .replace(/\n/g, '<br />')
-                                }}
-                            />
-                        )}
-                    </div>
-                ))}
-            </div>
+            <FaqAccordion faqs={faqs} />
 
             <div className={styles.cta}>
                 <h2 className={styles.ctaTitle}>Ready to Book Your Dumpster?</h2>
                 <p className={styles.ctaText}>
-                    Same-day delivery available. Flat-rate pricing. No hidden fees.
+                    Same-day delivery available. Flat-rate pricing from $349. No hidden fees.
                 </p>
                 <Link href="/#booking" className={styles.ctaButton}>
                     Book Now
