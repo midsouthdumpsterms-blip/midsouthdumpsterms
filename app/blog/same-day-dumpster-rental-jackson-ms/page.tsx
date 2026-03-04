@@ -13,7 +13,7 @@ export default function BlogPost() {
     const articleSchema = generateArticleSchema(
         'Same-Day Dumpster Rental in Jackson, MS',
         'Need a dumpster today in Jackson, MS? Mid South Dumpster Rentals offers same-day roll-off dumpster delivery across Central Mississippi.',
-        '2026-03-03',
+        '2026-01-13',
         'https://midsouthdumpsterms.com/images/og-image.jpg'
     )
 
@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <header className={styles.header}>
                         <span className={styles.category}>Local Guides</span>
                         <h1>Same-Day Dumpster Rental in Jackson, MS — We Deliver Today</h1>
-                        <p className={styles.meta}>Published March 3, 2026</p>
+                        <p className={styles.meta}>Published January 13, 2026</p>
                     </header>
 
                     <div className={styles.content}>

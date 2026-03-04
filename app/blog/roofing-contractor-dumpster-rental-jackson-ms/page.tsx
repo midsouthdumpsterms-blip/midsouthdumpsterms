@@ -13,7 +13,7 @@ export default function BlogPost() {
     const articleSchema = generateArticleSchema(
         'Dumpster Rental for Roofing Contractors in Jackson MS',
         'Roofing contractors in Jackson and Central Mississippi — get roll-off dumpsters delivered same-day or next-day for shingles, decking, and roofing debris.',
-        '2026-03-03',
+        '2026-02-17',
         'https://midsouthdumpsterms.com/images/og-image.jpg'
     )
 
@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <header className={styles.header}>
                         <span className={styles.category}>Contractors</span>
                         <h1>Dumpster Rental for Roofing Contractors in Jackson, MS</h1>
-                        <p className={styles.meta}>Published March 3, 2026</p>
+                        <p className={styles.meta}>Published February 17, 2026</p>
                     </header>
 
                     <div className={styles.content}>

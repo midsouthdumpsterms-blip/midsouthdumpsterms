@@ -13,7 +13,7 @@ export default function BlogPost() {
     const articleSchema = generateArticleSchema(
         'Rental Property & Foreclosure Cleanout Dumpsters in Mississippi',
         'Property managers and landlords in Central Mississippi — get fast, reliable roll-off dumpster service for rental property turnover, foreclosure cleanouts, and eviction cleanup.',
-        '2026-03-03',
+        '2026-02-03',
         'https://midsouthdumpsterms.com/images/og-image.jpg'
     )
 
@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <header className={styles.header}>
                         <span className={styles.category}>Property Management</span>
                         <h1>Rental Property & Foreclosure Cleanout Dumpsters in Central Mississippi</h1>
-                        <p className={styles.meta}>Published March 3, 2026</p>
+                        <p className={styles.meta}>Published February 3, 2026</p>
                     </header>
 
                     <div className={styles.content}>

@@ -13,7 +13,7 @@ export default function BlogPost() {
     const articleSchema = generateArticleSchema(
         'Garage Cleanout Dumpster Rental in Central Mississippi',
         'Cleaning out your garage in Jackson, Brandon, or Central MS? A 10 or 15-yard dumpster rental is the fastest way to get it done.',
-        '2026-03-03',
+        '2026-01-06',
         'https://midsouthdumpsterms.com/images/og-image.jpg'
     )
 
@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <header className={styles.header}>
                         <span className={styles.category}>Cleanouts</span>
                         <h1>Garage Cleanout Dumpster Rental in Central Mississippi</h1>
-                        <p className={styles.meta}>Published March 3, 2026</p>
+                        <p className={styles.meta}>Published January 6, 2026</p>
                     </header>
 
                     <div className={styles.content}>

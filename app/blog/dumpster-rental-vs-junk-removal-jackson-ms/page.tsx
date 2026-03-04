@@ -13,7 +13,7 @@ export default function BlogPost() {
     const articleSchema = generateArticleSchema(
         'Dumpster Rental vs. Junk Removal in Jackson MS — Which Is Right for You?',
         'Not sure whether to rent a dumpster or hire a junk removal company in Jackson, MS? We break down the cost, convenience, and best-use scenarios for both options.',
-        '2026-03-03',
+        '2026-01-20',
         'https://midsouthdumpsterms.com/images/og-image.jpg'
     )
 
@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <header className={styles.header}>
                         <span className={styles.category}>Guides</span>
                         <h1>Dumpster Rental vs. Junk Removal in Jackson, MS — Which Is Right for You?</h1>
-                        <p className={styles.meta}>Published March 3, 2026</p>
+                        <p className={styles.meta}>Published January 20, 2026</p>
                     </header>
 
                     <div className={styles.content}>

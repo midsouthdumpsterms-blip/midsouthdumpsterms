@@ -13,7 +13,7 @@ export default function BlogPost() {
     const articleSchema = generateArticleSchema(
         'Dumpster Rental in Brandon, MS | Same-Day Roll-Off Service',
         'Looking for dumpster rental in Brandon, MS? Mid South Dumpster Rentals delivers 10, 15, and 20-yard roll-off dumpsters to Brandon and all of Rankin County.',
-        '2026-03-03',
+        '2026-01-27',
         'https://midsouthdumpsterms.com/images/og-image.jpg'
     )
 
@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <header className={styles.header}>
                         <span className={styles.category}>Local Guides</span>
                         <h1>Dumpster Rental in Brandon, MS — Fast, Local, and Fairly Priced</h1>
-                        <p className={styles.meta}>Published March 3, 2026</p>
+                        <p className={styles.meta}>Published January 27, 2026</p>
                     </header>
 
                     <div className={styles.content}>

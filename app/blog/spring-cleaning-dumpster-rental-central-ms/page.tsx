@@ -13,7 +13,7 @@ export default function BlogPost() {
     const articleSchema = generateArticleSchema(
         'Spring Cleaning Dumpster Rental in Central Mississippi',
         'Spring cleaning in Jackson, Brandon, or Central MS? Rent a roll-off dumpster and get it all done in one weekend. Same-day delivery available.',
-        '2026-03-03',
+        '2026-02-24',
         'https://midsouthdumpsterms.com/images/og-image.jpg'
     )
 
@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <header className={styles.header}>
                         <span className={styles.category}>Seasonal</span>
                         <h1>Spring Cleaning Dumpster Rental in Central Mississippi</h1>
-                        <p className={styles.meta}>Published March 3, 2026</p>
+                        <p className={styles.meta}>Published February 24, 2026</p>
                     </header>
 
                     <div className={styles.content}>

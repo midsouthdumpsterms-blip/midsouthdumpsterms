@@ -13,7 +13,7 @@ export default function BlogPost() {
     const articleSchema = generateArticleSchema(
         'Estate Cleanout Dumpster Rental in Central Mississippi',
         'Handling an estate cleanout in Jackson, Brandon, or Central MS? Mid South Dumpster Rentals makes the process easier with flexible roll-off dumpster rentals.',
-        '2026-03-03',
+        '2026-02-10',
         'https://midsouthdumpsterms.com/images/og-image.jpg'
     )
 
@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <header className={styles.header}>
                         <span className={styles.category}>Cleanouts</span>
                         <h1>Estate Cleanout Dumpster Rental in Central Mississippi</h1>
-                        <p className={styles.meta}>Published March 3, 2026</p>
+                        <p className={styles.meta}>Published February 10, 2026</p>
                     </header>
 
                     <div className={styles.content}>
