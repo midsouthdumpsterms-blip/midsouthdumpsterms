@@ -57,6 +57,9 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
+    other: {
+        'facebook-domain-verification': 'krqcyhyicxca0nny9scqllvqt3tr8n',
+    },
 }
 
 export const viewport: Viewport = {
