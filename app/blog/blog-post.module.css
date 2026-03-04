@@ -128,6 +128,25 @@
     opacity: 0.95;
 }
 
+.cta a:not(.btn) {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.cta .btn {
+    background: var(--color-secondary);
+    color: #1a1a1a;
+    border: none;
+    font-weight: 700;
+}
+
+.cta .btn:hover {
+    background: #e6b800;
+    color: #1a1a1a;
+}
+
 @media (max-width: 768px) {
     .header h1 {
         font-size: 2rem;
