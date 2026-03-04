@@ -11,6 +11,27 @@ export const metadata: Metadata = {
 
 const blogPosts = [
     {
+        slug: 'dumpster-rental-jackson-ms',
+        title: 'Dumpster Rental in Jackson, MS | Reliable Waste Management',
+        excerpt: 'Looking for dumpster rental in Jackson, MS? MidSouth Dumpster Rentals delivers affordable, driveway-friendly roll-off dumpsters with same-day service across Hinds County.',
+        date: '2026-03-04',
+        category: 'Local Guides',
+    },
+    {
+        slug: 'dumpster-rental-near-me-jackson-ms',
+        title: 'Best Dumpster Rental Near Me in Jackson, MS | MidSouth',
+        excerpt: 'Looking for a reliable dumpster rental near me in Jackson, MS? MidSouth Dumpster Rentals offers affordable roll-off containers with same-day delivery. Learn about our sizes and book your 10, 15, or 20-yard dumpster today!',
+        date: '2026-03-04',
+        category: 'Local Guides',
+    },
+    {
+        slug: 'best-dumpster-rental-central-ms',
+        title: 'Best Dumpster Rental in Central Mississippi | MidSouth',
+        excerpt: 'Looking for the best dumpster rental in Central Mississippi? MidSouth Dumpster Rentals offers affordable roll-off containers with same-day delivery across Jackson, Brandon, Madison, and surrounding areas.',
+        date: '2026-03-04',
+        category: 'Local Guides',
+    },
+    {
         slug: 'storm-cleanup-dumpster-rental-jackson-ms',
         title: 'Storm Cleanup Dumpster Rental in Jackson MS | Same-Day Service',
         excerpt: 'Need a dumpster after a storm in Central Mississippi? We offer same-day storm debris removal across Jackson, Brandon, Ridgeland, Madison, and surrounding areas.',
