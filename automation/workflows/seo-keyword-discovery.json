@@ -1,0 +1,591 @@
+{
+    "name": "MidSouth SEO - Weekly Keyword Discovery",
+    "nodes": [
+        {
+            "id": "kd-001",
+            "name": "Weekly Schedule",
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1.2,
+            "position": [
+                240,
+                320
+            ],
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "weeks",
+                            "weeksInterval": 1,
+                            "triggerAtDay": [
+                                0
+                            ],
+                            "triggerAtHour": 22,
+                            "triggerAtMinute": 0
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "kd-002",
+            "name": "Manual Trigger",
+            "type": "n8n-nodes-base.manualTrigger",
+            "typeVersion": 1,
+            "position": [
+                240,
+                460
+            ],
+            "parameters": {}
+        },
+        {
+            "id": "kd-003",
+            "name": "Read Keyword Queue",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.4,
+            "position": [
+                480,
+                390
+            ],
+            "parameters": {
+                "operation": "read",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1838piMryF9Lw-yYVPrG2RPIvqSfBOGHXki422VOzy28",
+                    "mode": "id"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "Keyword_Queue",
+                    "mode": "name"
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "kd-004",
+            "name": "Read Published Posts",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.4,
+            "position": [
+                700,
+                390
+            ],
+            "parameters": {
+                "operation": "read",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1838piMryF9Lw-yYVPrG2RPIvqSfBOGHXki422VOzy28",
+                    "mode": "id"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "Published_Posts",
+                    "mode": "name"
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "kd-005",
+            "name": "Read Service Areas",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.4,
+            "position": [
+                920,
+                390
+            ],
+            "parameters": {
+                "operation": "read",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1838piMryF9Lw-yYVPrG2RPIvqSfBOGHXki422VOzy28",
+                    "mode": "id"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "Service_Areas",
+                    "mode": "name"
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "kd-006",
+            "name": "Read Services",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.4,
+            "position": [
+                1140,
+                390
+            ],
+            "parameters": {
+                "operation": "read",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1838piMryF9Lw-yYVPrG2RPIvqSfBOGHXki422VOzy28",
+                    "mode": "id"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "Services",
+                    "mode": "name"
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "kd-007",
+            "name": "Read Brand Voice",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.4,
+            "position": [
+                1360,
+                390
+            ],
+            "parameters": {
+                "operation": "read",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1838piMryF9Lw-yYVPrG2RPIvqSfBOGHXki422VOzy28",
+                    "mode": "id"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "Brand_Voice",
+                    "mode": "name"
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "kd-008",
+            "name": "Build Context",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                1580,
+                390
+            ],
+            "parameters": {
+                "jsCode": "const keywordQueueRows = $('Read Keyword Queue').all();\nconst publishedPostsRows = $('Read Published Posts').all();\nconst serviceAreaRows = $('Read Service Areas').all();\nconst serviceRows = $('Read Services').all();\nconst brandVoiceRows = $('Read Brand Voice').all();\n\nconst existingSet = new Set();\nkeywordQueueRows.forEach(r => { if (r.json.Keyword) existingSet.add(r.json.Keyword.toLowerCase().trim()); });\npublishedPostsRows.forEach(r => { if (r.json.Keyword) existingSet.add(r.json.Keyword.toLowerCase().trim()); });\n\nconst existingKeywordsList = Array.from(existingSet).join('\\n');\n\nconst serviceAreasText = serviceAreaRows\n  .map(r => `${r.json.City}, ${r.json.State} — ${r.json.Content_Angle || ''}`)\n  .join('\\n');\n\nconst servicesText = serviceRows\n  .map(r => `${r.json.Size}-Yard Dumpster: Base price ${r.json.Base_Price}, Best for: ${r.json.Best_For}`)\n  .join('\\n');\n\nconst brandVoiceText = brandVoiceRows\n  .filter(r => r.json.Category && r.json.Guideline)\n  .map(r => `${r.json.Category}: ${r.json.Guideline}`)\n  .join('\\n');\n\nconst currentMonth = new Date().toLocaleString('en-US', { month: 'long' });\n\nconst prompt = `You are an SEO keyword research expert for MidSouth Dumpster Rentals, a locally-owned dumpster rental company serving Central Mississippi (Jackson, MS metro area).\n\nTASK: Discover exactly 7 new, unique keyword opportunities NOT in the existing list.\n\nBUSINESS CONTEXT:\n- Company: MidSouth Dumpster Rentals (locally owned, Jackson MS)\n- Phone: 601-316-7891\n- Hours: 7AM-7PM, 7 days/week, same-day delivery available\n\nSERVICES:\n${servicesText}\n\nSERVICE AREAS:\n${serviceAreasText}\n\nBRAND VOICE:\n${brandVoiceText}\n\nCURRENT MONTH: ${currentMonth}\n\nEXISTING KEYWORDS - DO NOT DUPLICATE ANY OF THESE:\n${existingKeywordsList}\n\nSEARCH STRATEGY - Use 5-7 tavily_search calls:\n1. Search 'dumpster rental Jackson MS' and similar — find competitor keywords and People Also Ask\n2. Find uncovered [service type] + [city] combos from the service areas list\n3. Search informational queries: sizing guides, permit questions, cost guides for Mississippi\n4. Find seasonal opportunities for ${currentMonth}\n5. Search 'dumpster rental [city] MS' for expansion target cities\n\nOUTPUT: Return ONLY valid JSON in this exact format (no other text):\n{\n  \"keywords\": [\n    {\n      \"keyword\": \"exact keyword phrase\",\n      \"type\": \"long-tail|informational|neighborhood\",\n      \"priority\": \"high|medium|low\",\n      \"location\": \"City, MS\"\n    }\n  ]\n}\n\nRules:\n- Exactly 7 keywords\n- No duplicates with existing list\n- Mix of types (long-tail, informational, neighborhood)\n- High priority = clear commercial/local intent`;\n\nreturn [{ json: { prompt, existingKeywords: existingKeywordsList } }];"
+            }
+        },
+        {
+            "id": "kd-009",
+            "name": "Keyword Discovery Agent",
+            "type": "@n8n/n8n-nodes-langchain.agent",
+            "typeVersion": 1.7,
+            "position": [
+                1800,
+                390
+            ],
+            "parameters": {
+                "agent": "toolsAgent",
+                "promptType": "define",
+                "text": "={{ $json.prompt }}",
+                "options": {
+                    "systemMessage": "You are an SEO keyword research specialist for a local dumpster rental business in Jackson, Mississippi. You are methodical and data-driven. You always return valid JSON. You use search tools to find real keyword opportunities, not guesses.",
+                    "maxIterations": 10,
+                    "returnIntermediateSteps": false
+                }
+            }
+        },
+        {
+            "id": "kd-010",
+            "name": "OpenRouter Discovery LLM",
+            "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+            "typeVersion": 1.2,
+            "position": [
+                1800,
+                580
+            ],
+            "parameters": {
+                "model": "anthropic/claude-3.5-sonnet",
+                "options": {
+                    "baseURL": "https://openrouter.ai/api/v1",
+                    "temperature": 0.4,
+                    "maxTokens": 2048
+                }
+            }
+        },
+        {
+            "id": "kd-011",
+            "name": "Tavily Search",
+            "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+            "typeVersion": 1.1,
+            "position": [
+                1680,
+                720
+            ],
+            "parameters": {
+                "name": "tavily_search",
+                "description": "Search the web for information. Use to research dumpster rental keywords, competitor content, and local Mississippi market data.",
+                "method": "POST",
+                "url": "https://api.tavily.com/search",
+                "sendBody": true,
+                "contentType": "json",
+                "bodyParameters": {
+                    "parameters": [
+                        {
+                            "name": "api_key",
+                            "value": "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"
+                        },
+                        {
+                            "name": "query",
+                            "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('query', 'The search query to execute', 'string') }}"
+                        },
+                        {
+                            "name": "max_results",
+                            "value": "5"
+                        },
+                        {
+                            "name": "search_depth",
+                            "value": "basic"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "kd-013",
+            "name": "Parse Keywords",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                2020,
+                390
+            ],
+            "parameters": {
+                "jsCode": "const agentOutput = $input.first().json.output || '';\nconst existingRaw = $('Build Context').first().json.existingKeywords || '';\nconst existingSet = new Set(existingRaw.split('\\n').map(k => k.toLowerCase().trim()).filter(k => k));\n\nlet keywords = [];\ntry {\n  const jsonMatch = agentOutput.match(/\\{[\\s\\S]*\\\"keywords\\\"[\\s\\S]*\\}/);\n  if (jsonMatch) {\n    const parsed = JSON.parse(jsonMatch[0]);\n    keywords = parsed.keywords || [];\n  }\n} catch(e) {\n  return [{ json: { keywords: [], count: 0, error: 'JSON parse failed: ' + e.message } }];\n}\n\nconst validTypes = ['long-tail', 'informational', 'neighborhood'];\nconst validPriorities = ['high', 'medium', 'low'];\nconst seenInBatch = new Set();\nconst today = new Date().toISOString().split('T')[0];\n\nconst clean = keywords\n  .filter(kw => {\n    if (!kw.keyword || typeof kw.keyword !== 'string') return false;\n    const norm = kw.keyword.toLowerCase().trim();\n    if (existingSet.has(norm)) return false;\n    if (seenInBatch.has(norm)) return false;\n    seenInBatch.add(norm);\n    return true;\n  })\n  .map(kw => ({\n    Keyword: kw.keyword.trim(),\n    Type: validTypes.includes(kw.type) ? kw.type : 'long-tail',\n    Priority: validPriorities.includes(kw.priority) ? kw.priority : 'medium',\n    Location: kw.location || 'Jackson, MS',\n    Status: 'pending',\n    Date_Queued: today,\n    Date_Published: ''\n  }));\n\nreturn [{ json: { keywords: clean, count: clean.length } }];"
+            }
+        },
+        {
+            "id": "kd-014",
+            "name": "Has Keywords?",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                2240,
+                390
+            ],
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict"
+                    },
+                    "conditions": [
+                        {
+                            "id": "has-kw-check",
+                            "leftValue": "={{ $json.count }}",
+                            "rightValue": 0,
+                            "operator": {
+                                "type": "number",
+                                "operation": "gt"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                }
+            }
+        },
+        {
+            "id": "kd-015",
+            "name": "Split Out Keywords",
+            "type": "n8n-nodes-base.splitOut",
+            "typeVersion": 1,
+            "position": [
+                2460,
+                280
+            ],
+            "parameters": {
+                "fieldToSplitOut": "keywords",
+                "options": {}
+            }
+        },
+        {
+            "id": "kd-016",
+            "name": "Append to Keyword Queue",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.4,
+            "position": [
+                2680,
+                280
+            ],
+            "parameters": {
+                "operation": "append",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1838piMryF9Lw-yYVPrG2RPIvqSfBOGHXki422VOzy28",
+                    "mode": "id"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "Keyword_Queue",
+                    "mode": "name"
+                },
+                "columns": {
+                    "mappingMode": "defineBelow",
+                    "value": {
+                        "Keyword": "={{ $json.Keyword }}",
+                        "Type": "={{ $json.Type }}",
+                        "Priority": "={{ $json.Priority }}",
+                        "Location": "={{ $json.Location }}",
+                        "Status": "={{ $json.Status }}",
+                        "Date_Queued": "={{ $json.Date_Queued }}",
+                        "Date_Published": ""
+                    },
+                    "matchingColumns": [],
+                    "schema": []
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "kd-017",
+            "name": "Discovery Complete",
+            "type": "n8n-nodes-base.set",
+            "typeVersion": 3.4,
+            "position": [
+                2900,
+                280
+            ],
+            "parameters": {
+                "mode": "manual",
+                "fields": {
+                    "values": [
+                        {
+                            "name": "status",
+                            "type": "stringValue",
+                            "value": "success"
+                        },
+                        {
+                            "name": "message",
+                            "type": "stringValue",
+                            "value": "Keyword discovery complete"
+                        },
+                        {
+                            "name": "keywords_added",
+                            "type": "numberValue",
+                            "value": "={{ $('Parse Keywords').first().json.count }}"
+                        }
+                    ]
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "kd-018",
+            "name": "No New Keywords",
+            "type": "n8n-nodes-base.set",
+            "typeVersion": 3.4,
+            "position": [
+                2460,
+                500
+            ],
+            "parameters": {
+                "mode": "manual",
+                "fields": {
+                    "values": [
+                        {
+                            "name": "status",
+                            "type": "stringValue",
+                            "value": "success"
+                        },
+                        {
+                            "name": "message",
+                            "type": "stringValue",
+                            "value": "No new unique keywords found this run"
+                        },
+                        {
+                            "name": "keywords_added",
+                            "type": "numberValue",
+                            "value": "=0"
+                        }
+                    ]
+                },
+                "options": {}
+            }
+        }
+    ],
+    "connections": {
+        "Weekly Schedule": {
+            "main": [
+                [
+                    {
+                        "node": "Read Keyword Queue",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Manual Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Read Keyword Queue",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Read Keyword Queue": {
+            "main": [
+                [
+                    {
+                        "node": "Read Published Posts",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Read Published Posts": {
+            "main": [
+                [
+                    {
+                        "node": "Read Service Areas",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Read Service Areas": {
+            "main": [
+                [
+                    {
+                        "node": "Read Services",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Read Services": {
+            "main": [
+                [
+                    {
+                        "node": "Read Brand Voice",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Read Brand Voice": {
+            "main": [
+                [
+                    {
+                        "node": "Build Context",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Build Context": {
+            "main": [
+                [
+                    {
+                        "node": "Keyword Discovery Agent",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Keyword Discovery Agent": {
+            "main": [
+                [
+                    {
+                        "node": "Parse Keywords",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "OpenRouter Discovery LLM": {
+            "ai_languageModel": [
+                [
+                    {
+                        "node": "Keyword Discovery Agent",
+                        "type": "ai_languageModel",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Tavily Search": {
+            "ai_tool": [
+                [
+                    {
+                        "node": "Keyword Discovery Agent",
+                        "type": "ai_tool",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Parse Keywords": {
+            "main": [
+                [
+                    {
+                        "node": "Has Keywords?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Has Keywords?": {
+            "main": [
+                [
+                    {
+                        "node": "Split Out Keywords",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                [
+                    {
+                        "node": "No New Keywords",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Split Out Keywords": {
+            "main": [
+                [
+                    {
+                        "node": "Append to Keyword Queue",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Append to Keyword Queue": {
+            "main": [
+                [
+                    {
+                        "node": "Discovery Complete",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "active": false,
+    "settings": {
+        "executionOrder": "v1",
+        "timezone": "America/Chicago"
+    }
+}

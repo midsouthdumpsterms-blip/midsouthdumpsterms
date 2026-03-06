@@ -1,0 +1,280 @@
+{
+    "name": "MidSouth SEO - Weekly Performance Report",
+    "nodes": [
+        {
+            "id": "wr-001",
+            "name": "Every Monday 8AM",
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1.2,
+            "position": [
+                240,
+                320
+            ],
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "weeks",
+                            "weeksInterval": 1,
+                            "triggerAtDay": [
+                                1
+                            ],
+                            "triggerAtHour": 8,
+                            "triggerAtMinute": 0
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "wr-002",
+            "name": "Manual Trigger",
+            "type": "n8n-nodes-base.manualTrigger",
+            "typeVersion": 1,
+            "position": [
+                240,
+                460
+            ],
+            "parameters": {}
+        },
+        {
+            "id": "wr-003",
+            "name": "Read Published Posts",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.4,
+            "position": [
+                480,
+                390
+            ],
+            "parameters": {
+                "operation": "read",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1838piMryF9Lw-yYVPrG2RPIvqSfBOGHXki422VOzy28",
+                    "mode": "id"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "Published_Posts",
+                    "mode": "name"
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "wr-004",
+            "name": "Check Rankings",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                720,
+                390
+            ],
+            "parameters": {
+                "jsCode": "const posts = $input.all().map(r => r.json).filter(p => p.Keyword && p.Status === 'published');\nconst recentPosts = posts.slice(-10);\nconst now = new Date();\nconst weekAgo = new Date(now - 7 * 24 * 60 * 60 * 1000);\nconst newThisWeek = posts.filter(p => {\n  if (!p.Date_Published) return false;\n  const d = new Date(p.Date_Published);\n  return d >= weekAgo;\n});\nreturn [{ json: { posts, recentPosts, newThisWeek, totalPublished: posts.length, newThisWeekCount: newThisWeek.length, checkDate: now.toISOString().split('T')[0] } }];"
+            }
+        },
+        {
+            "id": "wr-005",
+            "name": "Search Rankings Agent",
+            "type": "@n8n/n8n-nodes-langchain.agent",
+            "typeVersion": 1.7,
+            "position": [
+                960,
+                390
+            ],
+            "parameters": {
+                "agent": "toolsAgent",
+                "promptType": "define",
+                "text": "={{ 'You are checking Google search rankings for MidSouth Dumpster Rentals website (midsouthdumpsterms.com).\n\nFor each of these keywords, do a Tavily search and note approximately where midsouthdumpsterms.com appears in results (top 3, top 10, not found on page 1, etc.):\n\n' + $json.recentPosts.map(p => p.Keyword).join('\\n') + '\n\nFor each keyword, search for it and look through the results. Report in this JSON format:\n{\n  \"rankings\": [\n    {\"keyword\": \"keyword here\", \"position\": \"#1\", \"found\": true},\n    {\"keyword\": \"keyword here\", \"position\": \"not ranked yet\", \"found\": false}\n  ]\n}\n\nReturn ONLY valid JSON, no other text.' }}",
+                "options": {
+                    "systemMessage": "You are an SEO rank checker. Search for keywords and check if midsouthdumpsterms.com appears in results. Be accurate and concise. Return only valid JSON.",
+                    "maxIterations": 15,
+                    "returnIntermediateSteps": false
+                }
+            }
+        },
+        {
+            "id": "wr-006",
+            "name": "OpenRouter LLM",
+            "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+            "typeVersion": 1.2,
+            "position": [
+                960,
+                580
+            ],
+            "parameters": {
+                "model": "anthropic/claude-3.5-sonnet",
+                "options": {
+                    "baseURL": "https://openrouter.ai/api/v1",
+                    "temperature": 0.2,
+                    "maxTokens": 3000
+                }
+            }
+        },
+        {
+            "id": "wr-007",
+            "name": "Tavily Search",
+            "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+            "typeVersion": 1.1,
+            "position": [
+                840,
+                720
+            ],
+            "parameters": {
+                "name": "tavily_search",
+                "description": "Search Google for keywords to check rankings.",
+                "method": "POST",
+                "url": "https://api.tavily.com/search",
+                "sendBody": true,
+                "contentType": "json",
+                "bodyParameters": {
+                    "parameters": [
+                        {
+                            "name": "api_key",
+                            "value": "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"
+                        },
+                        {
+                            "name": "query",
+                            "value": "={{ $fromAI('query', 'Search query to check rankings', 'string') }}"
+                        },
+                        {
+                            "name": "max_results",
+                            "value": "10"
+                        },
+                        {
+                            "name": "search_depth",
+                            "value": "basic"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "wr-008",
+            "name": "Build Report",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                1200,
+                390
+            ],
+            "parameters": {
+                "jsCode": "const rankingsRaw = $('Search Rankings Agent').first().json.output || '{\"rankings\":[]}';\nconst data = $('Check Rankings').first().json;\nlet rankings = [];\ntry {\n  const match = rankingsRaw.match(/\\{[\\s\\S]*\\\"rankings\\\"[\\s\\S]*\\}/);\n  if (match) rankings = JSON.parse(match[0]).rankings || [];\n} catch(e) {}\n\nconst ranked = rankings.filter(r => r.found);\nconst notRanked = rankings.filter(r => !r.found);\n\nconst rankRows = rankings.map(r => `\n    <tr style=\"border-bottom:1px solid #eee;\">\n      <td style=\"padding:8px 12px;\">${r.keyword}</td>\n      <td style=\"padding:8px 12px;text-align:center;font-weight:bold;color:${r.found ? '#2e7d32' : '#c62828'}\">${r.position || 'Not ranked'}</td>\n    </tr>`).join('');\n\nconst newPostRows = data.newThisWeek.map(p => `\n    <tr style=\"border-bottom:1px solid #eee;\">\n      <td style=\"padding:8px 12px;\">${p.Keyword}</td>\n      <td style=\"padding:8px 12px;\"><a href=\"https://www.midsouthdumpsterms.com/blog/${p.Slug || ''}\">View post</a></td>\n      <td style=\"padding:8px 12px;\">${p.Date_Published}</td>\n    </tr>`).join('');\n\nconst html = `<!DOCTYPE html>\n<html>\n<head><meta charset=\"utf-8\"><style>body{font-family:Arial,sans-serif;max-width:700px;margin:0 auto;color:#333;}h1{color:#1a5276;}h2{color:#2874a6;border-bottom:2px solid #2874a6;padding-bottom:6px;}table{width:100%;border-collapse:collapse;}th{background:#2874a6;color:white;padding:10px 12px;text-align:left;}.stat-box{display:inline-block;background:#eaf2ff;border-left:4px solid #2874a6;padding:12px 20px;margin:8px;border-radius:4px;}.stat-num{font-size:28px;font-weight:bold;color:#1a5276;}.stat-label{font-size:13px;color:#555;}</style></head>\n<body>\n<h1>📊 MidSouth SEO Weekly Report</h1>\n<p style=\"color:#777;\">Week of ${data.checkDate} | midsouthdumpsterms.com</p>\n\n<div style=\"margin:20px 0;\">\n  <div class=\"stat-box\"><div class=\"stat-num\">${data.totalPublished}</div><div class=\"stat-label\">Total Blog Posts Live</div></div>\n  <div class=\"stat-box\"><div class=\"stat-num\">${data.newThisWeekCount}</div><div class=\"stat-label\">Published This Week</div></div>\n  <div class=\"stat-box\"><div class=\"stat-num\">${ranked.length}/${rankings.length}</div><div class=\"stat-label\">Keywords Ranking</div></div>\n</div>\n\n${data.newThisWeekCount > 0 ? `<h2>🆕 New Posts This Week</h2>\n<table><tr style=\"background:#f5f5f5;\"><th>Keyword</th><th>URL</th><th>Published</th></tr>${newPostRows}</table>` : '<p style=\"background:#fff9c4;padding:12px;border-radius:4px;\">⚠️ No new posts published this week.</p>'}\n\n<h2>🔍 Keyword Rankings (Recent Posts)</h2>\n<table><tr style=\"background:#f5f5f5;\"><th>Keyword</th><th>Google Position</th></tr>${rankRows || '<tr><td colspan=2 style=\"padding:12px;color:#999;\">No ranking data available</td></tr>'}</table>\n\n<br><p style=\"font-size:12px;color:#999;\">This report checks approximately where midsouthdumpsterms.com appears in Google search results for each keyword. New posts typically take 2–4 weeks to rank.<br><br>Generated automatically by MidSouth SEO Automation.</p>\n</body></html>`;\n\nreturn [{ json: { html, subject: `📊 MidSouth SEO Report — ${data.checkDate}` } }];"
+            }
+        },
+        {
+            "id": "wr-009",
+            "name": "Send Report Email",
+            "type": "n8n-nodes-base.gmail",
+            "typeVersion": 2.1,
+            "position": [
+                1440,
+                390
+            ],
+            "parameters": {
+                "operation": "send",
+                "sendTo": "midsouthdumpsterms@gmail.com",
+                "subject": "={{ $json.subject }}",
+                "emailType": "html",
+                "message": "={{ $json.html }}",
+                "options": {}
+            }
+        }
+    ],
+    "connections": {
+        "Every Monday 8AM": {
+            "main": [
+                [
+                    {
+                        "node": "Read Published Posts",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Manual Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Read Published Posts",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Read Published Posts": {
+            "main": [
+                [
+                    {
+                        "node": "Check Rankings",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Check Rankings": {
+            "main": [
+                [
+                    {
+                        "node": "Search Rankings Agent",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Search Rankings Agent": {
+            "main": [
+                [
+                    {
+                        "node": "Build Report",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "OpenRouter LLM": {
+            "ai_languageModel": [
+                [
+                    {
+                        "node": "Search Rankings Agent",
+                        "type": "ai_languageModel",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Tavily Search": {
+            "ai_tool": [
+                [
+                    {
+                        "node": "Search Rankings Agent",
+                        "type": "ai_tool",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Build Report": {
+            "main": [
+                [
+                    {
+                        "node": "Send Report Email",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "active": false,
+    "settings": {
+        "executionOrder": "v1",
+        "timezone": "America/Chicago"
+    }
+}

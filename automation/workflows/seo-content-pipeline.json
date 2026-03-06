@@ -1,0 +1,804 @@
+{
+    "name": "MidSouth SEO - Daily Content Pipeline",
+    "nodes": [
+        {
+            "id": "cp-001",
+            "name": "Daily Schedule",
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1.2,
+            "position": [
+                240,
+                320
+            ],
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "cronExpression",
+                            "expression": "0 9 * * 1-6"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "cp-002",
+            "name": "Manual Trigger",
+            "type": "n8n-nodes-base.manualTrigger",
+            "typeVersion": 1,
+            "position": [
+                240,
+                460
+            ],
+            "parameters": {}
+        },
+        {
+            "id": "cp-003",
+            "name": "Read Keyword Queue",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.4,
+            "position": [
+                480,
+                390
+            ],
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "REPLACE_WITH_CREDENTIAL_ID",
+                    "name": "Google Sheets OAuth2"
+                }
+            },
+            "parameters": {
+                "operation": "read",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1838piMryF9Lw-yYVPrG2RPIvqSfBOGHXki422VOzy28",
+                    "mode": "id"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "Keyword_Queue",
+                    "mode": "name"
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "cp-004",
+            "name": "Get Pending Keyword",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                700,
+                390
+            ],
+            "parameters": {
+                "jsCode": "const allRows = $input.all();\nconst pendingRow = allRows.find(r => r.json.Status && r.json.Status.toLowerCase().trim() === 'pending' && r.json.Keyword);\n\nif (!pendingRow) {\n  return [{ json: { hasPending: false, Keyword: '', Type: '', Location: '', row_number: 0 } }];\n}\n\nreturn [{\n  json: {\n    hasPending: true,\n    Keyword: pendingRow.json.Keyword,\n    Type: pendingRow.json.Type || 'long-tail',\n    Priority: pendingRow.json.Priority || 'medium',\n    Location: pendingRow.json.Location || 'Jackson, MS',\n    row_number: pendingRow.json.row_number || 2\n  }\n}];"
+            }
+        },
+        {
+            "id": "cp-005",
+            "name": "Has Pending Keyword?",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                920,
+                390
+            ],
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "loose"
+                    },
+                    "conditions": [
+                        {
+                            "id": "pending-check",
+                            "leftValue": "={{ $json.hasPending }}",
+                            "rightValue": true,
+                            "operator": {
+                                "type": "boolean",
+                                "operation": "equal"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                }
+            }
+        },
+        {
+            "id": "cp-006",
+            "name": "No Keywords Available",
+            "type": "n8n-nodes-base.set",
+            "typeVersion": 3.4,
+            "position": [
+                1140,
+                500
+            ],
+            "parameters": {
+                "mode": "manual",
+                "fields": {
+                    "values": [
+                        {
+                            "name": "status",
+                            "type": "stringValue",
+                            "value": "skipped"
+                        },
+                        {
+                            "name": "message",
+                            "type": "stringValue",
+                            "value": "No pending keywords in queue. Run keyword discovery first."
+                        }
+                    ]
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "cp-007",
+            "name": "Read Brand Voice",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.4,
+            "position": [
+                1140,
+                280
+            ],
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "REPLACE_WITH_CREDENTIAL_ID",
+                    "name": "Google Sheets OAuth2"
+                }
+            },
+            "parameters": {
+                "operation": "read",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1838piMryF9Lw-yYVPrG2RPIvqSfBOGHXki422VOzy28",
+                    "mode": "id"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "Brand_Voice",
+                    "mode": "name"
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "cp-008",
+            "name": "Build Content Brief",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                1360,
+                280
+            ],
+            "parameters": {
+                "jsCode": "const kwData = $('Get Pending Keyword').first().json;\nconst brandVoiceRows = $('Read Brand Voice').all();\n\nconst keyword = kwData.Keyword;\nconst location = kwData.Location || 'Jackson, MS';\nconst kwType = kwData.Type || 'long-tail';\nconst rowNumber = kwData.row_number;\n\n// Generate slug\nconst slug = keyword\n  .toLowerCase()\n  .replace(/[^a-z0-9\\s-]/g, '')\n  .replace(/\\s+/g, '-')\n  .replace(/-+/g, '-')\n  .trim();\n\n// Determine category\nlet category = 'Local Guides';\nif (kwType === 'informational') category = 'Tips & Guides';\nif (kwType === 'neighborhood') category = 'Service Areas';\n\n// Dates\nconst today = new Date().toISOString().split('T')[0];\nconst todayFormatted = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });\n\n// Brand voice\nconst brandVoice = brandVoiceRows\n  .filter(r => r.json.Category && r.json.Guideline)\n  .map(r => `- ${r.json.Category}: ${r.json.Guideline}`)\n  .join('\\n');\n\nconst prompt = `You are writing an SEO blog post for MidSouth Dumpster Rentals, a locally-owned dumpster rental company in Jackson, MS.\n\nTARGET KEYWORD: \"${keyword}\"\nSLUG: ${slug}\nLOCATION: ${location}\nCATEGORY: ${category}\nDATE: ${todayFormatted}\n\nBRAND VOICE RULES:\n${brandVoice}\n\nBUSINESS FACTS:\n- Company: MidSouth Dumpster Rentals, LLC\n- Phone: 601-316-7891 (same-day delivery if called before noon)\n- Hours: 7AM-7PM, 7 days a week\n- Address: 3080 B John R Lynch St, Jackson, MS 39209\n- 10-yard: from $349 (1 ton limit) — garage cleanouts, small remodels\n- 15-yard: from $399 (2 ton limit) — most popular, home renos, roofing\n- 20-yard: from $449 (3 ton limit) — large renos, construction, demo\n- Flat-rate pricing: delivery, pickup, disposal all included, no hidden fees\n- Service areas: Jackson, Brandon, Madison, Clinton, Pearl, Ridgeland, Flowood, Byram, Terry, Raymond, Canton, Richland, Florence\n- Booking: https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF\n\nSTEP 1: Use tavily_search to research \"${keyword}\" — understand what searchers want, what competitors cover, local MS angle.\n\nSTEP 2: Write the complete blog post as a Next.js TSX file.\n\nCRITICAL OUTPUT RULES:\n- Return ONLY the raw TSX file content. No markdown fences. No explanations. No intro text.\n- File must start with: import { Metadata } from 'next'\n- ONLY allowed exports: export const metadata and export default function BlogPost. NO OTHER EXPORTS.\n- NEVER add: export const postData, export const config, export const revalidate, or any other export besides metadata and the default function.\n- All apostrophes in JSX text must be &apos; not '\n- All & in JSX text must be &amp;\n- NO dangerouslySetInnerHTML — write all content as real JSX elements, not HTML strings\n- Use Link from next/link for internal links (already imported) — write actual Link elements, never [text](url) markdown\n- Use <a href=\"tel:6013167891\"> for phone links\n- Post body: 900-1200 words of real, helpful content\n- Include min 1 internal link to a service page: /services/10-yard-dumpster, /services/15-yard-dumpster, or /services/20-yard-dumpster\n- Include min 1 internal link to a service area: /service-areas/jackson, /service-areas/brandon, /service-areas/madison, etc.\n- 4-5 FAQ entries that address real questions people have about this topic\n- End with CTA section using the booking link and phone number\n\nTSX FILE TEMPLATE (fill in ALL [PLACEHOLDER] values):\n\nimport { Metadata } from 'next'\nimport { generateArticleSchema, generateFAQSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'\nimport Link from 'next/link'\nimport styles from '../blog-post.module.css'\n\nexport const metadata: Metadata = {\n    title: '[SEO TITLE including keyword | MidSouth Dumpster Rentals]',\n    description: '[155 char compelling meta description with keyword]',\n    openGraph: {\n        title: '[OG title]',\n        description: '[OG description]',\n        url: 'https://midsouthdumpsterms.com/blog/${slug}',\n    },\n}\n\nconst faqs = [\n    { question: '[Question 1]', answer: '[Specific, detailed answer using business facts]' },\n    { question: '[Question 2]', answer: '[Specific, detailed answer]' },\n    { question: '[Question 3]', answer: '[Specific, detailed answer]' },\n    { question: '[Question 4]', answer: '[Specific, detailed answer]' },\n]\n\nexport default function BlogPost() {\n    const articleSchema = generateArticleSchema(\n        '[Title]',\n        '[Description]',\n        '${today}',\n        'https://midsouthdumpsterms.com/opengraph-image.jpg',\n        '${today}'\n    )\n    const faqSchema = generateFAQSchema(faqs)\n    const breadcrumbSchema = generateBreadcrumbSchema([\n        { name: 'Home', url: 'https://midsouthdumpsterms.com' },\n        { name: 'Blog', url: 'https://midsouthdumpsterms.com/blog' },\n        { name: '[Short Title]', url: 'https://midsouthdumpsterms.com/blog/${slug}' },\n    ])\n    return (\n        <>\n            <script type=\"application/ld+json\" dangerouslySetInnerHTML={{ __html: injectSchema(articleSchema) }} />\n            <script type=\"application/ld+json\" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />\n            <script type=\"application/ld+json\" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />\n            <article className={styles.article}>\n                <div className=\"container container-narrow\">\n                    <Link href=\"/blog\" className={styles.backLink}>&#8592; Back to Blog</Link>\n                    <header className={styles.header}>\n                        <span className={styles.category}>${category}</span>\n                        <h1>[H1 — include keyword naturally]</h1>\n                        <p className={styles.meta}>Updated ${todayFormatted}</p>\n                    </header>\n                    <div className={styles.content}>\n                        <p className={styles.lead}>[Strong opening paragraph]</p>\n                        [3-5 H2 sections with 2-4 paragraphs each. Include internal links and phone link naturally.]\n                        <h2>Frequently Asked Questions</h2>\n                        <div>\n                            {faqs.map((faq, i) => (\n                                <div key={i} style={{ marginBottom: '1.5rem' }}>\n                                    <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>{faq.question}</h3>\n                                    <p>{faq.answer}</p>\n                                </div>\n                            ))}\n                        </div>\n                        <div className={styles.cta}>\n                            <h3>Ready to Book Your Dumpster?</h3>\n                            <p>Call <a href=\"tel:6013167891\">601-316-7891</a> or book online &mdash; same-day delivery available 7 days a week.</p>\n                            <a href=\"https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"btn btn-primary\">Book Your Dumpster Now</a>\n                        </div>\n                    </div>\n                </div>\n            </article>\n        </>\n    )\n}`;\n\nreturn [{ json: { prompt, slug, keyword, category, location, date: today, dateFormatted: todayFormatted, row_number: rowNumber } }];"
+            }
+        },
+        {
+            "id": "cp-009",
+            "name": "SEO Content Agent",
+            "type": "@n8n/n8n-nodes-langchain.agent",
+            "typeVersion": 1.7,
+            "position": [
+                1580,
+                280
+            ],
+            "parameters": {
+                "agent": "toolsAgent",
+                "promptType": "define",
+                "text": "={{ $json.prompt }}",
+                "options": {
+                    "systemMessage": "You are an expert SEO content writer and Next.js developer specializing in local service businesses. You write engaging, informative blog posts that rank well for local search terms. You ALWAYS follow the exact TSX format provided, returning ONLY the raw file content with NO markdown fences. CRITICAL RULES: (1) Only export two things: 'export const metadata' and 'export default function BlogPost'. NEVER add export const postData, export const config, export const revalidate, or any other exports — they will break the Next.js build. (2) Write all content as real JSX elements, NEVER use dangerouslySetInnerHTML with HTML strings. (3) Never use markdown link syntax [text](url) — use proper JSX Link or anchor elements. You are meticulous about JSX syntax: apostrophes become &apos;, ampersands become &amp;.",
+                    "maxIterations": 8,
+                    "returnIntermediateSteps": false
+                }
+            }
+        },
+        {
+            "id": "cp-010",
+            "name": "OpenRouter Content LLM",
+            "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+            "typeVersion": 1.2,
+            "position": [
+                1580,
+                480
+            ],
+            "credentials": {
+                "openAiApi": {
+                    "id": "REPLACE_WITH_CREDENTIAL_ID",
+                    "name": "OpenRouter API"
+                }
+            },
+            "parameters": {
+                "model": "anthropic/claude-3.5-sonnet",
+                "options": {
+                    "baseURL": "https://openrouter.ai/api/v1",
+                    "temperature": 0.6,
+                    "maxTokens": 6000
+                }
+            }
+        },
+        {
+            "id": "cp-011",
+            "name": "Tavily Research",
+            "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+            "typeVersion": 1.1,
+            "position": [
+                1800,
+                480
+            ],
+            "parameters": {
+                "name": "tavily_search",
+                "description": "Search the web to research a topic. Use to understand what people want when searching a keyword, find competitor content, and get local Mississippi context.",
+                "method": "POST",
+                "url": "https://api.tavily.com/search",
+                "sendBody": true,
+                "contentType": "json",
+                "bodyParameters": {
+                    "parameters": [
+                        {
+                            "name": "api_key",
+                            "value": "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"
+                        },
+                        {
+                            "name": "query",
+                            "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('query', 'The search query to research', 'string') }}"
+                        },
+                        {
+                            "name": "max_results",
+                            "value": "5"
+                        },
+                        {
+                            "name": "search_depth",
+                            "value": "advanced"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "cp-012",
+            "name": "Parse Blog Post",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                1800,
+                280
+            ],
+            "parameters": {
+                "jsCode": "const agentOutput = $input.first().json.output || '';\nconst briefData = $('Build Content Brief').first().json;\n\n// Remove any markdown code fences if present\nlet tsx = agentOutput\n  .replace(/^```(?:tsx|typescript|jsx|js)?\\n?/i, '')\n  .replace(/\\n?```$/i, '')\n  .trim();\n\n// SAFETY: Strip any invalid Next.js page exports that break TypeScript build\n// Only 'export const metadata' and 'export default function' are valid in App Router pages\ntsx = tsx.replace(/^export const (?!metadata\\b)\\w+[\\s\\S]*?(?=\\n(?:export|import|const |function |\\s*$)|$)/gm, '').trim();\n\n// Remove any double blank lines created by the strip\ntsx = tsx.replace(/\\n{3,}/g, '\\n\\n');\n\nconst valid = tsx.length > 500 && tsx.includes('export default function BlogPost');\n\nreturn [{\n  json: {\n    tsx_content: tsx,\n    valid: valid,\n    slug: briefData.slug,\n    keyword: briefData.keyword,\n    category: briefData.category,\n    location: briefData.location,\n    date: briefData.date,\n    dateFormatted: briefData.dateFormatted,\n    row_number: briefData.row_number,\n    char_count: tsx.length\n  }\n}];"
+            }
+        },
+        {
+            "id": "cp-013",
+            "name": "Validate TSX",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                2020,
+                280
+            ],
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict"
+                    },
+                    "conditions": [
+                        {
+                            "id": "tsx-valid-check",
+                            "leftValue": "={{ $json.valid }}",
+                            "rightValue": true,
+                            "operator": {
+                                "type": "boolean",
+                                "operation": "equal"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                }
+            }
+        },
+        {
+            "id": "cp-014",
+            "name": "Content Parse Error",
+            "type": "n8n-nodes-base.set",
+            "typeVersion": 3.4,
+            "position": [
+                2240,
+                420
+            ],
+            "parameters": {
+                "mode": "manual",
+                "fields": {
+                    "values": [
+                        {
+                            "name": "status",
+                            "type": "stringValue",
+                            "value": "error"
+                        },
+                        {
+                            "name": "message",
+                            "type": "stringValue",
+                            "value": "Agent did not return valid TSX content"
+                        },
+                        {
+                            "name": "keyword",
+                            "type": "stringValue",
+                            "value": "={{ $json.keyword }}"
+                        },
+                        {
+                            "name": "char_count",
+                            "type": "numberValue",
+                            "value": "={{ $json.char_count }}"
+                        }
+                    ]
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "cp-015",
+            "name": "Encode for GitHub",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                2240,
+                160
+            ],
+            "parameters": {
+                "jsCode": "const data = $input.first().json;\nconst tsxContent = data.tsx_content;\nconst slug = data.slug;\nconst keyword = data.keyword;\n\n// Base64 encode the TSX content\nconst base64Content = Buffer.from(tsxContent, 'utf8').toString('base64');\n\nreturn [{\n  json: {\n    base64_content: base64Content,\n    slug: slug,\n    keyword: keyword,\n    title: keyword.charAt(0).toUpperCase() + keyword.slice(1),\n    file_path: `app/blog/${slug}/page.tsx`,\n    commit_message: `feat: add blog post - ${keyword}`,\n    github_repo: 'midsouthdumpsterms-blip/midsouthdumpsterms',\n    date: data.date,\n    dateFormatted: data.dateFormatted,\n    row_number: data.row_number,\n    tsx_content: tsxContent\n  }\n}];"
+            }
+        },
+        {
+            "id": "cp-016",
+            "name": "Push to GitHub",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.2,
+            "position": [
+                2460,
+                160
+            ],
+            "parameters": {
+                "method": "PUT",
+                "url": "=https://api.github.com/repos/{{ $json.github_repo }}/contents/{{ $json.file_path }}",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer YOUR_GITHUB_TOKEN_HERE"
+                        },
+                        {
+                            "name": "Accept",
+                            "value": "application/vnd.github+json"
+                        },
+                        {
+                            "name": "X-GitHub-Api-Version",
+                            "value": "2022-11-28"
+                        }
+                    ]
+                },
+                "sendBody": true,
+                "contentType": "json",
+                "bodyParameters": {
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "value": "={{ $json.commit_message }}"
+                        },
+                        {
+                            "name": "content",
+                            "value": "={{ $json.base64_content }}"
+                        },
+                        {
+                            "name": "branch",
+                            "value": "main"
+                        }
+                    ]
+                },
+                "options": {
+                    "response": {
+                        "response": {
+                            "fullResponse": false,
+                            "responseFormat": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": "cp-017",
+            "name": "Mark Keyword Published",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.4,
+            "position": [
+                2680,
+                160
+            ],
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "REPLACE_WITH_CREDENTIAL_ID",
+                    "name": "Google Sheets OAuth2"
+                }
+            },
+            "parameters": {
+                "operation": "update",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1838piMryF9Lw-yYVPrG2RPIvqSfBOGHXki422VOzy28",
+                    "mode": "id"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "Keyword_Queue",
+                    "mode": "name"
+                },
+                "columns": {
+                    "mappingMode": "defineBelow",
+                    "value": {
+                        "Keyword": "={{ $('Encode for GitHub').first().json.keyword }}",
+                        "Status": "published",
+                        "Date_Published": "={{ $('Encode for GitHub').first().json.date }}"
+                    },
+                    "matchingColumns": [
+                        "Keyword"
+                    ],
+                    "schema": []
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "cp-018",
+            "name": "Log to Published Posts",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.4,
+            "position": [
+                2900,
+                160
+            ],
+            "credentials": {
+                "googleSheetsOAuth2Api": {
+                    "id": "REPLACE_WITH_CREDENTIAL_ID",
+                    "name": "Google Sheets OAuth2"
+                }
+            },
+            "parameters": {
+                "operation": "append",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1838piMryF9Lw-yYVPrG2RPIvqSfBOGHXki422VOzy28",
+                    "mode": "id"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "Published_Posts",
+                    "mode": "name"
+                },
+                "columns": {
+                    "mappingMode": "defineBelow",
+                    "value": {
+                        "Keyword": "={{ $('Encode for GitHub').first().json.keyword }}",
+                        "Title": "={{ $('Encode for GitHub').first().json.title }}",
+                        "Slug": "={{ $('Encode for GitHub').first().json.slug }}",
+                        "URL": "=https://midsouthdumpsterms.com/blog/{{ $('Encode for GitHub').first().json.slug }}",
+                        "Date_Published": "={{ $('Encode for GitHub').first().json.date }}",
+                        "Word_Count": "",
+                        "Status": "live"
+                    },
+                    "matchingColumns": [],
+                    "schema": []
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "cp-019",
+            "name": "Post Published",
+            "type": "n8n-nodes-base.set",
+            "typeVersion": 3.4,
+            "position": [
+                3120,
+                160
+            ],
+            "parameters": {
+                "mode": "manual",
+                "fields": {
+                    "values": [
+                        {
+                            "name": "status",
+                            "type": "stringValue",
+                            "value": "success"
+                        },
+                        {
+                            "name": "message",
+                            "type": "stringValue",
+                            "value": "Blog post published successfully"
+                        },
+                        {
+                            "name": "keyword",
+                            "type": "stringValue",
+                            "value": "={{ $('Encode for GitHub').first().json.keyword }}"
+                        },
+                        {
+                            "name": "url",
+                            "type": "stringValue",
+                            "value": "=https://midsouthdumpsterms.com/blog/{{ $('Encode for GitHub').first().json.slug }}"
+                        }
+                    ]
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "cp-020",
+            "name": "Error Trigger",
+            "type": "n8n-nodes-base.errorTrigger",
+            "typeVersion": 1,
+            "position": [
+                240,
+                620
+            ],
+            "parameters": {}
+        },
+        {
+            "id": "cp-021",
+            "name": "Log Error",
+            "type": "n8n-nodes-base.set",
+            "typeVersion": 3.4,
+            "position": [
+                460,
+                620
+            ],
+            "parameters": {
+                "mode": "manual",
+                "fields": {
+                    "values": [
+                        {
+                            "name": "workflow",
+                            "type": "stringValue",
+                            "value": "MidSouth SEO - Daily Content Pipeline"
+                        },
+                        {
+                            "name": "error_message",
+                            "type": "stringValue",
+                            "value": "={{ $json.error.message }}"
+                        },
+                        {
+                            "name": "timestamp",
+                            "type": "stringValue",
+                            "value": "={{ $now.toISO() }}"
+                        }
+                    ]
+                },
+                "options": {}
+            }
+        }
+    ],
+    "connections": {
+        "Daily Schedule": {
+            "main": [
+                [
+                    {
+                        "node": "Read Keyword Queue",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Manual Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Read Keyword Queue",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Read Keyword Queue": {
+            "main": [
+                [
+                    {
+                        "node": "Get Pending Keyword",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get Pending Keyword": {
+            "main": [
+                [
+                    {
+                        "node": "Has Pending Keyword?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Has Pending Keyword?": {
+            "main": [
+                [
+                    {
+                        "node": "Read Brand Voice",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                [
+                    {
+                        "node": "No Keywords Available",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Read Brand Voice": {
+            "main": [
+                [
+                    {
+                        "node": "Build Content Brief",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Build Content Brief": {
+            "main": [
+                [
+                    {
+                        "node": "SEO Content Agent",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "SEO Content Agent": {
+            "main": [
+                [
+                    {
+                        "node": "Parse Blog Post",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "OpenRouter Content LLM": {
+            "ai_languageModel": [
+                [
+                    {
+                        "node": "SEO Content Agent",
+                        "type": "ai_languageModel",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Tavily Research": {
+            "ai_tool": [
+                [
+                    {
+                        "node": "SEO Content Agent",
+                        "type": "ai_tool",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Parse Blog Post": {
+            "main": [
+                [
+                    {
+                        "node": "Validate TSX",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Validate TSX": {
+            "main": [
+                [
+                    {
+                        "node": "Encode for GitHub",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                [
+                    {
+                        "node": "Content Parse Error",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Encode for GitHub": {
+            "main": [
+                [
+                    {
+                        "node": "Push to GitHub",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Push to GitHub": {
+            "main": [
+                [
+                    {
+                        "node": "Mark Keyword Published",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Mark Keyword Published": {
+            "main": [
+                [
+                    {
+                        "node": "Log to Published Posts",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Log to Published Posts": {
+            "main": [
+                [
+                    {
+                        "node": "Post Published",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Error Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Log Error",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "active": false,
+    "settings": {
+        "executionOrder": "v1",
+        "timezone": "America/Chicago",
+        "errorWorkflow": ""
+    },
+    "staticData": null,
+    "tags": [
+        {
+            "createdAt": "2026-03-03T21:00:00.000Z",
+            "updatedAt": "2026-03-03T21:00:00.000Z",
+            "id": "midsouth-seo",
+            "name": "MidSouth SEO"
+        }
+    ],
+    "triggerCount": 2,
+    "updatedAt": "2026-03-03T21:00:00.000Z",
+    "createdAt": "2026-03-03T21:00:00.000Z"
+}

@@ -5,6 +5,7 @@ Professional Next.js website for Mid South Dumpster Rentals serving Central Miss
 ## 🚀 Features
 
 - **12 Service Area Pages** - Dedicated pages for Jackson, Brandon, Clinton, Flowood, Pearl, Ridgeland, Madison, Flora, Canton, Terry, Byram, and Gluckstadt
+- **Dynamic Blog Discovery** - Automatically discover and list new blog posts from the filesystem (supports n8n automation)
 - **SEO Optimized** - Schema markup, meta tags, and proper heading structure
 - **Fast Performance** - Built with Next.js 14 for optimal speed
 - **Mobile Responsive** - Works perfectly on all devices
@@ -65,10 +66,12 @@ Every push to the `main` branch automatically triggers a deployment to Vercel.
 midsouthdumpsterms/
 ├── app/                      # Next.js app directory
 │   ├── service-areas/       # City service area pages
-│   ├── blog/                # Blog posts
+│   ├── blog/                # Blog posts (auto-discovered)
 │   ├── globals.css          # Global styles
 │   └── page.tsx             # Home page
+├── automation/               # n8n workflows and automation scripts
 ├── components/              # Reusable components
+├── docs/                     # Project documentation (Dynamic Blog Guide, etc.)
 ├── lib/                     # Utility functions
 ├── public/                  # Static assets
 │   └── images/             # Images and logo

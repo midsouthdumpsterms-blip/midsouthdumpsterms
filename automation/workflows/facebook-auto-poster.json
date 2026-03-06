@@ -1,0 +1,303 @@
+{
+    "name": "MidSouth - Facebook Auto-Poster",
+    "nodes": [
+        {
+            "id": "fb-001",
+            "name": "Daily Check 10AM",
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1.2,
+            "position": [
+                240,
+                320
+            ],
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "days",
+                            "daysInterval": 1,
+                            "triggerAtHour": 10,
+                            "triggerAtMinute": 30
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "fb-002",
+            "name": "Manual Trigger",
+            "type": "n8n-nodes-base.manualTrigger",
+            "typeVersion": 1,
+            "position": [
+                240,
+                460
+            ],
+            "parameters": {}
+        },
+        {
+            "id": "fb-003",
+            "name": "Read Published Posts",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 4.4,
+            "position": [
+                480,
+                390
+            ],
+            "parameters": {
+                "operation": "read",
+                "documentId": {
+                    "__rl": true,
+                    "value": "1838piMryF9Lw-yYVPrG2RPIvqSfBOGHXki422VOzy28",
+                    "mode": "id"
+                },
+                "sheetName": {
+                    "__rl": true,
+                    "value": "Published_Posts",
+                    "mode": "name"
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "fb-004",
+            "name": "Find Today's Post",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                720,
+                390
+            ],
+            "parameters": {
+                "jsCode": "const posts = $input.all().map(r => r.json);\nconst today = new Date().toISOString().split('T')[0];\nconst todaysPosts = posts.filter(p => {\n  if (!p.Date_Published || p.Status !== 'published') return false;\n  return p.Date_Published.startsWith(today);\n});\nif (todaysPosts.length === 0) {\n  return [{ json: { hasPost: false, today } }];\n}\nconst post = todaysPosts[0];\n// Note: URL must start with www. (not https://) for Facebook link previews\nconst url = 'www.midsouthdumpsterms.com/blog/' + (post.Slug || '');\nreturn [{ json: { hasPost: true, today, keyword: post.Keyword, title: post.Title || post.Keyword, slug: post.Slug || '', excerpt: post.Excerpt || '', category: post.Category || '', url } }];"
+            }
+        },
+        {
+            "id": "fb-005",
+            "name": "Has New Post?",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                960,
+                390
+            ],
+            "parameters": {
+                "conditions": {
+                    "conditions": [
+                        {
+                            "id": "check-post",
+                            "leftValue": "={{ $json.hasPost }}",
+                            "rightValue": true,
+                            "operator": {
+                                "type": "boolean",
+                                "operation": "equals"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                }
+            }
+        },
+        {
+            "id": "fb-006",
+            "name": "Generate Facebook Caption",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                1200,
+                280
+            ],
+            "parameters": {
+                "jsCode": "const post = $input.first().json;\n\n// Generate caption using template variations for variety\nconst templates = [\n  `📦 New on the blog! We just published a guide on ${post.keyword} — covering everything you need to know before renting a dumpster in Central Mississippi.\\n\\nWhether it's a home cleanout, renovation, or storm debris — we've got 10, 15, and 20-yard dumpsters with same-day delivery.\\n\\n📖 Read it here: ${post.url}\\n📞 Ready to book? Call us at 601-316-7891`,\n  `🏠 Got a project coming up? Our latest blog covers ${post.keyword} — written specifically for homeowners and contractors in the Jackson, MS area.\\n\\nMidSouth Dumpster Rentals | Same-day delivery | 7 days a week\\n\\n👉 ${post.url}\\n📞 601-316-7891`,\n  `💡 New blog post alert! \"${post.title}\" is live on our website.\\n\\nIf you've been searching for ${post.keyword}, this one's for you. We break it all down — pricing, sizing, and what to expect with MidSouth Dumpster Rentals.\\n\\n🔗 ${post.url}\\n📞 601-316-7891`\n];\n\n// Rotate templates based on day of week for variety\nconst dayOfWeek = new Date().getDay();\nconst caption = templates[dayOfWeek % templates.length];\n\nreturn [{ json: { caption, url: post.url, keyword: post.keyword } }];"
+            }
+        },
+        {
+            "id": "fb-007",
+            "name": "Post to Facebook Page",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.2,
+            "position": [
+                1440,
+                280
+            ],
+            "parameters": {
+                "method": "POST",
+                "url": "=https://graph.facebook.com/v19.0/649498884924352/feed",
+                "sendBody": true,
+                "contentType": "form-urlencoded",
+                "bodyParameters": {
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "value": "={{ $json.caption }}"
+                        },
+                        {
+                            "name": "link",
+                            "value": "={{ $json.url }}"
+                        },
+                        {
+                            "name": "access_token",
+                            "value": "REPLACE_WITH_YOUR_PAGE_ACCESS_TOKEN"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "fb-008",
+            "name": "Log Facebook Post",
+            "type": "n8n-nodes-base.set",
+            "typeVersion": 3.4,
+            "position": [
+                1680,
+                280
+            ],
+            "parameters": {
+                "mode": "manual",
+                "fields": {
+                    "values": [
+                        {
+                            "name": "status",
+                            "type": "stringValue",
+                            "value": "posted"
+                        },
+                        {
+                            "name": "keyword",
+                            "type": "stringValue",
+                            "value": "={{ $('Find Today\\'s Post').first().json.keyword }}"
+                        },
+                        {
+                            "name": "url",
+                            "type": "stringValue",
+                            "value": "={{ $('Find Today\\'s Post').first().json.url }}"
+                        },
+                        {
+                            "name": "posted_at",
+                            "type": "stringValue",
+                            "value": "={{ $now.toISO() }}"
+                        }
+                    ]
+                },
+                "options": {}
+            }
+        },
+        {
+            "id": "fb-009",
+            "name": "No Post Today",
+            "type": "n8n-nodes-base.set",
+            "typeVersion": 3.4,
+            "position": [
+                1200,
+                500
+            ],
+            "parameters": {
+                "mode": "manual",
+                "fields": {
+                    "values": [
+                        {
+                            "name": "status",
+                            "type": "stringValue",
+                            "value": "skipped"
+                        },
+                        {
+                            "name": "reason",
+                            "type": "stringValue",
+                            "value": "No blog post published today"
+                        }
+                    ]
+                },
+                "options": {}
+            }
+        }
+    ],
+    "connections": {
+        "Daily Check 10AM": {
+            "main": [
+                [
+                    {
+                        "node": "Read Published Posts",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Manual Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Read Published Posts",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Read Published Posts": {
+            "main": [
+                [
+                    {
+                        "node": "Find Today's Post",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Find Today's Post": {
+            "main": [
+                [
+                    {
+                        "node": "Has New Post?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Has New Post?": {
+            "main": [
+                [
+                    {
+                        "node": "Generate Facebook Caption",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                [
+                    {
+                        "node": "No Post Today",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Generate Facebook Caption": {
+            "main": [
+                [
+                    {
+                        "node": "Post to Facebook Page",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Post to Facebook Page": {
+            "main": [
+                [
+                    {
+                        "node": "Log Facebook Post",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "active": false,
+    "settings": {
+        "executionOrder": "v1",
+        "timezone": "America/Chicago"
+    }
+}
