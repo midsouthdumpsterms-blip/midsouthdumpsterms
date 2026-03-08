@@ -57,7 +57,7 @@ export default function About() {
                                 </div>
                                 <div style={{ flex: '0 0 250px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-md)', margin: '0 auto' }}>
                                     {/* Placeholder for Andrew Tyre's photo */}
-                                    <img src="/images/andrew-tyre.jpg" alt="Andrew Tyre, Founder of Mid South Dumpster Rentals" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                    <img src="/images/andrew-tyre.png" alt="Andrew Tyre, Founder of Mid South Dumpster Rentals" style={{ width: '100%', height: 'auto', display: 'block' }} />
                                 </div>
                             </div>
                         </div>
