@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import BookingButton from '@/components/BookingButton'
 import { generateServiceSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
@@ -79,6 +80,19 @@ export default function Services() {
                     <p className={styles.heroSubtext}>
                         Professional roll-off dumpster rentals for residential, commercial, and construction projects
                     </p>
+                </div>
+            </section>
+
+            <section style={{ padding: 'var(--spacing-xl) 0 0 0' }}>
+                <div className="container">
+                    <Image
+                        src="/images/gallery/clean-dumpster-delivery-flowood-blue.jpg"
+                        alt="Clean blue Mid South Dumpster Rentals roll-off container on a driveway"
+                        width={1200}
+                        height={500}
+                        style={{ borderRadius: 'var(--radius-xl)', objectFit: 'cover', width: '100%', height: '400px', boxShadow: 'var(--shadow-md)' }}
+                        priority
+                    />
                 </div>
             </section>
 

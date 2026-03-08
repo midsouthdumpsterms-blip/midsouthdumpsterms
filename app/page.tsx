@@ -152,6 +152,34 @@ export default function Home() {
                 <p>Read why we are the <Link href="/blog/best-dumpster-rental-central-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>best dumpster rental service in Central MS</Link>.</p>
             </div>
 
+            {/* Real Equipment / Trust Section */}
+            <section style={{ padding: 'calc(var(--spacing-3xl) * 0.8) 0', background: 'white' }}>
+                <div className="container">
+                    <div className="grid grid-2" style={{ alignItems: 'center' }}>
+                        <div>
+                            <h2>Real Local Service, Real Equipment</h2>
+                            <p style={{ fontSize: '1.125rem', marginBottom: 'var(--spacing-md)', color: 'var(--color-gray-700)' }}>
+                                When you rent from Mid South Dumpster Rentals, you get high-quality, well-maintained equipment delivered by local professionals. We don't rely on third-party brokers. We own our trucks, our dumpsters, and we take pride in keeping your job site clean and running on schedule.
+                            </p>
+                            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 var(--spacing-lg) 0', display: 'flex', flexDirection: 'column', gap: '0.5rem', fontWeight: 500, color: 'var(--color-gray-800)' }}>
+                                <li>✓ Driveway-safe placement (boards used to protect concrete)</li>
+                                <li>✓ Clean, well-maintained dumpsters</li>
+                                <li>✓ Prompt, professional drivers who respect your property</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <Image
+                                src="/images/gallery/mid-south-dumpster-rentals-delivery-truck.jpg"
+                                alt="Mid South Dumpster Rentals delivery truck dropping off a roll-off dumpster"
+                                width={600}
+                                height={400}
+                                style={{ borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)', width: '100%', height: 'auto', objectFit: 'cover' }}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Service Areas Section */}
             <section className={styles.serviceAreasSection}>
                 <div className="container">
