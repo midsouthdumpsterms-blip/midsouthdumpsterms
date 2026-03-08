@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import BookingButton from '@/components/BookingButton'
 import { generateServiceSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
@@ -85,7 +86,7 @@ export default function Services() {
                 <div className="container">
                     <h2 className="text-center">Available Dumpster Sizes</h2>
                     <p className="text-center" style={{ marginBottom: 'var(--spacing-2xl)' }}>
-                        Choose the perfect size for your project
+                        Choose the perfect size for your project. Read our <Link href="/blog/dumpster-rental-prices-jackson-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Jackson Dumpster Cost Guide</Link> for more details.
                     </p>
                     <div className={styles.sizesGrid}>
                         <DumpsterSizeCard
@@ -111,6 +112,9 @@ export default function Services() {
                             idealFor={['Large Renovations', 'New Construction', 'Major Demolition', 'Commercial Projects']}
                         />
                     </div>
+                    <p className="text-center" style={{ marginTop: 'var(--spacing-xl)', fontSize: '1.125rem' }}>
+                        Not sure which size to pick? Check out our <Link href="/blog/how-to-choose-dumpster-size" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Dumpster Sizing Guide</Link>.
+                    </p>
                 </div>
             </section>
 
@@ -129,7 +133,7 @@ export default function Services() {
 
                         <div className={`${styles.itemsCard} ${styles.prohibited}`}>
                             <h2>✗ Prohibited Items</h2>
-                            <p className={styles.note}>These items cannot be placed in dumpsters</p>
+                            <p className={styles.note}>These items cannot be placed in dumpsters. See our <Link href="/blog/what-can-i-put-in-a-dumpster" style={{ textDecoration: 'underline' }}>full guide on what goes in</Link>.</p>
                             <ul className={styles.itemsList}>
                                 {prohibitedItems.map((item, index) => (
                                     <li key={index}>{item}</li>

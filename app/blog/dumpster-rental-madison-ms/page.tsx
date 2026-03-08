@@ -92,7 +92,7 @@ export default function BlogPost() {
 
                         <div className={styles.cta}>
                             <h3>Get Your Madison MS Dumpster Rental</h3>
-                            <p>Call <a href="tel:6013167891">601-316-7891</a> or book completely online in minutes.</p>
+                            <p>For more local details, visit our dedicated <Link href="/service-areas/madison">Madison Dumpster Rental</Link> service page. Call <a href="tel:6013167891">601-316-7891</a> or book completely online in minutes.</p>
                             <a
                                 href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
                                 target="_blank"

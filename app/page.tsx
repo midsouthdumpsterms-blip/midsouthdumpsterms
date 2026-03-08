@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import { generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
@@ -147,13 +148,16 @@ export default function Home() {
 
             {/* Trust Badges Section */}
             <TrustBadges />
+            <div className="container text-center" style={{ marginBottom: 'var(--spacing-xl)' }}>
+                <p>Read why we are the <Link href="/blog/best-dumpster-rental-central-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>best dumpster rental service in Central MS</Link>.</p>
+            </div>
 
             {/* Service Areas Section */}
             <section className={styles.serviceAreasSection}>
                 <div className="container">
                     <h2 className="text-center">Serving Central Mississippi</h2>
                     <p className="text-center" style={{ marginBottom: 'var(--spacing-2xl)' }}>
-                        Reliable dumpster rental service across these communities and surrounding areas
+                        Reliable <Link href="/blog/dumpster-rental-near-me-jackson-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>local dumpster rental</Link> service across these communities and surrounding areas
                     </p>
                     <div className={styles.citiesGrid}>
                         {['Jackson', 'Brandon', 'Clinton', 'Flowood', 'Pearl', 'Ridgeland', 'Madison', 'Flora', 'Canton', 'Terry', 'Byram', 'Gluckstadt'].map(

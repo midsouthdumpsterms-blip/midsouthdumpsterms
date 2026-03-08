@@ -48,7 +48,7 @@ export default function HomeRenovationDumpsterGuide() {
                     <div className={styles.content}>
                         <p>
                             Renovating your home is exciting, but it creates a massive amount of debris. From old cabinets and ripped-up flooring to drywall and tile,
-                            waste builds up fast. Renting a roll-off dumpster is the most efficient way to keep your job site clean and safe.
+                            waste builds up fast. Renting a roll-off dumpster is the most efficient way to keep your job site clean and safe. Doing a smaller cleanout instead? Read our <Link href="/blog/spring-cleaning-dumpster-rental-central-ms">spring cleaning guide</Link>.
                         </p>
 
                         <h2>Step 1: Estimating Your Debris</h2>
@@ -58,6 +58,7 @@ export default function HomeRenovationDumpsterGuide() {
                         <ul>
                             <li><strong>Bathroom Remodel:</strong> Usually fits in a <strong>10-Yard Dumpster</strong>.</li>
                             <li><strong>Kitchen Remodel:</strong> Often requires a <strong>15-Yard or 20-Yard Dumpster</strong> depending on the size of the kitchen.</li>
+                            <li><strong>Roof Replacement:</strong> See our specific guide for <Link href="/blog/roofing-contractor-dumpster-rental-jackson-ms">roofing contractors and homeowners</Link>.</li>
                             <li><strong>Whole Home Cleanout/Flooring:</strong> Go with a <strong>20-Yard Dumpster</strong> to be safe.</li>
                         </ul>
 

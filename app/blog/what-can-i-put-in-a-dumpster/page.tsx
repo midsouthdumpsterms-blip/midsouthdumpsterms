@@ -94,6 +94,9 @@ export default function WhatCanIPutInADumpster() {
                         <h3>Can I throw away old paint?</h3>
                         <p>Only if it is completely dried out. Wet paint is considered hazardous. You can dry it out by mixing it with kitty litter or sand.</p>
 
+                        <h3>Dumpster vs Junk Removal</h3>
+                        <p>If you only have a few prohibited items, you might consider hiring a junk removal service for those specific items, while using a dumpster for the bulk of the permitted debris. Read our full comparison of <Link href="/blog/dumpster-rental-vs-junk-removal-jackson-ms">Dumpster Rental vs. Junk Removal</Link>.</p>
+
                         <div className={styles.cta}>
                             <h3>Ready to rent your dumpster?</h3>
                             <p>Now that you know what goes in, get your project started today!</p>

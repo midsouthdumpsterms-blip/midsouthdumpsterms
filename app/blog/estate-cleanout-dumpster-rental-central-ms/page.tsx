@@ -45,7 +45,7 @@ export default function BlogPost() {
 
                         <h2>What Is an Estate Cleanout?</h2>
                         <p>
-                            An estate cleanout typically involves clearing out the entire contents of a home after the passing of a loved one, or in preparation for selling or transferring a property. Unlike a regular cleanout, estate cleanouts often involve years' worth of accumulated belongings — furniture, clothing, household goods, garage contents, and more. They can take days and generate far more debris than most people expect.
+                            An estate cleanout typically involves clearing out the entire contents of a home after the passing of a loved one, or in preparation for selling or transferring a property. Unlike a regular cleanout, estate cleanouts often involve years' worth of accumulated belongings — furniture, clothing, household goods, garage contents, and more. They can take days and generate far more debris than most people expect. If you're a landlord, check out our guide to <Link href="/blog/rental-property-cleanout-dumpster-rental-ms">rental property cleanouts</Link>.
                         </p>
 
                         <h2>Why a Dumpster Makes Estate Cleanouts Easier</h2>

@@ -153,7 +153,7 @@ export default function BlogPost() {
 
                         <div className={styles.cta}>
                             <h3>Ready to Book Your Dumpster in Jackson?</h3>
-                            <p>Call <a href="tel:6013167891">601-316-7891</a> or book online &mdash; same-day delivery available 7 days a week.</p>
+                            <p>For more local details, visit our dedicated <Link href="/service-areas/jackson">Jackson Dumpster Rental</Link> service page. Call <a href="tel:6013167891">601-316-7891</a> or book online &mdash; same-day delivery available 7 days a week.</p>
                             <a
                                 href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
                                 target="_blank"
