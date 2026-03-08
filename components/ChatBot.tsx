@@ -56,8 +56,8 @@ const KNOWLEDGE_BASE = [
         answer: "Ready to go? You can book online instantly [here](https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF) or call us directly at 601-316-7891."
     },
     {
-        keywords: ['who', 'andrew', 'founder', 'owner', 'experience'],
-        answer: "Mid South Dumpster Rentals is locally owned by Andrew Tyre. Andrew has over 7 years of experience in MS real estate and development, so he knows exactly what builders and homeowners need."
+        keywords: ['who', 'founder', 'owner', 'experience'],
+        answer: "Mid South Dumpster Rentals is locally owned and operated with over 7 years of local real estate and development experience, so we know exactly what builders and homeowners need."
     },
     {
         keywords: ['hours', 'time', 'open', 'weekend', 'sunday', 'saturday'],
@@ -109,7 +109,7 @@ const KNOWLEDGE_BASE = [
     },
     {
         keywords: ['tree', 'pine', 'log', 'brush', 'yard waste', 'limb', 'wood', 'stump'],
-        answer: "Disposing of a large tree (like a 100ft pine) is a major project! **Weight & Volume:** A single 100ft pine tree can weigh over 5 tons and take up 15-20 cubic yards of space once cut. **Requirements:** Logs MUST be cut into 4-foot sections or smaller. For a project this size, a 20-yard dumpster is required, and you will likely need multiple loads or a specialized grapple service if it's not cut small. Call us at 601-316-7891 so Andrew can help you calculate the exact load size and avoid overage fees."
+        answer: "Disposing of a large tree (like a 100ft pine) is a major project! **Weight & Volume:** A single 100ft pine tree can weigh over 5 tons and take up 15-20 cubic yards of space once cut. **Requirements:** Logs MUST be cut into 4-foot sections or smaller. For a project this size, a 20-yard dumpster is required, and you will likely need multiple loads or a specialized grapple service if it's not cut small. Call us at 601-316-7891 so we can help you calculate the exact load size and avoid overage fees."
     },
     {
         keywords: ['legal', 'law', 'dispute', 'agreement', 'governing'],
@@ -182,7 +182,7 @@ const ChatBot: React.FC = () => {
             return "I can definitely help with that! You can book online instantly at [this link](https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF) or just call us at 601-316-7891.";
         }
 
-        return "I'm not exactly sure about that, but I'd love to help! Can you try rephrasing, or just call us at 601-316-7891 to talk to Andrew directly?";
+        return "I'm not exactly sure about that, but I'd love to help! Can you try rephrasing, or just call us at 601-316-7891 to talk to us directly?";
     };
 
     const suggestions = [
