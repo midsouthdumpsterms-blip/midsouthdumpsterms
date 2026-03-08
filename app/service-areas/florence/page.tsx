@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import Image from 'next/image'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
@@ -15,6 +17,21 @@ export const metadata: Metadata = {
     },
 }
 
+const faqs = [
+    {
+        question: 'Do I need a permit to rent a dumpster in Florence, MS?',
+        answer: 'For placement on your own private property, such as a driveway, no permit is required. If the dumpster needs to sit on a public street, you must contact the City of Florence for permit requirements.',
+    },
+    {
+        question: 'How much does dumpster rental cost in Florence?',
+        answer: 'Our flat-rate pricing for Florence includes delivery, pickup, and a set disposal weight. Prices start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard container, with no hidden fees.',
+    },
+    {
+        question: 'What items cannot be thrown in a dumpster in Florence?',
+        answer: 'Prohibited items include hazardous materials, wet paint, tires, batteries, and Freon items. Contact Rankin County solid waste for instructions on safely disposing of these.',
+    },
+]
+
 export default function FlorencePage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
@@ -29,11 +46,13 @@ export default function FlorencePage() {
         { name: 'Service Areas', url: 'https://midsouthdumpsterms.com/service-areas' },
         { name: 'Florence', url: 'https://midsouthdumpsterms.com/service-areas/florence' },
     ])
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
 
             <section className={styles.heroSection}>
                 <div className="container">
@@ -77,8 +96,15 @@ export default function FlorencePage() {
                             </ul>
                         </div>
                         <div>
+                            <Image
+                                src="/images/gallery/affordable-dumpster-rental-jackson-pricing.jpg"
+                                alt="Affordable roll-off dumpster delivered to a driveway in Florence, MS"
+                                width={600}
+                                height={400}
+                                className={styles.contentImage}
+                            />
                             <h2>Perfect For Florence Projects</h2>
-                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Florence, we have the right dumpster size for your needs.</p>
+                            <p>Whether you're <Link href="/blog/dumpster-rental-guide-for-home-renovations" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>renovating a home</Link>, clearing out an estate, or managing a construction project in Florence, we have the right dumpster size for your needs.</p>
                             <p><strong>Common uses in Florence:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
@@ -102,6 +128,20 @@ export default function FlorencePage() {
                     <p>
                         Florence's convenient location and residential communities make it a great place for families and businesses. We're committed to providing professional dumpster rental service for all your project needs.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection} style={{ padding: 'var(--spacing-3xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
+                <div className="container container-narrow">
+                    <h2 className="text-center">Florence Dumpster Rental FAQs</h2>
+                    <div className={styles.faqList}>
+                        {faqs.map((faq, index) => (
+                            <div key={index} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-xl)' }}>
+                                <h3 style={{ fontSize: '1.25rem', marginBottom: 'var(--spacing-sm)' }}>{faq.question}</h3>
+                                <p>{faq.answer}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 

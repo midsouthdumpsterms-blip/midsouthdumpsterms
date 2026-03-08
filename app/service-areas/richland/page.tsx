@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import Image from 'next/image'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
@@ -15,6 +17,21 @@ export const metadata: Metadata = {
     },
 }
 
+const faqs = [
+    {
+        question: 'Do I need a permit to rent a dumpster in Richland, MS?',
+        answer: 'You only need a permit if placing the dumpster on a public street or right-of-way in Richland. If placed in your private driveway or commercial lot, no permit is required. Contact Richland Public Works for street placement regulations.',
+    },
+    {
+        question: 'How much does dumpster rental cost in Richland?',
+        answer: 'Our flat-rate pricing for Richland includes delivery, pickup, and disposal. Prices start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard container, with no hidden fees.',
+    },
+    {
+        question: 'What items are prohibited in Richland dumpsters?',
+        answer: 'Prohibited items include hazardous materials, wet paint, tires, batteries, and appliances containing Freon. For disposal options, contact Rankin County solid waste management.',
+    },
+]
+
 export default function RichlandPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
@@ -29,11 +46,13 @@ export default function RichlandPage() {
         { name: 'Service Areas', url: 'https://midsouthdumpsterms.com/service-areas' },
         { name: 'Richland', url: 'https://midsouthdumpsterms.com/service-areas/richland' },
     ])
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
 
             <section className={styles.heroSection}>
                 <div className="container">
@@ -77,8 +96,15 @@ export default function RichlandPage() {
                             </ul>
                         </div>
                         <div>
+                            <Image
+                                src="/images/gallery/reliable-waste-management-ms-delivery.jpg"
+                                alt="Reliable dumpster rental and waste management delivery truck operating in Richland, MS"
+                                width={600}
+                                height={400}
+                                className={styles.contentImage}
+                            />
                             <h2>Perfect For Richland Projects</h2>
-                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Richland, we have the right dumpster size for your needs.</p>
+                            <p>Whether you're renovating a home, clearing out an estate, or managing a commercial construction project in Richland, we have the right <Link href="/blog/how-to-choose-dumpster-size" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>dumpster size</Link> for your needs.</p>
                             <p><strong>Common uses in Richland:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
@@ -102,6 +128,20 @@ export default function RichlandPage() {
                     <p>
                         Richland's established neighborhoods and convenient location make it a desirable place to live and work. We're here to support your home improvement and construction projects with professional dumpster rental service.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection} style={{ padding: 'var(--spacing-3xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
+                <div className="container container-narrow">
+                    <h2 className="text-center">Richland Dumpster Rental FAQs</h2>
+                    <div className={styles.faqList}>
+                        {faqs.map((faq, index) => (
+                            <div key={index} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-xl)' }}>
+                                <h3 style={{ fontSize: '1.25rem', marginBottom: 'var(--spacing-sm)' }}>{faq.question}</h3>
+                                <p>{faq.answer}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 

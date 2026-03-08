@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import Image from 'next/image'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
@@ -15,6 +17,21 @@ export const metadata: Metadata = {
     },
 }
 
+const faqs = [
+    {
+        question: 'Do I need an HOA permit to rent a dumpster in Gluckstadt, MS?',
+        answer: 'You may need permission from your HOA if placing the dumpster in a visible driveway or yard for an extended period. For street placement, check with Gluckstadt city regulations.',
+    },
+    {
+        question: 'How much does dumpster rental cost in Gluckstadt?',
+        answer: 'Our flat-rate pricing for Gluckstadt includes delivery, pickup, and disposal. Prices start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard container, with no hidden fees.',
+    },
+    {
+        question: 'Can you deliver a roll-off dumpster to a new construction site in Gluckstadt?',
+        answer: 'Yes! We frequently deliver our 20-yard roll-off dumpsters to new residential and commercial construction sites throughout the rapidly growing areas of Gluckstadt.',
+    },
+]
+
 export default function GluckstadtPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
@@ -29,11 +46,13 @@ export default function GluckstadtPage() {
         { name: 'Service Areas', url: 'https://midsouthdumpsterms.com/service-areas' },
         { name: 'Gluckstadt', url: 'https://midsouthdumpsterms.com/service-areas/gluckstadt' },
     ])
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
 
             <section className={styles.heroSection}>
                 <div className="container">
@@ -77,8 +96,15 @@ export default function GluckstadtPage() {
                             </ul>
                         </div>
                         <div>
+                            <Image
+                                src="/images/gallery/driveway-safe-dumpster-gluckstadt-boards.jpg"
+                                alt="Driveway-safe dumpster delivery utilizing protective boards on a Gluckstadt driveway"
+                                width={600}
+                                height={400}
+                                className={styles.contentImage}
+                            />
                             <h2>Perfect For Gluckstadt Projects</h2>
-                            <p>Gluckstadt is one of Mississippi's newest and fastest-growing municipalities. Whether you're building a new home, renovating a property, or managing construction in this rapidly developing area near Madison, we have the right dumpster size for your needs.</p>
+                            <p>Gluckstadt is one of Mississippi's newest and fastest-growing municipalities. Whether you're building a new home, renovating a property, or <Link href="/blog/dumpster-rental-guide-for-home-renovations" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>managing construction</Link> in this rapidly developing area near Madison, we have the right dumpster size for your needs.</p>
                             <p><strong>Common uses in Gluckstadt:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
@@ -102,6 +128,20 @@ export default function GluckstadtPage() {
                     <p>
                         Whether you're building a new home, developing a commercial property, or working on renovation projects in this dynamic community, Mid South Dumpster Rentals provides the reliable waste management solutions you need.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection} style={{ padding: 'var(--spacing-3xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
+                <div className="container container-narrow">
+                    <h2 className="text-center">Gluckstadt Dumpster Rental FAQs</h2>
+                    <div className={styles.faqList}>
+                        {faqs.map((faq, index) => (
+                            <div key={index} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-xl)' }}>
+                                <h3 style={{ fontSize: '1.25rem', marginBottom: 'var(--spacing-sm)' }}>{faq.question}</h3>
+                                <p>{faq.answer}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 

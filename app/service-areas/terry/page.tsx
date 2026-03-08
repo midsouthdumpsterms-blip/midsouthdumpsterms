@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import Image from 'next/image'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
@@ -15,6 +17,21 @@ export const metadata: Metadata = {
     },
 }
 
+const faqs = [
+    {
+        question: 'Do I need a permit to rent a dumpster in Terry, MS?',
+        answer: 'You do not generally need a permit if you place the roll-off dumpster in your private driveway. For street or right-of-way placement, you must contact Terry City Hall to inquire about local guidelines.',
+    },
+    {
+        question: 'How much does dumpster rental cost in Terry?',
+        answer: 'Our flat-rate pricing for Terry includes delivery, pickup, and disposal. Prices start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard container, with no hidden fees.',
+    },
+    {
+        question: 'What is prohibited from going into a dumpster in Terry?',
+        answer: 'Hazardous materials, wet paint, tires, batteries, and appliances containing Freon are strictly prohibited. These items must be properly disposed of via Hinds County solid waste channels.',
+    },
+]
+
 export default function TerryPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
@@ -29,11 +46,13 @@ export default function TerryPage() {
         { name: 'Service Areas', url: 'https://midsouthdumpsterms.com/service-areas' },
         { name: 'Terry', url: 'https://midsouthdumpsterms.com/service-areas/terry' },
     ])
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
 
             <section className={styles.heroSection}>
                 <div className="container">
@@ -77,8 +96,15 @@ export default function TerryPage() {
                             </ul>
                         </div>
                         <div>
+                            <Image
+                                src="/images/gallery/home-renovation-dumpster-terry-backyard.jpg"
+                                alt="Roll-off dumpster delivered to a backyard home renovation project in Terry, MS"
+                                width={600}
+                                height={400}
+                                className={styles.contentImage}
+                            />
                             <h2>Perfect For Terry Projects</h2>
-                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Terry or along Highway 27, we have the right dumpster size for your needs.</p>
+                            <p>Whether you're renovating a home, clearing out an estate, or managing a <Link href="/blog/dumpster-rental-near-me-jackson-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>construction project</Link> in Terry or along Highway 27, we have the right dumpster size for your needs.</p>
                             <p><strong>Common uses in Terry:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
@@ -102,6 +128,20 @@ export default function TerryPage() {
                     <p>
                         Terry's mix of historic homes and newer subdivisions creates a unique community atmosphere. From rural properties with larger yards to established neighborhoods, we're here to support your renovation, construction, and cleanup projects with professional dumpster rental service.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection} style={{ padding: 'var(--spacing-3xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
+                <div className="container container-narrow">
+                    <h2 className="text-center">Terry Dumpster Rental FAQs</h2>
+                    <div className={styles.faqList}>
+                        {faqs.map((faq, index) => (
+                            <div key={index} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-xl)' }}>
+                                <h3 style={{ fontSize: '1.25rem', marginBottom: 'var(--spacing-sm)' }}>{faq.question}</h3>
+                                <p>{faq.answer}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 

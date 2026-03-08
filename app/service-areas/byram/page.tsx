@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import Image from 'next/image'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
@@ -15,6 +17,21 @@ export const metadata: Metadata = {
     },
 }
 
+const faqs = [
+    {
+        question: 'Do I need a permit to rent a dumpster in Byram, MS?',
+        answer: 'You typically only need a permit if placing the dumpster on a public street or right-of-way in Byram. If placed in your private driveway, no permit is required. Contact Byram Public Works for street placement regulations.',
+    },
+    {
+        question: 'How much does dumpster rental cost in Byram?',
+        answer: 'Our flat-rate pricing for Byram includes delivery, pickup, and disposal. Prices start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard container, with no hidden fees.',
+    },
+    {
+        question: 'What items are prohibited in Byram dumpsters?',
+        answer: 'Prohibited items include hazardous materials, wet paint, tires, batteries, and appliances containing Freon. For these items, you will need to contact Hinds County solid waste management.',
+    },
+]
+
 export default function ByramPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
@@ -29,11 +46,13 @@ export default function ByramPage() {
         { name: 'Service Areas', url: 'https://midsouthdumpsterms.com/service-areas' },
         { name: 'Byram', url: 'https://midsouthdumpsterms.com/service-areas/byram' },
     ])
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
 
             <section className={styles.heroSection}>
                 <div className="container">
@@ -77,8 +96,15 @@ export default function ByramPage() {
                             </ul>
                         </div>
                         <div>
+                            <Image
+                                src="/images/gallery/local-dumpster-service-byram-truck.jpg"
+                                alt="Local dumpster rental delivery truck placing a roll-off container in Byram, MS"
+                                width={600}
+                                height={400}
+                                className={styles.contentImage}
+                            />
                             <h2>Perfect For Byram Projects</h2>
-                            <p>Whether you're renovating a home in the Siwell Road area, clearing out an estate, or managing a construction project in Byram, we have the right dumpster size for your needs.</p>
+                            <p>Whether you're <Link href="/blog/dumpster-rental-guide-for-home-renovations" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>renovating a home</Link> in the Siwell Road area, clearing out an estate, or managing a construction project in Byram, we have the right dumpster size for your needs.</p>
                             <p><strong>Common uses in Byram:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
@@ -102,6 +128,20 @@ export default function ByramPage() {
                     <p>
                         Byram's convenient location and residential communities make it a great place for families and businesses. We're committed to providing professional dumpster rental service for all your project needs.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection} style={{ padding: 'var(--spacing-3xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
+                <div className="container container-narrow">
+                    <h2 className="text-center">Byram Dumpster Rental FAQs</h2>
+                    <div className={styles.faqList}>
+                        {faqs.map((faq, index) => (
+                            <div key={index} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-xl)' }}>
+                                <h3 style={{ fontSize: '1.25rem', marginBottom: 'var(--spacing-sm)' }}>{faq.question}</h3>
+                                <p>{faq.answer}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 

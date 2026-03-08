@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import Image from 'next/image'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
@@ -15,6 +17,21 @@ export const metadata: Metadata = {
     },
 }
 
+const faqs = [
+    {
+        question: 'Do I need an HOA permit to rent a dumpster in Ridgeland, MS?',
+        answer: 'HOA neighborhoods like Bridgewater might require approval for visible exterior dumpsters. For street placement on public roads, contact the City of Ridgeland Public Works department.',
+    },
+    {
+        question: 'How much does dumpster rental cost in Ridgeland?',
+        answer: 'Our flat-rate pricing for Ridgeland includes delivery, pickup, and disposal. Prices start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard container, with no hidden fees.',
+    },
+    {
+        question: 'What is prohibited from a Ridgeland dumpster rental?',
+        answer: 'Hazardous materials, wet paint, tires, batteries, and appliances containing Freon are strictly prohibited for environmental safety.',
+    },
+]
+
 export default function RidgelandPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
@@ -29,11 +46,13 @@ export default function RidgelandPage() {
         { name: 'Service Areas', url: 'https://midsouthdumpsterms.com/service-areas' },
         { name: 'Ridgeland', url: 'https://midsouthdumpsterms.com/service-areas/ridgeland' },
     ])
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
 
             <section className={styles.heroSection}>
                 <div className="container">
@@ -77,8 +96,15 @@ export default function RidgelandPage() {
                             </ul>
                         </div>
                         <div>
+                            <Image
+                                src="/images/gallery/20-yard-dumpster-rental-ridgeland-project.jpg"
+                                alt="A 20-yard roll-off dumpster delivered to a Ridgeland MS construction project"
+                                width={600}
+                                height={400}
+                                className={styles.contentImage}
+                            />
                             <h2>Perfect For Ridgeland Projects</h2>
-                            <p>Whether you're renovating a home in Highland Colony, clearing out an estate, or managing a construction project in Ridgeland, we have the right dumpster size for your needs.</p>
+                            <p>Whether you're renovating a home in Highland Colony, <Link href="/blog/estate-cleanout-dumpster-rental-central-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>clearing out an estate</Link>, or managing a construction project in Ridgeland, we have the right dumpster size for your needs.</p>
                             <p><strong>Common uses in Ridgeland:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
@@ -102,6 +128,20 @@ export default function RidgelandPage() {
                     <p>
                         From residential renovations to commercial construction projects, Mid South Dumpster Rentals is your trusted partner for waste management throughout Ridgeland's diverse neighborhoods.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection} style={{ padding: 'var(--spacing-3xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
+                <div className="container container-narrow">
+                    <h2 className="text-center">Ridgeland Dumpster Rental FAQs</h2>
+                    <div className={styles.faqList}>
+                        {faqs.map((faq, index) => (
+                            <div key={index} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-xl)' }}>
+                                <h3 style={{ fontSize: '1.25rem', marginBottom: 'var(--spacing-sm)' }}>{faq.question}</h3>
+                                <p>{faq.answer}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 

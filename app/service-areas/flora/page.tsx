@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import Image from 'next/image'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
@@ -15,6 +17,21 @@ export const metadata: Metadata = {
     },
 }
 
+const faqs = [
+    {
+        question: 'Do I need a permit to rent a dumpster in Flora, MS?',
+        answer: 'You do not generally need a permit if you place the roll-off dumpster in your private driveway. For street or right-of-way placement, you must contact Flora City Hall to inquire about local guidelines.',
+    },
+    {
+        question: 'How much does dumpster rental cost in Flora?',
+        answer: 'Our flat-rate pricing for Flora includes delivery, pickup, and disposal. Prices start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard container, with no hidden fees.',
+    },
+    {
+        question: 'What is prohibited from going into a dumpster in Flora?',
+        answer: 'Hazardous materials, wet paint, tires, batteries, and appliances containing Freon are strictly prohibited. These items must be properly disposed of via Madison County solid waste channels.',
+    },
+]
+
 export default function FloraPage() {
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental',
@@ -29,11 +46,13 @@ export default function FloraPage() {
         { name: 'Service Areas', url: 'https://midsouthdumpsterms.com/service-areas' },
         { name: 'Flora', url: 'https://midsouthdumpsterms.com/service-areas/flora' },
     ])
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
 
             <section className={styles.heroSection}>
                 <div className="container">
@@ -77,8 +96,15 @@ export default function FloraPage() {
                             </ul>
                         </div>
                         <div>
+                            <Image
+                                src="/images/gallery/mid-south-dumpster-rentals-delivery-truck.jpg"
+                                alt="Mid South Dumpster Rentals delivery truck dropping off a container in Flora, MS"
+                                width={600}
+                                height={400}
+                                className={styles.contentImage}
+                            />
                             <h2>Perfect For Flora Projects</h2>
-                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Flora, we have the right dumpster size for your needs.</p>
+                            <p>Whether you're renovating a home, <Link href="/blog/estate-cleanout-dumpster-rental-central-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>clearing out an estate</Link>, or managing a construction project in Flora, we have the right dumpster size for your needs.</p>
                             <p><strong>Common uses in Flora:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
@@ -102,6 +128,20 @@ export default function FloraPage() {
                     <p>
                         Flora's small-town atmosphere and convenient location make it a wonderful place to live and work. We're committed to providing professional dumpster rental service for all your project needs.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection} style={{ padding: 'var(--spacing-3xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
+                <div className="container container-narrow">
+                    <h2 className="text-center">Flora Dumpster Rental FAQs</h2>
+                    <div className={styles.faqList}>
+                        {faqs.map((faq, index) => (
+                            <div key={index} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-xl)' }}>
+                                <h3 style={{ fontSize: '1.25rem', marginBottom: 'var(--spacing-sm)' }}>{faq.question}</h3>
+                                <p>{faq.answer}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
