@@ -39,6 +39,16 @@ export default function BlogPost() {
                     </header>
 
                     <div className={styles.content}>
+                        <div className={styles.tldrBox}>
+                            <h3>Key Takeaways: Dumpster Sizes</h3>
+                            <ul>
+                                <li><strong>10-Yard Dumpster:</strong> Holds ~4 truck loads, 1 ton weight limit. Best for small cleanouts and minor bathroom makeovers.</li>
+                                <li><strong>15-Yard Dumpster:</strong> Holds ~6 truck loads, 2 ton weight limit. Our most popular size. Ideal for mid-size renovations, roofing, and flooring removal.</li>
+                                <li><strong>20-Yard Dumpster:</strong> Holds ~8 truck loads, 3 ton weight limit. Perfect for new construction, major demolition, and whole-house cleanouts.</li>
+                                <li><strong>Important Rule:</strong> Never overfill the dumpster past the rim, and separate extremely heavy materials like concrete or dirt.</li>
+                            </ul>
+                        </div>
+
                         <p className={styles.lead}>
                             Choosing the right dumpster size can save you time and money. Too small and you'll need multiple trips; too large and you're wasting money. Here's how to pick the perfect size for your project.
                         </p>

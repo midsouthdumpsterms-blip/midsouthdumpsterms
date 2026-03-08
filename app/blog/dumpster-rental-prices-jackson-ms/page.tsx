@@ -40,6 +40,17 @@ export default function BlogPost() {
                     </header>
 
                     <div className={styles.content}>
+                        <div className={styles.tldrBox}>
+                            <h3>Key Takeaways: Jackson MS Dumpster Pricing (2026)</h3>
+                            <ul>
+                                <li><strong>10-Yard Dumpsters:</strong> Start at $349 for 1-day, up to $399 for a 7-day rental (1 ton included).</li>
+                                <li><strong>15-Yard Dumpsters:</strong> Start at $399 for 1-day, up to $449 for a 7-day rental (2 tons included).</li>
+                                <li><strong>20-Yard Dumpsters:</strong> Start at $449 for 1-day, up to $499 for a 7-day rental (3 tons included).</li>
+                                <li><strong>No Hidden Fees:</strong> Base prices include delivery, pickup, and disposal for a 1, 3, or 7-day rental.</li>
+                                <li><strong>Overage Fees:</strong> Exceeding weight limits incurs a $55/ton fee (not applicable to 20-yard which has a hard 6,000 lbs cap).</li>
+                            </ul>
+                        </div>
+
                         <p className={styles.lead}>
                             Planning a project in Jackson, Brandon, Madison, or surrounding Central Mississippi areas? Understanding dumpster rental costs helps you budget accurately. Here's everything you need to know about pricing in the Jackson metro area.
                         </p>

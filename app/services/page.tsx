@@ -118,6 +118,49 @@ export default function Services() {
                 </div>
             </section>
 
+            <section className={styles.tableSection}>
+                <div className="container container-narrow">
+                    <h2 className="text-center">Dumpster Rental Pricing Comparison</h2>
+                    <p className="text-center" style={{ marginBottom: 'var(--spacing-xl)', fontSize: '1.125rem' }}>
+                        Transparent, flat-rate pricing for the Jackson MS metro area. All prices include delivery, pickup, and disposal.
+                    </p>
+                    <table className={styles.table}>
+                        <thead>
+                            <tr>
+                                <th>Dumpster Size</th>
+                                <th>1-Day Rental</th>
+                                <th>3-Day Rental</th>
+                                <th>7-Day Rental</th>
+                                <th>Weight Included</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>10-Yard</strong></td>
+                                <td>$349</td>
+                                <td>$379</td>
+                                <td>$399</td>
+                                <td>1 Ton (2,000 lbs)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>15-Yard</strong></td>
+                                <td>$399</td>
+                                <td>$429</td>
+                                <td>$449</td>
+                                <td>2 Tons (4,000 lbs)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>20-Yard</strong></td>
+                                <td>$449</td>
+                                <td>$479</td>
+                                <td>$499</td>
+                                <td>3 Tons (6,000 lbs)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
             <section className={styles.itemsSection}>
                 <div className="container">
                     <div className="grid grid-2">

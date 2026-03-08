@@ -17,156 +17,154 @@ export const metadata: Metadata = {
 const faqs = [
     {
         question: "What is the exact pricing for each dumpster size and rental period?",
-        answer: `Mid South Dumpster Rentals offers flat-rate pricing with no hidden fees. All prices include delivery, pickup, and disposal.
-
-**10-Yard Dumpster** (includes 1 ton / 2,000 lbs):
-• 1 Day: $349
-• 3 Days: $379
-• 7 Days: $399
-
-**15-Yard Dumpster** — Most Popular (includes 2 tons / 4,000 lbs):
-• 1 Day: $399
-• 3 Days: $429
-• 7 Days: $449
-
-**20-Yard Dumpster** (includes 3 tons / 6,000 lbs — hard weight cap, no overage):
-• 1 Day: $449
-• 3 Days: $479
-• 7 Days: $499
-
-Overage fee for 10 and 15-yard containers: $55 per additional ton (prorated). The 20-yard container has a hard cap of 6,000 lbs — no exceptions.`
+        answer: `<p>Mid South Dumpster Rentals offers flat-rate pricing with no hidden fees. All prices include delivery, pickup, and disposal.</p>
+<p><strong>10-Yard Dumpster</strong> (includes 1 ton / 2,000 lbs):</p>
+<ul>
+    <li>1 Day: $349</li>
+    <li>3 Days: $379</li>
+    <li>7 Days: $399</li>
+</ul>
+<p><strong>15-Yard Dumpster</strong> — Most Popular (includes 2 tons / 4,000 lbs):</p>
+<ul>
+    <li>1 Day: $399</li>
+    <li>3 Days: $429</li>
+    <li>7 Days: $449</li>
+</ul>
+<p><strong>20-Yard Dumpster</strong> (includes 3 tons / 6,000 lbs — hard weight cap, no overage):</p>
+<ul>
+    <li>1 Day: $449</li>
+    <li>3 Days: $479</li>
+    <li>7 Days: $499</li>
+</ul>
+<p>Overage fee for 10 and 15-yard containers: $55 per additional ton (prorated). The 20-yard container has a hard cap of 6,000 lbs — no exceptions.</p>`
     },
     {
         question: "How much does it cost to rent a dumpster?",
-        answer: `Our pricing is simple and transparent:
-
-• **10 Yard Dumpster**: $349 (1 day) · $379 (3 days) · $399 (7 days) — includes 1 ton / 2,000 lbs
-• **15 Yard Dumpster**: $399 (1 day) · $429 (3 days) · $449 (7 days) — includes 2 tons / 4,000 lbs
-• **20 Yard Dumpster**: $449 (1 day) · $479 (3 days) · $499 (7 days) — includes 3 tons / 6,000 lbs
-
-Overage: $55/ton (prorated) for 10 and 15-yard containers. 20-yard containers cannot exceed 6,000 lbs total. All prices include delivery, pickup, and disposal. No hidden fees.`
+        answer: `<p>Our pricing is simple and transparent:</p>
+<ul>
+    <li><strong>10 Yard Dumpster</strong>: $349 (1 day) · $379 (3 days) · $399 (7 days) — includes 1 ton / 2,000 lbs</li>
+    <li><strong>15 Yard Dumpster</strong>: $399 (1 day) · $429 (3 days) · $449 (7 days) — includes 2 tons / 4,000 lbs</li>
+    <li><strong>20 Yard Dumpster</strong>: $449 (1 day) · $479 (3 days) · $499 (7 days) — includes 3 tons / 6,000 lbs</li>
+</ul>
+<p>Overage: $55/ton (prorated) for 10 and 15-yard containers. 20-yard containers cannot exceed 6,000 lbs total. All prices include delivery, pickup, and disposal. No hidden fees.</p>`
     },
     {
         question: "What is the 7-day rental price for a 20-yard dumpster?",
-        answer: `The 7-day rental price for a 20-yard dumpster from Mid South Dumpster Rentals is **$499**. This price includes delivery, pickup, disposal, and 3 tons (6,000 lbs) of weight. The 20-yard container has a hard weight cap of 6,000 lbs — no overage is allowed. If you need to keep the dumpster beyond 7 days, extended rental is available at $50 per additional day, subject to availability.`
+        answer: `<p>The 7-day rental price for a 20-yard dumpster from Mid South Dumpster Rentals is <strong>$499</strong>. This price includes delivery, pickup, disposal, and 3 tons (6,000 lbs) of weight. The 20-yard container has a hard weight cap of 6,000 lbs — no overage is allowed. If you need to keep the dumpster beyond 7 days, extended rental is available at $50 per additional day, subject to availability.</p>`
     },
     {
         question: "What are all the fees I should know about?",
-        answer: `Here is the complete fee schedule for Mid South Dumpster Rentals:
-
-**Standard Rental Fees:**
-• 10-yd (1/3/7 day): $349 / $379 / $399
-• 15-yd (1/3/7 day): $399 / $429 / $449
-• 20-yd (1/3/7 day): $449 / $479 / $499
-
-**Additional Fees:**
-• Extended rental (beyond 7 days): $50 per additional day
-• Missed pickup fee (access blocked on pickup day): $150 per day
-• Wait time (after 30 minutes on-site): $50 per hour
-• Overfilled/refused load: $500 flat fee plus disposal and cleanup costs
-• Overage tonnage (10 and 15-yd only): $55 per ton, prorated
-• Refund processing (credit/debit card): $40 deducted from refund
-
-**Refund Policy:** No refunds after dumpster is delivered. Cancellations within 24 hours of scheduled delivery may incur dispatch or scheduling fees.`
+        answer: `<p>Here is the complete fee schedule for Mid South Dumpster Rentals:</p>
+<p><strong>Standard Rental Fees:</strong></p>
+<ul>
+    <li>10-yd (1/3/7 day): $349 / $379 / $399</li>
+    <li>15-yd (1/3/7 day): $399 / $429 / $449</li>
+    <li>20-yd (1/3/7 day): $449 / $479 / $499</li>
+</ul>
+<p><strong>Additional Fees:</strong></p>
+<ul>
+    <li>Extended rental (beyond 7 days): $50 per additional day</li>
+    <li>Missed pickup fee (access blocked on pickup day): $150 per day</li>
+    <li>Wait time (after 30 minutes on-site): $50 per hour</li>
+    <li>Overfilled/refused load: $500 flat fee plus disposal and cleanup costs</li>
+    <li>Overage tonnage (10 and 15-yd only): $55 per ton, prorated</li>
+    <li>Refund processing (credit/debit card): $40 deducted from refund</li>
+</ul>
+<p><strong>Refund Policy:</strong> No refunds after dumpster is delivered. Cancellations within 24 hours of scheduled delivery may incur dispatch or scheduling fees.</p>`
     },
     {
         question: "How long can I keep the dumpster?",
-        answer: `The base rental period is **7 days**. Need more time? Extensions are available for **$50 per additional day**, subject to availability. Just give us a call before your pickup date to extend your rental.`
+        answer: `<p>The base rental period is <strong>7 days</strong>. Need more time? Extensions are available for <strong>$50 per additional day</strong>, subject to availability. Just give us a call before your pickup date to extend your rental.</p>`
     },
     {
         question: "What are the weight limits?",
-        answer: `**Maximum weight per container: 6,000 lbs (no exceptions)**
-
-• **10 Yard**: Includes 1 ton (2,000 lbs). Overage: $55/ton (prorated)
-• **15 Yard**: Includes 2 tons (4,000 lbs). Overage: $55/ton (prorated)
-• **20 Yard**: Includes 3 tons (6,000 lbs). **No overage allowed — 6,000 lbs hard cap**
-
-Containers are weighed at the disposal facility. Overweight charges will be invoiced to you. Heavy materials like concrete or brick may be refused unless pre-approved.`
+        answer: `<p><strong>Maximum weight per container: 6,000 lbs (no exceptions)</strong></p>
+<ul>
+    <li><strong>10 Yard</strong>: Includes 1 ton (2,000 lbs). Overage: $55/ton (prorated)</li>
+    <li><strong>15 Yard</strong>: Includes 2 tons (4,000 lbs). Overage: $55/ton (prorated)</li>
+    <li><strong>20 Yard</strong>: Includes 3 tons (6,000 lbs). <strong>No overage allowed — 6,000 lbs hard cap</strong></li>
+</ul>
+<p>Containers are weighed at the disposal facility. Overweight charges will be invoiced to you. Heavy materials like concrete or brick may be refused unless pre-approved.</p>`
     },
     {
         question: "What can I throw in the dumpster?",
-        answer: `**Permitted items include:**
-
-• Household trash and furniture
-• Lumber, drywall, PVC, roofing shingles
-• Carpet, insulation, construction debris
-• Porcelain, tile, drop ceilings
-• Yard clippings and natural vegetation
-• Plastics, paper, Styrofoam
-• Stoves, ovens, washers, dryers
-
-**Heavy materials** (concrete, brick, stone, asphalt) are allowed **only** in 10-yard containers, up to ¼ full, and must be separated from other debris unless pre-approved.`
+        answer: `<p><strong>Permitted items include:</strong></p>
+<ul>
+    <li>Household trash and furniture</li>
+    <li>Lumber, drywall, PVC, roofing shingles</li>
+    <li>Carpet, insulation, construction debris</li>
+    <li>Porcelain, tile, drop ceilings</li>
+    <li>Yard clippings and natural vegetation</li>
+    <li>Plastics, paper, Styrofoam</li>
+    <li>Stoves, ovens, washers, dryers</li>
+</ul>
+<p><strong>Heavy materials</strong> (concrete, brick, stone, asphalt) are allowed <strong>only</strong> in 10-yard containers, up to ¼ full, and must be separated from other debris unless pre-approved.</p>`
     },
     {
         question: "What is NOT allowed in the dumpster?",
-        answer: `**Prohibited materials include:**
-
-• Hazardous waste (paints, solvents, chemicals, oil, fuels, asbestos, batteries, pesticides)
-• Appliances with refrigerant (fridges, freezers, HVAC units)
-• Tires, electronics, TVs, computers
-• Liquids of any kind
-• Medical waste, fluorescent bulbs, railroad ties
-• Food waste
-• Concrete, dirt, or soil
-
-Violating these rules may result in additional fees, fines, or cleanup charges passed to you.`
+        answer: `<p><strong>Prohibited materials include:</strong></p>
+<ul>
+    <li>Hazardous waste (paints, solvents, chemicals, oil, fuels, asbestos, batteries, pesticides)</li>
+    <li>Appliances with refrigerant (fridges, freezers, HVAC units)</li>
+    <li>Tires, electronics, TVs, computers</li>
+    <li>Liquids of any kind</li>
+    <li>Medical waste, fluorescent bulbs, railroad ties</li>
+    <li>Food waste</li>
+    <li>Concrete, dirt, or soil</li>
+</ul>
+<p>Violating these rules may result in additional fees, fines, or cleanup charges passed to you.</p>`
     },
     {
         question: "Do I need a permit?",
-        answer: `If you are placing the dumpster on **private property** (your driveway, yard, etc.), you typically do **not** need a permit.
-
-If you need to place it on a **public street or right-of-way**, you are responsible for obtaining any required municipal permits and paying associated fees. Contact your local city office for permit requirements.`
+        answer: `<p>If you are placing the dumpster on <strong>private property</strong> (your driveway, yard, etc.), you typically do <strong>not</strong> need a permit.</p>
+<p>If you need to place it on a <strong>public street or right-of-way</strong>, you are responsible for obtaining any required municipal permits and paying associated fees. Contact your local city office for permit requirements.</p>`
     },
     {
         question: "Can I overfill the dumpster?",
-        answer: `**No.** Debris must not exceed the rim of the container. The dumpster must be tarp-ready with end doors closed and secured for safe transport. Overfilled containers may be refused, and you may be charged a **$500 refusal fee** plus any additional handling costs.`
+        answer: `<p><strong>No.</strong> Debris must not exceed the rim of the container. The dumpster must be tarp-ready with end doors closed and secured for safe transport. Overfilled containers may be refused, and you may be charged a <strong>$500 refusal fee</strong> plus any additional handling costs.</p>`
     },
     {
         question: "What if I need to cancel or get a refund?",
-        answer: `**Refunds are only available if requested BEFORE delivery.** Once the dumpster is dropped off, no refunds will be issued.
-
-If you paid by credit/debit card, refunds are processed minus a **$40 processing fee** to cover merchant charges. Refunds typically take 3–10 business days.
-
-Cancellations within 24 hours of scheduled delivery may incur dispatch or scheduling fees.`
+        answer: `<p><strong>Refunds are only available if requested BEFORE delivery.</strong> Once the dumpster is dropped off, no refunds will be issued.</p>
+<p>If you paid by credit/debit card, refunds are processed minus a <strong>$40 processing fee</strong> to cover merchant charges. Refunds typically take 3–10 business days.</p>
+<p>Cancellations within 24 hours of scheduled delivery may incur dispatch or scheduling fees.</p>`
     },
     {
         question: "What happens if the dumpster is blocked on pickup day?",
-        answer: `If our driver cannot access the dumpster on the scheduled pickup day due to blocked access (cars, gates, etc.), you will be charged a **$150 Missed Pickup Fee** plus additional rental day charges until we can retrieve it.
-
-Please ensure clear access on your scheduled pickup date.`
+        answer: `<p>If our driver cannot access the dumpster on the scheduled pickup day due to blocked access (cars, gates, etc.), you will be charged a <strong>$150 Missed Pickup Fee</strong> plus additional rental day charges until we can retrieve it.</p>
+<p>Please ensure clear access on your scheduled pickup date.</p>`
     },
     {
         question: "Will the dumpster damage my driveway?",
-        answer: `We take precautions to protect your property, including placing boards under the wheels when needed. However, **you are responsible for any damage to surfaces, lawns, utilities, or structures** unless caused by our negligence.
-
-For the best protection, place the dumpster on a flat, stable surface like concrete or asphalt.`
+        answer: `<p>We take precautions to protect your property, including placing boards under the wheels when needed. However, <strong>you are responsible for any damage to surfaces, lawns, utilities, or structures</strong> unless caused by our negligence.</p>
+<p>For the best protection, place the dumpster on a flat, stable surface like concrete or asphalt.</p>`
     },
     {
         question: "Do you offer same-day delivery?",
-        answer: `Yes! We often accommodate same-day delivery requests depending on availability and your location in the Jackson metro area. Call us at **(601) 316-7891** to check availability. Same-day delivery is available 7 days a week when you call before noon.`
+        answer: `<p>Yes! We often accommodate same-day delivery requests depending on availability and your location in the Jackson metro area. Call us at <strong>(601) 316-7891</strong> to check availability. Same-day delivery is available 7 days a week when you call before noon.</p>`
     },
     {
         question: "What areas do you serve?",
-        answer: `We serve Jackson, MS and surrounding areas including:
-
-• Madison, Brandon, Pearl, Flowood, Florence
-• Ridgeland, Clinton, Byram, Terry, Richland
-• Canton, Flora, Gluckstadt, and more
-
-We serve all of Hinds, Madison, and Rankin Counties in Central Mississippi. Not sure if we serve your area? Give us a call at **(601) 316-7891**.`
+        answer: `<p>We serve Jackson, MS and surrounding areas including:</p>
+<ul>
+    <li>Madison, Brandon, Pearl, Flowood, Florence</li>
+    <li>Ridgeland, Clinton, Byram, Terry, Richland</li>
+    <li>Canton, Flora, Gluckstadt, and more</li>
+</ul>
+<p>We serve all of Hinds, Madison, and Rankin Counties in Central Mississippi. Not sure if we serve your area? Give us a call at <strong>(601) 316-7891</strong>.</p>`
     },
     {
         question: "How does Mid South Dumpster Rentals compare to other dumpster companies in Jackson, MS?",
-        answer: `Mid South Dumpster Rentals is locally owned and operated in Jackson, MS — not a franchise or national chain. We offer:
-
-• **Transparent flat-rate pricing**: $349–$499 depending on size and duration — no hidden fees
-• **Same-day delivery** available 7 days a week
-• **Online booking** available 24/7
-• **All-inclusive pricing**: Every quote includes delivery, pickup, and disposal
-• **No surprise fees**: Weight overages are clearly disclosed upfront
-• **7AM–7PM hours, 7 days a week**
-
-Our 10-yard dumpster starts at $349 (1 day) and our 20-yard dumpster is $499 for a full 7-day rental including 3 tons.`
+        answer: `<p>Mid South Dumpster Rentals is locally owned and operated in Jackson, MS — not a franchise or national chain. We offer:</p>
+<ul>
+    <li><strong>Transparent flat-rate pricing</strong>: $349–$499 depending on size and duration — no hidden fees</li>
+    <li><strong>Same-day delivery</strong> available 7 days a week</li>
+    <li><strong>Online booking</strong> available 24/7</li>
+    <li><strong>All-inclusive pricing</strong>: Every quote includes delivery, pickup, and disposal</li>
+    <li><strong>No surprise fees</strong>: Weight overages are clearly disclosed upfront</li>
+    <li><strong>7AM–7PM hours, 7 days a week</strong></li>
+</ul>
+<p>Our 10-yard dumpster starts at $349 (1 day) and our 20-yard dumpster is $499 for a full 7-day rental including 3 tons.</p>`
     },
 ]
 
@@ -180,7 +178,7 @@ export default function FAQPage() {
             "name": faq.question,
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": faq.answer.replace(/\*\*/g, '').replace(/•/g, '-').replace(/\n/g, ' ')
+                "text": faq.answer.replace(/<[^>]*>?/gm, '')
             }
         }))
     }

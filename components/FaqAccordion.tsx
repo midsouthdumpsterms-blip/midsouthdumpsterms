@@ -29,17 +29,11 @@ export default function FaqAccordion({ faqs }: { faqs: FAQ[] }) {
                             +
                         </span>
                     </button>
-                    {openIndex === index && (
-                        <div
-                            className={styles.answer}
-                            dangerouslySetInnerHTML={{
-                                __html: faq.answer
-                                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                                    .replace(/•/g, '•')
-                                    .replace(/\n/g, '<br />')
-                            }}
-                        />
-                    )}
+                    <div
+                        className={styles.answer}
+                        style={{ display: openIndex === index ? 'block' : 'none' }}
+                        dangerouslySetInnerHTML={{ __html: faq.answer }}
+                    />
                 </div>
             ))}
         </div>
