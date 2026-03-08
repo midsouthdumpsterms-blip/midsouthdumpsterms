@@ -40,8 +40,8 @@ const KNOWLEDGE_BASE = [
         answer: "We offer same-day delivery 7 days a week! Just call us before noon at 601-316-7891 to secure your spot."
     },
     {
-        keywords: ['driveway', 'surface', 'damage', 'protect'],
-        answer: "We use a driveway protection system! We place wooden boards under the wheels to ensure your concrete or asphalt stays scratch-free."
+        keywords: ['driveway', 'surface', 'protect', 'cracks'],
+        answer: "We use a driveway protection system, placing wooden boards under the wheels to protect your concrete or asphalt. However, as per our agreement, Mid South Dumpster Rentals is not responsible for damages to surfaces, lawns, or structures unless caused by gross negligence."
     },
     {
         keywords: ['bagster', 'wm', 'bag'],
@@ -92,8 +92,8 @@ const KNOWLEDGE_BASE = [
         answer: "If a load is deemed unsafe or hazardous, we may refuse it. A Refused/Overweight Refusal Fee of $500 plus handling expenses may apply. Customers are responsible for correcting unsafe loads."
     },
     {
-        keywords: ['liability', 'damage', 'surface', 'lawn', 'pipe', 'structure'],
-        answer: "Customers are responsible for any damage to surfaces, lawns, utilities, or structures unless caused by Company negligence. We use boards to help protect your property, but provide no guarantee against property damage."
+        keywords: ['liability', 'damage', 'lawn', 'pipe', 'structure'],
+        answer: "Customer assumes all liability for any damage to surfaces, lawns, utilities, or structures unless caused by gross negligence of the Company. We take precautions like using protective boards, but our liability is limited specifically as defined in the Rental Agreement."
     },
     {
         keywords: ['payment', 'due', 'when to pay', 'past due', 'interest'],
