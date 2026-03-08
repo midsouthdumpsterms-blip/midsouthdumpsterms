@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import Image from 'next/image'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
@@ -30,10 +32,26 @@ export default function BrandonPage() {
         { name: 'Brandon', url: 'https://midsouthdumpsterms.com/service-areas/brandon' },
     ])
 
+    const faqSchema = generateFAQSchema([
+        {
+            question: "How much does it cost to rent a dumpster in Brandon, MS?",
+            answer: "Our dumpster rentals in Brandon start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size)."
+        },
+        {
+            question: "Can you deliver a dumpster to my neighborhood in Crossgates?",
+            answer: "Yes! We regularly deliver roll-off dumpsters to Crossgates, Castlewoods, Shiloh, and all other subdivisions throughout Brandon and Rankin County. Our trucks are designed to safely navigate residential streets."
+        },
+        {
+            question: "What items are not allowed in your dumpsters in Brandon?",
+            answer: "For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking."
+        }
+    ])
+
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
 
             <section className={styles.heroSection}>
                 <div className="container">
@@ -88,6 +106,16 @@ export default function BrandonPage() {
                                 <li>Yard waste and landscaping</li>
                                 <li>Commercial cleanouts</li>
                             </ul>
+
+                            <div style={{ marginTop: '2rem' }}>
+                                <Image
+                                    src="/images/gallery/residential-dumpster-rental-brandon-driveway.jpg"
+                                    alt="Residential dumpster rental delivery on a driveway in Brandon, MS"
+                                    width={600}
+                                    height={400}
+                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,6 +130,29 @@ export default function BrandonPage() {
                     <p>
                         Brandon's thriving community and expanding development make it one of the metro area's most desirable locations. We're here to support your projects with professional roll-off dumpster rental service tailored to Brandon's needs. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Brandon customers.
                     </p>
+                    <p style={{ marginTop: '1.5rem' }}>
+                        <strong>Planning a rental?</strong> Read our guide on <Link href="/blog/dumpster-rental-brandon-ms">Dumpster Rentals in Brandon, MS</Link> for more local tips and advice on sizing.
+                    </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection}>
+                <div className="container">
+                    <h2 className="text-center">Frequently Asked Questions: Brandon Dumpster Rentals</h2>
+                    <div className={styles.faqGrid}>
+                        <div className={styles.faqItem}>
+                            <h3>How much does it cost to rent a dumpster in Brandon, MS?</h3>
+                            <p>Our dumpster rentals in Brandon start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size).</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>Can you deliver a dumpster to my neighborhood in Crossgates?</h3>
+                            <p>Yes! We regularly deliver roll-off dumpsters to Crossgates, Castlewoods, Shiloh, and all other subdivisions throughout Brandon and Rankin County. Our trucks are designed to safely navigate residential streets.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>What items are not allowed in your dumpsters in Brandon?</h3>
+                            <p>For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 

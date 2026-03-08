@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import Image from 'next/image'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
@@ -30,10 +32,26 @@ export default function MadisonPage() {
         { name: 'Madison', url: 'https://midsouthdumpsterms.com/service-areas/madison' },
     ])
 
+    const faqSchema = generateFAQSchema([
+        {
+            question: "Do I need a permit to rent a dumpster in Madison, MS?",
+            answer: "If you place the dumpster on your private property, such as your driveway in Reunion or Annandale, you typically do not need a permit. However, if the dumpster must be placed on a public street or right-of-way, a permit from the City of Madison may be required. We can help guide you through this process."
+        },
+        {
+            question: "How quickly can you deliver a roll-off dumpster to Madison?",
+            answer: "We offer same-day and next-day dumpster delivery throughout Madison and Madison County. Call us early in the day to secure a same-day drop-off for your project."
+        },
+        {
+            question: "What roll-off dumpster sizes are available in Madison?",
+            answer: "We provide 10-yard, 15-yard, and 20-yard roll-off dumpsters in Madison. Our 20-yard dumpsters are our most popular size for home renovations and estate cleanouts in the area."
+        }
+    ])
+
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
 
             <section className={styles.heroSection}>
                 <div className="container">
@@ -88,6 +106,16 @@ export default function MadisonPage() {
                                 <li>Yard waste and landscaping</li>
                                 <li>Commercial cleanouts</li>
                             </ul>
+
+                            <div style={{ marginTop: '2rem' }}>
+                                <Image
+                                    src="/images/gallery/roll-off-dumpster-madison-ms-clean.jpg"
+                                    alt="Clean 20-yard roll-off dumpster rental delivery in a Madison, MS residential driveway"
+                                    width={600}
+                                    height={400}
+                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,6 +130,29 @@ export default function MadisonPage() {
                     <p>
                         From <strong>Georgetown</strong> to <strong>Germantown</strong> and beyond, we're committed to providing roll-off dumpster rental service that matches the quality standards of this exceptional community. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Madison customers.
                     </p>
+                    <p style={{ marginTop: '1.5rem' }}>
+                        <strong>Want to learn more?</strong> Check out our complete guide on <Link href="/blog/dumpster-rental-madison-ms">Dumpster Rental in Madison, MS</Link>.
+                    </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection}>
+                <div className="container">
+                    <h2 className="text-center">Frequently Asked Questions: Madison Dumpster Rentals</h2>
+                    <div className={styles.faqGrid}>
+                        <div className={styles.faqItem}>
+                            <h3>Do I need a permit to rent a dumpster in Madison, MS?</h3>
+                            <p>If you place the dumpster on your private property, such as your driveway in Reunion or Annandale, you typically do not need a permit. However, if the dumpster must be placed on a public street or right-of-way, a permit from the City of Madison may be required. We can help guide you through this process.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>How quickly can you deliver a roll-off dumpster to Madison?</h3>
+                            <p>We offer same-day and next-day dumpster delivery throughout Madison and Madison County. Call us early in the day to secure a same-day drop-off for your project.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>What roll-off dumpster sizes are available in Madison?</h3>
+                            <p>We provide 10-yard, 15-yard, and 20-yard roll-off dumpsters in Madison. Our 20-yard dumpsters are our most popular size for home renovations and estate cleanouts in the area.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 

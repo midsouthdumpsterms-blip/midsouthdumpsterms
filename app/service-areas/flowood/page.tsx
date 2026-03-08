@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import Image from 'next/image'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
@@ -30,10 +32,26 @@ export default function FlowoodPage() {
         { name: 'Flowood', url: 'https://midsouthdumpsterms.com/service-areas/flowood' },
     ])
 
+    const faqSchema = generateFAQSchema([
+        {
+            question: "How much does a dumpster rental cost in Flowood, MS?",
+            answer: "In Flowood, our 10-yard dumpster starts at $349, our 15-yard at $399, and our 20-yard at $449. This is a flat-rate price that includes delivery, pickup, and a generous weight allowance, so there are no hidden fees."
+        },
+        {
+            question: "Can you place a dumpster on my driveway in Flowood?",
+            answer: "Yes, we specialize in residential delivery. We carefully place the roll-off container on your driveway in neighborhoods like Laurelwood or Kensington, and we can use protective boards to prevent any damage to the concrete or asphalt."
+        },
+        {
+            question: "Do you offer same-day dumpster delivery in Flowood?",
+            answer: "Absolutely. We are based locally and offer same-day and next-day dumpster rentals throughout Flowood and the surrounding Rankin County area. Call early to secure same-day service."
+        }
+    ])
+
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
 
             <section className={styles.heroSection}>
                 <div className="container">
@@ -88,6 +106,16 @@ export default function FlowoodPage() {
                                 <li>Yard waste and landscaping</li>
                                 <li>Commercial cleanouts</li>
                             </ul>
+
+                            <div style={{ marginTop: '2rem' }}>
+                                <Image
+                                    src="/images/gallery/clean-dumpster-delivery-flowood-blue.jpg"
+                                    alt="Clean blue Mid South Dumpster Rentals container delivered to a home in Flowood, MS"
+                                    width={600}
+                                    height={400}
+                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -100,8 +128,31 @@ export default function FlowoodPage() {
                         We proudly serve all neighborhoods throughout Flowood, a thriving city in Rankin County. Whether you're in <strong>Laurelwood</strong>, <strong>Laurelwood Estates</strong>, <strong>Traditions</strong>, <strong>Latter Rayne</strong>, <strong>Lineage Lake</strong>, <strong>Kensington</strong>, <strong>Lakeland East</strong>, or <strong>Aubry Hills</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
-                        Flowood's prime location and growing business district make it one of the metro area's most dynamic communities. We're here to support your residential and commercial projects with professional dumpster rental service.
+                        Flowood's prime location and growing business district make it one of the metro area's most dynamic communities. We're here to support your residential and commercial projects with professional dumpster rental service. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other local customers.
                     </p>
+                    <p style={{ marginTop: '1.5rem' }}>
+                        <strong>Tip for Flowood Homeowners:</strong> We highly recommend our 15-yard dumpster for most mid-sized renovations in the Laurelwood and Kensington areas.
+                    </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection}>
+                <div className="container">
+                    <h2 className="text-center">Frequently Asked Questions: Flowood Dumpster Rentals</h2>
+                    <div className={styles.faqGrid}>
+                        <div className={styles.faqItem}>
+                            <h3>How much does a dumpster rental cost in Flowood, MS?</h3>
+                            <p>In Flowood, our 10-yard dumpster starts at $349, our 15-yard at $399, and our 20-yard at $449. This is a flat-rate price that includes delivery, pickup, and a generous weight allowance, so there are no hidden fees.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>Can you place a dumpster on my driveway in Flowood?</h3>
+                            <p>Yes, we specialize in residential delivery. We carefully place the roll-off container on your driveway in neighborhoods like Laurelwood or Kensington, and we can use protective boards to prevent any damage to the concrete or asphalt.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>Do you offer same-day dumpster delivery in Flowood?</h3>
+                            <p>Absolutely. We are based locally and offer same-day and next-day dumpster rentals throughout Flowood and the surrounding Rankin County area. Call early to secure same-day service.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
