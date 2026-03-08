@@ -12,8 +12,8 @@ interface Message {
 
 const KNOWLEDGE_BASE = [
     {
-        keywords: ['concrete', 'brick', 'stone', 'asphalt', 'dirt', 'earth', 'sand', 'gravel', 'tile', 'pavers', 'rock', 'bowling ball', 'shingles', 'roofing'],
-        answer: "That sounds like a heavy load! While our containers can hold the volume, weight adds up quickly. For example, 200 bowling balls weigh ~2,400 lbs, exceeding the 1-ton limit for a 10-yard bin. Materials like concrete or brick are 150+ lbs per cubic foot! Overage fees ($55/ton) may apply. Call us at 601-316-7891 so we can help you get the right size and avoid surprise fees."
+        keywords: ['concrete', 'brick', 'stone', 'asphalt', 'dirt', 'earth', 'sand', 'gravel', 'tile', 'pavers', 'rock', 'bowling ball', 'shingles', 'roofing', 'steel', 'aggregate', 'cement'],
+        answer: "That sounds like a heavy load! While our containers can hold the volume, weight adds up quickly. For comparison, materials range in density: Sand (~100lb/ft³), Brick (~120lb/ft³), and Concrete (~150lb/ft³). Even itemized loads like 200 bowling balls (~2,400 lbs) exceed the 1-ton limit of a 10-yard bin. Overage fees ($55/ton) apply, so call us at 601-316-7891 to ensure you get the right size and avoid extra costs!"
     },
     {
         keywords: ['weight', 'ton', 'overage', 'limit', 'pounds', 'how heavy', 'weigh'],
