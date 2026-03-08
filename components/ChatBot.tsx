@@ -28,8 +28,12 @@ const KNOWLEDGE_BASE = [
         answer: "Good news! We accept mattresses with ZERO additional fees. Many other companies charge extra, but with us, it's included in your flat rate."
     },
     {
-        keywords: ['weight', 'ton', 'overage', 'limit', 'pounds'],
-        answer: "10-yard includes 1 ton, 15-yard includes 2 tons, and 20-yard includes 3 tons. Overage is $55/ton for 10/15yd. The 20-yard has a hard cap of 6,000 lbs (3 tons) which cannot be exceeded."
+        keywords: ['weight', 'ton', 'overage', 'limit', 'pounds', 'how heavy', 'weigh'],
+        answer: "Our 10-yard includes 1 ton, 15-yard includes 2 tons, and 20-yard includes 3 tons. Overage is $55/ton for 10/15yd. The 20-yard has a hard cap of 6,000 lbs (3 tons) which cannot be exceeded. Heavy materials like concrete, brick, or dirt add up fast!"
+    },
+    {
+        keywords: ['concrete', 'brick', 'stone', 'asphalt', 'dirt', 'earth', 'sand', 'gravel', 'tile', 'pavers', 'rock', 'bowling ball', 'shingles', 'roofing'],
+        answer: "That sounds like a heavy load! While our containers can hold the volume, weight adds up quickly. For example, 200 bowling balls weigh ~2,400 lbs, exceeding the 1-ton limit for a 10-yard bin. Materials like concrete or brick are 150+ lbs per cubic foot! Overage fees ($55/ton) may apply. Call us at 601-316-7891 so we can help you get the right size and avoid surprise fees."
     },
     {
         keywords: ['area', 'where', 'jackson', 'madison', 'brandon', 'clinton', 'flowood', 'pearl', 'ridgeland', 'mississippi'],
