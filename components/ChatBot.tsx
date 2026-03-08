@@ -20,8 +20,8 @@ const KNOWLEDGE_BASE = [
         answer: "Our 10-yard includes 1 ton, 15-yard includes 2 tons, and 20-yard includes 3 tons. Overage is $55/ton for 10/15yd. The 20-yard has a hard cap of 6,000 lbs (3 tons) which cannot be exceeded. Heavy materials like concrete, brick, or dirt add up fast!"
     },
     {
-        keywords: ['prohibited', 'not allowed', 'cannot', 'toxic', 'hazardous', 'paint', 'tires', 'food', 'chemicals', 'oil', 'battery', 'hazardous waste', 'medical waste', 'freon', 'fridge', 'ac unit', 'deer', 'animal', 'dead', 'carcass', 'manure', 'poop', 'feces', 'fireworks', 'explosive', 'ammunition', 'gas', 'propane', 'tank', 'fuel', 'ash', 'hot', 'warm', 'burning'],
-        answer: "Prohibited items include: hazardous waste (paint, oil, chemicals, propane tanks), tires, battery, food/animal waste (carcasses, manure), medical waste, and appliances with Freon. Household furniture, construction debris, and yard waste are good! **Safety Warning:** Never put hot ashes, explosives, or flammable liquids in the container."
+        keywords: ['prohibited', 'not allowed', 'cannot', 'toxic', 'hazardous', 'paint', 'tires', 'food', 'chemicals', 'oil', 'battery', 'hazardous waste', 'medical waste', 'freon', 'fridge', 'ac unit', 'deer', 'animal', 'dead', 'carcass', 'manure', 'poop', 'feces', 'fireworks', 'explosive', 'ammunition', 'gas', 'propane', 'tank', 'fuel', 'ash', 'hot', 'warm', 'burning', 'biohazard', 'blood', 'infection'],
+        answer: "Prohibited items include: hazardous waste (paint/chemicals), tires, batteries, biohazard/medical waste (blood/needles), animal waste/carcasses, and appliances with Freon. **Safety First:** Never put hot ashes, explosives (fireworks/ammo), or flammable liquids in the container."
     },
     {
         keywords: ['price', 'cost', 'how much', 'rate'],
@@ -88,8 +88,8 @@ const KNOWLEDGE_BASE = [
         answer: "Customers are responsible for obtaining and paying for any required municipal permits for placement of dumpsters in public areas (streets, rights-of-way)."
     },
     {
-        keywords: ['placement', 'where to put', 'stable', 'legal'],
-        answer: "Customers must provide a legal, stable placement location with unobstructed access for delivery and removal."
+        keywords: ['placement', 'where to put', 'stable', 'legal', 'power line', 'tree', 'overhead', 'wire', 'clearance', 'height'],
+        answer: "Placement must be on a legal, stable surface with clear access. **Overhead Clearance:** We need at least 22 feet of overhead clearance (free of power lines, low branches, or structures) to safely drop and pick up the dumpster. Please ensure the area is clear of all obstructions!"
     },
     {
         keywords: ['refuse', 'unsafe', 'hazardous', 'refusal fee'],
