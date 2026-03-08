@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BookingButton from './BookingButton'
+import PaymentMethods from './PaymentMethods'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -68,6 +69,11 @@ export default function Footer() {
                         >
                             Call 601-316-7891
                         </a>
+
+                        <div style={{ marginTop: '2rem' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>Accepted Payments</h4>
+                            <PaymentMethods />
+                        </div>
                     </div>
                 </div>
 
