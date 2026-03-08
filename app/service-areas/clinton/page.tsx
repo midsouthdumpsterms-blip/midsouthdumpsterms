@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import Image from 'next/image'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
@@ -30,10 +32,26 @@ export default function ClintonPage() {
         { name: 'Clinton', url: 'https://midsouthdumpsterms.com/service-areas/clinton' },
     ])
 
+    const faqSchema = generateFAQSchema([
+        {
+            question: "Do you provide same-day dumpster rentals in Clinton, MS?",
+            answer: "Yes! Mid South Dumpster Rentals is locally owned and operates in Hinds County every day. If you call early, we can typically provide same-day roll-off delivery to Clinton."
+        },
+        {
+            question: "How do I protect my driveway when renting a dumpster in Clinton?",
+            answer: "We know your property is an investment. Our professional drivers are trained in precision placement. We can carefully position the dumpster on wooden boards so that the heavy steel wheels never scrape or damage your driveway."
+        },
+        {
+            question: "Are there things I can't put in my rental dumpster in Clinton?",
+            answer: "Standard household junk, lumber, and yard debris are totally fine. However, we cannot accept hazardous waste, items containing Freon (like refrigerators), wet paint, tires, or batteries. Give us a call if you are unsure about an item."
+        }
+    ])
+
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
 
             <section className={styles.heroSection}>
                 <div className="container">
@@ -88,6 +106,16 @@ export default function ClintonPage() {
                                 <li>Yard waste and landscaping</li>
                                 <li>Commercial cleanouts</li>
                             </ul>
+
+                            <div style={{ marginTop: '2rem' }}>
+                                <Image
+                                    src="/images/gallery/15-yard-dumpster-clinton-ms-rental.jpg"
+                                    alt="Roll-off 15-yard dumpster rental in a residential neighborhood in Clinton, Mississippi"
+                                    width={600}
+                                    height={400}
+                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -100,8 +128,31 @@ export default function ClintonPage() {
                         We proudly serve all neighborhoods throughout Clinton, a vibrant city in Hinds County. Whether you're in <strong>Woodmoor</strong>, <strong>Green Acres</strong>, <strong>Pinehaven Estates</strong>, <strong>Olde Town District</strong>, <strong>Countrywood</strong>, <strong>Oakhurst</strong>, <strong>College Hills</strong>, or <strong>Hunter's Ridge</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
-                        Clinton's family-friendly neighborhoods and growing community make it a great place to live and work. We're here to support your home improvement and construction projects with professional dumpster rental service.
+                        Clinton's family-friendly neighborhoods and growing community make it a great place to live and work. We're here to support your home improvement and construction projects with professional dumpster rental service. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other local customers.
                     </p>
+                    <p style={{ marginTop: '1.5rem' }}>
+                        <strong>Cleaning out a house?</strong> Read our comprehensive guide on <Link href="/blog/estate-cleanout-dumpster-rental-central-ms">Renting a Dumpster for Estate Cleanouts in Central MS</Link>.
+                    </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection}>
+                <div className="container">
+                    <h2 className="text-center">Frequently Asked Questions: Clinton Dumpster Rentals</h2>
+                    <div className={styles.faqGrid}>
+                        <div className={styles.faqItem}>
+                            <h3>Do you provide same-day dumpster rentals in Clinton, MS?</h3>
+                            <p>Yes! Mid South Dumpster Rentals is locally owned and operates in Hinds County every day. If you call early, we can typically provide same-day roll-off delivery to Clinton.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>How do I protect my driveway when renting a dumpster in Clinton?</h3>
+                            <p>We know your property is an investment. Our professional drivers are trained in precision placement. We can carefully position the dumpster on wooden boards so that the heavy steel wheels never scrape or damage your driveway.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>Are there things I can't put in my rental dumpster in Clinton?</h3>
+                            <p>Standard household junk, lumber, and yard debris are totally fine. However, we cannot accept hazardous waste, items containing Freon (like refrigerators), wet paint, tires, or batteries. Give us a call if you are unsure about an item.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 

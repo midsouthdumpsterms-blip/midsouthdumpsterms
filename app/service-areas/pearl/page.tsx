@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import Image from 'next/image'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
@@ -30,10 +32,26 @@ export default function PearlPage() {
         { name: 'Pearl', url: 'https://midsouthdumpsterms.com/service-areas/pearl' },
     ])
 
+    const faqSchema = generateFAQSchema([
+        {
+            question: "How do I choose the right size dumpster for my project in Pearl?",
+            answer: "For minor cleanouts and small yard projects in Pearl, our 10-yard dumpster is ideal. For mid-to-large renovations, roofing projects, or major decluttering, the 15-yard or 20-yard options provide the best value and capacity."
+        },
+        {
+            question: "Are there any hidden fees for dumpster rentals in Pearl, MS?",
+            answer: "No! Mid South Dumpster Rentals prides itself on transparent, flat-rate pricing. Your rental fee includes delivery, pickup, and a specific tonnage allowance, so you won't be surprised by unexpected charges."
+        },
+        {
+            question: "Can I put construction debris in a rented dumpster in Pearl?",
+            answer: "Yes, our dumpsters are fully equipped to handle standard construction and demolition debris, such as wood, drywall, and roofing materials. However, hazardous materials and wet paint are prohibited."
+        }
+    ])
+
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
 
             <section className={styles.heroSection}>
                 <div className="container">
@@ -88,6 +106,16 @@ export default function PearlPage() {
                                 <li>Yard waste and landscaping</li>
                                 <li>Commercial cleanouts</li>
                             </ul>
+
+                            <div style={{ marginTop: '2rem' }}>
+                                <Image
+                                    src="/images/gallery/construction-dumpster-pearl-ms-site.jpg"
+                                    alt="Roll-off construction dumpster rental at a job site in Pearl, Mississippi"
+                                    width={600}
+                                    height={400}
+                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,6 +130,29 @@ export default function PearlPage() {
                     <p>
                         Pearl's diverse neighborhoods and central location make it a hub for residential and commercial activity. We're here to support your projects with dependable roll-off dumpster rental service throughout the Pearl area. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Pearl customers.
                     </p>
+                    <p style={{ marginTop: '1.5rem' }}>
+                        <strong>Wondering what costs are like in the area?</strong> Get an idea from our <Link href="/blog/dumpster-rental-prices-jackson-ms">Dumpster Rental Cost Guide</Link> for Central Mississippi.
+                    </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection}>
+                <div className="container">
+                    <h2 className="text-center">Frequently Asked Questions: Pearl Dumpster Rentals</h2>
+                    <div className={styles.faqGrid}>
+                        <div className={styles.faqItem}>
+                            <h3>How do I choose the right size dumpster for my project in Pearl?</h3>
+                            <p>For minor cleanouts and small yard projects in Pearl, our 10-yard dumpster is ideal. For mid-to-large renovations, roofing projects, or major decluttering, the 15-yard or 20-yard options provide the best value and capacity.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>Are there any hidden fees for dumpster rentals in Pearl, MS?</h3>
+                            <p>No! Mid South Dumpster Rentals prides itself on transparent, flat-rate pricing. Your rental fee includes delivery, pickup, and a specific tonnage allowance, so you won't be surprised by unexpected charges.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>Can I put construction debris in a rented dumpster in Pearl?</h3>
+                            <p>Yes, our dumpsters are fully equipped to handle standard construction and demolition debris, such as wood, drywall, and roofing materials. However, hazardous materials and wet paint are prohibited.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 

@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
-import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import Image from 'next/image'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
@@ -30,10 +32,26 @@ export default function JacksonPage() {
         { name: 'Jackson', url: 'https://midsouthdumpsterms.com/service-areas/jackson' },
     ])
 
+    const faqSchema = generateFAQSchema([
+        {
+            question: "Do I need a permit to rent a dumpster in Jackson, MS?",
+            answer: "If the dumpster is placed on your private driveway or yard in Jackson, no permit is required. However, if the dumpster needs to be placed on a public street or right-of-way, you will need to obtain a permit from the City of Jackson."
+        },
+        {
+            question: "How long can I keep my dumpster rental in Jackson?",
+            answer: "Our standard rental period gives you plenty of time to complete your project. If you finish early, just give us a call and we'll pick it up! Need it longer? We offer flexible, affordable daily extensions."
+        },
+        {
+            question: "What roll-off dumpster sizes are best for a home cleanout in Jackson?",
+            answer: "For a standard garage cleanout or small remodel in Belhaven or Fondren, a 10-yard dumpster is often sufficient. For larger whole-home cleanouts, we recommend our most popular size: the 20-yard dumpster."
+        }
+    ])
+
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
 
             <section className={styles.heroSection}>
                 <div className="container">
@@ -88,6 +106,16 @@ export default function JacksonPage() {
                                 <li>Yard waste and landscaping</li>
                                 <li>Commercial cleanouts</li>
                             </ul>
+
+                            <div style={{ marginTop: '2rem' }}>
+                                <Image
+                                    src="/images/gallery/dumpster-rental-jackson-ms-delivery.jpg"
+                                    alt="Dumpster rental delivery in Jackson, Mississippi"
+                                    width={600}
+                                    height={400}
+                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,6 +130,29 @@ export default function JacksonPage() {
                     <p>
                         From <strong>Alta Woods</strong> and <strong>Cedar Hills</strong> to <strong>Pear Orchard</strong>, <strong>Northpointe</strong>, and <strong>Wildwood</strong>, our service covers every corner of Jackson. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Jackson customers.
                     </p>
+                    <p style={{ marginTop: '1.5rem' }}>
+                        <strong>Need a specific dumpster size in Jackson?</strong> Check out our guide on renting a <Link href="/blog/20-yard-dumpster-rental-jackson-ms">20-Yard Dumpster in Jackson, MS</Link>.
+                    </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection}>
+                <div className="container">
+                    <h2 className="text-center">Frequently Asked Questions: Jackson Dumpster Rentals</h2>
+                    <div className={styles.faqGrid}>
+                        <div className={styles.faqItem}>
+                            <h3>Do I need a permit to rent a dumpster in Jackson, MS?</h3>
+                            <p>If the dumpster is placed on your private driveway or yard in Jackson, no permit is required. However, if the dumpster needs to be placed on a public street or right-of-way, you will need to obtain a permit from the City of Jackson.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>How long can I keep my dumpster rental in Jackson?</h3>
+                            <p>Our standard rental period gives you plenty of time to complete your project. If you finish early, just give us a call and we'll pick it up! Need it longer? We offer flexible, affordable daily extensions.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>What roll-off dumpster sizes are best for a home cleanout in Jackson?</h3>
+                            <p>For a standard garage cleanout or small remodel in Belhaven or Fondren, a 10-yard dumpster is often sufficient. For larger whole-home cleanouts, we recommend our most popular size: the 20-yard dumpster.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
