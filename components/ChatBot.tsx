@@ -13,7 +13,7 @@ interface Message {
 const KNOWLEDGE_BASE = [
     {
         keywords: ['concrete', 'brick', 'stone', 'asphalt', 'dirt', 'earth', 'sand', 'gravel', 'tile', 'pavers', 'rock', 'bowling ball', 'shingles', 'roofing', 'steel', 'aggregate', 'cement'],
-        answer: "That sounds like a heavy load! While our containers can hold the volume, weight adds up quickly. For comparison, materials range in density: Sand (~100lb/ft³), Brick (~120lb/ft³), and Concrete (~150lb/ft³). Even itemized loads like 200 bowling balls (~2,400 lbs) exceed the 1-ton limit of a 10-yard bin. Overage fees ($55/ton) apply, so call us at 601-316-7891 to ensure you get the right size and avoid extra costs!"
+        answer: "That sounds like a heavy load! While our containers can hold the volume, weight adds up fast. For example, 1 cubic yard of Sand weighs ~2,700 lbs (1.35 tons), and 1 cubic yard of Concrete weighs ~4,050 lbs (2 tons)! Filling a 10-yard dumpster with these materials would be a massive weight violation. Overage fees ($55/ton) apply, so call us at 601-316-7891 so we can help you get the right size for your material."
     },
     {
         keywords: ['weight', 'ton', 'overage', 'limit', 'pounds', 'how heavy', 'weigh'],
