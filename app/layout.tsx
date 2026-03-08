@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MobileCallBar from '@/components/MobileCallBar'
 import GoogleReviewsBadge from '@/components/GoogleReviewsBadge'
+import ChatBot from '@/components/ChatBot'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -97,6 +98,7 @@ export default function RootLayout({
                 <Footer />
                 <MobileCallBar />
                 <GoogleReviewsBadge />
+                <ChatBot />
                 <Analytics />
                 <SpeedInsights />
             </body>
