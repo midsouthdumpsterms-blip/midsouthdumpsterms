@@ -20,8 +20,8 @@ const KNOWLEDGE_BASE = [
         answer: "Our 10-yard includes 1 ton, 15-yard includes 2 tons, and 20-yard includes 3 tons. Overage is $55/ton for 10/15yd. The 20-yard has a hard cap of 6,000 lbs (3 tons) which cannot be exceeded. Heavy materials like concrete, brick, or dirt add up fast!"
     },
     {
-        keywords: ['prohibited', 'not allowed', 'cannot', 'toxic', 'hazardous', 'paint', 'tires', 'food', 'chemicals', 'oil', 'battery', 'hazardous waste', 'medical waste', 'freon', 'fridge', 'ac unit'],
-        answer: "Prohibited items include: hazardous waste (paint, oil, chemicals), tires, food waste, medical waste, and appliances with Freon (fridges/AC units). Household furniture, construction debris, and yard waste are all good!"
+        keywords: ['prohibited', 'not allowed', 'cannot', 'toxic', 'hazardous', 'paint', 'tires', 'food', 'chemicals', 'oil', 'battery', 'hazardous waste', 'medical waste', 'freon', 'fridge', 'ac unit', 'deer', 'animal', 'dead', 'carcass', 'manure', 'poop', 'feces', 'fireworks', 'explosive', 'ammunition', 'gas', 'propane', 'tank', 'fuel', 'ash', 'hot', 'warm', 'burning'],
+        answer: "Prohibited items include: hazardous waste (paint, oil, chemicals, propane tanks), tires, battery, food/animal waste (carcasses, manure), medical waste, and appliances with Freon. Household furniture, construction debris, and yard waste are good! **Safety Warning:** Never put hot ashes, explosives, or flammable liquids in the container."
     },
     {
         keywords: ['price', 'cost', 'how much', 'rate'],
@@ -157,11 +157,11 @@ const ChatBot: React.FC = () => {
             let score = 0;
             item.keywords.forEach(kw => {
                 if (input.includes(kw)) {
-                    // Give more points for long keywords or specific materials
-                    score += kw.length > 5 ? 2 : 1;
-                    // Double points if the input matches a high-risk material exactly
-                    if (['concrete', 'tree', 'pine', 'log', 'shingles', 'hazardous'].includes(kw)) {
-                        score += 5;
+                    // Give points based on keyword length
+                    score += kw.length > 5 ? 3 : 1;
+                    // Double points if the input matches high-risk/specific categories
+                    if (['concrete', 'tree', 'pine', 'log', 'shingles', 'hazardous', 'dead', 'deer', 'animal', 'tank', 'explosive', 'ash'].includes(kw)) {
+                        score += 10;
                     }
                 }
             });
@@ -172,8 +172,8 @@ const ChatBot: React.FC = () => {
             }
         }
 
-        // 2. Priority check: If we have a decent match, return it
-        if (bestMatch && highestScore >= 2) {
+        // 2. Priority check: Reduced threshold for critical safety items
+        if (bestMatch && (highestScore >= 3)) {
             return bestMatch.answer;
         }
 
