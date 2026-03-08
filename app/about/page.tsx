@@ -41,6 +41,25 @@ export default function About() {
                             <p>
                                 Our commitment is simple: deliver quality dumpsters on time, provide transparent flat-rate pricing with no hidden fees, and offer exceptional customer service. Whether you&apos;re a homeowner tackling a weekend project or a contractor managing a large construction site, we have the right solution for you.
                             </p>
+                            <hr style={{ margin: 'var(--spacing-xl) 0', border: 'none', borderTop: '2px dashed var(--color-gray-200)' }} />
+                            <h2>About the Founder</h2>
+                            <div style={{ display: 'flex', gap: 'var(--spacing-lg)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+                                <div style={{ flex: '1 1 300px' }}>
+                                    <p>
+                                        Mid South Dumpster Rentals is locally owned and operated by Andrew Tyre. For over 7 years, Andrew has been deeply entrenched in the Mississippi real estate market, working as a real estate professional and developer in the Jackson metro area.
+                                    </p>
+                                    <p>
+                                        Having managed numerous renovations, flips, and new construction sites himself, Andrew knows firsthand how critical a reliable, transparent, and prompt dumpster rental service can be to keeping a job on schedule. He founded Mid South Dumpster Rentals to solve the exact problems he was facing as a contractor—hidden fees, delayed pickups, and poor communication.
+                                    </p>
+                                    <p>
+                                        When you book a dumpster with us, you aren&apos;t dealing with a faceless national call center or an anonymous broker. You are dealing with a local business owner who understands your project deadlines, values your property, and works 7 days a week to ensure your job site stays clean and moving forward.
+                                    </p>
+                                </div>
+                                <div style={{ flex: '0 0 250px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-md)', margin: '0 auto' }}>
+                                    {/* Placeholder for Andrew Tyre's photo */}
+                                    <img src="/images/andrew-tyre.jpg" alt="Andrew Tyre, Founder of Mid South Dumpster Rentals" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                </div>
+                            </div>
                         </div>
                         <div className={styles.infoCard}>
                             <h3>Business Information</h3>
