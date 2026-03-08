@@ -61,11 +61,51 @@ const KNOWLEDGE_BASE = [
     },
     {
         keywords: ['refund', 'cancel'],
-        answer: "Refunds are available before delivery. If you paid by card, there is a $40 processing fee. No refunds can be issued once the dumpster is dropped on-site."
+        answer: "Refunds are available before delivery. If you paid by card, there is a $40 processing fee. No refunds can be issued once the dumpster is dropped on-site. Cancellations within 24 hours of delivery may incur dispatch fees."
     },
     {
         keywords: ['extension', 'extra day', 'additional day', 'keep longer', 'more time'],
         answer: "Need the dumpster longer? No problem! Extensions are $50 per additional day, subject to availability. Just give us a call before your scheduled pickup to let us know."
+    },
+    {
+        keywords: ['missed pickup', 'blocked', 'access', 'cannot get to'],
+        answer: "If access is blocked on pickup day, a Missed Pickup Fee of $150 and/or additional rental day charges may apply. Please ensure clear access!"
+    },
+    {
+        keywords: ['overload', 'above the rim', 'tarp', 'rim'],
+        answer: "Safety first! No debris is allowed above the rim. The container must be tarp-ready with end doors secured for safe transport. Overfilled containers may be refused."
+    },
+    {
+        keywords: ['wait time', 'delay'],
+        answer: "We include a 30-minute drop time. Wait time exceeding this is billed at $50/hour."
+    },
+    {
+        keywords: ['permit', 'street', 'public', 'municipal'],
+        answer: "Customers are responsible for obtaining and paying for any required municipal permits for placement of dumpsters in public areas (streets, rights-of-way)."
+    },
+    {
+        keywords: ['placement', 'where to put', 'stable', 'legal'],
+        answer: "Customers must provide a legal, stable placement location with unobstructed access for delivery and removal."
+    },
+    {
+        keywords: ['refuse', 'unsafe', 'hazardous', 'refusal fee'],
+        answer: "If a load is deemed unsafe or hazardous, we may refuse it. A Refused/Overweight Refusal Fee of $500 plus handling expenses may apply. Customers are responsible for correcting unsafe loads."
+    },
+    {
+        keywords: ['liability', 'damage', 'surface', 'lawn', 'pipe', 'structure'],
+        answer: "Customers are responsible for any damage to surfaces, lawns, utilities, or structures unless caused by Company negligence. We use boards to help protect your property, but provide no guarantee against property damage."
+    },
+    {
+        keywords: ['payment', 'due', 'when to pay', 'past due', 'interest'],
+        answer: "All fees are due upon pickup, completion of service, or invoicing. Past-due balances may incur 10% interest per month plus collection costs."
+    },
+    {
+        keywords: ['manual handling', 'unloading'],
+        answer: "If we are required to manually empty or handle material (due to overfill or prohibited items), the customer is responsible for all associated labor and equipment costs."
+    },
+    {
+        keywords: ['legal', 'law', 'dispute', 'agreement', 'governing'],
+        answer: "Our agreement is governed by the laws of the State of Mississippi, and disputes are resolved in Mississippi courts."
     }
 ];
 
