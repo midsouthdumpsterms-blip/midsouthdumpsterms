@@ -62,6 +62,10 @@ const KNOWLEDGE_BASE = [
     {
         keywords: ['refund', 'cancel'],
         answer: "Refunds are available before delivery. If you paid by card, there is a $40 processing fee. No refunds can be issued once the dumpster is dropped on-site."
+    },
+    {
+        keywords: ['extension', 'extra day', 'additional day', 'keep longer', 'more time'],
+        answer: "Need the dumpster longer? No problem! Extensions are $50 per additional day, subject to availability. Just give us a call before your scheduled pickup to let us know."
     }
 ];
 
@@ -97,16 +101,16 @@ const ChatBot: React.FC = () => {
     };
 
     const getBotResponse = (input: string): string => {
-        // Check for high-priority "book" trigger
-        if (input.includes('book') || input.includes('reserve') || input.includes('rent') || input.includes('order')) {
-            return "I can definitely help with that! You can book online instantly at [this link](https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF) or just call us at 601-316-7891.";
-        }
-
-        // Match keywords
+        // 1. Check for specific matches FIRST (e.g. extension fees, prohibited items)
         for (const item of KNOWLEDGE_BASE) {
             if (item.keywords.some(kw => input.includes(kw))) {
                 return item.answer;
             }
+        }
+
+        // 2. Check for high-priority "book" trigger ONLY if no specific match was found
+        if (input.includes('book') || input.includes('reserve') || input.includes('rent') || input.includes('order')) {
+            return "I can definitely help with that! You can book online instantly at [this link](https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF) or just call us at 601-316-7891.";
         }
 
         return "I'm not exactly sure about that, but I'd love to help! Can you try rephrasing, or just call us at 601-316-7891 to talk to Andrew directly?";
