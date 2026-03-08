@@ -29,7 +29,7 @@ export default function About() {
 
             <section>
                 <div className="container">
-                    <div className="grid grid-2" style={{ alignItems: 'center' }}>
+                    <div className="grid grid-2" style={{ alignItems: 'flex-start', position: 'relative' }}>
                         <div>
                             <h2>Who We Are</h2>
                             <p>
@@ -61,7 +61,7 @@ export default function About() {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.infoCard}>
+                        <div className={styles.infoCard} style={{ position: 'sticky', top: 'var(--spacing-3xl)' }}>
                             <h3>Business Information</h3>
                             <div className={styles.infoItem}>
                                 <strong>Address:</strong>
