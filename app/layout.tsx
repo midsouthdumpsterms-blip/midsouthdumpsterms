@@ -7,7 +7,7 @@ import MobileCallBar from '@/components/MobileCallBar'
 import GoogleReviewsBadge from '@/components/GoogleReviewsBadge'
 import ChatBot from '@/components/ChatBot'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata: Metadata = {
