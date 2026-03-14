@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Dumpster Rental vs. Junk Removal in Jackson MS — Which Is Right for You?',
@@ -167,7 +168,7 @@ export default function BlogPost() {
 
                         <div className={styles.cta}>
                             <h3>Ready to Rent a Dumpster?</h3>
-                            <p>Call <a href="tel:6013167891">601-316-7891</a> or book online. Serving Jackson, Brandon, and all of Central MS.</p>
+                            <p>Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> or book online. Serving Jackson, Brandon, and all of Central MS.</p>
                             <a
                                 href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
                                 target="_blank"

@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'How to Choose the Right Dumpster Size for Your Project',
@@ -135,7 +136,7 @@ export default function BlogPost() {
 
                         <h2>Still Not Sure?</h2>
                         <p>
-                            If you're uncertain about which size to choose, we're here to help! Call us at <a href="tel:6013167891">601-316-7891</a> and describe your project. We'll recommend the perfect dumpster size based on our years of experience.
+                            If you're uncertain about which size to choose, we're here to help! Call us at <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> and describe your project. We'll recommend the perfect dumpster size based on our years of experience.
                         </p>
 
                         <div className={styles.cta}>

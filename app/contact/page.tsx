@@ -3,6 +3,7 @@ import BookingButton from '@/components/BookingButton'
 import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from './contact.module.css'
 import ContactForm from './ContactForm'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Contact Us | Mid South Dumpster Rentals | Jackson MS',
@@ -41,7 +42,7 @@ export default function ContactPage() {
                             <div className={styles.contactInfo}>
                                 <div className={styles.contactItem}>
                                     <h3>📞 Phone</h3>
-                                    <p><a href="tel:6013167891">601-316-7891</a></p>
+                                    <p><TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink></p>
                                     <p className={styles.subtext}>Click to call</p>
                                 </div>
 

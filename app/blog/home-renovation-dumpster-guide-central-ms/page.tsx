@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Dumpster Rental for Home Renovations in Central MS | Complete Guide',
@@ -279,7 +280,7 @@ export default function BlogPost() {
 
                         <h3>How far in advance should I book?</h3>
                         <p>
-                            For planned renovations in Jackson or Madison, book 3-7 days in advance. Need it sooner? Same-day delivery is available when you call before noon at <a href="tel:6013167891">601-316-7891</a>.
+                            For planned renovations in Jackson or Madison, book 3-7 days in advance. Need it sooner? Same-day delivery is available when you call before noon at <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink>.
                         </p>
 
                         <h3>Can I keep the dumpster longer if my project runs over?</h3>
@@ -309,7 +310,7 @@ export default function BlogPost() {
                                 Book Your Dumpster
                             </a>
                             <p style={{ marginTop: 'var(--spacing-md)', fontSize: '0.875rem' }}>
-                                Or call <a href="tel:6013167891">601-316-7891</a> for expert advice
+                                Or call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> for expert advice
                             </p>
                         </div>
                     </div>

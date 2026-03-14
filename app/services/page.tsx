@@ -5,6 +5,7 @@ import BookingButton from '@/components/BookingButton'
 import { generateServiceSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import styles from './services.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: { absolute: 'Dumpster Rental Prices Jackson MS | $349–$499 | Mid South' },
@@ -208,9 +209,9 @@ export default function Services() {
                         Call us at 601-316-7891 and we'll help you determine the right dumpster for your project
                     </p>
                     <div style={{ display: 'flex', gap: 'var(--spacing-lg)', justifyContent: 'center' }}>
-                        <a href="tel:6013167891" className="btn btn-primary btn-lg">
+                        <TrackedPhoneLink location="Page CTA" className="btn btn-primary btn-lg">
                             Call Now
-                        </a>
+                        </TrackedPhoneLink>
                         <BookingButton label="Book Now" location="Services Page CTA" />
                     </div>
                 </div>

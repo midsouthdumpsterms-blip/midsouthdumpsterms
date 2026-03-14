@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Spring Cleaning Dumpster Rental in Central Mississippi | Mid South',
@@ -114,7 +115,7 @@ export default function BlogPost() {
 
                         <div className={styles.cta}>
                             <h3>Book Your Spring Cleaning Dumpster Today</h3>
-                            <p>Same-day and next-day delivery available. Call <a href="tel:6013167891">601-316-7891</a> or book online now.</p>
+                            <p>Same-day and next-day delivery available. Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> or book online now.</p>
                             <a
                                 href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
                                 target="_blank"

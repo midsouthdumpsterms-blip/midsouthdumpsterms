@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Storm Cleanup Dumpster Rental in Jackson MS | Same-Day Service',
@@ -60,7 +61,7 @@ export default function BlogPost() {
                             <li>Broken glass, siding, and gutters</li>
                         </ul>
                         <p>
-                            <strong>Important:</strong> We cannot accept hazardous materials such as asbestos, chemicals, oils, or fuel — even if storm-damaged. If you're unsure whether an item is safe to load, give us a call at <a href="tel:6013167891">601-316-7891</a> and we'll walk you through it.
+                            <strong>Important:</strong> We cannot accept hazardous materials such as asbestos, chemicals, oils, or fuel — even if storm-damaged. If you're unsure whether an item is safe to load, give us a call at <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> and we'll walk you through it.
                         </p>
 
                         <h2>What Size Dumpster Do You Need for Storm Cleanup?</h2>
@@ -123,7 +124,7 @@ export default function BlogPost() {
 
                         <h2>Same-Day Storm Dumpster Pickup — Call Now</h2>
                         <p>
-                            We know storm cleanup is stressful. Our team is locally based in Jackson, which means we can move fast. Call <a href="tel:6013167891">601-316-7891</a> and let us know what you&apos;re dealing with — we&apos;ll get a dumpster to you as quickly as possible. We&apos;re available 7 days a week, 7AM–7PM.
+                            We know storm cleanup is stressful. Our team is locally based in Jackson, which means we can move fast. Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> and let us know what you&apos;re dealing with — we&apos;ll get a dumpster to you as quickly as possible. We&apos;re available 7 days a week, 7AM–7PM.
                         </p>
 
                         <div className={styles.cta}>

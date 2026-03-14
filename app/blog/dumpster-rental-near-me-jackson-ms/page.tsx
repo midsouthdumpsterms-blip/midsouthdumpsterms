@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateFAQSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Dumpster Rental Near Me in Jackson, MS | MidSouth',
@@ -78,7 +79,7 @@ export default function BlogPost() {
                         </p>
                         <ul>
                             <li><strong>Locally owned &amp; operated</strong> — not a franchise or national broker</li>
-                            <li><strong>Same-day delivery</strong> available when you call <a href="tel:6013167891">601-316-7891</a> before noon</li>
+                            <li><strong>Same-day delivery</strong> available when you call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> before noon</li>
                             <li><strong>Flat-rate, all-inclusive pricing</strong> — no fuel surcharges, no hidden fees</li>
                             <li><strong>7AM–7PM, 7 days a week</strong> including weekends</li>
                             <li><strong>Driveway-friendly</strong> delivery using protective boards</li>
@@ -139,7 +140,7 @@ export default function BlogPost() {
 
                         <div className={styles.cta}>
                             <h3>Ready to Book Your Dumpster?</h3>
-                            <p>Call <a href="tel:6013167891">601-316-7891</a> or book online &mdash; same-day delivery available 7 days a week.</p>
+                            <p>Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> or book online &mdash; same-day delivery available 7 days a week.</p>
                             <a
                                 href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
                                 target="_blank"

@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Dumpster Rental for Roofing Contractors in Jackson MS | Mid South',
@@ -83,7 +84,7 @@ export default function BlogPost() {
                             </tbody>
                         </table>
                         <p>
-                            <strong>Important weight note:</strong> Shingles are one of the heaviest types of roofing debris. Our 20-yard container has a strict 3-ton (6,000 lb) maximum with no overage allowed — plan accordingly. When in doubt, load by weight, not by volume. Call us at <a href="tel:6013167891">601-316-7891</a> and we&apos;ll help you plan the right setup for your job.
+                            <strong>Important weight note:</strong> Shingles are one of the heaviest types of roofing debris. Our 20-yard container has a strict 3-ton (6,000 lb) maximum with no overage allowed — plan accordingly. When in doubt, load by weight, not by volume. Call us at <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> and we&apos;ll help you plan the right setup for your job.
                         </p>
 
                         <h2>What Roofing Materials We Accept</h2>
@@ -142,7 +143,7 @@ export default function BlogPost() {
 
                         <div className={styles.cta}>
                             <h3>Ready to Order for Your Next Roofing Job?</h3>
-                            <p>Book online or call <a href="tel:6013167891">601-316-7891</a> — we&apos;ll get your container there fast.</p>
+                            <p>Book online or call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> — we&apos;ll get your container there fast.</p>
                             <a
                                 href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
                                 target="_blank"

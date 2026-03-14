@@ -6,6 +6,7 @@ import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import TrustBadges from '@/components/TrustBadges'
 import styles from './page.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Dumpster Rentals Jackson MS | Same-Day Delivery',
@@ -73,9 +74,9 @@ export default function Home() {
                         </p>
                         <div className={styles.heroButtons}>
                             <BookingButton label="Book Now Online" location="Homepage Hero" />
-                            <a href="tel:6013167891" className="btn btn-outline btn-lg">
+                            <TrackedPhoneLink location="Page CTA" className="btn btn-outline btn-lg">
                                 Call 601-316-7891
-                            </a>
+                            </TrackedPhoneLink>
                         </div>
                         <div className={styles.heroFeatures}>
                             <div className={styles.feature}>

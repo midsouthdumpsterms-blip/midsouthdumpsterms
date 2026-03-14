@@ -1,5 +1,7 @@
-// Google Analytics Event Tracking
+// Google Analytics & Vercel Event Tracking
 // This allows us to track button clicks even when they lead to third-party URLs
+
+import { track } from '@vercel/analytics'
 
 declare global {
     interface Window {
@@ -21,6 +23,12 @@ export function trackBookingClick(buttonLabel: string, location: string) {
             value: 1,
         })
     }
+    
+    // Vercel Analytics tracking
+    track('Booking Initiated', {
+        label: buttonLabel,
+        location: location
+    });
 }
 
 /**
@@ -36,4 +44,9 @@ export function trackPhoneClick(location: string) {
             value: 1,
         })
     }
+    
+    // Vercel Analytics tracking
+    track('Call Initiated', {
+        location: location
+    });
 }

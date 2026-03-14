@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Garage Cleanout Dumpster Rental in Central Mississippi | Mid South',
@@ -108,7 +109,7 @@ export default function BlogPost() {
                             <li><strong>Pesticides and fertilizers in bulk</strong></li>
                         </ul>
                         <p>
-                            Not sure about a specific item? Call us at <a href="tel:6013167891">601-316-7891</a> and we&apos;ll tell you straight.
+                            Not sure about a specific item? Call us at <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> and we&apos;ll tell you straight.
                         </p>
 
                         <h2>The Fastest Way to Do a Garage Cleanout</h2>
@@ -127,7 +128,7 @@ export default function BlogPost() {
 
                         <div className={styles.cta}>
                             <h3>Ready to Finally Clean Out That Garage?</h3>
-                            <p>Call <a href="tel:6013167891">601-316-7891</a> or book online. Same-day delivery often available.</p>
+                            <p>Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> or book online. Same-day delivery often available.</p>
                             <a
                                 href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
                                 target="_blank"

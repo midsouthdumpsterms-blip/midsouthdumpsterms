@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from './service-areas.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: { absolute: 'Dumpster Rental Near Me | Jackson, Brandon, Madison MS' },
@@ -75,9 +76,9 @@ export default function ServiceAreas() {
                     <p style={{ fontSize: '1.125rem', marginBottom: 'var(--spacing-xl)' }}>
                         We serve many areas throughout Central Mississippi. Call us to confirm availability in your area.
                     </p>
-                    <a href="tel:6013167891" className="btn btn-secondary btn-lg">
+                    <TrackedPhoneLink location="Page CTA" className="btn btn-secondary btn-lg">
                         Call 601-316-7891
-                    </a>
+                    </TrackedPhoneLink>
                 </div>
             </section>
         </>

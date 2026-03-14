@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Same-Day Dumpster Rental in Jackson, MS | Mid South Dumpster Rentals',
@@ -45,7 +46,7 @@ export default function BlogPost() {
 
                         <h2>How Same-Day Dumpster Rental Works</h2>
                         <ol>
-                            <li><strong>Call us at <a href="tel:6013167891">601-316-7891</a></strong> as early in the day as possible — the earlier you call, the better your chances of same-day delivery</li>
+                            <li><strong>Call us at <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink></strong> as early in the day as possible — the earlier you call, the better your chances of same-day delivery</li>
                             <li><strong>Give us your address and project details</strong> — we&apos;ll confirm a delivery window</li>
                             <li><strong>We deliver and place the container</strong> — you&apos;ll know exactly when to expect us</li>
                             <li><strong>Start loading immediately</strong> — no waiting around</li>
@@ -120,7 +121,7 @@ export default function BlogPost() {
 
                         <div className={styles.cta}>
                             <h3>Need a Dumpster Today? Call Now.</h3>
-                            <p><a href="tel:6013167891">601-316-7891</a> — Available 7AM–7PM, 7 days a week.</p>
+                            <p><TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> — Available 7AM–7PM, 7 days a week.</p>
                             <a
                                 href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
                                 target="_blank"

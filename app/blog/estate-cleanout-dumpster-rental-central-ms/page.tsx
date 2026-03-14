@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Estate Cleanout Dumpster Rental in Central Mississippi | Mid South',
@@ -88,7 +89,7 @@ export default function BlogPost() {
                             </tbody>
                         </table>
                         <p>
-                            Not sure? We recommend going one size up if you&apos;re unsure — it&apos;s always better to have extra room than to call for a second container mid-cleanout. Call us at <a href="tel:6013167891">601-316-7891</a> and we&apos;ll help you size it based on your situation.
+                            Not sure? We recommend going one size up if you&apos;re unsure — it&apos;s always better to have extra room than to call for a second container mid-cleanout. Call us at <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> and we&apos;ll help you size it based on your situation.
                         </p>
 
                         <h2>What You Can Put in the Dumpster</h2>
@@ -122,7 +123,7 @@ export default function BlogPost() {
 
                         <div className={styles.cta}>
                             <h3>Ready to Get Started?</h3>
-                            <p>Book your estate cleanout dumpster online or call us at <a href="tel:6013167891">601-316-7891</a>. We&apos;re available 7AM–7PM, seven days a week.</p>
+                            <p>Book your estate cleanout dumpster online or call us at <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink>. We&apos;re available 7AM–7PM, seven days a week.</p>
                             <a
                                 href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
                                 target="_blank"

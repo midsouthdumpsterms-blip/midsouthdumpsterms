@@ -2,7 +2,9 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
+import { trackPhoneClick } from '@/lib/analytics'
 import styles from './Header.module.css'
 
 export default function Header() {
@@ -78,11 +80,15 @@ export default function Header() {
                                 Contact
                             </Link>
                         </li>
-                        <li className={styles.ctaItem}>
-                            <a href="tel:6013167891" className="btn btn-primary">
+                        <div className={styles.ctaWrapper}>
+                            <a 
+                                href="tel:6013167891" 
+                                className="btn btn-primary"
+                                onClick={() => trackPhoneClick('Desktop Header')}
+                            >
                                 Call Now
                             </a>
-                        </li>
+                        </div>
                     </ul>
                 </nav>
             </div>

@@ -5,6 +5,7 @@ import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, inj
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Dumpster Rentals Florence MS | Rankin County Service',
@@ -62,9 +63,9 @@ export default function FlorencePage() {
                     </p>
                     <div className={styles.heroButtons}>
                         <BookingButton label="Book Florence Dumpster" location="Florence Service Area Hero" />
-                        <a href="tel:6013167891" className="btn btn-outline btn-lg">
+                        <TrackedPhoneLink location="Florence Service Area CTA" className="btn btn-outline btn-lg">
                             Call 601-316-7891
-                        </a>
+                        </TrackedPhoneLink>
                     </div>
                 </div>
             </section>

@@ -5,6 +5,7 @@ import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, inj
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Roll-Off Dumpster Rentals Brandon MS | Crossgates Area',
@@ -61,9 +62,9 @@ export default function BrandonPage() {
                     </p>
                     <div className={styles.heroButtons}>
                         <BookingButton label="Book Brandon Dumpster" location="Brandon Service Area Hero" />
-                        <a href="tel:6013167891" className="btn btn-outline btn-lg">
+                        <TrackedPhoneLink location="Brandon Service Area CTA" className="btn btn-outline btn-lg">
                             Call 601-316-7891
-                        </a>
+                        </TrackedPhoneLink>
                     </div>
                 </div>
             </section>

@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { trackPhoneClick } from '@/lib/analytics'
 import BookingButton from './BookingButton'
 import PaymentMethods from './PaymentMethods'
 import styles from './Footer.module.css'
@@ -16,7 +19,12 @@ export default function Footer() {
                         <div className={styles.contactInfo}>
                             <p>
                                 <strong>Phone:</strong>{' '}
-                                <a href="tel:6013167891">601-316-7891</a>
+                                <a 
+                                    href="tel:6013167891"
+                                    onClick={() => trackPhoneClick('Footer')}
+                                >
+                                    601-316-7891
+                                </a>
                             </p>
                             <p>
                                 <strong>Hours:</strong> 7AM - 7PM | 7 Days a Week
@@ -66,6 +74,7 @@ export default function Footer() {
                             className="btn btn-outline"
                             style={{ width: '100%' }}
                             aria-label="Call Mid South Dumpster Rentals at 601-316-7891"
+                            onClick={() => trackPhoneClick('Footer CTA')}
                         >
                             Call 601-316-7891
                         </a>

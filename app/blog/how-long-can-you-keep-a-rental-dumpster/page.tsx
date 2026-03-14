@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'How Long Can You Keep a Rental Dumpster? | Mid South Dumpster Rentals',
@@ -53,7 +54,7 @@ export default function BlogPost() {
 
                         <h2>What If I Finish Early?</h2>
                         <p>
-                            Finished your cleanup in just two days? Great job! You never have to keep a dumpster for the entire rental period. As soon as you are done loading your debris, simply give us a call at <a href="tel:6013167891">601-316-7891</a>. We'll dispatch a driver to haul it away, keeping your driveway clear and your property looking great.
+                            Finished your cleanup in just two days? Great job! You never have to keep a dumpster for the entire rental period. As soon as you are done loading your debris, simply give us a call at <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink>. We'll dispatch a driver to haul it away, keeping your driveway clear and your property looking great.
                         </p>
 
                         <h2>What If I Need More Time?</h2>

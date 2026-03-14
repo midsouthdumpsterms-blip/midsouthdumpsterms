@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Dumpster Rental in Brandon, MS | Same-Day Roll-Off Service | Mid South',
@@ -102,7 +103,7 @@ export default function BlogPost() {
 
                         <h2>How to Get a Dumpster Delivered to Brandon</h2>
                         <ol>
-                            <li><strong>Call us at <a href="tel:6013167891">601-316-7891</a></strong> or book online — takes about 2 minutes</li>
+                            <li><strong>Call us at <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink></strong> or book online — takes about 2 minutes</li>
                             <li><strong>Tell us your project</strong> — we&apos;ll recommend the right size if you&apos;re not sure</li>
                             <li><strong>Choose your rental period</strong> — 1, 3, or 7 days</li>
                             <li><strong>We deliver and place your container</strong> — driveway, yard, or job site</li>
@@ -125,7 +126,7 @@ export default function BlogPost() {
 
                         <div className={styles.cta}>
                             <h3>Ready to Book Your Brandon Dumpster?</h3>
-                            <p>For more local details, visit our dedicated <Link href="/service-areas/brandon">Brandon Dumpster Rental</Link> service page. Call <a href="tel:6013167891">601-316-7891</a> or book online. Same-day delivery often available in Brandon.</p>
+                            <p>For more local details, visit our dedicated <Link href="/service-areas/brandon">Brandon Dumpster Rental</Link> service page. Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> or book online. Same-day delivery often available in Brandon.</p>
                             <a
                                 href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
                                 target="_blank"

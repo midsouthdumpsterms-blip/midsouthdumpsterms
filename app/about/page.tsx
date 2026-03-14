@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import BookingButton from '@/components/BookingButton'
 import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from './about.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'About Mid South Dumpster Rentals | Jackson, MS Local Dumpster Company',
@@ -69,7 +70,7 @@ export default function About() {
                             </div>
                             <div className={styles.infoItem}>
                                 <strong>Phone:</strong>
-                                <p><a href="tel:6013167891">601-316-7891</a></p>
+                                <p><TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink></p>
                             </div>
                             <div className={styles.infoItem}>
                                 <strong>Hours:</strong>

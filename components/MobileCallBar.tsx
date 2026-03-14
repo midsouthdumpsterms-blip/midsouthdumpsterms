@@ -1,9 +1,16 @@
+'use client'
+
+import { trackPhoneClick } from '@/lib/analytics'
 import styles from './MobileCallBar.module.css'
 
 export default function MobileCallBar() {
     return (
         <div className={styles.container}>
-            <a href="tel:6013167891" className={styles.callButton}>
+            <a 
+                href="tel:6013167891" 
+                className={styles.callButton}
+                onClick={() => trackPhoneClick('Mobile Call Bar')}
+            >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"

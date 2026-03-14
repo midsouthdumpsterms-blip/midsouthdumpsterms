@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Dumpster Rental Prices in Jackson MS | 2026 Cost Guide',
@@ -179,7 +180,7 @@ export default function BlogPost() {
 
                         <h3>1. Choose the Right Size</h3>
                         <p>
-                            Too small means multiple rentals. Too large wastes money. Call <a href="tel:6013167891">601-316-7891</a> for a free size consultation based on your specific project.
+                            Too small means multiple rentals. Too large wastes money. Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> for a free size consultation based on your specific project.
                         </p>
 
                         <h3>2. Plan Your Timeline</h3>
@@ -331,7 +332,7 @@ export default function BlogPost() {
 
                         <h3>Do you offer same-day delivery in Jackson?</h3>
                         <p>
-                            Yes! Same-day delivery is available throughout Jackson and Central Mississippi when you call before noon. Book online or call <a href="tel:6013167891">601-316-7891</a>.
+                            Yes! Same-day delivery is available throughout Jackson and Central Mississippi when you call before noon. Book online or call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink>.
                         </p>
 
                         <h3>Are there any hidden fees?</h3>

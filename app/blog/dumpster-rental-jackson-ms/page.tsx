@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { generateArticleSchema, generateFAQSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Dumpster Rental Jackson MS | MidSouth Dumpster Rentals',
@@ -112,7 +113,7 @@ export default function BlogPost() {
 
                         <h2>How the Rental Process Works</h2>
                         <ol>
-                            <li><strong>Book online or call <a href="tel:6013167891">601-316-7891</a></strong> — takes about 2 minutes</li>
+                            <li><strong>Book online or call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink></strong> — takes about 2 minutes</li>
                             <li><strong>We deliver the dumpster</strong> to your driveway or job site — often same day</li>
                             <li><strong>Fill it up</strong> at your own pace during your rental period (1, 3, or 7 days)</li>
                             <li><strong>Call us when you&apos;re done</strong> and we&apos;ll come pick it up and haul everything away</li>
@@ -138,7 +139,7 @@ export default function BlogPost() {
                             <li><strong>Madison County:</strong> <Link href="/service-areas/madison">Madison</Link>, Ridgeland, Canton, Flora</li>
                         </ul>
                         <p>
-                            Not sure if we serve your area? Call <a href="tel:6013167891">601-316-7891</a> and we&apos;ll let you know in under a minute.
+                            Not sure if we serve your area? Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> and we&apos;ll let you know in under a minute.
                         </p>
 
                         <h2>Frequently Asked Questions</h2>
@@ -153,7 +154,7 @@ export default function BlogPost() {
 
                         <div className={styles.cta}>
                             <h3>Ready to Book Your Dumpster in Jackson?</h3>
-                            <p>For more local details, visit our dedicated <Link href="/service-areas/jackson">Jackson Dumpster Rental</Link> service page. Call <a href="tel:6013167891">601-316-7891</a> or book online &mdash; same-day delivery available 7 days a week.</p>
+                            <p>For more local details, visit our dedicated <Link href="/service-areas/jackson">Jackson Dumpster Rental</Link> service page. Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> or book online &mdash; same-day delivery available 7 days a week.</p>
                             <a
                                 href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
                                 target="_blank"

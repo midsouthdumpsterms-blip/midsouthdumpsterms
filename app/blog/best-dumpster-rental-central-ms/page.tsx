@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateFAQSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: 'Best Dumpster Rental in Central Mississippi | 2026 Guide',
@@ -99,7 +100,7 @@ export default function BlogPost() {
                             Projects don&apos;t always follow a plan. A provider that offers same-day delivery means you can start demolition or cleanout work without waiting days for a dumpster to arrive.
                         </p>
                         <p>
-                            Mid South Dumpster Rentals offers <strong>same-day delivery 7 days a week</strong> when you call before noon at <a href="tel:6013167891">601-316-7891</a>.
+                            Mid South Dumpster Rentals offers <strong>same-day delivery 7 days a week</strong> when you call before noon at <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink>.
                         </p>
 
                         <h3>3. Seven-Day-a-Week Operation</h3>
@@ -140,7 +141,7 @@ export default function BlogPost() {
                                 </tr>
                                 <tr>
                                     <td>Phone</td>
-                                    <td><a href="tel:6013167891">601-316-7891</a></td>
+                                    <td><TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink></td>
                                 </tr>
                                 <tr>
                                     <td>Hours</td>
@@ -196,7 +197,7 @@ export default function BlogPost() {
                             <li><strong>Rankin County:</strong> Brandon, Flowood, Pearl, Florence, Richland</li>
                         </ul>
                         <p>
-                            Not sure if your address is in the service area? Call <a href="tel:6013167891">601-316-7891</a> and they&apos;ll confirm availability for your location.
+                            Not sure if your address is in the service area? Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> and they&apos;ll confirm availability for your location.
                         </p>
 
                         <h2>Frequently Asked Questions</h2>
@@ -211,7 +212,7 @@ export default function BlogPost() {
 
                         <div className={styles.cta}>
                             <h3>Ready to Book a Dumpster in Central MS?</h3>
-                            <p>Call <a href="tel:6013167891">601-316-7891</a> or book online — same-day delivery available.</p>
+                            <p>Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> or book online — same-day delivery available.</p>
                             <a
                                 href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
                                 target="_blank"

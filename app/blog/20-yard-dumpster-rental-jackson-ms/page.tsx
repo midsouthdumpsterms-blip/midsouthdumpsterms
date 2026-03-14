@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     title: '20 Yard Dumpster Rental in Jackson MS | Mid South Dumpster Rentals',
@@ -67,7 +68,7 @@ export default function BlogPost() {
                         <ul>
                             <li><strong>Flat-Rate Pricing:</strong> We believe in transparent pricing without hidden fees. Our 20-yard dumpsters come with clear weight allowances so you know exactly what to expect.</li>
                             <li><strong>Driveway Protection:</strong> We respect your property. Our drivers are trained to carefully place dumpsters on your driveway safely.</li>
-                            <li><strong>Same-Day & Next-Day Delivery:</strong> When you're ready to work, we're ready to deliver. Give us a call at <a href="tel:6013167891">601-316-7891</a> and ask about same-day availability.</li>
+                            <li><strong>Same-Day & Next-Day Delivery:</strong> When you're ready to work, we're ready to deliver. Give us a call at <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> and ask about same-day availability.</li>
                         </ul>
 
                         <h2>Book Your 20 Yard Dumpster in Jackson, MS Today</h2>
