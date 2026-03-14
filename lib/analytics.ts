@@ -1,7 +1,7 @@
 // Google Analytics & Vercel Event Tracking
 // This allows us to track button clicks even when they lead to third-party URLs
 
-import { track } from '@vercel/analytics'
+import { track } from '@vercel/analytics/react'
 
 declare global {
     interface Window {
