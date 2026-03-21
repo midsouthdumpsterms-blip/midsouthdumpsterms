@@ -5,12 +5,12 @@ import styles from './service-areas.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
-    title: { absolute: 'Dumpster Rental Near Me | Jackson, Brandon, Madison MS' },
+    title: { absolute: 'Dumpster Rental Near Me | Jackson MS & Central Mississippi | Mid South' },
     description:
-        'Same-day dumpster rentals in Jackson, Brandon, Clinton, Madison, Pearl, Ridgeland & more. 14 Central Mississippi cities served. From $349. Call 601-316-7891.',
+        'Same-day roll off dumpster rentals across Hinds, Madison & Rankin Counties — Jackson, Brandon, Clinton, Madison, Pearl, Ridgeland & 14 more cities. From $349. Call 601-316-7891.',
     openGraph: {
         title: 'Dumpster Rental Near Me | Mid South Dumpster Rentals',
-        description: 'Same-day dumpster rentals across 14 Central Mississippi cities. From $349.',
+        description: 'Same-day roll off dumpster rentals across Hinds, Madison & Rankin Counties in Central MS. From $349.',
         url: 'https://midsouthdumpsterms.com/service-areas',
     },
 }
@@ -43,10 +43,30 @@ export default function ServiceAreas() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Our Service Areas</h1>
+                    <h1>Dumpster Rental Service Areas — Central Mississippi</h1>
                     <p className={styles.heroSubtext}>
-                        Proudly serving Central Mississippi with fast, reliable dumpster rental services
+                        Proudly serving Hinds, Madison & Rankin Counties with fast, same-day roll off dumpster rental
                     </p>
+                </div>
+            </section>
+
+            <section style={{ padding: 'var(--spacing-2xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
+                <div className="container">
+                    <h2 className="text-center">Browse by County</h2>
+                    <p className="text-center" style={{ marginBottom: 'var(--spacing-xl)' }}>Each county page lists every city we serve in that area.</p>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem', maxWidth: '960px', margin: '0 auto' }}>
+                        {[
+                            { name: 'Hinds County', href: '/service-areas/hinds-county', description: 'Jackson, Clinton, Byram, Terry, Raymond & more' },
+                            { name: 'Madison County', href: '/service-areas/madison-county', description: 'Madison, Ridgeland, Canton, Gluckstadt, Flora & more' },
+                            { name: 'Rankin County', href: '/service-areas/rankin-county', description: 'Brandon, Pearl, Flowood, Richland, Florence & more' },
+                        ].map(({ name, href, description }) => (
+                            <Link key={name} href={href} className={styles.areaCard}>
+                                <h2>{name}</h2>
+                                <p>{description}</p>
+                                <span className={styles.learnMore}>View All Cities →</span>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </section>
 

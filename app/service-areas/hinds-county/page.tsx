@@ -1,0 +1,204 @@
+import { Metadata } from 'next'
+import Link from 'next/link'
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
+import DumpsterSizeCard from '@/components/DumpsterSizeCard'
+import BookingButton from '@/components/BookingButton'
+import styles from '../city.module.css'
+import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+
+export const metadata: Metadata = {
+    title: 'Roll Off Dumpster Rental Hinds County MS | Mid South Dumpster Rentals',
+    description:
+        'Roll off dumpster rental serving all of Hinds County, MS. 10, 15 & 20-yard dumpsters with same-day delivery to Jackson, Clinton, Byram, Terry, Raymond & more. Flat-rate pricing, no hidden fees. Call 601-316-7891.',
+    openGraph: {
+        title: 'Roll Off Dumpster Rental Hinds County MS | Mid South',
+        description: 'Locally owned roll off dumpster rental serving all of Hinds County, MS. Same-day delivery, flat-rate pricing starting at $349.',
+        url: 'https://midsouthdumpsterms.com/service-areas/hinds-county',
+    },
+}
+
+export default function HindsCountyPage() {
+    const serviceSchema = generateServiceSchema(
+        'Dumpster Rental',
+        'Professional roll off dumpster rentals throughout Hinds County, MS. Available in 10, 15, and 20-yard sizes for residential, commercial, and construction projects.',
+        'Hinds County',
+        undefined,
+        ['39201', '39202', '39203', '39204', '39205', '39206', '39209', '39056', '39272', '39083', '39170']
+    )
+
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://midsouthdumpsterms.com' },
+        { name: 'Service Areas', url: 'https://midsouthdumpsterms.com/service-areas' },
+        { name: 'Hinds County', url: 'https://midsouthdumpsterms.com/service-areas/hinds-county' },
+    ])
+
+    const faqSchema = generateFAQSchema([
+        {
+            question: 'Do you provide roll off dumpster rental throughout all of Hinds County, MS?',
+            answer: 'Yes! Mid South Dumpster Rentals serves all of Hinds County including Jackson, Clinton, Byram, Terry, Raymond, Bolton, Edwards, and surrounding communities. We own our trucks and handle every delivery ourselves.',
+        },
+        {
+            question: 'How much does roll off dumpster rental cost in Hinds County, MS?',
+            answer: 'Our roll off dumpster rentals in Hinds County start at $349 for a 10-yard container, $399 for a 15-yard, and $449 for a 20-yard. All prices are flat-rate and include delivery, pickup, and disposal with no hidden fees.',
+        },
+        {
+            question: 'Can I get same-day dumpster delivery in Hinds County?',
+            answer: 'Yes! We offer same-day roll off dumpster delivery throughout Hinds County when you call before noon at 601-316-7891. We deliver 7 days a week, 7AM–7PM.',
+        },
+        {
+            question: 'Do I need a permit for a dumpster in Hinds County?',
+            answer: 'If placing the dumpster on your private driveway or property in Hinds County, no permit is typically needed. For placement on a public street or right-of-way in Jackson or another city, a permit may be required. We can help guide you through the process.',
+        },
+        {
+            question: 'What cities in Hinds County do you serve?',
+            answer: 'We serve the entire Hinds County area including Jackson, Clinton, Byram, Terry, Raymond, Bolton, Edwards, Utica, and surrounding communities. Call us at 601-316-7891 if you have questions about your specific location.',
+        },
+    ])
+
+    return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />
+
+            <section className={styles.heroSection}>
+                <div className="container">
+                    <h1>Roll Off Dumpster Rental in Hinds County, MS</h1>
+                    <p className={styles.heroSubtext}>
+                        Locally owned roll off dumpster rental serving all of Hinds County — same-day delivery to Jackson, Clinton, Byram, Terry, Raymond & more
+                    </p>
+                    <div className={styles.heroButtons}>
+                        <BookingButton label="Book Hinds County Dumpster" location="Hinds County Service Area Hero" />
+                        <TrackedPhoneLink location="Hinds County Service Area CTA" className="btn btn-outline btn-lg">
+                            Call 601-316-7891
+                        </TrackedPhoneLink>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div className="container">
+                    <h2 className="text-center">Roll Off Dumpster Sizes Available in Hinds County</h2>
+                    <div className={styles.sizesGrid}>
+                        <DumpsterSizeCard size="10" capacity="4 Pickup Truck Loads" weight="1 Ton Included" pricing={{ '1 Day': '$349', '3 Day': '$379', '7 Day': '$399' }} idealFor={['Small Cleanouts', 'Garage Cleanup', 'Minor Renovations', 'Yard Debris']} />
+                        <DumpsterSizeCard size="15" capacity="6 Pickup Truck Loads" weight="2 Tons Included" pricing={{ '1 Day': '$399', '3 Day': '$429', '7 Day': '$449' }} idealFor={['Home Renovations', 'Roofing Projects', 'Estate Cleanouts', 'Medium Construction']} popular />
+                        <DumpsterSizeCard size="20" capacity="8 Pickup Truck Loads" weight="3 Tons Included" pricing={{ '1 Day': '$449', '3 Day': '$479', '7 Day': '$499' }} idealFor={['Large Renovations', 'New Construction', 'Major Demolition', 'Commercial Projects']} />
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <div className="grid grid-2">
+                        <div>
+                            <h2>Why Choose Mid South for Hinds County Dumpster Rental?</h2>
+                            <p>We're a locally owned Hinds County company — not a national call center. Our roll off dumpsters are owned and operated by us, meaning you get reliable delivery, responsive service, and a real person on the phone every time you call.</p>
+                            <ul className={styles.benefitsList}>
+                                <li>✓ Same-day roll off dumpster delivery available</li>
+                                <li>✓ Serving all cities in Hinds County, MS</li>
+                                <li>✓ Flat-rate pricing — delivery, pickup & disposal included</li>
+                                <li>✓ 10, 15, and 20-yard roll off dumpsters in stock</li>
+                                <li>✓ Residential, commercial & construction service</li>
+                                <li>✓ Open 7 days a week, 7AM – 7PM</li>
+                                <li>✓ 5-star rated on Google</li>
+                                <li>✓ Licensed & insured</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2>Roll Off Dumpster Uses Across Hinds County</h2>
+                            <p>Whether you're clearing an estate in Belhaven, remodeling in North Jackson, running a roofing crew in Clinton, or cleaning out a rental property in Byram — we have the right roll off dumpster for your Hinds County project.</p>
+                            <p><strong>Common roll off dumpster uses in Hinds County:</strong></p>
+                            <ul className={styles.projectsList}>
+                                <li>Home renovations and remodeling</li>
+                                <li>Roofing tear-offs and replacements</li>
+                                <li>Construction and demolition debris</li>
+                                <li>Estate and foreclosure cleanouts</li>
+                                <li>Yard waste and storm cleanup</li>
+                                <li>Commercial and retail contractor projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Cities We Serve Across Hinds County, MS</h2>
+                    <p>
+                        As Hinds County's locally owned roll off dumpster company, we cover the entire county — from the heart of Jackson to the smaller communities throughout Hinds County:
+                    </p>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem', margin: '1.5rem 0' }}>
+                        {[
+                            { name: 'Jackson', href: '/service-areas/jackson' },
+                            { name: 'Clinton', href: '/service-areas/clinton' },
+                            { name: 'Byram', href: '/service-areas/byram' },
+                            { name: 'Terry', href: '/service-areas/terry' },
+                            { name: 'Raymond', href: null },
+                            { name: 'Bolton', href: null },
+                            { name: 'Edwards', href: null },
+                            { name: 'Utica', href: null },
+                        ].map(({ name, href }) => (
+                            <div key={name} style={{ padding: '0.75rem 1rem', backgroundColor: 'var(--color-gray-50)', borderRadius: '8px', fontWeight: '500' }}>
+                                {href ? (
+                                    <Link href={href} style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>
+                                        {name} →
+                                    </Link>
+                                ) : (
+                                    <span>{name}</span>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                    <p>
+                        Don't see your city? Call us at <TrackedPhoneLink location="Hinds County Cities Section">601-316-7891</TrackedPhoneLink> — we likely serve your area and can confirm availability.
+                    </p>
+                </div>
+            </section>
+
+            <section className={styles.faqSection} style={{ padding: 'var(--spacing-3xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
+                <div className="container container-narrow">
+                    <h2 className="text-center">Hinds County Dumpster Rental FAQs</h2>
+                    <div className={styles.faqList}>
+                        {[
+                            {
+                                question: 'Do you provide roll off dumpster rental throughout all of Hinds County, MS?',
+                                answer: 'Yes! Mid South Dumpster Rentals serves all of Hinds County including Jackson, Clinton, Byram, Terry, Raymond, Bolton, Edwards, and surrounding communities. We own our trucks and handle every delivery ourselves.',
+                            },
+                            {
+                                question: 'How much does roll off dumpster rental cost in Hinds County, MS?',
+                                answer: 'Our roll off dumpster rentals in Hinds County start at $349 for a 10-yard container, $399 for a 15-yard, and $449 for a 20-yard. All prices are flat-rate and include delivery, pickup, and disposal with no hidden fees.',
+                            },
+                            {
+                                question: 'Can I get same-day dumpster delivery in Hinds County?',
+                                answer: 'Yes! We offer same-day roll off dumpster delivery throughout Hinds County when you call before noon at 601-316-7891. We deliver 7 days a week, 7AM–7PM.',
+                            },
+                            {
+                                question: 'Do I need a permit for a dumpster in Hinds County?',
+                                answer: 'If placing the dumpster on your private driveway or property, no permit is typically needed. For placement on a public street in Jackson or another Hinds County city, a permit may be required. We can help guide you through the process.',
+                            },
+                            {
+                                question: 'What cities in Hinds County do you serve?',
+                                answer: 'We serve the entire Hinds County area including Jackson, Clinton, Byram, Terry, Raymond, Bolton, Edwards, Utica, and surrounding communities.',
+                            },
+                        ].map((faq, index) => (
+                            <div key={index} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-xl)' }}>
+                                <h3 style={{ fontSize: '1.25rem', marginBottom: 'var(--spacing-sm)' }}>{faq.question}</h3>
+                                <p>{faq.answer}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.ctaSection}>
+                <div className="container text-center">
+                    <h2>Ready to Rent a Roll Off Dumpster in Hinds County?</h2>
+                    <p style={{ fontSize: '1.125rem', marginBottom: 'var(--spacing-xl)' }}>
+                        Book online now or call 601-316-7891 for same-day service throughout Hinds County, MS
+                    </p>
+                    <BookingButton label="Book Hinds County Dumpster" location="Hinds County Service Area CTA" />
+                </div>
+            </section>
+        </>
+    )
+}
