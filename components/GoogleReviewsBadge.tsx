@@ -72,7 +72,7 @@ export default function GoogleReviewsBadge() {
                 <div className={styles.ratingBlock}>
                     <span className={styles.score}>5.0</span>
                     <span className={styles.stars}>★★★★★</span>
-                    <span className={styles.reviewCount}>12 reviews</span>
+                    <span className={styles.reviewCount}>15 reviews</span>
                 </div>
             </div>
 
