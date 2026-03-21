@@ -8,12 +8,12 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Flowood MS | Kensington & Lakeland',
+    title: 'Roll Off Dumpster Rental Flowood MS | Same-Day Service | Mid South',
     description:
-        'Serving Kensington, Castlewoods & Laurelwood with reliable dumpster rentals. 10-20 yard sizes for renovations & construction. Call 601-316-7891 today.',
+        'Roll off dumpster rental in Flowood, MS starting at $349. Same-day delivery to Kensington, Laurelwood, Traditions & all Flowood neighborhoods. Serving Rankin County contractors & homeowners. Call 601-316-7891.',
     openGraph: {
-        title: 'Dumpster Rentals in Flowood, MS | Mid South',
-        description: 'Serving Kensington, Castlewoods & Laurelwood with same-day dumpster delivery.',
+        title: 'Roll Off Dumpster Rental Flowood, MS | Mid South',
+        description: 'Same-day roll off dumpster rental in Flowood, MS. Flat-rate pricing from $349, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/flowood',
     },
 }
@@ -35,17 +35,25 @@ export default function FlowoodPage() {
 
     const faqSchema = generateFAQSchema([
         {
-            question: "How much does a dumpster rental cost in Flowood, MS?",
-            answer: "In Flowood, our 10-yard dumpster starts at $349, our 15-yard at $399, and our 20-yard at $449. This is a flat-rate price that includes delivery, pickup, and a generous weight allowance, so there are no hidden fees."
+            question: 'How much does roll off dumpster rental cost in Flowood, MS?',
+            answer: 'Our flat-rate prices in Flowood start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard. All prices include delivery, pickup, and disposal. No hidden fees.'
         },
         {
-            question: "Can you place a dumpster on my driveway in Flowood?",
-            answer: "Yes, we specialize in residential delivery. We carefully place the roll-off container on your driveway in neighborhoods like Laurelwood or Kensington, and we can use protective boards to prevent any damage to the concrete or asphalt."
+            question: 'Can you place a dumpster on my driveway in Flowood?',
+            answer: 'Yes — we specialize in residential driveway delivery throughout Flowood. We use protective boards to prevent damage to concrete or asphalt, especially in neighborhoods like Laurelwood and Kensington.'
         },
         {
-            question: "Do you offer same-day dumpster delivery in Flowood?",
-            answer: "Absolutely. We are based locally and offer same-day and next-day dumpster rentals throughout Flowood and the surrounding Rankin County area. Call early to secure same-day service."
-        }
+            question: 'Do you offer same-day dumpster delivery in Flowood?',
+            answer: 'Yes! We offer same-day roll off dumpster delivery throughout Flowood when you call before noon at 601-316-7891. We deliver 7 days a week, 7AM–7PM.'
+        },
+        {
+            question: 'Do I need a permit for a dumpster in Flowood?',
+            answer: 'If placing the dumpster on your private driveway or property, no permit is required. For placement on a public street or right-of-way in Flowood, contact the City of Flowood.'
+        },
+        {
+            question: 'What size dumpster is best for a commercial renovation in Flowood?',
+            answer: 'For commercial renovations along Lakeland Drive or in Flowood business parks, we typically recommend a 20-yard dumpster. Call us at 601-316-7891 and we can help size your project correctly.'
+        },
     ])
 
     return (
@@ -56,9 +64,9 @@ export default function FlowoodPage() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Dumpster Rentals in Flowood, MS</h1>
+                    <h1>Roll Off Dumpster Rental in Flowood, MS</h1>
                     <p className={styles.heroSubtext}>
-                        Fast, affordable roll-off dumpster delivery throughout Flowood and surrounding areas
+                        Same-day roll off dumpster delivery throughout Flowood — serving Kensington, Laurelwood, Traditions & surrounding Rankin County
                     </p>
                     <div className={styles.heroButtons}>
                         <BookingButton label="Book Flowood Dumpster" location="Flowood Service Area Hero" />
@@ -84,28 +92,30 @@ export default function FlowoodPage() {
                 <div className="container">
                     <div className="grid grid-2">
                         <div>
-                            <h2>Why Choose Us in Flowood?</h2>
+                            <h2>Why Choose Mid South for Flowood Dumpster Rental?</h2>
+                            <p>Flowood is one of our most active commercial service areas — from the Lakeland Drive retail corridor to new construction along the I-20 frontage. We're locally owned, we know Flowood's streets and HOA rules, and we deliver on time every time.</p>
                             <ul className={styles.benefitsList}>
-                                <li>✓ Same-day delivery available</li>
-                                <li>✓ Serving Flowood and Rankin County</li>
-                                <li>✓ Transparent pricing with no hidden fees</li>
-                                <li>✓ 10, 15, and 20-yard dumpsters</li>
+                                <li>✓ Same-day roll off dumpster delivery available</li>
+                                <li>✓ Serving all of Flowood and Rankin County</li>
+                                <li>✓ Flat-rate pricing — no hidden fees</li>
+                                <li>✓ 10, 15, and 20-yard roll off dumpsters</li>
                                 <li>✓ Residential and commercial service</li>
-                                <li>✓ 7 days a week, 7AM - 7PM</li>
-                                <li>✓ Professional, courteous service</li>
+                                <li>✓ Open 7 days a week, 7AM – 7PM</li>
+                                <li>✓ 5-star rated on Google</li>
+                                <li>✓ Licensed & insured</li>
                             </ul>
                         </div>
                         <div>
-                            <h2>Perfect For Flowood Projects</h2>
-                            <p>Whether you're renovating a home in Kensington, clearing out an estate in Castlewoods, managing a construction project in Laurelwood or Laurelwood Estates, we have the right dumpster size for your needs.</p>
-                            <p><strong>Common uses in Flowood:</strong></p>
+                            <h2>Roll Off Dumpster Uses in Flowood, MS</h2>
+                            <p>Whether you're remodeling a home in Kensington, managing a roofing crew in Laurelwood, running a commercial buildout along Lakeland Drive, or cleaning out a rental property near the Flowood business parks off I-20 — we have the right roll off dumpster for your project.</p>
+                            <p><strong>Common roll off dumpster uses in Flowood:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
-                                <li>Construction and demolition</li>
+                                <li>Roofing tear-offs and replacements</li>
+                                <li>Construction and demolition debris</li>
                                 <li>Estate and foreclosure cleanouts</li>
-                                <li>Roofing projects</li>
-                                <li>Yard waste and landscaping</li>
-                                <li>Commercial cleanouts</li>
+                                <li>Yard waste and storm cleanup</li>
+                                <li>Commercial and retail contractor projects</li>
                             </ul>
 
                             <div style={{ marginTop: '2rem' }}>
@@ -124,12 +134,16 @@ export default function FlowoodPage() {
 
             <section className={styles.contentSection}>
                 <div className="container">
+                    <h2>Roll Off Dumpster Rental Serving All of Rankin County from Flowood</h2>
+                    <p>
+                        Flowood's prime location at the crossroads of I-20 and Lakeland Drive makes it a central hub for our Rankin County service area. We provide fast roll off dumpster rental throughout all of Rankin County — from Flowood and Pearl to Brandon, Richland, Florence, and beyond.
+                    </p>
                     <h2>Neighborhoods We Serve in Flowood</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Flowood, a thriving city in Rankin County. Whether you're in <strong>Laurelwood</strong>, <strong>Laurelwood Estates</strong>, <strong>Traditions</strong>, <strong>Latter Rayne</strong>, <strong>Lineage Lake</strong>, <strong>Kensington</strong>, <strong>Lakeland East</strong>, or <strong>Aubry Hills</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly deliver roll off dumpsters to every neighborhood in Flowood. Whether you're in <strong>Laurelwood</strong>, <strong>Laurelwood Estates</strong>, <strong>Traditions</strong>, <strong>Latter Rayne</strong>, <strong>Lineage Lake</strong>, <strong>Kensington</strong>, <strong>Lakeland East</strong>, or <strong>Aubry Hills</strong>, we deliver fast, reliable dumpster rental service to your location.
                     </p>
                     <p>
-                        Flowood's prime location and growing business district make it one of the metro area's most dynamic communities. We're here to support your residential and commercial projects with professional dumpster rental service. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other local customers.
+                        Flowood's growing business district and prime residential communities make it one of the metro area's most dynamic service areas. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Flowood customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Tip for Flowood Homeowners:</strong> We highly recommend our 15-yard dumpster for most mid-sized renovations in the Laurelwood and Kensington areas.
@@ -145,16 +159,24 @@ export default function FlowoodPage() {
                     <h2 className="text-center">Frequently Asked Questions: Flowood Dumpster Rentals</h2>
                     <div className={styles.faqGrid}>
                         <div className={styles.faqItem}>
-                            <h3>How much does a dumpster rental cost in Flowood, MS?</h3>
-                            <p>In Flowood, our 10-yard dumpster starts at $349, our 15-yard at $399, and our 20-yard at $449. This is a flat-rate price that includes delivery, pickup, and a generous weight allowance, so there are no hidden fees.</p>
+                            <h3>How much does roll off dumpster rental cost in Flowood, MS?</h3>
+                            <p>Our flat-rate prices in Flowood start at $349 for a 10-yard, $399 for a 15-yard, and $449 for a 20-yard. All prices include delivery, pickup, and disposal — no hidden fees.</p>
                         </div>
                         <div className={styles.faqItem}>
                             <h3>Can you place a dumpster on my driveway in Flowood?</h3>
-                            <p>Yes, we specialize in residential delivery. We carefully place the roll-off container on your driveway in neighborhoods like Laurelwood or Kensington, and we can use protective boards to prevent any damage to the concrete or asphalt.</p>
+                            <p>Yes — we specialize in residential driveway delivery. We use protective boards to prevent damage to concrete or asphalt in neighborhoods like Laurelwood and Kensington.</p>
                         </div>
                         <div className={styles.faqItem}>
                             <h3>Do you offer same-day dumpster delivery in Flowood?</h3>
-                            <p>Absolutely. We are based locally and offer same-day and next-day dumpster rentals throughout Flowood and the surrounding Rankin County area. Call early to secure same-day service.</p>
+                            <p>Yes! Call before noon at 601-316-7891 for same-day roll off dumpster delivery. We deliver throughout Flowood and Rankin County 7 days a week, 7AM–7PM.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>Do I need a permit for a dumpster in Flowood?</h3>
+                            <p>For driveway or private property placement, no permit is needed. For street placement, contact the City of Flowood for requirements.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>What size dumpster is best for commercial work in Flowood?</h3>
+                            <p>For commercial renovations along Lakeland Drive or in Flowood business parks, we typically recommend a 20-yard. Call us and we'll help you size it correctly.</p>
                         </div>
                     </div>
                 </div>

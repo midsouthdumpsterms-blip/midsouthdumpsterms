@@ -6,9 +6,14 @@ import fs from 'fs'
 import path from 'path'
 
 export const metadata: Metadata = {
-    title: 'Blog | Dumpster Rental Tips & Guides',
+    title: 'Dumpster Rental Tips & Guides | Jackson MS | Mid South Dumpster Rentals',
     description:
-        'Expert tips and guides for dumpster rentals, waste management, and home improvement projects in Central Mississippi.',
+        'Expert dumpster rental guides for Jackson, Rankin, Hinds & Madison County MS. Learn what to throw away, how to choose a size, pricing tips, and more.',
+    openGraph: {
+        title: 'Dumpster Rental Tips & Local Guides | Mid South',
+        description: 'Expert dumpster rental guides for Central Mississippi homeowners and contractors.',
+        url: 'https://midsouthdumpsterms.com/blog',
+    },
 }
 
 function getBlogPosts() {
@@ -79,9 +84,9 @@ export default function Blog() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Blog & Resources</h1>
+                    <h1>Dumpster Rental Tips & Guides for Central Mississippi</h1>
                     <p className={styles.heroSubtext}>
-                        Tips, guides, and insights for your dumpster rental needs
+                        Local guides for Jackson, Rankin, Hinds & Madison County homeowners and contractors
                     </p>
                 </div>
             </section>

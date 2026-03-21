@@ -8,12 +8,12 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
-    title: 'Roll-Off Dumpster Rentals Pearl MS | Residential & Commercial',
+    title: 'Roll Off Dumpster Rental Pearl MS | Same-Day Service | Mid South',
     description:
-        'Affordable dumpster rentals in Pearl & Rankin County. 10-20 yard sizes for home cleanouts, roofing & construction. Same-day delivery. Book online.',
+        'Roll off dumpster rental in Pearl, MS starting at $349. 10, 15 & 20-yard dumpsters with same-day delivery to Harvey Crossing, Deerfield, Parkbridge & all Pearl neighborhoods. Flat-rate pricing. Call 601-316-7891.',
     openGraph: {
-        title: 'Dumpster Rentals in Pearl, MS | Mid South',
-        description: 'Serving Pearl & Rankin County with same-day dumpster delivery.',
+        title: 'Roll Off Dumpster Rental Pearl, MS | Mid South',
+        description: 'Same-day roll off dumpster rental in Pearl, MS. Flat-rate pricing from $349, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/pearl',
     },
 }
@@ -35,17 +35,25 @@ export default function PearlPage() {
 
     const faqSchema = generateFAQSchema([
         {
-            question: "How do I choose the right size dumpster for my project in Pearl?",
-            answer: "For minor cleanouts and small yard projects in Pearl, our 10-yard dumpster is ideal. For mid-to-large renovations, roofing projects, or major decluttering, the 15-yard or 20-yard options provide the best value and capacity."
+            question: 'How much does roll off dumpster rental cost in Pearl, MS?',
+            answer: 'Our flat-rate prices in Pearl start at $349 for a 10-yard dumpster (1-day), $399 for a 15-yard, and $449 for a 20-yard. All prices include delivery, pickup, and disposal. No hidden fees — ever.'
         },
         {
-            question: "Are there any hidden fees for dumpster rentals in Pearl, MS?",
-            answer: "No! Mid South Dumpster Rentals prides itself on transparent, flat-rate pricing. Your rental fee includes delivery, pickup, and a specific tonnage allowance, so you won't be surprised by unexpected charges."
+            question: 'Can I get same-day roll off dumpster delivery in Pearl?',
+            answer: 'Yes! We offer same-day delivery throughout Pearl, MS when you call before noon at 601-316-7891. We deliver 7 days a week, 7AM–7PM.'
         },
         {
-            question: "Can I put construction debris in a rented dumpster in Pearl?",
-            answer: "Yes, our dumpsters are fully equipped to handle standard construction and demolition debris, such as wood, drywall, and roofing materials. However, hazardous materials and wet paint are prohibited."
-        }
+            question: 'Do I need a permit to rent a dumpster in Pearl, MS?',
+            answer: 'If you place the dumpster on your private driveway or property in Pearl, no permit is required. For placement on a public street, contact the City of Pearl for permit requirements.'
+        },
+        {
+            question: 'What size dumpster do I need for a roofing project in Pearl?',
+            answer: 'A 10-yard dumpster handles most residential roofing tear-offs in Pearl. For larger roofs or multi-layer shingles, our 15-yard is the better choice. Call us at 601-316-7891 and we can help you size it right.'
+        },
+        {
+            question: 'Can I put construction debris in a rented dumpster in Pearl?',
+            answer: 'Yes — we accept wood, drywall, roofing shingles, carpet, concrete, and most construction debris. Prohibited items include hazardous materials, wet paint, tires, and appliances with Freon.'
+        },
     ])
 
     return (
@@ -56,9 +64,9 @@ export default function PearlPage() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Roll-Off Dumpster Rentals in Pearl, MS</h1>
+                    <h1>Roll Off Dumpster Rental in Pearl, MS</h1>
                     <p className={styles.heroSubtext}>
-                        Fast, affordable roll-off dumpster delivery throughout Pearl and surrounding areas
+                        Same-day roll off dumpster delivery throughout Pearl — serving Harvey Crossing, Deerfield, Parkbridge & all Pearl neighborhoods
                     </p>
                     <div className={styles.heroButtons}>
                         <BookingButton label="Book Pearl Dumpster" location="Pearl Service Area Hero" />
@@ -84,28 +92,30 @@ export default function PearlPage() {
                 <div className="container">
                     <div className="grid grid-2">
                         <div>
-                            <h2>Why Choose Us in Pearl?</h2>
+                            <h2>Why Choose Mid South for Pearl Dumpster Rental?</h2>
+                            <p>Pearl is one of the fastest-growing communities in Rankin County — and one of our most active delivery routes. We're locally owned and we know Pearl well: from the Old Brandon Road corridor to the neighborhoods near the airport and the medical mile on Pearson Road.</p>
                             <ul className={styles.benefitsList}>
-                                <li>✓ Same-day delivery available</li>
-                                <li>✓ Serving Pearl and Rankin County</li>
-                                <li>✓ Transparent pricing with no hidden fees</li>
-                                <li>✓ 10, 15, and 20-yard dumpsters</li>
+                                <li>✓ Same-day roll off dumpster delivery available</li>
+                                <li>✓ Serving all of Pearl and Rankin County</li>
+                                <li>✓ Flat-rate pricing — no hidden fees</li>
+                                <li>✓ 10, 15, and 20-yard roll off dumpsters</li>
                                 <li>✓ Residential and commercial service</li>
-                                <li>✓ 7 days a week, 7AM - 7PM</li>
-                                <li>✓ Professional, courteous service</li>
+                                <li>✓ Open 7 days a week, 7AM – 7PM</li>
+                                <li>✓ 5-star rated on Google</li>
+                                <li>✓ Licensed & insured</li>
                             </ul>
                         </div>
                         <div>
-                            <h2>Perfect For Pearl Projects</h2>
-                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Pearl, we have the right dumpster size for your needs.</p>
-                            <p><strong>Common uses in Pearl:</strong></p>
+                            <h2>Roll Off Dumpster Uses in Pearl, MS</h2>
+                            <p>Whether you're renovating a home near the Pearson Road corridor, cleaning out a rental property in Harvey Crossing, tearing off a roof in Parkbridge, or running a commercial project near the Airport Road industrial area — we have the right roll off dumpster for your Pearl project.</p>
+                            <p><strong>Common roll off dumpster uses in Pearl:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
-                                <li>Construction and demolition</li>
+                                <li>Roofing tear-offs and replacements</li>
+                                <li>Construction and demolition debris</li>
                                 <li>Estate and foreclosure cleanouts</li>
-                                <li>Roofing projects</li>
-                                <li>Yard waste and landscaping</li>
-                                <li>Commercial cleanouts</li>
+                                <li>Yard waste and storm cleanup</li>
+                                <li>Commercial and retail contractor projects</li>
                             </ul>
 
                             <div style={{ marginTop: '2rem' }}>
@@ -124,12 +134,16 @@ export default function PearlPage() {
 
             <section className={styles.contentSection}>
                 <div className="container">
-                    <h2>Neighborhoods We Serve in Pearl</h2>
+                    <h2>Roll Off Dumpster Rental Serving All of Rankin County from Pearl</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Pearl, a vibrant city in Rankin County. Whether you're in <strong>Harvey Crossing</strong>, <strong>Deerfield</strong>, <strong>Pauline Creek</strong>, <strong>Rangelon Hills</strong>, <strong>The Links of Madison</strong>, or <strong>Parkbridge</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        Pearl sits at the heart of Rankin County and is a key part of our daily delivery route. We provide fast roll off dumpster rental throughout all of Rankin County — from Pearl and Flowood to Brandon, Richland, Florence, and beyond. Whether your project is residential or a multi-week commercial job, our locally owned trucks are ready.
+                    </p>
+                    <h2>Neighborhoods We Serve in Pearl, MS</h2>
+                    <p>
+                        We proudly serve every neighborhood in Pearl. Whether you're in <strong>Harvey Crossing</strong>, <strong>Deerfield</strong>, <strong>Pauline Creek</strong>, <strong>Rangelon Hills</strong>, <strong>Parkbridge</strong>, <strong>Airport Road</strong>, or anywhere along <strong>Old Brandon Road</strong> or <strong>Pearson Road</strong>, we deliver fast, reliable roll off dumpster rental service.
                     </p>
                     <p>
-                        Pearl's diverse neighborhoods and central location make it a hub for residential and commercial activity. We're here to support your projects with dependable roll-off dumpster rental service throughout the Pearl area. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Pearl customers.
+                        Pearl's convenient location, active commercial corridors, and growing residential base make it one of our highest-demand service areas. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Pearl customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Wondering what costs are like in the area?</strong> Get an idea from our <Link href="/blog/dumpster-rental-prices-jackson-ms">Dumpster Rental Cost Guide</Link> for Central Mississippi.
@@ -145,16 +159,24 @@ export default function PearlPage() {
                     <h2 className="text-center">Frequently Asked Questions: Pearl Dumpster Rentals</h2>
                     <div className={styles.faqGrid}>
                         <div className={styles.faqItem}>
-                            <h3>How do I choose the right size dumpster for my project in Pearl?</h3>
-                            <p>For minor cleanouts and small yard projects in Pearl, our 10-yard dumpster is ideal. For mid-to-large renovations, roofing projects, or major decluttering, the 15-yard or 20-yard options provide the best value and capacity.</p>
+                            <h3>How much does roll off dumpster rental cost in Pearl, MS?</h3>
+                            <p>Our flat-rate prices in Pearl start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard. All prices include delivery, pickup, and disposal — no hidden fees.</p>
                         </div>
                         <div className={styles.faqItem}>
-                            <h3>Are there any hidden fees for dumpster rentals in Pearl, MS?</h3>
-                            <p>No! Mid South Dumpster Rentals prides itself on transparent, flat-rate pricing. Your rental fee includes delivery, pickup, and a specific tonnage allowance, so you won't be surprised by unexpected charges.</p>
+                            <h3>Can I get same-day dumpster delivery in Pearl?</h3>
+                            <p>Yes! We offer same-day roll off dumpster delivery throughout Pearl when you call before noon at 601-316-7891. We deliver 7 days a week, 7AM–7PM.</p>
                         </div>
                         <div className={styles.faqItem}>
-                            <h3>Can I put construction debris in a rented dumpster in Pearl?</h3>
-                            <p>Yes, our dumpsters are fully equipped to handle standard construction and demolition debris, such as wood, drywall, and roofing materials. However, hazardous materials and wet paint are prohibited.</p>
+                            <h3>Do I need a permit to rent a dumpster in Pearl, MS?</h3>
+                            <p>If you place the dumpster on your private driveway or property, no permit is required. For street placement in Pearl, contact the City of Pearl for permit requirements.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>What size dumpster do I need for a roofing project in Pearl?</h3>
+                            <p>A 10-yard handles most single-layer roof tear-offs. For larger roofs or multi-layer shingles, the 15-yard is usually better. Call us and we'll help you size it.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>Can I put construction debris in my Pearl dumpster?</h3>
+                            <p>Yes — wood, drywall, roofing shingles, carpet, and most construction debris are all accepted. Prohibited items include hazardous materials, wet paint, tires, and appliances with Freon.</p>
                         </div>
                     </div>
                 </div>
