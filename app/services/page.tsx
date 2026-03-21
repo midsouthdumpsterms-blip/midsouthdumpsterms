@@ -8,12 +8,12 @@ import styles from './services.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
-    title: { absolute: 'Dumpster Rental Prices Jackson MS | $349–$499 | Mid South' },
+    title: { absolute: 'Roll Off Dumpster Rental Jackson MS | Prices from $349 | Mid South' },
     description:
-        '10-yard from $349 · 15-yard from $399 · 20-yard from $449. Same-day delivery available. No hidden fees. Serving Jackson, Brandon, Madison & Central MS. Call 601-316-7891.',
+        'Roll off dumpster rental in Jackson, MS. 10-yard from $349 · 15-yard from $399 · 20-yard from $449. Same-day delivery, no hidden fees. Serving Jackson, Brandon, Madison & all of Central MS. Call 601-316-7891.',
     openGraph: {
-        title: 'Dumpster Rental Prices Jackson MS | Mid South Dumpster Rentals',
-        description: '10, 15 & 20-yard roll-off dumpsters from $349. Same-day delivery. No hidden fees.',
+        title: 'Roll Off Dumpster Rental Prices Jackson MS | Mid South',
+        description: 'Roll off dumpster rental in Jackson MS — 10, 15 & 20-yard containers from $349. Same-day delivery. No hidden fees.',
         url: 'https://midsouthdumpsterms.com/services',
     },
 }
@@ -77,9 +77,9 @@ export default function Services() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Our Dumpster Rental Services</h1>
+                    <h1>Roll Off Dumpster Rental in Jackson, MS</h1>
                     <p className={styles.heroSubtext}>
-                        Professional roll-off dumpster rentals for residential, commercial, and construction projects
+                        Same-day roll off dumpster rental for residential, commercial, and construction projects — flat-rate pricing from $349, no hidden fees
                     </p>
                 </div>
             </section>
