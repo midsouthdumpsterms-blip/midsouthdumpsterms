@@ -8,12 +8,12 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Ridgeland MS | Highland Colony Area',
+    title: 'Roll Off Dumpster Rental Ridgeland MS | Madison County | Mid South',
     description:
-        'Professional dumpster rentals for Highland Colony & Ridgeland. 10-20 yard roll-offs with same-day delivery. Transparent pricing, no hidden fees.',
+        'Roll off dumpster rental in Ridgeland, MS and Madison County. 10, 15 & 20-yard dumpsters with same-day delivery to Highland Colony, Bridgewater & more. Flat-rate pricing, no hidden fees. Call 601-316-7891.',
     openGraph: {
-        title: 'Dumpster Rentals in Ridgeland, MS | Mid South',
-        description: 'Serving Highland Colony & Ridgeland with same-day dumpster delivery.',
+        title: 'Roll Off Dumpster Rental Ridgeland MS | Madison County',
+        description: 'Local roll off dumpster rental serving Ridgeland & all of Madison County. Same-day delivery, flat-rate pricing starting at $349.',
         url: 'https://midsouthdumpsterms.com/service-areas/ridgeland',
     },
 }
@@ -21,15 +21,23 @@ export const metadata: Metadata = {
 const faqs = [
     {
         question: 'Do I need an HOA permit to rent a dumpster in Ridgeland, MS?',
-        answer: 'HOA neighborhoods like Bridgewater might require approval for visible exterior dumpsters. For street placement on public roads, contact the City of Ridgeland Public Works department.',
+        answer: 'HOA neighborhoods like Bridgewater might require approval for visible exterior dumpsters. For street placement on public roads, contact the City of Ridgeland Public Works department. Placement on your own private driveway typically requires no permit.',
     },
     {
-        question: 'How much does dumpster rental cost in Ridgeland?',
-        answer: 'Our flat-rate pricing for Ridgeland includes delivery, pickup, and disposal. Prices start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard container, with no hidden fees.',
+        question: 'How much does roll off dumpster rental cost in Ridgeland, MS?',
+        answer: 'Our flat-rate pricing for Ridgeland includes delivery, pickup, and disposal with no hidden fees. A 10-yard roll off dumpster starts at $349, a 15-yard at $399, and a 20-yard at $449. Extended rentals are available at $50/day.',
     },
     {
         question: 'What is prohibited from a Ridgeland dumpster rental?',
-        answer: 'Hazardous materials, wet paint, tires, batteries, and appliances containing Freon are strictly prohibited for environmental safety.',
+        answer: 'Hazardous materials, wet paint, tires, batteries, and appliances containing Freon are strictly prohibited for environmental safety. Standard household junk, lumber, roofing shingles, and yard debris are all accepted.',
+    },
+    {
+        question: 'Do you serve all of Madison County, MS?',
+        answer: 'Yes! We serve all cities and communities throughout Madison County including Ridgeland, Madison, Canton, Gluckstadt, Flora, and Pocahontas. Same-day roll off dumpster delivery is available throughout Madison County when you call before noon.',
+    },
+    {
+        question: 'How quickly can you deliver a dumpster to Ridgeland?',
+        answer: 'We offer same-day roll off dumpster delivery in Ridgeland, MS, 7 days a week. Call us before noon at 601-316-7891 and we can typically have a dumpster at your location the same day.',
     },
 ]
 
@@ -57,9 +65,9 @@ export default function RidgelandPage() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Dumpster Rentals in Ridgeland, MS</h1>
+                    <h1>Roll Off Dumpster Rental in Ridgeland, MS</h1>
                     <p className={styles.heroSubtext}>
-                        Fast, affordable roll-off dumpster delivery throughout Ridgeland and surrounding areas
+                        Local roll off dumpster rental serving Ridgeland and all of Madison County — same-day delivery, flat-rate pricing, no hidden fees
                     </p>
                     <div className={styles.heroButtons}>
                         <BookingButton label="Book Ridgeland Dumpster" location="Ridgeland Service Area Hero" />
@@ -85,35 +93,37 @@ export default function RidgelandPage() {
                 <div className="container">
                     <div className="grid grid-2">
                         <div>
-                            <h2>Why Choose Us in Ridgeland?</h2>
+                            <h2>Why Choose Mid South for Ridgeland Dumpster Rental?</h2>
+                            <p>We're a locally owned, Central Mississippi company — not a national broker. When you call us, you talk directly to the owner. Our roll off dumpsters are delivered by our own trucks and drivers, ensuring reliability and accountability that national chains can't match.</p>
                             <ul className={styles.benefitsList}>
-                                <li>✓ Same-day delivery available</li>
-                                <li>✓ Serving Ridgeland and Madison County</li>
-                                <li>✓ Transparent pricing with no hidden fees</li>
-                                <li>✓ 10, 15, and 20-yard dumpsters</li>
-                                <li>✓ Residential and commercial service</li>
-                                <li>✓ 7 days a week, 7AM - 7PM</li>
-                                <li>✓ Professional, courteous service</li>
+                                <li>✓ Same-day roll off dumpster delivery available</li>
+                                <li>✓ Serving Ridgeland and all of Madison County</li>
+                                <li>✓ Flat-rate pricing — delivery, pickup & disposal included</li>
+                                <li>✓ 10, 15, and 20-yard dumpsters in stock</li>
+                                <li>✓ Residential, commercial & construction service</li>
+                                <li>✓ Open 7 days a week, 7AM – 7PM</li>
+                                <li>✓ 5-star rated on Google</li>
+                                <li>✓ Licensed & insured</li>
                             </ul>
                         </div>
                         <div>
                             <Image
                                 src="/images/gallery/20-yard-dumpster-rental-ridgeland-project.jpg"
-                                alt="A 20-yard roll-off dumpster delivered to a Ridgeland MS construction project"
+                                alt="A 20-yard roll off dumpster delivered to a Ridgeland MS construction project"
                                 width={600}
                                 height={400}
                                 className={styles.contentImage}
                             />
-                            <h2>Perfect For Ridgeland Projects</h2>
-                            <p>Whether you're renovating a home in Highland Colony, <Link href="/blog/estate-cleanout-dumpster-rental-central-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>clearing out an estate</Link>, or managing a construction project in Ridgeland, we have the right dumpster size for your needs.</p>
-                            <p><strong>Common uses in Ridgeland:</strong></p>
+                            <h2>Perfect For Any Ridgeland Project</h2>
+                            <p>Whether you're renovating a home along Highland Colony Parkway, <Link href="/blog/estate-cleanout-dumpster-rental-central-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>clearing out an estate</Link>, or running a roofing job off the Old Canton Road corridor near I-55, we have the right roll off dumpster for your project.</p>
+                            <p><strong>Common uses in Ridgeland, MS:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
-                                <li>Construction and demolition</li>
+                                <li>Roofing tear-offs and replacements</li>
+                                <li>Construction and demolition debris</li>
                                 <li>Estate and foreclosure cleanouts</li>
-                                <li>Roofing projects</li>
-                                <li>Yard waste and landscaping</li>
-                                <li>Commercial cleanouts</li>
+                                <li>Yard waste and storm cleanup</li>
+                                <li>Commercial contractor projects</li>
                             </ul>
                         </div>
                     </div>
@@ -122,12 +132,16 @@ export default function RidgelandPage() {
 
             <section className={styles.contentSection}>
                 <div className="container">
+                    <h2>Roll Off Dumpster Rental Serving All of Madison County, MS</h2>
+                    <p>
+                        Ridgeland is our home base for Madison County operations. We provide fast roll off dumpster rental service to every corner of Madison County — from the I-55 corridor in Ridgeland to the neighborhoods of Madison, Canton, Gluckstadt, and Flora. No matter where your project is, we deliver on time.
+                    </p>
                     <h2>Neighborhoods We Serve in Ridgeland</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Ridgeland, a thriving city in Madison County. Whether you're in <strong>Bridgewater</strong>, <strong>Lake Harbor</strong>, <strong>Old Town</strong>, <strong>The Township</strong>, or <strong>Dinsmor</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly deliver roll off dumpsters to every neighborhood in Ridgeland, MS. Whether you're in <strong>Bridgewater</strong>, <strong>Lake Harbor</strong>, <strong>Old Town Ridgeland</strong>, <strong>The Township at Colony Park</strong>, <strong>Dinsmor</strong>, <strong>Reunion</strong>, or anywhere along <strong>Old Canton Road</strong> or <strong>Highland Colony Parkway</strong>, we'll get your dumpster there fast.
                     </p>
                     <p>
-                        From residential renovations to commercial construction projects, Mid South Dumpster Rentals is your trusted partner for waste management throughout Ridgeland's diverse neighborhoods.
+                        From residential cleanouts to large commercial construction on the Ridgeland Parkway corridors, Mid South Dumpster Rentals is Madison County's trusted local roll off dumpster provider.
                     </p>
                 </div>
             </section>

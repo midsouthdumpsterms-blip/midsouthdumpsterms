@@ -8,12 +8,12 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Clinton MS | Hinds County Service',
+    title: 'Roll Off Dumpster Rental Clinton MS | Hinds County | Mid South',
     description:
-        'Reliable dumpster rental service for Clinton & Hinds County. 10-20 yard roll-offs for residential & commercial projects. Transparent pricing, fast delivery.',
+        'Roll off dumpster rental in Clinton, MS and Hinds County. 10, 15 & 20-yard dumpsters with same-day delivery. Flat-rate pricing starting at $349 — delivery, pickup & disposal included. Call 601-316-7891.',
     openGraph: {
-        title: 'Dumpster Rentals in Clinton, MS | Mid South',
-        description: 'Serving Clinton & Hinds County with same-day dumpster delivery.',
+        title: 'Roll Off Dumpster Rental Clinton MS | Hinds County',
+        description: 'Local roll off dumpster rental in Clinton, MS. Same-day delivery, flat-rate pricing, no hidden fees. Serving all of Hinds County.',
         url: 'https://midsouthdumpsterms.com/service-areas/clinton',
     },
 }
@@ -36,7 +36,7 @@ export default function ClintonPage() {
     const faqSchema = generateFAQSchema([
         {
             question: "Do you provide same-day dumpster rentals in Clinton, MS?",
-            answer: "Yes! Mid South Dumpster Rentals is locally owned and operates in Hinds County every day. If you call early, we can typically provide same-day roll-off delivery to Clinton."
+            answer: "Yes! Mid South Dumpster Rentals is locally owned and operates in Hinds County every day. Call before noon at 601-316-7891 and we can typically provide same-day roll off dumpster delivery to Clinton."
         },
         {
             question: "How do I protect my driveway when renting a dumpster in Clinton?",
@@ -45,6 +45,14 @@ export default function ClintonPage() {
         {
             question: "Are there things I can't put in my rental dumpster in Clinton?",
             answer: "Standard household junk, lumber, and yard debris are totally fine. However, we cannot accept hazardous waste, items containing Freon (like refrigerators), wet paint, tires, or batteries. Give us a call if you are unsure about an item."
+        },
+        {
+            question: "How much does roll off dumpster rental cost in Clinton, MS?",
+            answer: "Our roll off dumpster rentals in Clinton start at $349 for a 10-yard, $399 for a 15-yard, and $449 for a 20-yard container. All prices include delivery, pickup, and disposal — no surprise fees at the end."
+        },
+        {
+            question: "Do you serve all of Hinds County, MS?",
+            answer: "Yes, we serve all of Hinds County including Clinton, Jackson, Byram, Raymond, Terry, Bolton, and Edwards. We're Central Mississippi's locally owned roll off dumpster rental company."
         }
     ])
 
@@ -56,9 +64,9 @@ export default function ClintonPage() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Dumpster Rentals in Clinton, MS</h1>
+                    <h1>Roll Off Dumpster Rental in Clinton, MS</h1>
                     <p className={styles.heroSubtext}>
-                        Fast, affordable roll-off dumpster delivery throughout Clinton and surrounding areas
+                        Locally owned roll off dumpster rental serving Clinton and all of Hinds County — same-day delivery, flat-rate pricing, no hidden fees
                     </p>
                     <div className={styles.heroButtons}>
                         <BookingButton label="Book Clinton Dumpster" location="Clinton Service Area Hero" />
@@ -84,34 +92,36 @@ export default function ClintonPage() {
                 <div className="container">
                     <div className="grid grid-2">
                         <div>
-                            <h2>Why Choose Us in Clinton?</h2>
+                            <h2>Why Choose Mid South for Clinton Dumpster Rental?</h2>
+                            <p>We're a locally owned Central Mississippi company — not an out-of-state broker forwarding your call. Our roll off dumpsters are owned and operated by us, so you get reliable delivery and responsive service every time.</p>
                             <ul className={styles.benefitsList}>
-                                <li>✓ Same-day delivery available</li>
-                                <li>✓ Serving Clinton and Hinds County</li>
-                                <li>✓ Transparent pricing with no hidden fees</li>
-                                <li>✓ 10, 15, and 20-yard dumpsters</li>
-                                <li>✓ Residential and commercial service</li>
-                                <li>✓ 7 days a week, 7AM - 7PM</li>
-                                <li>✓ Professional, courteous service</li>
+                                <li>✓ Same-day roll off dumpster delivery available</li>
+                                <li>✓ Serving Clinton and all of Hinds County</li>
+                                <li>✓ Flat-rate pricing — delivery, pickup & disposal included</li>
+                                <li>✓ 10, 15, and 20-yard roll off dumpsters in stock</li>
+                                <li>✓ Residential and commercial projects welcome</li>
+                                <li>✓ Open 7 days a week, 7AM – 7PM</li>
+                                <li>✓ 5-star rated on Google</li>
+                                <li>✓ Licensed & insured</li>
                             </ul>
                         </div>
                         <div>
-                            <h2>Perfect For Clinton Projects</h2>
-                            <p>Whether you're renovating a home, clearing out an estate, or managing a construction project in Clinton, we have the right dumpster size for your needs.</p>
-                            <p><strong>Common uses in Clinton:</strong></p>
+                            <h2>Perfect For Any Clinton, MS Project</h2>
+                            <p>Whether you're renovating a home near Mississippi College, clearing an estate off Pinehaven Drive, or running a roofing crew along the Highway 80 corridor, we have the right roll off dumpster for your Clinton project.</p>
+                            <p><strong>Common roll off dumpster uses in Clinton, MS:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
-                                <li>Construction and demolition</li>
+                                <li>Roofing tear-offs and replacements</li>
+                                <li>Construction and demolition debris</li>
                                 <li>Estate and foreclosure cleanouts</li>
-                                <li>Roofing projects</li>
-                                <li>Yard waste and landscaping</li>
-                                <li>Commercial cleanouts</li>
+                                <li>Yard waste and storm debris cleanup</li>
+                                <li>Commercial contractor projects</li>
                             </ul>
 
                             <div style={{ marginTop: '2rem' }}>
                                 <Image
                                     src="/images/gallery/15-yard-dumpster-clinton-ms-rental.jpg"
-                                    alt="Roll-off 15-yard dumpster rental in a residential neighborhood in Clinton, Mississippi"
+                                    alt="Roll off 15-yard dumpster rental in a residential neighborhood in Clinton, Mississippi"
                                     width={600}
                                     height={400}
                                     style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
@@ -124,12 +134,16 @@ export default function ClintonPage() {
 
             <section className={styles.contentSection}>
                 <div className="container">
-                    <h2>Neighborhoods We Serve in Clinton</h2>
+                    <h2>Roll Off Dumpster Rental Serving All of Hinds County, MS</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Clinton, a vibrant city in Hinds County. Whether you're in <strong>Woodmoor</strong>, <strong>Green Acres</strong>, <strong>Pinehaven Estates</strong>, <strong>Olde Town District</strong>, <strong>Countrywood</strong>, <strong>Oakhurst</strong>, <strong>College Hills</strong>, or <strong>Hunter's Ridge</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        Clinton is a key part of our Hinds County service area. We provide fast roll off dumpster rental throughout all of Hinds County — from Clinton to Jackson, Byram, Raymond, Terry, and Bolton. Whether your project is residential or commercial, our locally owned trucks are ready to deliver.
+                    </p>
+                    <h2>Neighborhoods We Serve in Clinton, MS</h2>
+                    <p>
+                        We deliver roll off dumpsters to every neighborhood in Clinton. Whether you're in <strong>Woodmoor</strong>, <strong>Green Acres</strong>, <strong>Pinehaven Estates</strong>, <strong>Olde Town District</strong>, <strong>Countrywood</strong>, <strong>Oakhurst</strong>, <strong>College Hills</strong>, <strong>Hunter's Ridge</strong>, or near the <strong>Mississippi College</strong> campus, we deliver fast and reliable dumpster rental service to your door.
                     </p>
                     <p>
-                        Clinton's family-friendly neighborhoods and growing community make it a great place to live and work. We're here to support your home improvement and construction projects with professional dumpster rental service. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other local customers.
+                        Clinton's family-friendly neighborhoods and active development make it one of Hinds County's most in-demand service areas. We're proud to support Clinton residents with professional roll off dumpster rentals backed by 5-star service. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other local customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Cleaning out a house?</strong> Read our comprehensive guide on <Link href="/blog/estate-cleanout-dumpster-rental-central-ms">Renting a Dumpster for Estate Cleanouts in Central MS</Link>.

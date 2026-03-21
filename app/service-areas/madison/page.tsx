@@ -8,12 +8,12 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
-    title: 'Roll-Off Dumpster Rentals Madison MS | Reunion & Annandale',
+    title: 'Roll Off Dumpster Rental Madison MS | Madison County | Mid South',
     description:
-        'Premium dumpster rental service for Reunion, Lake Caroline & Annandale. 10-20 yard roll-off dumpsters with transparent pricing. Same-day delivery available.',
+        'Roll off dumpster rental in Madison, MS and Madison County. 10, 15 & 20-yard dumpsters with same-day delivery to Reunion, Lake Caroline, Annandale & more. Flat-rate pricing, no hidden fees. Call 601-316-7891.',
     openGraph: {
-        title: 'Dumpster Rentals in Madison, MS | Mid South',
-        description: 'Serving Reunion, Lake Caroline & Annandale with same-day dumpster delivery.',
+        title: 'Roll Off Dumpster Rental Madison MS | Madison County',
+        description: 'Local roll off dumpster rental serving Madison, MS & all of Madison County. Same-day delivery, flat-rate pricing starting at $349.',
         url: 'https://midsouthdumpsterms.com/service-areas/madison',
     },
 }
@@ -39,12 +39,20 @@ export default function MadisonPage() {
             answer: "If you place the dumpster on your private property, such as your driveway in Reunion or Annandale, you typically do not need a permit. However, if the dumpster must be placed on a public street or right-of-way, a permit from the City of Madison may be required. We can help guide you through this process."
         },
         {
-            question: "How quickly can you deliver a roll-off dumpster to Madison?",
-            answer: "We offer same-day and next-day dumpster delivery throughout Madison and Madison County. Call us early in the day to secure a same-day drop-off for your project."
+            question: "How quickly can you deliver a roll off dumpster to Madison?",
+            answer: "We offer same-day and next-day roll off dumpster delivery throughout Madison and Madison County. Call us before noon at 601-316-7891 to secure a same-day drop-off for your project."
         },
         {
-            question: "What roll-off dumpster sizes are available in Madison?",
-            answer: "We provide 10-yard, 15-yard, and 20-yard roll-off dumpsters in Madison. Our 20-yard dumpsters are our most popular size for home renovations and estate cleanouts in the area."
+            question: "What roll off dumpster sizes are available in Madison, MS?",
+            answer: "We provide 10-yard, 15-yard, and 20-yard roll off dumpsters in Madison. Our 20-yard dumpsters are our most popular size for home renovations and estate cleanouts in Madison County."
+        },
+        {
+            question: "How much does roll off dumpster rental cost in Madison, MS?",
+            answer: "Our roll off dumpster rentals in Madison start at $349 for a 10-yard, $399 for a 15-yard, and $449 for a 20-yard. All prices are flat-rate and include delivery, pickup, and disposal with no hidden fees."
+        },
+        {
+            question: "Do you serve all of Madison County, MS?",
+            answer: "Yes! We provide roll off dumpster rental throughout all of Madison County including Madison, Ridgeland, Canton, Gluckstadt, Flora, Pocahontas, and surrounding communities. Same-day delivery is available when you call before noon."
         }
     ])
 
@@ -56,9 +64,9 @@ export default function MadisonPage() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Roll-Off Dumpster Rentals in Madison, MS</h1>
+                    <h1>Roll Off Dumpster Rental in Madison, MS</h1>
                     <p className={styles.heroSubtext}>
-                        Fast, affordable roll-off dumpster delivery throughout Madison and surrounding areas
+                        Locally owned roll off dumpster rental serving Madison and all of Madison County — same-day delivery, flat-rate pricing, no hidden fees
                     </p>
                     <div className={styles.heroButtons}>
                         <BookingButton label="Book Madison Dumpster" location="Madison Service Area Hero" />
@@ -84,34 +92,36 @@ export default function MadisonPage() {
                 <div className="container">
                     <div className="grid grid-2">
                         <div>
-                            <h2>Why Choose Us in Madison?</h2>
+                            <h2>Why Choose Mid South for Madison Dumpster Rental?</h2>
+                            <p>We're a locally owned Central Mississippi company. When you call us, you reach the owner directly — not a national call center. Our roll off dumpsters serve Madison's finest communities with the same care and professionalism that residents there expect.</p>
                             <ul className={styles.benefitsList}>
-                                <li>✓ Same-day delivery available</li>
-                                <li>✓ Serving Madison and Madison County</li>
-                                <li>✓ Transparent pricing with no hidden fees</li>
-                                <li>✓ 10, 15, and 20-yard dumpsters</li>
-                                <li>✓ Residential and commercial service</li>
-                                <li>✓ 7 days a week, 7AM - 7PM</li>
-                                <li>✓ Professional, courteous service</li>
+                                <li>✓ Same-day roll off dumpster delivery available</li>
+                                <li>✓ Serving Madison and all of Madison County</li>
+                                <li>✓ Flat-rate pricing — delivery, pickup & disposal included</li>
+                                <li>✓ 10, 15, and 20-yard roll off dumpsters in stock</li>
+                                <li>✓ Residential, commercial & construction service</li>
+                                <li>✓ Open 7 days a week, 7AM – 7PM</li>
+                                <li>✓ 5-star rated on Google</li>
+                                <li>✓ Licensed & insured</li>
                             </ul>
                         </div>
                         <div>
-                            <h2>Perfect For Madison Projects</h2>
-                            <p>Whether you're renovating a home in Reunion, clearing out an estate in Lake Caroline, managing a construction project in Annandale or Providence, we have the right dumpster size for your needs.</p>
-                            <p><strong>Common uses in Madison:</strong></p>
+                            <h2>Perfect For Any Madison Project</h2>
+                            <p>Whether you're renovating a home in Reunion, clearing out an estate in Lake Caroline, managing a construction project in Annandale or Providence, we have the right roll off dumpster for your Madison project.</p>
+                            <p><strong>Common roll off dumpster uses in Madison, MS:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
-                                <li>Construction and demolition</li>
+                                <li>Roofing tear-offs and replacements</li>
+                                <li>Construction and demolition debris</li>
                                 <li>Estate and foreclosure cleanouts</li>
-                                <li>Roofing projects</li>
-                                <li>Yard waste and landscaping</li>
-                                <li>Commercial cleanouts</li>
+                                <li>Yard waste and storm cleanup</li>
+                                <li>Commercial contractor projects</li>
                             </ul>
 
                             <div style={{ marginTop: '2rem' }}>
                                 <Image
                                     src="/images/gallery/roll-off-dumpster-madison-ms-clean.jpg"
-                                    alt="Clean 20-yard roll-off dumpster rental delivery in a Madison, MS residential driveway"
+                                    alt="Clean 20-yard roll off dumpster rental delivery in a Madison, MS residential driveway"
                                     width={600}
                                     height={400}
                                     style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
@@ -124,12 +134,16 @@ export default function MadisonPage() {
 
             <section className={styles.contentSection}>
                 <div className="container">
+                    <h2>Roll Off Dumpster Rental Serving All of Madison County, MS</h2>
+                    <p>
+                        Madison is the heart of Madison County, and we serve every corner of it. From roll off dumpster rental in Madison and Ridgeland to Canton, Gluckstadt, Flora, and Pocahontas — our locally owned trucks cover all of Madison County, MS. We're not a broker: we own our trucks and control every delivery.
+                    </p>
                     <h2>Neighborhoods We Serve in Madison</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Madison, one of Mississippi's premier communities. Whether you're in <strong>Reunion</strong>, <strong>Lake Caroline</strong>, <strong>Annandale</strong>, <strong>Lost Rabbit</strong>, or <strong>Woodland Estates</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        We proudly deliver roll off dumpsters to every neighborhood in Madison, MS. Whether you're in <strong>Reunion</strong>, <strong>Lake Caroline</strong>, <strong>Annandale</strong>, <strong>Lost Rabbit</strong>, <strong>Woodland Estates</strong>, <strong>Georgetown</strong>, <strong>Germantown</strong>, or anywhere along <strong>Old Canton Road</strong> or <strong>Highway 51</strong>, we'll get your dumpster there fast.
                     </p>
                     <p>
-                        From <strong>Georgetown</strong> to <strong>Germantown</strong> and beyond, we're committed to providing roll-off dumpster rental service that matches the quality standards of this exceptional community. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Madison customers.
+                        From residential cleanouts to large commercial builds in Madison's growing business corridors, Mid South Dumpster Rentals is Madison County's trusted local roll off dumpster provider. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Madison customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Want to learn more?</strong> Check out our complete guide on <Link href="/blog/dumpster-rental-madison-ms">Dumpster Rental in Madison, MS</Link>.

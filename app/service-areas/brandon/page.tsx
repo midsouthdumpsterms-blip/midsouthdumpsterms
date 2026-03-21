@@ -8,12 +8,12 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
-    title: 'Roll-Off Dumpster Rentals Brandon MS | Crossgates Area',
+    title: 'Roll Off Dumpster Rental Brandon MS | Rankin County | Mid South',
     description:
-        'Serving Crossgates, Winner\'s Circle & Reservoir Point with affordable dumpster rentals. 10-20 yard sizes, same-day delivery. Residential & commercial. Book online now.',
+        'Roll off dumpster rental in Brandon, MS and Rankin County. 10, 15 & 20-yard dumpsters with same-day delivery to Crossgates, Castlewoods & all Brandon neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
     openGraph: {
-        title: 'Dumpster Rentals in Brandon, MS | Mid South',
-        description: 'Serving Crossgates, Winner\'s Circle & Reservoir Point with same-day dumpster delivery.',
+        title: 'Roll Off Dumpster Rental Brandon MS | Rankin County',
+        description: 'Locally owned roll off dumpster rental serving Brandon & all of Rankin County. Same-day delivery, flat-rate pricing, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/brandon',
     },
 }
@@ -35,16 +35,24 @@ export default function BrandonPage() {
 
     const faqSchema = generateFAQSchema([
         {
-            question: "How much does it cost to rent a dumpster in Brandon, MS?",
-            answer: "Our dumpster rentals in Brandon start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size)."
+            question: "How much does it cost to rent a roll off dumpster in Brandon, MS?",
+            answer: "Our roll off dumpster rentals in Brandon start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size) with no hidden fees."
         },
         {
-            question: "Can you deliver a dumpster to my neighborhood in Crossgates?",
-            answer: "Yes! We regularly deliver roll-off dumpsters to Crossgates, Castlewoods, Shiloh, and all other subdivisions throughout Brandon and Rankin County. Our trucks are designed to safely navigate residential streets."
+            question: "Can you deliver a dumpster to my neighborhood in Crossgates or Castlewoods?",
+            answer: "Yes! We regularly deliver roll off dumpsters to Crossgates, Castlewoods, Shiloh, and all other subdivisions throughout Brandon and Rankin County. Our trucks are designed to safely navigate residential streets without damaging driveways."
         },
         {
             question: "What items are not allowed in your dumpsters in Brandon?",
             answer: "For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking."
+        },
+        {
+            question: "Do you serve all of Rankin County, MS?",
+            answer: "Yes! We provide roll off dumpster rental throughout all of Rankin County including Brandon, Pearl, Flowood, Richland, Florence, Pelahatchie, and surrounding communities. Same-day delivery is available when you call before noon."
+        },
+        {
+            question: "How quickly can you deliver a roll off dumpster to Brandon, MS?",
+            answer: "We offer same-day and next-day roll off dumpster delivery in Brandon and Rankin County. Call us before noon at 601-316-7891 and we can typically deliver the same day, 7 days a week."
         }
     ])
 
@@ -56,9 +64,9 @@ export default function BrandonPage() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Roll-Off Dumpster Rentals in Brandon, MS</h1>
+                    <h1>Roll Off Dumpster Rental in Brandon, MS</h1>
                     <p className={styles.heroSubtext}>
-                        Fast, affordable roll-off dumpster delivery throughout Brandon and surrounding areas
+                        Locally owned roll off dumpster rental serving Brandon and all of Rankin County — same-day delivery, flat-rate pricing, no hidden fees
                     </p>
                     <div className={styles.heroButtons}>
                         <BookingButton label="Book Brandon Dumpster" location="Brandon Service Area Hero" />
@@ -84,34 +92,36 @@ export default function BrandonPage() {
                 <div className="container">
                     <div className="grid grid-2">
                         <div>
-                            <h2>Why Choose Us in Brandon?</h2>
+                            <h2>Why Choose Mid South for Brandon Dumpster Rental?</h2>
+                            <p>We're a locally owned Central Mississippi company. We own our trucks and do our own deliveries — no third-party brokers. Rankin County customers get fast, reliable roll off dumpster service backed by our 5-star reputation.</p>
                             <ul className={styles.benefitsList}>
-                                <li>✓ Same-day delivery available</li>
-                                <li>✓ Serving Brandon and Rankin County</li>
-                                <li>✓ Transparent pricing with no hidden fees</li>
-                                <li>✓ 10, 15, and 20-yard dumpsters</li>
-                                <li>✓ Residential and commercial service</li>
-                                <li>✓ 7 days a week, 7AM - 7PM</li>
-                                <li>✓ Professional, courteous service</li>
+                                <li>✓ Same-day roll off dumpster delivery available</li>
+                                <li>✓ Serving Brandon and all of Rankin County</li>
+                                <li>✓ Flat-rate pricing — delivery, pickup & disposal included</li>
+                                <li>✓ 10, 15, and 20-yard roll off dumpsters in stock</li>
+                                <li>✓ Residential, commercial & construction service</li>
+                                <li>✓ Open 7 days a week, 7AM – 7PM</li>
+                                <li>✓ 5-star rated on Google</li>
+                                <li>✓ Licensed & insured</li>
                             </ul>
                         </div>
                         <div>
-                            <h2>Perfect For Brandon Projects</h2>
-                            <p>Whether you're renovating a home in Crossgates, clearing out an estate in Winner's Circle, managing a construction project in Reservoir Point, or working on a property in Shiloh, Castlewoods, or Pinebrook, we have the right dumpster size for your needs.</p>
-                            <p><strong>Common uses in Brandon:</strong></p>
+                            <h2>Perfect For Any Brandon Project</h2>
+                            <p>Whether you're renovating a home in Crossgates, clearing an estate in Winner's Circle, managing a construction project in Reservoir Point, or working a roofing job near the Rankin County Courthouse area, we have the right roll off dumpster for your needs.</p>
+                            <p><strong>Common roll off dumpster uses in Brandon, MS:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
-                                <li>Construction and demolition</li>
+                                <li>Roofing tear-offs and replacements</li>
+                                <li>Construction and demolition debris</li>
                                 <li>Estate and foreclosure cleanouts</li>
-                                <li>Roofing projects</li>
-                                <li>Yard waste and landscaping</li>
-                                <li>Commercial cleanouts</li>
+                                <li>Yard waste and storm cleanup</li>
+                                <li>Commercial contractor projects</li>
                             </ul>
 
                             <div style={{ marginTop: '2rem' }}>
                                 <Image
                                     src="/images/gallery/residential-dumpster-rental-brandon-driveway.jpg"
-                                    alt="Residential dumpster rental delivery on a driveway in Brandon, MS"
+                                    alt="Roll off residential dumpster rental delivery on a driveway in Brandon, MS"
                                     width={600}
                                     height={400}
                                     style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
@@ -124,12 +134,16 @@ export default function BrandonPage() {
 
             <section className={styles.contentSection}>
                 <div className="container">
-                    <h2>Neighborhoods We Serve in Brandon</h2>
+                    <h2>Roll Off Dumpster Rental Serving All of Rankin County, MS</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Brandon, a rapidly growing city in Rankin County. Whether you're in <strong>Castle Woods</strong>, <strong>Gardens of Manship</strong>, <strong>Hidden Hills</strong>, <strong>Crossgates</strong>, <strong>Crossview Plantation</strong>, <strong>Bellegrove</strong>, <strong>Waterwood</strong>, <strong>Copperfield</strong>, or <strong>Glen Arbor</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        Brandon is the Rankin County seat, and it's a key part of our service territory. We provide fast roll off dumpster rental throughout all of Rankin County — from Brandon and Pearl to Flowood, Richland, Florence, and Pelahatchie. Whether your project is a quick residential cleanout or a multi-week commercial job, our locally owned trucks are ready.
+                    </p>
+                    <h2>Neighborhoods We Serve in Brandon, MS</h2>
+                    <p>
+                        We proudly deliver roll off dumpsters to every neighborhood in Brandon. Whether you're in <strong>Castle Woods</strong>, <strong>Gardens of Manship</strong>, <strong>Hidden Hills</strong>, <strong>Crossgates</strong>, <strong>Crossview Plantation</strong>, <strong>Bellegrove</strong>, <strong>Waterwood</strong>, <strong>Copperfield</strong>, or <strong>Glen Arbor</strong>, we deliver fast and reliable roll off dumpster service.
                     </p>
                     <p>
-                        Brandon's thriving community and expanding development make it one of the metro area's most desirable locations. We're here to support your projects with professional roll-off dumpster rental service tailored to Brandon's needs. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Brandon customers.
+                        Brandon's thriving community and expanding development make it one of the metro area's most desirable locations for home improvement and construction. We're proud to serve Rankin County with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Brandon customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Planning a rental?</strong> Read our guide on <Link href="/blog/dumpster-rental-brandon-ms">Dumpster Rentals in Brandon, MS</Link> for more local tips and advice on sizing.
