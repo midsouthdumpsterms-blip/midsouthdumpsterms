@@ -129,6 +129,9 @@ export default function FlorencePage() {
                     <p>
                         Florence's convenient location and residential communities make it a great place for families and businesses. We're committed to providing professional dumpster rental service for all your project needs.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Florence is part of <Link href="/service-areas/rankin-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Rankin County</Link> — view all Rankin County cities we serve.
+                    </p>
                 </div>
             </section>
 

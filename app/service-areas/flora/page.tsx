@@ -129,6 +129,9 @@ export default function FloraPage() {
                     <p>
                         Flora's small-town atmosphere and convenient location make it a wonderful place to live and work. We're committed to providing professional dumpster rental service for all your project needs.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Flora is part of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.
+                    </p>
                 </div>
             </section>
 

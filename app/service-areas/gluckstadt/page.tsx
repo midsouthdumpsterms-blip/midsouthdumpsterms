@@ -129,6 +129,9 @@ export default function GluckstadtPage() {
                     <p>
                         Whether you're building a new home, developing a commercial property, or working on renovation projects in this dynamic community, Mid South Dumpster Rentals provides the reliable waste management solutions you need.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Gluckstadt is part of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.
+                    </p>
                 </div>
             </section>
 

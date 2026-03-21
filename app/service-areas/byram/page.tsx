@@ -129,6 +129,9 @@ export default function ByramPage() {
                     <p>
                         Byram's convenient location and residential communities make it a great place for families and businesses. We're committed to providing professional dumpster rental service for all your project needs.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Byram is located in <Link href="/service-areas/hinds-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Hinds County</Link> — see all Hinds County cities we serve.
+                    </p>
                 </div>
             </section>
 

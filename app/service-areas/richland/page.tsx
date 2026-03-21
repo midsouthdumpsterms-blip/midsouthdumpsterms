@@ -129,6 +129,9 @@ export default function RichlandPage() {
                     <p>
                         Richland's established neighborhoods and convenient location make it a desirable place to live and work. We're here to support your home improvement and construction projects with professional dumpster rental service.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Richland is part of <Link href="/service-areas/rankin-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Rankin County</Link> — view all Rankin County cities we serve.
+                    </p>
                 </div>
             </section>
 

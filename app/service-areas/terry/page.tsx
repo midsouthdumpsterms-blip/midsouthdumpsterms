@@ -129,6 +129,9 @@ export default function TerryPage() {
                     <p>
                         Terry's mix of historic homes and newer subdivisions creates a unique community atmosphere. From rural properties with larger yards to established neighborhoods, we're here to support your renovation, construction, and cleanup projects with professional dumpster rental service.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Terry is located in <Link href="/service-areas/hinds-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Hinds County</Link> — see all Hinds County cities we serve.
+                    </p>
                 </div>
             </section>
 

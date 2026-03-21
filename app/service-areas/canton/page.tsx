@@ -129,6 +129,9 @@ export default function CantonPage() {
                     <p>
                         Canton's rich history and growing community make it a unique place in Central Mississippi. We're here to support your renovation, construction, and cleanup projects with professional dumpster rental service.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Canton is part of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.
+                    </p>
                 </div>
             </section>
 
