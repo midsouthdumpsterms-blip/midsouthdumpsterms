@@ -148,6 +148,9 @@ export default function ClintonPage() {
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Cleaning out a house?</strong> Read our comprehensive guide on <Link href="/blog/estate-cleanout-dumpster-rental-central-ms">Renting a Dumpster for Estate Cleanouts in Central MS</Link>.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Clinton is located in <Link href="/service-areas/hinds-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Hinds County</Link> — see all Hinds County cities we serve.
+                    </p>
                 </div>
             </section>
 

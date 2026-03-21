@@ -134,6 +134,9 @@ export default function JacksonPage() {
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Need a specific dumpster size in Jackson?</strong> Check out our guide on renting a <Link href="/blog/20-yard-dumpster-rental-jackson-ms">20-Yard Dumpster in Jackson, MS</Link>.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Jackson is located in <Link href="/service-areas/hinds-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Hinds County</Link> — see all Hinds County cities we serve.
+                    </p>
                 </div>
             </section>
 

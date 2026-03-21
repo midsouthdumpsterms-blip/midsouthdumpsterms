@@ -148,6 +148,9 @@ export default function MadisonPage() {
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Want to learn more?</strong> Check out our complete guide on <Link href="/blog/dumpster-rental-madison-ms">Dumpster Rental in Madison, MS</Link>.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Madison is the heart of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.
+                    </p>
                 </div>
             </section>
 

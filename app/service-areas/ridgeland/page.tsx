@@ -143,6 +143,9 @@ export default function RidgelandPage() {
                     <p>
                         From residential cleanouts to large commercial construction on the Ridgeland Parkway corridors, Mid South Dumpster Rentals is Madison County's trusted local roll off dumpster provider.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Ridgeland is part of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.
+                    </p>
                 </div>
             </section>
 

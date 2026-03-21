@@ -120,6 +120,9 @@ export default function BlogPost() {
                         <p>
                             We serve families throughout Central Mississippi — including Jackson, Brandon, Madison, Ridgeland, Clinton, Flowood, Pearl, Byram, Richland, Gluckstadt, Flora, Florence, Canton, and Terry. We&apos;re locally owned and operated, which means we understand this community and we&apos;re available 7 days a week to help you get the job done.
                         </p>
+                        <p>
+                            Browse by county: <Link href="/service-areas/hinds-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Hinds County</Link> · <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> · <Link href="/service-areas/rankin-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Rankin County</Link>
+                        </p>
 
                         <div className={styles.cta}>
                             <h3>Ready to Get Started?</h3>

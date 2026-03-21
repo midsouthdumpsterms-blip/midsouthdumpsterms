@@ -134,6 +134,9 @@ export default function FlowoodPage() {
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Tip for Flowood Homeowners:</strong> We highly recommend our 15-yard dumpster for most mid-sized renovations in the Laurelwood and Kensington areas.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Flowood is part of <Link href="/service-areas/rankin-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Rankin County</Link> — view all Rankin County cities we serve.
+                    </p>
                 </div>
             </section>
 

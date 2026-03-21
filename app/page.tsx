@@ -9,12 +9,12 @@ import styles from './page.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Jackson MS | Same-Day Delivery',
+    title: 'Roll Off Dumpster Rental Jackson MS | Same-Day Delivery | Mid South',
     description:
-        'Affordable 10, 15 & 20-yard dumpster rentals in Jackson, MS. Same-day delivery, transparent pricing, no hidden fees. Serving Central MS. Call 601-316-7891 or book online.',
+        'Roll off dumpster rental in Jackson, MS starting at $349. 10, 15 & 20-yard dumpsters with same-day delivery. No hidden fees. Serving Hinds, Madison & Rankin Counties. Call 601-316-7891 or book online.',
     openGraph: {
-        title: 'Mid South Dumpster Rentals | Jackson, MS',
-        description: 'Affordable roll-off dumpster rentals in Central Mississippi with same-day delivery.',
+        title: 'Roll Off Dumpster Rental Jackson, MS | Mid South',
+        description: 'Roll off dumpster rental in Central Mississippi with same-day delivery. From $349, no hidden fees.',
         url: 'https://midsouthdumpsterms.com',
     },
 }
@@ -186,7 +186,7 @@ export default function Home() {
                 <div className="container">
                     <h2 className="text-center">Serving Central Mississippi</h2>
                     <p className="text-center" style={{ marginBottom: 'var(--spacing-2xl)' }}>
-                        Reliable <Link href="/blog/dumpster-rental-near-me-jackson-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>local dumpster rental</Link> service across these communities and surrounding areas
+                        Reliable <Link href="/blog/dumpster-rental-near-me-jackson-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>local dumpster rental</Link> service across <Link href="/service-areas/hinds-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Hinds</Link>, <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison</Link>, and <Link href="/service-areas/rankin-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Rankin</Link> Counties
                     </p>
                     <div className={styles.citiesGrid}>
                         {['Jackson', 'Brandon', 'Clinton', 'Flowood', 'Pearl', 'Ridgeland', 'Madison', 'Flora', 'Canton', 'Terry', 'Byram', 'Gluckstadt'].map(

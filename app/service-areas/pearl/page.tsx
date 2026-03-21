@@ -134,6 +134,9 @@ export default function PearlPage() {
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Wondering what costs are like in the area?</strong> Get an idea from our <Link href="/blog/dumpster-rental-prices-jackson-ms">Dumpster Rental Cost Guide</Link> for Central Mississippi.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Pearl is part of <Link href="/service-areas/rankin-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Rankin County</Link> — view all Rankin County cities we serve.
+                    </p>
                 </div>
             </section>
 

@@ -148,6 +148,9 @@ export default function BrandonPage() {
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Planning a rental?</strong> Read our guide on <Link href="/blog/dumpster-rental-brandon-ms">Dumpster Rentals in Brandon, MS</Link> for more local tips and advice on sizing.
                     </p>
+                    <p style={{ marginTop: '1rem' }}>
+                        Brandon is the seat of <Link href="/service-areas/rankin-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Rankin County</Link> — view all Rankin County cities we serve.
+                    </p>
                 </div>
             </section>
 
