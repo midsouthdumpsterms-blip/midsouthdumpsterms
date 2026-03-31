@@ -1,5 +1,5 @@
 {
-    "name": "MidSouth - GBP Post Draft Emailer",
+    "name": "Mid South - GBP Post Draft Emailer",
     "nodes": [
         {
             "id": "gbp-001",
@@ -68,7 +68,7 @@
                 390
             ],
             "parameters": {
-                "jsCode": "const posts = $input.all().map(r => r.json);\nconst today = new Date().toISOString().split('T')[0];\nconst todaysPosts = posts.filter(p => {\n  if (!p.Date_Published || p.Status !== 'published') return false;\n  return p.Date_Published.startsWith(today);\n});\nif (todaysPosts.length === 0) {\n  return [{ json: { hasPost: false, today } }];\n}\nconst post = todaysPosts[0];\nreturn [{ json: { hasPost: true, today, keyword: post.Keyword, title: post.Title || post.Keyword, slug: post.Slug || '', excerpt: post.Excerpt || '', category: post.Category || 'Tips & Guides', url: 'www.midsouthdumpsterms.com/blog/' + (post.Slug || '') } }];"
+                "jsCode": "const posts = $input.all().map(r => r.json);\nconst today = new Date().toISOString().split('T')[0];\nconst todaysPosts = posts.filter(p => {\n  if (!p.Date_Published || p.Status !== 'published') return false;\n  return p.Date_Published.startsWith(today);\n});\nif (todaysPosts.length === 0) {\n  return [{ json: { hasPost: false, today } }];\n}\nconst post = todaysPosts[0];\nreturn [{ json: { hasPost: true, today, keyword: post.Keyword, title: post.Title || post.Keyword, slug: post.Slug || '', excerpt: post.Excerpt || '', category: post.Category || 'Tips & Guides', url: 'www.Mid Southdumpsterms.com/blog/' + (post.Slug || '') } }];"
             }
         },
         {
@@ -116,7 +116,7 @@
                 "options": {
                     "baseURL": "https://openrouter.ai/api/v1"
                 },
-                "prompt": "={{ 'Write a Google Business Profile \"What\\'s New\" post for MidSouth Dumpster Rentals about our new blog post.\\n\\nBlog post keyword: ' + $json.keyword + '\\nBlog post title: ' + $json.title + '\\nBlog URL: ' + $json.url + '\\n\\nGBP post requirements:\\n- Maximum 1,500 characters\\n- Start with an attention-grabbing first line (no generic openers like \"We just published\")\\n- Mention MidSouth Dumpster Rentals by name\\n- Include the URL at the end: ' + $json.url + '\\n- End with a call to action (call 601-316-7891 or visit the link)\\n- Casual, helpful, local tone — not corporate\\n- Do NOT include hashtags\\n\\nReturn ONLY the post text, nothing else.' }}"
+                "prompt": "={{ 'Write a Google Business Profile \"What\\'s New\" post for Mid South Dumpster Rentals about our new blog post.\\n\\nBlog post keyword: ' + $json.keyword + '\\nBlog post title: ' + $json.title + '\\nBlog URL: ' + $json.url + '\\n\\nGBP post requirements:\\n- Maximum 1,500 characters\\n- Start with an attention-grabbing first line (no generic openers like \"We just published\")\\n- Mention Mid South Dumpster Rentals by name\\n- Include the URL at the end: ' + $json.url + '\\n- End with a call to action (call 601-316-7891 or visit the link)\\n- Casual, helpful, local tone — not corporate\\n- Do NOT include hashtags\\n\\nReturn ONLY the post text, nothing else.' }}"
             }
         },
         {
@@ -130,7 +130,7 @@
             ],
             "parameters": {
                 "operation": "send",
-                "sendTo": "midsouthdumpsterms@gmail.com",
+                "sendTo": "Mid Southdumpsterms@gmail.com",
                 "subject": "={{ '📍 New GBP Post Ready — ' + $('Find Today\\'s Post').first().json.keyword }}",
                 "emailType": "html",
                 "message": "={{ '<div style=\"font-family:Arial,sans-serif;max-width:600px;margin:0 auto;\"><h2 style=\"color:#1a5276;\">📍 Your Google Business Profile Post Is Ready</h2><p>A new blog post published today. Copy the text below and paste it into your <a href=\\\"https://business.google.com\\\">Google Business Profile</a> as a \"What\\'s New\" post.</p><hr><h3>Post Text:</h3><div style=\"background:#f5f5f5;padding:20px;border-left:4px solid #2874a6;border-radius:4px;white-space:pre-wrap;font-size:14px;line-height:1.6;\">' + $json.message + '</div><hr><p><strong>Blog URL (for the GBP post link field):</strong><br><code>' + $('Find Today\\'s Post').first().json.url + '</code></p><p style=\"font-size:12px;color:#999;\">Steps: Go to business.google.com → Posts → Add Update → \"What\\'s New\" → Paste text → Add the URL → Publish</p></div>' }}",

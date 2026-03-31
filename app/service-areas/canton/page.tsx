@@ -8,30 +8,15 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Canton MS | Madison County Service',
+    title: 'Roll Off Dumpster Rental Canton MS | Madison County | Mid South',
     description:
-        'Serving Canton & Madison County with affordable dumpster rentals. 10-20 yard sizes for home renovations, cleanouts & construction. Call 601-316-7891.',
+        'Roll off dumpster rental in Canton, MS and Madison County. 10, 15 & 20-yard dumpsters with same-day delivery to all Canton neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
     openGraph: {
-        title: 'Dumpster Rentals in Canton, MS | Mid South',
-        description: 'Serving Canton & Madison County with same-day dumpster delivery.',
+        title: 'Roll Off Dumpster Rental Canton MS | Madison County',
+        description: 'Locally owned roll off dumpster rental serving Canton & all of Madison County. Same-day delivery, flat-rate pricing, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/canton',
     },
 }
-
-const faqs = [
-    {
-        question: 'Do I need a permit to rent a dumpster in Canton, MS?',
-        answer: 'You only need a permit if placing the dumpster on a public street or right-of-way in Canton. If placed in your private driveway, no permit is required. Contact Canton Public Works for street placement regulations.',
-    },
-    {
-        question: 'How much does dumpster rental cost in Canton?',
-        answer: 'Our flat-rate pricing for Canton includes delivery, pickup, and disposal. Prices start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard container, with no hidden fees.',
-    },
-    {
-        question: 'What items are prohibited in Canton dumpsters?',
-        answer: 'Prohibited items include hazardous materials, wet paint, tires, batteries, and appliances containing Freon. For disposal options, contact Madison County solid waste management.',
-    },
-]
 
 export default function CantonPage() {
     const serviceSchema = generateServiceSchema(
@@ -47,7 +32,29 @@ export default function CantonPage() {
         { name: 'Service Areas', url: 'https://midsouthdumpsterms.com/service-areas' },
         { name: 'Canton', url: 'https://midsouthdumpsterms.com/service-areas/canton' },
     ])
-    const faqSchema = generateFAQSchema(faqs)
+
+    const faqSchema = generateFAQSchema([
+        {
+            question: "How much does it cost to rent a roll off dumpster in Canton, MS?",
+            answer: "Our roll off dumpster rentals in Canton start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size) with no hidden fees."
+        },
+        {
+            question: "Do I need a permit to rent a dumpster in Canton?",
+            answer: "You only need a permit if placing the dumpster on a public street or right-of-way in Canton. If placed in your private driveway, no permit is required. Contact Canton Public Works for street placement regulations."
+        },
+        {
+            question: "What items are not allowed in your dumpsters in Canton?",
+            answer: "For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking."
+        },
+        {
+            question: "Do you serve all of Madison County, MS?",
+            answer: "Yes! We provide roll off dumpster rental throughout all of Madison County including Canton, Madison, Ridgeland, Gluckstadt, Flora, and surrounding communities. Same-day delivery is available when you call before noon."
+        },
+        {
+            question: "How quickly can you deliver a roll off dumpster to Canton, MS?",
+            answer: "We offer same-day and next-day roll off dumpster delivery in Canton and Madison County. Call us before noon at 601-316-7891 and we can typically deliver the same day, 7 days a week."
+        }
+    ])
 
     return (
         <>
@@ -57,9 +64,9 @@ export default function CantonPage() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Dumpster Rentals in Canton, MS</h1>
+                    <h1>Roll Off Dumpster Rental in Canton, MS</h1>
                     <p className={styles.heroSubtext}>
-                        Fast, affordable roll-off dumpster delivery throughout Canton and surrounding areas
+                        Locally owned roll off dumpster rental serving Canton and all of Madison County — same-day delivery, flat-rate pricing, no hidden fees
                     </p>
                     <div className={styles.heroButtons}>
                         <BookingButton label="Book Canton Dumpster" location="Canton Service Area Hero" />
@@ -85,36 +92,41 @@ export default function CantonPage() {
                 <div className="container">
                     <div className="grid grid-2">
                         <div>
-                            <h2>Why Choose Us in Canton?</h2>
+                            <h2>Why Choose Mid South for Canton Dumpster Rental?</h2>
+                            <p>We're a locally owned Central Mississippi company. We own our trucks and handle every delivery ourselves — no third-party brokers or intermediaries. Canton customers get fast, dependable roll off dumpster service backed by our 5-star Google reputation.</p>
                             <ul className={styles.benefitsList}>
-                                <li>✓ Same-day delivery available</li>
-                                <li>✓ Serving Canton and Madison County</li>
-                                <li>✓ Transparent pricing with no hidden fees</li>
-                                <li>✓ 10, 15, and 20-yard dumpsters</li>
-                                <li>✓ Residential and commercial service</li>
-                                <li>✓ 7 days a week, 7AM - 7PM</li>
-                                <li>✓ Professional, courteous service</li>
+                                <li>✓ Same-day roll off dumpster delivery available</li>
+                                <li>✓ Serving Canton and all of Madison County</li>
+                                <li>✓ Flat-rate pricing — delivery, pickup & disposal included</li>
+                                <li>✓ 10, 15, and 20-yard roll off dumpsters in stock</li>
+                                <li>✓ Residential, commercial & construction service</li>
+                                <li>✓ Open 7 days a week, 7AM – 7PM</li>
+                                <li>✓ 5-star rated on Google</li>
+                                <li>✓ Licensed & insured</li>
                             </ul>
                         </div>
                         <div>
-                            <Image
-                                src="/images/gallery/same-day-dumpster-rental-canton.jpg"
-                                alt="Same-day roll-off dumpster rental delivery in Canton, MS"
-                                width={600}
-                                height={400}
-                                className={styles.contentImage}
-                            />
-                            <h2>Perfect For Canton Projects</h2>
-                            <p>Whether you're renovating a home, clearing out an estate, or managing a <Link href="/blog/dumpster-rental-near-me-jackson-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>construction project</Link> in Canton, we have the right dumpster size for your needs.</p>
-                            <p><strong>Common uses in Canton:</strong></p>
+                            <h2>Perfect For Any Canton Project</h2>
+                            <p>Whether you're renovating a home near the <Link href="/blog/dumpster-rental-near-me-jackson-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Canton Square</Link>, clearing an estate in Harvey Crossing, managing a construction project in Hampton Hills, or working a roofing job near the Madison County Courthouse, we have the right roll off dumpster for your needs.</p>
+                            <p><strong>Common roll off dumpster uses in Canton, MS:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
-                                <li>Construction and demolition</li>
+                                <li>Roofing tear-offs and replacements</li>
+                                <li>Construction and demolition debris</li>
                                 <li>Estate and foreclosure cleanouts</li>
-                                <li>Roofing projects</li>
-                                <li>Yard waste and landscaping</li>
-                                <li>Commercial cleanouts</li>
+                                <li>Yard waste and storm cleanup</li>
+                                <li>Commercial contractor projects</li>
                             </ul>
+
+                            <div style={{ marginTop: '2rem' }}>
+                                <Image
+                                    src="/images/gallery/same-day-dumpster-rental-canton.jpg"
+                                    alt="Roll off dumpster rental delivery on a driveway in Canton, MS"
+                                    width={600}
+                                    height={400}
+                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -122,12 +134,19 @@ export default function CantonPage() {
 
             <section className={styles.contentSection}>
                 <div className="container">
-                    <h2>Neighborhoods We Serve in Canton</h2>
+                    <h2>Roll Off Dumpster Rental Serving All of Madison County, MS</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Canton, a historic city in Madison County. Whether you're in <strong>Harvey Crossing</strong>, <strong>Deerfield</strong>, <strong>Panther Creek</strong>, <strong>Hampton Hills</strong>, <strong>The Links of Madison</strong>, or <strong>Bainbridge</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        Canton is the Madison County seat, and it's a key part of our service territory. We provide fast roll off dumpster rental throughout all of Madison County — from Canton and Gluckstadt to Madison, Flora, and Ridgeland. Whether your project is a quick residential cleanout or a multi-week commercial job, our locally owned trucks are ready.
+                    </p>
+                    <h2>Neighborhoods We Serve in Canton, MS</h2>
+                    <p>
+                        We proudly deliver roll off dumpsters to every neighborhood in Canton. Whether you're in <strong>Harvey Crossing</strong>, <strong>Deerfield</strong>, <strong>Panther Creek</strong>, <strong>Hampton Hills</strong>, <strong>The Links of Madison</strong>, <strong>Bainbridge</strong>, <strong>Cains Landing</strong>, or anywhere near the historic <strong>Canton Square</strong>, we deliver fast and reliable roll off dumpster service.
                     </p>
                     <p>
-                        Canton's rich history and growing community make it a unique place in Central Mississippi. We're here to support your renovation, construction, and cleanup projects with professional dumpster rental service.
+                        Canton's rich history as a Civil War-era city and its growing community make it a unique and vibrant place in Central Mississippi. We're proud to serve Canton with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other customers in Madison County.
+                    </p>
+                    <p style={{ marginTop: '1.5rem' }}>
+                        <strong>Planning a rental?</strong> Read our guide on <Link href="/blog/dumpster-rental-madison-ms">dumpster rentals in Madison County</Link> for more local tips and advice on sizing.
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Canton is part of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.
@@ -135,16 +154,22 @@ export default function CantonPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection} style={{ padding: 'var(--spacing-3xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
-                <div className="container container-narrow">
-                    <h2 className="text-center">Canton Dumpster Rental FAQs</h2>
-                    <div className={styles.faqList}>
-                        {faqs.map((faq, index) => (
-                            <div key={index} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-xl)' }}>
-                                <h3 style={{ fontSize: '1.25rem', marginBottom: 'var(--spacing-sm)' }}>{faq.question}</h3>
-                                <p>{faq.answer}</p>
-                            </div>
-                        ))}
+            <section className={styles.faqSection}>
+                <div className="container">
+                    <h2 className="text-center">Frequently Asked Questions: Canton Dumpster Rentals</h2>
+                    <div className={styles.faqGrid}>
+                        <div className={styles.faqItem}>
+                            <h3>How much does it cost to rent a dumpster in Canton, MS?</h3>
+                            <p>Our dumpster rentals in Canton start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size).</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>Do I need a permit for a dumpster in Canton?</h3>
+                            <p>You only need a permit if placing the dumpster on a public street in Canton. Placing it in your private driveway requires no permit. Contact Canton Public Works for specific street placement rules.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>What items are not allowed in your dumpsters in Canton?</h3>
+                            <p>For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking.</p>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -5,10 +5,10 @@ import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rental Jackson MS | MidSouth Dumpster Rentals',
-    description: 'Need reliable dumpster rental in Jackson, MS? MidSouth offers flat-rate pricing from $349, same-day delivery 7 days a week, and serves all of Central Mississippi.',
+    title: 'Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
+    description: 'Need reliable dumpster rental in Jackson, MS? Mid South offers flat-rate pricing from $349, same-day delivery 7 days a week, and serves all of Central Mississippi.',
     openGraph: {
-        title: 'Dumpster Rental Jackson MS | MidSouth Dumpster Rentals',
+        title: 'Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
         description: 'Flat-rate pricing from $349. Same-day delivery 7 days a week across Jackson, Hinds County, and Central Mississippi.',
         url: 'https://midsouthdumpsterms.com/blog/dumpster-rental-jackson-ms',
     },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const faqs = [
     {
         question: 'How much does dumpster rental cost in Jackson, MS?',
-        answer: 'MidSouth Dumpster Rentals charges flat-rate, all-inclusive pricing: 10-yard from $349 (1-day) to $399 (7-day), 15-yard from $399 to $449, and 20-yard from $449 to $499. Delivery, pickup, and disposal are all included — no hidden fees.',
+        answer: 'Mid South Dumpster Rentals charges flat-rate, all-inclusive pricing: 10-yard from $349 (1-day) to $399 (7-day), 15-yard from $399 to $449, and 20-yard from $449 to $499. Delivery, pickup, and disposal are all included — no hidden fees.',
     },
     {
         question: 'What size dumpster do I need for my project in Jackson?',
@@ -29,7 +29,7 @@ const faqs = [
     },
     {
         question: 'Can I get same-day dumpster delivery in Jackson?',
-        answer: 'Yes! MidSouth Dumpster Rentals offers same-day delivery when you call before noon at 601-316-7891. We operate 7AM–7PM, 7 days a week including weekends.',
+        answer: 'Yes! Mid South Dumpster Rentals offers same-day delivery when you call before noon at 601-316-7891. We operate 7AM–7PM, 7 days a week including weekends.',
     },
     {
         question: 'What items are NOT allowed in a dumpster rental?',
@@ -39,8 +39,8 @@ const faqs = [
 
 export default function BlogPost() {
     const articleSchema = generateArticleSchema(
-        'Dumpster Rental Jackson MS | MidSouth Dumpster Rentals',
-        'Need reliable dumpster rental in Jackson, MS? MidSouth offers flat-rate pricing from $349, same-day delivery 7 days a week, and serves all of Central Mississippi.',
+        'Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
+        'Need reliable dumpster rental in Jackson, MS? Mid South offers flat-rate pricing from $349, same-day delivery 7 days a week, and serves all of Central Mississippi.',
         '2026-03-04',
         'https://midsouthdumpsterms.com/opengraph-image.jpg',
         '2026-03-04'
@@ -70,12 +70,12 @@ export default function BlogPost() {
 
                     <div className={styles.content}>
                         <p className={styles.lead}>
-                            Facing a major cleanout, renovation, or construction project in Jackson, MS? MidSouth Dumpster Rentals is your local, Jackson-based partner for roll-off dumpster rentals with flat-rate pricing, same-day delivery, and zero hidden fees.
+                            Facing a major cleanout, renovation, or construction project in Jackson, MS? Mid South Dumpster Rentals is your local, Jackson-based partner for roll-off dumpster rentals with flat-rate pricing, same-day delivery, and zero hidden fees.
                         </p>
 
-                        <h2>Why Jackson Residents Choose MidSouth Dumpster Rentals</h2>
+                        <h2>Why Jackson Residents Choose Mid South Dumpster Rentals</h2>
                         <p>
-                            When you&apos;re searching for dumpster rental in Jackson, you want a company that knows the area and shows up when they say they will. MidSouth is a locally owned business — not a national franchise — which means faster service, real local knowledge, and someone who picks up the phone.
+                            When you&apos;re searching for dumpster rental in Jackson, you want a company that knows the area and shows up when they say they will. Mid South is a locally owned business — not a national franchise — which means faster service, real local knowledge, and someone who picks up the phone.
                         </p>
                         <ul>
                             <li><strong>Same-day delivery</strong> when you call before noon — 7 days a week</li>

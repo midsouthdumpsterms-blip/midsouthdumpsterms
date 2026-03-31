@@ -8,30 +8,15 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
-    title: 'Dumpster Rentals Gluckstadt MS | Fast-Growing Community',
+    title: 'Roll Off Dumpster Rental Gluckstadt MS | Madison County | Mid South',
     description:
-        'Serving Mississippi\'s fastest-growing municipality with reliable dumpster rentals. 10-20 yard sizes for new construction & home projects. Same-day delivery.',
+        'Roll off dumpster rental in Gluckstadt, MS and Madison County. 10, 15 & 20-yard dumpsters with same-day delivery to all Gluckstadt neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
     openGraph: {
-        title: 'Dumpster Rentals in Gluckstadt, MS | Mid South',
-        description: 'Serving Gluckstadt\'s fast-growing community with same-day dumpster delivery.',
+        title: 'Roll Off Dumpster Rental Gluckstadt MS | Madison County',
+        description: 'Locally owned roll off dumpster rental serving Gluckstadt & all of Madison County. Same-day delivery, flat-rate pricing, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/gluckstadt',
     },
 }
-
-const faqs = [
-    {
-        question: 'Do I need an HOA permit to rent a dumpster in Gluckstadt, MS?',
-        answer: 'You may need permission from your HOA if placing the dumpster in a visible driveway or yard for an extended period. For street placement, check with Gluckstadt city regulations.',
-    },
-    {
-        question: 'How much does dumpster rental cost in Gluckstadt?',
-        answer: 'Our flat-rate pricing for Gluckstadt includes delivery, pickup, and disposal. Prices start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard container, with no hidden fees.',
-    },
-    {
-        question: 'Can you deliver a roll-off dumpster to a new construction site in Gluckstadt?',
-        answer: 'Yes! We frequently deliver our 20-yard roll-off dumpsters to new residential and commercial construction sites throughout the rapidly growing areas of Gluckstadt.',
-    },
-]
 
 export default function GluckstadtPage() {
     const serviceSchema = generateServiceSchema(
@@ -47,7 +32,29 @@ export default function GluckstadtPage() {
         { name: 'Service Areas', url: 'https://midsouthdumpsterms.com/service-areas' },
         { name: 'Gluckstadt', url: 'https://midsouthdumpsterms.com/service-areas/gluckstadt' },
     ])
-    const faqSchema = generateFAQSchema(faqs)
+
+    const faqSchema = generateFAQSchema([
+        {
+            question: "How much does it cost to rent a roll off dumpster in Gluckstadt, MS?",
+            answer: "Our roll off dumpster rentals in Gluckstadt start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size) with no hidden fees."
+        },
+        {
+            question: "Can you deliver to the neighborhoods off Highway 463 in Gluckstadt?",
+            answer: "Yes! We regularly deliver roll off dumpsters to communities throughout the Gluckstadt area including Bellegrove, Reunion, Bridgewater, and all neighborhoods along the Highway 463 corridor. Our trucks safely navigate residential streets without damaging driveways."
+        },
+        {
+            question: "What items are not allowed in your dumpsters in Gluckstadt?",
+            answer: "For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking."
+        },
+        {
+            question: "Do you serve all of Madison County, MS?",
+            answer: "Yes! We provide roll off dumpster rental throughout all of Madison County including Gluckstadt, Madison, Ridgeland, Canton, Flora, and surrounding communities. Same-day delivery is available when you call before noon."
+        },
+        {
+            question: "How quickly can you deliver a roll off dumpster to Gluckstadt, MS?",
+            answer: "We offer same-day and next-day roll off dumpster delivery in Gluckstadt and Madison County. Call us before noon at 601-316-7891 and we can typically deliver the same day, 7 days a week."
+        }
+    ])
 
     return (
         <>
@@ -57,9 +64,9 @@ export default function GluckstadtPage() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Dumpster Rentals in Gluckstadt, MS</h1>
+                    <h1>Roll Off Dumpster Rental in Gluckstadt, MS</h1>
                     <p className={styles.heroSubtext}>
-                        Fast, affordable roll-off dumpster delivery throughout Gluckstadt and surrounding areas
+                        Locally owned roll off dumpster rental serving Gluckstadt and all of Madison County — same-day delivery, flat-rate pricing, no hidden fees
                     </p>
                     <div className={styles.heroButtons}>
                         <BookingButton label="Book Gluckstadt Dumpster" location="Gluckstadt Service Area Hero" />
@@ -85,36 +92,41 @@ export default function GluckstadtPage() {
                 <div className="container">
                     <div className="grid grid-2">
                         <div>
-                            <h2>Why Choose Us in Gluckstadt?</h2>
+                            <h2>Why Choose Mid South for Gluckstadt Dumpster Rental?</h2>
+                            <p>We're a locally owned Central Mississippi company. We own our trucks and handle every delivery ourselves — no third-party brokers or dispatch centers. Gluckstadt residents and contractors get fast, reliable roll off dumpster service backed by our 5-star Google reputation.</p>
                             <ul className={styles.benefitsList}>
-                                <li>✓ Same-day delivery available</li>
-                                <li>✓ Serving Gluckstadt and Madison County</li>
-                                <li>✓ Transparent pricing with no hidden fees</li>
-                                <li>✓ 10, 15, and 20-yard dumpsters</li>
-                                <li>✓ Residential and commercial service</li>
-                                <li>✓ 7 days a week, 7AM - 7PM</li>
-                                <li>✓ Professional, courteous service</li>
+                                <li>✓ Same-day roll off dumpster delivery available</li>
+                                <li>✓ Serving Gluckstadt and all of Madison County</li>
+                                <li>✓ Flat-rate pricing — delivery, pickup & disposal included</li>
+                                <li>✓ 10, 15, and 20-yard roll off dumpsters in stock</li>
+                                <li>✓ Residential, commercial & construction service</li>
+                                <li>✓ Open 7 days a week, 7AM – 7PM</li>
+                                <li>✓ 5-star rated on Google</li>
+                                <li>✓ Licensed & insured</li>
                             </ul>
                         </div>
                         <div>
-                            <Image
-                                src="/images/gallery/driveway-safe-dumpster-gluckstadt-boards.jpg"
-                                alt="Driveway-safe dumpster delivery utilizing protective boards on a Gluckstadt driveway"
-                                width={600}
-                                height={400}
-                                className={styles.contentImage}
-                            />
-                            <h2>Perfect For Gluckstadt Projects</h2>
-                            <p>Gluckstadt is one of Mississippi's newest and fastest-growing municipalities. Whether you're building a new home, renovating a property, or <Link href="/blog/dumpster-rental-guide-for-home-renovations" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>managing construction</Link> in this rapidly developing area near Madison, we have the right dumpster size for your needs.</p>
-                            <p><strong>Common uses in Gluckstadt:</strong></p>
+                            <h2>Perfect For Any Gluckstadt Project</h2>
+                            <p>Whether you're renovating a home in Reunion or Bridgewater, clearing out a garage in Bellegrove, managing <Link href="/blog/dumpster-rental-guide-for-home-renovations" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>a major home remodel</Link> along the Hwy 463 corridor, or handling roofing work in one of Gluckstadt's premier neighborhoods, we have the right roll off dumpster for your needs.</p>
+                            <p><strong>Common roll off dumpster uses in Gluckstadt, MS:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
-                                <li>Construction and demolition</li>
-                                <li>Estate and foreclosure cleanouts</li>
-                                <li>Roofing projects</li>
-                                <li>Yard waste and landscaping</li>
-                                <li>Commercial cleanouts</li>
+                                <li>Roofing tear-offs and replacements</li>
+                                <li>Construction and demolition debris</li>
+                                <li>Estate and property cleanouts</li>
+                                <li>Yard waste and storm cleanup</li>
+                                <li>New home construction debris</li>
                             </ul>
+
+                            <div style={{ marginTop: '2rem' }}>
+                                <Image
+                                    src="/images/gallery/same-day-dumpster-rental-gluckstadt.jpg"
+                                    alt="Roll off dumpster rental delivery in Gluckstadt, MS"
+                                    width={600}
+                                    height={400}
+                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -122,12 +134,19 @@ export default function GluckstadtPage() {
 
             <section className={styles.contentSection}>
                 <div className="container">
-                    <h2>Serving Gluckstadt's Growing Community</h2>
+                    <h2>Roll Off Dumpster Rental Serving All of Madison County, MS</h2>
                     <p>
-                        We proudly serve Gluckstadt, Mississippi's fastest-growing municipality. As one of the newest cities in Madison County, Gluckstadt is experiencing rapid residential and commercial development, and we're here to support that growth with professional dumpster rental service.
+                        Gluckstadt is one of the hottest-growing communities in Madison County, with new subdivisions and developments expanding rapidly. We provide fast roll off dumpster rental throughout all of Madison County — from Gluckstadt and Madison to Ridgeland, Canton, and Flora. Whether your project is a quick residential cleanout or a multi-week construction job, our locally owned trucks are ready.
+                    </p>
+                    <h2>Neighborhoods & Subdivisions We Serve in Gluckstadt, MS</h2>
+                    <p>
+                        We proudly deliver roll off dumpsters to every neighborhood in Gluckstadt. Whether you're in <strong>Reunion</strong>, <strong>Bridgewater</strong>, <strong>Bellegrove</strong>, <strong>Wolf Creek</strong>, <strong>Trace Ridge</strong>, along <strong>Highway 463</strong>, near <strong>Gluckstadt Road</strong>, or in any of the newer developments expanding north of Madison, we deliver fast and reliable roll off dumpster service.
                     </p>
                     <p>
-                        Whether you're building a new home, developing a commercial property, or working on renovation projects in this dynamic community, Mid South Dumpster Rentals provides the reliable waste management solutions you need.
+                        Gluckstadt's explosive residential growth makes it one of the most active markets for home construction, remodeling, and cleanout work in Central Mississippi. We're proud to serve this booming community with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Madison County customers.
+                    </p>
+                    <p style={{ marginTop: '1.5rem' }}>
+                        <strong>Planning a rental?</strong> Read our guide on <Link href="/blog/dumpster-rental-madison-ms">dumpster rentals in Madison County</Link> for more local tips and advice on sizing.
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Gluckstadt is part of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.
@@ -135,16 +154,22 @@ export default function GluckstadtPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection} style={{ padding: 'var(--spacing-3xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
-                <div className="container container-narrow">
-                    <h2 className="text-center">Gluckstadt Dumpster Rental FAQs</h2>
-                    <div className={styles.faqList}>
-                        {faqs.map((faq, index) => (
-                            <div key={index} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-xl)' }}>
-                                <h3 style={{ fontSize: '1.25rem', marginBottom: 'var(--spacing-sm)' }}>{faq.question}</h3>
-                                <p>{faq.answer}</p>
-                            </div>
-                        ))}
+            <section className={styles.faqSection}>
+                <div className="container">
+                    <h2 className="text-center">Frequently Asked Questions: Gluckstadt Dumpster Rentals</h2>
+                    <div className={styles.faqGrid}>
+                        <div className={styles.faqItem}>
+                            <h3>How much does it cost to rent a dumpster in Gluckstadt, MS?</h3>
+                            <p>Our dumpster rentals in Gluckstadt start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size).</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>Can you deliver to new construction neighborhoods in Gluckstadt?</h3>
+                            <p>Yes! We work with many builders and homeowners in Gluckstadt's growing neighborhoods like Reunion, Bridgewater, and Bellegrove. We can schedule deliveries around your construction timeline and regularly service active job sites.</p>
+                        </div>
+                        <div className={styles.faqItem}>
+                            <h3>What items are not allowed in your dumpsters in Gluckstadt?</h3>
+                            <p>For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking.</p>
+                        </div>
                     </div>
                 </div>
             </section>

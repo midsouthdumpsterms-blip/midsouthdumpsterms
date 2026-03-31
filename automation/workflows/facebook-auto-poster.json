@@ -1,5 +1,5 @@
 {
-    "name": "MidSouth - Facebook Auto-Poster",
+    "name": "Mid South - Facebook Auto-Poster",
     "nodes": [
         {
             "id": "fb-001",
@@ -68,7 +68,7 @@
                 390
             ],
             "parameters": {
-                "jsCode": "const posts = $input.all().map(r => r.json);\nconst today = new Date().toISOString().split('T')[0];\nconst todaysPosts = posts.filter(p => {\n  if (!p.Date_Published || p.Status !== 'published') return false;\n  return p.Date_Published.startsWith(today);\n});\nif (todaysPosts.length === 0) {\n  return [{ json: { hasPost: false, today } }];\n}\nconst post = todaysPosts[0];\n// Note: URL must start with www. (not https://) for Facebook link previews\nconst url = 'www.midsouthdumpsterms.com/blog/' + (post.Slug || '');\nreturn [{ json: { hasPost: true, today, keyword: post.Keyword, title: post.Title || post.Keyword, slug: post.Slug || '', excerpt: post.Excerpt || '', category: post.Category || '', url } }];"
+                "jsCode": "const posts = $input.all().map(r => r.json);\nconst today = new Date().toISOString().split('T')[0];\nconst todaysPosts = posts.filter(p => {\n  if (!p.Date_Published || p.Status !== 'published') return false;\n  return p.Date_Published.startsWith(today);\n});\nif (todaysPosts.length === 0) {\n  return [{ json: { hasPost: false, today } }];\n}\nconst post = todaysPosts[0];\n// Note: URL must start with www. (not https://) for Facebook link previews\nconst url = 'www.Mid Southdumpsterms.com/blog/' + (post.Slug || '');\nreturn [{ json: { hasPost: true, today, keyword: post.Keyword, title: post.Title || post.Keyword, slug: post.Slug || '', excerpt: post.Excerpt || '', category: post.Category || '', url } }];"
             }
         },
         {
@@ -107,7 +107,7 @@
                 280
             ],
             "parameters": {
-                "jsCode": "const post = $input.first().json;\n\n// Generate caption using template variations for variety\nconst templates = [\n  `📦 New on the blog! We just published a guide on ${post.keyword} — covering everything you need to know before renting a dumpster in Central Mississippi.\\n\\nWhether it's a home cleanout, renovation, or storm debris — we've got 10, 15, and 20-yard dumpsters with same-day delivery.\\n\\n📖 Read it here: ${post.url}\\n📞 Ready to book? Call us at 601-316-7891`,\n  `🏠 Got a project coming up? Our latest blog covers ${post.keyword} — written specifically for homeowners and contractors in the Jackson, MS area.\\n\\nMidSouth Dumpster Rentals | Same-day delivery | 7 days a week\\n\\n👉 ${post.url}\\n📞 601-316-7891`,\n  `💡 New blog post alert! \"${post.title}\" is live on our website.\\n\\nIf you've been searching for ${post.keyword}, this one's for you. We break it all down — pricing, sizing, and what to expect with MidSouth Dumpster Rentals.\\n\\n🔗 ${post.url}\\n📞 601-316-7891`\n];\n\n// Rotate templates based on day of week for variety\nconst dayOfWeek = new Date().getDay();\nconst caption = templates[dayOfWeek % templates.length];\n\nreturn [{ json: { caption, url: post.url, keyword: post.keyword } }];"
+                "jsCode": "const post = $input.first().json;\n\n// Generate caption using template variations for variety\nconst templates = [\n  `📦 New on the blog! We just published a guide on ${post.keyword} — covering everything you need to know before renting a dumpster in Central Mississippi.\\n\\nWhether it's a home cleanout, renovation, or storm debris — we've got 10, 15, and 20-yard dumpsters with same-day delivery.\\n\\n📖 Read it here: ${post.url}\\n📞 Ready to book? Call us at 601-316-7891`,\n  `🏠 Got a project coming up? Our latest blog covers ${post.keyword} — written specifically for homeowners and contractors in the Jackson, MS area.\\n\\nMid South Dumpster Rentals | Same-day delivery | 7 days a week\\n\\n👉 ${post.url}\\n📞 601-316-7891`,\n  `💡 New blog post alert! \"${post.title}\" is live on our website.\\n\\nIf you've been searching for ${post.keyword}, this one's for you. We break it all down — pricing, sizing, and what to expect with Mid South Dumpster Rentals.\\n\\n🔗 ${post.url}\\n📞 601-316-7891`\n];\n\n// Rotate templates based on day of week for variety\nconst dayOfWeek = new Date().getDay();\nconst caption = templates[dayOfWeek % templates.length];\n\nreturn [{ json: { caption, url: post.url, keyword: post.keyword } }];"
             }
         },
         {

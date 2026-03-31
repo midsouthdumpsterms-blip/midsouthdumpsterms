@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { generateFAQSchema, injectSchema } from '@/lib/schema'
+import { generateFAQSchema, generateWebSiteSchema, injectSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import BookingButton from '@/components/BookingButton'
 import TrustBadges from '@/components/TrustBadges'
@@ -54,12 +54,17 @@ const faqData = [
 
 export default function Home() {
     const faqSchema = generateFAQSchema(faqData)
+    const websiteSchema = generateWebSiteSchema()
 
     return (
         <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: injectSchema(websiteSchema) }}
             />
 
             {/* Hero Section */}
