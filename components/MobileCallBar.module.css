@@ -10,31 +10,47 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 12px;
     /* Safely handle iPhone home indicator area */
     padding-bottom: max(12px, env(safe-area-inset-bottom));
 }
 
-.callButton {
+.callButton, .bookButton {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background-color: var(--color-primary);
-    /* Uses your brand primary color */
     color: white;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.125rem;
+    font-size: 1rem;
     width: 100%;
-    padding: 12px;
+    padding: 12px 8px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 119, 182, 0.3);
     transition: transform 0.2s ease, background-color 0.2s ease;
+    flex: 1;
+    text-align: center;
+}
+
+.callButton {
+    background-color: var(--color-primary);
+    box-shadow: 0 4px 6px rgba(0, 119, 182, 0.3);
 }
 
 .callButton:active {
     transform: scale(0.98);
     background-color: var(--color-primary-dark);
+}
+
+.bookButton {
+    background-color: var(--color-secondary);
+    color: var(--color-gray-900);
+    box-shadow: 0 4px 6px rgba(242, 201, 76, 0.3);
+}
+
+.bookButton:active {
+    transform: scale(0.98);
+    background-color: var(--color-secondary-dark);
 }
 
 .icon {
