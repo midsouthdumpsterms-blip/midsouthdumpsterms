@@ -187,16 +187,14 @@
 }
 
 /* Mobile Responsive */
-@media (max-width: 480px) {
-    .chatWindow {
-        width: calc(100vw - 2rem);
-        height: 70vh;
-        bottom: 5rem;
+@media (max-width: 768px) {
+    .chatContainer {
+        bottom: 80px;
         right: 1rem;
     }
 
-    .chatContainer {
-        bottom: 1rem;
-        right: 1rem;
+    .chatWindow {
+        width: calc(100vw - 2rem);
+        height: 60vh;
     }
 }
