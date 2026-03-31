@@ -1,8 +1,7 @@
 'use client'
 
-import { trackPhoneClick } from '@/lib/analytics'
+import { trackPhoneClick, trackBookingClick } from '@/lib/analytics'
 import styles from './MobileCallBar.module.css'
-import Link from 'next/link'
 
 export default function MobileCallBar() {
     return (
@@ -21,9 +20,12 @@ export default function MobileCallBar() {
                 </svg>
                 Call Now
             </a>
-            <Link 
-                href="/contact" 
+            <a 
+                href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.bookButton}
+                onClick={() => trackBookingClick('Book Online', 'Mobile Call Bar')}
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +35,7 @@ export default function MobileCallBar() {
                    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7v-5z" />
                 </svg>
                 Book Online
-            </Link>
+            </a>
         </div>
     )
 }
