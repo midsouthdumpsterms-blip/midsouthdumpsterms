@@ -105,7 +105,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
             'how-to-dispose-appliances-mattresses-jackson-ms',
             'rental-property-cleanout-dumpster-rental-ms',
             'spring-cleaning-checklist-central-ms',
-            'storm-cleanup-dumpster-rental-jackson-ms'
+            'storm-cleanup-dumpster-rental-jackson-ms',
+            'contractor-dumpster-rental-jackson-ms',
+            'foreclosure-cleanout-dumpster-rental-ms',
+            'yard-waste-removal-dumpster-rental-jackson-ms',
         ].map((slug) => ({
             url: `${baseUrl}/blog/${slug}`,
             lastModified: new Date(),
