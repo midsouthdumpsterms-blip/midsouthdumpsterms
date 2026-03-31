@@ -10,6 +10,26 @@ export const metadata: Metadata = {
 
 const galleryImages = [
     {
+        src: '/images/gallery/dumpster-on-construction-site-new-build-ms.jpg',
+        alt: 'Mid South Dumpster Rentals dumpster on new construction site in Mississippi',
+        caption: 'Our branded roll-off dumpster supporting a new home build in Central Mississippi. Roofers on-site with our container ready for shingles, lumber, and construction debris.'
+    },
+    {
+        src: '/images/gallery/mid-south-truck-dumpster-trailer-full-view.jpg',
+        alt: 'Mid South Dumpster Rentals truck and trailer ready for delivery in Jackson MS',
+        caption: 'Our Ford F-350 and branded roll-off trailer ready to roll. We own our trucks and handle every delivery ourselves — no third-party brokers.'
+    },
+    {
+        src: '/images/gallery/branded-dumpster-trailer-closeup-jackson-ms.jpg',
+        alt: 'Branded Mid South dumpster trailer closeup with logo and phone number',
+        caption: 'Close-up of our branded dumpster trailer showing the Mid South Dumpster Rentals logo. Call 601-316-7891 or visit midsouthdumpsterms.com to book.'
+    },
+    {
+        src: '/images/gallery/ford-f350-dumpster-hauling-truck-ms.jpg',
+        alt: 'Ford F-350 hauling branded dumpster trailer in Central Mississippi',
+        caption: 'Our Ford F-350 crew cab hooked up and ready for delivery. USDOT registered and fully insured for your peace of mind.'
+    },
+    {
         src: '/images/gallery/dumpster-rental-jackson-ms-delivery.jpg',
         alt: 'Residential dumpster rental delivery in Jackson, MS',
         caption: 'Strategic placement of a 20-yard dumpster for a home renovation project in North Jackson. Our driver ensured it was close to the door for easy loading.'
