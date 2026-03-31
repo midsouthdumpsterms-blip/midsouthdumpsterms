@@ -114,7 +114,7 @@ export function generateLocalBusinessSchema(): LocalBusinessSchema {
         aggregateRating: {
             '@type': 'AggregateRating',
             ratingValue: '5.0',
-            reviewCount: '23',
+            reviewCount: '17',
             bestRating: '5',
             worstRating: '1',
         },
@@ -396,6 +396,24 @@ export function generateBreadcrumbSchema(
             name: crumb.name,
             item: crumb.url,
         })),
+    };
+}
+
+export interface WebSiteSchema {
+    '@context': string;
+    '@type': string;
+    name: string;
+    alternateName?: string[];
+    url: string;
+}
+
+export function generateWebSiteSchema(): WebSiteSchema {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Mid South Dumpster Rentals',
+        alternateName: ['Mid South Dumpster Rentals, LLC', 'Mid South', 'Mid South Dumpster'],
+        url: 'https://midsouthdumpsterms.com/',
     };
 }
 
