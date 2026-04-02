@@ -11,9 +11,9 @@
 .nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: var(--spacing-sm) 0;
-    gap: var(--spacing-sm);
+    gap: 1.5rem;
 }
 
 .logo {
@@ -84,8 +84,6 @@
     gap: 1.35rem;
     list-style: none;
     margin: 0;
-    flex-shrink: 1;
-    flex-wrap: nowrap;
 }
 
 .navLinks li a {
@@ -118,7 +116,7 @@
 }
 
 .ctaWrapper {
-    margin-left: var(--spacing-xs);
+    margin-left: 0;
     flex-shrink: 0;
 }
 
