@@ -11,11 +11,11 @@
     border: 0;
 }
 
-/* Full-screen booking embed — no padding, no max-width cap */
+/* Full-screen booking embed — height controlled by JS to fit viewport exactly */
 .bookingSection {
     width: 100%;
     background: white;
-    min-height: 100vh;
+    overflow: hidden;
 }
 
 /* Lean phone fallback */
