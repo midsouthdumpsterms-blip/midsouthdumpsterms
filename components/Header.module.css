@@ -135,19 +135,28 @@
         display: flex;
     }
 
-    /* On mobile: logo left, hamburger right — standard professional layout */
+    /* On mobile: logo icon + stacked text left, hamburger right */
     .nav {
         justify-content: space-between;
-        padding: var(--spacing-md) 0;
+        padding: var(--spacing-sm) 0;
     }
 
-    /* Show company name on mobile since nav links are hidden */
     .logoTextContainer {
         display: flex;
     }
 
+    .logoText {
+        font-size: 0.78rem;
+        white-space: normal;
+        line-height: 1.2;
+    }
+
+    .logoSubtext {
+        font-size: 0.7rem;
+    }
+
     .logo {
-        max-width: 280px;
+        max-width: 200px;
     }
 
     .navLinks {
