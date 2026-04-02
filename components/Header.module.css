@@ -123,6 +123,16 @@
 }
 
 /* Fit all nav items at mid-range desktops */
+@media (max-width: 1280px) {
+    .logoTextContainer {
+        display: none;
+    }
+
+    .logo {
+        max-width: 60px;
+    }
+}
+
 @media (max-width: 1200px) {
     .navLinks {
         gap: 1rem;
@@ -130,14 +140,6 @@
 
     .navLinks li a {
         font-size: 0.82rem;
-    }
-
-    .logoText {
-        font-size: 0.82rem;
-    }
-
-    .logoSubtext {
-        font-size: 0.75rem;
     }
 }
 
