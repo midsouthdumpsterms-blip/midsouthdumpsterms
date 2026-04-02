@@ -143,6 +143,7 @@
 
     .logoTextContainer {
         display: flex;
+        flex-direction: column;
     }
 
     .logoText {
