@@ -12,7 +12,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-sm) 0;
+    gap: var(--spacing-sm);
 }
 
 .logo {
@@ -80,9 +81,11 @@
 .navLinks {
     display: flex;
     align-items: center;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-md);
     list-style: none;
     margin: 0;
+    flex-shrink: 1;
+    flex-wrap: nowrap;
 }
 
 .navLinks li a {
@@ -114,8 +117,28 @@
     width: 100%;
 }
 
-.ctaItem {
-    margin-left: var(--spacing-sm);
+.ctaWrapper {
+    margin-left: var(--spacing-xs);
+    flex-shrink: 0;
+}
+
+/* Fit all nav items at mid-range desktops */
+@media (max-width: 1200px) {
+    .navLinks {
+        gap: var(--spacing-sm);
+    }
+
+    .navLinks li a {
+        font-size: 0.82rem;
+    }
+
+    .logoText {
+        font-size: 0.82rem;
+    }
+
+    .logoSubtext {
+        font-size: 0.75rem;
+    }
 }
 
 @media (max-width: 768px) {

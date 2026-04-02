@@ -80,12 +80,8 @@ export default function Header() {
                             </Link>
                         </li>
                         <li>
-                            <Link
-                                href="/book-online"
-                                onClick={() => setMobileMenuOpen(false)}
-                                style={{ color: 'var(--color-secondary-dark)', fontWeight: 700 }}
-                            >
-                                📅 Book Online
+                            <Link href="/book-online" onClick={() => setMobileMenuOpen(false)}>
+                                Book Online
                             </Link>
                         </li>
                         <div className={styles.ctaWrapper}>

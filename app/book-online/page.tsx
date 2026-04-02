@@ -20,11 +20,9 @@ export const metadata: Metadata = {
 export default function BookOnlinePage() {
     return (
         <>
-            {/* SurvCart CSS */}
+            {/* SurvCart CSS + script (enables modal triggers elsewhere on the site) */}
             {/* eslint-disable-next-line @next/next/no-css-tags */}
             <link rel="stylesheet" href="https://embed.survcart.com/embed.css" />
-
-            {/* SurvCart config — must be defined before embed.js executes */}
             <Script id="survcart-config" strategy="beforeInteractive">
                 {`
                 var survcartConfig = {
@@ -46,12 +44,7 @@ export default function BookOnlinePage() {
                 };
                 `}
             </Script>
-
-            {/* SurvCart embed script */}
-            <Script
-                src="https://embed.survcart.com/embed.js"
-                strategy="afterInteractive"
-            />
+            <Script src="https://embed.survcart.com/embed.js" strategy="afterInteractive" />
 
             {/* Hero Banner */}
             <section className={styles.hero}>
@@ -72,47 +65,27 @@ export default function BookOnlinePage() {
                 </div>
             </section>
 
-            {/* Booking CTA Section */}
+            {/* Embedded Booking Widget */}
             <section className={styles.bookingSection}>
                 <div className="container">
                     <div className={styles.bookingWrapper}>
                         <div className={styles.bookingCard}>
                             <div className={styles.bookingHeader}>
-                                <h2 className={styles.bookingTitle}>Ready to Reserve Your Dumpster?</h2>
+                                <h2 className={styles.bookingTitle}>Select Your Size &amp; Date</h2>
                                 <p className={styles.bookingSubtitle}>
-                                    Click the button below to select your dumpster size, rental duration, and delivery date — all in one quick step.
+                                    Choose your dumpster size, rental duration, and delivery date below.
                                 </p>
                             </div>
-                            <div className={styles.bookingCta}>
-                                <div className={styles.pricingPreview}>
-                                    <div className={styles.pricingItem}>
-                                        <span className={styles.pricingSize}>10 YD</span>
-                                        <span className={styles.pricingPrice}>From $349</span>
-                                    </div>
-                                    <div className={styles.pricingDivider} />
-                                    <div className={styles.pricingItem}>
-                                        <span className={styles.pricingSize}>15 YD</span>
-                                        <span className={styles.pricingPrice}>From $399</span>
-                                    </div>
-                                    <div className={styles.pricingDivider} />
-                                    <div className={styles.pricingItem}>
-                                        <span className={styles.pricingSize}>20 YD</span>
-                                        <span className={styles.pricingPrice}>From $449</span>
-                                    </div>
-                                </div>
-
-                                {/* This button is detected by SurvCart embed.js via class + text */}
-                                <button
-                                    className={`survcart-embed-presenter ${styles.bookNowBtn}`}
-                                    id="book-online-main-btn"
-                                    type="button"
-                                >
-                                    Book Now
-                                </button>
-
-                                <p className={styles.bookingNote}>
-                                    🔒 Secure online payment &mdash; All major credit &amp; debit cards accepted
-                                </p>
+                            <div className={styles.iframeContainer}>
+                                <iframe
+                                    src="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
+                                    width="100%"
+                                    height="750"
+                                    style={{ border: 'none', display: 'block' }}
+                                    title="Book a Dumpster Rental Online – Mid South Dumpster Rentals"
+                                    loading="lazy"
+                                    allowFullScreen
+                                />
                             </div>
                         </div>
                     </div>
@@ -137,7 +110,7 @@ export default function BookOnlinePage() {
                 </div>
             </section>
 
-            {/* Quick Info Cards */}
+            {/* What to Expect Cards */}
             <section className={styles.infoSection}>
                 <div className="container">
                     <h2 className={styles.infoTitle}>What to Expect</h2>
