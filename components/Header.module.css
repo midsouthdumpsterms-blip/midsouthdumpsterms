@@ -25,7 +25,15 @@
     color: var(--color-gray-900);
     transition: transform var(--transition-base);
     flex-shrink: 0;
-    max-width: 220px;
+    max-width: 60px;
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.logoTextContainer {
+    display: none;
 }
 
 .logo:hover {
@@ -122,16 +130,6 @@
     flex-shrink: 0;
 }
 
-/* Fit all nav items at mid-range desktops */
-@media (max-width: 1280px) {
-    .logoTextContainer {
-        display: none;
-    }
-
-    .logo {
-        max-width: 60px;
-    }
-}
 
 @media (max-width: 1200px) {
     .navLinks {
