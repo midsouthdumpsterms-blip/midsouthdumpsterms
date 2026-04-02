@@ -38,6 +38,11 @@
     box-shadow: var(--shadow-xl);
 }
 
+.bookingIframe {
+    height: 1100px;
+    width: 100%;
+}
+
 /* Phone CTA */
 .phoneSection {
     padding: 2.25rem 0;
@@ -119,17 +124,32 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+    /* Collapse hero to single line on mobile — get to the form faster */
+    .hero {
+        padding: 0.9rem 0;
+    }
+
     .heroTitle {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        margin-bottom: 0.2rem;
+    }
+
+    /* Hide the subtitle on mobile — the form makes it obvious what to do */
+    .heroSubtitle {
+        display: none;
     }
 
     .phoneCta {
         flex-direction: column;
         text-align: center;
-        padding: 1.25rem;
+        padding: 1rem;
+    }
+
+    .phoneIcon {
+        font-size: 1.75rem;
     }
 
     .iframeContainer iframe {
-        height: 700px !important;
+        height: 780px !important;
     }
 }

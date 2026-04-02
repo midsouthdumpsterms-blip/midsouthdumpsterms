@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import BookingIframe from './BookingIframe'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 export default function BookOnlinePage() {
     return (
         <>
-            {/* SurvCart CSS + script */}
+            {/* SurvCart assets */}
             {/* eslint-disable-next-line @next/next/no-css-tags */}
             <link rel="stylesheet" href="https://embed.survcart.com/embed.css" />
             <Script id="survcart-config" strategy="beforeInteractive">
@@ -46,7 +47,7 @@ export default function BookOnlinePage() {
             </Script>
             <Script src="https://embed.survcart.com/embed.js" strategy="afterInteractive" />
 
-            {/* Compact Hero Strip */}
+            {/* Compact hero strip */}
             <section className={styles.hero}>
                 <div className="container">
                     <div className={styles.heroContent}>
@@ -58,18 +59,10 @@ export default function BookOnlinePage() {
                 </div>
             </section>
 
-            {/* Booking Embed — front and center */}
-            <section className={styles.bookingSection}>
+            {/* Booking embed — auto-resizing client component */}
+            <section className={styles.bookingSection} id="booking-form">
                 <div className={styles.iframeContainer}>
-                    <iframe
-                        src="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                        width="100%"
-                        height="850"
-                        style={{ border: 'none', display: 'block' }}
-                        title="Book a Dumpster Rental Online – Mid South Dumpster Rentals"
-                        loading="eager"
-                        allowFullScreen
-                    />
+                    <BookingIframe />
                 </div>
             </section>
 
@@ -89,7 +82,7 @@ export default function BookOnlinePage() {
                 </div>
             </section>
 
-            {/* What to Expect Cards */}
+            {/* What to Expect */}
             <section className={styles.infoSection}>
                 <div className="container">
                     <h2 className={styles.infoTitle}>What to Expect</h2>
@@ -97,23 +90,17 @@ export default function BookOnlinePage() {
                         <div className="card">
                             <div className={styles.infoIcon}>🗓️</div>
                             <h3 className={styles.infoCardTitle}>Pick Your Date</h3>
-                            <p className={styles.infoCardText}>
-                                Same-day delivery available most days when ordered before noon.
-                            </p>
+                            <p className={styles.infoCardText}>Same-day delivery available most days when ordered before noon.</p>
                         </div>
                         <div className="card">
                             <div className={styles.infoIcon}>🚛</div>
                             <h3 className={styles.infoCardTitle}>We Deliver &amp; Pick Up</h3>
-                            <p className={styles.infoCardText}>
-                                Drop-off and pickup included in your flat rate. No extra charges.
-                            </p>
+                            <p className={styles.infoCardText}>Drop-off and pickup included in your flat rate. No extra charges.</p>
                         </div>
                         <div className="card">
                             <div className={styles.infoIcon}>💳</div>
                             <h3 className={styles.infoCardTitle}>Secure Payment</h3>
-                            <p className={styles.infoCardText}>
-                                Pay securely online. All major cards accepted. No surprise fees.
-                            </p>
+                            <p className={styles.infoCardText}>All major cards accepted. No surprise fees.</p>
                         </div>
                     </div>
                 </div>
