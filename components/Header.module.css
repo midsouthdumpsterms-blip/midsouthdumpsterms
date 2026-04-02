@@ -143,17 +143,12 @@
 
     .logoTextContainer {
         display: flex;
-        flex-direction: column;
     }
 
     .logoText {
         font-size: 0.78rem;
         white-space: normal;
         line-height: 1.2;
-    }
-
-    .logoSubtext {
-        font-size: 0.7rem;
     }
 
     .logo {
