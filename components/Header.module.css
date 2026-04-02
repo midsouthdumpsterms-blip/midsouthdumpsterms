@@ -135,6 +135,21 @@
         display: flex;
     }
 
+    /* On mobile: logo left, hamburger right — standard professional layout */
+    .nav {
+        justify-content: space-between;
+        padding: var(--spacing-md) 0;
+    }
+
+    /* Show company name on mobile since nav links are hidden */
+    .logoTextContainer {
+        display: flex;
+    }
+
+    .logo {
+        max-width: 280px;
+    }
+
     .navLinks {
         position: fixed;
         top: 70px;
