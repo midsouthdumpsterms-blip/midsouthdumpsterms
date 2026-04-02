@@ -29,8 +29,8 @@ const nextConfig = {
         return [
             {
                 source: '/booking',
-                destination: '/',
-                permanent: true, // 301 redirect - passes SEO authority to homepage
+                destination: '/book-online',
+                permanent: true, // 301 redirect - passes SEO authority to book-online page
             },
         ]
     },

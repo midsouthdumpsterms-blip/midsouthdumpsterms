@@ -48,6 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1,
         },
         {
+            url: `${baseUrl}/book-online`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.95,
+        },
+        {
             url: `${baseUrl}/services`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
