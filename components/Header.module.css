@@ -32,22 +32,14 @@
     transform: scale(1.02);
 }
 
-.logoTextContainer {
-    display: none;
-}
-
-.logo:hover {
-    transform: scale(1.02);
-}
-
 .logoImage {
     border-radius: 50%;
     object-fit: contain;
 }
 
+/* Always hidden — too many nav items to fit alongside the text */
 .logoTextContainer {
-    display: flex;
-    flex-direction: column;
+    display: none;
 }
 
 .logoText {
@@ -130,7 +122,6 @@
     flex-shrink: 0;
 }
 
-
 @media (max-width: 1200px) {
     .navLinks {
         gap: 1rem;
@@ -168,12 +159,12 @@
         visibility: visible;
     }
 
-    .ctaItem {
+    .ctaWrapper {
         margin-left: 0;
         width: 100%;
     }
 
-    .ctaItem .btn {
+    .ctaWrapper .btn {
         width: 100%;
     }
 }
