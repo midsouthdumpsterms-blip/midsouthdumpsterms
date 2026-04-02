@@ -417,6 +417,46 @@ export function generateWebSiteSchema(): WebSiteSchema {
     };
 }
 
+// City-level geo schema for local blog posts
+export function generateCityGeoSchema(
+    cityName: string,
+    latitude: number,
+    longitude: number,
+    zipCodes: string[]
+): object {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: 'Mid South Dumpster Rentals, LLC',
+        url: 'https://midsouthdumpsterms.com',
+        telephone: '+16013167891',
+        image: 'https://midsouthdumpsterms.com/icon.png',
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Jackson',
+            addressRegion: 'MS',
+            postalCode: '39209',
+            addressCountry: 'US',
+        },
+        geo: {
+            '@type': 'GeoCoordinates',
+            latitude,
+            longitude,
+        },
+        areaServed: [
+            {
+                '@type': 'City',
+                name: cityName,
+                containedInPlace: { '@type': 'State', name: 'Mississippi' },
+            },
+            ...zipCodes.map((zip) => ({
+                '@type': 'PostalCode',
+                postalCode: zip,
+            })),
+        ],
+    };
+}
+
 // Helper to inject schema into page
 export function injectSchema(schema: object): string {
     return JSON.stringify(schema);

@@ -64,7 +64,7 @@ export default function BlogPost() {
                     <Link href="/blog" className={styles.backLink}>← Back to Blog</Link>
 
                     <header className={styles.header}>
-                        <span className={styles.category}>Yard &amp; Landscaping</span>
+                        <span className={styles.category}>Yard & Landscaping</span>
                         <h1>Yard Waste Removal in Jackson, MS — When Your Cleanup Is Too Big for the Curb</h1>
                         <p className={styles.meta}>Published March 28, 2026</p>
                     </header>
