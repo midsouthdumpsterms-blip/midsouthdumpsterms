@@ -7,6 +7,7 @@ import MobileCallBar from '@/components/MobileCallBar'
 import GoogleReviewsBadge from '@/components/GoogleReviewsBadge'
 import ChatBot from '@/components/ChatBot'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import BehavioralTracker from '@/components/BehavioralTracker'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
@@ -99,6 +100,7 @@ export default function RootLayout({
                 <MobileCallBar />
                 <GoogleReviewsBadge />
                 <ChatBot />
+                <BehavioralTracker />
                 <Analytics />
                 <SpeedInsights />
             </body>

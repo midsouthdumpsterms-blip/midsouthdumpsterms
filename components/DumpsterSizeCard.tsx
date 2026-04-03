@@ -1,6 +1,7 @@
 'use client'
 
-import { trackBookingClick } from '@/lib/analytics'
+import { useRef } from 'react'
+import { trackBookingClick, trackSizeCardHoverStart, trackSizeCardHoverEnd } from '@/lib/analytics'
 import styles from './DumpsterSizeCard.module.css'
 
 interface DumpsterSizeCardProps {
@@ -20,12 +21,29 @@ export default function DumpsterSizeCard({
     idealFor,
     popular = false,
 }: DumpsterSizeCardProps) {
+    const hoverStartTime = useRef<number>(0)
+
     const handleBookingClick = () => {
         trackBookingClick(`Book ${size} Yard Dumpster`, 'Dumpster Size Card')
     }
 
+    const handleMouseEnter = () => {
+        hoverStartTime.current = trackSizeCardHoverStart(size)
+    }
+
+    const handleMouseLeave = () => {
+        if (hoverStartTime.current > 0) {
+            trackSizeCardHoverEnd(size, hoverStartTime.current)
+            hoverStartTime.current = 0
+        }
+    }
+
     return (
-        <div className={`${styles.card} ${popular ? styles.popular : ''}`}>
+        <div
+            className={`${styles.card} ${popular ? styles.popular : ''}`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             {popular && <div className={styles.badge}>Most Popular</div>}
             <div className={styles.header}>
                 <h3>{size} Yard Dumpster</h3>
@@ -66,3 +84,4 @@ export default function DumpsterSizeCard({
         </div>
     )
 }
+

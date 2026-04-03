@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { trackFaqOpen } from '@/lib/analytics'
 import styles from '@/app/faq/faq.module.css'
 
 interface FAQ {
@@ -12,7 +13,12 @@ export default function FaqAccordion({ faqs }: { faqs: FAQ[] }) {
     const [openIndex, setOpenIndex] = useState<number | null>(null)
 
     const toggleFAQ = (index: number) => {
+        const isOpening = openIndex !== index
         setOpenIndex(openIndex === index ? null : index)
+        // Track only when opening (not closing)
+        if (isOpening) {
+            trackFaqOpen(faqs[index].question)
+        }
     }
 
     return (
