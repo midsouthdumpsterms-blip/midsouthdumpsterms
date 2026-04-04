@@ -4,7 +4,6 @@
     background: white;
     box-shadow: var(--shadow-md);
     z-index: 1000;
-    overflow-x: hidden;
     width: 100%;
 }
 
