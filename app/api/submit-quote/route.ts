@@ -84,10 +84,11 @@ function buildCustomerSms(data: {
 function buildOwnerSms(data: {
     name: string; phone: string; project: string
     city: string; timeline: string; recommendedSize: string
+    quotedPrice: string; days: string
 }) {
-    const { name, phone, project, city, timeline, recommendedSize } = data
+    const { name, phone, project, city, timeline, recommendedSize, quotedPrice, days } = data
     const tlLabel = TIMELINE_LABELS[timeline]?.replace(/[🚀📅🗓️🔮]/g, '').trim() ?? timeline
-    return `🚨 NEW LEAD\nName: ${name}\nPhone: ${phone}\nProject: ${project}\nCity: ${city}, MS\nWhen: ${tlLabel}\nSize: ${recommendedSize}-Yd\n\nCall them back ASAP!`
+    return `🚨 NEW LEAD\nName: ${name}\nPhone: ${phone}\nProject: ${project}\nCity: ${city}, MS\nWhen: ${tlLabel}\nSize: ${recommendedSize}-Yd\nQuoted: ${quotedPrice} (${days})\n\nCall them back ASAP!`
 }
 
 export async function POST(req: NextRequest) {
@@ -130,7 +131,7 @@ export async function POST(req: NextRequest) {
             // Text the OWNER a short alert
             if (ownerPhone) {
                 await client.messages.create({
-                    body: buildOwnerSms({ name, phone, project, city, timeline, recommendedSize }),
+                    body: buildOwnerSms({ name, phone, project, city, timeline, recommendedSize, quotedPrice: quotedPrice ?? 'unknown', days: days ?? 'unknown' }),
                     from: twilioFrom,
                     to: ownerPhone,
                 }).catch(err => console.error('Twilio owner SMS error:', err))
