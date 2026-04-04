@@ -40,7 +40,7 @@ export default function DebrisRemovalJacksonPage() {
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <BookingButton label="Book Online" location="Debris Removal Jackson Hero" />
-                        <TrackedPhoneLink location="Debris Removal Jackson Hero" className="btn btn-outline btn-lg" style={{ color: 'white', borderColor: 'white' }}>
+                        <TrackedPhoneLink location="Debris Removal Jackson Hero" className="btn btn-outline-white btn-lg" style={{ color: 'white', borderColor: 'white' }}>
                             Call 601-316-7891
                         </TrackedPhoneLink>
                     </div>
@@ -139,7 +139,7 @@ export default function DebrisRemovalJacksonPage() {
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <BookingButton label="Book Now Online" location="Debris Jackson CTA" />
-                        <TrackedPhoneLink location="Debris Jackson CTA" className="btn btn-outline btn-lg" style={{ color: 'white', borderColor: 'white' }}>
+                        <TrackedPhoneLink location="Debris Jackson CTA" className="btn btn-outline-white btn-lg" style={{ color: 'white', borderColor: 'white' }}>
                             Call 601-316-7891
                         </TrackedPhoneLink>
                     </div>

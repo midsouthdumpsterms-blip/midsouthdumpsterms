@@ -79,7 +79,7 @@ export default function Home() {
                         </p>
                         <div className={styles.heroButtons}>
                             <BookingButton label="Book Now Online" location="Homepage Hero" />
-                            <TrackedPhoneLink location="Page CTA" className="btn btn-outline btn-lg">
+                            <TrackedPhoneLink location="Page CTA" className="btn btn-outline-white btn-lg">
                                 Call 601-316-7891
                             </TrackedPhoneLink>
                         </div>
@@ -234,7 +234,7 @@ export default function Home() {
                     </p>
                     <div className={styles.ctaButtons}>
                         <BookingButton label="Book Online Now" location="Homepage CTA" />
-                        <a href="/contact" className="btn btn-outline btn-lg">
+                        <a href="/contact" className="btn btn-outline-white btn-lg">
                             Contact Us
                         </a>
                     </div>

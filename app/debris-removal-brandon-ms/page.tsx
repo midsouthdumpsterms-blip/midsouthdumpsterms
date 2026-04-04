@@ -45,7 +45,7 @@ export default function DebrisRemovalPage() {
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <BookingButton label="Book Online" location={`Debris Removal ${city} Hero`} />
-                        <TrackedPhoneLink location={`Debris Removal ${city} Hero`} className="btn btn-outline btn-lg">Call 601-316-7891</TrackedPhoneLink>
+                        <TrackedPhoneLink location={`Debris Removal ${city} Hero`} className="btn btn-outline-white btn-lg">Call 601-316-7891</TrackedPhoneLink>
                     </div>
                 </div>
             </section>
@@ -114,7 +114,7 @@ export default function DebrisRemovalPage() {
                     <p style={{ fontSize: '1.125rem', marginBottom: 'var(--spacing-xl)', opacity: 0.9 }}>Book online or call 601-316-7891 — same-day delivery available</p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <BookingButton label="Book Now Online" location={`Debris ${city} CTA`} />
-                        <TrackedPhoneLink location={`Debris ${city} CTA`} className="btn btn-outline btn-lg">Call 601-316-7891</TrackedPhoneLink>
+                        <TrackedPhoneLink location={`Debris ${city} CTA`} className="btn btn-outline-white btn-lg">Call 601-316-7891</TrackedPhoneLink>
                     </div>
                 </div>
             </section>

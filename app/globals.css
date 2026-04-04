@@ -205,6 +205,18 @@ a:hover {
   color: white;
 }
 
+/* For use on primary/dark colored backgrounds */
+.btn-outline-white {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-outline-white:hover {
+  background: white;
+  color: var(--color-primary);
+}
+
 .btn-lg {
   padding: var(--spacing-md) var(--spacing-2xl);
   font-size: 1.125rem;

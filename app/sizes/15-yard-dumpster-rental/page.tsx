@@ -57,7 +57,7 @@ export default function FifteenYardDumpsterPage() {
                             </p>
                             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                                 <BookingButton label="Book 15 Yard Dumpster" location="15 Yard Hero" />
-                                <TrackedPhoneLink location="15 Yard Hero" className="btn btn-outline btn-lg">Call 601-316-7891</TrackedPhoneLink>
+                                <TrackedPhoneLink location="15 Yard Hero" className="btn btn-outline-white btn-lg">Call 601-316-7891</TrackedPhoneLink>
                             </div>
                         </div>
                         <div style={{ background: 'rgba(255,255,255,0.15)', borderRadius: 'var(--radius-xl)', padding: '1.5rem', minWidth: '200px', textAlign: 'center', flexShrink: 0 }}>
@@ -298,7 +298,7 @@ export default function FifteenYardDumpsterPage() {
                     <p style={{ fontSize: '1.125rem', opacity: 0.9, marginBottom: 'var(--spacing-xl)' }}>Our most popular size — same-day delivery available, call before noon or book online</p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <BookingButton label="Book 15 Yard Dumpster" location="15 Yard CTA" />
-                        <TrackedPhoneLink location="15 Yard CTA" className="btn btn-outline btn-lg">Call 601-316-7891</TrackedPhoneLink>
+                        <TrackedPhoneLink location="15 Yard CTA" className="btn btn-outline-white btn-lg">Call 601-316-7891</TrackedPhoneLink>
                     </div>
                 </div>
             </section>

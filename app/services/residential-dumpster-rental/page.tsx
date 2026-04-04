@@ -48,7 +48,7 @@ export default function ResidentialDumpsterRentalPage() {
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1.5rem' }}>
                         <BookingButton label="Book Online" location="Residential Hero" />
-                        <TrackedPhoneLink location="Residential Hero" className="btn btn-outline btn-lg">
+                        <TrackedPhoneLink location="Residential Hero" className="btn btn-outline-white btn-lg">
                             Call 601-316-7891
                         </TrackedPhoneLink>
                     </div>
@@ -156,7 +156,7 @@ export default function ResidentialDumpsterRentalPage() {
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <BookingButton label="Book Now Online" location="Residential CTA" />
-                        <TrackedPhoneLink location="Residential CTA" className="btn btn-outline btn-lg">
+                        <TrackedPhoneLink location="Residential CTA" className="btn btn-outline-white btn-lg">
                             Call 601-316-7891
                         </TrackedPhoneLink>
                     </div>

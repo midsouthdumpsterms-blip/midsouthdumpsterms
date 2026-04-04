@@ -48,7 +48,7 @@ export default function YardWasteDumpsterRentalPage() {
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1.5rem' }}>
                         <BookingButton label="Book Online" location="Yard Waste Hero" />
-                        <TrackedPhoneLink location="Yard Waste Hero" className="btn btn-outline btn-lg">
+                        <TrackedPhoneLink location="Yard Waste Hero" className="btn btn-outline-white btn-lg">
                             Call 601-316-7891
                         </TrackedPhoneLink>
                     </div>
@@ -141,7 +141,7 @@ export default function YardWasteDumpsterRentalPage() {
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <BookingButton label="Book Now Online" location="Yard Waste CTA" />
-                        <TrackedPhoneLink location="Yard Waste CTA" className="btn btn-outline btn-lg">
+                        <TrackedPhoneLink location="Yard Waste CTA" className="btn btn-outline-white btn-lg">
                             Call 601-316-7891
                         </TrackedPhoneLink>
                     </div>

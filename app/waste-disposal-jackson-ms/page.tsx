@@ -40,7 +40,7 @@ export default function WasteDisposalJacksonPage() {
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <BookingButton label="Book Online" location="Waste Disposal Jackson Hero" />
-                        <TrackedPhoneLink location="Waste Disposal Jackson Hero" className="btn btn-outline btn-lg">
+                        <TrackedPhoneLink location="Waste Disposal Jackson Hero" className="btn btn-outline-white btn-lg">
                             Call 601-316-7891
                         </TrackedPhoneLink>
                     </div>
@@ -138,7 +138,7 @@ export default function WasteDisposalJacksonPage() {
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <BookingButton label="Book Now Online" location="Waste Disposal Jackson CTA" />
-                        <TrackedPhoneLink location="Waste Disposal Jackson CTA" className="btn btn-outline btn-lg">
+                        <TrackedPhoneLink location="Waste Disposal Jackson CTA" className="btn btn-outline-white btn-lg">
                             Call 601-316-7891
                         </TrackedPhoneLink>
                     </div>

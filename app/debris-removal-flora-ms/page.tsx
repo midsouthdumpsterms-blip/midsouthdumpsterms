@@ -1,4 +1,4 @@
-﻿import { Metadata } from 'next'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import BookingButton from '@/components/BookingButton'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
@@ -6,7 +6,7 @@ import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@
 
 export const metadata: Metadata = {
     title: 'Debris Removal Flora MS | Roll-Off Dumpster Service | Mid South',
-    description: 'Debris removal in Flora, MS â€” rent a roll-off dumpster and we haul away your construction debris, renovation waste, storm damage, and yard debris. Same-day delivery. Call 601-316-7891.',
+    description: 'Debris removal in Flora, MS — rent a roll-off dumpster and we haul away your construction debris, renovation waste, storm damage, and yard debris. Same-day delivery. Call 601-316-7891.',
     openGraph: {
         title: 'Debris Removal Flora MS | Mid South Dumpster Rentals',
         description: 'Fast debris removal in Flora, MS. Roll-off dumpsters for construction debris, storm cleanup, renovation waste and yard debris. Same-day delivery.',
@@ -30,11 +30,11 @@ export default function DebrisRemovalFloraPage() {
                 <div className="container">
                     <h1 style={{ color: 'white', fontSize: '2.25rem', marginBottom: '1rem' }}>Debris Removal in Flora, MS</h1>
                     <p style={{ fontSize: '1.2rem', opacity: 0.92, maxWidth: '640px', margin: '0 auto 2rem' }}>
-                        The easiest way to remove debris in Flora â€” we deliver a roll-off dumpster, you fill it, we haul it all away
+                        The easiest way to remove debris in Flora — we deliver a roll-off dumpster, you fill it, we haul it all away
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <BookingButton label="Book Online" location="Debris Removal Flora Hero" />
-                        <TrackedPhoneLink location="Debris Removal Flora Hero" className="btn btn-outline btn-lg">Call 601-316-7891</TrackedPhoneLink>
+                        <TrackedPhoneLink location="Debris Removal Flora Hero" className="btn btn-outline-white btn-lg">Call 601-316-7891</TrackedPhoneLink>
                     </div>
                 </div>
             </section>
@@ -48,20 +48,20 @@ export default function DebrisRemovalFloraPage() {
                                 Mid South Dumpster Rentals provides debris removal throughout Flora, MS using roll-off dumpster containers. We serve all of Flora including Flora, Benton Road, and Highway 22. We drop off the dumpster, you load it on your schedule, and we pick it up and dispose of everything responsibly.
                             </p>
                             <p style={{ color: 'var(--color-gray-600)', marginTop: '1rem' }}>
-                                We handle all types of debris removal in Flora â€” construction and demolition debris, storm damage, renovation waste, yard debris, and household cleanout material. Same-day delivery is often available.
+                                We handle all types of debris removal in Flora — construction and demolition debris, storm damage, renovation waste, yard debris, and household cleanout material. Same-day delivery is often available.
                             </p>
                         </div>
                         <div>
                             <h2>Types of Debris We Remove</h2>
                             <ul style={{ listStyle: 'none', padding: 0, lineHeight: 2.2 }}>
-                                <li>âœ“ Construction and demolition debris</li>
-                                <li>âœ“ Roofing shingles and tear-off materials</li>
-                                <li>âœ“ Renovation debris (drywall, lumber, tile, flooring)</li>
-                                <li>âœ“ Storm damage debris</li>
-                                <li>âœ“ Yard waste and landscaping debris</li>
-                                <li>âœ“ Household junk and cleanout debris</li>
-                                <li>âœ“ Furniture and appliances (not refrigerators)</li>
-                                <li>âœ“ Carpet, insulation, and building materials</li>
+                                <li>✓ Construction and demolition debris</li>
+                                <li>✓ Roofing shingles and tear-off materials</li>
+                                <li>✓ Renovation debris (drywall, lumber, tile, flooring)</li>
+                                <li>✓ Storm damage debris</li>
+                                <li>✓ Yard waste and landscaping debris</li>
+                                <li>✓ Household junk and cleanout debris</li>
+                                <li>✓ Furniture and appliances (not refrigerators)</li>
+                                <li>✓ Carpet, insulation, and building materials</li>
                             </ul>
                         </div>
                     </div>
@@ -103,10 +103,10 @@ export default function DebrisRemovalFloraPage() {
             <section style={{ background: 'var(--color-primary)', color: 'white', padding: 'var(--spacing-2xl) 0', textAlign: 'center' }}>
                 <div className="container">
                     <h2 style={{ color: 'white' }}>Ready for Debris Removal in Flora?</h2>
-                    <p style={{ fontSize: '1.125rem', marginBottom: 'var(--spacing-xl)', opacity: 0.9 }}>Book online or call 601-316-7891 â€” same-day delivery available</p>
+                    <p style={{ fontSize: '1.125rem', marginBottom: 'var(--spacing-xl)', opacity: 0.9 }}>Book online or call 601-316-7891 — same-day delivery available</p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <BookingButton label="Book Now Online" location="Debris Flora CTA" />
-                        <TrackedPhoneLink location="Debris Flora CTA" className="btn btn-outline btn-lg">Call 601-316-7891</TrackedPhoneLink>
+                        <TrackedPhoneLink location="Debris Flora CTA" className="btn btn-outline-white btn-lg">Call 601-316-7891</TrackedPhoneLink>
                     </div>
                 </div>
             </section>

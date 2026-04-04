@@ -48,7 +48,7 @@ export default function RollOffDumpsterRentalPage() {
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1.5rem' }}>
                         <BookingButton label="Book Your Roll-Off" location="Roll-Off Hero" />
-                        <TrackedPhoneLink location="Roll-Off Hero" className="btn btn-outline btn-lg">
+                        <TrackedPhoneLink location="Roll-Off Hero" className="btn btn-outline-white btn-lg">
                             Call 601-316-7891
                         </TrackedPhoneLink>
                     </div>
@@ -151,7 +151,7 @@ export default function RollOffDumpsterRentalPage() {
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <BookingButton label="Book Now Online" location="Roll-Off CTA" />
-                        <TrackedPhoneLink location="Roll-Off CTA" className="btn btn-outline btn-lg">
+                        <TrackedPhoneLink location="Roll-Off CTA" className="btn btn-outline-white btn-lg">
                             Call 601-316-7891
                         </TrackedPhoneLink>
                     </div>
