@@ -62,6 +62,7 @@ export default function Footer() {
                             <li><Link href="/service-areas/pearl">Pearl</Link></li>
                             <li><Link href="/service-areas/ridgeland">Ridgeland</Link></li>
                             <li><Link href="/service-areas/flowood">Flowood</Link></li>
+                            <li><Link href="/service-areas/raymond">Raymond</Link></li>
                             <li><Link href="/service-areas">View All Cities →</Link></li>
                         </ul>
                     </div>

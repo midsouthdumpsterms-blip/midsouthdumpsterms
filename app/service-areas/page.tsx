@@ -27,6 +27,7 @@ const serviceAreas = [
     { city: 'Florence', state: 'MS', description: 'Reliable dumpster rental service for Florence and Rankin County' },
     { city: 'Canton', state: 'MS', description: 'Expert dumpster rental services in Canton' },
     { city: 'Terry', state: 'MS', description: 'Quality dumpster rentals serving Terry and surrounding areas' },
+    { city: 'Raymond', state: 'MS', description: 'Roll-off dumpster rental in Raymond and rural Hinds County' },
     { city: 'Byram', state: 'MS', description: 'Professional waste disposal solutions in Byram' },
     { city: 'Richland', state: 'MS', description: 'Professional dumpster rentals for Richland neighborhoods' },
     { city: 'Gluckstadt', state: 'MS', description: 'Dependable dumpster rental service for Gluckstadt' },

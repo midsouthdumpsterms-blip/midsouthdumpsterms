@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'gluckstadt',
         'florence',
         'richland',
+        'raymond',
     ]
 
     const countyHubs = [

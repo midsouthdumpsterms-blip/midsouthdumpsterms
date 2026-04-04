@@ -34,6 +34,7 @@ const serviceAreaLinks = [
     { href: '/service-areas/florence', label: 'Florence' },
     { href: '/service-areas/canton', label: 'Canton' },
     { href: '/service-areas/terry', label: 'Terry' },
+    { href: '/service-areas/raymond', label: 'Raymond' },
     { href: '/service-areas/flora', label: 'Flora' },
     { href: '/service-areas/gluckstadt', label: 'Gluckstadt' },
 ]
