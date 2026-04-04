@@ -290,10 +290,10 @@ export default function QuoteTool() {
                     <div>
                         {/* Success banner */}
                         <div style={{ background: '#dcfce7', border: '2px solid #16a34a', borderRadius: '12px', padding: '1rem 1.25rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                            <span style={{ fontSize: '1.4rem' }}>✅</span>
+                            <span style={{ fontSize: '1.4rem' }}>📲</span>
                             <div>
-                                <div style={{ fontWeight: 700, color: '#15803d' }}>Quote sent to {phone}!</div>
-                                <div style={{ fontSize: '0.85rem', color: '#166534' }}>Our team will follow up shortly — or book instantly below.</div>
+                                <div style={{ fontWeight: 700, color: '#15803d' }}>Texting your quote to {phone}!</div>
+                                <div style={{ fontSize: '0.85rem', color: '#166534' }}>You&apos;ll receive a text shortly — or book instantly below.</div>
                             </div>
                         </div>
 
