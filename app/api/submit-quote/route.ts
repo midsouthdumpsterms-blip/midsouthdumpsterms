@@ -76,7 +76,7 @@ function buildCustomerSms(data: {
         `Book online: midsouthdumpsterms.com/book-online`,
         `Or call/text us: 601-316-7891`,
         ``,
-        `Same-day delivery available. We'll be in touch shortly!`,
+        `Book online anytime — no phone call needed. Same-day delivery available.`,
     ].join('\n')
 }
 
