@@ -32,7 +32,8 @@ export default function SizesPage() {
             weight: '1 ton (2,000 lbs)',
             truckLoads: '~4 pickup loads',
             bags: '~55–70 bags',
-            badge: null,
+            badge: '🏠 Small & Efficient',
+            badgeColor: '#0891b2',
             tagline: 'Great for small cleanouts and minor renovations',
             bestFor: ['Garage cleanouts', 'Bathroom remodels', 'Yard debris', 'Small estate cleanouts', 'Minor renovations', 'Tenant turnovers'],
         },
@@ -47,6 +48,7 @@ export default function SizesPage() {
             truckLoads: '~6 pickup loads',
             bags: '~80–100 bags',
             badge: '⭐ Most Popular',
+            badgeColor: 'var(--color-primary)',
             tagline: 'Our go-to size for roofing, renovations & estate cleanouts',
             bestFor: ['Roofing tear-offs', 'Kitchen remodels', 'Estate cleanouts', 'Rental property cleanouts', 'Construction debris', 'Multi-room demo'],
         },
@@ -61,6 +63,7 @@ export default function SizesPage() {
             truckLoads: '~8 pickup loads',
             bags: '~110–130 bags',
             badge: '🏗️ Largest Size',
+            badgeColor: '#0e7490',
             tagline: 'Maximum capacity for major renovations and commercial work',
             bestFor: ['Whole-home cleanouts', 'Major renovations', 'New construction', 'Commercial projects', 'Large storm cleanup', 'Full gut jobs'],
         },
@@ -89,11 +92,10 @@ export default function SizesPage() {
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
                         {sizes.map((size) => (
                             <div key={size.yards} style={{ background: 'white', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-md)', overflow: 'hidden', border: size.yards === '15' ? '3px solid var(--color-primary)' : '1px solid var(--color-gray-100)', position: 'relative' }}>
-                                {size.badge && (
-                                    <div style={{ background: 'var(--color-primary)', color: 'white', textAlign: 'center', padding: '0.5rem', fontSize: '0.85rem', fontWeight: 700 }}>
-                                        {size.badge}
-                                    </div>
-                                )}
+                                {/* Badge — always rendered so all cards have same top structure */}
+                                <div style={{ background: size.badgeColor, color: 'white', textAlign: 'center', padding: '0.5rem', fontSize: '0.85rem', fontWeight: 700 }}>
+                                    {size.badge}
+                                </div>
                                 <div style={{ padding: '1.75rem' }}>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
                                         <div>
@@ -134,7 +136,7 @@ export default function SizesPage() {
                                         </div>
                                     </div>
 
-                                    <Link href={`/sizes/${size.slug}`} style={{ display: 'block', textAlign: 'center', background: size.yards === '15' ? 'var(--color-primary)' : 'transparent', color: size.yards === '15' ? 'white' : 'var(--color-primary)', border: `2px solid var(--color-primary)`, borderRadius: 'var(--radius-md)', padding: '0.75rem', fontWeight: 700, textDecoration: 'none', transition: 'all 0.2s' }}>
+                                    <Link href={`/sizes/${size.slug}`} style={{ display: 'block', textAlign: 'center', background: 'var(--color-primary)', color: 'white', border: `2px solid var(--color-primary)`, borderRadius: 'var(--radius-md)', padding: '0.75rem', fontWeight: 700, textDecoration: 'none', transition: 'all 0.2s' }}>
                                         View {size.yards} Yard Details →
                                     </Link>
                                 </div>
