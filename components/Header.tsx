@@ -171,7 +171,7 @@ export default function Header() {
                         </li>
                         <li>
                             <Link href="/book-online" onClick={() => setMobileMenuOpen(false)}>
-                                Book Online
+                                Book Now
                             </Link>
                         </li>
                         <li>

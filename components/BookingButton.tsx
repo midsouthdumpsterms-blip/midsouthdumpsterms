@@ -23,11 +23,11 @@ export default function BookingButton({ label, location, className = 'btn btn-se
             href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
             target="_blank"
             rel="noopener noreferrer"
-            className={className}
+            className={`${className} survcart-embed-presenter`}
             style={style}
             onClick={handleClick}
         >
-            {label}
+            Book Now
         </a>
     )
 }
