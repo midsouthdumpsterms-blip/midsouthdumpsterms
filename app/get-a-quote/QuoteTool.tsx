@@ -38,10 +38,33 @@ const TIMELINE_OPTIONS = [
     { id: 'planning', label: '🔮 Just Planning', sub: 'No rush yet' },
 ]
 
-const SIZE_PRICING: Record<'10' | '15' | '20', { oneDay: string; threeDay: string; sevenDay: string; dims: string; capacity: string }> = {
-    '10': { oneDay: '$349', threeDay: '$379', sevenDay: '$399', dims: '10ft × 7.5ft × 5ft', capacity: '4 pickup truck loads' },
-    '15': { oneDay: '$399', threeDay: '$429', sevenDay: '$449', dims: '14ft × 7.5ft × 4ft', capacity: '6 pickup truck loads' },
-    '20': { oneDay: '$449', threeDay: '$479', sevenDay: '$499', dims: '14ft × 7.5ft × 6.5ft', capacity: '8 pickup truck loads' },
+const DAY_OPTIONS = [
+    { id: '1', label: '1 Day' },
+    { id: '2', label: '2 Days' },
+    { id: '3', label: '3 Days' },
+    { id: '4', label: '4 Days' },
+    { id: '5', label: '5 Days' },
+    { id: '6', label: '6 Days' },
+    { id: '7', label: '7 Days' },
+    { id: 'longer', label: '7+ Days' },
+]
+
+const SIZE_PRICING: Record<'10' | '15' | '20', { oneDay: string; threeDay: string; sevenDay: string; oneDayNum: number; threeDayNum: number; sevenDayNum: number; dims: string; capacity: string }> = {
+    '10': { oneDay: '$349', threeDay: '$379', sevenDay: '$399', oneDayNum: 349, threeDayNum: 379, sevenDayNum: 399, dims: '10ft × 7.5ft × 5ft', capacity: '4 pickup truck loads' },
+    '15': { oneDay: '$399', threeDay: '$429', sevenDay: '$449', oneDayNum: 399, threeDayNum: 429, sevenDayNum: 449, dims: '14ft × 7.5ft × 4ft', capacity: '6 pickup truck loads' },
+    '20': { oneDay: '$449', threeDay: '$479', sevenDay: '$499', oneDayNum: 449, threeDayNum: 479, sevenDayNum: 499, dims: '14ft × 7.5ft × 6.5ft', capacity: '8 pickup truck loads' },
+}
+
+// Pricing tier logic
+function getDaysTier(days: string): 'oneDay' | 'threeDay' | 'sevenDay' {
+    if (days === '1') return 'oneDay'
+    if (days === '2' || days === '3') return 'threeDay'
+    return 'sevenDay' // 4, 5, 6, 7, or longer
+}
+
+function getDaysLabel(days: string): string {
+    if (days === 'longer') return '7+ Days'
+    return `${days} Day${days === '1' ? '' : 's'}`
 }
 
 export default function QuoteTool() {
@@ -49,6 +72,7 @@ export default function QuoteTool() {
     const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null)
     const [selectedCity, setSelectedCity] = useState('')
     const [selectedTimeline, setSelectedTimeline] = useState('')
+    const [selectedDays, setSelectedDays] = useState('')
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
     const [submitted, setSubmitted] = useState(false)
@@ -64,6 +88,10 @@ export default function QuoteTool() {
         return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`
     }
 
+    const pricing = selectedProject ? SIZE_PRICING[selectedProject.recommendedSize] : null
+    const daysTier = selectedDays ? getDaysTier(selectedDays) : 'oneDay'
+    const quotedPrice = pricing ? pricing[daysTier] : null
+
     const handleSubmit = async () => {
         if (!name.trim() || phone.replace(/\D/g, '').length < 10) return
         setSubmitting(true)
@@ -77,6 +105,8 @@ export default function QuoteTool() {
                     project: selectedProject?.label,
                     city: selectedCity,
                     timeline: selectedTimeline,
+                    days: selectedDays === 'longer' ? '7+ days' : `${selectedDays} day(s)`,
+                    quotedPrice,
                     recommendedSize: selectedProject?.recommendedSize,
                 }),
             })
@@ -87,8 +117,6 @@ export default function QuoteTool() {
         setSubmitted(true)
         setStep(4)
     }
-
-    const pricing = selectedProject ? SIZE_PRICING[selectedProject.recommendedSize] : null
 
     return (
         <div style={{ minHeight: '80vh', background: 'linear-gradient(160deg, #f0fdff 0%, #ffffff 60%)', padding: '3rem 1rem 5rem' }}>
@@ -153,19 +181,20 @@ export default function QuoteTool() {
                     </div>
                 )}
 
-                {/* STEP 2 — City + Timeline */}
+                {/* STEP 2 — City + Timeline + Days */}
                 {step === 2 && (
                     <div>
                         <button onClick={() => setStep(1)} style={{ background: 'none', border: 'none', color: 'var(--color-primary)', cursor: 'pointer', fontWeight: 600, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                             ← Back
                         </button>
                         <h2 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--color-gray-800)' }}>
-                            Where and when?
+                            Where, when, and how long?
                         </h2>
                         <p style={{ color: 'var(--color-gray-500)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
                             Great choice — <strong>{selectedProject?.label}</strong> projects are our specialty.
                         </p>
 
+                        {/* City */}
                         <div style={{ marginBottom: '1.5rem' }}>
                             <label style={{ fontWeight: 700, marginBottom: '0.5rem', display: 'block', color: 'var(--color-gray-700)' }}>
                                 📍 What city / area?
@@ -180,7 +209,8 @@ export default function QuoteTool() {
                             </select>
                         </div>
 
-                        <div style={{ marginBottom: '2rem' }}>
+                        {/* Timeline */}
+                        <div style={{ marginBottom: '1.5rem' }}>
                             <label style={{ fontWeight: 700, marginBottom: '0.75rem', display: 'block', color: 'var(--color-gray-700)' }}>
                                 🗓️ When do you need the dumpster?
                             </label>
@@ -203,14 +233,50 @@ export default function QuoteTool() {
                             </div>
                         </div>
 
+                        {/* Days needed */}
+                        <div style={{ marginBottom: '2rem' }}>
+                            <label style={{ fontWeight: 700, marginBottom: '0.75rem', display: 'block', color: 'var(--color-gray-700)' }}>
+                                📆 How many days do you need the dumpster?
+                            </label>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem' }}>
+                                {DAY_OPTIONS.map((d) => {
+                                    const tier = getDaysTier(d.id)
+                                    const p = selectedProject ? SIZE_PRICING[selectedProject.recommendedSize][tier] : null
+                                    return (
+                                        <button
+                                            key={d.id}
+                                            onClick={() => setSelectedDays(d.id)}
+                                            style={{
+                                                padding: '0.75rem 0.25rem', borderRadius: '10px', cursor: 'pointer',
+                                                border: `2px solid ${selectedDays === d.id ? 'var(--color-primary)' : 'var(--color-gray-200)'}`,
+                                                background: selectedDays === d.id ? '#f0fdff' : 'white',
+                                                transition: 'all 0.15s ease', textAlign: 'center',
+                                            }}
+                                        >
+                                            <div style={{ fontWeight: 700, fontSize: '0.9rem', color: selectedDays === d.id ? 'var(--color-primary)' : 'var(--color-gray-800)' }}>{d.label}</div>
+                                            {p && <div style={{ fontSize: '0.72rem', color: 'var(--color-gray-500)', marginTop: '0.2rem' }}>{p}</div>}
+                                        </button>
+                                    )
+                                })}
+                            </div>
+
+                            {/* Longer than 7 days note */}
+                            {selectedDays === 'longer' && (
+                                <div style={{ marginTop: '0.75rem', background: '#fffbeb', border: '1px solid #fcd34d', borderRadius: '8px', padding: '0.75rem 1rem', fontSize: '0.85rem', color: '#92400e' }}>
+                                    ℹ️ We&apos;ll quote you at our <strong>7-day rate</strong>. Give us a call at <strong>601-316-7891</strong> and we&apos;ll do our best to accommodate extended rentals beyond 7 days!
+                                </div>
+                            )}
+                        </div>
+
                         <button
                             onClick={() => setStep(3)}
-                            disabled={!selectedCity || !selectedTimeline}
+                            disabled={!selectedCity || !selectedTimeline || !selectedDays}
                             style={{
                                 width: '100%', padding: '1rem', borderRadius: '10px',
-                                background: selectedCity && selectedTimeline ? 'var(--color-primary)' : 'var(--color-gray-200)',
-                                color: selectedCity && selectedTimeline ? 'white' : 'var(--color-gray-400)',
-                                border: 'none', fontWeight: 700, fontSize: '1.05rem', cursor: selectedCity && selectedTimeline ? 'pointer' : 'not-allowed',
+                                background: selectedCity && selectedTimeline && selectedDays ? 'var(--color-primary)' : 'var(--color-gray-200)',
+                                color: selectedCity && selectedTimeline && selectedDays ? 'white' : 'var(--color-gray-400)',
+                                border: 'none', fontWeight: 700, fontSize: '1.05rem',
+                                cursor: selectedCity && selectedTimeline && selectedDays ? 'pointer' : 'not-allowed',
                                 transition: 'all 0.15s ease',
                             }}
                         >
@@ -233,7 +299,7 @@ export default function QuoteTool() {
                                 {selectedProject?.recommendedSize}-Yard Dumpster
                             </div>
                             <div style={{ fontSize: '0.9rem', opacity: 0.9, marginTop: '0.25rem' }}>
-                                Starting at {pricing?.oneDay} · {selectedCity}
+                                {getDaysLabel(selectedDays)} · {quotedPrice} · {selectedCity}
                             </div>
                             <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', marginTop: '0.75rem', paddingTop: '0.75rem', fontSize: '0.82rem', opacity: 0.85 }}>
                                 🔒 Enter your info below to unlock your full quote
@@ -308,11 +374,33 @@ export default function QuoteTool() {
                             </div>
 
                             <div style={{ padding: '1.5rem' }}>
+
+                                {/* Exact quoted price highlight */}
+                                <div style={{ background: '#f0fdff', border: '2px solid var(--color-primary)', borderRadius: '12px', padding: '1rem 1.25rem', marginBottom: '1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                    <div>
+                                        <div style={{ fontSize: '0.78rem', color: 'var(--color-gray-500)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Your Quoted Price</div>
+                                        <div style={{ fontSize: '0.9rem', color: 'var(--color-gray-600)', marginTop: '0.15rem' }}>{getDaysLabel(selectedDays)} · {selectedCity}</div>
+                                    </div>
+                                    <div style={{ fontSize: '2.2rem', fontWeight: 900, color: 'var(--color-primary)' }}>{quotedPrice}</div>
+                                </div>
+
+                                {selectedDays === 'longer' && (
+                                    <div style={{ background: '#fffbeb', border: '1px solid #fcd34d', borderRadius: '8px', padding: '0.75rem 1rem', marginBottom: '1.25rem', fontSize: '0.85rem', color: '#92400e' }}>
+                                        ℹ️ Quoted at our 7-day rate. <strong>Call us at 601-316-7891</strong> — we&apos;ll do our best to accommodate rentals beyond 7 days!
+                                    </div>
+                                )}
+
+                                {/* All tiers for reference */}
                                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem', marginBottom: '1.25rem' }}>
-                                    {[['1 Day', pricing.oneDay], ['3 Days', pricing.threeDay], ['7 Days', pricing.sevenDay]].map(([label, price]) => (
-                                        <div key={label} style={{ background: 'var(--color-gray-50)', borderRadius: '10px', padding: '0.875rem', textAlign: 'center' }}>
-                                            <div style={{ fontSize: '0.78rem', color: 'var(--color-gray-500)', fontWeight: 600 }}>{label}</div>
-                                            <div style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-primary)' }}>{price}</div>
+                                    {([['1 Day', pricing.oneDay, 'oneDay'], ['3 Days', pricing.threeDay, 'threeDay'], ['7 Days', pricing.sevenDay, 'sevenDay']] as const).map(([label, price, tier]) => (
+                                        <div key={label} style={{
+                                            background: daysTier === tier ? 'var(--color-primary)' : 'var(--color-gray-50)',
+                                            borderRadius: '10px', padding: '0.875rem', textAlign: 'center',
+                                            border: daysTier === tier ? '2px solid var(--color-primary)' : '2px solid transparent',
+                                        }}>
+                                            <div style={{ fontSize: '0.78rem', color: daysTier === tier ? 'rgba(255,255,255,0.85)' : 'var(--color-gray-500)', fontWeight: 600 }}>{label}</div>
+                                            <div style={{ fontSize: '1.4rem', fontWeight: 800, color: daysTier === tier ? 'white' : 'var(--color-primary)' }}>{price}</div>
+                                            {daysTier === tier && <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.8)', marginTop: '0.15rem' }}>← Your rate</div>}
                                         </div>
                                     ))}
                                 </div>
@@ -348,7 +436,7 @@ export default function QuoteTool() {
                             </div>
                         </div>
 
-                        {/* Also consider */}
+                        {/* Compare all sizes */}
                         <div style={{ background: 'var(--color-gray-50)', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.5rem' }}>
                             <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: 'var(--color-gray-700)' }}>Compare all sizes:</div>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
