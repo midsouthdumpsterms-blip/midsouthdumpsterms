@@ -40,6 +40,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.85,
     }))
 
+    // Service sub-pages
+    const serviceSubPages = [
+        'residential-dumpster-rental',
+        'commercial-dumpster-rental',
+        'construction-dumpster-rental',
+        'roll-off-dumpster-rental',
+        'yard-waste-dumpster-rental',
+        'same-day-dumpster-rental',
+    ].map((slug) => ({
+        url: `${baseUrl}/services/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.85,
+    }))
+
+    // Orphan pages — debris removal and waste disposal per city
+    const orphanCities = [
+        'jackson', 'brandon', 'byram', 'clinton', 'florence',
+        'flowood', 'madison', 'pearl', 'richland', 'ridgeland',
+        'terry', 'canton', 'flora', 'gluckstadt',
+    ]
+
+    const debrisRemovalUrls = orphanCities.map((city) => ({
+        url: `${baseUrl}/debris-removal-${city}-ms`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.75,
+    }))
+
+    const wasteDisposalUrls = orphanCities.map((city) => ({
+        url: `${baseUrl}/waste-disposal-${city}-ms`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.75,
+    }))
+
     return [
         {
             url: baseUrl,
@@ -59,6 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.9,
         },
+        ...serviceSubPages,
         {
             url: `${baseUrl}/service-areas`,
             lastModified: new Date(),
@@ -67,6 +104,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         ...serviceAreaUrls,
         ...countyHubUrls,
+        ...debrisRemovalUrls,
+        ...wasteDisposalUrls,
         {
             url: `${baseUrl}/about`,
             lastModified: new Date(),

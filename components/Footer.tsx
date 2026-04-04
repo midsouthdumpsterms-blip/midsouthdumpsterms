@@ -40,10 +40,14 @@ export default function Footer() {
                     <div className={styles.footerCol}>
                         <h4>Quick Links</h4>
                         <ul>
-                            <li><Link href="/services">Services</Link></li>
-                            <li><Link href="/service-areas">Service Areas</Link></li>
+                            <li><Link href="/services">All Services</Link></li>
+                            <li><Link href="/services/residential-dumpster-rental">Residential</Link></li>
+                            <li><Link href="/services/commercial-dumpster-rental">Commercial</Link></li>
+                            <li><Link href="/services/construction-dumpster-rental">Construction</Link></li>
+                            <li><Link href="/services/roll-off-dumpster-rental">Roll-Off</Link></li>
+                            <li><Link href="/services/yard-waste-dumpster-rental">Yard Waste</Link></li>
+                            <li><Link href="/services/same-day-dumpster-rental">Same-Day</Link></li>
                             <li><Link href="/about">About Us</Link></li>
-                            <li><Link href="/contact">Contact</Link></li>
                             <li><Link href="/blog">Blog</Link></li>
                         </ul>
                     </div>
@@ -53,10 +57,26 @@ export default function Footer() {
                         <ul>
                             <li><Link href="/service-areas/jackson">Jackson</Link></li>
                             <li><Link href="/service-areas/brandon">Brandon</Link></li>
+                            <li><Link href="/service-areas/madison">Madison</Link></li>
                             <li><Link href="/service-areas/clinton">Clinton</Link></li>
-                            <li><Link href="/service-areas/flowood">Flowood</Link></li>
                             <li><Link href="/service-areas/pearl">Pearl</Link></li>
-                            <li><Link href="/service-areas">View All Cities</Link></li>
+                            <li><Link href="/service-areas/ridgeland">Ridgeland</Link></li>
+                            <li><Link href="/service-areas/flowood">Flowood</Link></li>
+                            <li><Link href="/service-areas">View All Cities →</Link></li>
+                        </ul>
+                    </div>
+
+                    <div className={styles.footerCol}>
+                        <h4>More Services</h4>
+                        <ul>
+                            <li><Link href="/debris-removal-jackson-ms">Debris Removal Jackson</Link></li>
+                            <li><Link href="/debris-removal-brandon-ms">Debris Removal Brandon</Link></li>
+                            <li><Link href="/debris-removal-madison-ms">Debris Removal Madison</Link></li>
+                            <li><Link href="/debris-removal-clinton-ms">Debris Removal Clinton</Link></li>
+                            <li><Link href="/waste-disposal-jackson-ms">Waste Disposal Jackson</Link></li>
+                            <li><Link href="/waste-disposal-brandon-ms">Waste Disposal Brandon</Link></li>
+                            <li><Link href="/waste-disposal-madison-ms">Waste Disposal Madison</Link></li>
+                            <li><Link href="/waste-disposal-clinton-ms">Waste Disposal Clinton</Link></li>
                         </ul>
                     </div>
 

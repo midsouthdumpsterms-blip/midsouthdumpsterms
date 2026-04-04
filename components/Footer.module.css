@@ -7,8 +7,8 @@
 
 .footerGrid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-2xl);
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-xl);
     margin-bottom: var(--spacing-2xl);
 }
 
@@ -112,6 +112,12 @@
 .credits {
     font-size: 0.75rem !important;
     color: var(--color-gray-500) !important;
+}
+
+@media (max-width: 1200px) {
+    .footerGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 1024px) {

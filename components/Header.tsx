@@ -6,8 +6,36 @@ import { useState } from 'react'
 import { trackPhoneClick } from '@/lib/analytics'
 import styles from './Header.module.css'
 
+const serviceLinks = [
+    { href: '/services/residential-dumpster-rental', label: 'Residential' },
+    { href: '/services/commercial-dumpster-rental', label: 'Commercial' },
+    { href: '/services/construction-dumpster-rental', label: 'Construction' },
+    { href: '/services/roll-off-dumpster-rental', label: 'Roll-Off' },
+    { href: '/services/yard-waste-dumpster-rental', label: 'Yard Waste' },
+    { href: '/services/same-day-dumpster-rental', label: 'Same-Day' },
+]
+
+const serviceAreaLinks = [
+    { href: '/service-areas/jackson', label: 'Jackson' },
+    { href: '/service-areas/brandon', label: 'Brandon' },
+    { href: '/service-areas/madison', label: 'Madison' },
+    { href: '/service-areas/clinton', label: 'Clinton' },
+    { href: '/service-areas/pearl', label: 'Pearl' },
+    { href: '/service-areas/ridgeland', label: 'Ridgeland' },
+    { href: '/service-areas/flowood', label: 'Flowood' },
+    { href: '/service-areas/byram', label: 'Byram' },
+    { href: '/service-areas/richland', label: 'Richland' },
+    { href: '/service-areas/florence', label: 'Florence' },
+    { href: '/service-areas/canton', label: 'Canton' },
+    { href: '/service-areas/terry', label: 'Terry' },
+    { href: '/service-areas/flora', label: 'Flora' },
+    { href: '/service-areas/gluckstadt', label: 'Gluckstadt' },
+]
+
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+    const [mobileAreasOpen, setMobileAreasOpen] = useState(false)
 
     return (
         <header className={styles.header}>
@@ -43,16 +71,55 @@ export default function Header() {
                                 Home
                             </Link>
                         </li>
-                        <li>
-                            <Link href="/services" onClick={() => setMobileMenuOpen(false)}>
-                                Services
+
+                        {/* Services dropdown */}
+                        <li className={styles.dropdown}>
+                            <Link href="/services" className={styles.dropdownTrigger} onClick={() => setMobileMenuOpen(false)}>
+                                Services <span className={styles.chevron}>▾</span>
                             </Link>
+                            <button
+                                className={styles.mobileDropdownToggle}
+                                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                                aria-label="Toggle services menu"
+                            >
+                                <span className={`${styles.chevron} ${mobileServicesOpen ? styles.chevronOpen : ''}`}>▾</span>
+                            </button>
+                            <ul className={`${styles.dropdownMenu} ${mobileServicesOpen ? styles.dropdownMenuOpen : ''}`}>
+                                <li>
+                                    <Link href="/services" onClick={() => setMobileMenuOpen(false)}>All Services</Link>
+                                </li>
+                                {serviceLinks.map((link) => (
+                                    <li key={link.href}>
+                                        <Link href={link.href} onClick={() => setMobileMenuOpen(false)}>{link.label}</Link>
+                                    </li>
+                                ))}
+                            </ul>
                         </li>
-                        <li>
-                            <Link href="/service-areas" onClick={() => setMobileMenuOpen(false)}>
-                                Service Areas
+
+                        {/* Service Areas dropdown */}
+                        <li className={styles.dropdown}>
+                            <Link href="/service-areas" className={styles.dropdownTrigger} onClick={() => setMobileMenuOpen(false)}>
+                                Service Areas <span className={styles.chevron}>▾</span>
                             </Link>
+                            <button
+                                className={styles.mobileDropdownToggle}
+                                onClick={() => setMobileAreasOpen(!mobileAreasOpen)}
+                                aria-label="Toggle service areas menu"
+                            >
+                                <span className={`${styles.chevron} ${mobileAreasOpen ? styles.chevronOpen : ''}`}>▾</span>
+                            </button>
+                            <ul className={`${styles.dropdownMenu} ${mobileAreasOpen ? styles.dropdownMenuOpen : ''}`}>
+                                <li>
+                                    <Link href="/service-areas" onClick={() => setMobileMenuOpen(false)}>All Areas</Link>
+                                </li>
+                                {serviceAreaLinks.map((link) => (
+                                    <li key={link.href}>
+                                        <Link href={link.href} onClick={() => setMobileMenuOpen(false)}>{link.label}</Link>
+                                    </li>
+                                ))}
+                            </ul>
                         </li>
+
                         <li>
                             <Link href="/about" onClick={() => setMobileMenuOpen(false)}>
                                 About
