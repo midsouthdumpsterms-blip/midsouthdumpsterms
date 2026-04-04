@@ -87,7 +87,7 @@ export default function Services() {
             <section style={{ padding: 'var(--spacing-xl) 0 0 0' }}>
                 <div className="container">
                     <Image
-                        src="/images/gallery/services-hero.jpg"
+                        src="/images/gallery/dumpster-on-construction-site-new-build-ms.jpg"
                         alt="Mid South Dumpster Rentals roll-off container on a new construction site in Central Mississippi"
                         width={1200}
                         height={500}
