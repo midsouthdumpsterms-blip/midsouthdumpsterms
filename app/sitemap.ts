@@ -76,6 +76,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.75,
     }))
 
+    // Dumpster size pages
+    const sizePages = [
+        '',
+        '10-yard-dumpster-rental',
+        '15-yard-dumpster-rental',
+        '20-yard-dumpster-rental',
+    ].map((slug) => ({
+        url: slug ? `${baseUrl}/sizes/${slug}` : `${baseUrl}/sizes`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.88,
+    }))
+
     return [
         {
             url: baseUrl,
@@ -96,6 +109,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         ...serviceSubPages,
+        ...sizePages,
         {
             url: `${baseUrl}/service-areas`,
             lastModified: new Date(),

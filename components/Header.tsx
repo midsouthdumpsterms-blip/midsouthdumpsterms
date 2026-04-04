@@ -6,6 +6,12 @@ import { useState } from 'react'
 import { trackPhoneClick } from '@/lib/analytics'
 import styles from './Header.module.css'
 
+const sizeLinks = [
+    { href: '/sizes/10-yard-dumpster-rental', label: '10 Yard Dumpster' },
+    { href: '/sizes/15-yard-dumpster-rental', label: '15 Yard Dumpster' },
+    { href: '/sizes/20-yard-dumpster-rental', label: '20 Yard Dumpster' },
+]
+
 const serviceLinks = [
     { href: '/services/residential-dumpster-rental', label: 'Residential' },
     { href: '/services/commercial-dumpster-rental', label: 'Commercial' },
@@ -70,6 +76,28 @@ export default function Header() {
                             <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                                 Home
                             </Link>
+                        </li>
+
+                        {/* Sizes dropdown */}
+                        <li className={styles.dropdown}>
+                            <Link href="/sizes" className={styles.dropdownTrigger} onClick={() => setMobileMenuOpen(false)}>
+                                Sizes <span className={styles.chevron}>▾</span>
+                            </Link>
+                            <button
+                                className={styles.mobileDropdownToggle}
+                                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                                aria-label="Toggle sizes menu"
+                            >
+                                <span className={`${styles.chevron} ${mobileServicesOpen ? styles.chevronOpen : ''}`}>▾</span>
+                            </button>
+                            <ul className={`${styles.dropdownMenu} ${mobileServicesOpen ? styles.dropdownMenuOpen : ''}`}>
+                                <li><Link href="/sizes" onClick={() => setMobileMenuOpen(false)}>All Sizes</Link></li>
+                                {sizeLinks.map((link) => (
+                                    <li key={link.href}>
+                                        <Link href={link.href} onClick={() => setMobileMenuOpen(false)}>{link.label}</Link>
+                                    </li>
+                                ))}
+                            </ul>
                         </li>
 
                         {/* Services dropdown */}
