@@ -131,6 +131,11 @@ export default function Footer() {
                         </a>
                     </div>
                     <p>&copy; {currentYear} Mid South Dumpster Rentals, LLC. All rights reserved.</p>
+                    <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                        <Link href="/privacy-policy" style={{ color: 'var(--color-gray-400)', fontSize: '0.8rem', textDecoration: 'none' }}>Privacy Policy</Link>
+                        <span style={{ color: 'var(--color-gray-600)' }}>·</span>
+                        <Link href="/terms-and-conditions" style={{ color: 'var(--color-gray-400)', fontSize: '0.8rem', textDecoration: 'none' }}>Terms &amp; Conditions</Link>
+                    </div>
                 </div>
             </div>
         </footer>
