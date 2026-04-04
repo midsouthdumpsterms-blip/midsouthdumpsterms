@@ -12,9 +12,9 @@ const TIMELINE_LABELS: Record<string, string> = {
 }
 
 const SIZE_PRICES: Record<string, string> = {
-    '10': '$349/day',
-    '15': '$399/day',
-    '20': '$449/day',
+    '10': 'From $349',
+    '15': 'From $399',
+    '20': 'From $449',
 }
 
 // ── Rich HTML email for business owner ──────────────────────────────────────
@@ -65,13 +65,13 @@ function buildCustomerSms(data: {
     name: string; recommendedSize: string; city: string
 }) {
     const { name, recommendedSize, city } = data
-    const price = SIZE_PRICES[recommendedSize] ?? '$349/day'
+    const price = SIZE_PRICES[recommendedSize] ?? 'From $349'
     return [
         `Hi ${name}! Here's your Mid South Dumpster Rentals quote:`,
         ``,
         `✅ ${recommendedSize}-Yard Dumpster`,
         `📍 ${city}, MS`,
-        `💰 From ${price}`,
+        `💰 ${price}`,
         `📦 Includes delivery + pickup`,
         ``,
         `Book online: midsouthdumpsterms.com/book-online`,
