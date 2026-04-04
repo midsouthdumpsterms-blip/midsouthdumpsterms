@@ -26,9 +26,10 @@ const PROJECT_TYPES: ProjectType[] = [
 ]
 
 const SERVICE_CITIES = [
-    'Jackson', 'Brandon', 'Madison', 'Clinton', 'Pearl', 'Ridgeland',
-    'Flowood', 'Byram', 'Richland', 'Florence', 'Canton', 'Terry',
-    'Raymond', 'Flora', 'Gluckstadt', 'Other / Rural Area',
+    'Brandon', 'Byram', 'Canton', 'Clinton',
+    'Flora', 'Florence', 'Flowood', 'Gluckstadt',
+    'Jackson', 'Madison', 'Pearl', 'Raymond',
+    'Richland', 'Ridgeland', 'Terry', 'Other / Rural Area',
 ]
 
 const TIMELINE_OPTIONS = [
@@ -414,14 +415,13 @@ export default function QuoteTool() {
                                     ))}
                                 </div>
 
-                                <a
-                                    href={BOOKING_URL}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{ display: 'block', width: '100%', padding: '1.1rem', textAlign: 'center', background: 'var(--color-secondary)', color: 'var(--color-gray-900)', borderRadius: '10px', fontWeight: 800, fontSize: '1.1rem', textDecoration: 'none', marginBottom: '0.75rem', boxSizing: 'border-box' }}
+                                <button
+                                    type="button"
+                                    className="survcart-embed-presenter"
+                                    style={{ display: 'block', width: '100%', padding: '1.1rem', textAlign: 'center', background: 'var(--color-secondary)', color: 'var(--color-gray-900)', borderRadius: '10px', fontWeight: 800, fontSize: '1.1rem', border: 'none', marginBottom: '0.75rem', boxSizing: 'border-box', cursor: 'pointer' }}
                                 >
-                                    📅 Book Online Now
-                                </a>
+                                    📅 Book Now
+                                </button>
                                 <a
                                     href="tel:6013167891"
                                     style={{ display: 'block', width: '100%', padding: '1rem', textAlign: 'center', background: 'transparent', color: 'var(--color-primary)', border: '2px solid var(--color-primary)', borderRadius: '10px', fontWeight: 700, fontSize: '1rem', textDecoration: 'none', boxSizing: 'border-box' }}
