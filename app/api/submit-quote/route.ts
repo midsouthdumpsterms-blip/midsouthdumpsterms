@@ -71,7 +71,7 @@ function buildCustomerSms(data: {
         `✅ ${recommendedSize}-Yard Dumpster`,
         `📍 ${city}, MS`,
         `💰 ${quotedPrice} — flat rate (${days})`,
-        `📦 Delivery + pickup + one disposal/dump included`,
+        `📦 Delivery + pickup + one dump included`,
         ``,
         `Book online: midsouthdumpsterms.com/book-online`,
         `Or call/text us: 601-316-7891`,
