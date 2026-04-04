@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
     title: 'Privacy Policy | Mid South Dumpster Rentals',
@@ -56,6 +57,20 @@ export default function PrivacyPolicyPage() {
                         <li><strong>Service providers:</strong> We use trusted third-party services (such as Twilio for SMS delivery and Resend for email) to operate our website and deliver communications. These providers are contractually prohibited from using your information for any other purpose.</li>
                         <li><strong>Legal requirements:</strong> We may disclose information if required by law or to protect the rights and safety of our business or customers.</li>
                     </ul>
+
+                    {/* ServiceCore Platform Disclosure */}
+                    <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '12px', padding: '1.25rem 1.5rem', marginTop: '1.5rem', marginBottom: '0.5rem' }}>
+                        <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: '0.5rem', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>📄 Third-Party Booking Platform</div>
+                        <p style={{ margin: '0 0 0.5rem' }}>When you book a dumpster rental through our online booking system, your information is processed by <strong>ServiceCore</strong>, our field service management and payment platform. ServiceCore maintains its own privacy practices governing data collected through their platform.</p>
+                        <Link
+                            href="/docs/servicecore-privacy-notice.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}
+                        >
+                            📥 View ServiceCore Privacy Notice (PDF)
+                        </Link>
+                    </div>
 
                     <h2 style={{ color: 'var(--color-gray-900)', marginTop: '2rem' }}>5. Data Retention</h2>
                     <p>We retain your personal information only as long as necessary to fulfill the purposes outlined in this policy, provide our services, and comply with legal obligations. Quote inquiry data is retained for up to 12 months.</p>

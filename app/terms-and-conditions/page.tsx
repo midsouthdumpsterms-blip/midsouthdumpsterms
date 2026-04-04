@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
     title: 'Terms and Conditions | Mid South Dumpster Rentals',
@@ -73,6 +74,20 @@ export default function TermsPage() {
 
                     <h2 style={{ color: 'var(--color-gray-900)', marginTop: '2rem' }}>6. Cancellations and Modifications</h2>
                     <p>Cancellation and modification policies are communicated at the time of booking. Contact us at 601-316-7891 as early as possible if you need to change or cancel your rental.</p>
+
+                    {/* ServiceCore Platform Terms */}
+                    <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '12px', padding: '1.25rem 1.5rem', marginBottom: '1.5rem' }}>
+                        <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: '0.5rem', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>📄 Online Booking Platform — ServiceCore</div>
+                        <p style={{ margin: '0 0 0.5rem' }}>Our online booking system is powered by <strong>ServiceCore</strong>. When scheduling a rental or making a payment through our booking portal, you are also subject to ServiceCore&apos;s Terms and Conditions, which govern their platform&apos;s use, data handling, and payment processing.</p>
+                        <Link
+                            href="/docs/servicecore-terms-and-conditions.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}
+                        >
+                            📥 View ServiceCore Terms &amp; Conditions (PDF)
+                        </Link>
+                    </div>
 
                     <h2 style={{ color: 'var(--color-gray-900)', marginTop: '2rem' }}>7. Limitation of Liability</h2>
                     <p>Mid South Dumpster Rentals, LLC is not liable for indirect, incidental, or consequential damages arising from the use of our services. Our total liability shall not exceed the amount paid for the specific rental in question.</p>
