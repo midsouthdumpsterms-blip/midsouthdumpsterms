@@ -135,6 +135,8 @@ export default function Footer() {
                         <Link href="/privacy-policy" style={{ color: 'var(--color-gray-400)', fontSize: '0.8rem', textDecoration: 'none' }}>Privacy Policy</Link>
                         <span style={{ color: 'var(--color-gray-600)' }}>·</span>
                         <Link href="/terms-and-conditions" style={{ color: 'var(--color-gray-400)', fontSize: '0.8rem', textDecoration: 'none' }}>Terms &amp; Conditions</Link>
+                        <span style={{ color: 'var(--color-gray-600)' }}>·</span>
+                        <Link href="/service-terms" style={{ color: 'var(--color-gray-400)', fontSize: '0.8rem', textDecoration: 'none' }}>Service Terms</Link>
                     </div>
                 </div>
             </div>
