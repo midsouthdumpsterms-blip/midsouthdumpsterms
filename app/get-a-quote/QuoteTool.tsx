@@ -295,7 +295,7 @@ export default function QuoteTool() {
                                 {selectedProject?.recommendedSize}-Yard Dumpster
                             </div>
                             <div style={{ fontSize: '0.9rem', opacity: 0.9, marginTop: '0.25rem' }}>
-                                {getDaysLabel(selectedDays)} · {quotedPrice} · {selectedCity}
+                                {getDaysLabel(selectedDays)} · {selectedCity}
                             </div>
                             <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', marginTop: '0.75rem', paddingTop: '0.75rem', fontSize: '0.82rem', opacity: 0.85 }}>
                                 🔒 Enter your info below to unlock your full quote
