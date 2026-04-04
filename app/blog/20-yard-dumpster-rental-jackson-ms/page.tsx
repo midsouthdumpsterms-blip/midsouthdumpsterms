@@ -79,14 +79,7 @@ export default function BlogPost() {
                         <div className={styles.cta}>
                             <h3>Reserve Your Dumpster Now</h3>
                             <p>Book online or call us directly for fast, friendly service in Jackson and the surrounding areas.</p>
-                            <a
-                                href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-primary"
-                            >
-                                Book Your 20 Yard Dumpster
-                            </a>
+                            <button type="button" className="btn btn-primary survcart-embed-presenter">Book Now</button>
                         </div>
                     </div>
                 </div>

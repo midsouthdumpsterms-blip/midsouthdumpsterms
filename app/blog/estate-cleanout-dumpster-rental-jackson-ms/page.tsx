@@ -159,14 +159,7 @@ export default function BlogPost() {
                         <div className={styles.cta}>
                             <h3>Ready to Start Your Jackson Estate Cleanout?</h3>
                             <p>Book online or call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> — we&apos;re available 7AM–7PM, 7 days a week. Same-day delivery available in Jackson, MS and all of Hinds County.</p>
-                            <a
-                                href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-primary"
-                            >
-                                Book Estate Cleanout Dumpster
-                            </a>
+                            <button type="button" className="btn btn-primary survcart-embed-presenter">Book Now</button>
                         </div>
                     </div>
                 </div>

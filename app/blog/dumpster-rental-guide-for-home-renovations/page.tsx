@@ -91,7 +91,7 @@ export default function HomeRenovationDumpsterGuide() {
                         <div className={styles.cta}>
                             <h3>Start Your Renovation Right</h3>
                             <p>Don't let the mess slow you down. Book your dumpster today.</p>
-                            <a href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF" className="btn btn-secondary">Get a Quote</a>
+                            <button type="button" className="btn btn-secondary survcart-embed-presenter">Book Now</button>
                         </div>
                     </div>
                 </div>

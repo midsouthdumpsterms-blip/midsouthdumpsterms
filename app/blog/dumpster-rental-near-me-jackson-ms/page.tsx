@@ -141,14 +141,7 @@ export default function BlogPost() {
                         <div className={styles.cta}>
                             <h3>Ready to Book Your Dumpster?</h3>
                             <p>Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> or book online &mdash; same-day delivery available 7 days a week.</p>
-                            <a
-                                href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-primary"
-                            >
-                                Book Your Dumpster Now
-                            </a>
+                            <button type="button" className="btn btn-primary survcart-embed-presenter">Book Now</button>
                         </div>
                     </div>
                 </div>

@@ -77,15 +77,7 @@ export default function ContactPage() {
                             <div className={styles.quickBook}>
                                 <h3>Ready to Book?</h3>
                                 <p>Skip the form and book your dumpster online now!</p>
-                                <a
-                                    href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn btn-secondary"
-                                    style={{ width: '100%' }}
-                                >
-                                    Book Online Now
-                                </a>
+                                <button type="button" className="btn btn-secondary survcart-embed-presenter">Book Now</button>
                             </div>
 
                             <div style={{ marginTop: '2rem', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>

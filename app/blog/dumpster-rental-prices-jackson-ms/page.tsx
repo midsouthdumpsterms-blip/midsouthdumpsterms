@@ -353,14 +353,7 @@ export default function BlogPost() {
                         <div className={styles.cta}>
                             <h3>Get an Exact Quote for Your Project</h3>
                             <p>Call 601-316-7891 or book online for transparent pricing with no hidden fees!</p>
-                            <a
-                                href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-primary"
-                            >
-                                Book Your Dumpster Now
-                            </a>
+                            <button type="button" className="btn btn-primary survcart-embed-presenter">Book Now</button>
                         </div>
                     </div>
                 </div>

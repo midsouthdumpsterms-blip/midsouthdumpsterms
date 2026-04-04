@@ -301,14 +301,7 @@ export default function BlogPost() {
                         <div className={styles.cta}>
                             <h3>Ready to Start Your Renovation?</h3>
                             <p>Get the right dumpster for your Central Mississippi home renovation project!</p>
-                            <a
-                                href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-primary"
-                            >
-                                Book Your Dumpster
-                            </a>
+                            <button type="button" className="btn btn-primary survcart-embed-presenter">Book Now</button>
                             <p style={{ marginTop: 'var(--spacing-md)', fontSize: '0.875rem' }}>
                                 Or call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> for expert advice
                             </p>

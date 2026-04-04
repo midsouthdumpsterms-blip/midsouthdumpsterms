@@ -100,7 +100,7 @@ export default function WhatCanIPutInADumpster() {
                         <div className={styles.cta}>
                             <h3>Ready to rent your dumpster?</h3>
                             <p>Now that you know what goes in, get your project started today!</p>
-                            <a href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF" className="btn btn-secondary">Book a Dumpster Now</a>
+                            <button type="button" className="btn btn-secondary survcart-embed-presenter">Book Now</button>
                         </div>
                     </div>
                 </div>

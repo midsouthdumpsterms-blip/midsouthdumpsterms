@@ -116,14 +116,7 @@ export default function BlogPost() {
                         <div className={styles.cta}>
                             <h3>Book Your Spring Cleaning Dumpster Today</h3>
                             <p>Same-day and next-day delivery available. Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> or book online now.</p>
-                            <a
-                                href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-primary"
-                            >
-                                Book Spring Cleaning Dumpster
-                            </a>
+                            <button type="button" className="btn btn-primary survcart-embed-presenter">Book Now</button>
                         </div>
                     </div>
                 </div>

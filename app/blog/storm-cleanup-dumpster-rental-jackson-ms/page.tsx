@@ -130,14 +130,7 @@ export default function BlogPost() {
                         <div className={styles.cta}>
                             <h3>Ready to Start Cleaning Up?</h3>
                             <p>Book a dumpster online or call us directly for same-day storm cleanup service.</p>
-                            <a
-                                href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-primary"
-                            >
-                                Book Storm Cleanup Dumpster
-                            </a>
+                            <button type="button" className="btn btn-primary survcart-embed-presenter">Book Now</button>
                         </div>
                     </div>
                 </div>

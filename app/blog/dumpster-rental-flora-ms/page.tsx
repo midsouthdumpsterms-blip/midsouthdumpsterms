@@ -88,9 +88,7 @@ export default function BlogPost() {
                         <div className={styles.cta}>
                             <h3>Ready to Book Your Flora Dumpster?</h3>
                             <p>Visit our <Link href="/service-areas/flora">Flora Dumpster Rental</Link> page, or call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink>. Same-day delivery available in 39071.</p>
-                            <a href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                                Book Dumpster Rental in Flora
-                            </a>
+                            <button type="button" className="btn btn-primary survcart-embed-presenter">Book Now</button>
                         </div>
                     </div>
                 </div>
