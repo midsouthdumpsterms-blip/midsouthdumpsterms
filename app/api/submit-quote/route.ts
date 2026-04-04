@@ -73,7 +73,7 @@ function buildCustomerSms(data: {
         `💰 ${quotedPrice} — flat rate (${days})`,
         `📦 Delivery + pickup + one dump included`,
         ``,
-        `Book online: midsouthdumpsterms.com/book-online`,
+        `Book online: https://midsouthdumpsterms.com/book-online`,
         `Or call/text us: 601-316-7891`,
         ``,
         `Book online anytime — no phone call needed. Same-day delivery available.`,
