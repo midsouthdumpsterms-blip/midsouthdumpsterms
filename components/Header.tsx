@@ -160,11 +160,6 @@ export default function Header() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/gallery" onClick={() => setMobileMenuOpen(false)}>
-                                Gallery
-                            </Link>
-                        </li>
-                        <li>
                             <Link href="/faq" onClick={() => setMobileMenuOpen(false)}>
                                 FAQ
                             </Link>
@@ -177,6 +172,11 @@ export default function Header() {
                         <li>
                             <Link href="/book-online" onClick={() => setMobileMenuOpen(false)}>
                                 Book Online
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/get-a-quote" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--color-secondary)', fontWeight: 700 }}>
+                                Get a Quote
                             </Link>
                         </li>
                         <div className={styles.ctaWrapper}>

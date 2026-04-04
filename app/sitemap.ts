@@ -104,6 +104,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.95,
         },
         {
+            url: `${baseUrl}/get-a-quote`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.95,
+        },
+        {
             url: `${baseUrl}/services`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
