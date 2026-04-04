@@ -1,118 +1,115 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-
-const SURVCART_URL = 'https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF'
+// Survcart is designed as a popup/modal system — their embed.js script
+// (already loaded in page.tsx) will bind to any element with class
+// "survcart-embed-presenter" and open the full booking flow as an overlay.
+// This is far cleaner than forcing the iframe inline.
 
 export default function BookingIframe() {
-    const [isMobile, setIsMobile] = useState(false)
-    const [mounted, setMounted] = useState(false)
-
-    useEffect(() => {
-        setIsMobile(window.innerWidth < 768)
-        setMounted(true)
-        const handleResize = () => setIsMobile(window.innerWidth < 768)
-        window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)
-    }, [])
-
-    // Avoid flash on SSR
-    if (!mounted) return <div style={{ minHeight: '60vh', background: 'white' }} />
-
-    // Mobile: open Surcart directly — no iframe scrolling, full native experience
-    if (isMobile) {
-        return (
-            <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                minHeight: '70vh',
-                padding: '2rem 1.5rem',
-                background: 'linear-gradient(160deg, #f0fdff 0%, #ffffff 60%)',
-                textAlign: 'center',
-            }}>
-                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🗑️</div>
-                <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--color-gray-900)', marginBottom: '0.5rem' }}>
-                    Ready to Book?
-                </h2>
-                <p style={{ color: 'var(--color-gray-500)', marginBottom: '0.75rem', fontSize: '1rem', maxWidth: '320px' }}>
-                    Our booking system opens in a full mobile-optimized page — no scrolling hassle.
-                </p>
-
-                <div style={{ background: 'white', borderRadius: '14px', padding: '1rem 1.25rem', marginBottom: '1.75rem', boxShadow: '0 2px 16px rgba(0,0,0,0.08)', width: '100%', maxWidth: '340px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', color: 'var(--color-gray-600)', marginBottom: '0.4rem' }}>
-                        <span>10-yard</span><span style={{ fontWeight: 700, color: 'var(--color-primary)' }}>from $349</span>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', color: 'var(--color-gray-600)', marginBottom: '0.4rem' }}>
-                        <span>15-yard</span><span style={{ fontWeight: 700, color: 'var(--color-primary)' }}>from $399</span>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', color: 'var(--color-gray-600)' }}>
-                        <span>20-yard</span><span style={{ fontWeight: 700, color: 'var(--color-primary)' }}>from $449</span>
-                    </div>
-                    <div style={{ borderTop: '1px solid var(--color-gray-100)', marginTop: '0.75rem', paddingTop: '0.75rem', fontSize: '0.78rem', color: 'var(--color-gray-400)' }}>
-                        ✅ Delivery + pickup included &nbsp;·&nbsp; ✅ No hidden fees
-                    </div>
-                </div>
-
-                <a
-                    href={SURVCART_URL}
-                    style={{
-                        display: 'block',
-                        width: '100%',
-                        maxWidth: '340px',
-                        padding: '1.1rem',
-                        background: 'var(--color-secondary)',
-                        color: 'var(--color-gray-900)',
-                        borderRadius: '12px',
-                        fontWeight: 800,
-                        fontSize: '1.1rem',
-                        textDecoration: 'none',
-                        marginBottom: '0.75rem',
-                    }}
-                >
-                    📅 Book Online Now →
-                </a>
-                <a
-                    href="tel:6013167891"
-                    style={{
-                        display: 'block',
-                        width: '100%',
-                        maxWidth: '340px',
-                        padding: '1rem',
-                        background: 'transparent',
-                        color: 'var(--color-primary)',
-                        border: '2px solid var(--color-primary)',
-                        borderRadius: '12px',
-                        fontWeight: 700,
-                        fontSize: '1rem',
-                        textDecoration: 'none',
-                    }}
-                >
-                    📞 Call 601-316-7891
-                </a>
-                <p style={{ fontSize: '0.75rem', color: 'var(--color-gray-400)', marginTop: '1rem' }}>
-                    Same-day delivery available · 7 days a week
-                </p>
-            </div>
-        )
-    }
-
-    // Desktop: full iframe embed
     return (
-        <div style={{ width: '100%', background: 'white' }}>
-            <iframe
-                src={SURVCART_URL}
+        <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            padding: '3rem 1.5rem 5rem',
+            background: 'linear-gradient(160deg, #f0fdff 0%, #ffffff 60%)',
+            textAlign: 'center',
+        }}>
+            <div style={{ display: 'inline-block', background: 'var(--color-primary)', color: 'white', borderRadius: '999px', padding: '0.35rem 1rem', fontSize: '0.8rem', fontWeight: 700, marginBottom: '1rem', letterSpacing: '0.05em' }}>
+                FLAT-RATE · SAME-DAY AVAILABLE · NO HIDDEN FEES
+            </div>
+
+            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-gray-900)', marginBottom: '0.5rem' }}>
+                Reserve Your Dumpster Online
+            </h2>
+            <p style={{ color: 'var(--color-gray-500)', marginBottom: '2rem', fontSize: '1rem', maxWidth: '440px' }}>
+                Book in under 60 seconds. Delivery + pickup + disposal all included.
+            </p>
+
+            {/* Pricing cards */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem', width: '100%', maxWidth: '520px', marginBottom: '2rem' }}>
+                {[
+                    { size: '10-Yard', trucks: '4 truck loads', from: '$349' },
+                    { size: '15-Yard', trucks: '6 truck loads', from: '$399', popular: true },
+                    { size: '20-Yard', trucks: '8 truck loads', from: '$449' },
+                ].map((item) => (
+                    <div key={item.size} style={{
+                        background: item.popular ? 'var(--color-primary)' : 'white',
+                        borderRadius: '14px',
+                        padding: '1rem 0.75rem',
+                        boxShadow: '0 2px 16px rgba(0,0,0,0.08)',
+                        position: 'relative',
+                    }}>
+                        {item.popular && (
+                            <div style={{ position: 'absolute', top: '-10px', left: '50%', transform: 'translateX(-50%)', background: 'var(--color-secondary)', color: 'var(--color-gray-900)', borderRadius: '999px', padding: '0.15rem 0.6rem', fontSize: '0.65rem', fontWeight: 800, whiteSpace: 'nowrap' }}>
+                                ⭐ MOST POPULAR
+                            </div>
+                        )}
+                        <div style={{ fontSize: '0.9rem', fontWeight: 800, color: item.popular ? 'white' : 'var(--color-gray-800)', marginBottom: '0.2rem' }}>
+                            {item.size}
+                        </div>
+                        <div style={{ fontSize: '0.7rem', color: item.popular ? 'rgba(255,255,255,0.8)' : 'var(--color-gray-400)', marginBottom: '0.5rem' }}>
+                            {item.trucks}
+                        </div>
+                        <div style={{ fontSize: '1.3rem', fontWeight: 900, color: item.popular ? 'white' : 'var(--color-primary)' }}>
+                            {item.from}
+                        </div>
+                        <div style={{ fontSize: '0.65rem', color: item.popular ? 'rgba(255,255,255,0.7)' : 'var(--color-gray-400)' }}>
+                            starting
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* Survcart popup trigger — their embed.js binds to this class automatically */}
+            <button
+                className="survcart-embed-presenter"
                 style={{
-                    border: 'none',
                     display: 'block',
                     width: '100%',
-                    height: '2200px',
-                } as React.CSSProperties}
-                title="Book a Dumpster Rental Online – Mid South Dumpster Rentals"
-                loading="eager"
-                allowFullScreen
-            />
+                    maxWidth: '420px',
+                    padding: '1.2rem',
+                    background: 'var(--color-secondary)',
+                    color: 'var(--color-gray-900)',
+                    border: 'none',
+                    borderRadius: '12px',
+                    fontWeight: 800,
+                    fontSize: '1.15rem',
+                    cursor: 'pointer',
+                    marginBottom: '0.75rem',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.12)',
+                }}
+            >
+                📅 Book Now
+            </button>
+
+            <a
+                href="tel:6013167891"
+                style={{
+                    display: 'block',
+                    width: '100%',
+                    maxWidth: '420px',
+                    padding: '1rem',
+                    background: 'transparent',
+                    color: 'var(--color-primary)',
+                    border: '2px solid var(--color-primary)',
+                    borderRadius: '12px',
+                    fontWeight: 700,
+                    fontSize: '1rem',
+                    textDecoration: 'none',
+                    marginBottom: '1.5rem',
+                }}
+            >
+                📞 Call 601-316-7891
+            </a>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.5rem', maxWidth: '420px' }}>
+                {['✅ Delivery included', '✅ Pickup included', '✅ Same-day available', '✅ 7 days a week', '✅ No hidden fees'].map(t => (
+                    <span key={t} style={{ background: '#f0fdff', color: 'var(--color-primary-dark)', border: '1px solid #bae6fd', borderRadius: '999px', padding: '0.3rem 0.75rem', fontSize: '0.78rem', fontWeight: 600 }}>
+                        {t}
+                    </span>
+                ))}
+            </div>
         </div>
     )
 }
