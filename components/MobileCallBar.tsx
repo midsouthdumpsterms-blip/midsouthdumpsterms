@@ -1,9 +1,13 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import { trackPhoneClick, trackBookingClick } from '@/lib/analytics'
 import styles from './MobileCallBar.module.css'
 
 export default function MobileCallBar() {
+    const pathname = usePathname()
+    if (pathname === '/book-online') return null
+
     return (
         <div className={styles.container}>
             <a 

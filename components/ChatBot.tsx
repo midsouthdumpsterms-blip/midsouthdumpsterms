@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import styles from './ChatBot.module.css';
 import { FaRobot, FaPaperPlane, FaTimes, FaCommentAlt } from 'react-icons/fa';
 
@@ -441,6 +442,7 @@ const normalize = (input: string): string => {
 };
 
 const ChatBot: React.FC = () => {
+    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
         { id: 0, text: "Hi! 👋 I'm your Mid South Assistant. I can help with pricing, sizing, scheduling, and more. What can I help you with today?", sender: 'bot' }
@@ -534,6 +536,7 @@ const ChatBot: React.FC = () => {
     };
 
     return (
+        pathname === '/book-online' ? null :
         <div className={styles.chatContainer}>
             {isOpen && (
                 <div className={styles.chatWindow}>
