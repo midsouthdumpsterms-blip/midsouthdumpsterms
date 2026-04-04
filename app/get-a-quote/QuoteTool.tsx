@@ -239,25 +239,20 @@ export default function QuoteTool() {
                                 📆 How many days do you need the dumpster?
                             </label>
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem' }}>
-                                {DAY_OPTIONS.map((d) => {
-                                    const tier = getDaysTier(d.id)
-                                    const p = selectedProject ? SIZE_PRICING[selectedProject.recommendedSize][tier] : null
-                                    return (
-                                        <button
-                                            key={d.id}
-                                            onClick={() => setSelectedDays(d.id)}
-                                            style={{
-                                                padding: '0.75rem 0.25rem', borderRadius: '10px', cursor: 'pointer',
-                                                border: `2px solid ${selectedDays === d.id ? 'var(--color-primary)' : 'var(--color-gray-200)'}`,
-                                                background: selectedDays === d.id ? '#f0fdff' : 'white',
-                                                transition: 'all 0.15s ease', textAlign: 'center',
-                                            }}
-                                        >
-                                            <div style={{ fontWeight: 700, fontSize: '0.9rem', color: selectedDays === d.id ? 'var(--color-primary)' : 'var(--color-gray-800)' }}>{d.label}</div>
-                                            {p && <div style={{ fontSize: '0.72rem', color: 'var(--color-gray-500)', marginTop: '0.2rem' }}>{p}</div>}
-                                        </button>
-                                    )
-                                })}
+                                {DAY_OPTIONS.map((d) => (
+                                    <button
+                                        key={d.id}
+                                        onClick={() => setSelectedDays(d.id)}
+                                        style={{
+                                            padding: '0.75rem 0.25rem', borderRadius: '10px', cursor: 'pointer',
+                                            border: `2px solid ${selectedDays === d.id ? 'var(--color-primary)' : 'var(--color-gray-200)'}`,
+                                            background: selectedDays === d.id ? '#f0fdff' : 'white',
+                                            transition: 'all 0.15s ease', textAlign: 'center',
+                                        }}
+                                    >
+                                        <div style={{ fontWeight: 700, fontSize: '0.9rem', color: selectedDays === d.id ? 'var(--color-primary)' : 'var(--color-gray-800)' }}>{d.label}</div>
+                                    </button>
+                                ))}
                             </div>
 
                             {/* Longer than 7 days note */}
