@@ -62,17 +62,16 @@ function buildOwnerEmailHtml(data: {
 
 // ── Short SMS for customer ───────────────────────────────────────────────────
 function buildCustomerSms(data: {
-    name: string; recommendedSize: string; city: string
+    name: string; recommendedSize: string; city: string; quotedPrice: string; days: string
 }) {
-    const { name, recommendedSize, city } = data
-    const price = SIZE_PRICES[recommendedSize] ?? 'From $349'
+    const { name, recommendedSize, city, quotedPrice, days } = data
     return [
         `Hi ${name}! Here's your Mid South Dumpster Rentals quote:`,
         ``,
         `✅ ${recommendedSize}-Yard Dumpster`,
         `📍 ${city}, MS`,
-        `💰 ${price}`,
-        `📦 Includes delivery + pickup`,
+        `💰 ${quotedPrice} — flat rate (${days})`,
+        `📦 Delivery + pickup included, no hidden fees`,
         ``,
         `Book online: midsouthdumpsterms.com/book-online`,
         `Or call/text us: 601-316-7891`,
@@ -94,7 +93,7 @@ function buildOwnerSms(data: {
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json()
-        const { name, phone, project, city, timeline, recommendedSize } = body
+        const { name, phone, project, city, timeline, recommendedSize, quotedPrice, days } = body
         const cleanPhone = phone.replace(/\D/g, '')
 
         console.log('📋 NEW QUOTE LEAD:', { name, phone, project, city, timeline, recommendedSize, timestamp: new Date().toISOString() })
@@ -122,7 +121,7 @@ export async function POST(req: NextRequest) {
             // Text the CUSTOMER their quote
             if (cleanPhone.length === 10) {
                 await client.messages.create({
-                    body: buildCustomerSms({ name, recommendedSize, city }),
+                    body: buildCustomerSms({ name, recommendedSize, city, quotedPrice: quotedPrice ?? 'Call for pricing', days: days ?? 'rental' }),
                     from: twilioFrom,
                     to: `+1${cleanPhone}`,
                 }).catch(err => console.error('Twilio customer SMS error:', err))
