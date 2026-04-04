@@ -10,7 +10,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 export const metadata: Metadata = {
     title: 'Roll Off Dumpster Rental Pearl MS | Same-Day Service | Mid South',
     description:
-        'Roll off dumpster rental in Pearl, MS starting at $349. 10, 15 & 20-yard dumpsters with same-day delivery to Harvey Crossing, Deerfield, Parkbridge & all Pearl neighborhoods. Flat-rate pricing. Call 601-316-7891.',
+        'Roll off dumpster rental in Pearl, MS starting at $349. 10, 15 & 20-yard dumpsters with same-day delivery to Westside, Parkbridge, Airport Road & all Pearl neighborhoods. Flat-rate pricing. Call 601-316-7891.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Pearl, MS | Mid South',
         description: 'Same-day roll off dumpster rental in Pearl, MS. Flat-rate pricing from $349, no hidden fees.',
@@ -66,7 +66,7 @@ export default function PearlPage() {
                 <div className="container">
                     <h1>Roll Off Dumpster Rental in Pearl, MS</h1>
                     <p className={styles.heroSubtext}>
-                        Same-day roll off dumpster delivery throughout Pearl — serving Harvey Crossing, Deerfield, Parkbridge & all Pearl neighborhoods
+                        Same-day roll off dumpster delivery throughout Pearl — serving Westside, Parkbridge, Airport Road & all Pearl neighborhoods
                     </p>
                     <div className={styles.heroButtons}>
                         <BookingButton label="Book Pearl Dumpster" location="Pearl Service Area Hero" />
@@ -107,7 +107,7 @@ export default function PearlPage() {
                         </div>
                         <div>
                             <h2>Roll Off Dumpster Uses in Pearl, MS</h2>
-                            <p>Whether you're renovating a home near the Pearson Road corridor, cleaning out a rental property in Harvey Crossing, tearing off a roof in Parkbridge, or running a commercial project near the Airport Road industrial area — we have the right roll off dumpster for your Pearl project.</p>
+                            <p>Whether you're renovating a home near the Pearson Road corridor, cleaning out a rental property on the Westside, tearing off a roof in Parkbridge, or running a commercial project near the Airport Road industrial area — we have the right roll off dumpster for your Pearl project.</p>
                             <p><strong>Common roll off dumpster uses in Pearl:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
@@ -140,7 +140,7 @@ export default function PearlPage() {
                     </p>
                     <h2>Neighborhoods We Serve in Pearl, MS</h2>
                     <p>
-                        We proudly serve every neighborhood in Pearl. Whether you're in <strong>Harvey Crossing</strong>, <strong>Deerfield</strong>, <strong>Pauline Creek</strong>, <strong>Rangelon Hills</strong>, <strong>Parkbridge</strong>, <strong>Airport Road</strong>, or anywhere along <strong>Old Brandon Road</strong> or <strong>Pearson Road</strong>, we deliver fast, reliable roll off dumpster rental service.
+                        We proudly serve every neighborhood in Pearl. Whether you're in <strong>Westside</strong>, <strong>Parkbridge</strong>, <strong>Pauline Creek</strong>, <strong>Rangelon Hills</strong>, <strong>Airport Road</strong>, or anywhere along <strong>Old Brandon Road</strong>, <strong>Pearson Road</strong>, or <strong>Highway 80</strong>, we deliver fast, reliable roll off dumpster rental service.
                     </p>
                     <p>
                         Pearl's convenient location, active commercial corridors, and growing residential base make it one of our highest-demand service areas. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Pearl customers.
