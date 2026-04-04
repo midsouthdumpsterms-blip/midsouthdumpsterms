@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import BookingIframe from './BookingIframe'
 import styles from './page.module.css'
 
@@ -18,18 +17,10 @@ export const metadata: Metadata = {
 export default function BookOnlinePage() {
     return (
         <>
-            {/* SurvCart assets */}
-            {/* eslint-disable-next-line @next/next/no-css-tags */}
-            <link rel="stylesheet" href="https://embed.survcart.com/embed.css" />
-            <Script id="survcart-config" strategy="beforeInteractive">
-                {`var survcartConfig={"id":"3u8ibIDlEWCk4uhSC1iS","companyId":"irGaFVL6CggDRSyqIHNa","staged":false,"embedName":"Embed Configuration 1","selectors":[{"tokens":["Book Now","Book Now!","BOOK NOW"],"id":"B77cgcBIlxlcSRgehUvF","configId":"5O3wdzzOPnQx1KZlsXjD","workflowId":"Oi3qEUY3kbLvysbCyTUA","ga4_tags":[],"classes":"survcart-embed-presenter","default":true}]};`}
-            </Script>
-            <Script src="https://embed.survcart.com/embed.js" strategy="afterInteractive" />
-
             {/* Invisible SEO anchor — gives Google an H1 without adding visual clutter */}
             <h1 className={styles.seoTitle}>Book a Dumpster Rental Online in Jackson, MS</h1>
 
-            {/* Full-screen booking embed */}
+            {/* Booking section — Survcart popup trigger */}
             <section className={styles.bookingSection} id="booking-form">
                 <BookingIframe />
             </section>

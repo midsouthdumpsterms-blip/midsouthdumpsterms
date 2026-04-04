@@ -71,16 +71,14 @@ export default function DumpsterSizeCard({
                 </ul>
             </div>
 
-            <a
-                href="https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary"
+            <button
+                type="button"
+                className="btn btn-primary survcart-embed-presenter"
                 style={{ width: '100%', marginTop: 'var(--spacing-lg)' }}
                 onClick={handleBookingClick}
             >
-                Book {size} Yard Dumpster
-            </a>
+                Book Now
+            </button>
         </div>
     )
 }
