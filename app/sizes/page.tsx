@@ -222,7 +222,7 @@ export default function SizesPage() {
                     <p style={{ fontSize: '1.125rem', opacity: 0.9, marginBottom: 'var(--spacing-xl)' }}>Same-day delivery available — book online or call 601-316-7891</p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <BookingButton label="Book Online" location="Sizes Hub CTA" />
-                        <TrackedPhoneLink location="Sizes Hub CTA" className="btn btn-outline btn-lg">Call 601-316-7891</TrackedPhoneLink>
+                        <TrackedPhoneLink location="Sizes Hub CTA" style={{ border: '2px solid white', color: 'white', background: 'transparent', borderRadius: 'var(--radius-md)', padding: '0.75rem 1.5rem', fontWeight: 700, fontSize: '1rem', textDecoration: 'none', display: 'inline-block' }}>Call 601-316-7891</TrackedPhoneLink>
                     </div>
                 </div>
             </section>
