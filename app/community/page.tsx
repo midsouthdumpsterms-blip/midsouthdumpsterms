@@ -72,10 +72,10 @@ export default function Community() {
                         </h2>
                         <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--color-gray-700)', marginBottom: '1rem' }}>
                             Mid South Dumpster Rentals is based in Jackson, MS — and our owner, Andrew Tyre, isn&apos;t
-                            just a longtime resident. He&apos;s a born and bred Jackson native. His family&apos;s roots here
-                            run deep — generations back, an ancestor served as the architect of the
-                            original Mississippi State Capitol building — not the current one, but the one that came before it.
-                            The Nelson name has been part of this city&apos;s story for a long time.
+                            just a longtime resident. He&apos;s a born and bred Jackson native. His roots here run deep —
+                            generations back, an ancestor on his mother&apos;s side, from the Nelson family, served as
+                            the architect of the original Mississippi State Capitol building — not the current one,
+                            but the one that came before it. That name has been woven into this city&apos;s story for a long time.
                         </p>
                         <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--color-gray-700)', marginBottom: '1rem' }}>
                             Today, Andrew lives in the Fondren neighborhood. That&apos;s not a marketing line —
