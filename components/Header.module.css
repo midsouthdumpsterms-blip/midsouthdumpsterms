@@ -127,7 +127,7 @@
 }
 
 .chevron {
-    font-size: 0.7rem;
+    font-size: 1rem;
     transition: transform var(--transition-fast);
     display: inline-block;
     line-height: 1;
@@ -229,11 +229,18 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background: none;
-        border: none;
+        background: var(--color-gray-100);
+        border: 1.5px solid var(--color-gray-200);
+        border-radius: 8px;
         cursor: pointer;
-        padding: 0 4px;
+        padding: 0 12px;
+        min-height: 40px;
+        min-width: 44px;
         color: var(--color-gray-700);
+    }
+
+    .mobileDropdownToggle .chevron {
+        font-size: 1.4rem;
     }
 
     /* On mobile: logo icon + stacked text left, hamburger right */
