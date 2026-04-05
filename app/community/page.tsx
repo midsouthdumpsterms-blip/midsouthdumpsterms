@@ -74,7 +74,7 @@ export default function Community() {
                             Mid South Dumpster Rentals is based in Jackson, MS — and our owner, Andrew Tyre, isn&apos;t
                             just a longtime resident. He&apos;s a born and bred Jackson native. His roots here run deep —
                             generations back, an ancestor on his mother&apos;s side, from the Nelson family, served as
-                            the architect of the original Mississippi State Capitol building — not the current one,
+                            an architect of the original Mississippi State Capitol building — not the current one,
                             but the one that came before it. That name has been woven into this city&apos;s story for a long time.
                         </p>
                         <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--color-gray-700)', marginBottom: '1rem' }}>
