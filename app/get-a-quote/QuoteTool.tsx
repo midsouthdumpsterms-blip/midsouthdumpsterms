@@ -298,7 +298,7 @@ export default function QuoteTool() {
                                 {getDaysLabel(selectedDays)} · {selectedCity}
                             </div>
                             <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', marginTop: '0.75rem', paddingTop: '0.75rem', fontSize: '0.82rem', opacity: 0.85 }}>
-                                🔒 Enter your info below to unlock your full quote
+                                🔒 Just your name & number — we'll text you the exact price
                             </div>
                         </div>
 
@@ -306,7 +306,7 @@ export default function QuoteTool() {
                             Where should we send your quote?
                         </h2>
                         <p style={{ color: 'var(--color-gray-500)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
-                            We&apos;ll text your personalized quote so you have it handy.
+                            We&apos;ll send your flat-rate quote straight to your phone — no spam, ever.
                         </p>
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.5rem' }}>
