@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import BookingButton from '@/components/BookingButton'
 import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from './about.module.css'
@@ -55,6 +56,9 @@ export default function About() {
                                     <p>
                                         When you book a dumpster with us, you aren&apos;t dealing with a faceless national call center or an anonymous broker. You are dealing with a local business owner who understands your project deadlines, values your property, and works 7 days a week to ensure your job site stays clean and moving forward.
                                     </p>
+                                    <p>
+                                        Andrew is a born and bred Jackson native — his roots here run generations deep through his mother&apos;s side of the family. That connection to this city isn&apos;t just background; it shapes how he runs the business and how he thinks about the community around it. <Link href="/community" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>Learn more about our community involvement →</Link>
+                                    </p>
                                 </div>
                                 <div style={{ flex: '0 0 250px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-md)', margin: '0 auto' }}>
                                     {/* Placeholder for Andrew Tyre's photo */}
@@ -89,6 +93,26 @@ export default function About() {
                                 <p>⭐ 5.0 stars</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Community teaser */}
+            <section style={{ padding: '2.5rem 1rem', background: 'linear-gradient(135deg, #f0fdff, #e0f2fe)' }}>
+                <div className="container">
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem', maxWidth: '860px', margin: '0 auto' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: '1 1 300px' }}>
+                            <span style={{ fontSize: '2.5rem', flexShrink: 0 }}>🏘️</span>
+                            <div>
+                                <div style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-gray-900)', marginBottom: '0.25rem' }}>Community Support</div>
+                                <p style={{ color: 'var(--color-gray-600)', margin: 0, fontSize: '0.95rem', lineHeight: 1.6 }}>
+                                    We live and work here — and we try to give back when we can. When community cleanup efforts in the greater Jackson metro need debris removal support, we do our part.
+                                </p>
+                            </div>
+                        </div>
+                        <Link href="/community" className="btn btn-outline" style={{ flexShrink: 0 }}>
+                            Our Community Page →
+                        </Link>
                     </div>
                 </div>
             </section>
