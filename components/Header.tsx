@@ -49,18 +49,31 @@ export default function Header() {
             <div className="container">
                 <nav className={styles.nav}>
                     <Link href="/" className={styles.logo}>
-                        <Image
-                            src="/images/logo.png"
-                            alt="Mid South Dumpster Rentals - Same Day Service"
-                            width={52}
-                            height={52}
-                            className={styles.logoImage}
-                            priority
-                        />
+                        <div style={{ position: 'relative', display: 'inline-block', flexShrink: 0 }}>
+                            <Image
+                                src="/images/logo.png"
+                                alt="Mid South Dumpster Rentals - Same Day Service"
+                                width={52}
+                                height={52}
+                                className={styles.logoImage}
+                                priority
+                            />
+                            <span style={{
+                                position: 'absolute',
+                                bottom: 0,
+                                right: -6,
+                                fontSize: '9px',
+                                fontWeight: 700,
+                                color: '#1a1a1a',
+                                lineHeight: 1,
+                                letterSpacing: 0,
+                            }}>™</span>
+                        </div>
                         <div className={styles.logoTextContainer}>
                             <span className={styles.logoText}>Mid South Dumpster Rentals, LLC</span>
                         </div>
                     </Link>
+
 
                     <button
                         className={styles.mobileMenuButton}
