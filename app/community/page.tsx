@@ -74,7 +74,7 @@ export default function Community() {
                         <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--color-gray-700)', marginBottom: '1rem' }}>
                             Jackson has no shortage of people quietly doing the work — neighborhood associations, volunteer
                             groups, community cleanup crews. If you&apos;re one of them and you ever find yourself needing debris
-                            removal support, we&apos;re worth reaching out to.
+                            removal support anywhere in the greater Jackson metro, we&apos;re worth reaching out to.
                         </p>
                         <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--color-gray-700)' }}>
                             We can&apos;t always make it work — availability and timing have to line up — but when they do,
@@ -115,7 +115,7 @@ export default function Community() {
                         </h3>
                         <p style={{ color: 'var(--color-gray-600)', marginBottom: '1.5rem', lineHeight: 1.7 }}>
                             If you&apos;re putting together a neighborhood cleanup, community improvement project, or
-                            something similar in the Jackson area — reach out. We&apos;re easy to get ahold of and happy to talk.
+                            something similar anywhere in the greater Jackson metro — reach out. We&apos;re easy to get ahold of and happy to talk.
                         </p>
                         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                             <Link href="/contact" className="btn btn-primary">
