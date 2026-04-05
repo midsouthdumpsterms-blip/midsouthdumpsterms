@@ -5,7 +5,30 @@ import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 export const metadata: Metadata = {
     title: 'Community | Mid South Dumpster Rentals | Jackson, MS',
     description:
-        'Mid South Dumpster Rentals is rooted in Jackson, MS. Our owner has lived here for years and believes in showing up for the community — not just doing business in it.',
+        'Mid South Dumpster Rentals is rooted in Jackson, MS. Our owner has lived in the greater Jackson area for years and believes in showing up for the community — not just doing business in it.',
+    openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: 'https://midsouthdumpsterms.com/community',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Rooted in Jackson | Mid South Dumpster Rentals',
+        description:
+            'We live here, work here, and care about what happens here. When community cleanup efforts in the greater Jackson metro need support, we try to help where we can.',
+        images: [
+            {
+                url: '/images/og-community.png',
+                width: 1200,
+                height: 630,
+                alt: 'Mid South Dumpster Rentals — Rooted in the Jackson Community',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Rooted in Jackson | Mid South Dumpster Rentals',
+        description: 'We live here, work here, and care about what happens here.',
+        images: ['/images/og-community.png'],
+    },
 }
 
 export default function Community() {
