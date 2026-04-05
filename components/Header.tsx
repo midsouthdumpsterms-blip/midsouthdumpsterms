@@ -43,6 +43,7 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
     const [mobileAreasOpen, setMobileAreasOpen] = useState(false)
+    const [mobileAboutOpen, setMobileAboutOpen] = useState(false)
 
     return (
         <header className={styles.header}>
@@ -162,10 +163,22 @@ export default function Header() {
                             </ul>
                         </li>
 
-                        <li>
-                            <Link href="/about" onClick={() => setMobileMenuOpen(false)}>
-                                About
+                        {/* About dropdown */}
+                        <li className={styles.dropdown}>
+                            <Link href="/about" className={styles.dropdownTrigger} onClick={() => setMobileMenuOpen(false)}>
+                                About <span className={styles.chevron}>▾</span>
                             </Link>
+                            <button
+                                className={styles.mobileDropdownToggle}
+                                onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                                aria-label="Toggle about menu"
+                            >
+                                <span className={`${styles.chevron} ${mobileAboutOpen ? styles.chevronOpen : ''}`}>▾</span>
+                            </button>
+                            <ul className={`${styles.dropdownMenu} ${mobileAboutOpen ? styles.dropdownMenuOpen : ''}`}>
+                                <li><Link href="/about" onClick={() => setMobileMenuOpen(false)}>About Us</Link></li>
+                                <li><Link href="/community" onClick={() => setMobileMenuOpen(false)}>Community</Link></li>
+                            </ul>
                         </li>
                         <li>
                             <Link href="/blog" onClick={() => setMobileMenuOpen(false)}>
