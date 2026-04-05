@@ -91,6 +91,19 @@ function buildOwnerSms(data: {
     return `🚨 NEW LEAD\nName: ${name}\nPhone: ${phone}\nProject: ${project}\nCity: ${city}, MS\nWhen: ${tlLabel}\nSize: ${recommendedSize}-Yd\nQuoted: ${quotedPrice} (${days})\n\nCall them back ASAP!`
 }
 
+// ── 48-hour follow-up SMS (only if they haven't booked) ──────────────────────
+function buildFollowUpSms(data: { name: string }) {
+    return [
+        `Hey ${data.name}! Your Mid South quote is still active.`,
+        ``,
+        `If you haven't booked yet — grab it here:`,
+        `https://midsouthdumpsterms.com/book-online`,
+        ``,
+        `If you already did — we'll see you on delivery day! 🙌`,
+        `Questions? Just reply.`,
+    ].join('\n')
+}
+
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json()
@@ -118,14 +131,28 @@ export async function POST(req: NextRequest) {
         // ── 2. SMS via Twilio ────────────────────────────────────────────────
         if (twilioSid && twilioToken && twilioFrom) {
             const client = twilio(twilioSid, twilioToken)
+            const messagingServiceSid = process.env.TWILIO_MESSAGING_SERVICE_SID
 
             // Text the CUSTOMER their quote
             if (cleanPhone.length === 10) {
                 await client.messages.create({
                     body: buildCustomerSms({ name, recommendedSize, city, quotedPrice: quotedPrice ?? 'Call for pricing', days: days ?? 'rental' }),
-                    from: twilioFrom,
+                    ...(messagingServiceSid ? { messagingServiceSid } : { from: twilioFrom }),
                     to: `+1${cleanPhone}`,
                 }).catch(err => console.error('Twilio customer SMS error:', err))
+
+                // Schedule 48-hour follow-up (skip "Just Planning" leads — they said no rush)
+                if (messagingServiceSid && timeline !== 'planning') {
+                    const followUpAt = new Date(Date.now() + 48 * 60 * 60 * 1000)
+                    await client.messages.create({
+                        body: buildFollowUpSms({ name }),
+                        messagingServiceSid,
+                        to: `+1${cleanPhone}`,
+                        scheduleType: 'fixed',
+                        sendAt: followUpAt,
+                    }).catch(err => console.error('Twilio follow-up SMS error:', err))
+                    console.log(`🗓️ Follow-up scheduled for ${followUpAt.toISOString()} → ${cleanPhone}`)
+                }
             }
 
             // Text the OWNER a short alert
