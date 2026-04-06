@@ -86,21 +86,20 @@ export default function BookingIframe() {
             <a
                 href="tel:6013167891"
                 style={{
-                    display: 'block',
-                    width: '100%',
-                    maxWidth: '420px',
-                    padding: '1rem',
+                    display: 'inline-block',
+                    padding: '0.45rem 1.1rem',
                     background: 'transparent',
-                    color: 'var(--color-primary)',
-                    border: '2px solid var(--color-primary)',
-                    borderRadius: '12px',
-                    fontWeight: 700,
-                    fontSize: '1rem',
+                    color: 'var(--color-gray-400)',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '999px',
+                    fontWeight: 600,
+                    fontSize: '0.78rem',
                     textDecoration: 'none',
                     marginBottom: '1.5rem',
+                    letterSpacing: '0.01em',
                 }}
             >
-                📞 Call 601-316-7891
+                📞 Or call 601-316-7891
             </a>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.5rem', maxWidth: '420px' }}>
