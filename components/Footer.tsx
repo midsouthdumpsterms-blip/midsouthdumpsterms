@@ -27,6 +27,12 @@ export default function Footer() {
                                 </a>
                             </p>
                             <p>
+                                <strong>Email:</strong>{' '}
+                                <a href="mailto:atyre@midsouthdumpsterms.com">
+                                    atyre@midsouthdumpsterms.com
+                                </a>
+                            </p>
+                            <p>
                                 <strong>Hours:</strong> 7AM - 7PM | 7 Days a Week
                             </p>
                             <p>
