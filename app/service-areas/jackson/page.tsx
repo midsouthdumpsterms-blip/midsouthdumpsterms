@@ -97,7 +97,7 @@ export default function JacksonPage() {
                         </div>
                         <div>
                             <h2>Perfect For Jackson Projects</h2>
-                            <p>Whether you're renovating a home in Fondren, clearing out an estate in Belhaven, or managing a construction project in downtown Jackson, we have the right dumpster size for your needs.</p>
+                            <p>Whether you&apos;re renovating a home in Fondren, clearing out an estate in Belhaven, or managing a construction project in downtown Jackson, we have the right dumpster size for your needs.</p>
                             <p><strong>Common uses in Jackson:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
@@ -107,18 +107,25 @@ export default function JacksonPage() {
                                 <li>Yard waste and landscaping</li>
                                 <li>Commercial cleanouts</li>
                             </ul>
-
-                            <div style={{ marginTop: '2rem' }}>
-                                <Image
-                                    src="/images/gallery/dumpster-rental-jackson-ms-delivery.jpg"
-                                    alt="Dumpster rental delivery in Jackson, Mississippi"
-                                    width={600}
-                                    height={400}
-                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
-                                />
-                            </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section style={{ padding: '0 0 var(--spacing-2xl)' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
+                        <Image
+                            src="/images/gallery/dumpster-rental-jackson-ms-delivery.jpg"
+                            alt="Mid South Dumpster Rentals roll-off container delivered to a Jackson, MS property"
+                            width={760}
+                            height={480}
+                            style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                        />
+                    </div>
+                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
+                        A Mid South roll-off dumpster delivered to a Jackson, MS property — ready to work.
+                    </p>
                 </div>
             </section>
 
