@@ -25,6 +25,7 @@ const serviceAreas = [
     { city: 'Madison', state: 'MS', description: 'Top-rated dumpster rental service in Madison' },
     { city: 'Flora', state: 'MS', description: 'Affordable dumpster rentals for Flora area projects' },
     { city: 'Florence', state: 'MS', description: 'Reliable dumpster rental service for Florence and Rankin County' },
+    { city: 'Pelahatchie', state: 'MS', description: 'Rankin County dumpster rental near the Ross Barnett Reservoir' },
     { city: 'Canton', state: 'MS', description: 'Expert dumpster rental services in Canton' },
     { city: 'Terry', state: 'MS', description: 'Quality dumpster rentals serving Terry and surrounding areas' },
     { city: 'Raymond', state: 'MS', description: 'Roll-off dumpster rental in Raymond and rural Hinds County' },

@@ -134,7 +134,7 @@ export default function RankinCountyPage() {
                             { name: 'Flowood', href: '/service-areas/flowood' },
                             { name: 'Richland', href: '/service-areas/richland' },
                             { name: 'Florence', href: '/service-areas/florence' },
-                            { name: 'Pelahatchie', href: null },
+                            { name: 'Pelahatchie', href: '/service-areas/pelahatchie' },
                             { name: 'Sandhill', href: null },
                             { name: 'Ludlow', href: null },
                         ].map(({ name, href }) => (
