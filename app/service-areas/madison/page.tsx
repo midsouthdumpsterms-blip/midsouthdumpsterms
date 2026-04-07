@@ -136,14 +136,27 @@ export default function MadisonPage() {
                 <div className="container">
                     <h2>Roll Off Dumpster Rental Serving All of Madison County, MS</h2>
                     <p>
-                        Madison is the heart of Madison County, and we serve every corner of it. From roll off dumpster rental in Madison and Ridgeland to Canton, Gluckstadt, Flora, and Pocahontas — our locally owned trucks cover all of Madison County, MS. We're not a broker: we own our trucks and control every delivery.
+                        Madison is the heart of Madison County, and we serve every corner of it. From roll off dumpster rental in Madison and Ridgeland to Canton, Gluckstadt, Flora, and Pocahontas — our locally owned trucks cover all of Madison County, MS. We&apos;re not a broker: we own our trucks and control every delivery.
                     </p>
-                    <h2>Neighborhoods We Serve in Madison</h2>
+                    <h2>Neighborhoods &amp; Communities We Serve in Madison, MS</h2>
                     <p>
-                        We proudly deliver roll off dumpsters to every neighborhood in Madison, MS. Whether you're in <strong>Reunion</strong>, <strong>Lake Caroline</strong>, <strong>Annandale</strong>, <strong>Lost Rabbit</strong>, <strong>Woodland Estates</strong>, <strong>Georgetown</strong>, <strong>Germantown</strong>, or anywhere along <strong>Old Canton Road</strong> or <strong>Highway 51</strong>, we'll get your dumpster there fast.
+                        Madison is one of the fastest-growing cities in Mississippi — and one of our most active delivery areas. We deliver roll off dumpsters across every subdivision, corridor, and community in Madison, including:
                     </p>
+                    <ul className={styles.projectsList} style={{ marginBottom: '1.5rem' }}>
+                        <li><strong>Reunion</strong> — Master-planned community off Hwy 463 with golf course, 400-acre lake &amp; equestrian facilities; large estate homes with frequent renovation &amp; cleanout needs (ZIP 39110)</li>
+                        <li><strong>Lake Caroline</strong> — Waterfront residential community on Lake Caroline; older homes &amp; active remodeling (ZIP 39110)</li>
+                        <li><strong>Annandale</strong> — Upscale golf community off Old Canton Road; estate cleanouts &amp; high-end remodeling projects</li>
+                        <li><strong>Lost Rabbit</strong> — Urban neighborhood along the Natchez Trace corridor; mixed residential &amp; townhome development</li>
+                        <li><strong>Colony Park / The Township at Colony Park</strong> — Mixed-use corridor off Highland Colony Parkway; retail buildouts &amp; commercial contractor work</li>
+                        <li><strong>Strawberry Patch area</strong> — Historic residential area near Old Canton Road &amp; St. Augustine Drive; Strawberry Patch Park &amp; historic 1860s landmarks nearby</li>
+                        <li><strong>Georgetown &amp; Germantown</strong> — Established residential neighborhoods along Hwy 51 North corridor</li>
+                        <li><strong>Woodland Estates &amp; Providence</strong> — Suburban residential development in the I-55 North / Hwy 463 corridor</li>
+                        <li><strong>Highland Colony Parkway corridor</strong> — Professional offices, medical facilities &amp; commercial development between Madison &amp; Ridgeland</li>
+                        <li><strong>Highway 51 &amp; Main Street Madison</strong> — Historic downtown core; commercial cleanouts &amp; older residential stock</li>
+                        <li><strong>Old Canton Road corridor</strong> — Residential and rural properties running south toward Ridgeland (ZIP 39110)</li>
+                    </ul>
                     <p>
-                        From residential cleanouts to large commercial builds in Madison's growing business corridors, Mid South Dumpster Rentals is Madison County's trusted local roll off dumpster provider. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Madison customers.
+                        From residential cleanouts to large commercial builds in Madison&apos;s growing business corridors, Mid South Dumpster Rentals is Madison County&apos;s trusted local roll off dumpster provider. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Madison customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Want to learn more?</strong> Check out our complete guide on <Link href="/blog/dumpster-rental-madison-ms">Dumpster Rental in Madison, MS</Link>.
