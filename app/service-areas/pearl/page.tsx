@@ -118,15 +118,6 @@ export default function PearlPage() {
                                 <li>Commercial and retail contractor projects</li>
                             </ul>
 
-                            <div style={{ marginTop: '2rem' }}>
-                                <Image
-                                    src="/images/gallery/construction-dumpster-pearl-ms-site.jpg"
-                                    alt="Roll-off construction dumpster rental at a job site in Pearl, Mississippi"
-                                    width={600}
-                                    height={400}
-                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
-                                />
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -138,12 +129,26 @@ export default function PearlPage() {
                     <p>
                         Pearl sits at the heart of Rankin County and is a key part of our daily delivery route. We provide fast roll off dumpster rental throughout all of Rankin County — from Pearl and Flowood to Brandon, Richland, Florence, and beyond. Whether your project is residential or a multi-week commercial job, our locally owned trucks are ready.
                     </p>
-                    <h2>Neighborhoods We Serve in Pearl, MS</h2>
+                    <h2 style={{ marginTop: '2.5rem' }}>Neighborhoods &amp; Communities We Serve in Pearl, MS</h2>
                     <p>
-                        We proudly serve every neighborhood in Pearl. Whether you're in <strong>Westside</strong>, <strong>Parkbridge</strong>, <strong>Pauline Creek</strong>, <strong>Rangelon Hills</strong>, <strong>Airport Road</strong>, or anywhere along <strong>Old Brandon Road</strong>, <strong>Pearson Road</strong>, or <strong>Highway 80</strong>, we deliver fast, reliable roll off dumpster rental service.
+                        Pearl is one of the Jackson metro&apos;s fastest-growing cities — and one of our most active daily delivery zones. We cover every neighborhood, subdivision, and corridor in Pearl, including:
                     </p>
+                    <ul className={styles.projectsList} style={{ marginBottom: '1.5rem' }}>
+                        <li><strong>Westside</strong> — Established residential neighborhood along the western Pearl corridor near the Pearl River (ZIP 39208)</li>
+                        <li><strong>Parkbridge &amp; Pauline Creek</strong> — Mid-city residential communities with active roofing and remodel projects</li>
+                        <li><strong>Patrick Farms</strong> — Growing subdivision in northeast Pearl; frequent new construction &amp; renovation deliveries</li>
+                        <li><strong>Country Place &amp; Wood Ridge</strong> — Established family subdivisions with regular cleanout &amp; remodeling work</li>
+                        <li><strong>Bridgepoint &amp; The Hollows</strong> — Newer residential developments in the Pearl growth corridor</li>
+                        <li><strong>McLaurin Heights &amp; Grandview Heights</strong> — Elevated residential areas off Old Brandon Road</li>
+                        <li><strong>Hickory Glen &amp; Longwood Estates</strong> — Quiet subdivisions in the eastern Pearl residential zone</li>
+                        <li><strong>Lee Park &amp; Green Meadow</strong> — Family neighborhoods near Pearl City Park</li>
+                        <li><strong>Airport Road / Flowood Drive corridor</strong> — Commercial &amp; industrial zone near Jackson-Medgar Wiley Evers International Airport; contractor &amp; commercial projects (ZIP 39208)</li>
+                        <li><strong>Outlets of Mississippi / Riverwind corridor</strong> — Major retail &amp; commercial district; Bass Pro Shops, Trustmark Park area; commercial contractor projects</li>
+                        <li><strong>Pearson Road / Old Brandon Road corridor</strong> — Medical mile, retail strip &amp; residential mix running through central Pearl</li>
+                        <li><strong>Highway 80 East corridor</strong> — Commercial strip connecting Pearl to Brandon; industrial &amp; residential service</li>
+                    </ul>
                     <p>
-                        Pearl's convenient location, active commercial corridors, and growing residential base make it one of our highest-demand service areas. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Pearl customers.
+                        Pearl&apos;s convenient location, active commercial corridors, and growing residential base make it one of our highest-demand service areas. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Pearl customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Wondering what costs are like in the area?</strong> Get an idea from our <Link href="/blog/dumpster-rental-prices-jackson-ms">Dumpster Rental Cost Guide</Link> for Central Mississippi.
@@ -179,6 +184,23 @@ export default function PearlPage() {
                             <p>Yes — wood, drywall, roofing shingles, carpet, and most construction debris are all accepted. Prohibited items include hazardous materials, wet paint, tires, and appliances with Freon.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section style={{ padding: 'var(--spacing-2xl) 0' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
+                        <Image
+                            src="/images/gallery/construction-dumpster-pearl-ms-site.jpg"
+                            alt="Mid South Dumpster Rentals roll-off container at a construction job site in Pearl, Mississippi (Rankin County) — serving Airport Road, Outlets of Mississippi &amp; surrounding neighborhoods"
+                            width={760}
+                            height={480}
+                            style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                        />
+                    </div>
+                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
+                        Mid South Dumpster Rentals on a job site in Pearl, MS (Rankin County) — same-day roll-off service near Airport Road, Outlets of Mississippi &amp; Trustmark Park.
+                    </p>
                 </div>
             </section>
 
