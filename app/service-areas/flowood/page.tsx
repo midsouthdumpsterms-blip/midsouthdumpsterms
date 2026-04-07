@@ -122,22 +122,6 @@ export default function FlowoodPage() {
                 </div>
             </section>
 
-            <section style={{ padding: '0 0 var(--spacing-2xl)' }}>
-                <div className="container">
-                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
-                        <Image
-                            src="/images/gallery/clean-dumpster-delivery-flowood-blue.jpg"
-                            alt="Mid South Dumpster Rentals clean blue roll-off container delivered to a home in Flowood, MS"
-                            width={760}
-                            height={480}
-                            style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
-                        />
-                    </div>
-                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
-                        A Mid South roll-off dumpster delivered to a Flowood, MS residential driveway.
-                    </p>
-                </div>
-            </section>
 
             <section className={styles.contentSection}>
                 <div className="container">
@@ -199,6 +183,23 @@ export default function FlowoodPage() {
                             <p>For commercial renovations along Lakeland Drive or in Flowood business parks, we typically recommend a 20-yard. Call us and we'll help you size it correctly.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section style={{ padding: 'var(--spacing-2xl) 0' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
+                        <Image
+                            src="/images/gallery/clean-dumpster-delivery-flowood-blue.jpg"
+                            alt="Mid South Dumpster Rentals blue roll-off container delivered on a residential driveway in Flowood, Mississippi (Rankin County) — Lakeland Drive corridor"
+                            width={760}
+                            height={480}
+                            style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                        />
+                    </div>
+                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
+                        Mid South Dumpster Rentals delivery in Flowood, MS (Rankin County) — same-day roll-off service near Lakeland Drive &amp; I-20.
+                    </p>
                 </div>
             </section>
 

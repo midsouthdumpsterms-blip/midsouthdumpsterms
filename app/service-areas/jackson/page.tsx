@@ -112,22 +112,7 @@ export default function JacksonPage() {
                 </div>
             </section>
 
-            <section style={{ padding: '0 0 var(--spacing-2xl)' }}>
-                <div className="container">
-                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
-                        <Image
-                            src="/images/gallery/dumpster-rental-jackson-ms-delivery.jpg"
-                            alt="Mid South Dumpster Rentals roll-off container delivered to a Jackson, MS property"
-                            width={760}
-                            height={480}
-                            style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
-                        />
-                    </div>
-                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
-                        A Mid South roll-off dumpster delivered to a Jackson, MS property — ready to work.
-                    </p>
-                </div>
-            </section>
+
 
             <section className={styles.contentSection}>
                 <div className="container">
@@ -178,6 +163,23 @@ export default function JacksonPage() {
                             <p>For a standard garage cleanout or small remodel in Belhaven or Fondren, a 10-yard dumpster is often sufficient. For larger whole-home cleanouts, we recommend our most popular size: the 20-yard dumpster.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section style={{ padding: 'var(--spacing-2xl) 0' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
+                        <Image
+                            src="/images/gallery/dumpster-rental-jackson-ms-delivery.jpg"
+                            alt="Mid South Dumpster Rentals roll-off container on delivery in Jackson, Mississippi — serving Hinds County residential and commercial customers"
+                            width={760}
+                            height={480}
+                            style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                        />
+                    </div>
+                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
+                        Mid South Dumpster Rentals delivery in Jackson, MS (Hinds County) — same-day roll-off service available 7 days a week.
+                    </p>
                 </div>
             </section>
 
