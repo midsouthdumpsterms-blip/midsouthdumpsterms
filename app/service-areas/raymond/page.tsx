@@ -118,15 +118,6 @@ export default function RaymondPage() {
                                 <li>Yard waste and storm cleanup</li>
                             </ul>
 
-                            <div style={{ marginTop: '2rem' }}>
-                                <Image
-                                    src="/images/gallery/same-day-dumpster-rental-raymond.jpg"
-                                    alt="Roll off dumpster rental delivery in Raymond, MS"
-                                    width={600}
-                                    height={400}
-                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
-                                />
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -143,18 +134,23 @@ export default function RaymondPage() {
                         <Link href="/service-areas/jackson" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Jackson</Link>.
                     </p>
 
-                    <h2>Areas &amp; Communities We Serve Near Raymond</h2>
+                    <h2 style={{ marginTop: '2.5rem' }}>Areas &amp; Communities We Serve Near Raymond, MS</h2>
                     <p>
-                        Raymond doesn&apos;t have large subdivisions like a bigger city — it&apos;s defined by its <strong>historic downtown</strong>, the <strong>Hinds Community College campus</strong>, and the rural residential areas spreading out along local roads. We deliver to all of it, including:
+                        Raymond doesn&apos;t have large subdivisions like a bigger city — it&apos;s defined by its <strong>historic downtown</strong>, the <strong>Hinds Community College campus</strong>, Civil War landmarks, and the rural residential areas spreading out along local roads. We deliver to all of it, including:
                     </p>
                     <ul className={styles.projectsList} style={{ marginBottom: '1.5rem' }}>
-                        <li>Downtown Raymond &amp; Historic District</li>
-                        <li>Hinds Community College area</li>
-                        <li>Dry Grove Road corridor</li>
-                        <li>Ratliff Road &amp; Ranger Road areas</li>
-                        <li>Parsons Road &amp; surrounding rural properties</li>
-                        <li>Learned community (nearby)</li>
-                        <li>Rural Hinds County properties (ZIP 39154)</li>
+                        <li><strong>Downtown Raymond &amp; Historic Courthouse District</strong> — Greek Revival courthouse (1857), St. Marks Episcopal Church; commercial cleanouts &amp; historic home renovations (ZIP 39154)</li>
+                        <li><strong>Hinds Community College (Raymond Campus)</strong> — Mississippi&apos;s largest community college at 501 E. Main St; institutional &amp; residential projects in the campus corridor</li>
+                        <li><strong>Battle of Raymond Military Park area</strong> — Fourteenmile Creek battlefield corridor; rural residential properties around the historic site</li>
+                        <li><strong>Magnolia Terrace &amp; Wyndalwood</strong> — Residential subdivisions in the Raymond area</li>
+                        <li><strong>Whispering Pines &amp; Windsor Forest</strong> — Established residential communities with estate cleanout &amp; renovation activity</li>
+                        <li><strong>Mayfair &amp; Willow Wood</strong> — Neighborhood residential areas near Raymond&apos;s core</li>
+                        <li><strong>Appleridge &amp; Lakewood Drive</strong> — Residential corridors in the Raymond community</li>
+                        <li><strong>Dry Grove Road corridor</strong> — Rural residential properties &amp; farm cleanouts north of Raymond</li>
+                        <li><strong>Ratliff Road &amp; Ranger Road</strong> — Rural Hinds County roads; large lot &amp; farmstead cleanouts</li>
+                        <li><strong>Parsons Road &amp; surrounding rural properties</strong> — Deep rural delivery; older structures, estate &amp; land clearing projects</li>
+                        <li><strong>Highway 18 corridor</strong> — Primary Raymond thoroughfare running through the historic battlefield zone</li>
+                        <li><strong>Learned community &amp; rural Hinds County (ZIP 39154)</strong> — Surrounding unincorporated rural areas west of Raymond</li>
                     </ul>
                     <p>
                         Raymond&apos;s rural setting often means larger cleanout jobs — barn cleanouts, estate sales, older farmhouses — and our 15 and 20-yard dumpsters are ideal for that kind of work. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Hinds County customers.
@@ -185,6 +181,23 @@ export default function RaymondPage() {
                             <p>We cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. Call us if you have specific items you&apos;re unsure about.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section style={{ padding: 'var(--spacing-2xl) 0' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)', maxHeight: '480px' }}>
+                        <Image
+                            src="/images/gallery/same-day-dumpster-rental-raymond.jpg"
+                            alt="Mid South Dumpster Rentals same-day roll-off container delivery in Raymond, Mississippi (Hinds County) — serving Hinds Community College, historic downtown &amp; surrounding rural communities"
+                            width={760}
+                            height={480}
+                            style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </div>
+                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
+                        Mid South Dumpster Rentals in Raymond, MS (Hinds County) — same-day roll-off service near Hinds Community College, Battle of Raymond &amp; surrounding rural properties.
+                    </p>
                 </div>
             </section>
 
