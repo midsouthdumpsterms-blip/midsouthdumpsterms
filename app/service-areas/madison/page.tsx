@@ -129,7 +129,7 @@ export default function MadisonPage() {
                     <p>
                         Madison is the heart of Madison County, and we serve every corner of it. From roll off dumpster rental in Madison and Ridgeland to Canton, Gluckstadt, Flora, and Pocahontas — our locally owned trucks cover all of Madison County, MS. We&apos;re not a broker: we own our trucks and control every delivery.
                     </p>
-                    <h2>Neighborhoods &amp; Communities We Serve in Madison, MS</h2>
+                    <h2 style={{ marginTop: '2.5rem' }}>Neighborhoods &amp; Communities We Serve in Madison, MS</h2>
                     <p>
                         Madison is one of the fastest-growing cities in Mississippi — and one of our most active delivery areas. We deliver roll off dumpsters across every subdivision, corridor, and community in Madison, including:
                     </p>
