@@ -134,7 +134,7 @@ export default function HindsCountyPage() {
                             { name: 'Byram', href: '/service-areas/byram' },
                             { name: 'Terry', href: '/service-areas/terry' },
                             { name: 'Raymond', href: null },
-                            { name: 'Bolton', href: null },
+                            { name: 'Bolton', href: '/service-areas/bolton' },
                             { name: 'Edwards', href: null },
                             { name: 'Utica', href: null },
                         ].map(({ name, href }) => (
