@@ -118,15 +118,6 @@ export default function ByramPage() {
                                 <li>Commercial contractor projects</li>
                             </ul>
 
-                            <div style={{ marginTop: '2rem' }}>
-                                <Image
-                                    src="/images/gallery/local-dumpster-service-byram-truck.jpg"
-                                    alt="Roll off dumpster rental delivery truck placing a container in Byram, MS"
-                                    width={600}
-                                    height={400}
-                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
-                                />
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -138,12 +129,26 @@ export default function ByramPage() {
                     <p>
                         Byram is one of Hinds County's fastest-growing communities, and it's a key part of our service territory. We provide fast roll off dumpster rental throughout all of Hinds County — from Byram and Jackson to Clinton, Terry, and Bolton. Whether your project is a quick residential cleanout or a multi-week commercial job, our locally owned trucks are ready.
                     </p>
-                    <h2>Neighborhoods We Serve in Byram, MS</h2>
+                    <h2 style={{ marginTop: '2.5rem' }}>Neighborhoods &amp; Communities We Serve in Byram, MS</h2>
                     <p>
-                        We proudly deliver roll off dumpsters to every neighborhood in Byram. Whether you're in <strong>Lake Dockery</strong>, <strong>Lake Ridgelea</strong>, <strong>Byramdale Estates</strong>, <strong>Brannan Ridge</strong>, <strong>Byram Estates</strong>, <strong>Smith Creek</strong>, <strong>Summerwind</strong>, or anywhere else along the <strong>Siwell Road corridor</strong>, we deliver fast and reliable roll off dumpster service.
+                        Byram is one of Hinds County&apos;s fastest-growing communities, with a strong mix of established neighborhoods and new development south of Jackson. We deliver roll off dumpsters to every corner of Byram, including:
                     </p>
+                    <ul className={styles.projectsList} style={{ marginBottom: '1.5rem' }}>
+                        <li><strong>Lake Dockery &amp; Lake Ridgelea</strong> — Lakeside residential areas; outdoor recreation, storm debris cleanup &amp; home renovation projects (ZIP 39272)</li>
+                        <li><strong>Byramdale Estates &amp; Byram Estates</strong> — Established subdivisions along the Siwell Road corridor; active roofing &amp; remodeling work</li>
+                        <li><strong>Brannan Ridge &amp; Summerwind</strong> — Growing residential communities with frequent new construction &amp; cleanout deliveries</li>
+                        <li><strong>Elton Woods &amp; Willow Wood</strong> — Quiet family subdivisions in the Byram interior</li>
+                        <li><strong>Western Hills &amp; Appleridge</strong> — Established neighborhoods near the I-55 South corridor</li>
+                        <li><strong>Cedars of Byram &amp; The Hollows</strong> — Newer residential developments; active new build &amp; renovation projects</li>
+                        <li><strong>Serenity Lake &amp; Cedar Lane</strong> — Growing subdivisions in the southern Byram growth corridor</li>
+                        <li><strong>Smith Creek area</strong> — Residential community off Crystal Springs Road</li>
+                        <li><strong>Siwell Road corridor</strong> — Major Byram artery connecting to I-55; residential &amp; commercial service throughout (ZIP 39272)</li>
+                        <li><strong>Terry Road / Crystal Springs Road corridor</strong> — Southern Byram access routes; rural-residential properties &amp; large lot cleanouts</li>
+                        <li><strong>Byram Swinging Bridge area</strong> — Historic 1905 Pearl River bridge (National Register of Historic Places); nearby residential &amp; rural properties</li>
+                        <li><strong>I-55 South frontage</strong> — Commercial &amp; contractor projects along the interstate through Byram</li>
+                    </ul>
                     <p>
-                        Byram's growing residential developments and convenient location just south of Jackson make it one of the metro's most active areas for home improvement and construction. We're proud to serve this community with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Byram customers.
+                        Byram&apos;s growing residential developments and convenient location just south of Jackson make it one of the metro&apos;s most active areas for home improvement and construction. We&apos;re proud to serve this community with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Byram customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Planning a rental?</strong> Read our guide on <Link href="/blog/dumpster-rental-guide-for-home-renovations">home renovation dumpster rentals</Link> for more local tips and advice on sizing.
@@ -171,6 +176,23 @@ export default function ByramPage() {
                             <p>For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section style={{ padding: 'var(--spacing-2xl) 0' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)', maxHeight: '480px' }}>
+                        <Image
+                            src="/images/gallery/local-dumpster-service-byram-truck.jpg"
+                            alt="Mid South Dumpster Rentals delivery truck placing a roll-off container in Byram, Mississippi (Hinds County) — serving Siwell Road, Lake Dockery &amp; surrounding neighborhoods"
+                            width={760}
+                            height={480}
+                            style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </div>
+                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
+                        Mid South Dumpster Rentals in Byram, MS (Hinds County) — same-day roll-off delivery to Siwell Road, Lake Dockery &amp; all Byram neighborhoods.
+                    </p>
                 </div>
             </section>
 

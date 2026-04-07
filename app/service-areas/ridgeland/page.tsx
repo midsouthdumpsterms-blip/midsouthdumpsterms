@@ -172,13 +172,13 @@ export default function RidgelandPage() {
 
             <section style={{ padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">
-                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
+                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)', maxHeight: '480px' }}>
                         <Image
                             src="/images/gallery/20-yard-dumpster-rental-ridgeland-project.jpg"
                             alt="Mid South Dumpster Rentals 20-yard roll-off container at a project in Ridgeland, Mississippi (Madison County) — serving Highland Colony Parkway, Bridgewater &amp; surrounding communities"
                             width={760}
                             height={480}
-                            style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                            style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
                         />
                     </div>
                     <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
