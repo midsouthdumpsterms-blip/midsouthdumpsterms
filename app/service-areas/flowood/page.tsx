@@ -107,7 +107,7 @@ export default function FlowoodPage() {
                         </div>
                         <div>
                             <h2>Roll Off Dumpster Uses in Flowood, MS</h2>
-                            <p>Whether you're remodeling a home in Kensington, managing a roofing crew in Laurelwood, running a commercial buildout along Lakeland Drive, or cleaning out a rental property near the Flowood business parks off I-20 — we have the right roll off dumpster for your project.</p>
+                            <p>Whether you&apos;re remodeling a home in Kensington, managing a roofing crew in Laurelwood, running a commercial buildout along Lakeland Drive, or cleaning out a rental property near the Flowood business parks off I-20 — we have the right roll off dumpster for your project.</p>
                             <p><strong>Common roll off dumpster uses in Flowood:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>
@@ -117,18 +117,25 @@ export default function FlowoodPage() {
                                 <li>Yard waste and storm cleanup</li>
                                 <li>Commercial and retail contractor projects</li>
                             </ul>
-
-                            <div style={{ marginTop: '2rem' }}>
-                                <Image
-                                    src="/images/gallery/clean-dumpster-delivery-flowood-blue.jpg"
-                                    alt="Clean blue Mid South Dumpster Rentals container delivered to a home in Flowood, MS"
-                                    width={600}
-                                    height={400}
-                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
-                                />
-                            </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section style={{ padding: '0 0 var(--spacing-2xl)' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
+                        <Image
+                            src="/images/gallery/clean-dumpster-delivery-flowood-blue.jpg"
+                            alt="Mid South Dumpster Rentals clean blue roll-off container delivered to a home in Flowood, MS"
+                            width={760}
+                            height={480}
+                            style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                        />
+                    </div>
+                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
+                        A Mid South roll-off dumpster delivered to a Flowood, MS residential driveway.
+                    </p>
                 </div>
             </section>
 
