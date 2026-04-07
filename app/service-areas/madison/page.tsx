@@ -118,15 +118,6 @@ export default function MadisonPage() {
                                 <li>Commercial contractor projects</li>
                             </ul>
 
-                            <div style={{ marginTop: '2rem' }}>
-                                <Image
-                                    src="/images/gallery/roll-off-dumpster-madison-ms-clean.jpg"
-                                    alt="Clean 20-yard roll off dumpster rental delivery in a Madison, MS residential driveway"
-                                    width={600}
-                                    height={400}
-                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
-                                />
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -184,6 +175,23 @@ export default function MadisonPage() {
                             <p>We provide 10-yard, 15-yard, and 20-yard roll-off dumpsters in Madison. Our 20-yard dumpsters are our most popular size for home renovations and estate cleanouts in the area.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section style={{ padding: 'var(--spacing-2xl) 0' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
+                        <Image
+                            src="/images/gallery/roll-off-dumpster-madison-ms-clean.jpg"
+                            alt="Mid South Dumpster Rentals clean 20-yard roll-off container delivered to a residential driveway in Madison, Mississippi (Madison County) — serving Reunion, Lake Caroline, Annandale &amp; Old Canton Road corridor"
+                            width={760}
+                            height={480}
+                            style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                        />
+                    </div>
+                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
+                        Mid South Dumpster Rentals delivery in Madison, MS (Madison County) — same-day roll-off service to Reunion, Lake Caroline, Annandale &amp; surrounding communities.
+                    </p>
                 </div>
             </section>
 
