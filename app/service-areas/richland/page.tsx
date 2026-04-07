@@ -118,15 +118,6 @@ export default function RichlandPage() {
                                 <li>Yard waste and storm cleanup</li>
                             </ul>
 
-                            <div style={{ marginTop: '2rem' }}>
-                                <Image
-                                    src="/images/gallery/same-day-dumpster-rental-richland.jpg"
-                                    alt="Roll off dumpster rental delivery in Richland, MS"
-                                    width={600}
-                                    height={400}
-                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
-                                />
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -138,12 +129,25 @@ export default function RichlandPage() {
                     <p>
                         Richland sits at the heart of the Jackson metro's industrial and residential corridor, right on the Rankin County border. We provide fast roll off dumpster rental throughout all of Rankin County — from Richland and Pearl to Brandon, Flowood, Florence, and Pelahatchie. Whether your project is a quick residential cleanout or a multi-week commercial job, our locally owned trucks are ready.
                     </p>
-                    <h2>Neighborhoods & Areas We Serve in Richland, MS</h2>
+                    <h2 style={{ marginTop: '2.5rem' }}>Neighborhoods &amp; Areas We Serve in Richland, MS</h2>
                     <p>
-                        We proudly deliver roll off dumpsters throughout Richland and surrounding communities. Whether you're in <strong>Richland Hills</strong>, <strong>Lakewood</strong>, along <strong>US-49</strong>, near <strong>Richland Industrial Park</strong>, on <strong>Greenfield Road</strong>, or in any of Richland's established residential areas, we deliver fast and reliable roll off dumpster service.
+                        Richland is a growing city at the crossroads of Rankin County&apos;s residential and industrial corridors &mdash; and we deliver to every part of it. Our roll off dumpsters reach every neighborhood and road in Richland, including:
                     </p>
+                    <ul className={styles.projectsList} style={{ marginBottom: '1.5rem' }}>
+                        <li><strong>Richland Hills &amp; Richland East</strong> &mdash; Established residential neighborhoods; active roofing, remodeling &amp; cleanout work (ZIP 39218)</li>
+                        <li><strong>Sylvan Hills &amp; Monterey Woods</strong> &mdash; Family subdivisions; frequent estate cleanout &amp; renovation deliveries</li>
+                        <li><strong>Southwind &amp; West Wind</strong> &mdash; Residential communities in the western Richland corridor</li>
+                        <li><strong>Bradford Place of Richland</strong> &mdash; Established subdivision off the US-49 corridor</li>
+                        <li><strong>Bluebird &amp; Bullock Forrest</strong> &mdash; Residential areas in Richland&apos;s growing zones</li>
+                        <li><strong>Richland Industrial Park &amp; US-49 corridor</strong> &mdash; Major logistics &amp; distribution hub; commercial container &amp; demo cleanouts (ZIP 39218)</li>
+                        <li><strong>Wise Road corridor</strong> &mdash; Residential &amp; commercial access road through central Richland</li>
+                        <li><strong>Greenfield Road area</strong> &mdash; Commercial &amp; residential zone near the Rankin County border</li>
+                        <li><strong>Hinds Community College (Rankin Branch) area</strong> &mdash; Educational corridor; contractor &amp; commercial projects</li>
+                        <li><strong>I-55 &amp; I-20 interchange corridor</strong> &mdash; Major transportation hub; commercial &amp; industrial contractor work (ZIP 39218)</li>
+                        <li><strong>Jackson-Evers Airport access corridor</strong> &mdash; Commercial &amp; light industrial zone; frequent job site deliveries</li>
+                    </ul>
                     <p>
-                        Richland's mix of residential neighborhoods and commercial areas makes it an active hub for home improvement, commercial work, and construction. We're proud to serve this community with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Rankin County customers.
+                        Richland&apos;s mix of residential neighborhoods and commercial areas makes it an active hub for home improvement, commercial work, and construction. We&apos;re proud to serve this community with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Rankin County customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Planning a rental?</strong> Read our guide on <Link href="/blog/how-to-choose-dumpster-size">how to choose the right dumpster size</Link> for your project.
@@ -171,6 +175,23 @@ export default function RichlandPage() {
                             <p>For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section style={{ padding: 'var(--spacing-2xl) 0' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)', maxHeight: '480px' }}>
+                        <Image
+                            src="/images/gallery/same-day-dumpster-rental-richland.jpg"
+                            alt="Mid South Dumpster Rentals same-day roll-off container delivery in Richland, Mississippi (Rankin County) — serving US-49, Richland Industrial Park &amp; surrounding neighborhoods"
+                            width={760}
+                            height={480}
+                            style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </div>
+                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
+                        Mid South Dumpster Rentals in Richland, MS (Rankin County) — same-day roll-off delivery to US-49, Richland Industrial Park &amp; all Richland neighborhoods.
+                    </p>
                 </div>
             </section>
 
