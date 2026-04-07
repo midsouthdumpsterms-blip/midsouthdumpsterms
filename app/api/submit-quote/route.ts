@@ -60,6 +60,40 @@ function buildOwnerEmailHtml(data: {
 </body></html>`
 }
 
+// ── Rich HTML email for customer quote ──────────────────────────────────────
+function buildCustomerEmailHtml(data: {
+    name: string; recommendedSize: string; city: string
+    quotedPrice: string; days: string; project: string
+}) {
+    const { name, recommendedSize, city, quotedPrice, days, project } = data
+    return `<!DOCTYPE html><html><head><meta charset="utf-8"></head>
+<body style="margin:0;padding:0;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <div style="max-width:560px;margin:0 auto;padding:24px 16px;">
+    <div style="background:linear-gradient(135deg,#0fbfdf,#0a92ad);border-radius:12px 12px 0 0;padding:28px;text-align:center;">
+      <div style="font-size:36px;margin-bottom:8px;">🎯</div>
+      <h1 style="color:white;margin:0;font-size:22px;font-weight:800;">Your Dumpster Quote, ${name}!</h1>
+      <p style="color:rgba(255,255,255,0.85);margin:6px 0 0;font-size:14px;">Mid South Dumpster Rentals · Jackson Metro, MS</p>
+    </div>
+    <div style="background:white;padding:28px;border-left:1px solid #e5e7eb;border-right:1px solid #e5e7eb;">
+      <div style="background:#f0fdff;border:2px solid #0fbfdf;border-radius:12px;padding:20px;text-align:center;margin-bottom:20px;">
+        <div style="font-size:13px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;">Your Recommended Size</div>
+        <div style="font-size:36px;font-weight:900;color:#0a92ad;">${recommendedSize}-Yard</div>
+        <div style="font-size:28px;font-weight:900;color:#111827;margin-top:4px;">${quotedPrice}</div>
+        <div style="font-size:13px;color:#6b7280;margin-top:4px;">${days} · ${city}, MS · ${project}</div>
+      </div>
+      <div style="margin-bottom:20px;">
+        ${['📦 Delivery, pickup &amp; disposal included', '✅ Flat-rate — no hidden fees', '🚀 Same-day delivery available', '🛡️ Licensed &amp; insured'].map(item => `<div style="padding:8px 0;border-bottom:1px solid #f3f4f6;font-size:14px;color:#374151;">${item}</div>`).join('')}
+      </div>
+      <a href="https://midsouthdumpsterms.com/book-online" style="display:block;background:#F2C94C;color:#111827;font-weight:800;font-size:16px;padding:16px;border-radius:10px;text-decoration:none;text-align:center;margin-bottom:12px;">📅 Book Online Now</a>
+      <a href="tel:6013167891" style="display:block;background:transparent;color:#0fbfdf;border:2px solid #0fbfdf;font-weight:700;font-size:15px;padding:14px;border-radius:10px;text-decoration:none;text-align:center;">📞 Call 601-316-7891</a>
+    </div>
+    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-top:none;border-radius:0 0 12px 12px;padding:16px 28px;text-align:center;">
+      <p style="color:#9ca3af;font-size:12px;margin:0;">Mid South Dumpster Rentals · 601-316-7891 · midsouthdumpsterms.com<br>Serving Jackson, Brandon, Madison, Pearl &amp; all of Central MS</p>
+    </div>
+  </div>
+</body></html>`
+}
+
 // ── Short SMS for customer ───────────────────────────────────────────────────
 function buildCustomerSms(data: {
     name: string; recommendedSize: string; city: string; quotedPrice: string; days: string
@@ -107,8 +141,8 @@ function buildFollowUpSms(data: { name: string }) {
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json()
-        const { name, phone, project, city, timeline, recommendedSize, quotedPrice, days } = body
-        const cleanPhone = phone.replace(/\D/g, '')
+        const { name, phone, email, project, city, timeline, recommendedSize, quotedPrice, days } = body
+        const cleanPhone = phone?.replace(/\D/g, '') ?? ''
 
         console.log('📋 NEW QUOTE LEAD:', { name, phone, project, city, timeline, recommendedSize, timestamp: new Date().toISOString() })
 
@@ -124,8 +158,18 @@ export async function POST(req: NextRequest) {
                 from: 'Mid South Quotes <quotes@midsouthdumpsterms.com>',
                 to: [notifyEmail],
                 subject: `🚨 New Lead: ${name} · ${recommendedSize}-Yd · ${city}`,
-                html: buildOwnerEmailHtml({ name, phone, project, city, timeline, recommendedSize }),
-            }).catch(err => console.error('Resend email error:', err))
+                html: buildOwnerEmailHtml({ name, phone: phone ?? '(email only)', project, city, timeline, recommendedSize }),
+            }).catch(err => console.error('Resend owner email error:', err))
+        }
+
+        // ── 2. Email quote to customer (if they provided email) ──────────────
+        if (process.env.RESEND_API_KEY && email?.includes('@')) {
+            await resend.emails.send({
+                from: 'Mid South Dumpster Rentals <quotes@midsouthdumpsterms.com>',
+                to: [email],
+                subject: `Your ${recommendedSize}-Yard Dumpster Quote — ${quotedPrice ?? 'See details'}`,
+                html: buildCustomerEmailHtml({ name, recommendedSize, city, quotedPrice: quotedPrice ?? 'Call for pricing', days: days ?? 'rental', project }),
+            }).catch(err => console.error('Resend customer email error:', err))
         }
 
         // ── 2. SMS via Twilio ────────────────────────────────────────────────

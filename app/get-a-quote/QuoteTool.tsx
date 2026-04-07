@@ -76,6 +76,7 @@ export default function QuoteTool() {
     const [selectedDays, setSelectedDays] = useState('')
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
+    const [email, setEmail] = useState('')
     const [submitted, setSubmitted] = useState(false)
     const [submitting, setSubmitting] = useState(false)
 
@@ -93,8 +94,10 @@ export default function QuoteTool() {
     const daysTier = selectedDays ? getDaysTier(selectedDays) : 'oneDay'
     const quotedPrice = pricing ? pricing[daysTier] : null
 
+    const canSubmit = name.trim() && (phone.replace(/\D/g, '').length >= 10 || email.trim().includes('@'))
+
     const handleSubmit = async () => {
-        if (!name.trim() || phone.replace(/\D/g, '').length < 10) return
+        if (!canSubmit) return
         setSubmitting(true)
         try {
             await fetch('/api/submit-quote', {
@@ -103,6 +106,7 @@ export default function QuoteTool() {
                 body: JSON.stringify({
                     name,
                     phone,
+                    email,
                     project: selectedProject?.label,
                     city: selectedCity,
                     timeline: selectedTimeline,
@@ -298,7 +302,7 @@ export default function QuoteTool() {
                                 {getDaysLabel(selectedDays)} · {selectedCity}
                             </div>
                             <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', marginTop: '0.75rem', paddingTop: '0.75rem', fontSize: '0.82rem', opacity: 0.85 }}>
-                                🔒 Just your name & number — we'll text you the exact price
+                                🔒 Name + phone or email — we&apos;ll send you the exact price
                             </div>
                         </div>
 
@@ -306,7 +310,7 @@ export default function QuoteTool() {
                             Where should we send your quote?
                         </h2>
                         <p style={{ color: 'var(--color-gray-500)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
-                            We&apos;ll send your flat-rate quote straight to your phone — no spam, ever.
+                            We&apos;ll text or email your flat-rate quote — no spam, ever.
                         </p>
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.5rem' }}>
@@ -319,9 +323,16 @@ export default function QuoteTool() {
                             />
                             <input
                                 type="tel"
-                                placeholder="Phone number (601) 000-0000"
+                                placeholder="📱 Phone number (601) 000-0000"
                                 value={phone}
                                 onChange={(e) => setPhone(formatPhone(e.target.value))}
+                                style={{ padding: '0.875rem 1rem', borderRadius: '10px', border: '2px solid var(--color-gray-200)', fontSize: '1rem', outline: 'none' }}
+                            />
+                            <input
+                                type="email"
+                                placeholder="📧 Email address (optional)"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 style={{ padding: '0.875rem 1rem', borderRadius: '10px', border: '2px solid var(--color-gray-200)', fontSize: '1rem', outline: 'none' }}
                             />
                         </div>
@@ -332,13 +343,13 @@ export default function QuoteTool() {
 
                         <button
                             onClick={handleSubmit}
-                            disabled={!name.trim() || phone.replace(/\D/g, '').length < 10 || submitting}
+                            disabled={!canSubmit || submitting}
                             style={{
                                 width: '100%', padding: '1.1rem', borderRadius: '10px',
-                                background: name.trim() && phone.replace(/\D/g, '').length >= 10 ? 'var(--color-secondary)' : 'var(--color-gray-200)',
-                                color: name.trim() && phone.replace(/\D/g, '').length >= 10 ? 'var(--color-gray-900)' : 'var(--color-gray-400)',
+                                background: canSubmit ? 'var(--color-secondary)' : 'var(--color-gray-200)',
+                                color: canSubmit ? 'var(--color-gray-900)' : 'var(--color-gray-400)',
                                 border: 'none', fontWeight: 800, fontSize: '1.1rem',
-                                cursor: name.trim() && phone.replace(/\D/g, '').length >= 10 ? 'pointer' : 'not-allowed',
+                                cursor: canSubmit ? 'pointer' : 'not-allowed',
                                 transition: 'all 0.15s ease',
                             }}
                         >
@@ -352,10 +363,14 @@ export default function QuoteTool() {
                     <div>
                         {/* Success banner */}
                         <div style={{ background: '#dcfce7', border: '2px solid #16a34a', borderRadius: '12px', padding: '1rem 1.25rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                            <span style={{ fontSize: '1.4rem' }}>📲</span>
+                            <span style={{ fontSize: '1.4rem' }}>{phone ? '📲' : '📧'}</span>
                             <div>
-                                <div style={{ fontWeight: 700, color: '#15803d' }}>Texting your quote to {phone}!</div>
-                                <div style={{ fontSize: '0.85rem', color: '#166534' }}>You&apos;ll receive a text shortly — or book instantly below.</div>
+                                <div style={{ fontWeight: 700, color: '#15803d' }}>
+                                    {phone && email ? `Sending your quote to ${phone} & ${email}!` : phone ? `Texting your quote to ${phone}!` : `Emailing your quote to ${email}!`}
+                                </div>
+                                <div style={{ fontSize: '0.85rem', color: '#166534' }}>
+                                    {phone ? 'You\'ll receive a text shortly — or book instantly below.' : 'Check your inbox shortly — or book instantly below.'}
+                                </div>
                             </div>
                         </div>
 
