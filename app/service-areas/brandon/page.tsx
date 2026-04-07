@@ -117,16 +117,6 @@ export default function BrandonPage() {
                                 <li>Yard waste and storm cleanup</li>
                                 <li>Commercial contractor projects</li>
                             </ul>
-
-                            <div style={{ marginTop: '2rem' }}>
-                                <Image
-                                    src="/images/gallery/residential-dumpster-rental-brandon-driveway.jpg"
-                                    alt="Roll off residential dumpster rental delivery on a driveway in Brandon, MS"
-                                    width={600}
-                                    height={400}
-                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
-                                />
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -185,6 +175,23 @@ export default function BrandonPage() {
                             <p>For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section style={{ padding: 'var(--spacing-2xl) 0' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
+                        <Image
+                            src="/images/gallery/residential-dumpster-rental-brandon-driveway.jpg"
+                            alt="Mid South Dumpster Rentals roll-off container on a residential driveway in Brandon, Mississippi (Rankin County) — serving Crossgates, Castlewoods &amp; surrounding neighborhoods"
+                            width={760}
+                            height={480}
+                            style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                        />
+                    </div>
+                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
+                        Mid South Dumpster Rentals delivery in Brandon, MS (Rankin County) — same-day roll-off service to Crossgates, Castlewoods &amp; all Brandon neighborhoods.
+                    </p>
                 </div>
             </section>
 
