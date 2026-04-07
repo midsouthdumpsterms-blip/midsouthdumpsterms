@@ -107,13 +107,6 @@ export default function RidgelandPage() {
                             </ul>
                         </div>
                         <div>
-                            <Image
-                                src="/images/gallery/20-yard-dumpster-rental-ridgeland-project.jpg"
-                                alt="A 20-yard roll off dumpster delivered to a Ridgeland MS construction project"
-                                width={600}
-                                height={400}
-                                className={styles.contentImage}
-                            />
                             <h2>Perfect For Any Ridgeland Project</h2>
                             <p>Whether you're renovating a home along Highland Colony Parkway, <Link href="/blog/estate-cleanout-dumpster-rental-central-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>clearing out an estate</Link>, or running a roofing job off the Old Canton Road corridor near I-55, we have the right roll off dumpster for your project.</p>
                             <p><strong>Common uses in Ridgeland, MS:</strong></p>
@@ -136,12 +129,26 @@ export default function RidgelandPage() {
                     <p>
                         Ridgeland is our home base for Madison County operations. We provide fast roll off dumpster rental service to every corner of Madison County — from the I-55 corridor in Ridgeland to the neighborhoods of Madison, Canton, Gluckstadt, and Flora. No matter where your project is, we deliver on time.
                     </p>
-                    <h2>Neighborhoods We Serve in Ridgeland</h2>
+                    <h2 style={{ marginTop: '2.5rem' }}>Neighborhoods &amp; Communities We Serve in Ridgeland, MS</h2>
                     <p>
-                        We proudly deliver roll off dumpsters to every neighborhood in Ridgeland, MS. Whether you're in <strong>Bridgewater</strong>, <strong>Lake Harbor</strong>, <strong>Old Town Ridgeland</strong>, <strong>The Township at Colony Park</strong>, <strong>Dinsmor</strong>, <strong>Reunion</strong>, or anywhere along <strong>Old Canton Road</strong> or <strong>Highland Colony Parkway</strong>, we'll get your dumpster there fast.
+                        Ridgeland is one of Madison County&apos;s most upscale and active communities — and we&apos;re in its neighborhoods every week. We deliver roll off dumpsters to every subdivision, corridor, and community in Ridgeland, including:
                     </p>
+                    <ul className={styles.projectsList} style={{ marginBottom: '1.5rem' }}>
+                        <li><strong>Bridgewater</strong> — Upscale gated residential community; HOA-managed, estate cleanouts &amp; high-end renovation projects (ZIP 39157)</li>
+                        <li><strong>Ashbrooke, Northbay &amp; Cypress Lake</strong> — Established residential subdivisions throughout Ridgeland&apos;s interior</li>
+                        <li><strong>Greenbrook &amp; Dinsmor</strong> — Quiet family neighborhoods in the central Ridgeland corridor</li>
+                        <li><strong>The Township at Colony Park</strong> — Master-planned mixed-use community off Highland Colony Parkway; retail buildouts &amp; residential remodels</li>
+                        <li><strong>Old Town Ridgeland / Highway 51 corridor</strong> — Historic residential &amp; commercial zone along Hwy 51 North</li>
+                        <li><strong>Highland Colony Parkway corridor</strong> — Premier commercial, office &amp; retail spine; Renaissance at Colony Park, high-end buildouts</li>
+                        <li><strong>Lake Harbour Drive corridor</strong> — Major east-west retail &amp; residential connector; active commercial contractor projects</li>
+                        <li><strong>County Line Road corridor</strong> — Northpark Mall area; high-traffic commercial zone with frequent contractor cleanouts</li>
+                        <li><strong>I-55 frontage &amp; business parks</strong> — Commercial &amp; light industrial corridor running through Ridgeland (ZIP 39157)</li>
+                        <li><strong>Ross Barnett Reservoir (The Rez) access area</strong> — Spillway Road residential &amp; lakefront properties; storm debris &amp; outdoor cleanouts</li>
+                        <li><strong>Natchez Trace Parkway corridor</strong> — Rural-residential properties along the historic parkway; estate workouts &amp; land clearing</li>
+                        <li><strong>Old Canton Road corridor</strong> — Residential neighborhoods south toward Jackson; frequent roofing &amp; remodel projects</li>
+                    </ul>
                     <p>
-                        From residential cleanouts to large commercial construction on the Ridgeland Parkway corridors, Mid South Dumpster Rentals is Madison County's trusted local roll off dumpster provider.
+                        From residential cleanouts to large commercial construction on the Ridgeland Parkway corridors, Mid South Dumpster Rentals is Madison County&apos;s trusted local roll off dumpster provider.
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Ridgeland is part of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.
@@ -160,6 +167,23 @@ export default function RidgelandPage() {
                             </div>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            <section style={{ padding: 'var(--spacing-2xl) 0' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
+                        <Image
+                            src="/images/gallery/20-yard-dumpster-rental-ridgeland-project.jpg"
+                            alt="Mid South Dumpster Rentals 20-yard roll-off container at a project in Ridgeland, Mississippi (Madison County) — serving Highland Colony Parkway, Bridgewater &amp; surrounding communities"
+                            width={760}
+                            height={480}
+                            style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                        />
+                    </div>
+                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
+                        Mid South Dumpster Rentals on a project in Ridgeland, MS (Madison County) — same-day roll-off service near Highland Colony Parkway, Bridgewater &amp; The Rez.
+                    </p>
                 </div>
             </section>
 
