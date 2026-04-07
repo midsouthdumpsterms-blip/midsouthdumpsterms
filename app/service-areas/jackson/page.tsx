@@ -124,12 +124,26 @@ export default function JacksonPage() {
 
             <section className={styles.contentSection}>
                 <div className="container">
-                    <h2>Neighborhoods We Serve in Jackson</h2>
+                    <h2>Areas &amp; Neighborhoods We Serve in Jackson, MS</h2>
                     <p>
-                        We proudly serve all neighborhoods throughout Jackson, Mississippi's capital city. Whether you're in the historic charm of <strong>Belhaven</strong> or <strong>Fondren</strong>, the communities of <strong>Tougaloo</strong>, <strong>Forest Hill Place</strong>, or <strong>Presidential Hills</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        Jackson is Mississippi&apos;s largest city and our home base — we know every corner of it. From the historic Belhaven streetscapes to the busy commercial strips of North Jackson, we deliver roll off dumpsters across all of Jackson&apos;s neighborhoods, ZIP codes, and surrounding corridors. No neighborhood is too small, no property too large.
                     </p>
+                    <ul className={styles.projectsList} style={{ marginBottom: '1.5rem' }}>
+                        <li><strong>Belhaven &amp; Belhaven Heights</strong> — Historic 1900s-era homes near Belhaven University &amp; the Eudora Welty House (ZIP 39202)</li>
+                        <li><strong>Fondren</strong> — Arts district, older homes, dense residential &amp; commercial renovation activity (ZIP 39216)</li>
+                        <li><strong>Midtown</strong> — Near Millsaps College &amp; the medical corridor; active renovation &amp; cleanout area (ZIP 39202)</li>
+                        <li><strong>Eastover &amp; Ridgewood</strong> — Established Northeast Jackson residential area; estate cleanouts &amp; remodels (ZIP 39211)</li>
+                        <li><strong>North Jackson</strong> — Residential neighborhoods along Old Canton Road, Ridgewood Road &amp; County Line Road corridor (ZIP 39211)</li>
+                        <li><strong>South Jackson</strong> — McDowell Road, Highway 18 corridor, industrial &amp; residential service (ZIP 39204)</li>
+                        <li><strong>West Jackson</strong> — Lynch Street &amp; Capitol Street corridors, older residential stock &amp; commercial (ZIP 39209)</li>
+                        <li><strong>Downtown Jackson</strong> — Capitol District, Farish Street, State Street &amp; Amite Street commercial corridor (ZIP 39201)</li>
+                        <li><strong>Northeast Jackson</strong> — Sherwood &amp; Forest Hill communities near Lakeland Drive &amp; Spillway Road (ZIP 39206)</li>
+                        <li><strong>Tougaloo &amp; North Jackson border</strong> — Near Tougaloo College &amp; County Line Road (ZIP 39213)</li>
+                        <li><strong>Alta Woods, Presidential Hills &amp; Forest Hill</strong> — Southeast Jackson residential communities (ZIP 39212)</li>
+                        <li><strong>Northpointe, Cedar Hills &amp; Pear Orchard</strong> — Northwest Jackson residential neighborhoods (ZIP 39213)</li>
+                    </ul>
                     <p>
-                        From <strong>Alta Woods</strong> and <strong>Cedar Hills</strong> to <strong>Pear Orchard</strong>, <strong>Northpointe</strong>, and <strong>Wildwood</strong>, our service covers every corner of Jackson. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Jackson customers.
+                        We also serve the major commercial and institutional corridors throughout Jackson — including the <strong>University of Mississippi Medical Center (UMMC)</strong> area, the <strong>Metrocenter</strong> district, and properties along <strong>I-55</strong>, <strong>I-20</strong>, and <strong>Highway 80</strong>. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Jackson customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Need a specific dumpster size in Jackson?</strong> Check out our guide on renting a <Link href="/blog/20-yard-dumpster-rental-jackson-ms">20-Yard Dumpster in Jackson, MS</Link>.
