@@ -118,15 +118,6 @@ export default function ClintonPage() {
                                 <li>Commercial contractor projects</li>
                             </ul>
 
-                            <div style={{ marginTop: '2rem' }}>
-                                <Image
-                                    src="/images/gallery/15-yard-dumpster-clinton-ms-rental.jpg"
-                                    alt="Roll off 15-yard dumpster rental in a residential neighborhood in Clinton, Mississippi"
-                                    width={600}
-                                    height={400}
-                                    style={{ borderRadius: '8px', objectFit: 'cover', width: '100%', height: 'auto' }}
-                                />
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -138,18 +129,49 @@ export default function ClintonPage() {
                     <p>
                         Clinton is a key part of our Hinds County service area. We provide fast roll off dumpster rental throughout all of Hinds County — from Clinton to Jackson, Byram, Raymond, Terry, and Bolton. Whether your project is residential or commercial, our locally owned trucks are ready to deliver.
                     </p>
-                    <h2>Neighborhoods We Serve in Clinton, MS</h2>
+                    <h2 style={{ marginTop: '2.5rem' }}>Neighborhoods &amp; Communities We Serve in Clinton, MS</h2>
                     <p>
-                        We deliver roll off dumpsters to every neighborhood in Clinton. Whether you're in <strong>Woodmoor</strong>, <strong>Green Acres</strong>, <strong>Pinehaven Estates</strong>, <strong>Olde Town District</strong>, <strong>Countrywood</strong>, <strong>Oakhurst</strong>, <strong>College Hills</strong>, <strong>Hunter's Ridge</strong>, or near the <strong>Mississippi College</strong> campus, we deliver fast and reliable dumpster rental service to your door.
+                        Clinton is a college town with a rich historic core and fast-growing residential corridors — and we deliver to every corner of it. Our roll off dumpsters reach every neighborhood and road in Clinton, including:
                     </p>
+                    <ul className={styles.projectsList} style={{ marginBottom: '1.5rem' }}>
+                        <li><strong>Olde Towne Clinton</strong> — Historic district on the National Register of Historic Places; brick-paved streets near Mississippi College; commercial cleanouts &amp; older home renovations (ZIP 39056)</li>
+                        <li><strong>Mississippi College campus area</strong> — State&apos;s oldest private university corridor; residential &amp; commercial projects along College Street &amp; Jefferson Street</li>
+                        <li><strong>Cascades &amp; Copper Creek</strong> — Active residential subdivisions in the Clinton growth corridor; roofing, remodeling &amp; yard debris projects</li>
+                        <li><strong>Woodmoor &amp; Trailwood</strong> — Established subdivisions with frequent estate cleanout &amp; renovation activity</li>
+                        <li><strong>Hunter&apos;s Ridge &amp; Horseshoe Bend</strong> — Residential communities off Clinton Parkway &amp; Northside Drive</li>
+                        <li><strong>Southern Oaks &amp; Indian Trails</strong> — Family neighborhoods in the western Clinton corridor</li>
+                        <li><strong>Lakeridge &amp; Lakeview Heights</strong> — Established residential areas with active home improvement projects</li>
+                        <li><strong>Clinton Park</strong> — Residential subdivision near Clinton Parkway; frequent driveway dumpster deliveries</li>
+                        <li><strong>Northside Drive corridor</strong> — Major arterial with mixed residential &amp; commercial service; runs north through the city (ZIP 39056)</li>
+                        <li><strong>Clinton Boulevard &amp; Highway 80 corridor</strong> — Commercial strip &amp; older residential stock heading toward Jackson</li>
+                        <li><strong>Natchez Trace Parkway (Milepost 89) area</strong> — Scenic rural-residential corridor at Clinton&apos;s western edge; rural property cleanouts</li>
+                        <li><strong>I-20 Clinton exits &amp; Pinehaven area</strong> — Commercial &amp; contractor projects along the interstate corridor</li>
+                    </ul>
                     <p>
-                        Clinton's family-friendly neighborhoods and active development make it one of Hinds County's most in-demand service areas. We're proud to support Clinton residents with professional roll off dumpster rentals backed by 5-star service. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other local customers.
+                        Clinton&apos;s family-friendly neighborhoods and active development make it one of Hinds County&apos;s most in-demand service areas. We&apos;re proud to support Clinton residents with professional roll off dumpster rentals backed by 5-star service. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other local customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Cleaning out a house?</strong> Read our comprehensive guide on <Link href="/blog/estate-cleanout-dumpster-rental-central-ms">Renting a Dumpster for Estate Cleanouts in Central MS</Link>.
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Clinton is located in <Link href="/service-areas/hinds-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Hinds County</Link> — see all Hinds County cities we serve.
+                    </p>
+                </div>
+            </section>
+
+            <section style={{ padding: 'var(--spacing-2xl) 0' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
+                        <Image
+                            src="/images/gallery/15-yard-dumpster-clinton-ms-rental.jpg"
+                            alt="Mid South Dumpster Rentals 15-yard roll-off container in a residential neighborhood in Clinton, Mississippi (Hinds County) — near Olde Towne &amp; Mississippi College"
+                            width={760}
+                            height={480}
+                            style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                        />
+                    </div>
+                    <p style={{ textAlign: 'center', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>
+                        Mid South Dumpster Rentals delivery in Clinton, MS (Hinds County) — same-day roll-off service near Olde Towne, Mississippi College &amp; surrounding neighborhoods.
                     </p>
                 </div>
             </section>
