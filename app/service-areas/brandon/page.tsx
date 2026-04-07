@@ -136,14 +136,28 @@ export default function BrandonPage() {
                 <div className="container">
                     <h2>Roll Off Dumpster Rental Serving All of Rankin County, MS</h2>
                     <p>
-                        Brandon is the Rankin County seat, and it's a key part of our service territory. We provide fast roll off dumpster rental throughout all of Rankin County — from Brandon and Pearl to Flowood, Richland, Florence, and Pelahatchie. Whether your project is a quick residential cleanout or a multi-week commercial job, our locally owned trucks are ready.
+                        Brandon is the Rankin County seat, and it&apos;s a key part of our service territory. We provide fast roll off dumpster rental throughout all of Rankin County — from Brandon and Pearl to Flowood, Richland, Florence, and Pelahatchie. Whether your project is a quick residential cleanout or a multi-week commercial job, our locally owned trucks are ready.
                     </p>
-                    <h2>Neighborhoods We Serve in Brandon, MS</h2>
+                    <h2>Neighborhoods &amp; Communities We Serve in Brandon, MS</h2>
                     <p>
-                        We proudly deliver roll off dumpsters to every neighborhood in Brandon. Whether you're in <strong>Castle Woods</strong>, <strong>Gardens of Manship</strong>, <strong>Hidden Hills</strong>, <strong>Crossgates</strong>, <strong>Crossview Plantation</strong>, <strong>Bellegrove</strong>, <strong>Waterwood</strong>, <strong>Copperfield</strong>, or <strong>Glen Arbor</strong>, we deliver fast and reliable roll off dumpster service.
+                        Brandon is one of the fastest-growing cities in Mississippi, and our trucks are in its neighborhoods every week. We deliver roll off dumpsters across every subdivision, road, and community in Brandon, including:
                     </p>
+                    <ul className={styles.projectsList} style={{ marginBottom: '1.5rem' }}>
+                        <li><strong>Crossgates</strong> — One of Brandon&apos;s largest and most established subdivisions; active roofing, remodeling &amp; cleanout work along Crossgates Boulevard (ZIP 39042)</li>
+                        <li><strong>Castlewoods</strong> — Upscale gated community with golf course off Castlewoods Boulevard; estate cleanouts &amp; high-end renovation projects</li>
+                        <li><strong>Shiloh &amp; Shiloh Crossing</strong> — Established residential area along Hwy 80 East; frequent home renovation &amp; yard debris projects</li>
+                        <li><strong>Castle Woods / Bellegrove</strong> — Newer residential developments in northeast Brandon; active new construction &amp; remodeling corridor</li>
+                        <li><strong>Gardens of Manship</strong> — Established subdivision off Hwy 471 / Manship Road corridor</li>
+                        <li><strong>Hidden Hills &amp; Copperfield</strong> — Residential neighborhoods off Old Hwy 80 &amp; Brandon Road areas</li>
+                        <li><strong>Waterwood &amp; Glen Arbor</strong> — Quiet residential communities in the west Brandon corridor</li>
+                        <li><strong>Crossview Plantation</strong> — Established subdivision along the Hwy 80 East / Rankin County line corridor</li>
+                        <li><strong>Winner&apos;s Circle &amp; Reservoir Point</strong> — Brandon communities near the Ross Barnett Reservoir spillway area</li>
+                        <li><strong>Downtown Brandon / Rankin County Courthouse area</strong> — Historic downtown core; commercial cleanouts, contractor staging &amp; older residential stock (ZIP 39042)</li>
+                        <li><strong>Highway 80 East corridor</strong> — Commercial strip east of Jackson; industrial &amp; contractor work heading toward Pelahatchie</li>
+                        <li><strong>Highway 471 / Airport Road corridor</strong> — Growth corridor connecting Brandon to Flowood &amp; Pearl; new construction &amp; commercial projects</li>
+                    </ul>
                     <p>
-                        Brandon's thriving community and expanding development make it one of the metro area's most desirable locations for home improvement and construction. We're proud to serve Rankin County with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Brandon customers.
+                        Brandon&apos;s thriving community and expanding development make it one of the metro area&apos;s most desirable locations for home improvement and construction. We&apos;re proud to serve Rankin County with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Brandon customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Planning a rental?</strong> Read our guide on <Link href="/blog/dumpster-rental-brandon-ms">Dumpster Rentals in Brandon, MS</Link> for more local tips and advice on sizing.
