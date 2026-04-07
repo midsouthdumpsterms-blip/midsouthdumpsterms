@@ -136,14 +136,27 @@ export default function FlowoodPage() {
                 <div className="container">
                     <h2>Roll Off Dumpster Rental Serving All of Rankin County from Flowood</h2>
                     <p>
-                        Flowood's prime location at the crossroads of I-20 and Lakeland Drive makes it a central hub for our Rankin County service area. We provide fast roll off dumpster rental throughout all of Rankin County — from Flowood and Pearl to Brandon, Richland, Florence, and beyond.
+                        Flowood&apos;s prime location at the crossroads of I-20 and Lakeland Drive makes it a central hub for our Rankin County service area. We provide fast roll off dumpster rental throughout all of Rankin County — from Flowood and Pearl to Brandon, Richland, Florence, and beyond.
                     </p>
-                    <h2>Neighborhoods We Serve in Flowood</h2>
+                    <h2>Neighborhoods &amp; Areas We Serve in Flowood, MS</h2>
                     <p>
-                        We proudly deliver roll off dumpsters to every neighborhood in Flowood. Whether you're in <strong>Laurelwood</strong>, <strong>Laurelwood Estates</strong>, <strong>Traditions</strong>, <strong>Latter Rayne</strong>, <strong>Lineage Lake</strong>, <strong>Kensington</strong>, <strong>Lakeland East</strong>, or <strong>Aubry Hills</strong>, we deliver fast, reliable dumpster rental service to your location.
+                        Flowood is one of the Jackson metro&apos;s most active commercial and residential growth areas — and one of our busiest delivery zones. We deliver roll off dumpsters throughout every neighborhood and corridor in Flowood, including:
                     </p>
+                    <ul className={styles.projectsList} style={{ marginBottom: '1.5rem' }}>
+                        <li><strong>Dogwood &amp; Oakridge</strong> — Upscale gated communities with estate-sized lots off Lakeland Drive; high-end remodels &amp; renovation projects (ZIP 39232)</li>
+                        <li><strong>Laurelwood &amp; Laurelwood Estates</strong> — Established residential neighborhoods; active roofing, remodeling &amp; cleanout work</li>
+                        <li><strong>Kensington</strong> — Residential subdivision off Old Fannin Road; HOA community with frequent driveway dumpster deliveries</li>
+                        <li><strong>Traditions &amp; Latter Rayne</strong> — Newer residential communities in the Flowood growth corridor</li>
+                        <li><strong>Lineage Lake &amp; Mirror Lake</strong> — Lakeside residential areas off the Flowood / Pearl border zone</li>
+                        <li><strong>Bradford Place &amp; Abundance Pointe</strong> — Established subdivisions in southeast Flowood</li>
+                        <li><strong>Lakeland Drive (Hwy 25) corridor</strong> — Major commercial spine; retail buildouts at Dogwood Festival Market, Dogwood Promenade &amp; surrounding business parks</li>
+                        <li><strong>Winner&apos;s Circle Park area</strong> — Active residential corridor off Winner&apos;s Circle Drive; park, walking tracks &amp; nearby neighborhoods</li>
+                        <li><strong>Sheraton Flowood / The Refuge area</strong> — Hospitality &amp; conference center corridor; commercial renovation &amp; hotel cleanout projects</li>
+                        <li><strong>I-20 frontage &amp; business parks</strong> — New construction, commercial demo &amp; contractor job sites along the interstate corridor (ZIP 39232)</li>
+                        <li><strong>Old Fannin Road corridor</strong> — Connecting Flowood to Pearl; mixed residential &amp; commercial service area</li>
+                    </ul>
                     <p>
-                        Flowood's growing business district and prime residential communities make it one of the metro area's most dynamic service areas. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Flowood customers.
+                        Flowood&apos;s growing business district and prime residential communities make it one of the metro area&apos;s most dynamic service zones. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Flowood customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
                         <strong>Tip for Flowood Homeowners:</strong> We highly recommend our 15-yard dumpster for most mid-sized renovations in the Laurelwood and Kensington areas.
