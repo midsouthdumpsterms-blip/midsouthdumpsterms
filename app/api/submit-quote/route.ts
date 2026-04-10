@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import twilio from 'twilio'
+import { saveLead, createLeadsTable } from '@/lib/db'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -146,6 +147,20 @@ export async function POST(req: NextRequest) {
 
         console.log('📋 NEW QUOTE LEAD:', { name, phone, project, city, timeline, recommendedSize, timestamp: new Date().toISOString() })
 
+        // ── 0. Save lead to Database ────────────────────────────────────────
+        try {
+            await createLeadsTable() // Ensure table exists
+            await saveLead({
+                name, phone, email, project, city, timeline,
+                size: String(recommendedSize),
+                price: quotedPrice ?? 'Call for pricing'
+            })
+            console.log('💾 Lead saved to database')
+        } catch (dbErr) {
+            console.error('❌ Failed to save lead to DB:', dbErr)
+            // Continue with notifications even if DB fails
+        }
+
         const notifyEmail = process.env.NOTIFICATION_EMAIL
         const ownerPhone = process.env.OWNER_PHONE_NUMBER  // e.g. +16013167891
         const twilioSid = process.env.TWILIO_ACCOUNT_SID
@@ -172,20 +187,31 @@ export async function POST(req: NextRequest) {
             }).catch(err => console.error('Resend customer email error:', err))
         }
 
-        // ── 2. SMS via Twilio ────────────────────────────────────────────────
-        if (twilioSid && twilioToken && twilioFrom) {
+        // ── 3. SMS via Twilio ────────────────────────────────────────────────
+        if (twilioSid && twilioToken) {
             const client = twilio(twilioSid, twilioToken)
             const messagingServiceSid = process.env.TWILIO_MESSAGING_SERVICE_SID
+            const messageConfig = (to: string, body: string) => ({
+                body,
+                to: to.startsWith('+') ? to : `+1${to.replace(/\D/g, '')}`,
+                ...(messagingServiceSid ? { messagingServiceSid } : { from: twilioFrom })
+            })
 
             // Text the CUSTOMER their quote
             if (cleanPhone.length === 10) {
-                await client.messages.create({
-                    body: buildCustomerSms({ name, recommendedSize, city, quotedPrice: quotedPrice ?? 'Call for pricing', days: days ?? 'rental' }),
-                    ...(messagingServiceSid ? { messagingServiceSid } : { from: twilioFrom }),
-                    to: `+1${cleanPhone}`,
-                }).catch(err => console.error('Twilio customer SMS error:', err))
+                await client.messages.create(messageConfig(cleanPhone, buildCustomerSms({
+                    name, recommendedSize, city,
+                    quotedPrice: quotedPrice ?? 'Call for pricing',
+                    days: days ?? 'rental'
+                })))
+                .then(msg => console.log(`✅ Customer SMS sent: ${msg.sid}`))
+                .catch(err => console.error('❌ Twilio customer SMS error:', {
+                    code: err.code,
+                    message: err.message,
+                    status: err.status
+                }))
 
-                // Schedule 48-hour follow-up (skip "Just Planning" leads — they said no rush)
+                // Schedule 48-hour follow-up (skip "Just Planning" leads)
                 if (messagingServiceSid && timeline !== 'planning') {
                     const followUpAt = new Date(Date.now() + 48 * 60 * 60 * 1000)
                     await client.messages.create({
@@ -194,24 +220,35 @@ export async function POST(req: NextRequest) {
                         to: `+1${cleanPhone}`,
                         scheduleType: 'fixed',
                         sendAt: followUpAt,
-                    }).catch(err => console.error('Twilio follow-up SMS error:', err))
-                    console.log(`🗓️ Follow-up scheduled for ${followUpAt.toISOString()} → ${cleanPhone}`)
+                    })
+                    .then(msg => console.log(`🗓️ Follow-up scheduled: ${msg.sid}`))
+                    .catch(err => console.error('❌ Twilio follow-up SMS error:', {
+                        code: err.code,
+                        message: err.message
+                    }))
                 }
+            } else {
+                console.warn(`⚠️ SMS skipped: Invalid customer phone format (${phone})`)
             }
 
             // Text the OWNER a short alert
             if (ownerPhone) {
-                await client.messages.create({
-                    body: buildOwnerSms({ name, phone, project, city, timeline, recommendedSize, quotedPrice: quotedPrice ?? 'unknown', days: days ?? 'unknown' }),
-                    from: twilioFrom,
-                    to: ownerPhone,
-                }).catch(err => console.error('Twilio owner SMS error:', err))
+                await client.messages.create(messageConfig(ownerPhone, buildOwnerSms({
+                    name, phone: phone ?? 'unknown', project, city, timeline,
+                    recommendedSize, quotedPrice: quotedPrice ?? 'unknown', days: days ?? 'unknown'
+                })))
+                .then(msg => console.log(`🚨 Owner alert sent: ${msg.sid}`))
+                .catch(err => console.error('❌ Twilio owner SMS error:', {
+                    code: err.code,
+                    message: err.message,
+                    status: err.status
+                }))
             }
         }
 
         return NextResponse.json({ success: true })
     } catch (err) {
-        console.error('Quote submission error:', err)
+        console.error('💥 Quote submission system error:', err)
         return NextResponse.json({ success: false }, { status: 500 })
     }
 }
