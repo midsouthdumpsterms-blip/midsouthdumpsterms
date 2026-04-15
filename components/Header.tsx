@@ -200,11 +200,6 @@ export default function Header() {
                                 Book Now
                             </Link>
                         </li>
-                        <li>
-                            <Link href="/get-a-quote" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--color-secondary)', fontWeight: 700 }}>
-                                Get a Quote
-                            </Link>
-                        </li>
                         <div className={styles.ctaWrapper}>
                             <a
                                 href="tel:6013167891"

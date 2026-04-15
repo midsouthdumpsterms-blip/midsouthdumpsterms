@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
                     </ul>
 
                     <h2 style={{ color: 'var(--color-gray-900)', marginTop: '2rem' }}>3. SMS / Text Message Communications</h2>
-                    <p>By submitting your phone number through our quote request form at <strong>midsouthdumpsterms.com/get-a-quote</strong>, you consent to receive a SMS message containing your personalized dumpster rental quote from Mid South Dumpster Rentals. Message and data rates may apply.</p>
+                    <p>While our automated quote tool is undergoing a scheduled upgrade, we provide personalized quotes primarily via phone. By calling us at 601-316-7891 or optionally providing your number in a contact request, you consent to receive communications regarding your quote. Message and data rates may apply.</p>
                     <ul style={{ paddingLeft: '1.5rem' }}>
                         <li><strong>To opt out:</strong> Reply <strong>STOP</strong> to any text message you receive from us.</li>
                         <li><strong>For help:</strong> Reply <strong>HELP</strong> or call us at 601-316-7891.</li>
