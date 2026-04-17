@@ -4,6 +4,95 @@
     color: white;
 }
 
+/* BBB Accredited Business Badge - Featured card */
+.bbbBadge {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border: 2px solid rgba(255, 215, 0, 0.5) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.bbbBadge::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255,215,0,0.3), transparent, rgba(255,215,0,0.3));
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bbbBadge:hover {
+    border-color: rgba(255, 215, 0, 0.85) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2) !important;
+}
+
+.bbbLogoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.bbbFlame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 8px 10px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.bbbTextBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+    gap: 4px;
+    position: relative;
+}
+
+.bbbLetters {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.bbbReg {
+    position: absolute;
+    top: -4px;
+    right: -12px;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.bbbAccredited {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(255,255,255,0.4);
+    padding-top: 4px;
+    width: 100%;
+}
+
+.bbbBadge p {
+    position: relative;
+    z-index: 1;
+}
+
+
 .badgesGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

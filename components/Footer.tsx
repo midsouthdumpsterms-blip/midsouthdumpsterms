@@ -114,26 +114,56 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.footerBottom}>
-                    <div className={styles.socialLinks}>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1.5rem', marginBottom: 'var(--spacing-md)', flexWrap: 'wrap' }}>
+                        <div className={styles.socialLinks} style={{ margin: 0 }}>
+                            <a
+                                href="https://www.facebook.com/profile.php?id=61578838911863"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Visit us on Facebook"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </a>
+                            <a
+                                href="https://www.yelp.com/biz/mid-south-dumpster-rentals-jackson-2"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Review us on Yelp"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M21.111 18.226c-.141.969-2.119 3.483-3.029 3.847-.311.124-.611.094-.85-.09-.154-.12-.314-.365-2.447-3.827l-.633-1.032c-.244-.37-.199-.857.104-1.229.297-.362.732-.506 1.104-.368l1.112.409c3.681 1.352 3.967 1.471 4.161 1.588.309.185.475.446.478.702zm-6.944-12.086c-.045-.301.11-.611.373-.748.311-.162.685-.117.96.108 1.006.823 2.455 2.023 2.668 2.223.246.232.369.575.308.919-.053.302-.231.581-.5.769l-3.382 2.365c-.379.265-.9.185-1.173-.179-.267-.357-.206-.858.136-1.122l2.61-2.335zm-5.833-3.777c.314-.02.603.135.748.398.159.289.13.668-.074.938l-2.365 3.382c-.265.379-.786.458-1.149.179-.357-.267-.458-.768-.226-1.123l2.335-2.61c.201-.225.474-.353.731-.364zm-7.878 9.969c.312-.139.684-.081.96.145.275.227.379.602.267.936-.407 1.219-.917 2.76-1.032 3.08-.133.37-.423.602-.746.602-.36 0-.719-.27-.899-.676-.311-.703-.5-3.394-.5-4.05 0-.311.135-.611.373-.748.311-.162.685-.117.96.108l.617.603z" />
+                                </svg>
+                            </a>
+                        </div>
+                        {/* BBB Accredited Business Seal */}
                         <a
-                            href="https://www.facebook.com/profile.php?id=61578838911863"
+                            href="https://www.bbb.org/us/ms/jackson/profile/dumpster-rental/mid-south-dumpster-rentals-llc-0575-1000133697"
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label="Visit us on Facebook"
+                            aria-label="Mid South Dumpster Rentals BBB Accredited Business Profile"
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                padding: '6px 14px',
+                                background: '#007B84',
+                                borderRadius: '8px',
+                                textDecoration: 'none',
+                                border: '1px solid rgba(255,255,255,0.2)',
+                                transition: 'all 0.2s ease',
+                            }}
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 54" fill="white" width="22" height="30">
+                                <path d="M20 0 C13 10 6 14 9 26 C10 31 15 34 15 34 C13 28 16 24 19 20 C19 27 21 29 20 36 C23 32 25 28 24 20 C27 24 28 29 27 36 C29 31 31 26 28 16 C31 20 32 24 31 28 C34 20 31 12 20 0Z" />
+                                <rect x="12" y="38" width="16" height="4" rx="1" />
+                                <rect x="7" y="44" width="26" height="4" rx="1" />
                             </svg>
-                        </a>
-                        <a
-                            href="https://www.yelp.com/biz/mid-south-dumpster-rentals-jackson-2"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Review us on Yelp"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M21.111 18.226c-.141.969-2.119 3.483-3.029 3.847-.311.124-.611.094-.85-.09-.154-.12-.314-.365-2.447-3.827l-.633-1.032c-.244-.37-.199-.857.104-1.229.297-.362.732-.506 1.104-.368l1.112.409c3.681 1.352 3.967 1.471 4.161 1.588.309.185.475.446.478.702zm-6.944-12.086c-.045-.301.11-.611.373-.748.311-.162.685-.117.96.108 1.006.823 2.455 2.023 2.668 2.223.246.232.369.575.308.919-.053.302-.231.581-.5.769l-3.382 2.365c-.379.265-.9.185-1.173-.179-.267-.357-.206-.858.136-1.122l2.61-2.335zm-5.833-3.777c.314-.02.603.135.748.398.159.289.13.668-.074.938l-2.365 3.382c-.265.379-.786.458-1.149.179-.357-.267-.458-.768-.226-1.123l2.335-2.61c.201-.225.474-.353.731-.364zm-7.878 9.969c.312-.139.684-.081.96.145.275.227.379.602.267.936-.407 1.219-.917 2.76-1.032 3.08-.133.37-.423.602-.746.602-.36 0-.719-.27-.899-.676-.311-.703-.5-3.394-.5-4.05 0-.311.135-.611.373-.748.311-.162.685-.117.96.108l.617.603z" />
-                            </svg>
+                            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
+                                <span style={{ fontSize: '1rem', fontWeight: 900, color: 'white', letterSpacing: '1px' }}>BBB</span>
+                                <span style={{ fontSize: '0.5rem', fontWeight: 700, color: 'rgba(255,255,255,0.9)', letterSpacing: '1px', textTransform: 'uppercase', borderTop: '1px solid rgba(255,255,255,0.4)', paddingTop: '2px' }}>Accredited</span>
+                            </div>
                         </a>
                     </div>
                     <p>&copy; {currentYear} Mid South Dumpster Rentals, LLC. All rights reserved.</p>

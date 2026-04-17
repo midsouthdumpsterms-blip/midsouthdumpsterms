@@ -96,6 +96,10 @@ export default function Home() {
                                 <span className={styles.checkmark}>✓</span>
                                 <span>Transparent Pricing</span>
                             </div>
+                            <div className={styles.feature}>
+                                <span className={styles.checkmark}>✓</span>
+                                <span>BBB Accredited Business</span>
+                            </div>
                         </div>
                     </div>
                 </div>

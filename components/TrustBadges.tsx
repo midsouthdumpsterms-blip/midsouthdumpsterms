@@ -5,6 +5,24 @@ export default function TrustBadges() {
         <section className={styles.trustBadges}>
             <div className="container">
                 <div className={styles.badgesGrid}>
+                    <div className={`${styles.badge} ${styles.bbbBadge}`}>
+                        <div className={styles.bbbLogoContainer}>
+                            <div className={styles.bbbFlame}>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 80" fill="white" width="36" height="48">
+                                    <path d="M30 0 C20 15 10 20 14 38 C16 46 22 50 22 50 C20 42 24 36 28 30 C28 40 32 44 30 54 C34 48 38 42 36 30 C40 36 42 44 40 54 C44 46 46 38 42 24 C46 30 48 36 46 42 C50 30 46 18 30 0Z" />
+                                    <rect x="18" y="58" width="24" height="6" rx="2" />
+                                    <rect x="10" y="66" width="40" height="6" rx="2" />
+                                </svg>
+                            </div>
+                            <div className={styles.bbbTextBlock}>
+                                <span className={styles.bbbLetters}>BBB</span>
+                                <span className={styles.bbbReg}>®</span>
+                                <span className={styles.bbbAccredited}>ACCREDITED<br />BUSINESS</span>
+                            </div>
+                        </div>
+                        <p>Proud member of the Better Business Bureau — held to the highest standards of trust &amp; integrity.</p>
+                    </div>
+
                     <div className={styles.badge}>
                         <div className={styles.icon}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
