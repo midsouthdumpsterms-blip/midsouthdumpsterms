@@ -139,7 +139,7 @@ export default function Footer() {
                         </div>
                         {/* BBB Accredited Business Seal */}
                         <a
-                            href="https://www.bbb.org/us/ms/jackson/profile/dumpster-rental/mid-south-dumpster-rentals-llc-0575-1000133697"
+                            href="https://www.bbb.org/us/ms/jackson/profile/dumpster-rentals/mid-south-dumpster-rentals-llc-0523-235907877"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Mid South Dumpster Rentals BBB Accredited Business Profile"
