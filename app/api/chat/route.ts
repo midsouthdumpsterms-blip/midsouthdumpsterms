@@ -196,10 +196,12 @@ RESPONSE GUIDELINES
 
 export async function POST(request: NextRequest) {
     // ─── Origin Validation ────────────────────────────────────────────────────
-    // Block requests that don't come from the actual website.
-    // Allows localhost for local development.
+    // Block requests that come from unapproved external domains.
+    // Empty origin = same-origin request (browser doesn't send Origin for same-domain fetches)
+    // — that's safe and should be allowed.
     const origin = request.headers.get('origin') || ''
     const isAllowed =
+        !origin ||                              // Same-origin (no header sent)
         ALLOWED_ORIGINS.includes(origin) ||
         origin.startsWith('http://localhost') ||
         origin.startsWith('http://127.0.0.1')
