@@ -77,7 +77,10 @@ const ChatBot: React.FC = () => {
                 body: JSON.stringify({ messages: apiMessages }),
             });
 
-            if (!res.ok) throw new Error('API error');
+            if (!res.ok) {
+                const errData = await res.json().catch(() => ({}));
+                throw new Error(errData.error || `HTTP ${res.status}`);
+            }
 
             const data = await res.json();
             const botMessage: Message = {
@@ -86,16 +89,17 @@ const ChatBot: React.FC = () => {
                 sender: 'bot',
             };
             setMessages(prev => [...prev, botMessage]);
-        } catch {
+        } catch (err) {
             const errorMessage: Message = {
                 id: Date.now(),
-                text: "Sorry, something went wrong on my end! Please give us a call at **601-316-7891** and we'll help you out directly. 📞",
+                text: `Debug error: ${err instanceof Error ? err.message : String(err)}`,
                 sender: 'bot',
             };
             setMessages(prev => [...prev, errorMessage]);
         } finally {
             setIsTyping(false);
         }
+
     }, []);
 
     // ─── Send Handler ────────────────────────────────────────────────────────

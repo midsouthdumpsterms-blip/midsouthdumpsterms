@@ -194,6 +194,17 @@ RESPONSE GUIDELINES
 11. Never make up prices, policies, or information not listed above
 12. Don't go off-topic — you're here to help people rent dumpsters`
 
+// ─── GET: Diagnostic Health Check ───────────────────────────────────────────
+export async function GET() {
+    return NextResponse.json({
+        status: 'ok',
+        hasApiKey: !!process.env.ANTHROPIC_API_KEY,
+        keyPrefix: process.env.ANTHROPIC_API_KEY?.slice(0, 18) ?? 'NOT SET',
+        model: 'claude-3-5-haiku-20241022',
+        timestamp: new Date().toISOString(),
+    })
+}
+
 export async function POST(request: NextRequest) {
     // ─── Origin Validation ────────────────────────────────────────────────────
     // Block requests that come from unapproved external domains.
@@ -262,8 +273,10 @@ export async function POST(request: NextRequest) {
         )
     } catch (error) {
         console.error('Chat API error:', error)
+        // Return the actual error message temporarily for debugging
+        const errorMsg = error instanceof Error ? error.message : String(error)
         return NextResponse.json(
-            { error: 'Something went wrong. Please call us at 601-316-7891!' },
+            { error: `[DEBUG] ${errorMsg}` },
             { status: 500 }
         )
     }
