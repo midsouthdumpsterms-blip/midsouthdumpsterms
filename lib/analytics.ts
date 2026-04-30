@@ -278,6 +278,13 @@ function initPricingIdleTracking() {
                         page_path: window.location.pathname,
                     })
                     track('Pricing Idle 45s', { page: window.location.pathname })
+
+                    // Trigger the chatbot to open with a contextual nudge
+                    window.dispatchEvent(new CustomEvent('chatbot-open', {
+                        detail: {
+                            prompt: "Still comparing sizes? I can help you pick the right dumpster for your project in about 30 seconds — just tell me what you're working on! 🎯"
+                        }
+                    }))
                 }, IDLE_MS)
             } else {
                 if (idleTimer) {
