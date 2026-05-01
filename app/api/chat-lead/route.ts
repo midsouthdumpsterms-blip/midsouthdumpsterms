@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
-const LEAD_NOTIFY_EMAIL = 'midsouthdumpsterms@gmail.com'
+const LEAD_NOTIFY_EMAIL = process.env.NOTIFICATION_EMAIL ?? 'midsouthdumpsterms@gmail.com'
 
 const ALLOWED_ORIGINS = [
     'https://www.midsouthdumpsterms.com',
