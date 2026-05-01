@@ -146,7 +146,12 @@ const ChatBot: React.FC = () => {
                                 dangerouslySetInnerHTML={{
                                     __html: msg.text
                                         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                                        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="text-decoration: underline; color: inherit;">$1</a>')
+                                        // Markdown links → clickable anchors (must run before raw URL pass)
+                                        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit; font-weight: 600;">$1</a>')
+                                        // Raw phone number → tel: link (fallback if Claude doesn't use markdown)
+                                        .replace(/(?<!\[)(?<!href=")(?<!">)601-316-7891(?!\])/g, '<a href="tel:6013167891" style="text-decoration: underline; color: inherit; font-weight: 600;">601-316-7891</a>')
+                                        // Raw survcart URL → clickable (fallback)
+                                        .replace(/(?<!\[)(?<!href=")(https:\/\/embed\.survcart\.com[^\s<"]*)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit; font-weight: 600;">[Book Online]</a>')
                                         .replace(/\n/g, '<br/>')
                                         .replace(/\|(.+)\|/g, (match) => {
                                             // Basic markdown table → HTML conversion

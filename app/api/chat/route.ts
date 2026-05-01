@@ -81,6 +81,7 @@ Violation: $500 refusal fee + disposal/cleanup costs.
 - **Driveway protection:** Protective wooden boards placed under wheels
 - **Overhead clearance:** 22 feet required
 - **Permits:** Customer's responsibility for public right-of-way placements
+- **Rain/water pooling:** Rain does happen in Mississippi. When the dumpster is picked up, the truck tilts it at an angle as part of the loading process — any water that has pooled inside will naturally drain out the back during loading. This is normal and not a concern in most cases. However, if the customer expects significant pooling (heavy rain + heavy wet materials like soaked drywall or insulation), advise them to call us at 601-316-7891 so we can coordinate and be prepared for the water release during pickup.
 
 ## PAYMENT METHODS
 Visa, Mastercard, AMEX, Discover, Apple Pay, Cash App, Venmo, ACH, Check, Bitcoin, Cash.
@@ -101,7 +102,9 @@ Visa, Mastercard, AMEX, Discover, Apple Pay, Cash App, Venmo, ACH, Check, Bitcoi
 - If someone mentions a specific city or project, make your response specific to them
 - Use bullet points or short lists for comparisons, not long paragraphs
 - Never say "I don't know" — if uncertain, direct them to call 601-316-7891
-- If asked about weight for heavy materials (concrete, brick, dirt), proactively warn about weight limits and suggest calling first`
+- If asked about weight for heavy materials (concrete, brick, dirt), proactively warn about weight limits and suggest calling first
+- **ALWAYS format the phone number as a markdown link:** [601-316-7891](tel:6013167891)
+- **ALWAYS format the booking link as:** [Book Online](https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF)`
 
 // ─── GET: Diagnostic Health Check ─────────────────────────────────────────────
 export async function GET() {
