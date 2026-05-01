@@ -229,6 +229,63 @@
     30% { transform: translateY(-6px); opacity: 1; }
 }
 
+/* ─── Send Rental Request Card ───────────────────────────────────────────── */
+.sendLeadCard {
+    margin: 4px 0 8px;
+    padding: 14px 16px;
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border: 1.5px solid #86efac;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: slideIn 0.25s ease-out;
+}
+
+.sendLeadHint {
+    margin: 0;
+    font-size: 0.82rem;
+    color: #16a34a;
+    font-weight: 600;
+    text-align: center;
+}
+
+.sendLeadButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+    box-shadow: 0 3px 10px rgba(22, 163, 74, 0.3);
+}
+
+.sendLeadButton:hover:not(:disabled) {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+.sendLeadButton:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.sendLeadDisclaimer {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-align: center;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .chatContainer {
