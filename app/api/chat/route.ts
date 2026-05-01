@@ -1,9 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk'
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
-
-const resend = new Resend(process.env.RESEND_API_KEY)
-const LEAD_NOTIFY_EMAIL = 'midsouthdumpsterms@gmail.com'
 
 const client = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY,
@@ -167,24 +163,10 @@ interface LeadData {
     summary: string
 }
 
-async function sendChatLeadEmail(lead: LeadData, conversationMessages: { sender: string; text: string }[]) {
-    if (!process.env.RESEND_API_KEY) return
-
-    const now = new Date().toLocaleString('en-US', {
-        timeZone: 'America/Chicago',
-        month: 'short', day: 'numeric', year: 'numeric',
-        hour: 'numeric', minute: '2-digit', hour12: true,
-    })
-
-    const callLink = `tel:${lead.phone.replace(/\D/g, '')}`
-    const sizeLabel = lead.size ? `${lead.size}-Yard` : 'Not specified'
-    const priceMap: Record<string, string> = { '10': 'From $349', '15': 'From $399', '20': 'From $449' }
-    const price = priceMap[lead.size] ?? 'Call for pricing'
-
 // Email sending is handled by /api/chat-lead/route.ts when user clicks "Send Rental Request"
-// This function is kept as a no-op for backwards compatibility
-async function sendChatLeadEmail(_lead: LeadData, _conversationMessages: { sender: string; text: string }[]) {
-    // No-op: email is now sent from the dedicated /api/chat-lead endpoint
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+async function sendChatLeadEmail(_lead: LeadData, _msgs: { sender: string; text: string }[]) {
+    // No-op: moved to dedicated endpoint
 }
 
 // ─── GET: Diagnostic Health Check ─────────────────────────────────────────────
