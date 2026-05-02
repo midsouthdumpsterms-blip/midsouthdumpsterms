@@ -106,72 +106,9 @@ Visa, Mastercard, AMEX, Discover, Apple Pay, Cash App, Venmo, ACH, Check, Bitcoi
 - **ALWAYS format the phone number as a markdown link:** [601-316-7891](tel:6013167891)
 - **ALWAYS format the booking link as:** [Book Online](https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF)
 
-## BOOKING INTAKE — LEAD COLLECTION
-If a customer says they want to book, place an order, or request service through the chat, collect the following fields one or two at a time, naturally in conversation:
-1. **Full name** (first and last)
-2. **Phone number**
-3. **Email address**
-4. **Service address** (where to deliver)
-5. **Dumpster size** (10, 15, or 20 yard — recommend based on their project if they haven't chosen)
-6. **Days needed** (1, 3, or 7)
-7. **Placement** (where on the property they'd like the dumpster placed — e.g. driveway, side yard, backyard, street)
-8. **Business name** (optional — ask casually if it seems like a contractor or commercial job, skip if clearly residential)
-9. **Preferred delivery date** (ask for this, but it's optional)
-
-Once you have collected ALL of fields 1–6, do ONLY these two things and nothing else:
-
-**A)** Show a summary and ask for confirmation — write EXACTLY this (fill in their details):
-
-"Here's what I have for your rental request:
-
-✅ **Name:** [Full Name]
-✅ **Business:** [Business Name or omit line if none]
-✅ **Phone:** [Phone]
-✅ **Email:** [Email]
-✅ **Address:** [Service Address]
-✅ **Placement:** [Where on property]
-✅ **Size:** [X]-yard | [Y] day(s) | [Date or 'Flexible']
-
-Does all of this look correct? If yes, click the **Send Rental Request** button below."
-
-Do NOT change this last line. Do NOT add "click Book Online" or any other call to action. The ONLY action you tell them to take is clicking the Send Rental Request button.
-
-**B)** Immediately after, with NO other text, append the hidden data block:
-<!--LEAD_CAPTURE:{"name":"[full name]","business":"[business name or '']","phone":"[phone]","email":"[email]","address":"[service address]","placement":"[placement location]","size":"[10/15/20]","days":"[1/3/7]","date":"[preferred date or 'Not specified']","summary":"[1-2 sentence conversation summary]"}-->
-
-## ⛔ ABSOLUTE PROHIBITIONS — NEVER SAY THESE
-These are strictly forbidden. Violating these means you have made a critical error:
-- "Your dumpster is scheduled" / "is confirmed" / "is booked"
-- "You're all set"
-- "The total is $___" (as if an order is placed)
-- "Delivery on the morning of..." / any specific delivery time
-- "I've scheduled" / "I've booked" / "I've reserved" / "I've placed your order"
-- Any pricing or order summary after the confirmation step
-- Any statement that implies the booking is finalized
-- "click Book Online" or any link to the booking page after collecting lead info
-- Any call to action OTHER than "Send Rental Request" in the confirmation summary
-
-The chatbot CANNOT process payments, confirm availability, or place orders. You collect info — the team confirms everything.`
-
-// ─── Chat Lead Email Builder ──────────────────────────────────────────────────
-interface LeadData {
-    name: string
-    business?: string
-    phone: string
-    email: string
-    address: string
-    placement?: string
-    size: string
-    days: string
-    date: string
-    summary: string
-}
-
-// Email sending is handled by /api/chat-lead/route.ts when user clicks "Send Rental Request"
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-async function sendChatLeadEmail(_lead: LeadData, _msgs: { sender: string; text: string }[]) {
-    // No-op: moved to dedicated endpoint
-}
+## WHEN A CUSTOMER WANTS TO BOOK
+If a customer says they want to book, place an order, schedule a delivery, or get started, do NOT collect their personal information. Instead, direct them to one of these two options:
+If a customer wants to book, please direct them to [Book Online](https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF) or call us at [601-316-7891](tel:6013167891).`
 
 // ─── GET: Diagnostic Health Check ─────────────────────────────────────────────
 export async function GET() {
