@@ -34,6 +34,8 @@ const ChatBot: React.FC = () => {
     const [isTyping, setIsTyping] = useState(false);
     const [suggestions, setSuggestions] = useState<string[]>(INITIAL_SUGGESTIONS);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    // Guard: ensure the proactive nudge message is only injected once per session
+    const nudgeSentRef = useRef(false);
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -46,6 +48,10 @@ const ChatBot: React.FC = () => {
     // Listen for pricing-idle trigger from analytics.ts
     useEffect(() => {
         const handleChatbotOpen = (e: Event) => {
+            // Ignore if the nudge has already been shown this session
+            if (nudgeSentRef.current) return;
+            nudgeSentRef.current = true;
+
             const customEvent = e as CustomEvent;
             setIsOpen(true);
             if (customEvent.detail?.message) {

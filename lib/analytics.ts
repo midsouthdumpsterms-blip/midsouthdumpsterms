@@ -270,8 +270,12 @@ function initPricingIdleTracking() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !firedThisSession) {
+                // Mark immediately so no other matched element can start a second timer
+                firedThisSession = true
+                // Stop observing every element — we only need one trigger
+                observer.disconnect()
+
                 idleTimer = setTimeout(() => {
-                    firedThisSession = true
                     fireEvent('pricing_idle_45s', {
                         event_category: 'Decision Signals',
                         event_label: 'Idle on pricing section',
@@ -279,15 +283,17 @@ function initPricingIdleTracking() {
                     })
                     track('Pricing Idle 45s', { page: window.location.pathname })
 
-                    // Trigger the chatbot to open with a contextual nudge
+                    // Trigger the chatbot to open with a contextual nudge (fires once)
                     window.dispatchEvent(new CustomEvent('chatbot-open', {
                         detail: { message: "💡 Need help picking the right size? I'm here! Tell me about your project and I'll point you to the right dumpster — and find you the best deal." }
                     }))
                 }, IDLE_MS)
-            } else {
+            } else if (!firedThisSession) {
+                // User scrolled away before idle timer fired — cancel it
                 if (idleTimer) {
                     clearTimeout(idleTimer)
                     idleTimer = null
+                    firedThisSession = false // allow re-trigger if they scroll back
                 }
             }
         })
