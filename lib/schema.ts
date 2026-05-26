@@ -114,7 +114,7 @@ export function generateLocalBusinessSchema(): LocalBusinessSchema {
         aggregateRating: {
             '@type': 'AggregateRating',
             ratingValue: '5.0',
-            reviewCount: '20',
+            reviewCount: '23',
             bestRating: '5',
             worstRating: '1',
         },
