@@ -5,7 +5,14 @@ export default function TrustBadges() {
         <section className={styles.trustBadges}>
             <div className="container">
                 <div className={styles.badgesGrid}>
-                    <div className={`${styles.badge} ${styles.bbbBadge}`}>
+                    <a
+                        href="https://www.bbb.org/us/ms/jackson/profile/dumpster-rentals/mid-south-dumpster-rentals-llc-0523-235907877/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${styles.badge} ${styles.bbbBadge}`}
+                        style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+                        aria-label="View Mid South Dumpster Rentals BBB Accredited Business Profile"
+                    >
                         <div className={styles.bbbLogoContainer}>
                             <div className={styles.bbbFlame}>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 80" fill="white" width="36" height="48">
@@ -21,7 +28,8 @@ export default function TrustBadges() {
                             </div>
                         </div>
                         <p>Proud member of the Better Business Bureau — held to the highest standards of trust &amp; integrity.</p>
-                    </div>
+                        <span className={styles.bbbProfileLink}>See BBB Profile →</span>
+                    </a>
 
                     <div className={styles.badge}>
                         <div className={styles.icon}>

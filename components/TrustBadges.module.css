@@ -92,6 +92,29 @@
     z-index: 1;
 }
 
+.bbbProfileLink {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 6px 18px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #1a1a2e;
+    background: linear-gradient(135deg, #ffd700, #ffb800);
+    border-radius: 20px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.bbbBadge:hover .bbbProfileLink {
+    background: linear-gradient(135deg, #ffe44d, #ffc933);
+    box-shadow: 0 4px 16px rgba(255, 215, 0, 0.5);
+    transform: translateY(-1px);
+}
+
 
 .badgesGrid {
     display: grid;
