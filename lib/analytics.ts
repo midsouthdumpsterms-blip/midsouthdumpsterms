@@ -282,11 +282,6 @@ function initPricingIdleTracking() {
                         page_path: window.location.pathname,
                     })
                     track('Pricing Idle 45s', { page: window.location.pathname })
-
-                    // Trigger the chatbot to open with a contextual nudge (fires once)
-                    window.dispatchEvent(new CustomEvent('chatbot-open', {
-                        detail: { message: "💡 Need help picking the right size? I'm here! Tell me about your project and I'll point you to the right dumpster — and find you the best deal." }
-                    }))
                 }, IDLE_MS)
             } else if (!firedThisSession) {
                 // User scrolled away before idle timer fired — cancel it
