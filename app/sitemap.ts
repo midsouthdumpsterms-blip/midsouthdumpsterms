@@ -46,9 +46,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'residential-dumpster-rental',
         'commercial-dumpster-rental',
         'construction-dumpster-rental',
+        'demolition-dumpster-rental',
+        'roofing-dumpster-rental',
+        'estate-cleanout-dumpster-rental',
         'roll-off-dumpster-rental',
         'yard-waste-dumpster-rental',
         'same-day-dumpster-rental',
+        'storm-cleanup-dumpster-rental',
     ].map((slug) => ({
         url: `${baseUrl}/services/${slug}`,
         lastModified: new Date(),

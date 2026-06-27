@@ -16,9 +16,13 @@ const serviceLinks = [
     { href: '/services/residential-dumpster-rental', label: 'Residential' },
     { href: '/services/commercial-dumpster-rental', label: 'Commercial' },
     { href: '/services/construction-dumpster-rental', label: 'Construction' },
+    { href: '/services/demolition-dumpster-rental', label: 'Demolition' },
+    { href: '/services/roofing-dumpster-rental', label: 'Roofing' },
+    { href: '/services/estate-cleanout-dumpster-rental', label: 'Estate Cleanout' },
     { href: '/services/roll-off-dumpster-rental', label: 'Roll-Off' },
     { href: '/services/yard-waste-dumpster-rental', label: 'Yard Waste' },
     { href: '/services/same-day-dumpster-rental', label: 'Same-Day' },
+    { href: '/services/storm-cleanup-dumpster-rental', label: 'Storm Cleanup' },
 ]
 
 const serviceAreaLinks = [
