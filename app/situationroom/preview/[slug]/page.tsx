@@ -66,7 +66,7 @@ export default async function PreviewArticlePage({
                 <div className={postStyles.gallerySection} style={{ marginTop: '3rem', marginBottom: '3rem' }}>
                     <h3 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Recent Projects & Our Fleet</h3>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
-                        {pickRandomPhotos(getLocalPhotoPool(), 4).map((photoUrl, idx) => (
+                        {pickRandomPhotos(getLocalPhotoPool(), 6).map((photoUrl, idx) => (
                             <div key={idx} style={{ position: 'relative', width: '100%', aspectRatio: '1/1' }}>
                                 <Image
                                     src={photoUrl}
