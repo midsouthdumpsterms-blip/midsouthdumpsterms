@@ -28,7 +28,7 @@ export async function getDrivePhotoPool(): Promise<string[]> {
     // List all image files in the shared folder
     const url = new URL('https://www.googleapis.com/drive/v3/files')
     url.searchParams.set('q', `'${DRIVE_FOLDER_ID}' in parents and mimeType contains 'image/' and trashed = false`)
-    url.searchParams.set('fields', 'files(id,name)')
+    url.searchParams.set('fields', 'files(id,name,thumbnailLink)')
     url.searchParams.set('pageSize', '500')
     url.searchParams.set('orderBy', 'name')
     url.searchParams.set('key', apiKey)
@@ -43,12 +43,12 @@ export async function getDrivePhotoPool(): Promise<string[]> {
     }
 
     const data = await res.json()
-    const files: DriveFile[] = data.files || []
+    const files: any[] = data.files || []
 
-    // Build direct-access image URLs (works for files shared publicly)
+    // Build uncropped direct-access image URLs
     return files.map(
-      f => `https://lh3.googleusercontent.com/d/${f.id}`
-    )
+      f => (f.thumbnailLink ? f.thumbnailLink.replace('=s220', '=s1200') : '')
+    ).filter(url => url !== '')
   } catch (err) {
     console.error('[Drive] Failed to fetch photo pool:', err)
     return []
