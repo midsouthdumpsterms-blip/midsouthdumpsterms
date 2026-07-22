@@ -92,8 +92,7 @@ export default async function DbArticlePage({
                         alt={article.title}
                         style={{
                             width: '100%',
-                            maxHeight: '480px',
-                            objectFit: 'cover',
+                            height: 'auto',
                             borderRadius: '12px',
                             marginBottom: '2rem',
                         }}
