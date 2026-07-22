@@ -1,0 +1,4 @@
+{
+  "_readme": "Map Soro article slugs to your own photo paths or URLs. Use local paths like /photos/my-photo.jpg (put files in /public/photos/) or full https:// URLs from Google Drive. Leave value as empty string '' to show no photo until you add one. Google Drive auto-pool will fill blanks automatically once set up.",
+  "dumpster-rental-jackson-ms-size-price-guide": ""
+}
