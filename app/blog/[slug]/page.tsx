@@ -1,20 +1,21 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getSoroArticles, getSoroArticleContent } from '@/lib/soro'
-import { getDrivePhotoPool, pickPhotoForSlug } from '@/lib/drive-photos'
+import { sql } from '@vercel/postgres'
 import postStyles from '../blog-post.module.css'
-import photoOverrides from '../../../soro-photo-overrides.json'
 
-// Recheck for new Soro content every 4 hours
-export const revalidate = 14400
+export const revalidate = 3600 // Check for new db posts every hour
 
-// Allow slugs not known at build time (new Soro articles)
+// Allow slugs not known at build time (new DB articles)
 export const dynamicParams = true
 
 export async function generateStaticParams() {
-    const articles = await getSoroArticles()
-    return articles.map(a => ({ slug: a.slug }))
+    try {
+        const { rows } = await sql`SELECT slug FROM blog_posts WHERE status = 'PUBLISHED'`;
+        return rows.map(r => ({ slug: r.slug }))
+    } catch (err) {
+        return []
+    }
 }
 
 export async function generateMetadata({
@@ -22,44 +23,48 @@ export async function generateMetadata({
 }: {
     params: { slug: string }
 }): Promise<Metadata> {
-    const articles = await getSoroArticles()
-    const article = articles.find(a => a.slug === params.slug)
-    if (!article) return {}
+    try {
+        const { rows } = await sql`
+            SELECT title, excerpt FROM blog_posts 
+            WHERE slug = ${params.slug} AND status = 'PUBLISHED'
+        `;
+        const article = rows[0];
+        if (!article) return {}
 
-    return {
-        title: `${article.title} | Mid South Dumpster Rentals`,
-        description: article.excerpt,
-        openGraph: {
-            title: article.title,
+        return {
+            title: `${article.title} | Mid South Dumpster Rentals`,
             description: article.excerpt,
-            url: `https://midsouthdumpsterms.com/blog/${params.slug}`,
-        },
+            openGraph: {
+                title: article.title,
+                description: article.excerpt,
+                url: `https://midsouthdumpsterms.com/blog/${params.slug}`,
+            },
+        }
+    } catch (err) {
+        return {}
     }
 }
 
-export default async function SoroArticlePage({
+export default async function DbArticlePage({
     params,
 }: {
     params: { slug: string }
 }) {
-    // Only handle slugs that are Soro articles
-    const articles = await getSoroArticles()
-    const article = articles.find(a => a.slug === params.slug)
-    if (!article) notFound()
-
-    const content = await getSoroArticleContent(article.id)
-    if (!content) notFound()
-
-    // Look up custom photo — falls back gracefully to no image
-    const overrides = photoOverrides as Record<string, string>
-    let customPhoto = overrides[params.slug] || null
-
-    if (!customPhoto) {
-        const photoPool = await getDrivePhotoPool()
-        customPhoto = pickPhotoForSlug(photoPool, params.slug)
+    let rows: any[] = [];
+    try {
+        const result = await sql`
+            SELECT * FROM blog_posts 
+            WHERE slug = ${params.slug} AND status = 'PUBLISHED'
+        `;
+        rows = result.rows;
+    } catch (err) {
+        console.error('Failed to fetch DB article', err);
     }
 
-    const publishDate = new Date(article.isoDate).toLocaleDateString('en-US', {
+    if (rows.length === 0) notFound()
+    const article = rows[0];
+
+    const publishDate = new Date(article.published_at).toLocaleDateString('en-US', {
         month: 'long',
         day: 'numeric',
         year: 'numeric',
@@ -81,10 +86,9 @@ export default async function SoroArticlePage({
                     </p>
                 </header>
 
-                {/* Your real photo — shown when an override is set for this article */}
-                {customPhoto && (
+                {article.image_url && (
                     <img
-                        src={customPhoto}
+                        src={article.image_url}
                         alt={article.title}
                         style={{
                             width: '100%',
@@ -96,13 +100,11 @@ export default async function SoroArticlePage({
                     />
                 )}
 
-                {/* Article content from Soro */}
                 <div
                     className={postStyles.content}
-                    dangerouslySetInnerHTML={{ __html: content }}
+                    dangerouslySetInnerHTML={{ __html: article.content_html }}
                 />
 
-                {/* CTA at bottom of every Soro article */}
                 <div className={postStyles.cta}>
                     <h3>Ready to Rent a Dumpster in Central Mississippi?</h3>
                     <p>

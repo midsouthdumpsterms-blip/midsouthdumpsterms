@@ -4,10 +4,9 @@ import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from './blog.module.css'
 import fs from 'fs'
 import path from 'path'
-import { getSoroArticles } from '@/lib/soro'
+import { sql } from '@vercel/postgres'
 
-// Revalidate the page every 4 hours so new Soro articles appear automatically
-export const revalidate = 14400
+export const revalidate = 3600 // revalidate hourly to pick up approved posts
 
 export const metadata: Metadata = {
     title: 'Dumpster Rental Tips & Guides | Jackson MS | Mid South Dumpster Rentals',
@@ -26,14 +25,14 @@ interface UnifiedPost {
     excerpt: string
     date: string
     category: string
-    source: 'local' | 'soro'
+    source: 'local' | 'db'
     href: string
 }
 
 function getLocalBlogPosts(): UnifiedPost[] {
     const blogDir = path.join(process.cwd(), 'app/blog')
     const folders = fs.readdirSync(blogDir).filter(f =>
-        fs.statSync(path.join(blogDir, f)).isDirectory()
+        fs.statSync(path.join(blogDir, f)).isDirectory() && !f.startsWith('[')
     )
 
     const posts = folders.map(slug => {
@@ -84,35 +83,43 @@ function getLocalBlogPosts(): UnifiedPost[] {
     return posts
 }
 
+async function getDbBlogPosts(): Promise<UnifiedPost[]> {
+    try {
+        const { rows } = await sql`
+            SELECT slug, title, excerpt, published_at
+            FROM blog_posts
+            WHERE status = 'PUBLISHED'
+            ORDER BY published_at DESC
+        `;
+        
+        return rows.map(row => ({
+            slug: row.slug,
+            title: row.title,
+            excerpt: row.excerpt,
+            date: new Date(row.published_at).toISOString().split('T')[0],
+            category: 'Tips & Guides',
+            source: 'db' as const,
+            href: `/blog/${row.slug}`,
+        }));
+    } catch (err) {
+        console.error('Failed to fetch DB posts', err);
+        return [];
+    }
+}
+
 export default async function Blog() {
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', url: 'https://midsouthdumpsterms.com' },
         { name: 'Blog', url: 'https://midsouthdumpsterms.com/blog' },
     ])
 
-    // Fetch local (filesystem) posts and Soro API posts in parallel
-    const [localPosts, soroArticles] = await Promise.all([
+    const [localPosts, dbPosts] = await Promise.all([
         Promise.resolve(getLocalBlogPosts()),
-        getSoroArticles(),
+        getDbBlogPosts(),
     ])
 
-    // Avoid duplicates — local posts take precedence if slugs ever collide
-    const localSlugs = new Set(localPosts.map(p => p.slug))
-
-    const soroPosts: UnifiedPost[] = soroArticles
-        .filter(a => !localSlugs.has(a.slug))
-        .map(a => ({
-            slug: a.slug,
-            title: a.title,
-            excerpt: a.excerpt,
-            date: a.isoDate ? a.isoDate.split('T')[0] : '2026-01-01',
-            category: 'Tips & Guides',
-            source: 'soro' as const,
-            href: `/blog/${a.slug}`,
-        }))
-
     // One unified list sorted newest → oldest
-    const allPosts = [...localPosts, ...soroPosts].sort(
+    const allPosts = [...localPosts, ...dbPosts].sort(
         (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     )
 

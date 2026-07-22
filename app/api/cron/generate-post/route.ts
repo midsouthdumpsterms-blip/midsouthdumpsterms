@@ -1,0 +1,147 @@
+import { NextResponse } from 'next/server';
+import { sql } from '@vercel/postgres';
+import Anthropic from '@anthropic-ai/sdk';
+import { Resend } from 'resend';
+import { getDrivePhotoPool, pickPhotoForSlug } from '@/lib/drive-photos';
+
+// We allow this to run for up to 60 seconds (max for Vercel Hobby/Pro without bumping config)
+export const maxDuration = 60;
+
+const anthropic = new Anthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY,
+});
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+const TOPICS = [
+  "How to choose the right dumpster size for a home remodel in Jackson MS",
+  "Dumpster rental vs junk removal in Central Mississippi: Which is better?",
+  "What items are prohibited in roll-off dumpsters in Rankin County?",
+  "The ultimate guide to estate cleanouts and dumpster rentals in MS",
+  "How to properly dispose of heavy debris like concrete and dirt in Jackson",
+  "Spring cleaning checklist for Jackson homeowners: Getting the most out of your dumpster",
+  "Understanding dumpster weight limits and overage fees in Mississippi",
+  "Roofing contractor guide to efficient debris removal in Hinds County",
+  "How to prepare your driveway for a roll-off dumpster delivery",
+  "Same-day dumpster rentals in Jackson MS: What you need to know",
+  "A guide to commercial dumpster rentals for Madison County businesses",
+  "How to safely dispose of appliances and mattresses in Central MS",
+  "Yard waste removal tips for Jackson MS residents",
+  "The environmental benefits of responsible debris disposal in Mississippi",
+  "How to rent a dumpster for storm cleanup in Central MS",
+];
+
+function generateSlug(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+}
+
+export async function GET(request: Request) {
+  // Simple cron authentication (Vercel sets a CRON_SECRET if configured, but we'll allow manual hits for now or check an auth header)
+  const authHeader = request.headers.get('authorization');
+  const cronSecret = process.env.CRON_SECRET;
+  
+  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+    return new NextResponse('Unauthorized', { status: 401 });
+  }
+
+  try {
+    // 1. Pick a topic that hasn't been written yet
+    const { rows: existingPosts } = await sql`SELECT title FROM blog_posts`;
+    const existingTitles = new Set(existingPosts.map(p => p.title.toLowerCase()));
+    
+    let selectedTopic = TOPICS.find(t => !existingTitles.has(t.toLowerCase()));
+    
+    // Fallback: If all are used, we ask Anthropic to generate a brand new hyper-local topic
+    if (!selectedTopic) {
+        const topicRes = await anthropic.messages.create({
+            model: 'claude-3-5-sonnet-20240620',
+            max_tokens: 150,
+            system: "You are an SEO expert for a dumpster rental company in Jackson, Mississippi. Generate ONE unique, highly engaging blog post title about dumpster rental, junk removal, or waste disposal in Central MS.",
+            messages: [{ role: 'user', content: 'Generate a new blog post title.' }]
+        });
+        const textBlock = topicRes.content.find(c => c.type === 'text');
+        selectedTopic = textBlock?.type === 'text' ? textBlock.text.replace(/["']/g, '').trim() : "Dumpster Rental Guide for Central MS";
+    }
+
+    const slug = generateSlug(selectedTopic);
+
+    // 2. Generate the article using Claude 3.5 Sonnet
+    const articleRes = await anthropic.messages.create({
+      model: 'claude-3-5-sonnet-20240620',
+      max_tokens: 2500,
+      system: `You are an expert SEO copywriter for Mid South Dumpster Rentals based in Jackson, MS. 
+      Write a highly engaging, long-form, SEO-optimized blog post in HTML format based on the provided topic. 
+      
+      Requirements:
+      - Return ONLY raw HTML (no markdown code blocks, no \`\`\`html).
+      - Do NOT include <h1> tags (the site template provides the <h1> title).
+      - Use <h2> and <h3> tags for structuring the content.
+      - Use short paragraphs, bullet points, and bold text for readability.
+      - Naturally weave in local keywords: Jackson, Brandon, Clinton, Madison, Rankin County, Hinds County, roll-off dumpster, waste management.
+      - Write in a professional, direct, and helpful tone.
+      - End with a strong call-to-action to rent a dumpster from Mid South Dumpster Rentals (Call 601-316-7891 or book online).`,
+      messages: [{ role: 'user', content: `Topic: ${selectedTopic}` }]
+    });
+
+    const textBlock = articleRes.content.find(c => c.type === 'text');
+    let contentHtml = textBlock?.type === 'text' ? textBlock.text : '<p>Content generation failed.</p>';
+    
+    // Clean up any markdown code block wrappers if Claude accidentally includes them
+    contentHtml = contentHtml.replace(/^```html\n?/, '').replace(/\n?```$/, '').trim();
+
+    // Generate a short excerpt
+    const excerptRes = await anthropic.messages.create({
+        model: 'claude-3-5-sonnet-20240620',
+        max_tokens: 100,
+        system: "You are an SEO expert. Write a compelling 2-sentence meta description / excerpt for this article. Return only the text.",
+        messages: [{ role: 'user', content: `Topic: ${selectedTopic}\nContent: ${contentHtml.substring(0, 500)}...` }]
+    });
+    const excerptBlock = excerptRes.content.find(c => c.type === 'text');
+    const excerpt = excerptBlock?.type === 'text' ? excerptBlock.text : 'Expert dumpster rental tips for Central Mississippi.';
+
+    // 3. Assign an image from the Drive Pool
+    const photoPool = await getDrivePhotoPool();
+    const customPhoto = pickPhotoForSlug(photoPool, slug) || '';
+
+    // 4. Save to Database as DRAFT
+    await sql`
+      INSERT INTO blog_posts (slug, title, excerpt, content_html, image_url, status)
+      VALUES (${slug}, ${selectedTopic}, ${excerpt}, ${contentHtml}, ${customPhoto}, 'DRAFT')
+      ON CONFLICT (slug) DO UPDATE SET
+        title = EXCLUDED.title,
+        excerpt = EXCLUDED.excerpt,
+        content_html = EXCLUDED.content_html,
+        image_url = EXCLUDED.image_url,
+        status = 'DRAFT'
+    `;
+
+    // 5. Send Approval Email via Resend
+    const previewUrl = `https://midsouthdumpsterms.com/admin/preview/${slug}`;
+    await resend.emails.send({
+      from: 'Mid South Blog Bot <onboarding@resend.dev>', // Resend free tier requires this verified domain or onboarding address
+      to: 'andrew@midsouthdumpsterms.com', // Replace with Andrew's actual email if different
+      subject: `🚨 Action Required: New Blog Post Draft - ${selectedTopic}`,
+      html: `
+        <h2>A new SEO blog post is ready for your review!</h2>
+        <p><strong>Title:</strong> ${selectedTopic}</p>
+        <p><strong>Excerpt:</strong> ${excerpt}</p>
+        <br/>
+        <a href="${previewUrl}" style="background-color:#E34F26;color:white;padding:12px 24px;text-decoration:none;border-radius:6px;font-weight:bold;display:inline-block;">Preview & Approve Article</a>
+        <br/><br/>
+        <p>If you approve it on the preview page, it will instantly go live on your site.</p>
+      `
+    });
+
+    return NextResponse.json({ 
+        message: 'Post generated and saved as draft.', 
+        slug,
+        title: selectedTopic
+    }, { status: 200 });
+
+  } catch (error) {
+    console.error('Cron job error:', error);
+    return NextResponse.json({ error: 'Failed to generate post' }, { status: 500 });
+  }
+}
