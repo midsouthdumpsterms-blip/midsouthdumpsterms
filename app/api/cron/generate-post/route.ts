@@ -144,7 +144,7 @@ export async function GET(request: Request) {
     `;
 
     // 5. Send Approval Email via Resend
-    const previewUrl = `https://midsouthdumpsterms.com/admin/preview/${slug}`;
+    const previewUrl = `https://midsouthdumpsterms.com/situationroom/preview/${slug}`;
     const resendResult = await resend.emails.send({
       from: 'Mid South Blog Bot <onboarding@resend.dev>', // Resend free tier requires this verified domain or onboarding address
       to: 'midsouthdumpsterms@gmail.com', // Updated to the correct registered email
@@ -170,8 +170,8 @@ export async function GET(request: Request) {
         title: selectedTopic || "Dumpster Rental"
     }, { status: 200 });
 
-  } catch (error) {
+  } catch (error: any) {
     console.error('Cron job error:', error);
-    return NextResponse.json({ error: 'Failed to generate post' }, { status: 500 });
+    return NextResponse.json({ error: error.message || 'Failed to generate post', stack: error.stack }, { status: 500 });
   }
 }
