@@ -98,7 +98,7 @@ export default function BlogContent({ pin }: { pin: string }) {
                                                 </span>
                                             </td>
                                             <td style={tdStyle}>
-                                                <div style={{ fontWeight: '700', fontSize: '15px' }}>{post.title}</div>
+                                                <div style={{ fontWeight: '700', fontSize: '15px', color: 'white' }}>{post.title}</div>
                                                 <div style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>/{post.slug}</div>
                                             </td>
                                             <td style={tdStyle}>
