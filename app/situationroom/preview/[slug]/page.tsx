@@ -43,16 +43,20 @@ export default async function PreviewArticlePage({
                         </p>
                     </header>
 
-                    <img
-                        src="/images/og-image.jpg"
-                        alt={article.title}
-                        style={{
-                            width: '100%',
-                            height: 'auto',
-                            borderRadius: '12px',
-                            marginBottom: '2rem',
-                        }}
-                    />
+                    {article.image_url && (
+                        <img
+                            src={article.image_url}
+                            alt={article.title}
+                            style={{
+                                width: '100%',
+                                maxHeight: '500px',
+                                objectFit: 'contain',
+                                backgroundColor: '#f8f9fa',
+                                borderRadius: '12px',
+                                marginBottom: '2rem',
+                            }}
+                        />
+                    )}
 
                     <div
                         className={postStyles.content}

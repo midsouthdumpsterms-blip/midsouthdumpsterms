@@ -94,16 +94,20 @@ export default async function DbArticlePage({
                     </p>
                 </header>
 
+                {article.image_url && (
                     <img
-                        src="/images/og-image.jpg"
+                        src={article.image_url}
                         alt={article.title}
                         style={{
                             width: '100%',
-                            height: 'auto',
+                            maxHeight: '500px',
+                            objectFit: 'contain',
+                            backgroundColor: '#f8f9fa',
                             borderRadius: '12px',
                             marginBottom: '2rem',
                         }}
                     />
+                )}
 
                 <div
                     className={postStyles.content}
