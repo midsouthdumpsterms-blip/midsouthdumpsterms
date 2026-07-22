@@ -49,9 +49,7 @@ export default async function PreviewArticlePage({
                             alt={article.title}
                             style={{
                                 width: '100%',
-                                maxHeight: '500px',
-                                objectFit: 'contain',
-                                backgroundColor: '#f8f9fa',
+                                height: 'auto',
                                 borderRadius: '12px',
                                 marginBottom: '2rem',
                             }}
