@@ -94,9 +94,8 @@ export default async function DbArticlePage({
                     </p>
                 </header>
 
-                {article.image_url && (
                     <img
-                        src={article.image_url}
+                        src="/images/og-image.jpg"
                         alt={article.title}
                         style={{
                             width: '100%',
@@ -105,7 +104,6 @@ export default async function DbArticlePage({
                             marginBottom: '2rem',
                         }}
                     />
-                )}
 
                 <div
                     className={postStyles.content}
