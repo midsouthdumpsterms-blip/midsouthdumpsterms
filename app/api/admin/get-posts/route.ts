@@ -12,9 +12,9 @@ export async function POST(req: Request) {
         }
 
         const { rows: posts } = await sql`
-            SELECT id, title, slug, status, created_at 
+            SELECT id, title, slug, status, published_at AS created_at 
             FROM blog_posts 
-            ORDER BY created_at DESC
+            ORDER BY published_at DESC
         `
 
         return NextResponse.json({ success: true, posts })
