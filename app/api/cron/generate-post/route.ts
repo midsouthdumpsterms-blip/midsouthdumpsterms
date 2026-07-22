@@ -14,7 +14,6 @@ const TOPICS = [
   "Dumpster rental vs junk removal in Central Mississippi: Which is better?",
   "What items are prohibited in roll-off dumpsters in Rankin County?",
   "The ultimate guide to estate cleanouts and dumpster rentals in MS",
-  "How to properly dispose of heavy debris like concrete and dirt in Jackson",
   "Spring cleaning checklist for Jackson homeowners: Getting the most out of your dumpster",
   "Understanding dumpster weight limits and overage fees in Mississippi",
   "Roofing contractor guide to efficient debris removal in Hinds County",
@@ -76,7 +75,11 @@ export async function GET(request: Request) {
     // Fallback: If all are used, we ask Anthropic to generate a brand new hyper-local topic
     if (!selectedTopic) {
         const generated = await callAnthropic(
-            "You are an SEO expert for a dumpster rental company in Jackson, Mississippi. Generate ONE unique, highly engaging blog post title about dumpster rental, junk removal, or waste disposal in Central MS.",
+            `You are an SEO expert for a dumpster rental company in Jackson, Mississippi. Generate ONE unique, highly engaging blog post title about dumpster rental, junk removal, or waste disposal in Central MS.
+            
+            STRICT CONSTRAINTS:
+            1. DO NOT mention concrete, dirt, or heavy asphalt disposal.
+            2. DO NOT mention 30-yard or 40-yard dumpsters.`,
             "Generate a new blog post title.",
             150
         );
@@ -98,9 +101,18 @@ export async function GET(request: Request) {
       - Write in a professional, direct, and helpful tone.
       - End with a strong call-to-action to rent a dumpster from Mid South Dumpster Rentals (Call 601-316-7891 or book online).
       
-      STRICT BUSINESS CONSTRAINTS (NEVER VIOLATE THESE):
-      1. DO NOT mention or promote putting concrete, dirt, or heavy asphalt in the dumpsters. We do not allow or specialize in heavy concrete disposal.
-      2. We ONLY offer 10-yard, 15-yard, and 20-yard dumpsters. NEVER mention 30-yard or 40-yard dumpsters.`;
+      STRICT COMPANY RULES & FACTS (NEVER INVENT INFORMATION, ONLY USE THESE FACTS):
+      - Dumpster Sizes Offered: ONLY 10-yard, 15-yard, and 20-yard dumpsters. DO NOT mention 30-yard or 40-yard dumpsters.
+      - Weight Limits & Overage:
+        * 10-yard: Includes 1 ton (2,000 lbs). Overage: $55 per ton.
+        * 15-yard: Includes 2 tons (4,000 lbs). Overage: $55 per ton.
+        * 20-yard: Includes 3 tons (6,000 lbs). STRICT LIMIT. NO overage allowed.
+      - Maximum Weight: NO load in ANY container may exceed 6,000 pounds.
+      - Rental Period: Base rental covers 1-7 days. Extensions are $50 per additional day.
+      - Prohibited Items (DO NOT TELL CUSTOMERS THEY CAN DUMP THESE): Hazardous wastes, paints, stain, solvents, chemicals, oil, fuels, epoxy, asbestos, batteries, barrels, pesticides, food waste, liquids, freezers, refrigerators, HVAC units, pressurized vessels, tires, electronics, refrigerant appliances, medical waste, TVs, computers, motor oil, gas/diesel fuel, oil filters, fluorescent bulbs, railroad ties, radioactive materials.
+      - Permitted Items: Household trash, furniture, general construction debris, appliances (non-refrigerated), yard clippings.
+      - Heavy Debris Rule: Concrete, stone, and brick are highly restricted due to the 6,000 lb limit and require prior approval. DO NOT write posts promoting heavy concrete or dirt removal.
+      - Fees: Missed pickup/inaccessible fee is $150. Wait time is $50/hour. Overweight refusal fee is $500.`;
 
     let contentHtml = await callAnthropic(systemPrompt, `Topic: ${selectedTopic || "Dumpster Rental"}`, 2500);
     if (!contentHtml) contentHtml = '<p>Content generation failed.</p>';
