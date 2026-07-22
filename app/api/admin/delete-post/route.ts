@@ -4,9 +4,10 @@ import { sql } from '@vercel/postgres'
 export async function POST(req: Request) {
     try {
         const { id, pin } = await req.json()
-        const validPin = process.env.ADMIN_PIN || '90210'
+        const ADMIN_PIN = process.env.ADMIN_PIN?.trim() || '90210'
+        const userPIN = pin?.trim()
 
-        if (pin !== validPin) {
+        if (userPIN !== ADMIN_PIN) {
             return NextResponse.json({ success: false, error: 'Invalid PIN' }, { status: 401 })
         }
 
