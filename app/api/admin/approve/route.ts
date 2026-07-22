@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { sql } from '@vercel/postgres';
+import { revalidatePath } from 'next/cache';
 
 export async function POST(request: Request) {
   try {
@@ -19,6 +20,8 @@ export async function POST(request: Request) {
     if (result.rowCount === 0) {
         return NextResponse.json({ error: 'Draft not found' }, { status: 404 });
     }
+
+    revalidatePath('/blog');
 
     return NextResponse.json({ message: 'Approved and Published successfully' }, { status: 200 });
   } catch (error) {
