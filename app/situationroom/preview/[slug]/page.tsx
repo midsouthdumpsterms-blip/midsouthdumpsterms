@@ -1,6 +1,9 @@
+import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { sql } from '@vercel/postgres';
 import postStyles from '../../../blog/blog-post.module.css';
+import { getLocalPhotoPool, pickRandomPhotos } from '@/lib/local-photos';
 import ApproveButton from './ApproveButton';
 
 export const dynamic = 'force-dynamic';
@@ -44,22 +47,37 @@ export default async function PreviewArticlePage({
                     </header>
 
                     {article.image_url && (
-                        <img
-                            src={article.image_url}
+                    <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', marginBottom: '2rem' }}>
+                        <Image
+                            src={article.image_url.startsWith('http') ? article.image_url : `${article.image_url}`}
                             alt={article.title}
-                            style={{
-                                width: '100%',
-                                height: 'auto',
-                                borderRadius: '12px',
-                                marginBottom: '2rem',
-                            }}
+                            fill
+                            style={{ objectFit: 'cover', borderRadius: '12px' }}
+                            unoptimized={article.image_url.startsWith('http')}
                         />
-                    )}
+                    </div>
+                )}
 
-                    <div
-                        className={postStyles.content}
-                        dangerouslySetInnerHTML={{ __html: article.content_html }}
-                    />
+                <div
+                    className={postStyles.content}
+                    dangerouslySetInnerHTML={{ __html: article.content_html }}
+                />
+
+                <div className={postStyles.gallerySection} style={{ marginTop: '3rem', marginBottom: '3rem' }}>
+                    <h3 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Recent Projects & Our Fleet</h3>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                        {pickRandomPhotos(getLocalPhotoPool(), 4).map((photoUrl, idx) => (
+                            <div key={idx} style={{ position: 'relative', width: '100%', aspectRatio: '1/1' }}>
+                                <Image
+                                    src={photoUrl}
+                                    alt="Mid South Dumpster Rentals recent project"
+                                    fill
+                                    style={{ objectFit: 'cover', borderRadius: '8px' }}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
 
                     <div className={postStyles.cta}>
                         <h3>Ready to Rent a Dumpster in Central Mississippi?</h3>

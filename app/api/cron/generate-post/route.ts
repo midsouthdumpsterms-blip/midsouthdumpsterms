@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { sql } from '@vercel/postgres';
 import { Resend } from 'resend';
-import { getDrivePhotoPool, pickPhotoForSlug } from '@/lib/drive-photos';
+import { getLocalPhotoPool, pickPhotoForSlug } from '@/lib/local-photos';
 
 // We allow this to run for up to 60 seconds (max for Vercel Hobby/Pro without bumping config)
 export const maxDuration = 60;
@@ -148,14 +148,14 @@ export async function GET(request: Request) {
         100
     ) || 'Expert dumpster rental tips for Central Mississippi.';
 
-    // 3. Assign an image from the Drive Pool
-    const photoPool = await getDrivePhotoPool();
-    const customPhoto = pickPhotoForSlug(photoPool, slug) || '';
+    // 3. Assign an image
+    const photoPool = getLocalPhotoPool();
+    const imageUrl = pickPhotoForSlug(photoPool, slug) || '';
 
     // 4. Save to Database as DRAFT
     await sql`
       INSERT INTO blog_posts (slug, title, excerpt, content_html, image_url, status)
-      VALUES (${slug}, ${selectedTopic || "Dumpster Rental Guide"}, ${excerpt}, ${contentHtml}, ${customPhoto}, 'DRAFT')
+      VALUES (${slug}, ${selectedTopic || "Dumpster Rental Guide"}, ${excerpt}, ${contentHtml}, ${imageUrl}, 'DRAFT')
       ON CONFLICT (slug) DO UPDATE SET
         title = EXCLUDED.title,
         excerpt = EXCLUDED.excerpt,
