@@ -131,7 +131,7 @@ export async function GET(request: Request) {
     const previewUrl = `https://midsouthdumpsterms.com/admin/preview/${slug}`;
     await resend.emails.send({
       from: 'Mid South Blog Bot <onboarding@resend.dev>', // Resend free tier requires this verified domain or onboarding address
-      to: 'andrew@midsouthdumpsterms.com', // Replace with Andrew's actual email if different
+      to: 'atyre@midsouthdumpsterms.com', // Updated to the correct email
       subject: `🚨 Action Required: New Blog Post Draft - ${selectedTopic || "Dumpster Rental"}`,
       html: `
         <h2>A new SEO blog post is ready for your review!</h2>
