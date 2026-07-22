@@ -33,6 +33,16 @@ function generateSlug(title: string) {
     .replace(/(^-|-$)+/g, '');
 }
 
+function toTitleCase(str: string) {
+  return str.replace(
+    /\w\S*/g,
+    function(txt) {
+      if (txt === txt.toUpperCase() && txt.length > 1) return txt; // Preserve acronyms like MS
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    }
+  );
+}
+
 export async function GET(request: Request) {
   // Simple cron authentication (Vercel sets a CRON_SECRET if configured, but we'll allow manual hits for now or check an auth header)
   const authHeader = request.headers.get('authorization');
@@ -106,7 +116,10 @@ export async function GET(request: Request) {
         selectedTopic = generated ? generated.replace(/["']/g, '').trim() : "Dumpster Rental Guide for Central MS";
     }
 
-    const slug = generateSlug(selectedTopic || "Dumpster Rental Guide for Central MS");
+    // Apply title casing immediately so all references are correct
+    selectedTopic = toTitleCase(selectedTopic || "Dumpster Rental Guide for Central MS");
+
+    const slug = generateSlug(selectedTopic);
 
     // 2. Generate the article using Claude Sonnet 5
     const systemPrompt = `You are an expert SEO copywriter for Mid South Dumpster Rentals based in Jackson, MS. 

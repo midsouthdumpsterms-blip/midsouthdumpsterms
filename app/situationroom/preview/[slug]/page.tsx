@@ -49,11 +49,11 @@ export default async function PreviewArticlePage({
                     {article.image_url && (
                     <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', marginBottom: '2rem' }}>
                         <Image
-                            src={article.image_url.startsWith('http') ? article.image_url : `${article.image_url}`}
+                            src={article.image_url}
                             alt={article.title}
                             fill
                             style={{ objectFit: 'cover', borderRadius: '12px' }}
-                            unoptimized={article.image_url.startsWith('http')}
+                            unoptimized={true}
                         />
                     </div>
                 )}
@@ -73,6 +73,7 @@ export default async function PreviewArticlePage({
                                     alt="Mid South Dumpster Rentals recent project"
                                     fill
                                     style={{ objectFit: 'cover', borderRadius: '8px' }}
+                                    unoptimized={true}
                                 />
                             </div>
                         ))}
