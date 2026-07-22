@@ -14,7 +14,7 @@ export async function POST(req: Request) {
         const { rows: posts } = await sql`
             SELECT id, title, slug, status, published_at AS created_at 
             FROM blog_posts 
-            ORDER BY published_at DESC
+            ORDER BY id DESC
         `
 
         return NextResponse.json({ success: true, posts })
