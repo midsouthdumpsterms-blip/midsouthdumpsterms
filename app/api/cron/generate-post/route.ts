@@ -85,7 +85,7 @@ export async function GET(request: Request) {
 
     const slug = generateSlug(selectedTopic || "Dumpster Rental Guide for Central MS");
 
-    // 2. Generate the article using Claude 3.5 Sonnet
+    // 2. Generate the article using Claude Sonnet 5
     const systemPrompt = `You are an expert SEO copywriter for Mid South Dumpster Rentals based in Jackson, MS. 
       Write a highly engaging, long-form, SEO-optimized blog post in HTML format based on the provided topic. 
       
@@ -96,7 +96,11 @@ export async function GET(request: Request) {
       - Use short paragraphs, bullet points, and bold text for readability.
       - Naturally weave in local keywords: Jackson, Brandon, Clinton, Madison, Rankin County, Hinds County, roll-off dumpster, waste management.
       - Write in a professional, direct, and helpful tone.
-      - End with a strong call-to-action to rent a dumpster from Mid South Dumpster Rentals (Call 601-316-7891 or book online).`;
+      - End with a strong call-to-action to rent a dumpster from Mid South Dumpster Rentals (Call 601-316-7891 or book online).
+      
+      STRICT BUSINESS CONSTRAINTS (NEVER VIOLATE THESE):
+      1. DO NOT mention or promote putting concrete, dirt, or heavy asphalt in the dumpsters. We do not allow or specialize in heavy concrete disposal.
+      2. We ONLY offer 10-yard, 15-yard, and 20-yard dumpsters. NEVER mention 30-yard or 40-yard dumpsters.`;
 
     let contentHtml = await callAnthropic(systemPrompt, `Topic: ${selectedTopic || "Dumpster Rental"}`, 2500);
     if (!contentHtml) contentHtml = '<p>Content generation failed.</p>';
