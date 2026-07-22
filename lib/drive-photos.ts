@@ -45,10 +45,10 @@ export async function getDrivePhotoPool(): Promise<string[]> {
     const data = await res.json()
     const files: any[] = data.files || []
 
-    // Build uncropped direct-access image URLs
+    // Build proxied image URLs that point to our local API route
     return files.map(
-      f => (f.thumbnailLink ? f.thumbnailLink.replace('=s220', '=w860') : '')
-    ).filter(url => url !== '')
+      f => `/api/image?id=${f.id}`
+    )
   } catch (err) {
     console.error('[Drive] Failed to fetch photo pool:', err)
     return []
