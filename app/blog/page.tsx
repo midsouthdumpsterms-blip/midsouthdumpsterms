@@ -115,7 +115,7 @@ export default function Blog() {
                 <div className="container">
                     <div className={styles.archiveDividerInner}>
                         <span className={styles.archiveLabel}>📂 Post Archive</span>
-                        <p className={styles.archiveSubtext}>All of our guides and resources — months of local knowledge, all in one place.</p>
+                        <p className={styles.archiveSubtext}>All of our guides and resources — years of local knowledge, all in one place.</p>
                     </div>
                 </div>
             </div>
