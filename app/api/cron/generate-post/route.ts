@@ -113,9 +113,10 @@ export async function GET(request: Request) {
       - Prohibited Items (DO NOT TELL CUSTOMERS THEY CAN DUMP THESE): Hazardous wastes, paints, stain, solvents, chemicals, oil, fuels, epoxy, asbestos, batteries, barrels, pesticides, food waste, liquids, freezers, refrigerators, HVAC units, pressurized vessels, tires, electronics, refrigerant appliances, medical waste, TVs, computers, motor oil, gas/diesel fuel, oil filters, fluorescent bulbs, railroad ties, radioactive materials.
       - Permitted Items: Household trash, furniture, general construction debris, appliances (non-refrigerated), yard clippings.
       - Heavy Debris Rule: Concrete, stone, and brick are highly restricted due to the 6,000 lb limit and require prior approval. DO NOT write posts promoting heavy concrete or dirt removal.
-      - Fees: Missed pickup/inaccessible fee is $150. Wait time is $50/hour. Overweight refusal fee is $500.`;
+      - Fees: Missed pickup/inaccessible fee is $150. Wait time is $50/hour. Overweight refusal fee is $500.
+      - Length: Aim for 800 to 1200 words. Keep it concise, punchy, and do not exceed this length so it does not cut off mid-sentence.`;
 
-    let contentHtml = await callAnthropic(systemPrompt, `Topic: ${selectedTopic || "Dumpster Rental"}`, 2500);
+    let contentHtml = await callAnthropic(systemPrompt, `Topic: ${selectedTopic || "Dumpster Rental"}`, 4000);
     if (!contentHtml) contentHtml = '<p>Content generation failed.</p>';
     
     // Clean up any markdown code block wrappers if Claude accidentally includes them
