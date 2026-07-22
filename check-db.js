@@ -1,17 +1,8 @@
-const { loadEnvConfig } = require('@next/env');
-loadEnvConfig(process.cwd());
 const { sql } = require('@vercel/postgres');
+require('@next/env').loadEnvConfig(process.cwd());
 
-async function main() {
-    try {
-        const result = await sql`
-            SELECT column_name
-            FROM information_schema.columns
-            WHERE table_name = 'blog_posts'
-        `;
-        console.log(result.rows);
-    } catch (e) {
-        console.error(e);
-    }
+async function check() {
+    const { rows } = await sql`SELECT image_url FROM blog_posts WHERE slug = 'spring-cleaning-checklist-for-jackson-homeowners-getting-the-most-out-of-your-dumpster'`;
+    console.log("URL:", rows[0]?.image_url);
 }
-main();
+check();

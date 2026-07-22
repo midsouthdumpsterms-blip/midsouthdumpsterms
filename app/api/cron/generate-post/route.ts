@@ -144,7 +144,7 @@ export async function GET(request: Request) {
     `;
 
     // 5. Send Approval Email via Resend
-    const previewUrl = `https://midsouthdumpsterms.com/situationroom/preview/${slug}`;
+    const dashboardUrl = `https://midsouthdumpsterms.com/situationroom`;
     const resendResult = await resend.emails.send({
       from: 'Mid South Blog Bot <onboarding@resend.dev>', // Resend free tier requires this verified domain or onboarding address
       to: 'midsouthdumpsterms@gmail.com', // Updated to the correct registered email
@@ -154,9 +154,9 @@ export async function GET(request: Request) {
         <p><strong>Title:</strong> ${selectedTopic || "Dumpster Rental"}</p>
         <p><strong>Excerpt:</strong> ${excerpt}</p>
         <br/>
-        <a href="${previewUrl}" style="background-color:#E34F26;color:white;padding:12px 24px;text-decoration:none;border-radius:6px;font-weight:bold;display:inline-block;">Preview & Approve Article</a>
+        <a href="${dashboardUrl}" style="background-color:#E34F26;color:white;padding:12px 24px;text-decoration:none;border-radius:6px;font-weight:bold;display:inline-block;">Open Situation Room</a>
         <br/><br/>
-        <p>If you approve it on the preview page, it will instantly go live on your site.</p>
+        <p>Go to the Blog Manager tab to preview and approve this article.</p>
       `
     });
 

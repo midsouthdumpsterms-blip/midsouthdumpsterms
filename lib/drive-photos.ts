@@ -47,7 +47,7 @@ export async function getDrivePhotoPool(): Promise<string[]> {
 
     // Build direct-access image URLs (works for files shared publicly)
     return files.map(
-      f => `https://drive.google.com/uc?export=view&id=${f.id}`
+      f => `https://lh3.googleusercontent.com/d/${f.id}`
     )
   } catch (err) {
     console.error('[Drive] Failed to fetch photo pool:', err)
