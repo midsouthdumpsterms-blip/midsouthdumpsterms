@@ -129,9 +129,9 @@ export async function GET(request: Request) {
 
     // 5. Send Approval Email via Resend
     const previewUrl = `https://midsouthdumpsterms.com/admin/preview/${slug}`;
-    await resend.emails.send({
+    const resendResult = await resend.emails.send({
       from: 'Mid South Blog Bot <onboarding@resend.dev>', // Resend free tier requires this verified domain or onboarding address
-      to: 'atyre@midsouthdumpsterms.com', // Updated to the correct email
+      to: 'midsouthdumpsterms@gmail.com', // Updated to the correct registered email
       subject: `🚨 Action Required: New Blog Post Draft - ${selectedTopic || "Dumpster Rental"}`,
       html: `
         <h2>A new SEO blog post is ready for your review!</h2>
@@ -143,6 +143,10 @@ export async function GET(request: Request) {
         <p>If you approve it on the preview page, it will instantly go live on your site.</p>
       `
     });
+
+    if (resendResult.error) {
+        throw new Error(`Resend API Error: ${resendResult.error.message}`);
+    }
 
     return NextResponse.json({ 
         message: 'Post generated and saved as draft.', 
