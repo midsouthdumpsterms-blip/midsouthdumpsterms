@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getSoroArticles, getSoroArticleContent } from '@/lib/soro'
+import { getDrivePhotoPool, pickPhotoForSlug } from '@/lib/drive-photos'
 import postStyles from '../blog-post.module.css'
 import photoOverrides from '../../../soro-photo-overrides.json'
 
@@ -51,7 +52,12 @@ export default async function SoroArticlePage({
 
     // Look up custom photo — falls back gracefully to no image
     const overrides = photoOverrides as Record<string, string>
-    const customPhoto = overrides[params.slug] || null
+    let customPhoto = overrides[params.slug] || null
+
+    if (!customPhoto) {
+        const photoPool = await getDrivePhotoPool()
+        customPhoto = pickPhotoForSlug(photoPool, params.slug)
+    }
 
     const publishDate = new Date(article.isoDate).toLocaleDateString('en-US', {
         month: 'long',
