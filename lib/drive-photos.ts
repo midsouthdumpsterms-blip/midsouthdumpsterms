@@ -47,7 +47,7 @@ export async function getDrivePhotoPool(): Promise<string[]> {
 
     // Build uncropped direct-access image URLs
     return files.map(
-      f => (f.thumbnailLink ? f.thumbnailLink.replace('=s220', '=s1200') : '')
+      f => (f.thumbnailLink ? f.thumbnailLink.replace('=s220', '=w860') : '')
     ).filter(url => url !== '')
   } catch (err) {
     console.error('[Drive] Failed to fetch photo pool:', err)
