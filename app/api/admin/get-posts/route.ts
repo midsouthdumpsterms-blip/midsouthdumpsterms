@@ -4,7 +4,7 @@ import { sql } from '@vercel/postgres'
 export async function POST(req: Request) {
     try {
         const { pin } = await req.json()
-        const ADMIN_PIN = process.env.ADMIN_PIN?.trim() || '90210'
+        const ADMIN_PIN = process.env.ADMIN_PIN?.trim() || '1056'
         const userPIN = pin?.trim()
 
         if (userPIN !== ADMIN_PIN) {
