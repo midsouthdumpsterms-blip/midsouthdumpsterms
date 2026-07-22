@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Admin | Mid South Dumpster Rentals',
+    title: 'Situation Room | Mid South Dumpster Rentals',
     robots: {
         index: false,
         follow: false,
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     },
 }
 
-export default function AdminLayout({
+export default function SituationRoomLayout({
     children,
 }: {
     children: React.ReactNode

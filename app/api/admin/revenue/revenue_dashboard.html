@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MidSouth Dumpster MS — Revenue Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --teal: #19b89c;
+            --teal-dark: #0f9e85;
+            --teal-light: rgba(25, 184, 156, 0.15);
+            --yellow: #f5c842;
+            --orange: #f58f42;
+            --blue: #4a9eff;
+            --purple: #a78bfa;
+            --bg: #0d1117;
+            --bg2: #161b22;
+            --bg3: #1f2937;
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #e6edf3;
+            --muted: #8b949e;
+            --danger: #f85149;
+            --warning: #e3b341;
+            --success: #3fb950;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* ── Header ── */
+        header {
+            background: linear-gradient(135deg, #0a1628 0%, #0f2740 50%, #0d1e1b 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 28px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .logo-area h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-area h1 span { color: var(--teal); }
+        .logo-area p { color: var(--muted); font-size: 0.85rem; margin-top: 3px; }
+
+        .header-right { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+        .as-of {
+            color: var(--muted);
+            font-size: 0.8rem;
+            background: var(--bg3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .badge-new {
+            background: linear-gradient(135deg, #19b89c, #0f9e85);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        /* ── Alert Banner ── */
+        .alert-banner {
+            background: rgba(248, 81, 73, 0.10);
+            border-left: 4px solid var(--danger);
+            border-bottom: 1px solid rgba(248, 81, 73, 0.2);
+            padding: 12px 40px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.88rem;
+        }
+
+        .alert-banner strong { color: var(--danger); }
+
+        /* ── Fleet expansion banner ── */
+        .expansion-banner {
+            background: linear-gradient(90deg, rgba(25,184,156,0.12) 0%, rgba(245,200,66,0.08) 100%);
+            border-left: 4px solid var(--teal);
+            border-bottom: 1px solid rgba(25, 184, 156, 0.2);
+            padding: 12px 40px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.88rem;
+        }
+
+        .expansion-banner strong { color: var(--teal); }
+
+        /* ── Success banner ── */
+        .success-banner {
+            background: linear-gradient(90deg, rgba(63,185,80,0.12) 0%, rgba(25,184,156,0.08) 100%);
+            border-left: 4px solid var(--success);
+            border-bottom: 1px solid rgba(63,185,80, 0.2);
+            padding: 12px 40px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.88rem;
+        }
+
+        .success-banner strong { color: var(--success); }
+
+        /* ── Main ── */
+        main {
+            padding: 32px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ── Stat Cards ── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .stat-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px 22px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .stat-card:hover {
+            border-color: rgba(25, 184, 156, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--teal), var(--yellow));
+        }
+
+        .stat-card.danger::before { background: linear-gradient(90deg, var(--danger), #ff8c00); }
+        .stat-card.warn::before { background: linear-gradient(90deg, var(--warning), #f5a623); }
+        .stat-card.purple::before { background: linear-gradient(90deg, var(--purple), var(--blue)); }
+        .stat-card.blue::before { background: linear-gradient(90deg, var(--blue), var(--teal)); }
+
+        .stat-emoji { font-size: 1.4rem; margin-bottom: 10px; display: block; }
+
+        .stat-label {
+            font-size: 0.72rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
+        }
+
+        .stat-value {
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .stat-value.teal { color: var(--teal); }
+        .stat-value.danger { color: var(--danger); }
+        .stat-value.warning { color: var(--warning); }
+        .stat-value.purple { color: var(--purple); }
+        .stat-value.blue { color: var(--blue); }
+
+        .stat-sub {
+            font-size: 0.76rem;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+
+        .stat-delta {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 2px 7px;
+            border-radius: 10px;
+            margin-top: 6px;
+        }
+
+        .delta-up { background: rgba(63,185,80,0.15); color: var(--success); }
+        .delta-down { background: rgba(248,81,73,0.12); color: var(--danger); }
+
+        /* ── Chart Cards ── */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin-bottom: 24px;
+        }
+
+        @media(max-width: 960px) { .charts-grid { grid-template-columns: 1fr; } }
+
+        .chart-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px 26px;
+            transition: border-color 0.2s;
+        }
+
+        .chart-card:hover { border-color: rgba(25, 184, 156, 0.25); }
+        .chart-card.wide { grid-column: 1 / -1; }
+
+        .chart-header { margin-bottom: 16px; }
+
+        .chart-header h2 {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .chart-header p {
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .chart-wrap { position: relative; height: 290px; }
+        .chart-wrap.tall { height: 360px; }
+        .chart-wrap.short { height: 240px; }
+
+        /* ── Invoice Table ── */
+        .table-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px 26px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+        }
+
+        .table-card h2 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+
+        thead th {
+            text-align: left;
+            color: var(--muted);
+            font-weight: 500;
+            font-size: 0.71rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+            white-space: nowrap;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid var(--border);
+            transition: background 0.15s;
+        }
+
+        tbody tr:last-child { border-bottom: none; }
+
+        tbody tr:hover { background: rgba(255, 255, 255, 0.03); }
+
+        tbody td { padding: 10px 0; padding-right: 12px; }
+
+        .td-month { font-weight: 600; }
+        .td-dollars { font-weight: 700; color: var(--teal); font-variant-numeric: tabular-nums; }
+        .td-invoices { color: var(--muted); }
+        .td-right { text-align: right; }
+
+        /* ── April Invoice Table ── */
+        .inv-num { font-weight: 700; color: var(--teal); }
+        .inv-client { font-weight: 500; }
+        .inv-type { font-size: 0.72rem; color: var(--muted); }
+
+        /* ── Badges ── */
+        .badge {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .badge-teal { background: var(--teal-light); color: var(--teal); }
+        .badge-danger { background: rgba(248,81,73,0.12); color: var(--danger); }
+        .badge-warning { background: rgba(227,179,65,0.15); color: var(--warning); }
+        .badge-muted { background: rgba(255,255,255,0.07); color: var(--muted); }
+        .badge-proj { background: rgba(245,200,66,0.15); color: var(--yellow); }
+        .badge-blue { background: rgba(74,158,255,0.15); color: var(--blue); }
+        .badge-purple { background: rgba(167,139,250,0.15); color: var(--purple); }
+
+        /* ── Insights Box ── */
+        .insights {
+            background: rgba(25, 184, 156, 0.06);
+            border: 1px solid rgba(25, 184, 156, 0.2);
+            border-radius: 14px;
+            padding: 22px 26px;
+            margin-bottom: 24px;
+        }
+
+        .insights h3 {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--teal);
+            margin-bottom: 14px;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 10px;
+        }
+
+        .insight-item {
+            display: flex;
+            gap: 10px;
+            font-size: 0.83rem;
+            color: var(--muted);
+            align-items: flex-start;
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            padding: 10px 12px;
+        }
+
+        .insight-item .icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+        .insight-item strong { color: var(--text); }
+
+        /* ── AR Aging ── */
+        .ar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .ar-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 20px;
+            border-left: 3px solid;
+        }
+
+        .ar-card.current { border-left-color: var(--success); }
+        .ar-card.overdue { border-left-color: var(--danger); }
+        .ar-card.voided { border-left-color: var(--muted); }
+
+        .ar-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+        .ar-amount { font-size: 1.5rem; font-weight: 700; }
+        .ar-amount.green { color: var(--success); }
+        .ar-amount.red { color: var(--danger); }
+        .ar-amount.muted { color: var(--muted); }
+        .ar-detail { font-size: 0.76rem; color: var(--muted); margin-top: 4px; }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding: 24px 40px;
+            color: var(--muted);
+            font-size: 0.76rem;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-area">
+            <h1>MidSouth <span>Dumpster MS</span></h1>
+            <p>Revenue Dashboard — Andrew Tyre</p>
+        </div>
+        <div class="header-right">
+            <span class="badge-new">🚛 Fleet Expansion Active — Summer 2026</span>
+            <div class="as-of">📅 Updated July 22, 2026</div>
+        </div>
+    </header>
+
+    <!-- Alerts -->
+    <div class="success-banner">
+        <span>🏆</span>
+        <div><strong>June 2026 CONFIRMED NEW RECORD: $13,247 across 28 invoices — beat April's $12,645!</strong> All-time revenue: $81,530 through July 22. July pacing at ~$447/day — on track for another record.</div>
+    </div>
+    <div class="expansion-banner">
+        <span>⚠️</span>
+        <div><strong>3 open invoices — $1,054 outstanding:</strong> Brandon Community Care ($480.43 · Inv 245), Jay Wilson ($373.43 · Inv 248), Cardinal Concrete ($160.50 · Inv 253). Follow up to collect.</div>
+    </div>
+
+    <main>
+
+        <!-- ── KPI Cards ── -->
+        <div class="section-title">Key Performance Indicators</div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-emoji">🎉</span>
+                <div class="stat-label">All-Time Revenue Billed</div>
+                <div class="stat-value teal">$81,530</div>
+                <div class="stat-sub">Aug 2025 – Jul 22, 2026 · 191 invoices</div>
+                <div class="stat-delta delta-up">↑ +$10,077 since last update</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-emoji">🏆</span>
+                <div class="stat-label">Best Month (Record)</div>
+                <div class="stat-value teal">$13,247</div>
+                <div class="stat-sub">June 2026 — NEW all-time record 🔥</div>
+                <div class="stat-delta delta-up">↑ Beat April $12,645 by +$602</div>
+            </div>
+            <div class="stat-card blue">
+                <span class="stat-emoji">✅</span>
+                <div class="stat-label">June 2026 — Final (Confirmed)</div>
+                <div class="stat-value blue">$13,247</div>
+                <div class="stat-sub">28 invoices · 100% collected · all paid ✓</div>
+                <div class="stat-delta delta-up">↑ +$602 vs April — new all-time record!</div>
+            </div>
+            <div class="stat-card blue">
+                <span class="stat-emoji">🚀</span>
+                <div class="stat-label">July 2026 (MTD — thru Jul 22)</div>
+                <div class="stat-value blue">$9,833</div>
+                <div class="stat-sub">26 jobs · $1,054 balance due · 3 open invoices</div>
+                <div class="stat-delta delta-up">🔥 Pacing ~$13,400 full month</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-emoji">🧾</span>
+                <div class="stat-label">Total Invoices (All-Time)</div>
+                <div class="stat-value teal">191</div>
+                <div class="stat-sub">All invoices tracked across 12 months</div>
+                <div class="stat-delta delta-up">+23 since last update</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-emoji">📈</span>
+                <div class="stat-label">Avg Revenue / Invoice</div>
+                <div class="stat-value teal">$427</div>
+                <div class="stat-sub">All-time avg ($81,530 ÷ 191)</div>
+                <div class="stat-delta delta-up">↑ up from $425 — higher-value jobs continuing</div>
+            </div>
+            <div class="stat-card purple">
+                <span class="stat-emoji">🔄</span>
+                <div class="stat-label">Repeat Clients (All-Time)</div>
+                <div class="stat-value purple">25+</div>
+                <div class="stat-sub">Gibson ×13, Multi-South ×9, Brandon CC ×8, Hiliary ×6, Bluff City Turf ×5</div>
+            </div>
+            <div class="stat-card danger">
+                <span class="stat-emoji">⚠️</span>
+                <div class="stat-label">Outstanding Balance</div>
+                <div class="stat-value danger">$1,054</div>
+                <div class="stat-sub">3 open invoices — Brandon CC, Jay Wilson, Cardinal Concrete</div>
+                <div class="stat-delta delta-down">↓ Follow up to collect</div>
+            </div>
+        </div>
+
+        <!-- ── Revenue Charts ── -->
+        <div class="section-title">Revenue History &amp; Projection</div>
+        <div class="charts-grid">
+            <div class="chart-card wide">
+                <div class="chart-header">
+                    <h2>📊 Monthly Revenue — Aug 2025 → Jul 2026 (MTD) + Projection</h2>
+                    <p>Solid bars = actuals. Teal = June record. Green = July MTD. Dashed line = projection with fleet expansion.</p>
+                </div>
+                <div class="chart-wrap tall">
+                    <canvas id="historicalChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <!-- May Invoice Breakdown Doughnut -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h2>🍩 Revenue Status Breakdown — All Time</h2>
+                    <p>June & July actuals vs all prior collected. 3 invoices open ($1,054).</p>
+                </div>
+                <div class="chart-wrap short">
+                    <canvas id="statusChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Client Type Donut - All Time -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h2>👥 All-Time — Client Type Split</h2>
+                    <p>Residential vs Commercial by invoice count (191 total).</p>
+                </div>
+                <div class="chart-wrap short">
+                    <canvas id="clientTypeChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <!-- Top Clients Bar - All Time -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h2>🏢 Top 15 Clients — All-Time Revenue</h2>
+                    <p>Total billed (incl. fees &amp; tax) per client, Aug 2025 – Jul 2026.</p>
+                </div>
+                <div class="chart-wrap tall">
+                    <canvas id="clientRevChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Collection Rate Gauge -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h2>✅ All-Time — Collected vs Outstanding</h2>
+                    <p>$80,476 collected of $81,530 billed. $1,054 outstanding on 3 open invoices.</p>
+                </div>
+                <div class="chart-wrap short">
+                    <canvas id="collectionChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── AR Aging ── -->
+        <div class="section-title">Accounts Receivable — Current Status</div>
+        <div class="ar-grid">
+            <div class="ar-card current">
+                <div class="ar-label">All-Time Collected</div>
+                <div class="ar-amount green">$80,476</div>
+                <div class="ar-detail">$81,530 billed — $1,054 open</div>
+            </div>
+            <div class="ar-card overdue">
+                <div class="ar-label">Outstanding (3 Open Invoices)</div>
+                <div class="ar-amount red">$1,054</div>
+                <div class="ar-detail">Inv 245 Brandon CC $480 · Inv 248 Jay Wilson $373 · Inv 253 Cardinal $161</div>
+            </div>
+            <div class="ar-card current">
+                <div class="ar-label">June 2026 — Final (New Record)</div>
+                <div class="ar-amount green">$13,247</div>
+                <div class="ar-detail">28 invoices · 100% collected · all paid ✓ 🏆</div>
+            </div>
+            <div class="ar-card current">
+                <div class="ar-label">July 2026 — MTD (thru Jul 22)</div>
+                <div class="ar-amount green">$9,833</div>
+                <div class="ar-detail">26 invoices · $8,779 paid · $1,054 open</div>
+            </div>
+            <div class="ar-card voided">
+                <div class="ar-label">Collection Rate (All-Time)</div>
+                <div class="ar-amount" style="color:var(--teal)">98.7%</div>
+                <div class="ar-detail">$80,476 of $81,530 collected · 3 invoices pending</div>
+            </div>
+        </div>
+
+        <!-- ── Top Clients Leaderboard ── -->
+        <div class="section-title">Top Clients by Revenue — All Time</div>
+        <div class="table-card" style="margin-bottom:24px;">
+            <h2>🏅 Client Revenue Leaderboard — All Time (Aug 2025 – Jul 2026)</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:16px;">
+                <div style="background:linear-gradient(135deg,rgba(255,215,0,0.12),rgba(255,215,0,0.02));border:1px solid rgba(255,215,0,0.35);border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:14px;">
+                    <span style="font-size:2.2rem">🥇</span>
+                    <div style="flex:1;min-width:0;">
+                        <div style="font-weight:700;font-size:0.95rem">Gibson &amp; Associates</div>
+                        <div style="font-size:0.72rem;color:var(--muted);margin:3px 0">Commercial · 13 invoices · #1 anchor client 🔥</div>
+                        <div style="background:rgba(255,255,255,0.07);border-radius:4px;height:5px;margin-top:8px"><div style="background:var(--teal);height:5px;border-radius:4px;width:100%"></div></div>
+                    </div>
+                    <div style="font-size:1.35rem;font-weight:800;color:var(--teal);white-space:nowrap">$6,377</div>
+                </div>
+                <div style="background:linear-gradient(135deg,rgba(167,139,250,0.1),rgba(167,139,250,0.02));border:1px solid rgba(167,139,250,0.25);border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:14px;">
+                    <span style="font-size:2.2rem">🥈</span>
+                    <div style="flex:1;min-width:0;">
+                        <div style="font-weight:700;font-size:0.95rem">Multi-South</div>
+                        <div style="font-size:0.72rem;color:var(--muted);margin:3px 0">Commercial · 9 invoices · D&amp;R user · repeat client</div>
+                        <div style="background:rgba(255,255,255,0.07);border-radius:4px;height:5px;margin-top:8px"><div style="background:var(--purple);height:5px;border-radius:4px;width:55.1%"></div></div>
+                    </div>
+                    <div style="font-size:1.35rem;font-weight:800;color:var(--purple);white-space:nowrap">$3,515</div>
+                </div>
+                <div style="background:linear-gradient(135deg,rgba(245,143,66,0.1),rgba(245,143,66,0.02));border:1px solid rgba(245,143,66,0.25);border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:14px;">
+                    <span style="font-size:2.2rem">🥉</span>
+                    <div style="flex:1;min-width:0;">
+                        <div style="font-weight:700;font-size:0.95rem">Brandon Community Care</div>
+                        <div style="font-size:0.72rem;color:var(--muted);margin:3px 0">Non-Profit · 8 invoices · D&amp;R user · repeat client</div>
+                        <div style="background:rgba(255,255,255,0.07);border-radius:4px;height:5px;margin-top:8px"><div style="background:var(--orange);height:5px;border-radius:4px;width:52.1%"></div></div>
+                    </div>
+                    <div style="font-size:1.35rem;font-weight:800;color:var(--orange);white-space:nowrap">$3,319</div>
+                </div>
+            </div>
+            <table style="margin-top:20px;">
+                <thead><tr><th>Rank</th><th>Client</th><th>Type</th><th>Invoices</th><th>All-Time Revenue</th><th>% of Total</th></tr></thead>
+                <tbody>
+                    <tr><td style="color:var(--muted);font-weight:700">4</td><td class="inv-client">Phoenix Fabricators</td><td><span class="badge badge-purple">Commercial</span></td><td class="td-invoices">7</td><td class="td-dollars">$3,131.00</td><td style='color:var(--muted);font-size:0.82rem'>3.8%</td></tr>
+                    <tr><td style="color:var(--muted);font-weight:700">5</td><td class="inv-client">Hiliary Carter</td><td><span class="badge badge-blue">Residential</span></td><td class="td-invoices">6</td><td class="td-dollars">$2,206.00</td><td style='color:var(--muted);font-size:0.82rem'>2.7%</td></tr>
+                    <tr><td style="color:var(--muted);font-weight:700">6</td><td class="inv-client">AIT Environmental</td><td><span class="badge badge-purple">Commercial</span></td><td class="td-invoices">1</td><td class="td-dollars">$2,013.72</td><td style='color:var(--muted);font-size:0.82rem'>2.5%</td></tr>
+                    <tr><td style="color:var(--muted);font-weight:700">7</td><td class="inv-client">JJ Govinda Krishna</td><td><span class="badge badge-blue">Residential</span></td><td class="td-invoices">6</td><td class="td-dollars">$1,944.29</td><td style='color:var(--muted);font-size:0.82rem'>2.4%</td></tr>
+                    <tr><td style="color:var(--muted);font-weight:700">8</td><td class="inv-client">McCleod Construction LLC</td><td><span class="badge badge-purple">Commercial</span></td><td class="td-invoices">4</td><td class="td-dollars">$1,818.36</td><td style='color:var(--muted);font-size:0.82rem'>2.2%</td></tr>
+                    <tr><td style="color:var(--muted);font-weight:700">9</td><td class="inv-client">Superior Traffic Control</td><td><span class="badge badge-purple">Commercial</span></td><td class="td-invoices">4</td><td class="td-dollars">$1,686.32</td><td style='color:var(--muted);font-size:0.82rem'>2.1%</td></tr>
+                    <tr><td style="color:var(--muted);font-weight:700">10</td><td class="inv-client">Bluff City Turf <span style='font-size:0.7rem;color:var(--teal)'>&uarr; NEW Jul 2026</span></td><td><span class="badge badge-purple">Commercial</span></td><td class="td-invoices">5</td><td class="td-dollars">$1,631.75</td><td style='color:var(--muted);font-size:0.82rem'>2.0%</td></tr>
+                    <tr><td style="color:var(--muted);font-weight:700">11</td><td class="inv-client">Randy Nations</td><td><span class="badge badge-blue">Residential</span></td><td class="td-invoices">4</td><td class="td-dollars">$1,636.96</td><td style='color:var(--muted);font-size:0.82rem'>2.0%</td></tr>
+                    <tr><td style="color:var(--muted);font-weight:700">12</td><td class="inv-client">Christina Coleman</td><td><span class="badge badge-blue">Residential</span></td><td class="td-invoices">5</td><td class="td-dollars">$1,633.89</td><td style='color:var(--muted);font-size:0.82rem'>2.0%</td></tr>
+                    <tr><td style="color:var(--muted);font-weight:700">13</td><td class="inv-client">Jay Wilson</td><td><span class="badge badge-blue">Contractor</span></td><td class="td-invoices">4</td><td class="td-dollars">$1,444.86</td><td style='color:var(--muted);font-size:0.82rem'>1.8%</td></tr>
+                    <tr><td style="color:var(--muted);font-weight:700">14</td><td class="inv-client">Gibson &amp; Associates (Jun-Jul additional)</td><td><span class="badge badge-purple">Commercial</span></td><td class="td-invoices">13 total</td><td class="td-dollars">see #1</td><td style='color:var(--muted);font-size:0.82rem'>—</td></tr>
+                    <tr><td style="color:var(--muted);font-weight:700">15</td><td class="inv-client">Trey Porter</td><td><span class="badge badge-blue">Residential</span></td><td class="td-invoices">3</td><td class="td-dollars">$1,207.00</td><td style='color:var(--muted);font-size:0.82rem'>1.5%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-title">June &amp; May 2026 — Invoice Detail</div>
+        <div class="table-card">
+            <h2>📑 June 2026 (4 invoices) + May 2026 Complete (18 invoices) + April 2026 Archive</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Client</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Profit</th>
+                        <th>Total</th>
+                        <th>Balance Due</th>
+                        <th>Payment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="9" style="padding:10px 0 6px;font-size:0.72rem;color:var(--success);font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--border);">── July 2026 (MTD) ──</td>
+                    </tr>
+                    <tr style="background:rgba(63,185,80,0.04);">
+                        <td class="inv-num" style="color:var(--success)">162</td>
+                        <td style="color:var(--success)">07/22/26</td>
+                        <td class="inv-client">Toys for Tots</td>
+                        <td><span class="badge badge-purple">Non-Profit</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$0.00</td><td class="td-dollars">$0.00</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr style="background:rgba(63,185,80,0.04);">
+                        <td class="inv-num" style="color:var(--success)">237</td>
+                        <td style="color:var(--success)">07/01/26</td>
+                        <td class="inv-client">Andrew Gallagher</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$349.00</td><td class="td-dollars">$373.43</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr style="background:rgba(63,185,80,0.04);">
+                        <td class="inv-num" style="color:var(--success)">232</td>
+                        <td style="color:var(--success)">07/01/26</td>
+                        <td class="inv-client">Gibson & Associates</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$374.00</td><td class="td-dollars">$400.18</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9" style="padding:20px 0 6px;font-size:0.72rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--border);">── June 2026 Complete (28 invoices) ──</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">231</td>
+                        <td>06/30/26</td>
+                        <td class="inv-client">Gibson & Associates</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$448.00</td><td class="td-dollars">$479.36</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">223</td>
+                        <td>06/29/26</td>
+                        <td class="inv-client">Edna Adams</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$399.00</td><td class="td-dollars">$426.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">222</td>
+                        <td>06/26/26</td>
+                        <td class="inv-client">Andrew Gallagher</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$474.00</td><td class="td-dollars">$507.18</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">220</td>
+                        <td>06/26/26</td>
+                        <td class="inv-client">Gibson & Associates</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$499.00</td><td class="td-dollars">$533.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">217</td>
+                        <td>06/26/26</td>
+                        <td class="inv-client">Ellen Holifield</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$499.00</td><td class="td-dollars">$533.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">221</td>
+                        <td>06/24/26</td>
+                        <td class="inv-client">Christina Coleman</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$449.00</td><td class="td-dollars">$480.43</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">219</td>
+                        <td>06/23/26</td>
+                        <td class="inv-client">Madisyn Sanford</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$399.00</td><td class="td-dollars">$426.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">218</td>
+                        <td>06/23/26</td>
+                        <td class="inv-client">The Pension Source</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$449.00</td><td class="td-dollars">$480.43</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">216</td>
+                        <td>06/22/26</td>
+                        <td class="inv-client">Randall Williams</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$499.00</td><td class="td-dollars">$533.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">215</td>
+                        <td>06/20/26</td>
+                        <td class="inv-client">Shaylon Taylor</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$399.00</td><td class="td-dollars">$426.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">214</td>
+                        <td>06/18/26</td>
+                        <td class="inv-client">Tommy Robertson</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$429.00</td><td class="td-dollars">$459.03</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">213</td>
+                        <td>06/17/26</td>
+                        <td class="inv-client">Jack Harkins</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$449.00</td><td class="td-dollars">$480.43</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">212</td>
+                        <td>06/15/26</td>
+                        <td class="inv-client">Gibson & Associates</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$499.00</td><td class="td-dollars">$533.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">211</td>
+                        <td>06/14/26</td>
+                        <td class="inv-client">Kimberly Anderson</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$399.00</td><td class="td-dollars">$426.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">209</td>
+                        <td>06/13/26</td>
+                        <td class="inv-client">Beverly Fatherree</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$404.00</td><td class="td-dollars">$432.28</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">208</td>
+                        <td>06/12/26</td>
+                        <td class="inv-client">Natco Design Build</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$407.55</td><td class="td-dollars">$436.08</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">207</td>
+                        <td>06/12/26</td>
+                        <td class="inv-client">Calvin Palmer</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$429.00</td><td class="td-dollars">$459.03</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">205</td>
+                        <td>06/10/26</td>
+                        <td class="inv-client">Multi-South</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$428.00</td><td class="td-dollars">$457.96</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">204</td>
+                        <td>06/10/26</td>
+                        <td class="inv-client">JJ Govinda Krishna</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$349.00</td><td class="td-dollars">$373.43</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">203</td>
+                        <td>06/10/26</td>
+                        <td class="inv-client">Gibson & Associates</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$299.00</td><td class="td-dollars">$319.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">202</td>
+                        <td>06/09/26</td>
+                        <td class="inv-client">Alex Willoughby</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$449.00</td><td class="td-dollars">$480.43</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">201</td>
+                        <td>06/09/26</td>
+                        <td class="inv-client">Gibson & Associates</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$449.00</td><td class="td-dollars">$480.43</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">200</td>
+                        <td>06/09/26</td>
+                        <td class="inv-client">Multi-South</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$429.00</td><td class="td-dollars">$459.03</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">199</td>
+                        <td>06/09/26</td>
+                        <td class="inv-client">Michael Sharp</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$479.00</td><td class="td-dollars">$512.53</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">197</td>
+                        <td>06/03/26</td>
+                        <td class="inv-client">Randy Nations</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$299.00</td><td class="td-dollars">$319.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">196</td>
+                        <td>06/03/26</td>
+                        <td class="inv-client">Randy Nations</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$429.00</td><td class="td-dollars">$459.03</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">195</td>
+                        <td>06/02/26</td>
+                        <td class="inv-client">RC/MHLLC</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$399.00</td><td class="td-dollars">$426.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">191</td>
+                        <td>06/02/26</td>
+                        <td class="inv-client">Gibson & Associates</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$449.00</td><td class="td-dollars">$480.43</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9" style="padding:20px 0 6px;font-size:0.72rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--border);">── May 2026 Complete (18 invoices) ──</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">194</td>
+                        <td>05/28/26</td>
+                        <td class="inv-client">Memory Clark</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$399.00</td><td class="td-dollars">$426.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">193</td>
+                        <td>05/24/26</td>
+                        <td class="inv-client">Madison Knight</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$598.00</td><td class="td-dollars">$639.86</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">192</td>
+                        <td>05/22/26</td>
+                        <td class="inv-client">Angie Holbrook</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$50.00</td><td class="td-dollars">$53.50</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">190</td>
+                        <td>05/19/26</td>
+                        <td class="inv-client">Angie Holbrook</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$379.00</td><td class="td-dollars">$405.53</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">188</td>
+                        <td>05/18/26</td>
+                        <td class="inv-client">Kristopher Sterling</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$429.00</td><td class="td-dollars">$459.03</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">187</td>
+                        <td>05/18/26</td>
+                        <td class="inv-client">Southern Roofing Company</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$50.00</td><td class="td-dollars">$50.00</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">183</td>
+                        <td>05/15/26</td>
+                        <td class="inv-client">Gibson & Associates</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$299.00</td><td class="td-dollars">$319.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">185</td>
+                        <td>05/14/26</td>
+                        <td class="inv-client">Stewart Hester</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$379.00</td><td class="td-dollars">$405.53</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">184</td>
+                        <td>05/14/26</td>
+                        <td class="inv-client">Cover Source Solutions</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$399.00</td><td class="td-dollars">$426.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">182</td>
+                        <td>05/13/26</td>
+                        <td class="inv-client">Southern Roofing Company</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$400.00</td><td class="td-dollars">$400.00</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">181</td>
+                        <td>05/13/26</td>
+                        <td class="inv-client">Beverly Puckett</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$429.00</td><td class="td-dollars">$459.03</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">180</td>
+                        <td>05/12/26</td>
+                        <td class="inv-client">Jay Wilson</td>
+                        <td><span class="badge badge-blue">Contractor</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$349.00</td><td class="td-dollars">$373.43</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">179</td>
+                        <td>05/10/26</td>
+                        <td class="inv-client">Gibson & Associates</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$449.00</td><td class="td-dollars">$480.43</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">189</td>
+                        <td>05/08/26</td>
+                        <td class="inv-client">Mu Alpha Theta</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$300.00</td><td class="td-dollars">$300.00</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">177</td>
+                        <td>05/07/26</td>
+                        <td class="inv-client">Mu Alpha Theta</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$450.00</td><td class="td-dollars">$450.00</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">176</td>
+                        <td>05/05/26</td>
+                        <td class="inv-client">Half Moon Properties</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$299.00</td><td class="td-dollars">$319.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">175</td>
+                        <td>05/04/26</td>
+                        <td class="inv-client">Matthew Bridges</td>
+                        <td><span class="badge badge-blue">Residential</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$399.00</td><td class="td-dollars">$426.93</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                    <tr>
+                        <td class="inv-num">171</td>
+                        <td>05/04/26</td>
+                        <td class="inv-client">Half Moon Properties</td>
+                        <td><span class="badge badge-purple">Commercial</span></td>
+                        <td><span class="badge badge-teal">✓ Paid</span></td>
+                        <td class="td-dollars">$479.00</td><td class="td-dollars">$512.53</td>
+                        <td><span class="badge badge-teal">$0.00</span></td>
+                        <td style="color:var(--success);font-size:0.8rem">✓ Paid</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ── Monthly Breakdown Table ── -->
+        <div class="section-title">All-Time Monthly Performance</div>
+        <div class="table-card">
+            <h2>📋 Monthly Revenue Breakdown — All Time</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Revenue</th>
+                        <th># Invoices</th>
+                        <th>Avg / Invoice</th>
+                        <th>MoM Change</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td-month">August 2025</td>
+                        <td class="td-dollars">$399</td>
+                        <td class="td-invoices">1</td>
+                        <td class="td-invoices">$399</td>
+                        <td class="td-invoices">—</td>
+                        <td><span class="badge badge-teal">✓ Collected</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">September 2025</td>
+                        <td class="td-dollars">$1,328</td>
+                        <td class="td-invoices">4</td>
+                        <td class="td-invoices">$332</td>
+                        <td class="td-invoices"><span style="color:var(--success)">&uarr; +233%</span></td>
+                        <td><span class="badge badge-teal">✓ Collected</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">October 2025</td>
+                        <td class="td-dollars">$3,563</td>
+                        <td class="td-invoices">9</td>
+                        <td class="td-invoices">$396</td>
+                        <td class="td-invoices"><span style="color:var(--success)">&uarr; +168%</span></td>
+                        <td><span class="badge badge-teal">✓ Collected</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">November 2025</td>
+                        <td class="td-dollars">$5,924</td>
+                        <td class="td-invoices">14</td>
+                        <td class="td-invoices">$423</td>
+                        <td class="td-invoices"><span style="color:var(--success)">&uarr; +66%</span></td>
+                        <td><span class="badge badge-teal">✓ Collected</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">December 2025</td>
+                        <td class="td-dollars">$3,522</td>
+                        <td class="td-invoices">8</td>
+                        <td class="td-invoices">$440</td>
+                        <td class="td-invoices"><span style="color:var(--danger)">&darr; -41%</span></td>
+                        <td><span class="badge badge-teal">✓ Collected</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">January 2026</td>
+                        <td class="td-dollars">$6,237</td>
+                        <td class="td-invoices">16</td>
+                        <td class="td-invoices">$390</td>
+                        <td class="td-invoices"><span style="color:var(--success)">&uarr; +77%</span></td>
+                        <td><span class="badge badge-teal">✓ Collected</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">February 2026</td>
+                        <td class="td-dollars">$7,915</td>
+                        <td class="td-invoices">18</td>
+                        <td class="td-invoices">$440</td>
+                        <td class="td-invoices"><span style="color:var(--success)">&uarr; +27%</span></td>
+                        <td><span class="badge badge-teal">✓ Collected</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">March 2026</td>
+                        <td class="td-dollars">$9,409</td>
+                        <td class="td-invoices">23</td>
+                        <td class="td-invoices">$409</td>
+                        <td class="td-invoices"><span style="color:var(--success)">&uarr; +19%</span></td>
+                        <td><span class="badge badge-teal">✓ Collected</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">April 2026</td>
+                        <td class="td-dollars">$12,645</td>
+                        <td class="td-invoices">26</td>
+                        <td class="td-invoices">$486</td>
+                        <td class="td-invoices"><span style="color:var(--success)">&uarr; +34%</span></td>
+                        <td><span class="badge badge-teal">✓ Collected</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">May 2026</td>
+                        <td class="td-dollars">$6,910</td>
+                        <td class="td-invoices">18</td>
+                        <td class="td-invoices">$384</td>
+                        <td class="td-invoices"><span style="color:var(--danger)">&darr; -45%</span></td>
+                        <td><span class="badge badge-teal">✓ Collected</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">June 2026</td>
+                        <td class="td-dollars">$12,828</td>
+                        <td class="td-invoices">28</td>
+                        <td class="td-invoices">$458</td>
+                        <td class="td-invoices"><span style="color:var(--success)">&uarr; +86%</span></td>
+                        <td><span class="badge badge-teal">✓ Collected</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">July 2026</td>
+                        <td class="td-dollars">$774</td>
+                        <td class="td-invoices">3</td>
+                        <td class="td-invoices">$258</td>
+                        <td class="td-invoices"><span style="color:var(--warning)">&darr; -94% (MTD)</span></td>
+                        <td><span class="badge badge-warning">⏳ In Progress</span></td>
+                    </tr>
+                    <tr style="opacity:0.7">
+                        <td class="td-month" style="color:var(--yellow)">August 2026 (proj.)</td>
+                        <td class="td-dollars" style="color:var(--yellow)">~$21,000</td>
+                        <td class="td-invoices">~42</td>
+                        <td class="td-invoices">~$500</td>
+                        <td style="color:var(--yellow);font-size:0.82rem">&uarr; full summer</td>
+                        <td><span class="badge badge-proj">📈 Projected</span></td>
+                    </tr>
+                    <tr style="opacity:0.7">
+                        <td class="td-month" style="color:var(--yellow)">September 2026 (proj.)</td>
+                        <td class="td-dollars" style="color:var(--yellow)">~$18,500</td>
+                        <td class="td-invoices">~37</td>
+                        <td class="td-invoices">~$500</td>
+                        <td style="color:var(--yellow);font-size:0.82rem">&darr; post-summer</td>
+                        <td><span class="badge badge-proj">📈 Projected</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════════════ -->
+        <!-- ── Section A: Rental Duration & Product Mix Analysis ────── -->
+        <!-- ══════════════════════════════════════════════════════════════ -->
+        <div class="section-title">Rental Duration & Product Mix Analysis</div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-emoji">⏱️</span>
+                <div class="stat-label">Avg Rental Duration</div>
+                <div class="stat-value teal">4.27 days</div>
+                <div class="stat-sub">Based on 91 standard-priced rentals</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-emoji">📅</span>
+                <div class="stat-label">Most Common Duration</div>
+                <div class="stat-value teal">7-Day (42.9%)</div>
+                <div class="stat-sub">39 of 91 rentals · highest volume product</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-emoji">📦</span>
+                <div class="stat-label">Most Popular Size</div>
+                <div class="stat-value teal">15 Yard (40.7%)</div>
+                <div class="stat-sub">37 of 91 rentals · "Most Popular" on website</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-emoji">💵</span>
+                <div class="stat-label">Revenue Per Dumpster-Day</div>
+                <div class="stat-value teal">$106</div>
+                <div class="stat-sub">Avg across all sizes and durations</div>
+            </div>
+        </div>
+        <div class="charts-grid">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h2>⏱️ Duration Distribution</h2>
+                    <p>Breakdown of 132 standard-priced rentals by rental period.</p>
+                </div>
+                <div class="chart-wrap short">
+                    <canvas id="durationChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h2>📦 Dumpster Size Distribution</h2>
+                    <p>Breakdown of 145 standard-priced rentals by container size.</p>
+                </div>
+                <div class="chart-wrap short">
+                    <canvas id="sizeChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════════════ -->
+        <!-- ── Section B: Per-Rental Unit Economics ─────────────────── -->
+        <!-- ══════════════════════════════════════════════════════════════ -->
+        <div class="section-title">Per-Rental Unit Economics</div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-emoji">💰</span>
+                <div class="stat-label">Avg Profit Per Rental</div>
+                <div class="stat-value teal">$318</div>
+                <div class="stat-sub">After dump fees ($40-70) + fuel (~$62.50)</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-emoji">📊</span>
+                <div class="stat-label">Gross Margin</div>
+                <div class="stat-value teal">73.2%</div>
+                <div class="stat-sub">Industry avg is 50-60%. You are significantly above.</div>
+            </div>
+            <div class="stat-card blue">
+                <span class="stat-emoji">🔧</span>
+                <div class="stat-label">Variable Cost Per Rental</div>
+                <div class="stat-value blue">$116</div>
+                <div class="stat-sub">Dump: ~$54 avg + Fuel: ~$62.50</div>
+            </div>
+            <div class="stat-card purple">
+                <span class="stat-emoji">🏢</span>
+                <div class="stat-label">Monthly Overhead</div>
+                <div class="stat-value purple">~$967</div>
+                <div class="stat-sub">Docket $200 · GL $67 · Trailer Ins $100 · Lot $300 · Truck Ins $300</div>
+            </div>
+        </div>
+
+        <div class="table-card">
+            <h2>💰 Profit Per Rental — Complete Pricing Matrix</h2>
+            <p style="font-size:0.78rem;color:var(--muted);margin-top:-8px;margin-bottom:16px;">Variable costs only (dump fee + fuel). Does not include fixed overhead.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Duration</th>
+                        <th>Price</th>
+                        <th>Dump Fee</th>
+                        <th>Fuel (avg)</th>
+                        <th>Profit</th>
+                        <th>Margin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td-month">10 Yard</td>
+                        <td>1 Day</td>
+                        <td class="td-dollars">$349</td>
+                        <td style="color:var(--muted)">$40</td>
+                        <td style="color:var(--muted)">$62.50</td>
+                        <td style="color:var(--teal);font-weight:700">$246.50</td>
+                        <td>70.6%</td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">10 Yard</td>
+                        <td>3 Day</td>
+                        <td class="td-dollars">$379</td>
+                        <td style="color:var(--muted)">$40</td>
+                        <td style="color:var(--muted)">$62.50</td>
+                        <td style="color:var(--teal);font-weight:700">$276.50</td>
+                        <td>73.0%</td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">10 Yard</td>
+                        <td>7 Day</td>
+                        <td class="td-dollars">$399</td>
+                        <td style="color:var(--muted)">$40</td>
+                        <td style="color:var(--muted)">$62.50</td>
+                        <td style="color:var(--teal);font-weight:700">$296.50</td>
+                        <td>74.3%</td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">15 Yard</td>
+                        <td>1 Day</td>
+                        <td class="td-dollars">$399</td>
+                        <td style="color:var(--muted)">$50</td>
+                        <td style="color:var(--muted)">$62.50</td>
+                        <td style="color:var(--teal);font-weight:700">$286.50</td>
+                        <td>71.8%</td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">15 Yard</td>
+                        <td>3 Day</td>
+                        <td class="td-dollars">$429</td>
+                        <td style="color:var(--muted)">$50</td>
+                        <td style="color:var(--muted)">$62.50</td>
+                        <td style="color:var(--teal);font-weight:700">$316.50</td>
+                        <td>73.8%</td>
+                    </tr>
+                    <tr style="background:rgba(25,184,156,0.08);outline:1px solid rgba(25,184,156,0.3);">
+                        <td class="td-month" style="font-weight:800">15 Yard</td>
+                        <td style="font-weight:800">7 Day</td>
+                        <td class="td-dollars" style="font-weight:800">$449</td>
+                        <td style="color:var(--muted);font-weight:800">$50</td>
+                        <td style="color:var(--muted);font-weight:800">$62.50</td>
+                        <td style="color:var(--teal);font-weight:800">$336.50</td>
+                        <td style="font-weight:800;color:var(--teal)">74.9% ⭐</td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">20 Yard</td>
+                        <td>1 Day</td>
+                        <td class="td-dollars">$449</td>
+                        <td style="color:var(--muted)">$70</td>
+                        <td style="color:var(--muted)">$62.50</td>
+                        <td style="color:var(--teal);font-weight:700">$316.50</td>
+                        <td>70.5%</td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">20 Yard</td>
+                        <td>3 Day</td>
+                        <td class="td-dollars">$479</td>
+                        <td style="color:var(--muted)">$70</td>
+                        <td style="color:var(--muted)">$62.50</td>
+                        <td style="color:var(--teal);font-weight:700">$346.50</td>
+                        <td>72.3%</td>
+                    </tr>
+                    <tr>
+                        <td class="td-month">20 Yard</td>
+                        <td>7 Day</td>
+                        <td class="td-dollars">$499</td>
+                        <td style="color:var(--muted)">$70</td>
+                        <td style="color:var(--muted)">$62.50</td>
+                        <td style="color:var(--teal);font-weight:700">$366.50</td>
+                        <td>73.4%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="insights" style="margin-bottom:24px;">
+            <h3>💡 Unit Economics Insights</h3>
+            <div class="insights-grid">
+                <div class="insight-item">
+                    <span class="icon">🏆</span>
+                    <div><strong>Best margin product: 15 Yard / 7 Day at 74.9%</strong> — and it is also your most popular size</div>
+                </div>
+                <div class="insight-item">
+                    <span class="icon">⚡</span>
+                    <div><strong>1-day rentals earn $404/day per occupied dumpster vs $67/day for 7-day</strong> — but 7-day requires fewer trips per dollar</div>
+                </div>
+                <div class="insight-item">
+                    <span class="icon">📊</span>
+                    <div><strong>78% of your rentals are 3+ day, generating 78% of revenue.</strong> Your pricing is well-optimized for your market.</div>
+                </div>
+                <div class="insight-item">
+                    <span class="icon">⚠️</span>
+                    <div><strong>Solo operator bottleneck: A 10-day vacation in May cost ~$4,000 in lost revenue.</strong> A driver would keep trucks rolling.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════════════ -->
+        <!-- ── Section C: Business Growth Plan Summary ─────────────── -->
+        <!-- ══════════════════════════════════════════════════════════════ -->
+        <div class="section-title">Business Growth Plan — 3-Phase Expansion</div>
+        <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="stat-card" style="border-top:3px solid var(--teal);padding:24px;">
+                <div style="font-size:0.72rem;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:10px;">Phase 1: Fleet & Equipment</div>
+                <div style="font-size:0.78rem;color:var(--muted);margin-bottom:12px;">📅 July 2026</div>
+                <ul style="list-style:none;padding:0;font-size:0.83rem;color:var(--text);">
+                    <li style="padding:5px 0;border-bottom:1px solid var(--border);">🚛 Second truck ($25-45K)</li>
+                    <li style="padding:5px 0;border-bottom:1px solid var(--border);">🔗 Pro-Tainer trailer ($8-15K)</li>
+                    <li style="padding:5px 0;border-bottom:1px solid var(--border);">📦 4-6 additional dumpsters ($12-30K)</li>
+                </ul>
+                <div style="margin-top:12px;font-size:1.1rem;font-weight:700;color:var(--teal);">$45K-90K</div>
+                <div style="font-size:0.72rem;color:var(--muted);">Estimated budget</div>
+            </div>
+            <div class="stat-card" style="border-top:3px solid var(--purple);padding:24px;">
+                <div style="font-size:0.72rem;color:var(--purple);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:10px;">Phase 2: Property Acquisition</div>
+                <div style="font-size:0.78rem;color:var(--muted);margin-bottom:12px;">📅 Aug-Sep 2026</div>
+                <ul style="list-style:none;padding:0;font-size:0.83rem;color:var(--text);">
+                    <li style="padding:5px 0;border-bottom:1px solid var(--border);">🏠 House + 10-20 acres in Rankin County</li>
+                    <li style="padding:5px 0;border-bottom:1px solid var(--border);">🏗️ Pole barn (self-built, ~$25K)</li>
+                    <li style="padding:5px 0;border-bottom:1px solid var(--border);">🪨 Grading + gravel (~$10K)</li>
+                    <li style="padding:5px 0;border-bottom:1px solid var(--border);">🔥 Burn pit for wood debris</li>
+                </ul>
+                <div style="margin-top:12px;font-size:1.1rem;font-weight:700;color:var(--purple);">$175-250K</div>
+                <div style="font-size:0.72rem;color:var(--muted);">Copiah Bank, 0-3% down</div>
+            </div>
+            <div class="stat-card" style="border-top:3px solid var(--blue);padding:24px;">
+                <div style="font-size:0.72rem;color:var(--blue);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:10px;">Phase 3: First Hire</div>
+                <div style="font-size:0.78rem;color:var(--muted);margin-bottom:12px;">📅 Sep-Oct 2026</div>
+                <ul style="list-style:none;padding:0;font-size:0.83rem;color:var(--text);">
+                    <li style="padding:5px 0;border-bottom:1px solid var(--border);">👷 Driver/operator ($16-20/hr)</li>
+                    <li style="padding:5px 0;border-bottom:1px solid var(--border);">📋 Owner becomes dispatcher + driver #2</li>
+                    <li style="padding:5px 0;border-bottom:1px solid var(--border);">🚀 Unlocks 2x delivery capacity</li>
+                </ul>
+                <div style="margin-top:12px;font-size:1.1rem;font-weight:700;color:var(--blue);">~$3,700-4,500/mo</div>
+                <div style="font-size:0.72rem;color:var(--muted);">Monthly labor cost</div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h2>📈 Monthly Revenue Projection — Year 2</h2>
+                    <p>Projected monthly revenue Jul 2026 – May 2027 with fleet expansion and first hire.</p>
+                </div>
+                <div class="chart-wrap tall">
+                    <canvas id="projectionChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h2>💰 Monthly P&L Projection at Scale</h2>
+                    <p>Estimated monthly economics with driver + expanded fleet (15-20 dumpsters).</p>
+                </div>
+                <div style="padding:16px 0;">
+                    <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);">
+                        <span style="font-size:1.2rem;">📈</span>
+                        <div style="flex:1;">
+                            <div style="font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;">Revenue</div>
+                            <div style="font-size:1.4rem;font-weight:700;color:var(--teal);">$15,200 – $19,500/mo</div>
+                        </div>
+                        <div style="background:var(--teal-light);height:8px;border-radius:4px;width:100%;max-width:200px;">
+                            <div style="background:var(--teal);height:8px;border-radius:4px;width:100%;"></div>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);">
+                        <span style="font-size:1.2rem;">🔧</span>
+                        <div style="flex:1;">
+                            <div style="font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;">Variable Costs</div>
+                            <div style="font-size:1.4rem;font-weight:700;color:var(--orange);">$4,078 – $5,243/mo</div>
+                        </div>
+                        <div style="background:rgba(245,143,66,0.15);height:8px;border-radius:4px;width:100%;max-width:200px;">
+                            <div style="background:var(--orange);height:8px;border-radius:4px;width:27%;"></div>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);">
+                        <span style="font-size:1.2rem;">🏢</span>
+                        <div style="flex:1;">
+                            <div style="font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;">Fixed Costs</div>
+                            <div style="font-size:1.4rem;font-weight:700;color:var(--purple);">$7,317 – $9,512/mo</div>
+                        </div>
+                        <div style="background:rgba(167,139,250,0.15);height:8px;border-radius:4px;width:100%;max-width:200px;">
+                            <div style="background:var(--purple);height:8px;border-radius:4px;width:49%;"></div>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:16px;padding:18px 0;">
+                        <span style="font-size:1.2rem;">💰</span>
+                        <div style="flex:1;">
+                            <div style="font-size:0.72rem;color:var(--success);text-transform:uppercase;letter-spacing:0.06em;font-weight:700;">Net Income</div>
+                            <div style="font-size:1.6rem;font-weight:800;color:var(--success);">$3,805 – $7,605/mo</div>
+                        </div>
+                        <div style="background:rgba(63,185,80,0.15);height:8px;border-radius:4px;width:100%;max-width:200px;">
+                            <div style="background:var(--success);height:8px;border-radius:4px;width:39%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="insights" style="margin-bottom:24px;">
+            <h3>📊 Growth Plan — Honest Assessment</h3>
+            <div class="insights-grid">
+                <div class="insight-item">
+                    <span class="icon">📈</span>
+                    <div><strong>Year 2 projection: $180K-$245K revenue, $45K-97K net income.</strong> Household income: $120K-175K with wife's $75K W-2.</div>
+                </div>
+                <div class="insight-item">
+                    <span class="icon">⚠️</span>
+                    <div><strong>Biggest risk: over-leveraging.</strong> Property + truck + dumpsters = $272K-398K in new investment. Copiah Bank's 24-month I/O period gives runway, but winter months (Dec-Jan) will test cash reserves.</div>
+                </div>
+                <div class="insight-item">
+                    <span class="icon">🔥</span>
+                    <div><strong>June 2026 record: $12,827.75 across 28 invoices.</strong> Fully paid & collected. July 2026 is now underway with 3 invoices MTD.</div>
+                </div>
+                <div class="insight-item">
+                    <span class="icon">💡</span>
+                    <div><strong>The burn pit saves ~$315/month (~$3,800/year)</strong> at your current 1-in-6 burnable ratio. It's a nice bonus, not a game-changer. Don't buy land solely for the burn pit.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Insights ── -->
+        <div class="section-title">Key Insights — July 22, 2026 Update</div>
+        <div class="insights">
+            <h3>💡 Business Intelligence — Updated July 22, 2026</h3>
+            <div class="insights-grid">
+                <div class="insight-item">
+                    <span class="icon">🏆</span>
+                    <div><strong>June 2026 CONFIRMED new record: $13,247 across 28 invoices.</strong> Beat April's $12,645 by $602. All-time revenue now at $81,530 through July 22.</div>
+                </div>
+                <div class="insight-item">
+                    <span class="icon">🚀</span>
+                    <div><strong>July 2026 MTD (thru Jul 22): $9,833 across 26 jobs.</strong> Pacing at ~$447/day — projecting a ~$13,400 full month. Could be another record.</div>
+                </div>
+                <div class="insight-item">
+                    <span class="icon">⭐</span>
+                    <div><strong>Bluff City Turf — biggest new client debut ever.</strong> $1,632 in July alone: 1 rental + 4 D&amp;R fees at a single Madison job site. Strong candidate for repeat commercial account.</div>
+                </div>
+                <div class="insight-item">
+                    <span class="icon">⚠️</span>
+                    <div><strong>3 open invoices — $1,054 outstanding.</strong> Brandon CC Inv 245 ($480.43), Jay Wilson Inv 248 ($373.43), Cardinal Concrete Inv 253 ($160.50). Follow up to collect.</div>
+                </div>
+                <div class="insight-item">
+                    <span class="icon">📈</span>
+                    <div><strong>Gibson &amp; Associates now a $6,377 anchor account</strong> — 13 invoices across 12 months. Nearly doubled since last update. Your most valuable client by a wide margin.</div>
+                </div>
+                <div class="insight-item">
+                    <span class="icon">💡</span>
+                    <div><strong>2026 monthly avg now $10,717/mo</strong> (Jan–Jul). Up from $2,947/mo in 2025. 3.6× growth in monthly run-rate year over year. On track for $150K+ full-year 2026.</div>
+                </div>
+                <div class="insight-item">
+                    <span class="icon">💰</span>
+                    <div><strong>73% gross margin on rentals.</strong> After dump fees ($40-70) and fuel (~$62.50), average profit per rental is $318. Industry avg is 50-60% — you're significantly above.</div>
+                </div>
+                <div class="insight-item">
+                    <span class="icon">🌟</span>
+                    <div><strong>Ready for Phase 1 expansion.</strong> Second truck + Pro-Tainer trailer + additional dumpsters. Current demand proves the market — need to scale operations to capture it.</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        MidSouth Dumpster MS · Revenue Dashboard · Updated July 22, 2026 · Data source: Docket Invoice Management + CSV Export (Sales_612025_812026.csv)
+    </footer>
+
+    <script>
+        const teal = '#19b89c';
+        const yellow = '#f5c842';
+        const orange = '#f58f42';
+        const blue = '#4a9eff';
+        const purple = '#a78bfa';
+        const muted = '#8b949e';
+        const success = '#3fb950';
+        const danger = '#f85149';
+        const bg2 = '#161b22';
+        const border = 'rgba(255,255,255,0.08)';
+
+        Chart.defaults.color = muted;
+        Chart.defaults.borderColor = border;
+        Chart.defaults.font.family = 'Inter, sans-serif';
+
+        const tooltipDefaults = {
+            backgroundColor: '#1f2937',
+            borderColor: 'rgba(255,255,255,0.12)',
+            borderWidth: 1,
+            padding: 14,
+            cornerRadius: 10,
+        };
+
+        // ── Historical + Projection Combo Chart ──────────────────────────
+        const histCtx = document.getElementById('historicalChart').getContext('2d');
+
+        const allLabels = ['Aug 25', 'Sep 25', 'Oct 25', 'Nov 25', 'Dec 25', 'Jan 26', 'Feb 26', 'Mar 26', 'Apr 26\n⭐ Record', 'May 26\n✅ Final', 'Jun 26\n🏆 Record', 'Jul 26\n⏳ MTD', 'Aug 26'];
+        const actualBars = [399, 1328, 3563, 5924, 3522, 6236, 7915, 9408, null, 7510, null, null, null];
+        const aprilBar   = [null, null, null, null, null, null, null, null, 12645, null, null, null, null];
+        const mayBar     = [null, null, null, null, null, null, null, null, null, null, 13247, null, null];
+        const juneMTD    = [null, null, null, null, null, null, null, null, null, null, null, 9833, null];
+        const projLine   = [null, null, null, null, null, null, null, null, null, null, 13247, 18000, 21000];
+        const avgLine    = [399, 332, 396, 423, 440, 390, 440, 409, 486, 417, 473, 378, null];
+
+        const gradProj = histCtx.createLinearGradient(0, 0, 0, 360);
+        gradProj.addColorStop(0, 'rgba(245,200,66,0.2)');
+        gradProj.addColorStop(1, 'rgba(245,200,66,0.01)');
+
+        new Chart(histCtx, {
+            type: 'bar',
+            data: {
+                labels: allLabels,
+                datasets: [
+                    {
+                        label: 'Monthly Revenue (Actual)',
+                        data: actualBars,
+                        backgroundColor: teal,
+                        borderColor: '#0f9e85',
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        borderSkipped: false,
+                        order: 3,
+                    },
+                    {
+                        label: 'April 2026 (Record)',
+                        data: aprilBar,
+                        backgroundColor: 'rgba(25,184,156,0.85)',
+                        borderColor: teal,
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        borderSkipped: false,
+                        order: 3,
+                    },
+                    {
+                        label: 'June 2026 (Record)',
+                        data: mayBar,
+                        backgroundColor: 'rgba(74,158,255,0.7)',
+                        borderColor: blue,
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        borderSkipped: false,
+                        order: 3,
+                    },
+                    {
+                        label: 'July 2026 (MTD)',
+                        data: juneMTD,
+                        backgroundColor: 'rgba(63,185,80,0.7)',
+                        borderColor: success,
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        borderSkipped: false,
+                        order: 3,
+                    },
+                    {
+                        label: 'Projection (w/ Fleet)',
+                        data: projLine,
+                        type: 'line',
+                        borderColor: yellow,
+                        backgroundColor: gradProj,
+                        borderWidth: 3,
+                        pointRadius: 5,
+                        pointHoverRadius: 8,
+                        pointBackgroundColor: yellow,
+                        pointBorderColor: '#0d1117',
+                        pointBorderWidth: 2,
+                        tension: 0.35,
+                        fill: true,
+                        borderDash: [6, 4],
+                        order: 1,
+                        yAxisID: 'y',
+                    },
+                    {
+                        label: 'Avg Invoice $',
+                        data: avgLine,
+                        type: 'line',
+                        borderColor: blue,
+                        backgroundColor: 'rgba(74,158,255,0.0)',
+                        borderWidth: 2,
+                        pointRadius: 5,
+                        pointHoverRadius: 8,
+                        pointBackgroundColor: blue,
+                        pointBorderColor: '#0d1117',
+                        pointBorderWidth: 2,
+                        tension: 0.35,
+                        fill: false,
+                        borderDash: [3, 3],
+                        order: 0,
+                        yAxisID: 'y1',
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: { usePointStyle: true, pointStyle: 'circle', padding: 20, font: { size: 12 } }
+                    },
+                    tooltip: {
+                        ...tooltipDefaults,
+                        callbacks: {
+                            label: ctx => {
+                                if (ctx.dataset.yAxisID === 'y1') return ' Avg Invoice: $' + (ctx.raw || 0).toLocaleString();
+                                return ' ' + ctx.dataset.label + ': $' + (ctx.raw || 0).toLocaleString();
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: {
+                            font: { size: 11 },
+                            callback: v => '$' + (v >= 1000 ? (v / 1000).toFixed(0) + 'K' : v)
+                        },
+                        title: { display: true, text: 'Monthly Revenue', color: muted, font: { size: 10 } }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        beginAtZero: false,
+                        min: 200,
+                        max: 700,
+                        grid: { display: false },
+                        ticks: {
+                            font: { size: 11 },
+                            callback: v => '$' + v
+                        },
+                        title: { display: true, text: 'Avg Invoice $', color: blue, font: { size: 10 } }
+                    }
+                }
+            }
+        });
+
+        // ── May Invoice Status Doughnut ───────────────────────────────────────
+        const statusCtx = document.getElementById('statusChart').getContext('2d');
+        new Chart(statusCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['June 2026 Record ($13,247)', 'July MTD ($9,833)', 'All Prior Collected ($58,450)'],
+                datasets: [{
+                    data: [13247, 9833, 58450],
+                    backgroundColor: [blue, yellow, teal],
+                    borderColor: bg2,
+                    borderWidth: 3,
+                    hoverOffset: 8,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { usePointStyle: true, pointStyle: 'circle', padding: 14, font: { size: 11 } }
+                    },
+                    tooltip: {
+                        ...tooltipDefaults,
+                        callbacks: {
+                            label: ctx => ' ' + ctx.label + ': $' + ctx.raw.toLocaleString(),
+                        }
+                    }
+                }
+            }
+        });
+
+        // ── Client Type Doughnut ─────────────────────────────────────────
+        const clientTypeCtx = document.getElementById('clientTypeChart').getContext('2d');
+        new Chart(clientTypeCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Residential (person)', 'Commercial (business)', 'Non-Profit'],
+                datasets: [{
+                    data: [114, 63, 14],
+                    backgroundColor: [blue, purple, orange],
+                    borderColor: bg2,
+                    borderWidth: 3,
+                    hoverOffset: 8,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { usePointStyle: true, pointStyle: 'circle', padding: 14, font: { size: 11 } }
+                    },
+                    tooltip: {
+                        ...tooltipDefaults,
+                        callbacks: {
+                            label: ctx => ' ' + ctx.label + ': ' + ctx.raw + ' invoices',
+                        }
+                    }
+                }
+            }
+        });
+
+        // ── Client Revenue Bar — All-Time Top 15 ────────────────────────────────────────────
+        const clientRevCtx = document.getElementById('clientRevChart').getContext('2d');
+
+        const clients = [
+            'Gibson & Assoc. (A-13) 🔥',
+            'Multi-South (A-9)',
+            'Brandon CC (A-8)',
+            'Phoenix Fabricators (A-7)',
+            'Hiliary Carter (A-6)',
+            'AIT Environmental',
+            'JJ Krishna (A-6)',
+            'McCleod Const. (A-4)',
+            'Superior Traffic (A-4)',
+            'Bluff City Turf (A-5) ⭐NEW',
+            'Randy Nations (A-4)',
+            'Christina Coleman (A-5)',
+            'Jay Wilson (A-4)',
+            'Trey Porter (A-3)',
+            'John Lewis (A-2)',
+        ];
+
+        const clientRevenues = [6377, 3515, 3319, 3131, 2206, 2014, 1944, 1818, 1686, 1632, 1637, 1634, 1445, 1207, 1174];
+        const clientColors = [teal, purple, orange, blue, purple, yellow, blue, purple, purple, blue, blue, blue, blue, blue, blue];
+
+        new Chart(clientRevCtx, {
+            type: 'bar',
+            data: {
+                labels: clients,
+                datasets: [{
+                    label: 'Total Billed (All-Time)',
+                    data: clientRevenues,
+                    backgroundColor: clientColors,
+                    borderColor: clientColors.map(c => c),
+                    borderWidth: 1,
+                    borderRadius: 6,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        ...tooltipDefaults,
+                        callbacks: { label: ctx => ' $' + ctx.raw.toLocaleString() }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: {
+                            font: { size: 10 },
+                            callback: v => '$' + (v >= 1000 ? (v / 1000).toFixed(1) + 'K' : v)
+                        }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { font: { size: 10 } }
+                    }
+                }
+            }
+        });
+
+        // ── Collection Rate Doughnut ──────────────────────────────────────
+        const collectionCtx = document.getElementById('collectionChart').getContext('2d');
+
+        new Chart(collectionCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Collected ($80,476)', 'Outstanding ($1,054 — 3 invoices)'],
+                datasets: [{
+                    data: [80476, 1054],
+                    backgroundColor: [teal, 'rgba(227,179,65,0.6)'],
+                    borderColor: bg2,
+                    borderWidth: 3,
+                    hoverOffset: 8,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { usePointStyle: true, pointStyle: 'circle', padding: 14, font: { size: 11 } }
+                    },
+                    tooltip: {
+                        ...tooltipDefaults,
+                        callbacks: {
+                            label: ctx => ' ' + ctx.label + ': $' + ctx.raw.toLocaleString(),
+                            afterLabel: ctx => ctx.dataIndex === 0 ? ' 100% collection rate' : ''
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script>
+        // ── New Section Charts ──────────────────────────────────────────
+        // Reuse color variables and tooltip defaults from above
+
+        const _teal = '#19b89c';
+        const _blue = '#4a9eff';
+        const _purple = '#a78bfa';
+        const _orange = '#f58f42';
+        const _muted = '#8b949e';
+        const _bg2 = '#161b22';
+        const _border = 'rgba(255,255,255,0.08)';
+
+        const _tooltipDefaults = {
+            backgroundColor: '#1f2937',
+            borderColor: 'rgba(255,255,255,0.12)',
+            borderWidth: 1,
+            padding: 14,
+            cornerRadius: 10,
+        };
+
+        // ── Duration Distribution Doughnut ────────────────────────────
+        const durCtx = document.getElementById('durationChart').getContext('2d');
+        new Chart(durCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['1-Day (23.5%)', '3-Day (36.4%)', '7-Day (40.2%)'],
+                datasets: [{
+                    data: [31, 48, 53],
+                    backgroundColor: [_orange, _blue, _teal],
+                    borderColor: _bg2,
+                    borderWidth: 3,
+                    hoverOffset: 8,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { usePointStyle: true, pointStyle: 'circle', padding: 14, font: { size: 11 } }
+                    },
+                    tooltip: {
+                        ..._tooltipDefaults,
+                        callbacks: {
+                            label: ctx => ' ' + ctx.label + ': ' + ctx.raw + ' rentals',
+                        }
+                    }
+                }
+            }
+        });
+
+        // ── Dumpster Size Distribution Doughnut ──────────────────────
+        const sizeCtx = document.getElementById('sizeChart').getContext('2d');
+        new Chart(sizeCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['10 Yard (22.8%)', '15 Yard (47.6%)', '20 Yard (29.7%)'],
+                datasets: [{
+                    data: [33, 69, 43],
+                    backgroundColor: [_blue, _purple, _teal],
+                    borderColor: _bg2,
+                    borderWidth: 3,
+                    hoverOffset: 8,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { usePointStyle: true, pointStyle: 'circle', padding: 14, font: { size: 11 } }
+                    },
+                    tooltip: {
+                        ..._tooltipDefaults,
+                        callbacks: {
+                            label: ctx => ' ' + ctx.label + ': ' + ctx.raw + ' rentals',
+                        }
+                    }
+                }
+            }
+        });
+
+        // ── Revenue Projection Bar Chart ─────────────────────────────
+        const projCtx = document.getElementById('projectionChart').getContext('2d');
+
+        const projGrad = projCtx.createLinearGradient(0, 0, 0, 360);
+        projGrad.addColorStop(0, 'rgba(25,184,156,0.85)');
+        projGrad.addColorStop(1, 'rgba(25,184,156,0.4)');
+
+        new Chart(projCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Aug 26', 'Sep 26', 'Oct 26', 'Nov 26', 'Dec 26', 'Jan 27', 'Feb 27', 'Mar 27', 'Apr 27', 'May 27', 'Jun 27'],
+                datasets: [{
+                    label: 'Projected Revenue',
+                    data: [20000, 18000, 16000, 13000, 9000, 13000, 17000, 23000, 29000, 23000, 26000],
+                    backgroundColor: projGrad,
+                    borderColor: _teal,
+                    borderWidth: 2,
+                    borderRadius: 8,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        ..._tooltipDefaults,
+                        callbacks: {
+                            label: ctx => ' Projected: $' + ctx.raw.toLocaleString()
+                        }
+                    }
+                },
+                scales: {
+                    x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: {
+                            font: { size: 11 },
+                            callback: v => '$' + (v >= 1000 ? (v / 1000).toFixed(0) + 'K' : v)
+                        },
+                        title: { display: true, text: 'Projected Monthly Revenue', color: _muted, font: { size: 10 } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

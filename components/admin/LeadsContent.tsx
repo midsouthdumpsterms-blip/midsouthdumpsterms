@@ -3,35 +3,30 @@
 import React, { useState, useEffect } from 'react'
 import { Lead } from '@/lib/db'
 
-export default function AdminLeadsPage() {
-    const [pin, setPin] = useState('')
-    const [isAuthorized, setIsAuthorized] = useState(false)
+export default function LeadsContent({ pin }: { pin: string }) {
     const [leads, setLeads] = useState<Lead[]>([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(true)
 
-    const checkPin = async () => {
-        setLoading(true)
-        setError('')
-        try {
-            const res = await fetch('/api/admin/get-leads', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ pin })
-            })
-            const data = await res.json()
-            if (data.success) {
-                setIsAuthorized(true)
-                setLeads(data.leads)
-            } else {
-                setError('Invalid PIN. Please try again.')
+    useEffect(() => {
+        const fetchLeads = async () => {
+            try {
+                const res = await fetch('/api/admin/get-leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ pin })
+                })
+                const data = await res.json()
+                if (data.success) {
+                    setLeads(data.leads)
+                }
+            } catch (err) {
+                console.error('Failed to load leads', err)
+            } finally {
+                setLoading(false)
             }
-        } catch (err) {
-            setError('Connection error')
-        } finally {
-            setLoading(false)
         }
-    }
+        fetchLeads()
+    }, [pin])
 
     const updateStatus = async (id: number, status: Lead['status']) => {
         try {
@@ -48,80 +43,6 @@ export default function AdminLeadsPage() {
         }
     }
 
-    if (!isAuthorized) {
-        return (
-            <div style={{
-                minHeight: '100vh',
-                backgroundColor: '#0a0a0a',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'column',
-                fontFamily: 'Inter, system-ui, sans-serif',
-                color: 'white'
-            }}>
-                <div style={{
-                    backgroundColor: '#1a1a1a',
-                    padding: '40px',
-                    borderRadius: '24px',
-                    boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    width: '100%',
-                    maxWidth: '400px',
-                    textAlign: 'center'
-                }}>
-                    <div style={{ fontSize: '48px', marginBottom: '20px' }}>🔐</div>
-                    <h1 style={{ fontSize: '24px', fontWeight: '800', marginBottom: '8px' }}>Admin Login</h1>
-                    <p style={{ color: '#888', marginBottom: '32px', fontSize: '14px' }}>Please enter your PIN to access the Lead Command Center.</p>
-                    
-                    <input 
-                        type="password" 
-                        value={pin}
-                        onChange={(e) => setPin(e.target.value)}
-                        onKeyDown={(e) => e.key === 'Enter' && checkPin()}
-                        placeholder="Enter PIN"
-                        style={{
-                            width: '100%',
-                            padding: '16px',
-                            backgroundColor: '#000',
-                            border: '1px solid #333',
-                            borderRadius: '12px',
-                            color: 'white',
-                            fontSize: '24px',
-                            textAlign: 'center',
-                            letterSpacing: '8px',
-                            outline: 'none',
-                            marginBottom: '20px'
-                        }}
-                    />
-                    
-                    {error && <p style={{ color: '#ff4d4d', fontSize: '14px', marginBottom: '20px' }}>{error}</p>}
-                    
-                    <button 
-                        onClick={checkPin}
-                        style={{
-                            width: '100%',
-                            padding: '16px',
-                            backgroundColor: '#0fbfdf',
-                            color: 'white',
-                            border: 'none',
-                            borderRadius: '12px',
-                            fontWeight: '800',
-                            fontSize: '16px',
-                            cursor: 'pointer',
-                            transition: 'transform 0.2s',
-                        }}
-                    >
-                        Access Leads
-                    </button>
-                    <p style={{ color: '#444', marginTop: '24px', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                        Mid South Dumpster Rentals Internal Tool
-                    </p>
-                </div>
-            </div>
-        )
-    }
-
     const stats = {
         total: leads.length,
         potential: leads.reduce((acc, curr) => acc + (parseInt(curr.price.replace(/\D/g, '')) || 349), 0),
@@ -130,11 +51,7 @@ export default function AdminLeadsPage() {
 
     return (
         <div style={{
-            minHeight: '100vh',
-            backgroundColor: '#0a0a0a',
-            color: 'white',
             fontFamily: 'Inter, system-ui, sans-serif',
-            padding: '40px 20px'
         }}>
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
                 <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }}>

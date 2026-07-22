@@ -10,35 +10,30 @@ interface Post {
     created_at: string;
 }
 
-export default function AdminBlogPage() {
-    const [pin, setPin] = useState('')
-    const [isAuthorized, setIsAuthorized] = useState(false)
+export default function BlogContent({ pin }: { pin: string }) {
     const [posts, setPosts] = useState<Post[]>([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(true)
 
-    const checkPin = async () => {
-        setLoading(true)
-        setError('')
-        try {
-            const res = await fetch('/api/admin/get-posts', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ pin })
-            })
-            const data = await res.json()
-            if (data.success) {
-                setIsAuthorized(true)
-                setPosts(data.posts)
-            } else {
-                setError('Invalid PIN. Please try again.')
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const res = await fetch('/api/admin/get-posts', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ pin })
+                })
+                const data = await res.json()
+                if (data.success) {
+                    setPosts(data.posts)
+                }
+            } catch (err) {
+                console.error('Failed to load posts', err)
+            } finally {
+                setLoading(false)
             }
-        } catch (err) {
-            setError('Connection error')
-        } finally {
-            setLoading(false)
         }
-    }
+        fetchPosts()
+    }, [pin])
 
     const deletePost = async (id: number) => {
         if (!confirm('Are you sure you want to permanently delete this post?')) return;
@@ -57,84 +52,9 @@ export default function AdminBlogPage() {
         }
     }
 
-    if (!isAuthorized) {
-        return (
-            <div style={{
-                minHeight: '100vh',
-                backgroundColor: '#0a0a0a',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'column',
-                fontFamily: 'Inter, system-ui, sans-serif',
-                color: 'white'
-            }}>
-                <div style={{
-                    backgroundColor: '#1a1a1a',
-                    padding: '40px',
-                    borderRadius: '24px',
-                    boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    width: '100%',
-                    maxWidth: '400px',
-                    textAlign: 'center'
-                }}>
-                    <div style={{ fontSize: '48px', marginBottom: '20px' }}>🔐</div>
-                    <h1 style={{ fontSize: '24px', fontWeight: '800', marginBottom: '8px' }}>Admin Login</h1>
-                    <p style={{ color: '#888', marginBottom: '32px', fontSize: '14px' }}>Please enter your PIN to access the Blog Manager.</p>
-                    
-                    <input 
-                        type="password" 
-                        value={pin}
-                        onChange={(e) => setPin(e.target.value)}
-                        onKeyDown={(e) => e.key === 'Enter' && checkPin()}
-                        placeholder="Enter PIN"
-                        style={{
-                            width: '100%',
-                            padding: '16px',
-                            backgroundColor: '#000',
-                            border: '1px solid #333',
-                            borderRadius: '12px',
-                            color: 'white',
-                            fontSize: '24px',
-                            textAlign: 'center',
-                            letterSpacing: '8px',
-                            outline: 'none',
-                            marginBottom: '20px'
-                        }}
-                    />
-                    
-                    {error && <p style={{ color: '#ff4d4d', fontSize: '14px', marginBottom: '20px' }}>{error}</p>}
-                    
-                    <button 
-                        onClick={checkPin}
-                        style={{
-                            width: '100%',
-                            padding: '16px',
-                            backgroundColor: '#E34F26',
-                            color: 'white',
-                            border: 'none',
-                            borderRadius: '12px',
-                            fontWeight: '800',
-                            fontSize: '16px',
-                            cursor: 'pointer',
-                            transition: 'transform 0.2s',
-                        }}
-                    >
-                        Access Blog Manager
-                    </button>
-                </div>
-            </div>
-        )
-    }
-
     return (
         <div style={{
-            minHeight: '100vh',
-            backgroundColor: '#0a0a0a',
-            color: 'white',
             fontFamily: 'Inter, system-ui, sans-serif',
-            padding: '40px 20px'
         }}>
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
                 <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }}>
@@ -199,7 +119,7 @@ export default function AdminBlogPage() {
                                             <td style={tdStyle}>
                                                 <div style={{ display: 'flex', gap: '10px' }}>
                                                     <a 
-                                                        href={`/admin/preview/${post.slug}`} 
+                                                        href={`/situationroom/preview/${post.slug}`} 
                                                         target="_blank"
                                                         rel="noreferrer"
                                                         style={{ 
