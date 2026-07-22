@@ -38,6 +38,14 @@ export async function generateMetadata({
                 title: article.title,
                 description: article.excerpt,
                 url: `https://midsouthdumpsterms.com/blog/${params.slug}`,
+                images: [
+                    {
+                        url: '/images/og-image.jpg',
+                        width: 1200,
+                        height: 630,
+                        alt: 'Mid South Dumpster Rentals',
+                    }
+                ],
             },
         }
     } catch (err) {

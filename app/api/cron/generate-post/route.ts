@@ -10,20 +10,20 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
 const TOPICS = [
-  "How to choose the right dumpster size for a home remodel in Jackson MS",
-  "Dumpster rental vs junk removal in Central Mississippi: Which is better?",
-  "What items are prohibited in roll-off dumpsters in Rankin County?",
-  "The ultimate guide to estate cleanouts and dumpster rentals in MS",
-  "Spring cleaning checklist for Jackson homeowners: Getting the most out of your dumpster",
-  "Understanding dumpster weight limits and overage fees in Mississippi",
-  "Roofing contractor guide to efficient debris removal in Hinds County",
-  "How to prepare your driveway for a roll-off dumpster delivery",
-  "Same-day dumpster rentals in Jackson MS: What you need to know",
-  "A guide to commercial dumpster rentals for Madison County businesses",
-  "How to safely dispose of appliances and mattresses in Central MS",
-  "Yard waste removal tips for Jackson MS residents",
-  "The environmental benefits of responsible debris disposal in Mississippi",
-  "How to rent a dumpster for storm cleanup in Central MS",
+  "How to Choose the Right Dumpster Size for a Home Remodel in Jackson, MS",
+  "Dumpster Rental vs. Junk Removal in Central Mississippi: Which is Better?",
+  "What Items Are Prohibited in Roll-Off Dumpsters in Rankin County?",
+  "The Ultimate Guide to Estate Cleanouts and Dumpster Rentals in MS",
+  "Spring Cleaning Checklist for Jackson Homeowners: Getting the Most Out of Your Dumpster",
+  "Understanding Dumpster Weight Limits and Overage Fees in Mississippi",
+  "Roofing Contractor Guide to Efficient Debris Removal in Hinds County",
+  "How to Prepare Your Driveway for a Roll-Off Dumpster Delivery",
+  "Same-Day Dumpster Rentals in Jackson, MS: What You Need to Know",
+  "A Guide to Commercial Dumpster Rentals for Madison County Businesses",
+  "How to Safely Dispose of Appliances and Mattresses in Central MS",
+  "Yard Waste Removal Tips for Jackson, MS Residents",
+  "The Environmental Benefits of Responsible Debris Disposal in Mississippi",
+  "How to Rent a Dumpster for Storm Cleanup in Central MS",
 ];
 
 function generateSlug(title: string) {
@@ -79,7 +79,8 @@ export async function GET(request: Request) {
             
             STRICT CONSTRAINTS:
             1. DO NOT mention concrete, dirt, or heavy asphalt disposal.
-            2. DO NOT mention 30-yard or 40-yard dumpsters.`,
+            2. DO NOT mention 30-yard or 40-yard dumpsters.
+            3. The title MUST be formatted in proper grammatically correct Title Case (e.g. "Understanding Dumpster Weight Limits and Overage Fees in Mississippi").`,
             "Generate a new blog post title.",
             150
         );
