@@ -1,30 +1,12 @@
-import fs from 'fs';
-import path from 'path';
+import photoList from './photo-list.json';
 
 /**
  * Returns a list of all local photo URLs in the public/images/gallery folder.
+ * Uses a pre-generated JSON list to avoid Vercel bundling the entire folder into
+ * serverless functions, which exceeds the 50MB limit.
  */
 export function getLocalPhotoPool(): string[] {
-  try {
-    const galleryDir = path.join(process.cwd(), 'public', 'images', 'gallery');
-    
-    // Check if directory exists
-    if (!fs.existsSync(galleryDir)) {
-        return [];
-    }
-    
-    const files = fs.readdirSync(galleryDir);
-    
-    return files
-      .filter(file => {
-        const lower = file.toLowerCase();
-        return lower.endsWith('.jpg') || lower.endsWith('.png') || lower.endsWith('.jpeg');
-      })
-      .map(file => `/images/gallery/${file}`);
-  } catch (err) {
-    console.error('[Gallery] Failed to read local photo pool:', err);
-    return [];
-  }
+  return photoList;
 }
 
 /**
