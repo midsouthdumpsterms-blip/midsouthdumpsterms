@@ -114,6 +114,39 @@ export default function SituationRoomPage() {
 
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#0a0a0a' }}>
+            <style dangerouslySetInnerHTML={{__html: `
+                .sitroom-nav-container {
+                    flex-direction: row;
+                }
+                .sitroom-tabs {
+                    display: flex;
+                    gap: 8px;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                    -webkit-overflow-scrolling: touch;
+                }
+                .sitroom-tabs::-webkit-scrollbar {
+                    display: none;
+                }
+                @media (max-width: 768px) {
+                    .sitroom-nav-container {
+                        flex-direction: column !important;
+                        align-items: flex-start !important;
+                    }
+                    .sitroom-logo {
+                        margin-right: 0 !important;
+                        margin-bottom: 10px;
+                        margin-top: 15px;
+                    }
+                    .sitroom-tabs {
+                        width: 100%;
+                    }
+                    .sitroom-tab-btn {
+                        padding: 12px 10px !important;
+                        font-size: 13px !important;
+                    }
+                }
+            `}} />
             {/* Navigation Bar */}
             <nav style={{
                 backgroundColor: '#111',
@@ -123,8 +156,8 @@ export default function SituationRoomPage() {
                 top: 0,
                 zIndex: 100
             }}>
-                <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', alignItems: 'center' }}>
-                    <div style={{ 
+                <div className="sitroom-nav-container" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', alignItems: 'center' }}>
+                    <div className="sitroom-logo" style={{ 
                         color: 'white', 
                         fontWeight: '800', 
                         fontSize: '18px', 
@@ -136,7 +169,7 @@ export default function SituationRoomPage() {
                         <span style={{ fontSize: '24px' }}>🛡️</span> Situation Room
                     </div>
                     
-                    <div style={{ display: 'flex', gap: '8px' }}>
+                    <div className="sitroom-tabs">
                         <TabButton 
                             active={activeTab === 'leads'} 
                             onClick={() => setActiveTab('leads')}
@@ -172,6 +205,7 @@ export default function SituationRoomPage() {
 function TabButton({ active, onClick, label, icon }: { active: boolean, onClick: () => void, label: string, icon: string }) {
     return (
         <button 
+            className="sitroom-tab-btn"
             onClick={onClick}
             style={{
                 backgroundColor: 'transparent',
