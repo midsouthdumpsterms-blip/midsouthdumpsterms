@@ -43,11 +43,30 @@ export async function GET(request: Request) {
   }
 
   try {
-    // 1. Pick a topic that hasn't been written yet
+    // 1. Pick a random topic that hasn't been written yet
     const { rows: existingPosts } = await sql`SELECT title FROM blog_posts`;
     const existingTitles = new Set(existingPosts.map(p => p.title.toLowerCase()));
     
-    let selectedTopic = TOPICS.find(t => !existingTitles.has(t.toLowerCase()));
+    const availableTopics = TOPICS.filter(t => !existingTitles.has(t.toLowerCase()));
+    
+    let selectedTopic;
+
+    if (availableTopics.length === 0) {
+      // Fallback: If all are used, we ask Anthropic to generate a brand new hyper-local topic
+      const generated = await callAnthropic(
+          `You are an SEO expert for a dumpster rental company in Jackson, Mississippi. Generate ONE unique, highly engaging blog post title about dumpster rental, junk removal, or waste disposal in Central MS.
+          
+          STRICT CONSTRAINTS:
+          1. DO NOT mention concrete, dirt, or heavy asphalt disposal.
+          2. DO NOT mention 30-yard or 40-yard dumpsters.
+          3. The title MUST be formatted in proper grammatically correct Title Case (e.g. "Understanding Dumpster Weight Limits and Overage Fees in Mississippi").`,
+          "Generate a new blog post title.",
+          150
+      );
+      selectedTopic = generated ? generated.replace(/["']/g, '').trim() : "Dumpster Rental Guide for Central MS";
+    } else {
+      selectedTopic = availableTopics[Math.floor(Math.random() * availableTopics.length)];
+    }
     
     async function callAnthropic(systemPrompt: string, userPrompt: string, maxTokens: number) {
         const res = await fetch('https://api.anthropic.com/v1/messages', {
