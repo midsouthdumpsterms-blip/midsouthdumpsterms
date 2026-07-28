@@ -91,11 +91,8 @@ export async function GET(request: Request) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                systemInstruction: {
-                    parts: [{ text: systemPrompt }]
-                },
                 contents: [{
-                    parts: [{ text: userPrompt }]
+                    parts: [{ text: systemPrompt + '\n\n' + userPrompt }]
                 }],
                 generationConfig: {
                     maxOutputTokens: maxTokens,
