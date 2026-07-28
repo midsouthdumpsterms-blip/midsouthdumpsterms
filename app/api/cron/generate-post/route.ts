@@ -211,6 +211,6 @@ export async function GET(request: Request) {
 
   } catch (error: any) {
     console.error('Cron job error:', error);
-    return NextResponse.json({ error: 'Failed to generate post' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to generate post', details: error.message, stack: error.stack }, { status: 500 });
   }
 }
