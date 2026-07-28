@@ -103,10 +103,10 @@ export default function RootLayout({
                 {/* SurvCart — loads globally so Book Now popup works on every page */}
                 {/* eslint-disable-next-line @next/next/no-css-tags */}
                 <link rel="stylesheet" href="https://embed.survcart.com/embed.css" />
-                <Script id="survcart-config" strategy="beforeInteractive">
+                <Script id="survcart-config" strategy="lazyOnload">
                     {`var survcartConfig={"id":"3u8ibIDlEWCk4uhSC1iS","companyId":"irGaFVL6CggDRSyqIHNa","staged":false,"embedName":"Embed Configuration 1","selectors":[{"tokens":["Book Now","Book Now!","BOOK NOW"],"id":"B77cgcBIlxlcSRgehUvF","configId":"5O3wdzzOPnQx1KZlsXjD","workflowId":"Oi3qEUY3kbLvysbCyTUA","ga4_tags":[],"classes":"survcart-embed-presenter","default":true}]};`}
                 </Script>
-                <Script src="https://embed.survcart.com/embed.js" strategy="afterInteractive" />
+                <Script src="https://embed.survcart.com/embed.js" strategy="lazyOnload" />
                 <Header />
                 <main>{children}</main>
                 <Footer />
