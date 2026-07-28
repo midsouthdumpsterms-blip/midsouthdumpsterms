@@ -44,13 +44,14 @@ function toTitleCase(str: string) {
 }
 
 export async function GET(request: Request) {
-  // Simple cron authentication (Vercel sets a CRON_SECRET if configured, but we'll allow manual hits for now or check an auth header)
+  // Cron authentication — fails CLOSED if CRON_SECRET is not configured
   const authHeader = request.headers.get('authorization');
   const cronSecret = process.env.CRON_SECRET;
-  
-  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+
+  if (!cronSecret || authHeader !== `Bearer ${cronSecret}`) {
     return new NextResponse('Unauthorized', { status: 401 });
   }
+
 
   try {
     // 1. Pick a random topic that hasn't been written yet

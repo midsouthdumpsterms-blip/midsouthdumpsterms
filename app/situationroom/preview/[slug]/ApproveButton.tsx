@@ -8,17 +8,23 @@ export default function ApproveButton({ slug }: { slug: string }) {
   const router = useRouter();
 
   const handleApprove = async () => {
+    // Prompt for PIN since this preview page has no session context
+    const pin = prompt('Enter your admin PIN to publish this article:');
+    if (!pin) return;
+
     setLoading(true);
     try {
       const res = await fetch('/api/admin/approve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slug }),
+        body: JSON.stringify({ slug, pin }),
       });
       
       if (res.ok) {
         alert('Article Approved and Published Successfully!');
-        router.push(`/blog/${slug}`); // redirect to the live blog page
+        router.push(`/blog/${slug}`);
+      } else if (res.status === 401) {
+        alert('Invalid PIN. Access denied.');
       } else {
         alert('Failed to approve article');
       }

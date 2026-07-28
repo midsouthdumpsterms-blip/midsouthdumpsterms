@@ -4,7 +4,14 @@ import { revalidatePath } from 'next/cache';
 
 export async function POST(request: Request) {
   try {
-    const { slug } = await request.json();
+    const { slug, pin } = await request.json();
+
+    const envPin = process.env.ADMIN_PIN?.trim();
+    const userPIN = pin?.trim();
+
+    if (!envPin || userPIN !== envPin) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     if (!slug) {
       return NextResponse.json({ error: 'Slug is required' }, { status: 400 });
@@ -29,3 +36,4 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Failed to approve draft' }, { status: 500 });
   }
 }
+

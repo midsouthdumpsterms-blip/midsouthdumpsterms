@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
         const envPin = process.env.ADMIN_PIN?.trim()
         const userPIN = pin?.trim()
 
-        if (userPIN !== '1056' && userPIN !== envPin) {
+        if (!envPin || userPIN !== envPin) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
         }
 

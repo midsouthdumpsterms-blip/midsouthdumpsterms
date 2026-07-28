@@ -110,12 +110,7 @@ Visa, Mastercard, AMEX, Discover, Apple Pay, Cash App, Venmo, ACH, Check, Bitcoi
 If a customer says they want to book, place an order, schedule a delivery, or get started, do NOT collect their personal information. Instead, direct them to one of these two options:
 If a customer wants to book, please direct them to [Book Online](https://embed.survcart.com/?type=landing&co=irGaFVL6CggDRSyqIHNa&wsid=3u8ibIDlEWCk4uhSC1iS&sel=B77cgcBIlxlcSRgehUvF) or call us at [601-316-7891](tel:6013167891).`
 
-// ─── GET: Diagnostic Health Check ─────────────────────────────────────────────
-export async function GET() {
-    const hasKey = !!process.env.ANTHROPIC_API_KEY
-    const keyPrefix = hasKey ? process.env.ANTHROPIC_API_KEY!.slice(0, 20) + '...' : 'NOT SET'
-    return NextResponse.json({ status: 'ok', hasApiKey: hasKey, keyPrefix })
-}
+
 
 // ─── OPTIONS: CORS Preflight ──────────────────────────────────────────────────
 export async function OPTIONS(request: NextRequest) {

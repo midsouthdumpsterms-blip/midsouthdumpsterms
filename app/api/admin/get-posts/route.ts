@@ -7,7 +7,7 @@ export async function POST(req: Request) {
         const envPin = process.env.ADMIN_PIN?.trim()
         const userPIN = pin?.trim()
 
-        if (userPIN !== '1056' && userPIN !== envPin) {
+        if (!envPin || userPIN !== envPin) {
             return NextResponse.json({ success: false, error: 'Invalid PIN' }, { status: 401 })
         }
 
