@@ -8,7 +8,7 @@ import { sanitizeHtml } from '@/lib/sanitize-html';
 export const maxDuration = 60;
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 const TOPICS = [
   "How to Choose the Right Dumpster Size for a Home Remodel in Jackson, MS",
@@ -80,32 +80,40 @@ export async function GET(request: Request) {
       selectedTopic = availableTopics[Math.floor(Math.random() * availableTopics.length)];
     }
     
-    async function callAnthropic(systemPrompt: string, userPrompt: string, maxTokens: number) {
-        const res = await fetch('https://api.anthropic.com/v1/messages', {
+    async function callGemini(systemPrompt: string, userPrompt: string, maxTokens: number) {
+        if (!GEMINI_API_KEY) {
+            throw new Error("GEMINI_API_KEY is not configured in environment variables.");
+        }
+        
+        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${GEMINI_API_KEY}`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': ANTHROPIC_API_KEY || '',
-                'anthropic-version': '2023-06-01'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                model: 'claude-3-sonnet-20240229',
-                max_tokens: maxTokens,
-                system: systemPrompt,
-                messages: [{ role: 'user', content: userPrompt }]
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+                contents: [{
+                    parts: [{ text: userPrompt }]
+                }],
+                generationConfig: {
+                    maxOutputTokens: maxTokens,
+                }
             })
         });
+        
         if (!res.ok) {
-            throw new Error(`Anthropic API error: ${res.status} ${await res.text()}`);
+            throw new Error(`Gemini API error: ${res.status} ${await res.text()}`);
         }
+        
         const data = await res.json();
-        const textBlock = data.content.find((c: any) => c.type === 'text');
-        return textBlock ? textBlock.text : '';
+        return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
     }
 
     // Fallback: If all are used, we ask Anthropic to generate a brand new hyper-local topic
     if (!selectedTopic) {
-        const generated = await callAnthropic(
+        const generated = await callGemini(
             `You are an SEO expert for a dumpster rental company in Jackson, Mississippi. Generate ONE unique, highly engaging blog post title about dumpster rental, junk removal, or waste disposal in Central MS.
             
             STRICT CONSTRAINTS:
@@ -150,7 +158,7 @@ export async function GET(request: Request) {
       - Fees: Missed pickup/inaccessible fee is $150. Wait time is $50/hour. Overweight refusal fee is $500.
       - Length: Aim for 800 to 1200 words. Keep it concise, punchy, and do not exceed this length so it does not cut off mid-sentence.`;
 
-    let contentHtml = await callAnthropic(systemPrompt, `Topic: ${selectedTopic || "Dumpster Rental"}`, 4000);
+    let contentHtml = await callGemini(systemPrompt, `Topic: ${selectedTopic || "Dumpster Rental"}`, 4000);
     if (!contentHtml) contentHtml = '<p>Content generation failed.</p>';
     
     // Clean up any markdown code block wrappers if Claude accidentally includes them
@@ -160,7 +168,7 @@ export async function GET(request: Request) {
     contentHtml = sanitizeHtml(contentHtml);
 
     // Generate a short excerpt
-    const excerpt = await callAnthropic(
+    const excerpt = await callGemini(
         "You are an SEO expert. Write a compelling 2-sentence meta description / excerpt for this article. Return only the text.",
         `Topic: ${selectedTopic}\nContent: ${contentHtml.substring(0, 500)}...`,
         100
