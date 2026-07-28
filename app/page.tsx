@@ -121,8 +121,6 @@ export default function Home() {
                             width={1200}
                             height={400}
                             className={styles.comparisonImage}
-                            priority
-                            fetchPriority="high"
                         />
                         <p className={styles.comparisonDisclaimer}>
                             <em>* Visual size estimation for reference only. Actual dumpster dimensions may vary.</em>
