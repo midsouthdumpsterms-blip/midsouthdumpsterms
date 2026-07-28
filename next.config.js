@@ -54,10 +54,10 @@ const nextConfig = {
                         key: 'Content-Security-Policy',
                         value: [
                             "default-src 'self'",
-                            // GA, GTM, and inline scripts (inline needed for Next.js hydration)
-                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
-                            // Inline styles needed for Next.js + Google Fonts
-                            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+                            // GA, GTM, SurvCart, and inline scripts (inline needed for Next.js hydration)
+                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://embed.survcart.com",
+                            // Inline styles needed for Next.js, Google Fonts, SurvCart
+                            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://embed.survcart.com",
                             "font-src 'self' https://fonts.gstatic.com",
                             // Images from self, data URIs, blobs, and any HTTPS source (for gallery/blog images)
                             "img-src 'self' data: blob: https:",
