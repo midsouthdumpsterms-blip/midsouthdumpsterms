@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate-photo-list.js && next build",
+    "build": "node scripts/generate-photo-list.js && node scripts/generate-blog-list.js && next build",
     "start": "next start",
     "lint": "next lint"
   },
