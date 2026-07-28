@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
 import { sql } from '@vercel/postgres';
 import postStyles from '../../../blog/blog-post.module.css';
 import { getLocalPhotoPool, pickRandomPhotos } from '@/lib/local-photos';
@@ -13,11 +14,19 @@ export default async function PreviewArticlePage({
 }: {
     params: { slug: string }
 }) {
+    // Require a valid admin session cookie — redirect to login if missing
+    const cookieStore = cookies();
+    const session = cookieStore.get('admin_session');
+    if (!session || session.value !== 'verified') {
+        redirect('/situationroom');
+    }
+
     // Fetch the draft from the database
     const { rows } = await sql`
         SELECT * FROM blog_posts 
         WHERE slug = ${params.slug}
     `;
+
 
     if (rows.length === 0) {
         notFound();

@@ -14,19 +14,21 @@ export default function SituationRoomPage() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
-    // We use get-posts as a lightweight way to verify the PIN
+    // Call verify-pin which validates the PIN and sets an httpOnly session cookie
     const checkPin = async () => {
         setLoading(true)
         setError('')
         try {
-            const res = await fetch('/api/admin/get-posts', {
+            const res = await fetch('/api/admin/verify-pin', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ pin })
             })
             const data = await res.json()
-            if (data.success) {
+            if (res.ok && data.success) {
                 setIsAuthorized(true)
+            } else if (res.status === 429) {
+                setError(data.error || 'Too many attempts. Please wait.')
             } else {
                 setError('Invalid PIN. Access Denied.')
             }
