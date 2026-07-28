@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MidSouth Dumpster MS — Business Performance Presentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --teal: #19b89c; --teal-dim: rgba(25,184,156,0.15); --teal-dark: #0f9e85;
+    --yellow: #f5c842; --orange: #f58f42; --blue: #4a9eff; --purple: #a78bfa;
+    --success: #3fb950; --danger: #f85149; --warning: #e3b341;
+    --bg: #0d1117; --bg2: #161b22; --bg3: #1f2937;
+    --border: rgba(255,255,255,0.08); --text: #e6edf3; --muted: #8b949e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); height: 100vh; overflow: hidden; }
+
+  /* ── Deck shell ── */
+  #deck { width: 100%; height: 100vh; position: relative; }
+  .slide {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateX(60px);
+    overflow-y: auto;
+  }
+  .slide.active { opacity: 1; pointer-events: all; transform: translateX(0); }
+  .slide.exit { opacity: 0; transform: translateX(-60px); }
+
+  /* ── Nav bar ── */
+  nav {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,17,23,0.92); backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 40px; gap: 16px;
+  }
+  .nav-dots { display: flex; gap: 8px; align-items: center; }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--muted); cursor: pointer; transition: all 0.2s;
+  }
+  .dot.active { background: var(--teal); width: 24px; border-radius: 4px; }
+  .nav-btn {
+    background: var(--bg3); border: 1px solid var(--border); color: var(--text);
+    border-radius: 10px; padding: 8px 20px; cursor: pointer; font-family: inherit;
+    font-size: 0.85rem; font-weight: 600; transition: all 0.2s; display: flex; align-items: center; gap: 6px;
+  }
+  .nav-btn:hover { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .nav-btn:disabled { opacity: 0.3; cursor: default; background: var(--bg3); border-color: var(--border); color: var(--muted); }
+  .slide-counter { font-size: 0.8rem; color: var(--muted); min-width: 60px; text-align: center; }
+
+  /* ── Slide layouts ── */
+  .slide-inner { flex: 1; padding: 48px 72px 100px; display: flex; flex-direction: column; }
+  .slide-inner.center { align-items: center; justify-content: center; text-align: center; }
+
+  /* ── Brand header ── */
+  .brand { font-size: 0.75rem; font-weight: 700; color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
+  .slide-title { font-size: 2.4rem; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; }
+  .slide-sub { font-size: 1rem; color: var(--muted); margin-top: 10px; font-weight: 400; }
+  .divider { width: 60px; height: 4px; background: linear-gradient(90deg, var(--teal), var(--yellow)); border-radius: 2px; margin: 20px 0; }
+
+  /* ── Stat cards ── */
+  .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 24px; }
+  .kpi {
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 16px;
+    padding: 22px 24px; position: relative; overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .kpi:hover { transform: translateY(-3px); border-color: rgba(25,184,156,0.35); }
+  .kpi::before { content:''; position:absolute; top:0;left:0;right:0;height:3px; background:linear-gradient(90deg,var(--teal),var(--yellow)); }
+  .kpi.blue::before { background:linear-gradient(90deg,var(--blue),var(--teal)); }
+  .kpi.purple::before { background:linear-gradient(90deg,var(--purple),var(--blue)); }
+  .kpi.orange::before { background:linear-gradient(90deg,var(--orange),var(--yellow)); }
+  .kpi.green::before { background:linear-gradient(90deg,var(--success),var(--teal)); }
+  .kpi-emoji { font-size: 1.5rem; margin-bottom: 10px; display: block; }
+  .kpi-label { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .kpi-value { font-size: 2rem; font-weight: 800; letter-spacing: -1px; color: var(--teal); }
+  .kpi-value.blue { color: var(--blue); }
+  .kpi-value.purple { color: var(--purple); }
+  .kpi-value.orange { color: var(--orange); }
+  .kpi-value.green { color: var(--success); }
+  .kpi-value.yellow { color: var(--yellow); }
+  .kpi-sub { font-size: 0.74rem; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+  /* ── Chart cards ── */
+  .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
+  .chart-card {
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 16px;
+    padding: 22px 24px; transition: border-color 0.2s;
+  }
+  .chart-card:hover { border-color: rgba(25,184,156,0.25); }
+  .chart-title { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+  .chart-desc { font-size: 0.74rem; color: var(--muted); margin-bottom: 14px; }
+  .chart-wrap { position: relative; }
+  .chart-wrap.h220 { height: 220px; }
+  .chart-wrap.h260 { height: 260px; }
+
+  /* ── Table ── */
+  table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-top: 16px; }
+  thead th {
+    text-align: left; color: var(--muted); font-weight: 500; font-size: 0.68rem;
+    text-transform: uppercase; letter-spacing: 0.07em;
+    border-bottom: 1px solid var(--border); padding-bottom: 8px;
+  }
+  tbody tr { border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.15s; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: rgba(255,255,255,0.025); }
+  tbody td { padding: 8px 0; padding-right: 12px; }
+  .t-teal { color: var(--teal); font-weight: 700; }
+  .t-muted { color: var(--muted); }
+  .t-bold { font-weight: 700; }
+  .highlight-row { background: rgba(25,184,156,0.07) !important; outline: 1px solid rgba(25,184,156,0.25); }
+
+  /* ── Leaderboard podium ── */
+  .podium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+  .podium-card {
+    border-radius: 14px; padding: 18px 20px;
+    display: flex; align-items: center; gap: 14px;
+    border: 1px solid;
+  }
+  .podium-card.gold { background: linear-gradient(135deg,rgba(255,215,0,0.12),rgba(255,215,0,0.02)); border-color: rgba(255,215,0,0.35); }
+  .podium-card.silver { background: linear-gradient(135deg,rgba(167,139,250,0.1),rgba(167,139,250,0.02)); border-color: rgba(167,139,250,0.25); }
+  .podium-card.bronze { background: linear-gradient(135deg,rgba(245,143,66,0.1),rgba(245,143,66,0.02)); border-color: rgba(245,143,66,0.25); }
+  .podium-emoji { font-size: 2rem; flex-shrink: 0; }
+  .podium-name { font-weight: 700; font-size: 0.9rem; }
+  .podium-sub { font-size: 0.68rem; color: var(--muted); margin-top: 2px; }
+  .podium-amount { font-size: 1.3rem; font-weight: 800; white-space: nowrap; margin-left: auto; }
+  .podium-amount.gold { color: var(--teal); }
+  .podium-amount.silver { color: var(--purple); }
+  .podium-amount.bronze { color: var(--orange); }
+
+  /* ── Insight bullets ── */
+  .insight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-top: 20px; }
+  .insight {
+    display: flex; gap: 12px; align-items: flex-start;
+    background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 14px; font-size: 0.82rem; color: var(--muted);
+  }
+  .insight .icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+  .insight strong { color: var(--text); }
+
+  /* ── Title slide specific ── */
+  .title-bg {
+    background: linear-gradient(135deg, #0a1628 0%, #0f2740 50%, #0d1e1b 100%);
+    min-height: 100vh;
+  }
+  .title-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--teal-dim); border: 1px solid rgba(25,184,156,0.3);
+    border-radius: 30px; padding: 6px 18px; font-size: 0.8rem;
+    font-weight: 600; color: var(--teal); margin-bottom: 28px;
+  }
+  .big-title { font-size: 3.8rem; font-weight: 900; letter-spacing: -2.5px; line-height: 1.05; margin-bottom: 16px; }
+  .big-title span { color: var(--teal); }
+
+  /* ── Growth callout ── */
+  .growth-callout {
+    background: linear-gradient(135deg, rgba(25,184,156,0.12), rgba(245,200,66,0.06));
+    border: 1px solid rgba(25,184,156,0.25); border-radius: 16px;
+    padding: 24px 32px; margin-top: 20px; display: flex; align-items: center; gap: 32px;
+  }
+  .growth-big { font-size: 4rem; font-weight: 900; letter-spacing: -3px; color: var(--teal); line-height: 1; }
+  .growth-label { font-size: 1rem; font-weight: 700; }
+  .growth-sub { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+
+  .logo-mark { width: 54px; height: 54px; border-radius: 14px; background: linear-gradient(135deg, var(--teal), var(--teal-dark)); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 24px; }
+</style>
+</head>
+<body>
+<div id="deck">
+
+  <!-- SLIDE 1: TITLE -->
+  <div class="slide active title-bg" id="s1">
+    <div class="slide-inner center">
+      <div class="logo-mark">🚛</div>
+      <div class="title-tag">🗓️ Aug 2025 – Jul 2026 &nbsp;·&nbsp; Prepared Jul 28, 2026</div>
+      <div class="big-title">MidSouth<br><span>Dumpster MS</span></div>
+      <div style="font-size:1.5rem;font-weight:700;color:var(--muted);letter-spacing:-0.5px;">Business Performance Presentation</div>
+      <div style="font-size:0.9rem;color:var(--muted);margin-top:14px;max-width:480px;">A 12-month operational snapshot — revenue, growth, unit economics, client base, and product mix.</div>
+      <div style="display:flex;gap:20px;margin-top:36px;flex-wrap:wrap;justify-content:center;">
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 28px;text-align:center;">
+          <div style="font-size:1.6rem;font-weight:800;color:var(--teal);">$87,538</div>
+          <div style="font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:3px;">All-Time Revenue</div>
+        </div>
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 28px;text-align:center;">
+          <div style="font-size:1.6rem;font-weight:800;color:var(--yellow);">+82.4%</div>
+          <div style="font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:3px;">Avg MoM Growth</div>
+        </div>
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 28px;text-align:center;">
+          <div style="font-size:1.6rem;font-weight:800;color:var(--purple);">73.2%</div>
+          <div style="font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:3px;">Gross Margin</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: REVENUE OVERVIEW -->
+  <div class="slide" id="s2">
+    <div class="slide-inner">
+      <div class="brand">Revenue Overview</div>
+      <div class="slide-title">The Business in Numbers</div>
+      <div class="slide-sub">12 months of operation — Aug 2025 through Jul 2026 (final)</div>
+      <div class="divider"></div>
+      <div class="kpi-row">
+        <div class="kpi">
+          <span class="kpi-emoji">💰</span>
+          <div class="kpi-label">All-Time Revenue</div>
+          <div class="kpi-value">$87,538</div>
+          <div class="kpi-sub">206 invoices across 12 months</div>
+        </div>
+        <div class="kpi green">
+          <span class="kpi-emoji">✅</span>
+          <div class="kpi-label">Collected</div>
+          <div class="kpi-value green">$84,237</div>
+          <div class="kpi-sub">96.2% collection rate</div>
+        </div>
+        <div class="kpi blue">
+          <span class="kpi-emoji">🧾</span>
+          <div class="kpi-label">Total Invoices</div>
+          <div class="kpi-value blue">206</div>
+          <div class="kpi-sub">Avg $425 per invoice</div>
+        </div>
+        <div class="kpi purple">
+          <span class="kpi-emoji">🔄</span>
+          <div class="kpi-label">Repeat Clients</div>
+          <div class="kpi-value purple">25+</div>
+          <div class="kpi-sub">Strong recurring base</div>
+        </div>
+      </div>
+      <div style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+        <div class="chart-card">
+          <div class="chart-title">✅ Collected vs Outstanding</div>
+          <div class="chart-desc">$84,237 of $87,538 collected · 8 invoices open ($3,301)</div>
+          <div class="chart-wrap h220"><canvas id="c-collection"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">👥 Client Type Split</div>
+          <div class="chart-desc">Residential vs Commercial vs Non-Profit by invoice count (206 total)</div>
+          <div class="chart-wrap h220"><canvas id="c-clienttype"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: GROWTH STORY -->
+  <div class="slide" id="s3">
+    <div class="slide-inner">
+      <div class="brand">Growth Story</div>
+      <div class="slide-title">Month-Over-Month Growth</div>
+      <div class="slide-sub">Consistent, compounding growth — operating at 42× the August 2025 run-rate by July 2026</div>
+      <div class="divider"></div>
+      <div class="growth-callout">
+        <div>
+          <div class="growth-big">+82.4%</div>
+          <div class="growth-label">Average MoM Growth Rate</div>
+          <div class="growth-sub">Excluding Dec 2025 & May 2026 (operational slowdowns)</div>
+        </div>
+        <div style="flex:1;border-left:1px solid var(--border);padding-left:32px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div>
+            <div style="font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;">Started (Aug 2025)</div>
+            <div style="font-size:1.4rem;font-weight:800;color:var(--muted);">$399/mo</div>
+          </div>
+          <div>
+            <div style="font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;">Current Record (Jul 2026)</div>
+            <div style="font-size:1.4rem;font-weight:800;color:var(--success);">$16,858/mo</div>
+          </div>
+          <div>
+            <div style="font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;">2026 Monthly Avg (7 months)</div>
+            <div style="font-size:1.4rem;font-weight:800;color:var(--teal);">$10,486/mo</div>
+          </div>
+          <div>
+            <div style="font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;">Full-Year 2026 Projection</div>
+            <div style="font-size:1.4rem;font-weight:800;color:var(--yellow);">$150K–170K</div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-card" style="margin-top:20px;">
+        <div class="chart-title">📈 Month-Over-Month Growth Rate</div>
+        <div class="chart-desc">Monthly growth percentages · Dec 2025 &amp; May 2026 highlighted as operational dips (not counted in avg)</div>
+        <div class="chart-wrap h220"><canvas id="c-mom"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: TOP CLIENTS -->
+  <div class="slide" id="s4">
+    <div class="slide-inner">
+      <div class="brand">Client Base</div>
+      <div class="slide-title">Top Clients — All-Time Revenue</div>
+      <div class="slide-sub">Aug 2025 – Jul 2026 · Total billed (incl. fees & tax) per client</div>
+      <div class="divider"></div>
+      <div class="podium">
+        <div class="podium-card gold">
+          <div class="podium-emoji">🥇</div>
+          <div>
+            <div class="podium-name">Gibson &amp; Associates</div>
+            <div class="podium-sub">Commercial · 9 invoices · #1 anchor client 🔥</div>
+          </div>
+          <div class="podium-amount gold">$4,029</div>
+        </div>
+        <div class="podium-card silver">
+          <div class="podium-emoji">🥈</div>
+          <div>
+            <div class="podium-name">Phoenix Fabricators</div>
+            <div class="podium-sub">Commercial · 9 invoices · D&amp;R user 🔥</div>
+          </div>
+          <div class="podium-amount silver">$3,931</div>
+        </div>
+        <div class="podium-card bronze">
+          <div class="podium-emoji">🥉</div>
+          <div>
+            <div class="podium-name">Brandon Community Care</div>
+            <div class="podium-sub">Non-Profit · 7 invoices · D&amp;R user</div>
+          </div>
+          <div class="podium-amount bronze">$2,945</div>
+        </div>
+      </div>
+      <div class="chart-card" style="margin-top:16px;">
+        <div class="chart-title">🏢 Top 15 Clients — All-Time Revenue</div>
+        <div class="chart-desc">Total billed per client · Aug 2025 – Jul 2026</div>
+        <div class="chart-wrap h260"><canvas id="c-clients"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: UNIT ECONOMICS -->
+  <div class="slide" id="s5">
+    <div class="slide-inner">
+      <div class="brand">Per-Rental Unit Economics</div>
+      <div class="slide-title">Margin & Profitability</div>
+      <div class="slide-sub">Variable costs only (dump fee + fuel). Does not include fixed overhead of ~$967/mo.</div>
+      <div class="divider"></div>
+      <div class="kpi-row">
+        <div class="kpi">
+          <span class="kpi-emoji">💵</span>
+          <div class="kpi-label">Avg Profit Per Rental</div>
+          <div class="kpi-value">$318</div>
+          <div class="kpi-sub">After dump fees ($40–70) + fuel (~$62.50)</div>
+        </div>
+        <div class="kpi green">
+          <span class="kpi-emoji">📊</span>
+          <div class="kpi-label">Gross Margin</div>
+          <div class="kpi-value green">73.2%</div>
+          <div class="kpi-sub">Industry avg is 50–60%. <strong style="color:var(--success)">Significantly above.</strong></div>
+        </div>
+        <div class="kpi blue">
+          <span class="kpi-emoji">🔧</span>
+          <div class="kpi-label">Variable Cost / Rental</div>
+          <div class="kpi-value blue">$116</div>
+          <div class="kpi-sub">Dump: ~$54 avg + Fuel: ~$62.50</div>
+        </div>
+        <div class="kpi purple">
+          <span class="kpi-emoji">🏢</span>
+          <div class="kpi-label">Monthly Overhead</div>
+          <div class="kpi-value purple">~$967</div>
+          <div class="kpi-sub">Docket $200 · GL $67 · Trailer Ins $100 · Lot $300 · Truck Ins $300</div>
+        </div>
+      </div>
+      <div class="chart-card" style="margin-top:20px;">
+        <div class="chart-title">💰 Profit Per Rental — Complete Pricing Matrix</div>
+        <div class="chart-desc">Variable costs only · Best margin: 15 Yard / 7 Day at 74.9% ⭐</div>
+        <table>
+          <thead><tr><th>Size</th><th>Duration</th><th>Price</th><th>Dump Fee</th><th>Fuel</th><th>Profit</th><th>Margin</th></tr></thead>
+          <tbody>
+            <tr><td class="t-bold">10 Yard</td><td class="t-muted">1 Day</td><td class="t-teal">$349</td><td class="t-muted">$40</td><td class="t-muted">$62.50</td><td class="t-teal">$246.50</td><td>70.6%</td></tr>
+            <tr><td class="t-bold">10 Yard</td><td class="t-muted">3 Day</td><td class="t-teal">$379</td><td class="t-muted">$40</td><td class="t-muted">$62.50</td><td class="t-teal">$276.50</td><td>73.0%</td></tr>
+            <tr><td class="t-bold">10 Yard</td><td class="t-muted">7 Day</td><td class="t-teal">$399</td><td class="t-muted">$40</td><td class="t-muted">$62.50</td><td class="t-teal">$296.50</td><td>74.3%</td></tr>
+            <tr><td class="t-bold">15 Yard</td><td class="t-muted">1 Day</td><td class="t-teal">$399</td><td class="t-muted">$50</td><td class="t-muted">$62.50</td><td class="t-teal">$286.50</td><td>71.8%</td></tr>
+            <tr><td class="t-bold">15 Yard</td><td class="t-muted">3 Day</td><td class="t-teal">$429</td><td class="t-muted">$50</td><td class="t-muted">$62.50</td><td class="t-teal">$316.50</td><td>73.8%</td></tr>
+            <tr class="highlight-row"><td class="t-bold" style="color:var(--teal)">15 Yard ⭐</td><td style="font-weight:700">7 Day</td><td class="t-teal" style="font-weight:800">$449</td><td class="t-muted">$50</td><td class="t-muted">$62.50</td><td class="t-teal" style="font-weight:800">$336.50</td><td style="font-weight:800;color:var(--teal)">74.9%</td></tr>
+            <tr><td class="t-bold">20 Yard</td><td class="t-muted">1 Day</td><td class="t-teal">$449</td><td class="t-muted">$70</td><td class="t-muted">$62.50</td><td class="t-teal">$316.50</td><td>70.5%</td></tr>
+            <tr><td class="t-bold">20 Yard</td><td class="t-muted">3 Day</td><td class="t-teal">$479</td><td class="t-muted">$70</td><td class="t-muted">$62.50</td><td class="t-teal">$346.50</td><td>72.3%</td></tr>
+            <tr><td class="t-bold">20 Yard</td><td class="t-muted">7 Day</td><td class="t-teal">$499</td><td class="t-muted">$70</td><td class="t-muted">$62.50</td><td class="t-teal">$366.50</td><td>73.4%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: PRODUCT MIX -->
+  <div class="slide" id="s6">
+    <div class="slide-inner">
+      <div class="brand">Product Mix Analysis</div>
+      <div class="slide-title">Rental Duration &amp; Size Breakdown</div>
+      <div class="slide-sub">Based on standard-priced rentals Aug 2025 – Jul 2026</div>
+      <div class="divider"></div>
+      <div class="kpi-row" style="grid-template-columns:repeat(4,1fr)">
+        <div class="kpi">
+          <span class="kpi-emoji">⏱️</span>
+          <div class="kpi-label">Avg Rental Duration</div>
+          <div class="kpi-value" style="font-size:1.7rem;">4.27 days</div>
+          <div class="kpi-sub">Based on 91 standard-priced rentals</div>
+        </div>
+        <div class="kpi blue">
+          <span class="kpi-emoji">📅</span>
+          <div class="kpi-label">Most Common Duration</div>
+          <div class="kpi-value blue" style="font-size:1.5rem;">7-Day (42.9%)</div>
+          <div class="kpi-sub">39 of 91 rentals · highest volume</div>
+        </div>
+        <div class="kpi purple">
+          <span class="kpi-emoji">📦</span>
+          <div class="kpi-label">Most Popular Size</div>
+          <div class="kpi-value purple" style="font-size:1.5rem;">15 Yard (40.7%)</div>
+          <div class="kpi-sub">37 of 91 rentals · "Most Popular" on site</div>
+        </div>
+        <div class="kpi orange">
+          <span class="kpi-emoji">💵</span>
+          <div class="kpi-label">Revenue / Dumpster-Day</div>
+          <div class="kpi-value orange">$106</div>
+          <div class="kpi-sub">Avg across all sizes and durations</div>
+        </div>
+      </div>
+      <div class="chart-grid" style="margin-top:20px;">
+        <div class="chart-card">
+          <div class="chart-title">⏱️ Duration Distribution</div>
+          <div class="chart-desc">Breakdown of 132 standard-priced rentals by rental period</div>
+          <div class="chart-wrap h220"><canvas id="c-duration"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">📦 Dumpster Size Distribution</div>
+          <div class="chart-desc">Breakdown of 145 standard-priced rentals by container size</div>
+          <div class="chart-wrap h220"><canvas id="c-size"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7: KEY TAKEAWAYS -->
+  <div class="slide" id="s7">
+    <div class="slide-inner">
+      <div class="brand">Summary</div>
+      <div class="slide-title">Key Takeaways</div>
+      <div class="slide-sub">What the numbers tell us — and what's next</div>
+      <div class="divider"></div>
+      <div class="insight-grid">
+        <div class="insight"><span class="icon">🏆</span><div><strong>July 2026: $16,858 all-time record</strong> — 41 invoices in a single month. The business is scaling rapidly with one truck.</div></div>
+        <div class="insight"><span class="icon">📈</span><div><strong>+82.4% average MoM growth</strong> on operational months. Started at $399 in Aug 2025 — now a $200K+ annual run-rate.</div></div>
+        <div class="insight"><span class="icon">💰</span><div><strong>73.2% gross margin</strong> — well above the 50–60% industry average. High-margin, capital-light business model.</div></div>
+        <div class="insight"><span class="icon">✅</span><div><strong>96.2% collection rate</strong> on $87,538 billed. Only $3,301 outstanding across 8 open invoices — primarily new July jobs.</div></div>
+        <div class="insight"><span class="icon">🔄</span><div><strong>25+ repeat clients</strong> including Gibson &amp; Associates and Phoenix Fabricators, each with 9+ invoices. Strong anchor commercial accounts.</div></div>
+        <div class="insight"><span class="icon">📦</span><div><strong>15 Yard / 7-Day is the sweet spot</strong> — most popular size (40.7%) and highest margin product (74.9%). Pricing is well-calibrated.</div></div>
+        <div class="insight"><span class="icon">🚛</span><div><strong>One-truck bottleneck</strong> — 41 jobs in July with a single truck likely means turned-down revenue. Phase 1 expansion directly addresses this.</div></div>
+        <div class="insight"><span class="icon">🌟</span><div><strong>2026 monthly avg: $10,486/mo</strong> — vs $2,947/mo in 2025 (H2 only). 3.6× growth in run-rate in under a year.</div></div>
+      </div>
+      <div style="margin-top:24px;background:linear-gradient(135deg,rgba(25,184,156,0.1),rgba(245,200,66,0.05));border:1px solid rgba(25,184,156,0.25);border-radius:14px;padding:18px 28px;display:flex;align-items:center;gap:20px;">
+        <div style="font-size:2rem;">🎯</div>
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;">Full-Year 2026 Projection: <span style="color:var(--teal)">$150,000 – $170,000</span></div>
+          <div style="font-size:0.8rem;color:var(--muted);margin-top:3px;">Based on 7-month 2026 average of $10,486/mo · Assumes continued summer demand + seasonal normalization in Q4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Navigation -->
+<nav>
+  <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>← Prev</button>
+  <div class="nav-dots" id="dots"></div>
+  <div class="slide-counter" id="counter">1 / 7</div>
+  <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+</nav>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dotsEl = document.getElementById('dots');
+  let current = 0;
+  let chartsInitialized = false;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goTo(i);
+    dotsEl.appendChild(d);
+  });
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    slides[current].classList.add('exit');
+    setTimeout(() => slides[current].classList.remove('exit'), 500);
+    current = n;
+    slides[current].classList.add('active');
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    document.getElementById('counter').textContent = (current + 1) + ' / ' + slides.length;
+    document.getElementById('prevBtn').disabled = current === 0;
+    document.getElementById('nextBtn').disabled = current === slides.length - 1;
+    if (!chartsInitialized && current > 0) { initCharts(); chartsInitialized = true; }
+  }
+  function changeSlide(dir) { goTo(Math.max(0, Math.min(slides.length - 1, current + dir))); }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') changeSlide(-1);
+  });
+
+  const teal = '#19b89c', yellow = '#f5c842', orange = '#f58f42';
+  const blue = '#4a9eff', purple = '#a78bfa', success = '#3fb950';
+  const bg2 = '#161b22', border = 'rgba(255,255,255,0.08)', muted = '#8b949e';
+  Chart.defaults.color = muted;
+  Chart.defaults.borderColor = border;
+  Chart.defaults.font.family = 'Inter, sans-serif';
+  const tt = { backgroundColor:'#1f2937', borderColor:'rgba(255,255,255,0.12)', borderWidth:1, padding:12, cornerRadius:10 };
+
+  function initCharts() {
+    new Chart(document.getElementById('c-collection').getContext('2d'), {
+      type:'doughnut',
+      data:{ labels:['Collected ($84,237)','Outstanding ($3,301)'], datasets:[{ data:[84237,3301], backgroundColor:[teal,'rgba(227,179,65,0.6)'], borderColor:bg2, borderWidth:3, hoverOffset:8 }] },
+      options:{ responsive:true, maintainAspectRatio:false, cutout:'70%', plugins:{ legend:{position:'right',labels:{usePointStyle:true,pointStyle:'circle',padding:12,font:{size:11}}}, tooltip:{...tt,callbacks:{label:c=>' '+c.label}} } }
+    });
+
+    new Chart(document.getElementById('c-clienttype').getContext('2d'), {
+      type:'doughnut',
+      data:{ labels:['Residential (63%)','Commercial (35%)','Non-Profit (2%)'], datasets:[{ data:[130,72,4], backgroundColor:[blue,purple,orange], borderColor:bg2, borderWidth:3, hoverOffset:8 }] },
+      options:{ responsive:true, maintainAspectRatio:false, cutout:'65%', plugins:{ legend:{position:'right',labels:{usePointStyle:true,pointStyle:'circle',padding:12,font:{size:11}}}, tooltip:{...tt,callbacks:{label:c=>' '+c.label+': '+c.raw+' invoices'}} } }
+    });
+
+    new Chart(document.getElementById('c-mom').getContext('2d'), {
+      type:'bar',
+      data:{
+        labels:['Sep 25','Oct 25','Nov 25','Dec 25\n(excl.)','Jan 26','Feb 26','Mar 26','Apr 26','May 26\n(excl.)','Jun 26','Jul 26'],
+        datasets:[{ label:'MoM Growth %', data:[233,168,66,-41,77,27,19,34,-45,86,31],
+          backgroundColor: [teal,teal,teal,'rgba(248,81,73,0.4)',teal,teal,teal,teal,'rgba(248,81,73,0.4)',teal,success],
+          borderColor: [teal,teal,teal,'rgba(248,81,73,0.7)',teal,teal,teal,teal,'rgba(248,81,73,0.7)',teal,success],
+          borderWidth:2, borderRadius:6, borderSkipped:false }]
+      },
+      options:{ responsive:true, maintainAspectRatio:false,
+        plugins:{ legend:{display:false}, tooltip:{...tt,callbacks:{label:c=>' '+(c.raw>0?'+':'')+c.raw+'%'}} },
+        scales:{
+          x:{ grid:{display:false}, ticks:{font:{size:10}} },
+          y:{ grid:{color:'rgba(255,255,255,0.05)'}, ticks:{font:{size:10},callback:v=>(v>0?'+':'')+v+'%'},
+            title:{display:true,text:'MoM Growth',color:muted,font:{size:10}} }
+        }
+      }
+    });
+
+    const clientNames = ['Gibson & Assoc.','Phoenix Fab.','Brandon CC','Multi-South','Hiliary Carter','AIT Environmental','McCleod Const.','JJ Krishna','Jay Wilson','Superior Traffic','Randy Nations','Bluff City Turf','C. Coleman','Mike Sims','Trey Porter'];
+    const clientRevs = [4029,3931,2945,2598,2206,2014,1818,1816,1712,1686,1637,1632,1580,1265,1207];
+    const clientColors = [teal,purple,orange,blue,purple,yellow,blue,purple,blue,purple,blue,blue,blue,purple,blue];
+    new Chart(document.getElementById('c-clients').getContext('2d'), {
+      type:'bar',
+      data:{ labels:clientNames, datasets:[{ label:'All-Time Revenue', data:clientRevs, backgroundColor:clientColors, borderColor:clientColors, borderWidth:1, borderRadius:5, borderSkipped:false }] },
+      options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false,
+        plugins:{ legend:{display:false}, tooltip:{...tt,callbacks:{label:c=>' $'+c.raw.toLocaleString()}} },
+        scales:{ x:{ grid:{color:'rgba(255,255,255,0.05)'}, ticks:{font:{size:10},callback:v=>'$'+(v>=1000?(v/1000).toFixed(1)+'K':v)} }, y:{grid:{display:false},ticks:{font:{size:10}}} }
+      }
+    });
+
+    new Chart(document.getElementById('c-duration').getContext('2d'), {
+      type:'doughnut',
+      data:{ labels:['1-Day (24.2%)','3-Day (33.9%)','7-Day (40.0%)','Other (1.9%)'], datasets:[{ data:[40,56,66,3], backgroundColor:[orange,blue,teal,purple], borderColor:bg2, borderWidth:3, hoverOffset:8 }] },
+      options:{ responsive:true, maintainAspectRatio:false, cutout:'65%', plugins:{ legend:{position:'right',labels:{usePointStyle:true,pointStyle:'circle',padding:12,font:{size:11}}}, tooltip:{...tt,callbacks:{label:c=>' '+c.label+': '+c.raw+' rentals'}} } }
+    });
+
+    new Chart(document.getElementById('c-size').getContext('2d'), {
+      type:'doughnut',
+      data:{ labels:['10 Yard (23.0%)','15 Yard (46.6%)','20 Yard (30.5%)'], datasets:[{ data:[40,81,53], backgroundColor:[blue,purple,teal], borderColor:bg2, borderWidth:3, hoverOffset:8 }] },
+      options:{ responsive:true, maintainAspectRatio:false, cutout:'65%', plugins:{ legend:{position:'right',labels:{usePointStyle:true,pointStyle:'circle',padding:12,font:{size:11}}}, tooltip:{...tt,callbacks:{label:c=>' '+c.label+': '+c.raw+' rentals'}} } }
+    });
+  }
+</script>
+</body>
+</html>
