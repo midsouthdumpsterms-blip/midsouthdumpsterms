@@ -54,15 +54,15 @@ const nextConfig = {
                         key: 'Content-Security-Policy',
                         value: [
                             "default-src 'self'",
-                            // GA, GTM, SurvCart, and inline scripts (inline needed for Next.js hydration)
-                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://embed.survcart.com",
+                            // GA, GTM, SurvCart, Google Ads, and inline scripts
+                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://embed.survcart.com https://googleads.g.doubleclick.net",
                             // Inline styles needed for Next.js, Google Fonts, SurvCart
                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://embed.survcart.com",
                             "font-src 'self' https://fonts.gstatic.com",
                             // Images from self, data URIs, blobs, and any HTTPS source (for gallery/blog images)
                             "img-src 'self' data: blob: https:",
-                            // GA telemetry + self API calls
-                            "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com",
+                            // GA telemetry, Google Ads telemetry + self API calls
+                            "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://ad.doubleclick.net https://www.google.com",
                             // Survcart booking iframe (book-online page)
                             "frame-src https://embed.survcart.com",
                             // Revenue dashboard uses srcDoc iframe — needs 'self' frame-src

@@ -16,17 +16,17 @@ const PaymentMethods: React.FC = () => {
     const iconStyle = { fontSize: '1.8rem', color: '#cbd5e1' }; // Light slate/silver look
 
     const payments = [
-        { icon: <FaCcVisa style={iconStyle} />, label: 'Visa' },
-        { icon: <FaCcMastercard style={iconStyle} />, label: 'Mastercard' },
-        { icon: <FaCcAmex style={iconStyle} />, label: 'American Express' },
-        { icon: <FaCcDiscover style={iconStyle} />, label: 'Discover' },
-        { icon: <FaApplePay style={iconStyle} />, label: 'Apple Pay' },
-        { icon: <SiVenmo style={iconStyle} />, label: 'Venmo' },
-        { icon: <SiCashapp style={iconStyle} />, label: 'Cash App' },
-        { icon: <MdAccountBalance style={iconStyle} />, label: 'ACH/Transfer' },
-        { icon: <FaCheckDouble style={iconStyle} />, label: 'Check' },
-        { icon: <FaMoneyBillWave style={iconStyle} />, label: 'Cash' },
-        { icon: <FaBitcoin style={iconStyle} />, label: 'Bitcoin' },
+        { icon: <FaCcVisa style={iconStyle} title="Visa" />, label: 'Visa' },
+        { icon: <FaCcMastercard style={iconStyle} title="Mastercard" />, label: 'Mastercard' },
+        { icon: <FaCcAmex style={iconStyle} title="American Express" />, label: 'American Express' },
+        { icon: <FaCcDiscover style={iconStyle} title="Discover" />, label: 'Discover' },
+        { icon: <FaApplePay style={iconStyle} title="Apple Pay" />, label: 'Apple Pay' },
+        { icon: <SiVenmo style={iconStyle} title="Venmo" />, label: 'Venmo' },
+        { icon: <SiCashapp style={iconStyle} title="Cash App" />, label: 'Cash App' },
+        { icon: <MdAccountBalance style={iconStyle} title="ACH/Transfer" />, label: 'ACH/Transfer' },
+        { icon: <FaCheckDouble style={iconStyle} title="Check" />, label: 'Check' },
+        { icon: <FaMoneyBillWave style={iconStyle} title="Cash" />, label: 'Cash' },
+        { icon: <FaBitcoin style={iconStyle} title="Bitcoin" />, label: 'Bitcoin' },
     ];
 
     return (

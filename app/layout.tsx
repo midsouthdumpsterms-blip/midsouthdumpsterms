@@ -6,7 +6,6 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MobileCallBar from '@/components/MobileCallBar'
 import GoogleReviewsBadge from '@/components/GoogleReviewsBadge'
-import ChatBot from '@/components/ChatBot'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import BehavioralTracker from '@/components/BehavioralTracker'
 import { Analytics } from '@vercel/analytics/next'
@@ -89,12 +88,6 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                {/* Resource Hints for Performance */}
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-                <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: injectSchema(localBusinessSchema) }}
@@ -116,7 +109,6 @@ export default function RootLayout({
                 <Footer />
                 <MobileCallBar />
                 <GoogleReviewsBadge />
-                <ChatBot />
                 <BehavioralTracker />
                 <Analytics />
                 <SpeedInsights />
