@@ -145,7 +145,7 @@ export async function POST(req: NextRequest) {
         const { name, phone, email, project, city, timeline, recommendedSize, quotedPrice, days } = body
         const cleanPhone = phone?.replace(/\D/g, '') ?? ''
 
-        console.log('📋 NEW QUOTE LEAD:', { name, phone, project, city, timeline, recommendedSize, timestamp: new Date().toISOString() })
+        console.log('📋 NEW QUOTE LEAD:', { name, project, city, timeline, recommendedSize, timestamp: new Date().toISOString() })
 
         // ── 0. Save lead to Database ────────────────────────────────────────
         try {

@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { sql } from '@vercel/postgres';
 import { Resend } from 'resend';
 import { getLocalPhotoPool, pickPhotoForSlug } from '@/lib/local-photos';
+import { sanitizeHtml } from '@/lib/sanitize-html';
 
 // We allow this to run for up to 60 seconds (max for Vercel Hobby/Pro without bumping config)
 export const maxDuration = 60;
@@ -154,6 +155,9 @@ export async function GET(request: Request) {
     
     // Clean up any markdown code block wrappers if Claude accidentally includes them
     contentHtml = contentHtml.replace(/^```html\n?/, '').replace(/\n?```$/, '').trim();
+    
+    // Sanitize the generated HTML to prevent XSS
+    contentHtml = sanitizeHtml(contentHtml);
 
     // Generate a short excerpt
     const excerpt = await callAnthropic(
@@ -207,6 +211,6 @@ export async function GET(request: Request) {
 
   } catch (error: any) {
     console.error('Cron job error:', error);
-    return NextResponse.json({ error: error.message || 'Failed to generate post', stack: error.stack }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to generate post' }, { status: 500 });
   }
 }
