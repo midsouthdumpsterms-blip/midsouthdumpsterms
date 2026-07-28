@@ -13,6 +13,9 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://midsouthdumpsterms.com'),
+    alternates: {
+        canonical: '/',
+    },
     title: {
         default: 'Dumpster Rental Jackson MS | From $349 | Same-Day Delivery',
         template: '%s | Mid South Dumpster Rentals',
