@@ -55,7 +55,7 @@ const nextConfig = {
                         value: [
                             "default-src 'self'",
                             // GA, GTM, SurvCart, Google Ads, and inline scripts
-                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://embed.survcart.com https://googleads.g.doubleclick.net",
+                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://embed.survcart.com https://googleads.g.doubleclick.net https://cdn.jsdelivr.net",
                             // Inline styles needed for Next.js, Google Fonts, SurvCart
                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://embed.survcart.com",
                             "font-src 'self' https://fonts.gstatic.com",
