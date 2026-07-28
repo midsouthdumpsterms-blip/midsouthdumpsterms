@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { sql } from '@vercel/postgres'
+import { revalidatePath } from 'next/cache'
 
 export async function POST(req: Request) {
     try {
@@ -12,6 +13,9 @@ export async function POST(req: Request) {
         }
 
         await sql`DELETE FROM blog_posts WHERE id = ${id}`
+
+        revalidatePath('/blog')
+        revalidatePath('/situationroom')
 
         return NextResponse.json({ success: true })
     } catch (error) {
