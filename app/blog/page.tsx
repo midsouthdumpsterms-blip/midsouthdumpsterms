@@ -6,7 +6,7 @@ import fs from 'fs'
 import path from 'path'
 import { sql } from '@vercel/postgres'
 
-export const revalidate = 3600 // revalidate hourly to pick up approved posts
+export const dynamic = 'force-dynamic' // Always show fresh database content
 
 export const metadata: Metadata = {
     title: 'Dumpster Rental Tips & Guides | Jackson MS | Mid South Dumpster Rentals',
