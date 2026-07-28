@@ -65,7 +65,7 @@ export async function GET(request: Request) {
 
     if (availableTopics.length === 0) {
       // Fallback: If all are used, we ask Anthropic to generate a brand new hyper-local topic
-      const generated = await callAnthropic(
+      const generated = await callGemini(
           `You are an SEO expert for a dumpster rental company in Jackson, Mississippi. Generate ONE unique, highly engaging blog post title about dumpster rental, junk removal, or waste disposal in Central MS.
           
           STRICT CONSTRAINTS:
