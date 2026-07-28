@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
 import { generateLocalBusinessSchema, injectSchema } from '@/lib/schema'
@@ -10,6 +11,12 @@ import GoogleAnalytics from '@/components/GoogleAnalytics'
 import BehavioralTracker from '@/components/BehavioralTracker'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+
+const inter = Inter({ 
+    subsets: ['latin'],
+    variable: '--font-primary',
+    display: 'swap',
+})
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://midsouthdumpsterms.com'),
@@ -89,19 +96,19 @@ export default function RootLayout({
     const localBusinessSchema = generateLocalBusinessSchema()
 
     return (
-        <html lang="en">
+        <html lang="en" className={inter.variable}>
             <head>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: injectSchema(localBusinessSchema) }}
                 />
             </head>
-            <body>
+            <body className={inter.variable}>
                 {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
                     <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
                 )}
                 {/* SurvCart — loads globally so Book Now popup works on every page */}
-                {/* eslint-disable-next-line @next/next/no-css-tags */}
+                {/* eslint-disable-next-line @next/next/no-page-custom-font */}
                 <link rel="stylesheet" href="https://embed.survcart.com/embed.css" />
                 <Script id="survcart-config" strategy="lazyOnload">
                     {`var survcartConfig={"id":"3u8ibIDlEWCk4uhSC1iS","companyId":"irGaFVL6CggDRSyqIHNa","staged":false,"embedName":"Embed Configuration 1","selectors":[{"tokens":["Book Now","Book Now!","BOOK NOW"],"id":"B77cgcBIlxlcSRgehUvF","configId":"5O3wdzzOPnQx1KZlsXjD","workflowId":"Oi3qEUY3kbLvysbCyTUA","ga4_tags":[],"classes":"survcart-embed-presenter","default":true}]};`}
