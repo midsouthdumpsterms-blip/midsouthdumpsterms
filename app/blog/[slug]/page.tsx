@@ -103,7 +103,6 @@ export default async function DbArticlePage({
                                 alt={article.title}
                                 fill
                                 style={{ objectFit: 'cover', borderRadius: '12px' }}
-                                unoptimized={true}
                             />
                         </div>
                     )}
@@ -123,7 +122,6 @@ export default async function DbArticlePage({
                                     alt="Mid South Dumpster Rentals recent project"
                                     fill
                                     style={{ objectFit: 'cover', borderRadius: '8px' }}
-                                    unoptimized={true}
                                 />
                             </div>
                         ))}

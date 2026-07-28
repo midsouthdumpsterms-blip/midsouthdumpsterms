@@ -1,6 +1,9 @@
 import { MetadataRoute } from 'next'
+import { sql } from '@vercel/postgres'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const dynamic = 'force-dynamic'
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://midsouthdumpsterms.com'
 
     const serviceAreas = [
@@ -93,6 +96,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly' as const,
         priority: 0.88,
     }))
+
+    let dbBlogUrls: any[] = []
+    try {
+        const { rows } = await sql`SELECT slug, published_at FROM blog_posts WHERE status = 'PUBLISHED'`
+        dbBlogUrls = rows.map((post) => ({
+            url: `${baseUrl}/blog/${post.slug}`,
+            lastModified: new Date(post.published_at),
+            changeFrequency: 'weekly' as const,
+            priority: 0.8,
+        }))
+    } catch (err) {
+        console.error('Failed to fetch DB posts for sitemap', err)
+    }
 
     return [
         {
@@ -217,6 +233,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'monthly' as const,
             priority: 0.75,
-        }))
+        })),
+        ...dbBlogUrls
     ]
 }
