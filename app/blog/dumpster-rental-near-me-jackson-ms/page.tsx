@@ -5,6 +5,7 @@ import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-near-me-jackson-ms' },
     title: 'Dumpster Rental Near Me in Jackson, MS | Mid South',
     description: 'Searching for dumpster rental near me in Jackson, MS? Mid South offers affordable roll-off dumpsters with same-day delivery and flat rates. Book online or call 601-316-7891.',
     openGraph: {

@@ -5,6 +5,7 @@ import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-florence-ms' },
     title: 'Dumpster Rental in Florence, MS | Same-Day Roll-Off Service | Mid South',
     description:
         'Need a dumpster rental in Florence, MS? Mid South Dumpster Rentals delivers 10, 15, and 20-yard roll-off dumpsters to Southern Oaks, Deer Valley, Stonebrook, and all Florence zip codes 39073 and 39218. Call 601-316-7891.',

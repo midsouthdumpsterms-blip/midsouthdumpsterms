@@ -7,6 +7,7 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/rankin-county' },
     title: 'Roll Off Dumpster Rental Rankin County MS | Mid South Dumpster Rentals',
     description:
         'Roll off dumpster rental serving all of Rankin County, MS. 10, 15 & 20-yard dumpsters with same-day delivery to Brandon, Pearl, Flowood, Richland, Florence & more. Flat-rate pricing, no hidden fees. Call 601-316-7891.',

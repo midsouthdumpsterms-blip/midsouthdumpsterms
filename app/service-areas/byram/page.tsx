@@ -8,6 +8,7 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/byram' },
     title: 'Roll Off Dumpster Rental Byram MS | Hinds County | Mid South',
     description:
         'Roll off dumpster rental in Byram, MS and Hinds County. 10, 15 & 20-yard dumpsters with same-day delivery to Siwell Road, Lake Dockery & all Byram neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',

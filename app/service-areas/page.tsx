@@ -5,6 +5,7 @@ import styles from './service-areas.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas' },
     title: { absolute: 'Dumpster Rental Near Me | Jackson MS & Central Mississippi | Mid South' },
     description:
         'Same-day roll off dumpster rentals across Hinds, Madison & Rankin Counties — Jackson, Brandon, Clinton, Madison, Pearl, Ridgeland & 14 more cities. From $349. Call 601-316-7891.',

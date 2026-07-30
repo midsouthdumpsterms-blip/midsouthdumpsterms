@@ -6,6 +6,7 @@ import ContactForm from './ContactForm'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/contact' },
     title: 'Contact Us | Mid South Dumpster Rentals | Jackson MS',
     description: 'Get in touch with Mid South Dumpster Rentals for all your dumpster rental needs in Central Mississippi. Call 601-316-7891 or book online.',
 }

@@ -7,6 +7,7 @@ import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, inj
 import styles from '../services.module.css'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/services/estate-cleanout-dumpster-rental' },
     title: 'Estate Cleanout Dumpster Rental Jackson MS | Property Cleanout | Mid South',
     description:
         'Estate cleanout dumpster rental in Jackson MS and Central Mississippi. Roll-off containers for estate sales, foreclosure cleanouts, rental property turnovers & hoarding cleanup. Same-day delivery. Call 601-316-7891.',

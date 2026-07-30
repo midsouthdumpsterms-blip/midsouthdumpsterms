@@ -8,6 +8,7 @@ import localPostsData from '@/lib/blog-posts.json'
 export const dynamic = 'force-dynamic' // Always show fresh database content
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog' },
     title: 'Dumpster Rental Tips & Guides | Jackson MS | Mid South Dumpster Rentals',
     description:
         'Expert dumpster rental guides for Jackson, Rankin, Hinds & Madison County MS. Learn what to throw away, how to choose a size, pricing tips, and more.',

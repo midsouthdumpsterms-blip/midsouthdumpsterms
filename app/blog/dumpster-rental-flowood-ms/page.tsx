@@ -5,6 +5,7 @@ import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-flowood-ms' },
     title: 'Dumpster Rental in Flowood, MS | Same-Day Roll-Off Service | Mid South',
     description:
         'Need a dumpster rental in Flowood, MS? Mid South Dumpster Rentals delivers 10, 15, and 20-yard roll-off dumpsters to Laurelwood, Traditions, Kensington, Aubry Hills, and all of zip code 39232. Call 601-316-7891.',

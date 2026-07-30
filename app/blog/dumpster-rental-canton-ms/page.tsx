@@ -5,6 +5,7 @@ import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-canton-ms' },
     title: 'Dumpster Rental in Canton, MS | Same-Day Roll-Off Service | Mid South',
     description:
         'Need a dumpster rental in Canton, MS? Mid South Dumpster Rentals delivers 10, 15, and 20-yard roll-off dumpsters to Harvey Crossing, Deerfield, Panther Creek, Hampton Hills, and all of zip code 39046. Call 601-316-7891.',

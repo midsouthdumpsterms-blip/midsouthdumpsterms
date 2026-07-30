@@ -4,6 +4,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@
 import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/what-can-i-put-in-a-dumpster' },
     title: 'What Can I Put in a Dumpster? | Mid South Dumpster Rentals',
     description: 'Confused about what you can and cannot throw in a roll-off dumpster? Check out our complete guide to permitted and prohibited items in Mississippi.',
     openGraph: {

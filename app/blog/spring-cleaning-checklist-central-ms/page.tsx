@@ -6,6 +6,7 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/spring-cleaning-checklist-central-ms' },
     title: 'Spring Cleaning Checklist for Central MS Homeowners | Mid South Dumpster',
     description: 'Get your home ready for spring with our comprehensive cleaning checklist for Jackson, Madison, and Brandon homeowners. Plus, find out how renting a dumpster makes cleanouts a breeze.',
     openGraph: {

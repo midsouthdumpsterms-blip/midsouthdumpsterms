@@ -5,6 +5,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/debris-removal-ridgeland-ms' },
     title: 'Debris Removal Ridgeland MS | Roll-Off Dumpster Service | Mid South',
     description: 'Debris removal in Ridgeland, MS — rent a roll-off dumpster and we haul away your construction debris, renovation waste, storm damage, and yard debris. Same-day delivery. Call 601-316-7891.',
     openGraph: {

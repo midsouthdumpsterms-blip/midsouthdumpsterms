@@ -7,6 +7,7 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/madison-county' },
     title: 'Roll Off Dumpster Rental Madison County MS | Mid South Dumpster Rentals',
     description:
         'Roll off dumpster rental serving all of Madison County, MS. 10, 15 & 20-yard dumpsters with same-day delivery to Madison, Ridgeland, Canton, Gluckstadt, Flora & more. Flat-rate pricing, no hidden fees. Call 601-316-7891.',

@@ -8,6 +8,7 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/flowood' },
     title: 'Roll Off Dumpster Rental Flowood MS | Same-Day Service | Mid South',
     description:
         'Roll off dumpster rental in Flowood, MS starting at $349. Same-day delivery to Kensington, Laurelwood, Traditions & all Flowood neighborhoods. Serving Rankin County contractors & homeowners. Call 601-316-7891.',

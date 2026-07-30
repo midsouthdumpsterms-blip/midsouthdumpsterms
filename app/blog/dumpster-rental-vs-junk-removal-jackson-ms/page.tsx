@@ -5,6 +5,7 @@ import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-vs-junk-removal-jackson-ms' },
     title: 'Dumpster Rental vs. Junk Removal in Jackson MS — Which Is Right for You?',
     description:
         'Not sure whether to rent a dumpster or hire a junk removal company in Jackson, MS? We break down the cost, convenience, and best-use scenarios for both options. Mid South Dumpster Rentals — 601-316-7891.',

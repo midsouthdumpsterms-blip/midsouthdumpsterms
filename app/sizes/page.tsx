@@ -5,6 +5,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/sizes' },
     title: 'Dumpster Sizes & Pricing | 10, 15 & 20 Yard | Mid South Dumpster Rentals',
     description:
         'Compare 10, 15, and 20-yard dumpster sizes in Central Mississippi. See exact dimensions, weight limits, pricing, and which size is right for your project. Same-day delivery available. Call 601-316-7891.',

@@ -5,6 +5,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/sizes/10-yard-dumpster-rental' },
     title: '10 Yard Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
     description:
         '10 yard dumpster rental in Jackson MS from $349. 10ft x 7.5ft x 5ft container holds 4 pickup truck loads. Perfect for small cleanouts, garage cleanups & minor renovations. Same-day delivery. Call 601-316-7891.',

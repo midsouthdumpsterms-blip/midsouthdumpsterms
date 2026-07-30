@@ -8,6 +8,7 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/pearl' },
     title: 'Roll Off Dumpster Rental Pearl MS | Same-Day Service | Mid South',
     description:
         'Roll off dumpster rental in Pearl, MS starting at $349. 10, 15 & 20-yard dumpsters with same-day delivery to Westside, Parkbridge, Airport Road & all Pearl neighborhoods. Flat-rate pricing. Call 601-316-7891.',

@@ -7,6 +7,7 @@ import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@
 import styles from '../services.module.css'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/services/yard-waste-dumpster-rental' },
     title: 'Yard Waste Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
     description:
         'Yard waste dumpster rental in Jackson MS and Central Mississippi. Remove tree branches, brush, grass clippings, storm debris & landscaping waste fast. Same-day delivery. Call 601-316-7891.',

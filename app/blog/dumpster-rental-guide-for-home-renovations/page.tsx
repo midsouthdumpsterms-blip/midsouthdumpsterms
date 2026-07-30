@@ -4,6 +4,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@
 import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-guide-for-home-renovations' },
     title: 'Dumpster Rental Guide for Home Renovations | Mid South Dumpster Rentals',
     description: 'Planning a home renovation? Learn how to choose the right dumpster size, where to place it, and how to save money on waste disposal.',
     openGraph: {

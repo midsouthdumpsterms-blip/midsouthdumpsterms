@@ -4,6 +4,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 import styles from './faq.module.css'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/faq' },
     title: 'Dumpster Rental FAQ Jackson MS | Pricing, Sizes & Policies',
     description:
         'Answers to the most common dumpster rental questions in Jackson, MS. Pricing for all sizes and rental periods, weight limits, what you can throw away, fees, and more. Call 601-316-7891.',

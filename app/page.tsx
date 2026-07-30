@@ -9,6 +9,7 @@ import styles from './page.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/' },
     title: 'Roll Off Dumpster Rental Jackson MS | Same-Day Delivery | Mid South',
     description:
         'Roll off dumpster rental in Jackson, MS starting at $349. 10, 15 & 20-yard dumpsters with same-day delivery. No hidden fees. Serving Hinds, Madison & Rankin Counties. Call 601-316-7891 or book online.',

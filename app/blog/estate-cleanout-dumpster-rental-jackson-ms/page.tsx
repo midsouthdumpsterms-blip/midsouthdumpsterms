@@ -5,6 +5,7 @@ import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/estate-cleanout-dumpster-rental-jackson-ms' },
     title: 'Estate Cleanout Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
     description:
         'Need a dumpster for an estate cleanout in Jackson, MS? Mid South Dumpster Rentals delivers same-day roll off dumpsters throughout Jackson and Hinds County. Flat-rate pricing from $349. Call 601-316-7891.',

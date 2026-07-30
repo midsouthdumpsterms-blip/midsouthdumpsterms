@@ -5,6 +5,7 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/deck-shed-demolition-dumpster-rental-jackson-ms' },
     title: 'Deck & Shed Demolition Dumpster Rental in Jackson, MS | Mid South',
     description: 'Tearing down a deck, shed, or backyard structure in Central Mississippi? Learn what size dumpster you need, what to expect, and how Mid South makes cleanup easy. Flat-rate pricing from $349.',
     openGraph: {

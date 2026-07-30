@@ -5,6 +5,7 @@ import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/home-renovation-dumpster-guide-central-ms' },
     title: 'Dumpster Rental for Home Renovations in Central MS | Complete Guide',
     description:
         'Planning a home renovation in Jackson, Madison, or Brandon MS? Learn how to choose the right dumpster size, manage debris, and save money on your remodeling project.',

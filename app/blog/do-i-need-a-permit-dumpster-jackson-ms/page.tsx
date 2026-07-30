@@ -6,6 +6,7 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/do-i-need-a-permit-dumpster-jackson-ms' },
     title: 'Do I Need a Permit for a Dumpster in Jackson MS? | Mid South',
     description: 'Find out if you need a right-of-way permit to place a roll-off dumpster on the street in Jackson, Byram, Clinton, or Brandon, Mississippi.',
     openGraph: {

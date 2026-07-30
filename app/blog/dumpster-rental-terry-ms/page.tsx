@@ -5,6 +5,7 @@ import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-terry-ms' },
     title: 'Dumpster Rental in Terry, MS | Same-Day Roll-Off Service | Mid South',
     description:
         'Need a dumpster rental in Terry, MS? Mid South Dumpster Rentals delivers 10, 15, and 20-yard roll-off dumpsters to Terry Park, South Fork Estates, Cedarstone, and all of zip code 39170. Call 601-316-7891.',

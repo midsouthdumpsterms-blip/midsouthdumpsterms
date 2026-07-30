@@ -5,6 +5,7 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/bathroom-remodel-dumpster-rental-jackson-ms' },
     title: 'Bathroom Remodel Dumpster Rental in Jackson, MS | Mid South',
     description: 'Planning a bathroom renovation in Central Mississippi? Find out what size dumpster you need for a full gut-out, tile removal, vanity swap, and more. Flat-rate pricing from $349.',
     openGraph: {

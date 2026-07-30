@@ -5,6 +5,7 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-weight-limits-jackson-ms' },
     title: 'Dumpster Weight Limits Explained: Avoid Overage Fees in Jackson, MS | Mid South',
     description: 'Confused by dumpster weight limits? Learn how tons vs. yards work, which debris is heaviest, and how to avoid costly overage fees in Central Mississippi. Clear guide from Mid South Dumpster Rentals.',
     openGraph: {

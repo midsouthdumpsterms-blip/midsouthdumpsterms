@@ -4,6 +4,7 @@ import Link from 'next/link'
 import styles from './gallery.module.css'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/gallery' },
     title: 'Project Gallery | Dumpster Rentals in Jackson, MS & Surrounding Areas',
     description: 'See our dumpsters in action! Photos of residential and commercial dumpster rentals in Jackson, Madison, Brandon, Pearl, and more. Clean, reliable, and driveway-safe.',
 }

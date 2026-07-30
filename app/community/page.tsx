@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/community' },
     title: 'Community | Mid South Dumpster Rentals | Jackson, MS',
     description:
         'Mid South Dumpster Rentals is rooted in Jackson, MS. Our owner has lived in the greater Jackson area for years and believes in showing up for the community — not just doing business in it.',

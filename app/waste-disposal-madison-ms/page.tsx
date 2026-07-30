@@ -5,6 +5,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/waste-disposal-madison-ms' },
     title: 'Waste Disposal Madison MS | Roll-Off Dumpster Rental | Mid South',
     description: 'Waste disposal in Madison, MS made easy — rent a roll-off dumpster for convenient, affordable disposal of renovation waste, household junk, yard debris, and more. Same-day delivery. Call 601-316-7891.',
     openGraph: {

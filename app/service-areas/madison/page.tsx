@@ -8,6 +8,7 @@ import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/madison' },
     title: 'Roll Off Dumpster Rental Madison MS | Madison County | Mid South',
     description:
         'Roll off dumpster rental in Madison, MS and Madison County. 10, 15 & 20-yard dumpsters with same-day delivery to Reunion, Lake Caroline, Annandale & more. Flat-rate pricing, no hidden fees. Call 601-316-7891.',

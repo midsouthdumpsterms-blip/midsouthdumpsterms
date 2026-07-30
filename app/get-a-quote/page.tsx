@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/get-a-quote' },
     title: 'Get an Instant Dumpster Quote | Mid South Dumpster Rentals',
     description:
         'Our automated quote tool is undergoing a scheduled upgrade. For an instant, personalized dumpster rental quote, please call us at 601-316-7891.',

@@ -5,6 +5,7 @@ import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/storm-cleanup-dumpster-rental-jackson-ms' },
     title: 'Storm Cleanup Dumpster Rental in Jackson MS | Same-Day Service',
     description:
         'Need a dumpster after a storm in Central Mississippi? Mid South Dumpster Rentals offers same-day storm debris removal in Jackson, Brandon, Ridgeland, Madison, and surrounding areas. Call 601-316-7891.',

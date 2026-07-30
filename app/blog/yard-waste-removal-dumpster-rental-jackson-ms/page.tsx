@@ -5,6 +5,7 @@ import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/yard-waste-removal-dumpster-rental-jackson-ms' },
     title: 'Yard Waste Removal & Dumpster Rental Jackson MS | Brush, Limbs, Debris',
     description:
         'Need yard waste removal in Jackson, MS? Mid South Dumpster Rentals offers affordable roll-off dumpsters for brush, tree limbs, landscaping debris, and large yard cleanups. Call 601-316-7891.',

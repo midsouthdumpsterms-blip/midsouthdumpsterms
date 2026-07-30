@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/terms-and-conditions' },
     title: 'Terms and Conditions | Mid South Dumpster Rentals',
     description: 'Terms and Conditions for Mid South Dumpster Rentals, LLC. Read our service terms, SMS messaging terms, and rental policies.',
 }

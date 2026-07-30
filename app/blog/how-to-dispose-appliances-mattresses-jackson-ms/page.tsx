@@ -6,6 +6,7 @@ import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/how-to-dispose-appliances-mattresses-jackson-ms' },
     title: 'How to Dispose of Appliances & Mattresses in Jackson MS | Mid South',
     description: 'Looking to get rid of an old mattress or refrigerator in Jackson, MS? Learn the local rules, costs, and easiest ways to dispose of large, bulky items.',
     openGraph: {

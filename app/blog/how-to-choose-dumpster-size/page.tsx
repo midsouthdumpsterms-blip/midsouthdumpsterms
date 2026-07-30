@@ -5,6 +5,7 @@ import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/how-to-choose-dumpster-size' },
     title: 'How to Choose the Right Dumpster Size for Your Project',
     description:
         'Comprehensive guide to selecting the perfect dumpster size for your home renovation, construction, or cleanout project. Learn about 10, 15, and 20-yard dumpster options.',

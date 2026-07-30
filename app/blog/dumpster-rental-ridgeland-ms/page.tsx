@@ -5,6 +5,7 @@ import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-ridgeland-ms' },
     title: 'Dumpster Rental in Ridgeland, MS | Same-Day Roll-Off Service | Mid South',
     description:
         'Looking for dumpster rental in Ridgeland, MS? Mid South delivers 10, 15, and 20-yard roll-off dumpsters to Bridgewater, Lake Harbor, Old Town, The Township, and all of zip code 39157. Call 601-316-7891.',

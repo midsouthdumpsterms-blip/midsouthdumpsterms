@@ -8,6 +8,7 @@ import styles from './services.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/services' },
     title: { absolute: 'Roll Off Dumpster Rental Jackson MS | Prices from $349 | Mid South' },
     description:
         'Roll off dumpster rental in Jackson, MS. 10-yard from $349 · 15-yard from $399 · 20-yard from $449. Same-day delivery, no hidden fees. Serving Jackson, Brandon, Madison & all of Central MS. Call 601-316-7891.',

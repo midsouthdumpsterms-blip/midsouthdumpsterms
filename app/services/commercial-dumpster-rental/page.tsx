@@ -7,6 +7,7 @@ import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@
 import styles from '../services.module.css'
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://midsouthdumpsterms.com/services/commercial-dumpster-rental' },
     title: 'Commercial Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
     description:
         'Commercial roll-off dumpster rental in Jackson MS and Central Mississippi. Reliable waste disposal for contractors, property managers, retail, and office cleanouts. Same-day delivery available. Call 601-316-7891.',
