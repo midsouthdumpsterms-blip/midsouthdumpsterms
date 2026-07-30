@@ -55,9 +55,9 @@ export const metadata: Metadata = {
         images: [
             {
                 url: '/images/og-image.jpg',
-                width: 1200,
-                height: 630,
-                alt: 'Mid South Dumpster Rentals — Jackson, MS',
+                width: 1024,
+                height: 1024,
+                alt: 'Mid South Dumpster Rentals — Roll Off Dumpster Rental in Jackson, MS',
             },
         ],
     },
