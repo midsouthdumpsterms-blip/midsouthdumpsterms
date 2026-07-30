@@ -8,11 +8,11 @@ import styles from '../services.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/same-day-dumpster-rental' },
-    title: 'Same-Day Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
+    title: 'Same-Day Dumpster Rental Jackson MS',
     description:
         'Same-day dumpster rental in Jackson MS and Central Mississippi. Need a roll-off delivered today? Call before noon and we\'ll deliver the same day. Flat-rate pricing. 7 days a week. Call 601-316-7891.',
     openGraph: {
-        title: 'Same-Day Dumpster Rental Jackson MS | Mid South',
+        title: 'Same-Day Dumpster Rental Jackson MS',
         description: 'Same-day roll-off dumpster delivery in Central MS — call before noon. 10, 15 & 20-yard containers. 7 days a week.',
         url: 'https://midsouthdumpsterms.com/services/same-day-dumpster-rental',
     },

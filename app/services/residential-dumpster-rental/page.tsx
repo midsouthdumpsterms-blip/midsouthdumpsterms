@@ -8,11 +8,11 @@ import styles from '../services.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/residential-dumpster-rental' },
-    title: 'Residential Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
+    title: 'Residential Dumpster Rental Jackson MS',
     description:
         'Residential roll-off dumpster rental in Jackson MS and Central Mississippi. 10, 15 & 20-yard containers for home cleanouts, renovations, yard waste & more. Same-day delivery. Flat-rate pricing from $349. Call 601-316-7891.',
     openGraph: {
-        title: 'Residential Dumpster Rental Jackson MS | Mid South',
+        title: 'Residential Dumpster Rental Jackson MS',
         description: 'Roll-off dumpsters for home projects across Central MS — garage cleanouts, renovations, yard waste & more. Same-day delivery from $349.',
         url: 'https://midsouthdumpsterms.com/services/residential-dumpster-rental',
     },

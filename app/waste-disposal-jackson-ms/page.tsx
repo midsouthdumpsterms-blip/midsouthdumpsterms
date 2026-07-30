@@ -6,11 +6,11 @@ import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/waste-disposal-jackson-ms' },
-    title: 'Waste Disposal Jackson MS | Roll-Off Dumpster Rental | Mid South',
+    title: 'Waste Disposal Jackson MS | Roll-Off Dumpster Rental',
     description:
         'Waste disposal in Jackson, MS made easy — rent a roll-off dumpster for convenient, affordable disposal of renovation waste, household junk, construction debris, and yard waste. Same-day delivery. Call 601-316-7891.',
     openGraph: {
-        title: 'Waste Disposal Jackson MS | Mid South Dumpster Rentals',
+        title: 'Waste Disposal Jackson MS',
         description: 'Easy waste disposal in Jackson, MS. Roll-off dumpster rental for renovation waste, household junk, and debris. Same-day delivery.',
         url: 'https://midsouthdumpsterms.com/waste-disposal-jackson-ms',
     },

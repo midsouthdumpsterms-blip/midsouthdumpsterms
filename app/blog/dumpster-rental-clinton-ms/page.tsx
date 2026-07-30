@@ -6,7 +6,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-clinton-ms' },
-    title: 'Dumpster Rental in Clinton, MS | Same-Day Roll-Off Service | Mid South',
+    title: 'Dumpster Rental in Clinton, MS | Same-Day Roll-Off Service',
     description:
         'Need a dumpster rental in Clinton, MS? Mid South Dumpster Rentals delivers 10, 15, and 20-yard roll-off dumpsters to Clinton, Woodmoor, College Hills, and surrounding neighborhoods. Same-day delivery available. Call 601-316-7891.',
 }

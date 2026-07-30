@@ -6,10 +6,10 @@ import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/debris-removal-gluckstadt-ms' },
-    title: 'Debris Removal Gluckstadt MS | Roll-Off Dumpster Service | Mid South',
+    title: 'Debris Removal Gluckstadt MS | Roll-Off Dumpster Service',
     description: 'Debris removal in Gluckstadt, MS — rent a roll-off dumpster and we haul away your construction debris, renovation waste, storm damage, and yard debris. Same-day delivery. Call 601-316-7891.',
     openGraph: {
-        title: 'Debris Removal Gluckstadt MS | Mid South Dumpster Rentals',
+        title: 'Debris Removal Gluckstadt MS',
         description: 'Fast debris removal in Gluckstadt, MS. Roll-off dumpsters for construction debris, storm cleanup, renovation waste and yard debris. Same-day delivery.',
         url: 'https://midsouthdumpsterms.com/debris-removal-gluckstadt-ms',
     },

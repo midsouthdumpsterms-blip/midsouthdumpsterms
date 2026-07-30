@@ -10,11 +10,11 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/' },
-    title: 'Roll Off Dumpster Rental Jackson MS | Same-Day Delivery | Mid South',
+    title: 'Roll Off Dumpster Rental Jackson MS | Same-Day Delivery | Mid South Dumpster Rentals',
     description:
         'Roll off dumpster rental in Jackson, MS starting at $349. 10, 15 & 20-yard dumpsters with same-day delivery. No hidden fees. Serving Hinds, Madison & Rankin Counties. Call 601-316-7891 or book online.',
     openGraph: {
-        title: 'Roll Off Dumpster Rental Jackson, MS | Mid South',
+        title: 'Roll Off Dumpster Rental Jackson, MS',
         description: 'Roll off dumpster rental in Central Mississippi with same-day delivery. From $349, no hidden fees.',
         url: 'https://midsouthdumpsterms.com',
     },

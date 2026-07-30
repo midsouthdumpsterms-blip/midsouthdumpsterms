@@ -6,10 +6,10 @@ import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/debris-removal-canton-ms' },
-    title: 'Debris Removal Canton MS | Roll-Off Dumpster Service | Mid South',
+    title: 'Debris Removal Canton MS | Roll-Off Dumpster Service',
     description: 'Debris removal in Canton, MS — rent a roll-off dumpster and we haul away your construction debris, renovation waste, storm damage, and yard debris. Same-day delivery. Call 601-316-7891.',
     openGraph: {
-        title: 'Debris Removal Canton MS | Mid South Dumpster Rentals',
+        title: 'Debris Removal Canton MS',
         description: 'Fast debris removal in Canton, MS. Roll-off dumpsters for construction debris, storm cleanup, renovation waste and yard debris. Same-day delivery.',
         url: 'https://midsouthdumpsterms.com/debris-removal-canton-ms',
     },

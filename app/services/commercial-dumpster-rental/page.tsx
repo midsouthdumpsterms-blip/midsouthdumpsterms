@@ -8,11 +8,11 @@ import styles from '../services.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/commercial-dumpster-rental' },
-    title: 'Commercial Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
+    title: 'Commercial Dumpster Rental Jackson MS',
     description:
         'Commercial roll-off dumpster rental in Jackson MS and Central Mississippi. Reliable waste disposal for contractors, property managers, retail, and office cleanouts. Same-day delivery available. Call 601-316-7891.',
     openGraph: {
-        title: 'Commercial Dumpster Rental Jackson MS | Mid South',
+        title: 'Commercial Dumpster Rental Jackson MS',
         description: 'Roll-off dumpster rental for businesses across Central MS — contractors, property managers, retail cleanouts & more. Same-day delivery.',
         url: 'https://midsouthdumpsterms.com/services/commercial-dumpster-rental',
     },

@@ -9,11 +9,11 @@ export const dynamic = 'force-dynamic' // Always show fresh database content
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog' },
-    title: 'Dumpster Rental Tips & Guides | Jackson MS | Mid South Dumpster Rentals',
+    title: 'Dumpster Rental Tips & Guides | Jackson MS',
     description:
         'Expert dumpster rental guides for Jackson, Rankin, Hinds & Madison County MS. Learn what to throw away, how to choose a size, pricing tips, and more.',
     openGraph: {
-        title: 'Dumpster Rental Tips & Local Guides | Mid South',
+        title: 'Dumpster Rental Tips & Local Guides',
         description: 'Expert dumpster rental guides for Central Mississippi homeowners and contractors.',
         url: 'https://midsouthdumpsterms.com/blog',
     },

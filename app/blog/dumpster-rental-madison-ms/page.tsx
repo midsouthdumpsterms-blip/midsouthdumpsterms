@@ -6,7 +6,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-madison-ms' },
-    title: 'Dumpster Rental in Madison MS | Same-Day Service | Mid South',
+    title: 'Dumpster Rental in Madison MS | Same-Day Service',
     description:
         'Need a dumpster rental in Madison, MS? Mid South Dumpster Rentals delivers 10, 15, and 20-yard roll-off dumpsters directly to your driveway. HOA-friendly and locally owned. Call 601-316-7891.',
 }

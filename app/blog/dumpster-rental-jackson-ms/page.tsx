@@ -6,10 +6,10 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-jackson-ms' },
-    title: 'Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
+    title: 'Dumpster Rental Jackson MS',
     description: 'Need reliable dumpster rental in Jackson, MS? Mid South offers flat-rate pricing from $349, same-day delivery 7 days a week, and serves all of Central Mississippi.',
     openGraph: {
-        title: 'Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
+        title: 'Dumpster Rental Jackson MS',
         description: 'Flat-rate pricing from $349. Same-day delivery 7 days a week across Jackson, Hinds County, and Central Mississippi.',
         url: 'https://midsouthdumpsterms.com/blog/dumpster-rental-jackson-ms',
     },

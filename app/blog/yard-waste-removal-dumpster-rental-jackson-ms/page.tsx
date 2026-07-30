@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description:
         'Need yard waste removal in Jackson, MS? Mid South Dumpster Rentals offers affordable roll-off dumpsters for brush, tree limbs, landscaping debris, and large yard cleanups. Call 601-316-7891.',
     openGraph: {
-        title: 'Yard Waste Removal & Dumpster Rental Jackson MS | Mid South',
+        title: 'Yard Waste Removal & Dumpster Rental Jackson MS',
         description: 'Roll-off dumpsters for yard waste, brush piles, tree debris, and landscaping projects across Central Mississippi. Same-day delivery available.',
         url: 'https://midsouthdumpsterms.com/blog/yard-waste-removal-dumpster-rental-jackson-ms',
     },

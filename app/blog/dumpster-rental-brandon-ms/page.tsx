@@ -6,7 +6,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-brandon-ms' },
-    title: 'Dumpster Rental in Brandon, MS | Same-Day Roll-Off Service | Mid South',
+    title: 'Dumpster Rental in Brandon, MS | Same-Day Roll-Off Service',
     description:
         'Looking for dumpster rental in Brandon, MS? Mid South Dumpster Rentals delivers 10, 15, and 20-yard roll-off dumpsters to Brandon and all of Rankin County. Same-day delivery available. Call 601-316-7891.',
 }

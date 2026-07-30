@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description:
         'Answers to the most common dumpster rental questions in Jackson, MS. Pricing for all sizes and rental periods, weight limits, what you can throw away, fees, and more. Call 601-316-7891.',
     openGraph: {
-        title: 'Dumpster Rental FAQ | Mid South Dumpster Rentals',
+        title: 'Dumpster Rental FAQ',
         description: 'Complete pricing, weight limits, fees, and policies for dumpster rentals in Central Mississippi.',
         url: 'https://midsouthdumpsterms.com/faq',
     },

@@ -7,7 +7,7 @@ import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-vs-bagster-jackson-ms' },
-    title: 'Dumpster Rental vs. Bagster: Which is Cheaper in Jackson? | Mid South',
+    title: 'Dumpster Rental vs. Bagster: Which is Cheaper in Jackson?',
     description: 'Thinking about buying a Waste Management Bagster from Lowe\'s or Home Depot? We break down the true costs to show you why renting a small roll-off dumpster is often cheaper.',
     openGraph: {
         title: 'Dumpster Rental vs. Bagster: Which is Cheaper in Jackson?',

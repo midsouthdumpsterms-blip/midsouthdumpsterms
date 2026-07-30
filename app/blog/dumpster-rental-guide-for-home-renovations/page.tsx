@@ -5,10 +5,10 @@ import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-guide-for-home-renovations' },
-    title: 'Dumpster Rental Guide for Home Renovations | Mid South Dumpster Rentals',
+    title: 'Dumpster Rental Guide for Home Renovations',
     description: 'Planning a home renovation? Learn how to choose the right dumpster size, where to place it, and how to save money on waste disposal.',
     openGraph: {
-        title: 'Dumpster Rental Guide for Home Renovations | Mid South',
+        title: 'Dumpster Rental Guide for Home Renovations',
         description: 'Essential guide for homeowners renting a dumpster for renovation projects.',
         type: 'article',
     },

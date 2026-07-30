@@ -6,7 +6,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-flora-ms' },
-    title: 'Dumpster Rental in Flora, MS | Same-Day Roll-Off Service | Mid South',
+    title: 'Dumpster Rental in Flora, MS | Same-Day Roll-Off Service',
     description:
         'Need a dumpster rental in Flora, MS? Mid South Dumpster Rentals delivers 10, 15, and 20-yard roll-off dumpsters to Chestnut Hill, Kearney Park, Springwood, and all of zip code 39071. Call 601-316-7891.',
 }

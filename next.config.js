@@ -32,6 +32,15 @@ const nextConfig = {
                 destination: '/book-online',
                 permanent: true, // 301 redirect - passes SEO authority to book-online page
             },
+            // Consolidate duplicate city blog posts into their service-area page equivalents
+            ...[
+                'brandon', 'byram', 'canton', 'clinton', 'flora', 'florence',
+                'flowood', 'jackson', 'madison', 'richland', 'ridgeland', 'terry',
+            ].map((city) => ({
+                source: `/blog/dumpster-rental-${city}-ms`,
+                destination: `/service-areas/${city}`,
+                permanent: true,
+            })),
         ]
     },
 

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description:
         'Reliable roll-off dumpster rental for contractors in Jackson, MS. Mid South Dumpster Rentals offers same-day delivery, flexible scheduling, and flat-rate pricing for construction, roofing, and remodeling projects. Call 601-316-7891.',
     openGraph: {
-        title: 'Contractor Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
+        title: 'Contractor Dumpster Rental Jackson MS',
         description: 'Same-day roll-off delivery for contractors across Central Mississippi. Flat-rate pricing, no hidden fees, 7 days a week.',
         url: 'https://midsouthdumpsterms.com/blog/contractor-dumpster-rental-jackson-ms',
     },

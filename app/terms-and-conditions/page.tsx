@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/terms-and-conditions' },
-    title: 'Terms and Conditions | Mid South Dumpster Rentals',
+    title: 'Terms and Conditions',
     description: 'Terms and Conditions for Mid South Dumpster Rentals, LLC. Read our service terms, SMS messaging terms, and rental policies.',
 }
 

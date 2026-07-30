@@ -6,7 +6,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-richland-ms' },
-    title: 'Dumpster Rental in Richland, MS | Same-Day Roll-Off Service | Mid South',
+    title: 'Dumpster Rental in Richland, MS | Same-Day Roll-Off Service',
     description:
         'Need a dumpster rental in Richland, MS? Mid South Dumpster Rentals delivers 10, 15, and 20-yard roll-off dumpsters to Bluebird, Bradford Place, Monterey Woods, Richland East, and zip codes 39204, 39207, 39218. Call 601-316-7891.',
 }

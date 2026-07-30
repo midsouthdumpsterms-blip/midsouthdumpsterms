@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
         'Serving Fondren, Belhaven & Northeast Jackson with 10-20 yard dumpsters. Same-day delivery, flat-rate pricing. Perfect for home renovations & construction. Call 601-316-7891.',
     openGraph: {
-        title: 'Dumpster Rentals in Jackson, MS | Mid South',
+        title: 'Dumpster Rentals in Jackson, MS',
         description: 'Serving Fondren, Belhaven & Northeast Jackson with same-day dumpster delivery.',
         url: 'https://midsouthdumpsterms.com/service-areas/jackson',
     },

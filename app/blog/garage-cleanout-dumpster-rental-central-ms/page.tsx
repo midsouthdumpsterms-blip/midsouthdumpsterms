@@ -6,7 +6,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/garage-cleanout-dumpster-rental-central-ms' },
-    title: 'Garage Cleanout Dumpster Rental in Central Mississippi | Mid South',
+    title: 'Garage Cleanout Dumpster Rental in Central Mississippi',
     description:
         'Cleaning out your garage in Jackson, Brandon, or Central MS? A 10 or 15-yard dumpster rental is the fastest way to get it done. Same-day delivery available. Call Mid South at 601-316-7891.',
 }

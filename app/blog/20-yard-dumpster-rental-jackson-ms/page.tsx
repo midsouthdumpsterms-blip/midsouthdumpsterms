@@ -6,7 +6,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/20-yard-dumpster-rental-jackson-ms' },
-    title: '20 Yard Dumpster Rental in Jackson MS | Mid South Dumpster Rentals',
+    title: '20 Yard Dumpster Rental in Jackson MS',
     description:
         'Looking for a 20 yard dumpster rental in Jackson, MS? Mid South Dumpster Rentals offers fast delivery, affordable pricing, and locally-owned service. Perfect for home renovations and cleanouts. Call 601-316-7891.',
 }

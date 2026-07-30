@@ -8,7 +8,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/pelahatchie' },
-    title: 'Roll Off Dumpster Rental Pelahatchie MS | Rankin County | Mid South',
+    title: 'Roll Off Dumpster Rental Pelahatchie MS | Rankin County',
     description:
         'Roll off dumpster rental in Pelahatchie, MS (ZIP 39145). 10, 15 & 20-yard dumpsters with same-day delivery to Pelahatchie and surrounding Rankin County communities. Flat-rate pricing from $349. Call 601-316-7891.',
     openGraph: {

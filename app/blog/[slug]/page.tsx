@@ -34,7 +34,7 @@ export async function generateMetadata({
         if (!article) return {}
 
         return {
-            title: `${article.title} | Mid South Dumpster Rentals`,
+            title: `${article.title}`,
             description: article.excerpt,
             alternates: { canonical: `https://midsouthdumpsterms.com/blog/${params.slug}` },
             openGraph: {

@@ -8,11 +8,11 @@ import styles from '../services.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/roofing-dumpster-rental' },
-    title: 'Roofing Dumpster Rental Jackson MS | Shingle Disposal | Mid South',
+    title: 'Roofing Dumpster Rental Jackson MS | Shingle Disposal',
     description:
         'Roofing dumpster rental in Jackson MS. Roll-off containers for shingle tear-offs, re-roofs & roofing debris disposal. Same-day delivery. Flat-rate pricing from $349. Call 601-316-7891.',
     openGraph: {
-        title: 'Roofing Dumpster Rental Jackson MS | Mid South',
+        title: 'Roofing Dumpster Rental Jackson MS',
         description: 'Roll-off dumpsters for roofing projects in Central MS. Shingle tear-offs, re-roofs, and roofing debris. Same-day delivery.',
         url: 'https://midsouthdumpsterms.com/services/roofing-dumpster-rental',
     },

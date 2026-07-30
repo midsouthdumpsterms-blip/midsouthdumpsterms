@@ -8,11 +8,11 @@ import styles from '../services.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/yard-waste-dumpster-rental' },
-    title: 'Yard Waste Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
+    title: 'Yard Waste Dumpster Rental Jackson MS',
     description:
         'Yard waste dumpster rental in Jackson MS and Central Mississippi. Remove tree branches, brush, grass clippings, storm debris & landscaping waste fast. Same-day delivery. Call 601-316-7891.',
     openGraph: {
-        title: 'Yard Waste Dumpster Rental Jackson MS | Mid South',
+        title: 'Yard Waste Dumpster Rental Jackson MS',
         description: 'Yard waste roll-off dumpsters across Central MS. Branches, brush, grass, storm debris — same-day delivery from $349.',
         url: 'https://midsouthdumpsterms.com/services/yard-waste-dumpster-rental',
     },

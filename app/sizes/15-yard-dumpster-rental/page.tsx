@@ -6,11 +6,11 @@ import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, inj
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/sizes/15-yard-dumpster-rental' },
-    title: '15 Yard Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
+    title: '15 Yard Dumpster Rental Jackson MS',
     description:
         '15 yard dumpster rental in Jackson MS from $399. 14ft x 7.5ft x 4ft container holds 6 pickup truck loads. Our most popular size for home renovations, roofing & estate cleanouts. Same-day delivery. Call 601-316-7891.',
     openGraph: {
-        title: '15 Yard Dumpster Rental Jackson MS | Mid South',
+        title: '15 Yard Dumpster Rental Jackson MS',
         description: '15 yard roll-off dumpster in Central MS from $399 — our most popular size. Same-day delivery, flat-rate pricing.',
         url: 'https://midsouthdumpsterms.com/sizes/15-yard-dumpster-rental',
     },

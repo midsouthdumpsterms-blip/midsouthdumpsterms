@@ -6,11 +6,11 @@ import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/debris-removal-jackson-ms' },
-    title: 'Debris Removal Jackson MS | Roll-Off Dumpster Service | Mid South',
+    title: 'Debris Removal Jackson MS | Roll-Off Dumpster Service',
     description:
         'Debris removal in Jackson, MS — rent a roll-off dumpster and we haul away your construction debris, renovation waste, storm damage, and yard debris. Same-day delivery. Call 601-316-7891.',
     openGraph: {
-        title: 'Debris Removal Jackson MS | Mid South Dumpster Rentals',
+        title: 'Debris Removal Jackson MS',
         description: 'Fast debris removal in Jackson, MS. Roll-off dumpsters for construction debris, storm cleanup, renovation waste & yard debris. Same-day delivery.',
         url: 'https://midsouthdumpsterms.com/debris-removal-jackson-ms',
     },

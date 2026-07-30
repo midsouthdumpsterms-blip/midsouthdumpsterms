@@ -6,7 +6,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-byram-ms' },
-    title: 'Dumpster Rental in Byram, MS | Same-Day Roll-Off Service | Mid South',
+    title: 'Dumpster Rental in Byram, MS | Same-Day Roll-Off Service',
     description:
         'Need a dumpster rental in Byram, MS? Mid South Dumpster Rentals delivers 10, 15, and 20-yard roll-off dumpsters to Lake Dockery, Byramdale Estates, Brannan Ridge, and all Byram zip codes. Call 601-316-7891.',
 }

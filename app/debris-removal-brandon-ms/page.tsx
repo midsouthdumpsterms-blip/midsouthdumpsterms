@@ -17,10 +17,10 @@ const nearbySlug3 = 'richland'; const nearbyCity3 = 'Richland'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/debris-removal-brandon-ms' },
-    title: `Debris Removal ${city} MS | Roll-Off Dumpster Service | Mid South`,
+    title: `Debris Removal ${city} MS | Roll-Off Dumpster Service`,
     description: `Debris removal in ${city}, MS — rent a roll-off dumpster and we haul away your construction debris, renovation waste, storm damage, and yard debris. Same-day delivery. Call 601-316-7891.`,
     openGraph: {
-        title: `Debris Removal ${city} MS | Mid South Dumpster Rentals`,
+        title: `Debris Removal ${city} MS`,
         description: `Fast debris removal in ${city}, MS. Roll-off dumpsters for construction debris, storm cleanup, renovation waste & yard debris. Same-day delivery.`,
         url: `https://midsouthdumpsterms.com/debris-removal-${citySlug}-ms`,
     },

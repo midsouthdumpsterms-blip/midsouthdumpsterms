@@ -6,11 +6,11 @@ import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/sizes' },
-    title: 'Dumpster Sizes & Pricing | 10, 15 & 20 Yard | Mid South Dumpster Rentals',
+    title: 'Dumpster Sizes & Pricing | 10, 15 & 20 Yard',
     description:
         'Compare 10, 15, and 20-yard dumpster sizes in Central Mississippi. See exact dimensions, weight limits, pricing, and which size is right for your project. Same-day delivery available. Call 601-316-7891.',
     openGraph: {
-        title: 'Dumpster Sizes & Pricing | Mid South Dumpster Rentals',
+        title: 'Dumpster Sizes & Pricing',
         description: 'Compare 10, 15, and 20-yard roll-off dumpster sizes — dimensions, pricing, capacity, and which is right for your project.',
         url: 'https://midsouthdumpsterms.com/sizes',
     },

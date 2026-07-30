@@ -6,10 +6,10 @@ import { generateServiceSchema, generateBreadcrumbSchema, injectSchema } from '@
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/waste-disposal-canton-ms' },
-    title: 'Waste Disposal Canton MS | Roll-Off Dumpster Rental | Mid South',
+    title: 'Waste Disposal Canton MS | Roll-Off Dumpster Rental',
     description: 'Waste disposal in Canton, MS made easy — rent a roll-off dumpster for convenient, affordable disposal of renovation waste, household junk, yard debris, and more. Same-day delivery. Call 601-316-7891.',
     openGraph: {
-        title: 'Waste Disposal Canton MS | Mid South Dumpster Rentals',
+        title: 'Waste Disposal Canton MS',
         description: 'Easy waste disposal in Canton, MS. Roll-off dumpster rental for renovation waste, household junk, and yard debris. Same-day delivery.',
         url: 'https://midsouthdumpsterms.com/waste-disposal-canton-ms',
     },

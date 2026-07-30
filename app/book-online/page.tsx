@@ -3,12 +3,12 @@ import BookingIframe from './BookingIframe'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
-    title: 'Book Online | Dumpster Rental Jackson MS | Mid South Dumpster Rentals',
+    title: 'Book Online | Dumpster Rental Jackson MS',
     description:
         'Book your roll-off dumpster rental online in 60 seconds. 10, 15 & 20-yard dumpsters from $349. Same-day delivery across Central MS. Flat-rate — no hidden fees.',
     alternates: { canonical: 'https://midsouthdumpsterms.com/book-online' },
     openGraph: {
-        title: 'Book a Dumpster Online | Mid South Dumpster Rentals',
+        title: 'Book a Dumpster Online',
         description: 'Reserve your roll-off dumpster in under a minute. Flat-rate pricing. Same-day delivery available in Central MS.',
         url: 'https://midsouthdumpsterms.com/book-online',
     },

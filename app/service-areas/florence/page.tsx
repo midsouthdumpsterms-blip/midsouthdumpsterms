@@ -9,7 +9,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/florence' },
-    title: 'Roll Off Dumpster Rental Florence MS | Rankin County | Mid South',
+    title: 'Roll Off Dumpster Rental Florence MS | Rankin County',
     description:
         'Roll off dumpster rental in Florence, MS and Rankin County. 10, 15 & 20-yard dumpsters with same-day delivery to all Florence neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
     openGraph: {
