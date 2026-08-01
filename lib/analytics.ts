@@ -23,7 +23,7 @@ export function trackBookingClick(buttonLabel: string, location: string) {
     fireEvent('booking_click', {
         event_category: 'Booking',
         event_label: buttonLabel,
-        page_location: location,
+        click_location: location,
         value: 1,
     })
     track('Booking Initiated', { label: buttonLabel, location })
@@ -33,7 +33,7 @@ export function trackPhoneClick(location: string) {
     fireEvent('phone_click', {
         event_category: 'Contact',
         event_label: 'Phone Call',
-        page_location: location,
+        click_location: location,
         value: 1,
     })
     track('Call Initiated', { location })
