@@ -8,7 +8,7 @@ import { sanitizeHtml } from '@/lib/sanitize-html';
 export const maxDuration = 60;
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
 const TOPICS = [
   "How to Choose the Right Dumpster Size for a Home Remodel in Jackson, MS",
@@ -55,19 +55,69 @@ export async function GET(request: Request) {
 
 
   try {
+    // Calls Claude's Messages API. When useSearch is true, gives Claude its
+    // native web_search server tool (capped via max_uses) so the response is
+    // grounded in real, current search results instead of pure training-data
+    // recall — used for the research passes, not the final writing pass.
+    async function callClaude(systemPrompt: string, userPrompt: string, maxTokens: number, useSearch: boolean = false) {
+        if (!ANTHROPIC_API_KEY) {
+            throw new Error("ANTHROPIC_API_KEY is not configured in environment variables.");
+        }
+
+        const body: Record<string, any> = {
+            model: 'claude-sonnet-5',
+            max_tokens: maxTokens,
+            system: systemPrompt,
+            messages: [{ role: 'user', content: userPrompt }],
+        };
+
+        if (useSearch) {
+            body.tools = [{
+                type: 'web_search_20260209',
+                name: 'web_search',
+                max_uses: 5,
+            }];
+        }
+
+        const res = await fetch('https://api.anthropic.com/v1/messages', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': ANTHROPIC_API_KEY,
+                'anthropic-version': '2023-06-01',
+            },
+            body: JSON.stringify(body),
+        });
+
+        if (!res.ok) {
+            throw new Error(`Claude API error: ${res.status} ${await res.text()}`);
+        }
+
+        const data = await res.json();
+        // With web search enabled, content can interleave text, server_tool_use,
+        // and web_search_tool_result blocks — join just the text blocks to get
+        // Claude's final written answer.
+        const blocks: any[] = data.content || [];
+        return blocks
+            .filter((block) => block.type === 'text')
+            .map((block) => block.text)
+            .join('\n')
+            .trim();
+    }
+
     // 1. Pick a random topic that hasn't been written yet
     const { rows: existingPosts } = await sql`SELECT title FROM blog_posts`;
     const existingTitles = new Set(existingPosts.map(p => p.title.toLowerCase()));
-    
+
     const availableTopics = TOPICS.filter(t => !existingTitles.has(t.toLowerCase()));
-    
+
     let selectedTopic;
 
     if (availableTopics.length === 0) {
-      // Fallback: If all are used, we ask Anthropic to generate a brand new hyper-local topic
-      const generated = await callGemini(
+      // Fallback: If all are used, we ask Claude to generate a brand new hyper-local topic
+      const generated = await callClaude(
           `You are an SEO expert for a dumpster rental company in Jackson, Mississippi. Generate ONE unique, highly engaging blog post title about dumpster rental, junk removal, or waste disposal in Central MS.
-          
+
           STRICT CONSTRAINTS:
           1. DO NOT mention concrete, dirt, or heavy asphalt disposal.
           2. DO NOT mention 30-yard or 40-yard dumpsters.
@@ -79,59 +129,32 @@ export async function GET(request: Request) {
     } else {
       selectedTopic = availableTopics[Math.floor(Math.random() * availableTopics.length)];
     }
-    
-    async function callGemini(systemPrompt: string, userPrompt: string, maxTokens: number) {
-        if (!GEMINI_API_KEY) {
-            throw new Error("GEMINI_API_KEY is not configured in environment variables.");
-        }
-        
-        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=${GEMINI_API_KEY}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                contents: [{
-                    parts: [{ text: systemPrompt + '\n\n' + userPrompt }]
-                }],
-                generationConfig: {
-                    maxOutputTokens: maxTokens,
-                }
-            })
-        });
-        
-        if (!res.ok) {
-            throw new Error(`Gemini API error: ${res.status} ${await res.text()}`);
-        }
-        
-        const data = await res.json();
-        return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
-    }
-
-    // Fallback: If all are used, we ask Anthropic to generate a brand new hyper-local topic
-    if (!selectedTopic) {
-        const generated = await callGemini(
-            `You are an SEO expert for a dumpster rental company in Jackson, Mississippi. Generate ONE unique, highly engaging blog post title about dumpster rental, junk removal, or waste disposal in Central MS.
-            
-            STRICT CONSTRAINTS:
-            1. DO NOT mention concrete, dirt, or heavy asphalt disposal.
-            2. DO NOT mention 30-yard or 40-yard dumpsters.
-            3. The title MUST be formatted in proper grammatically correct Title Case (e.g. "Understanding Dumpster Weight Limits and Overage Fees in Mississippi").`,
-            "Generate a new blog post title.",
-            150
-        );
-        selectedTopic = generated ? generated.replace(/["']/g, '').trim() : "Dumpster Rental Guide for Central MS";
-    }
 
     // Apply title casing immediately so all references are correct
     selectedTopic = toTitleCase(selectedTopic || "Dumpster Rental Guide for Central MS");
 
     const slug = generateSlug(selectedTopic);
 
-    // 2. Generate the article using Claude Sonnet 5
-    const systemPrompt = `You are an expert SEO copywriter for Mid South Dumpster Rentals based in Jackson, MS. 
-      Write a highly engaging, long-form, SEO-optimized blog post in HTML format based on the provided topic. 
-      
+    // 2a. Round 1 — general research, grounded in live web search
+    const generalResearch = await callClaude(
+        "You are a research assistant helping write an accurate, substantive blog article. Use web search to gather real, current, factual background information on the given topic — industry best practices, concrete how-to steps, relevant facts and figures, and the questions people commonly ask. Present findings as specific, concrete bullet points, not vague generalities. Do not write a blog post — only research notes.",
+        `Topic: ${selectedTopic}`,
+        1000,
+        true
+    );
+
+    // 2b. Round 2 — local, grounded research specific to Central Mississippi
+    const localResearch = await callClaude(
+        "You are a local research assistant for Mid South Dumpster Rentals, based in Jackson, Mississippi. Use web search to find SPECIFIC, VERIFIABLE facts relevant to this topic for the Jackson, MS / Rankin County / Hinds County / Madison County, Central Mississippi area — for example real local landfill or transfer station names, county-specific permit or ordinance requirements, local climate or seasonal considerations, or relevant local regulations. Present findings as bullet points. If you cannot find genuinely local, verifiable information for this topic, say so plainly rather than inventing anything — never fabricate business names, regulations, or statistics. Do not write a blog post — only research notes.",
+        `Topic: ${selectedTopic}`,
+        1000,
+        true
+    );
+
+    // 3. Generate the article using Claude Sonnet 5, grounded in both research passes
+    const systemPrompt = `You are an expert SEO copywriter for Mid South Dumpster Rentals based in Jackson, MS.
+      Write a highly engaging, long-form, SEO-optimized blog post in HTML format based on the provided topic and research notes.
+
       Requirements:
       - Return ONLY raw HTML (no markdown code blocks, no \`\`\`html).
       - Do NOT include <h1> tags (the site template provides the <h1> title).
@@ -139,9 +162,10 @@ export async function GET(request: Request) {
       - Use short paragraphs, bullet points, and bold text for readability.
       - Naturally weave in local keywords: Jackson, Brandon, Clinton, Madison, Rankin County, Hinds County, roll-off dumpster, waste management.
       - Write in a professional, direct, and helpful tone.
+      - Use the research notes provided in the user message to make the article substantive and specific rather than generic — real facts, real local details, concrete steps. Do not just restate the notes as a list; weave them into the prose.
       - End with a strong call-to-action to rent a dumpster from Mid South Dumpster Rentals (Call 601-316-7891 or book online).
-      
-      STRICT COMPANY RULES & FACTS (NEVER INVENT INFORMATION, ONLY USE THESE FACTS):
+
+      STRICT COMPANY RULES & FACTS (NEVER INVENT INFORMATION, ONLY USE THESE FACTS — these always override anything in the research notes if there's ever a conflict):
       - Dumpster Sizes Offered: ONLY 10-yard, 15-yard, and 20-yard dumpsters. DO NOT mention 30-yard or 40-yard dumpsters.
       - Weight Limits & Overage:
         * 10-yard: Includes 1 ton (2,000 lbs). Overage: $55 per ton.
@@ -155,27 +179,37 @@ export async function GET(request: Request) {
       - Fees: Missed pickup/inaccessible fee is $150. Wait time is $50/hour. Overweight refusal fee is $500.
       - Length: Aim for 800 to 1200 words. Keep it concise, punchy, and do not exceed this length so it does not cut off mid-sentence.`;
 
-    let contentHtml = await callGemini(systemPrompt, `Topic: ${selectedTopic || "Dumpster Rental"}`, 4000);
+    const contentUserPrompt = `Topic: ${selectedTopic || "Dumpster Rental"}
+
+GENERAL RESEARCH NOTES:
+${generalResearch || "No additional research available — write from general industry knowledge."}
+
+LOCAL CENTRAL MISSISSIPPI RESEARCH NOTES:
+${localResearch || "No additional local research available."}
+
+Only use factual claims that come from the research notes above or the STRICT COMPANY RULES & FACTS in the system prompt — do not invent statistics, business names, regulations, or facts not present in either.`;
+
+    let contentHtml = await callClaude(systemPrompt, contentUserPrompt, 4000);
     if (!contentHtml) contentHtml = '<p>Content generation failed.</p>';
-    
+
     // Clean up any markdown code block wrappers if Claude accidentally includes them
     contentHtml = contentHtml.replace(/^```html\n?/, '').replace(/\n?```$/, '').trim();
-    
+
     // Sanitize the generated HTML to prevent XSS
     contentHtml = sanitizeHtml(contentHtml);
 
     // Generate a short excerpt
-    const excerpt = await callGemini(
+    const excerpt = await callClaude(
         "You are an SEO expert. Write a compelling 2-sentence meta description / excerpt for this article. Return only the text.",
         `Topic: ${selectedTopic}\nContent: ${contentHtml.substring(0, 500)}...`,
-        100
+        400
     ) || 'Expert dumpster rental tips for Central Mississippi.';
 
-    // 3. Assign an image
+    // 4. Assign an image
     const photoPool = getLocalPhotoPool();
     const imageUrl = pickPhotoForSlug(photoPool, slug) || '';
 
-    // 4. Save to Database as DRAFT
+    // 5. Save to Database as DRAFT
     await sql`
       INSERT INTO blog_posts (slug, title, excerpt, content_html, image_url, status)
       VALUES (${slug}, ${selectedTopic || "Dumpster Rental Guide"}, ${excerpt}, ${contentHtml}, ${imageUrl}, 'DRAFT')
@@ -187,7 +221,7 @@ export async function GET(request: Request) {
         status = 'DRAFT'
     `;
 
-    // 5. Send Approval Email via Resend
+    // 6. Send Approval Email via Resend
     const dashboardUrl = `https://midsouthdumpsterms.com/situationroom`;
     const resendResult = await resend.emails.send({
       from: 'Mid South Blog Bot <onboarding@resend.dev>', // Resend free tier requires this verified domain or onboarding address
@@ -208,8 +242,8 @@ export async function GET(request: Request) {
         throw new Error(`Resend API Error: ${resendResult.error.message}`);
     }
 
-    return NextResponse.json({ 
-        message: 'Post generated and saved as draft.', 
+    return NextResponse.json({
+        message: 'Post generated and saved as draft.',
         slug,
         title: selectedTopic || "Dumpster Rental"
     }, { status: 200 });
