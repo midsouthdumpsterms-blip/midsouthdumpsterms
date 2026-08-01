@@ -5,9 +5,11 @@ import { getLocalPhotoPool, pickPhotoForSlug } from '@/lib/local-photos';
 import { sanitizeHtml } from '@/lib/sanitize-html';
 
 // Two grounded web-search research passes plus a full article generation can
-// exceed 60s combined. The project is on Vercel Pro, which supports longer
-// Serverless Function durations than the previous comment assumed.
-export const maxDuration = 120;
+// exceed 60s combined, and web search duration varies a lot run-to-run
+// depending on how many searches Claude decides to run. The project is on
+// Vercel Pro, which supports much longer Serverless Function durations than
+// the original 60s comment assumed — set generously to absorb that variance.
+export const maxDuration = 180;
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
@@ -77,7 +79,10 @@ export async function GET(request: Request) {
             body.tools = [{
                 type: 'web_search_20260209',
                 name: 'web_search',
-                max_uses: 5,
+                // Bounds worst-case latency (and cost) per research call —
+                // enough searches for solid grounding without letting Claude
+                // run an open-ended number of queries on a slow run.
+                max_uses: 3,
             }];
         }
 
