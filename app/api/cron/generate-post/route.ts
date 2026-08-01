@@ -4,8 +4,10 @@ import { Resend } from 'resend';
 import { getLocalPhotoPool, pickPhotoForSlug } from '@/lib/local-photos';
 import { sanitizeHtml } from '@/lib/sanitize-html';
 
-// We allow this to run for up to 60 seconds (max for Vercel Hobby/Pro without bumping config)
-export const maxDuration = 60;
+// Two grounded web-search research passes plus a full article generation can
+// exceed 60s combined. The project is on Vercel Pro, which supports longer
+// Serverless Function durations than the previous comment assumed.
+export const maxDuration = 120;
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
@@ -135,21 +137,22 @@ export async function GET(request: Request) {
 
     const slug = generateSlug(selectedTopic);
 
-    // 2a. Round 1 — general research, grounded in live web search
-    const generalResearch = await callClaude(
-        "You are a research assistant helping write an accurate, substantive blog article. Use web search to gather real, current, factual background information on the given topic — industry best practices, concrete how-to steps, relevant facts and figures, and the questions people commonly ask. Present findings as specific, concrete bullet points, not vague generalities. Do not write a blog post — only research notes.",
-        `Topic: ${selectedTopic}`,
-        1000,
-        true
-    );
-
-    // 2b. Round 2 — local, grounded research specific to Central Mississippi
-    const localResearch = await callClaude(
-        "You are a local research assistant for Mid South Dumpster Rentals, based in Jackson, Mississippi. Use web search to find SPECIFIC, VERIFIABLE facts relevant to this topic for the Jackson, MS / Rankin County / Hinds County / Madison County, Central Mississippi area — for example real local landfill or transfer station names, county-specific permit or ordinance requirements, local climate or seasonal considerations, or relevant local regulations. Present findings as bullet points. If you cannot find genuinely local, verifiable information for this topic, say so plainly rather than inventing anything — never fabricate business names, regulations, or statistics. Do not write a blog post — only research notes.",
-        `Topic: ${selectedTopic}`,
-        1000,
-        true
-    );
+    // 2. Research — general and local passes run concurrently since neither
+    // depends on the other's output. Both are grounded in live web search.
+    const [generalResearch, localResearch] = await Promise.all([
+        callClaude(
+            "You are a research assistant helping write an accurate, substantive blog article. Use web search to gather real, current, factual background information on the given topic — industry best practices, concrete how-to steps, relevant facts and figures, and the questions people commonly ask. Present findings as specific, concrete bullet points, not vague generalities. Do not write a blog post — only research notes.",
+            `Topic: ${selectedTopic}`,
+            1000,
+            true
+        ),
+        callClaude(
+            "You are a local research assistant for Mid South Dumpster Rentals, based in Jackson, Mississippi. Use web search to find SPECIFIC, VERIFIABLE facts relevant to this topic for the Jackson, MS / Rankin County / Hinds County / Madison County, Central Mississippi area — for example real local landfill or transfer station names, county-specific permit or ordinance requirements, local climate or seasonal considerations, or relevant local regulations. Present findings as bullet points. If you cannot find genuinely local, verifiable information for this topic, say so plainly rather than inventing anything — never fabricate business names, regulations, or statistics. Do not write a blog post — only research notes.",
+            `Topic: ${selectedTopic}`,
+            1000,
+            true
+        ),
+    ]);
 
     // 3. Generate the article using Claude Sonnet 5, grounded in both research passes
     const systemPrompt = `You are an expert SEO copywriter for Mid South Dumpster Rentals based in Jackson, MS.
