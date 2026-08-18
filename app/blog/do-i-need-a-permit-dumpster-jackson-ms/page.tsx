@@ -14,6 +14,7 @@ export const metadata: Metadata = {
         title: 'Do I Need a Permit for a Dumpster in Jackson MS?',
         description: 'Find out if you need a right-of-way permit to place a roll-off dumpster on the street in Jackson, MS.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

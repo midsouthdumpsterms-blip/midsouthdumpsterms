@@ -16,6 +16,7 @@ export const metadata: Metadata = {
         description:
             'Roll-off containers for construction, storm, renovation and yard debris across the Jackson metro. Same-day delivery, flat-rate pricing from $349.',
         url: 'https://midsouthdumpsterms.com/services/debris-removal',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

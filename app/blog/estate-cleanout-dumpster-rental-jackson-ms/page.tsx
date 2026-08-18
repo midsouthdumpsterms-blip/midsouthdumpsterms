@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Estate Cleanout Dumpster Rental Jackson',
     description:
         'Estate cleanout dumpsters delivered across Jackson and Hinds County. Flexible rental periods so nobody is rushed. From $349.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Estate Cleanout Dumpster Rental Jackson',
+        description: 'Estate cleanout dumpsters delivered across Jackson and Hinds County. Flexible rental periods so nobody is rushed. From $349.',
+        url: 'https://midsouthdumpsterms.com/blog/estate-cleanout-dumpster-rental-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

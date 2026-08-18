@@ -13,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Deck & Shed Demolition Dumpster Rental in Jackson, MS',
         description: 'Renting a dumpster for deck or shed demolition in Central MS. Size guide, tips, and flat-rate pricing.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

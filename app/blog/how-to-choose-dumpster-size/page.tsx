@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'How to Choose the Right Dumpster Size',
     description:
         'Pick between a 10, 15 and 20-yard container using pickup-load math and debris weight instead of guessing. Practical sizing guide.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'How to Choose the Right Dumpster Size',
+        description: 'Pick between a 10, 15 and 20-yard container using pickup-load math and debris weight instead of guessing. Practical sizing guide.',
+        url: 'https://midsouthdumpsterms.com/blog/how-to-choose-dumpster-size',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
         title: '15 Yard Dumpster Rental Jackson MS',
         description: '15 yard roll-off dumpster in Central MS from $399 — our most popular size. Same-day delivery, flat-rate pricing.',
         url: 'https://midsouthdumpsterms.com/sizes/15-yard-dumpster-rental',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

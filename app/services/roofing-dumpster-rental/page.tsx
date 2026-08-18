@@ -15,6 +15,7 @@ export const metadata: Metadata = {
         title: 'Roofing Dumpster Rental Jackson MS',
         description: 'Roll-off dumpsters for roofing projects in Central MS. Shingle tear-offs, re-roofs, and roofing debris. Same-day delivery.',
         url: 'https://midsouthdumpsterms.com/services/roofing-dumpster-rental',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

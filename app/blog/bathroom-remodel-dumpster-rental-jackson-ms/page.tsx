@@ -13,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Bathroom Remodel Dumpster Rental in Jackson, MS',
         description: 'The complete guide to renting a dumpster for your bathroom remodel in Central Mississippi. Sizes, costs, and tips.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

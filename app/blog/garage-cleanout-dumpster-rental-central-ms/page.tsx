@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Garage Cleanout Dumpster Rental Guide',
     description:
         'A 10 or 15-yard container clears most garages in a weekend. What fits, what does not, and how to work through it efficiently.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Garage Cleanout Dumpster Rental Guide',
+        description: 'A 10 or 15-yard container clears most garages in a weekend. What fits, what does not, and how to work through it efficiently.',
+        url: 'https://midsouthdumpsterms.com/blog/garage-cleanout-dumpster-rental-central-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

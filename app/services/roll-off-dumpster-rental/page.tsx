@@ -15,6 +15,7 @@ export const metadata: Metadata = {
         title: 'Roll-Off Dumpster Rental Jackson MS',
         description: '10, 15 & 20-yard roll-off dumpsters in Central Mississippi. Residential, commercial & construction use. Same-day delivery from $349.',
         url: 'https://midsouthdumpsterms.com/services/roll-off-dumpster-rental',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

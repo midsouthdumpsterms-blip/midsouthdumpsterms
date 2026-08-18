@@ -16,6 +16,7 @@ export const metadata: Metadata = {
         title: 'Roll Off Dumpster Rental Flowood, MS',
         description: 'Same-day roll off dumpster rental in Flowood, MS. Flat-rate pricing from $349, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/flowood',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

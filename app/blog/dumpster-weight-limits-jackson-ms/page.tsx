@@ -13,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Dumpster Weight Limits Explained: Avoid Overage Fees in Jackson, MS',
         description: 'A practical guide to dumpster weight limits, heavy debris, and avoiding overage fees in Central Mississippi.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

@@ -16,6 +16,7 @@ export const metadata: Metadata = {
         title: 'Dumpster Rentals in Jackson, MS',
         description: 'Serving Fondren, Belhaven & Northeast Jackson with same-day dumpster delivery.',
         url: 'https://midsouthdumpsterms.com/service-areas/jackson',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

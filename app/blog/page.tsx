@@ -16,6 +16,7 @@ export const metadata: Metadata = {
         title: 'Dumpster Rental Tips & Local Guides',
         description: 'Expert dumpster rental guides for Central Mississippi homeowners and contractors.',
         url: 'https://midsouthdumpsterms.com/blog',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

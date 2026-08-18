@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'Project Gallery | Dumpsters in Central MS',
     description:
         'Real deliveries across Jackson, Madison, Brandon and Pearl. See how our roll-off containers sit on a driveway before you book one for your project.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Project Gallery | Dumpsters in Central MS',
+        description: 'Real deliveries across Jackson, Madison, Brandon and Pearl. See how our roll-off containers sit on a driveway before you book one for your project.',
+        url: 'https://midsouthdumpsterms.com/gallery',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 const galleryImages = [

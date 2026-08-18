@@ -17,6 +17,7 @@ export const metadata: Metadata = {
         title: 'Roll Off Dumpster Rental Jackson, MS',
         description: 'Roll off dumpster rental in Central Mississippi with same-day delivery. From $349, no hidden fees.',
         url: 'https://midsouthdumpsterms.com',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

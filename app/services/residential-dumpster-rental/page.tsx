@@ -15,6 +15,7 @@ export const metadata: Metadata = {
         title: 'Residential Dumpster Rental Jackson MS',
         description: 'Roll-off dumpsters for home projects across Central MS — garage cleanouts, renovations, yard waste & more. Same-day delivery from $349.',
         url: 'https://midsouthdumpsterms.com/services/residential-dumpster-rental',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

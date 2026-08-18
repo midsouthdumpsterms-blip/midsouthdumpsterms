@@ -6,6 +6,14 @@ export const metadata: Metadata = {
     title: 'Terms and Conditions',
     description:
         'The terms governing use of the Mid South Dumpster Rentals website and the booking of roll-off dumpster rentals in Central Mississippi.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Terms and Conditions',
+        description: 'The terms governing use of the Mid South Dumpster Rentals website and the booking of roll-off dumpster rentals in Central Mississippi.',
+        url: 'https://midsouthdumpsterms.com/terms-and-conditions',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function TermsPage() {

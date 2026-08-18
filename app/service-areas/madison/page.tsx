@@ -16,6 +16,7 @@ export const metadata: Metadata = {
         title: 'Roll Off Dumpster Rental Madison MS | Madison County',
         description: 'Local roll off dumpster rental serving Madison, MS & all of Madison County. Same-day delivery, flat-rate pricing starting at $349.',
         url: 'https://midsouthdumpsterms.com/service-areas/madison',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

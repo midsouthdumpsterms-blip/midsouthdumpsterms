@@ -13,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Foreclosure Cleanout Dumpster Rental Mississippi',
         description: 'Roll-off dumpsters for foreclosure cleanouts, REO properties, and bank-owned homes across Central Mississippi. Flat-rate pricing, same-day delivery.',
         url: 'https://midsouthdumpsterms.com/blog/foreclosure-cleanout-dumpster-rental-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -44,7 +45,7 @@ export default function BlogPost() {
         'Foreclosure Cleanout Dumpster Rental Mississippi | REO & Bank-Owned',
         'Need a dumpster for a foreclosure cleanout in Central Mississippi? Mid South offers fast, affordable roll-off dumpsters for bank-owned, REO, and estate properties.',
         '2026-03-25',
-        'https://midsouthdumpsterms.com/opengraph-image.jpg',
+        'https://midsouthdumpsterms.com/images/og-image.jpg',
         '2026-03-25'
     )
     const faqSchema = generateFAQSchema(faqs)

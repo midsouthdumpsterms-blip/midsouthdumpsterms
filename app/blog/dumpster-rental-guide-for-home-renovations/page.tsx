@@ -12,6 +12,7 @@ export const metadata: Metadata = {
         title: 'Dumpster Rental Guide for Home Renovations',
         description: 'Essential guide for homeowners renting a dumpster for renovation projects.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

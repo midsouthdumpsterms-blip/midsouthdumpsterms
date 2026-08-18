@@ -14,6 +14,7 @@ export const metadata: Metadata = {
         title: 'Dumpster Rental Near Me | Mid South Dumpster Rentals',
         description: 'Same-day roll off dumpster rentals across Hinds, Madison & Rankin Counties in Central MS. From $349.',
         url: 'https://midsouthdumpsterms.com/service-areas',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

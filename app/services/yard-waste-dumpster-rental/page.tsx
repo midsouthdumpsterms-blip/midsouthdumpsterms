@@ -15,6 +15,7 @@ export const metadata: Metadata = {
         title: 'Yard Waste Dumpster Rental Jackson MS',
         description: 'Yard waste roll-off dumpsters across Central MS. Branches, brush, grass, storm debris — same-day delivery from $349.',
         url: 'https://midsouthdumpsterms.com/services/yard-waste-dumpster-rental',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

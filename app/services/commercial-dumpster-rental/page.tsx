@@ -15,6 +15,7 @@ export const metadata: Metadata = {
         title: 'Commercial Dumpster Rental Jackson MS',
         description: 'Roll-off dumpster rental for businesses across Central MS — contractors, property managers, retail cleanouts & more. Same-day delivery.',
         url: 'https://midsouthdumpsterms.com/services/commercial-dumpster-rental',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

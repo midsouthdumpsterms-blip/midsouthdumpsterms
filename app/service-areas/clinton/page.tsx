@@ -16,6 +16,7 @@ export const metadata: Metadata = {
         title: 'Roll Off Dumpster Rental Clinton MS | Hinds County',
         description: 'Local roll off dumpster rental in Clinton, MS. Same-day delivery, flat-rate pricing, no hidden fees. Serving all of Hinds County.',
         url: 'https://midsouthdumpsterms.com/service-areas/clinton',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

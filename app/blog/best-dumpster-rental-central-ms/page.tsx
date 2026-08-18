@@ -14,6 +14,7 @@ export const metadata: Metadata = {
         description:
             'Flat-rate pricing from $349. Same-day delivery available 7 days a week. Serving Jackson MS and the entire Central Mississippi tri-county area.',
         url: 'https://midsouthdumpsterms.com/blog/best-dumpster-rental-central-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -50,7 +51,7 @@ export default function BlogPost() {
         'Best Dumpster Rental in Central Mississippi | 2026 Guide',
         'A complete guide to finding the best dumpster rental company in Central Mississippi, covering pricing, availability, service areas, and what to look for when choosing a provider.',
         '2026-03-01',
-        'https://midsouthdumpsterms.com/opengraph-image.jpg',
+        'https://midsouthdumpsterms.com/images/og-image.jpg',
         '2026-03-01'
     )
 

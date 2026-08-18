@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: '20 Yard Dumpster Rental in Jackson MS',
     description:
         'What a 20-yard dumpster actually holds, what it costs in Jackson MS, and the projects it is worth paying up for. Flat rate from $449.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: '20 Yard Dumpster Rental in Jackson MS',
+        description: 'What a 20-yard dumpster actually holds, what it costs in Jackson MS, and the projects it is worth paying up for. Flat rate from $449.',
+        url: 'https://midsouthdumpsterms.com/blog/20-yard-dumpster-rental-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

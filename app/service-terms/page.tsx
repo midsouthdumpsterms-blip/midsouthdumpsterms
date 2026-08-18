@@ -6,6 +6,14 @@ export const metadata: Metadata = {
     description:
         'The full rental agreement: permitted and prohibited materials, weight limits, overage and extension fees, liability, and payment terms.',
     robots: { index: true, follow: true },
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Dumpster Rental Agreement | Service Terms',
+        description: 'The full rental agreement: permitted and prohibited materials, weight limits, overage and extension fees, liability, and payment terms.',
+        url: 'https://midsouthdumpsterms.com/service-terms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 const h2Style = { color: 'var(--color-gray-900)', marginTop: '2rem', marginBottom: '0.5rem', fontSize: '1.2rem' }

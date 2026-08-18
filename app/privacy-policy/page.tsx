@@ -6,6 +6,14 @@ export const metadata: Metadata = {
     title: 'Privacy Policy',
     description:
         'How Mid South Dumpster Rentals, LLC collects, uses, stores and protects the personal information you share when booking a dumpster rental.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Privacy Policy',
+        description: 'How Mid South Dumpster Rentals, LLC collects, uses, stores and protects the personal information you share when booking a dumpster rental.',
+        url: 'https://midsouthdumpsterms.com/privacy-policy',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function PrivacyPolicyPage() {

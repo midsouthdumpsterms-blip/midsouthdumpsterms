@@ -15,6 +15,7 @@ export const metadata: Metadata = {
         title: 'Roll Off Dumpster Rental Rankin County MS',
         description: 'Locally owned roll off dumpster rental serving all of Rankin County, MS. Same-day delivery, flat-rate pricing starting at $349.',
         url: 'https://midsouthdumpsterms.com/service-areas/rankin-county',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Contractor Dumpster Rental Jackson MS',
         description: 'Same-day roll-off delivery for contractors across Central Mississippi. Flat-rate pricing, no hidden fees, 7 days a week.',
         url: 'https://midsouthdumpsterms.com/blog/contractor-dumpster-rental-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -44,7 +45,7 @@ export default function BlogPost() {
         'Contractor Dumpster Rental Jackson MS | Roll-Off for Job Sites',
         'Reliable roll-off dumpster rental for contractors in Jackson, MS. Same-day delivery, flexible scheduling, and flat-rate pricing for construction, roofing, and remodeling projects.',
         '2026-03-22',
-        'https://midsouthdumpsterms.com/opengraph-image.jpg',
+        'https://midsouthdumpsterms.com/images/og-image.jpg',
         '2026-03-22'
     )
     const faqSchema = generateFAQSchema(faqs)

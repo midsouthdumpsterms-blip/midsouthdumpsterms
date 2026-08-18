@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Home Renovation Dumpster Guide | MS',
     description:
         'Sizing, placement, timing and cost for renovation debris in Jackson, Madison and Brandon. A full walkthrough for Central MS homeowners.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Home Renovation Dumpster Guide | MS',
+        description: 'Sizing, placement, timing and cost for renovation debris in Jackson, Madison and Brandon. A full walkthrough for Central MS homeowners.',
+        url: 'https://midsouthdumpsterms.com/blog/home-renovation-dumpster-guide-central-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

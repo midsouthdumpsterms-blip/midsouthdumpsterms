@@ -13,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Dumpster Sizes & Pricing',
         description: 'Compare 10, 15, and 20-yard roll-off dumpster sizes — dimensions, pricing, capacity, and which is right for your project.',
         url: 'https://midsouthdumpsterms.com/sizes',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

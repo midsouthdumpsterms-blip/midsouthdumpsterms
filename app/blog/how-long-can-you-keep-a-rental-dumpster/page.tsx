@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'How Long Can You Keep a Dumpster?',
     description:
         'Standard dumpster rental periods in Central MS, how extensions are priced, and when paying for another day beats rushing the job.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'How Long Can You Keep a Dumpster?',
+        description: 'Standard dumpster rental periods in Central MS, how extensions are priced, and when paying for another day beats rushing the job.',
+        url: 'https://midsouthdumpsterms.com/blog/how-long-can-you-keep-a-rental-dumpster',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

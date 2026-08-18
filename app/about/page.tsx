@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'About Us | Locally Owned in Jackson MS',
     description:
         'Mid South Dumpster Rentals is a licensed, insured, locally owned roll-off company serving Hinds, Madison and Rankin counties seven days a week.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'About Us | Locally Owned in Jackson MS',
+        description: 'Mid South Dumpster Rentals is a licensed, insured, locally owned roll-off company serving Hinds, Madison and Rankin counties seven days a week.',
+        url: 'https://midsouthdumpsterms.com/about',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function About() {

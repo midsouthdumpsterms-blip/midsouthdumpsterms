@@ -15,6 +15,7 @@ export const metadata: Metadata = {
         title: 'Demolition Dumpster Rental Jackson MS',
         description: 'Roll-off dumpsters for demolition and tear-down projects in Central MS. Interior demo, gut jobs, structural tear-downs. Same-day delivery.',
         url: 'https://midsouthdumpsterms.com/services/demolition-dumpster-rental',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

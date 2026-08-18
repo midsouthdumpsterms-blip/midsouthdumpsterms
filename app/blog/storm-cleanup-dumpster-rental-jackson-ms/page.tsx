@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Storm Cleanup Dumpster Rental Jackson',
     description:
         'What to do first after storm damage in Central MS, how to document it for insurance, and how fast you can get a container out.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Storm Cleanup Dumpster Rental Jackson',
+        description: 'What to do first after storm damage in Central MS, how to document it for insurance, and how fast you can get a container out.',
+        url: 'https://midsouthdumpsterms.com/blog/storm-cleanup-dumpster-rental-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

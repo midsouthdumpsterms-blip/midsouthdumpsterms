@@ -13,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Dumpster Rental Near Me in Jackson, MS',
         description: 'Same-day roll-off dumpster delivery in Jackson and all of Central Mississippi. Flat-rate pricing from $349. No hidden fees.',
         url: 'https://midsouthdumpsterms.com/blog/dumpster-rental-near-me-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -44,7 +45,7 @@ export default function BlogPost() {
         'Dumpster Rental Near Me in Jackson, MS | Mid South',
         'Searching for dumpster rental near me in Jackson, MS? Mid South offers same-day roll-off dumpster delivery with flat-rate pricing and no hidden fees.',
         '2026-03-04',
-        'https://midsouthdumpsterms.com/opengraph-image.jpg',
+        'https://midsouthdumpsterms.com/images/og-image.jpg',
         '2026-03-04'
     )
     const faqSchema = generateFAQSchema(faqs)

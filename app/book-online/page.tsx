@@ -13,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Book a Dumpster Online',
         description: 'Reserve your roll-off dumpster in under a minute. Flat-rate pricing. Same-day delivery available in Central MS.',
         url: 'https://midsouthdumpsterms.com/book-online',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

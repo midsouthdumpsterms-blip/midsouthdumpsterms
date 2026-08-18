@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Same-Day Dumpster Rental Jackson MS',
     description:
         'How same-day dumpster delivery works in Jackson MS, what the noon cutoff means, and when same-day availability gets tight.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Same-Day Dumpster Rental Jackson MS',
+        description: 'How same-day dumpster delivery works in Jackson MS, what the noon cutoff means, and when same-day availability gets tight.',
+        url: 'https://midsouthdumpsterms.com/blog/same-day-dumpster-rental-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

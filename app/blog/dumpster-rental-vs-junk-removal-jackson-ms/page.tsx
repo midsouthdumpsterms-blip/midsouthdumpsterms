@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Dumpster Rental vs Junk Removal Jackson',
     description:
         'Which costs less in Jackson MS, a roll-off you load yourself or a junk removal crew? The break-even is smaller than most people expect.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Dumpster Rental vs Junk Removal Jackson',
+        description: 'Which costs less in Jackson MS, a roll-off you load yourself or a junk removal crew? The break-even is smaller than most people expect.',
+        url: 'https://midsouthdumpsterms.com/blog/dumpster-rental-vs-junk-removal-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

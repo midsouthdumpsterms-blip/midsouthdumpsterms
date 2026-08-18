@@ -14,6 +14,7 @@ export const metadata: Metadata = {
         title: 'How to Dispose of Appliances & Mattresses in Jackson MS',
         description: 'Learn the local rules, costs, and easiest ways to dispose of large, bulky items like mattresses and appliances in Jackson, Mississippi.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

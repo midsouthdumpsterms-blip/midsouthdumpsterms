@@ -13,6 +13,7 @@ export const metadata: Metadata = {
         title: 'Yard Waste Removal & Dumpster Rental Jackson MS',
         description: 'Roll-off dumpsters for yard waste, brush piles, tree debris, and landscaping projects across Central Mississippi. Same-day delivery available.',
         url: 'https://midsouthdumpsterms.com/blog/yard-waste-removal-dumpster-rental-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -44,7 +45,7 @@ export default function BlogPost() {
         'Yard Waste Removal & Dumpster Rental Jackson MS | Brush, Limbs, Debris',
         'Need yard waste removal in Jackson, MS? Mid South Dumpster Rentals offers affordable roll-off dumpsters for brush, tree limbs, landscaping debris, and large yard cleanups.',
         '2026-03-28',
-        'https://midsouthdumpsterms.com/opengraph-image.jpg',
+        'https://midsouthdumpsterms.com/images/og-image.jpg',
         '2026-03-28'
     )
     const faqSchema = generateFAQSchema(faqs)

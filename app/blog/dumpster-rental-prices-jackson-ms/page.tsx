@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Dumpster Rental Prices Jackson MS (2026)',
     description:
         'Real dumpster rental prices in Jackson MS by size and rental period, plus the fees that catch people out. Updated for 2026.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Dumpster Rental Prices Jackson MS (2026)',
+        description: 'Real dumpster rental prices in Jackson MS by size and rental period, plus the fees that catch people out. Updated for 2026.',
+        url: 'https://midsouthdumpsterms.com/blog/dumpster-rental-prices-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

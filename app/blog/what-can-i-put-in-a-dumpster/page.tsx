@@ -12,6 +12,7 @@ export const metadata: Metadata = {
         title: 'What Can I Put in a Dumpster?',
         description: 'Complete guide to what you can throw in a roll-off dumpster in Mississippi.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

@@ -14,6 +14,7 @@ export const metadata: Metadata = {
         title: 'Spring Cleaning Checklist for Central MS Homeowners',
         description: 'Get your Central Mississippi home ready for the season with our ultimate spring cleaning checklist.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

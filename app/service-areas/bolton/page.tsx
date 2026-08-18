@@ -15,6 +15,7 @@ export const metadata: Metadata = {
         title: 'Roll Off Dumpster Rental Bolton MS | Hinds County',
         description: 'Locally owned roll off dumpster rental serving Bolton & all of Hinds County. Same-day delivery, flat-rate pricing from $349, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/bolton',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
