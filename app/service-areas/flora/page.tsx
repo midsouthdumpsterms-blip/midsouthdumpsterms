@@ -156,6 +156,22 @@ export default function FloraPage() {
                 </div>
             </section>
 
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Dumpster Delivery in Flora — Local Notes</h2>
+                    <p>Flora sits in the rural north-west corner of Madison County, and most of what we haul out of it reflects that. Land clearing brush, barn and outbuilding tear-downs, fence lines, and acreage cleanouts make up far more of the work here than kitchen remodels do. Those loads are bulky rather than heavy, which usually means a 20-yard is the right call even when the debris does not look like much stacked in a pile.</p>
+                    <p>Placement is the thing worth planning here. A lot of Flora properties are set well back from the road down a long gravel or dirt drive, and a loaded roll-off truck is heavy enough to rut soft ground badly after rain. If your drive is gravel, narrow, or crosses a culvert, tell us when you book and we will either set the container closer to the road or schedule around wet weather.</p>
+                    <p>The run up Highway 49 from our yard in west Jackson takes a little longer than a delivery inside the metro, so same-day in Flora is realistic but tighter. Calling in the morning rather than at noon makes it far more likely we can get to you the same day.</p>
+                    <p><strong>What we most often haul out of Flora:</strong></p>
+                    <ul className={styles.projectsList}>
+                        <li>Land clearing, brush and fence-line debris</li>
+                        <li>Barn, shed and outbuilding demolition</li>
+                        <li>Rural estate and acreage cleanouts</li>
+                        <li>Storm debris after wind events</li>
+                    </ul>
+                </div>
+            </section>
+
             <section className={styles.faqSection}>
                 <div className="container">
                     <h2 className="text-center">Frequently Asked Questions: Flora Dumpster Rentals</h2>

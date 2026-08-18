@@ -156,6 +156,22 @@ export default function CantonPage() {
                 </div>
             </section>
 
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Dumpster Delivery in Canton — Local Notes</h2>
+                    <p>Canton is the Madison County seat, and its older housing stock changes what size container makes sense. Renovations in and around the historic district turn up plaster and lath, old tile, and dimensional lumber — all of it considerably heavier than the drywall and modern framing that comes out of a newer house. A 15-yard of plaster can hit its weight allowance while it still looks half empty, so we usually recommend sizing by weight rather than by volume on these jobs.</p>
+                    <p>The older streets near the square are narrower than the newer parts of the county, and some have limited room to set a container without encroaching on the roadway. If the only workable spot is the street rather than a driveway, you will need to clear that with the city first — placement on a public right-of-way is the one situation that normally requires a permit anywhere in Central Mississippi.</p>
+                    <p>Canton also generates a steady stream of commercial and industrial work along the interstate corridor east of town. Those jobs are typically 20-yard containers on a swap schedule rather than single drops.</p>
+                    <p><strong>What we most often haul out of Canton:</strong></p>
+                    <ul className={styles.projectsList}>
+                        <li>Historic-home renovation debris (plaster, lath, old tile)</li>
+                        <li>Downtown commercial and retail tear-outs</li>
+                        <li>Industrial and warehouse cleanouts</li>
+                        <li>Estate and probate property clearing</li>
+                    </ul>
+                </div>
+            </section>
+
             <section className={styles.faqSection}>
                 <div className="container">
                     <h2 className="text-center">Frequently Asked Questions: Canton Dumpster Rentals</h2>

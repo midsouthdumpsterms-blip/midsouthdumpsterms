@@ -51,7 +51,7 @@ export default function BlogPost() {
 
                     <div className={styles.content}>
                         <div className={styles.tldrBox}>
-                            <h3>Key Takeaways: Jackson MS Dumpster Pricing (2026)</h3>
+                            <h2>Key Takeaways: Jackson MS Dumpster Pricing (2026)</h2>
                             <ul>
                                 <li><strong>10-Yard Dumpsters:</strong> Start at $349 for 1-day, up to $399 for a 7-day rental (1 ton included).</li>
                                 <li><strong>15-Yard Dumpsters:</strong> Start at $399 for 1-day, up to $449 for a 7-day rental (2 tons included).</li>

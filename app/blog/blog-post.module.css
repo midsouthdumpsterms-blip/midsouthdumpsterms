@@ -185,3 +185,15 @@
         font-size: 1.125rem;
     }
 }
+/* Referenced by every blog hero image. It was never defined, so className
+   resolved to undefined and the photos rendered unstyled at full width --
+   and they are portrait 3:4, so that was very tall. */
+.heroImage {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    margin: var(--spacing-xl) auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}

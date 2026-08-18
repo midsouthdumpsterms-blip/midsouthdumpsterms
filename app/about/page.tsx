@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import BookingButton from '@/components/BookingButton'
 import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from './about.module.css'
@@ -70,8 +71,18 @@ export default function About() {
                                     </p>
                                 </div>
                                 <div style={{ flex: '0 0 250px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-md)', margin: '0 auto' }}>
-                                    {/* Placeholder for Andrew Tyre's photo */}
-                                    <img src="/images/andrew-tyre.png" alt="Andrew Tyre, Founder of Mid South Dumpster Rentals" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                    {/* next/image so this is served as WebP/AVIF at the size
+                                        actually needed. As a raw <img> it shipped the full
+                                        549 KB PNG with no dimensions, so it also shifted the
+                                        layout as it loaded. */}
+                                    <Image
+                                        src="/images/andrew-tyre.png"
+                                        alt="Andrew Tyre, founder of Mid South Dumpster Rentals, Jackson MS"
+                                        width={250}
+                                        height={250}
+                                        sizes="250px"
+                                        style={{ width: '100%', height: 'auto', display: 'block' }}
+                                    />
                                 </div>
                             </div>
                         </div>

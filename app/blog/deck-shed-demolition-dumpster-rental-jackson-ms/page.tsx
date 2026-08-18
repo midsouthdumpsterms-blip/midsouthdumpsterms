@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
@@ -69,7 +70,7 @@ export default function DeckShedDemolitionDumpster() {
 
                     {/* TL;DR Summary Box */}
                     <div className={styles.tldrBox}>
-                        <h3>Key Takeaways (TL;DR)</h3>
+                        <h2>Key Takeaways (TL;DR)</h2>
                         <ul>
                             <li><strong>Right-Size It:</strong> A 15-yard dumpster handles most residential decks and standard sheds. Go 20-yard for large structures or combined projects.</li>
                             <li><strong>Order Before You Swing:</strong> Have the dumpster on-site <em>before</em> demo day so you can load as you tear down — don't let debris pile up in your yard.</li>
@@ -78,10 +79,13 @@ export default function DeckShedDemolitionDumpster() {
                         </ul>
                     </div>
 
-                    <img
+                    <Image
                         src="/images/gallery/home-renovation-dumpster-terry-backyard.jpg"
                         alt="Dumpster in a Central Mississippi backyard next to a deck demolition project"
-                        style={{ width: '100%', borderRadius: '8px', marginBottom: '2rem' }}
+                        width={763}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
+                        className={styles.heroImage}
                     />
 
                     <div className={styles.content}>

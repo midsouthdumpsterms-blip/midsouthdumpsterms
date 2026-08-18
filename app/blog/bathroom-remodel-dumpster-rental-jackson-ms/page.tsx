@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
@@ -68,7 +69,7 @@ export default function BathroomRemodelDumpster() {
 
                     {/* TL;DR Summary Box */}
                     <div className={styles.tldrBox}>
-                        <h3>Key Takeaways (TL;DR)</h3>
+                        <h2>Key Takeaways (TL;DR)</h2>
                         <ul>
                             <li><strong>10-Yard for Most Remodels:</strong> A single bathroom gut-out — tile, vanity, tub, drywall — fits in a 10-yard dumpster starting at $349.</li>
                             <li><strong>Tile Is Heavy:</strong> Ceramic tile with thinset can weigh up to 12 lbs per sq ft. A full bath of tile is 800–1,200 lbs — factor this into your weight estimate.</li>
@@ -77,10 +78,13 @@ export default function BathroomRemodelDumpster() {
                         </ul>
                     </div>
 
-                    <img
+                    <Image
                         src="/images/gallery/construction-dumpster-pearl-ms-site.jpg"
                         alt="Roll-off dumpster on a residential job site in Central Mississippi during a bathroom remodel"
-                        style={{ width: '100%', borderRadius: '8px', marginBottom: '2rem' }}
+                        width={768}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
+                        className={styles.heroImage}
                     />
 
                     <div className={styles.content}>

@@ -164,6 +164,22 @@ export default function BoltonPage() {
                 </div>
             </section>
 
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Dumpster Delivery in Bolton — Local Notes</h2>
+                    <p>Bolton is a small town in western Hinds County along the I-20 corridor, and it is one of the more rural parts of our service area. Most of what we haul here is property cleanout material, outbuilding demolition and general accumulation off long-held family land rather than remodel or construction debris.</p>
+                    <p>Because Bolton is further west than the bulk of our routing, same-day delivery is possible but not something to count on the way you can inside the metro. Booking a day ahead makes scheduling materially easier for both of us, and it means we can put you on a run rather than making a special trip.</p>
+                    <p>Placement on rural Bolton properties is rarely a problem for space, but ground conditions matter. A loaded roll-off truck needs firm footing, so if the only approach is a soft or heavily rutted drive, let us know and we will find a spot nearer the road.</p>
+                    <p><strong>What we most often haul out of Bolton:</strong></p>
+                    <ul className={styles.projectsList}>
+                        <li>Property and estate cleanouts</li>
+                        <li>Outbuilding and shed demolition</li>
+                        <li>Brush, yard waste and storm debris</li>
+                        <li>Residential renovation debris</li>
+                    </ul>
+                </div>
+            </section>
+
             <section className={styles.faqSection}>
                 <div className="container">
                     <h2 className="text-center">Frequently Asked Questions: Bolton Dumpster Rentals</h2>

@@ -156,6 +156,22 @@ export default function TerryPage() {
                 </div>
             </section>
 
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Dumpster Delivery in Terry — Local Notes</h2>
+                    <p>Terry runs along the I-55 corridor in south Hinds County, and the work here splits fairly evenly between in-town residential jobs and rural property cleanups further out. Outbuilding demolition, old mobile home cleanouts, and clearing years of accumulation off family land come up far more often here than commercial work does.</p>
+                    <p>Because so many Terry properties sit on acreage, we can usually place a container almost anywhere you want it — which is an advantage, but it does mean thinking about where the truck can turn around. We need a straight run to set a container down and a clear path back out. Soft ground and narrow gravel drives are the two things that most often force us to reposition, so mention them when you book.</p>
+                    <p>The I-55 run from our yard is quick, which makes Terry one of the easier same-day calls in the southern half of the county. Book before noon and there is a good chance the container is on your property that afternoon.</p>
+                    <p><strong>What we most often haul out of Terry:</strong></p>
+                    <ul className={styles.projectsList}>
+                        <li>Outbuilding and shed demolition</li>
+                        <li>Rural property and land cleanouts</li>
+                        <li>Yard waste, brush and storm debris</li>
+                        <li>Residential renovation debris</li>
+                    </ul>
+                </div>
+            </section>
+
             <section className={styles.faqSection}>
                 <div className="container">
                     <h2 className="text-center">Frequently Asked Questions: Terry Dumpster Rentals</h2>

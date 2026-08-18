@@ -5,7 +5,11 @@ import styles from './blog.module.css'
 import { sql } from '@vercel/postgres'
 import localPostsData from '@/lib/blog-posts.json'
 
-export const dynamic = 'force-dynamic' // Always show fresh database content
+// Revalidate rather than force-dynamic: the listing was querying Postgres on
+// every request, including every crawler hit, which made the content hub the
+// only slow page on an otherwise fully static site. Ten minutes is well inside
+// the cadence at which posts are actually published.
+export const revalidate = 600
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog' },

@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
@@ -68,7 +69,7 @@ export default function DumpsterWeightLimits() {
 
                     {/* TL;DR Summary Box */}
                     <div className={styles.tldrBox}>
-                        <h3>Key Takeaways (TL;DR)</h3>
+                        <h2>Key Takeaways (TL;DR)</h2>
                         <ul>
                             <li><strong>Yards vs. Tons:</strong> &quot;Yards&quot; measures volume (space). &quot;Tons&quot; measures weight. A dumpster can fill up on volume OR hit its weight limit first — whichever comes first.</li>
                             <li><strong>Tile, Concrete &amp; Shingles Are Heavy:</strong> These materials are 3–8x denser than regular household junk. A small amount goes a long way toward your weight cap.</li>
@@ -77,10 +78,13 @@ export default function DumpsterWeightLimits() {
                         </ul>
                     </div>
 
-                    <img
+                    <Image
                         src="/images/gallery/large-dumpster-rental-projects-waste.jpg"
                         alt="Large roll-off dumpster filled with construction debris on a Central Mississippi project site"
-                        style={{ width: '100%', borderRadius: '8px', marginBottom: '2rem' }}
+                        width={768}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
+                        className={styles.heroImage}
                     />
 
                     <div className={styles.content}>

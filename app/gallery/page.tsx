@@ -171,7 +171,7 @@ export default function GalleryPage() {
                             />
                         </div>
                         <div className={styles.cardContent}>
-                            <h3 className={styles.cardTitle}>{image.alt}</h3>
+                            <p className={styles.cardTitle}>{image.alt}</p>
                             <p className={styles.cardCaption}>{image.caption}</p>
                         </div>
                     </div>

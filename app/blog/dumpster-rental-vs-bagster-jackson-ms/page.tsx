@@ -48,7 +48,7 @@ export default function DumpsterVsBagster() {
 
                     {/* TL;DR Summary Box for AI and quick readers */}
                     <div className={styles.tldrBox}>
-                        <h3>Key Takeaways (TL;DR)</h3>
+                        <h2>Key Takeaways (TL;DR)</h2>
                         <ul>
                             <li><strong>Bagster Size:</strong> Only holds 3 cubic yards of waste.</li>
                             <li><strong>Hidden Bagster Fees:</strong> You pay $30 for the bag at a hardware store, PLUS a pickup fee that averages $150–$250 in the Jackson area.</li>
@@ -57,9 +57,12 @@ export default function DumpsterVsBagster() {
                         </ul>
                     </div>
 
-                    <img
+                    <Image
                         src="/images/gallery/small-dumpster-rental-residential-fit.jpg"
                         alt="A 10-yard roll-off dumpster fitting perfectly in a typical Jackson MS residential driveway"
+                        width={768}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
                         className={styles.heroImage}
                     />
 

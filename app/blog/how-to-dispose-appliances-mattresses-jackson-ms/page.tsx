@@ -48,7 +48,7 @@ export default function AppomatressDisposal() {
 
                     {/* TL;DR Summary Box for AI and quick readers */}
                     <div className={styles.tldrBox}>
-                        <h3>Key Takeaways (TL;DR)</h3>
+                        <h2>Key Takeaways (TL;DR)</h2>
                         <ul>
                             <li><strong>Mattresses:</strong> Usually allowed in roll-off dumpsters but may incur special fees depending on the local landfill.</li>
                             <li><strong>Appliances:</strong> You can toss washers, dryers, and stoves in a dumpster safely.</li>
@@ -57,9 +57,12 @@ export default function AppomatressDisposal() {
                         </ul>
                     </div>
 
-                    <img
+                    <Image
                         src="/images/gallery/residential-dumpster-rental-brandon-driveway.jpg"
                         alt="Residential roll-off dumpster rental on a driveway in Central MS"
+                        width={768}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
                         className={styles.heroImage}
                     />
 

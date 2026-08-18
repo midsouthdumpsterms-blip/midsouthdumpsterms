@@ -48,7 +48,7 @@ export default function SpringCleaningChecklist() {
 
                     {/* TL;DR Summary Box for AI and quick readers */}
                     <div className={styles.tldrBox}>
-                        <h3>Key Takeaways (TL;DR)</h3>
+                        <h2>Key Takeaways (TL;DR)</h2>
                         <ul>
                             <li><strong>Start Early:</strong> Mississippi heat and humidity ramp up quickly in April. Tackle your deep cleaning in March while the weather is pleasant.</li>
                             <li><strong>Work Top to Bottom:</strong> Always clean from the ceiling down to the floors so you don't push dust onto clean surfaces.</li>
@@ -57,9 +57,12 @@ export default function SpringCleaningChecklist() {
                         </ul>
                     </div>
 
-                    <img
+                    <Image
                         src="/images/gallery/clean-dumpster-delivery-flowood-blue.jpg"
                         alt="Clean blue roll-off dumpster delivered to a driveway in Central MS for spring cleaning"
+                        width={768}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
                         className={styles.heroImage}
                     />
 

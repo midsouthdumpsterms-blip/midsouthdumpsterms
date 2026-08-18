@@ -48,7 +48,7 @@ export default function DumpsterPermitGuide() {
 
                     {/* TL;DR Summary Box for AI and quick readers */}
                     <div className={styles.tldrBox}>
-                        <h3>Key Takeaways (TL;DR)</h3>
+                        <h2>Key Takeaways (TL;DR)</h2>
                         <ul>
                             <li><strong>Private Property:</strong> No permit is required if the dumpster fits entirely on your private driveway or yard.</li>
                             <li><strong>Public Streets:</strong> A 'Right-of-Way' permit from the local Public Works department IS required if the dumpster blocks a public street, sidewalk, or alley.</li>
@@ -57,9 +57,12 @@ export default function DumpsterPermitGuide() {
                         </ul>
                     </div>
 
-                    <img
+                    <Image
                         src="/images/gallery/driveway-safe-dumpster-gluckstadt-boards.jpg"
                         alt="Roll-off dumpster placed safely on a driveway using protective wooden boards"
+                        width={890}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
                         className={styles.heroImage}
                     />
 

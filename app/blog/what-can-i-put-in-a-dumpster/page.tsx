@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from '../blog-post.module.css'
 
@@ -42,9 +43,12 @@ export default function WhatCanIPutInADumpster() {
                         <p className={styles.date}>Published on February 3, 2026</p>
                     </header>
 
-                    <img
+                    <Image
                         src="/images/blog/what-can-i-put-in-dumpster.jpg"
                         alt="Dumpster filled with household debris"
+                        width={1024}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
                         className={styles.heroImage}
                     />
 

@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from '../blog-post.module.css'
 
@@ -42,9 +43,12 @@ export default function HomeRenovationDumpsterGuide() {
                         <p className={styles.date}>Published on January 28, 2026</p>
                     </header>
 
-                    <img
+                    <Image
                         src="/images/real-dumpsters/dumpster-trailer-grey.jpg"
                         alt="Mid South Dumpster Rental delivery for home renovation"
+                        width={767}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
                         className={styles.heroImage}
                     />
 

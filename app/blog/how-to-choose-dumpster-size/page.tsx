@@ -23,7 +23,7 @@ export default function BlogPost() {
     const articleSchema = generateArticleSchema(
         'How to Choose the Right Dumpster Size for Your Project',
         'Comprehensive guide to selecting the perfect dumpster size for your project.',
-        '2024-01-15',
+        '2026-01-15',
         'https://midsouthdumpsterms.com/images/blog/size-capacity-infographic.png'
     )
 
@@ -50,7 +50,7 @@ export default function BlogPost() {
 
                     <div className={styles.content}>
                         <div className={styles.tldrBox}>
-                            <h3>Key Takeaways: Dumpster Sizes</h3>
+                            <h2>Key Takeaways: Dumpster Sizes</h2>
                             <ul>
                                 <li><strong>10-Yard Dumpster:</strong> Holds ~4 truck loads, 1 ton weight limit. Best for small cleanouts and minor bathroom makeovers.</li>
                                 <li><strong>15-Yard Dumpster:</strong> Holds ~6 truck loads, 2 ton weight limit. Our most popular size. Ideal for mid-size renovations, roofing, and flooring removal.</li>

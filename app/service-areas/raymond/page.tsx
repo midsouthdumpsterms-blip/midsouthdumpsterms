@@ -166,6 +166,22 @@ export default function RaymondPage() {
                 </div>
             </section>
 
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Dumpster Delivery in Raymond — Local Notes</h2>
+                    <p>Raymond is the Hinds County seat and home to the main Hinds Community College campus, which gives the town a mix you do not see elsewhere in the county: historic properties around the courthouse square, a steady rhythm of rental turnovers driven by the academic calendar, and rural acreage spreading out west of town.</p>
+                    <p>The rental turnover work has its own timing. Landlords clearing units between tenants generally need a container fast and only for a day or two, and they need it gone before the next move-in. Tell us the deadline when you book and we will schedule the pickup around it rather than leaving it to a standard rental window.</p>
+                    <p>Older properties near the square can throw up the same problem as any historic area — plaster, lath and old tile weigh far more than modern renovation debris, so size by weight rather than by how full the container looks. Delivery from our yard runs out Highway 18 or I-20 and is comfortably inside same-day range.</p>
+                    <p><strong>What we most often haul out of Raymond:</strong></p>
+                    <ul className={styles.projectsList}>
+                        <li>Rental and student-housing turnovers</li>
+                        <li>Historic property renovation debris</li>
+                        <li>Rural acreage and estate cleanouts</li>
+                        <li>Yard waste, brush and storm debris</li>
+                    </ul>
+                </div>
+            </section>
+
             <section className={styles.faqSection}>
                 <div className="container">
                     <h2 className="text-center">Frequently Asked Questions: Raymond Dumpster Rentals</h2>

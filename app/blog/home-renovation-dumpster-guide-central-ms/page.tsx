@@ -23,7 +23,7 @@ export default function BlogPost() {
     const articleSchema = generateArticleSchema(
         'Dumpster Rental for Home Renovations in Central MS',
         'Complete guide to managing debris during home renovations in Central Mississippi.',
-        '2024-02-05'
+        '2026-02-05'
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
