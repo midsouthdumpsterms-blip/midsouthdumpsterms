@@ -75,7 +75,7 @@ export default function DumpsterPermitGuide() {
                             If you have enough space to place the dumpster entirely on your private property—such as your concrete driveway, a gravel parking pad, or even your side yard—<strong>you do not need a city permit.</strong>
                         </p>
                         <p>
-                            Many homeowners worry that a heavy steel dumpster will crack their driveway. At <strong>Mid South Dumpster Rentals</strong>, we mitigate this risk by employing "driveway-safe" delivery methods. We place thick wooden boards under the dumpster's steel rollers, ensuring the metal never actually scrapes or rests directly on your concrete. If your driveway can hold a heavy pickup truck, it can usually handle a <Link href="/blog/15-yard-dumpster-rental-jackson-ms">15-yard dumpster</Link> without issue.
+                            Many homeowners worry that a heavy steel dumpster will crack their driveway. At <strong>Mid South Dumpster Rentals</strong>, we mitigate this risk by employing "driveway-safe" delivery methods. We place thick wooden boards under the dumpster's steel rollers, ensuring the metal never actually scrapes or rests directly on your concrete. If your driveway can hold a heavy pickup truck, it can usually handle a <Link href="/sizes/15-yard-dumpster-rental">15-yard dumpster</Link> without issue.
                         </p>
 
                         <h3>A Quick Note on HOAs</h3>

@@ -19,9 +19,9 @@ export default function BookingIframe() {
                 FLAT-RATE · SAME-DAY AVAILABLE · NO HIDDEN FEES
             </div>
 
-            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-gray-900)', marginBottom: '0.5rem' }}>
-                Reserve Your Dumpster Online
-            </h2>
+            <h1 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-gray-900)', marginBottom: '0.5rem' }}>
+                Book a Dumpster Rental Online in Jackson, MS
+            </h1>
             <p style={{ color: 'var(--color-gray-500)', marginBottom: '2rem', fontSize: '1rem', maxWidth: '440px' }}>
                 Book in under 60 seconds. Delivery + pickup + disposal all included.
             </p>

@@ -105,17 +105,17 @@ export default function BlogPost() {
                             <tbody>
                                 <tr>
                                     <td>Light cleanout — some furniture and personal items</td>
-                                    <td><Link href="/services/10-yard-dumpster">10 Yard</Link></td>
+                                    <td><Link href="/sizes/10-yard-dumpster-rental">10 Yard</Link></td>
                                     <td>$349</td>
                                 </tr>
                                 <tr>
                                     <td>Full-house cleanout — furniture, appliances, carpet, debris</td>
-                                    <td><Link href="/services/15-yard-dumpster">15 Yard</Link></td>
+                                    <td><Link href="/sizes/15-yard-dumpster-rental">15 Yard</Link></td>
                                     <td>$399</td>
                                 </tr>
                                 <tr>
                                     <td>Hoarder-level or demo-required — everything must go plus renovation debris</td>
-                                    <td><Link href="/services/20-yard-dumpster">20 Yard</Link></td>
+                                    <td><Link href="/sizes/20-yard-dumpster-rental">20 Yard</Link></td>
                                     <td>$449</td>
                                 </tr>
                             </tbody>

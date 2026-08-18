@@ -6,7 +6,7 @@ import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/sizes' },
-    title: 'Dumpster Sizes & Dimensions | 10, 15, 20 Yard',
+    title: 'Dumpster Sizes: 10, 15 & 20 Yard | Jackson MS',
     description:
         'Compare 10, 15 and 20-yard roll-off dumpsters: dimensions, weight limits, truck-load capacity and price. Find the right size before you book.',
     openGraph: {

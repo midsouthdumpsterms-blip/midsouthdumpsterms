@@ -198,7 +198,7 @@ export default function DeckShedDemolitionDumpster() {
 
                         <h2>Serving Jackson, Brandon, Madison &amp; All of Central MS</h2>
                         <p>
-                            We deliver to every city in the Jackson metro area and across Hinds, Madison, and Rankin counties — including <Link href="/blog/dumpster-rental-brandon-ms">Brandon</Link>, <Link href="/blog/dumpster-rental-flowood-ms">Flowood</Link>, <Link href="/blog/dumpster-rental-clinton-ms">Clinton</Link>, <Link href="/blog/dumpster-rental-ridgeland-ms">Ridgeland</Link>, <Link href="/blog/dumpster-rental-madison-ms">Madison</Link>, and beyond. We&apos;re a local company — not a national chain — so you get real answers, flexible scheduling, and a crew that actually shows up on time.
+                            We deliver to every city in the Jackson metro area and across Hinds, Madison, and Rankin counties — including <Link href="/service-areas/brandon">Brandon</Link>, <Link href="/service-areas/flowood">Flowood</Link>, <Link href="/service-areas/clinton">Clinton</Link>, <Link href="/service-areas/ridgeland">Ridgeland</Link>, <Link href="/service-areas/madison">Madison</Link>, and beyond. We&apos;re a local company — not a national chain — so you get real answers, flexible scheduling, and a crew that actually shows up on time.
                         </p>
 
                         <h2>Frequently Asked Questions</h2>

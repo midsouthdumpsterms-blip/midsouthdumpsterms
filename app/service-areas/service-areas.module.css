@@ -41,9 +41,10 @@
     border-color: var(--color-primary);
 }
 
-.areaCard h2 {
+.areaCard h2,
+.areaCard h3 {
     color: var(--color-primary);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: var(--spacing-sm);
 }
 

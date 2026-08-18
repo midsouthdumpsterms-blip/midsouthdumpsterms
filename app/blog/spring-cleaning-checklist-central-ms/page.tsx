@@ -81,7 +81,7 @@ export default function SpringCleaningChecklist() {
                             <li><strong>Garage & Attic:</strong> This is usually where the bulk of the "Toss" pile originates. Broken furniture, <Link href="/blog/how-to-dispose-appliances-mattresses-jackson-ms">old appliances</Link>, and boxes of junk that haven't been opened since you moved in. </li>
                         </ul>
                         <p>
-                            <em>Pro Tip:</em> If you discover you have more junk than will fit in your weekly curbside bin, skip the multiple trips to the dump and rent a <Link href="/blog/10-yard-dumpster-rental-jackson-ms">10-yard roll-off dumpster</Link> for the weekend.
+                            <em>Pro Tip:</em> If you discover you have more junk than will fit in your weekly curbside bin, skip the multiple trips to the dump and rent a <Link href="/sizes/10-yard-dumpster-rental">10-yard roll-off dumpster</Link> for the weekend.
                         </p>
 
                         <h3>2. Windows & Baseboards</h3>

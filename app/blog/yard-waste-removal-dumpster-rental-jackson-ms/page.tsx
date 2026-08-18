@@ -119,17 +119,17 @@ export default function BlogPost() {
                             <tbody>
                                 <tr>
                                     <td>Seasonal cleanup, brush pile, trimming debris</td>
-                                    <td><Link href="/services/10-yard-dumpster">10 Yard</Link></td>
+                                    <td><Link href="/sizes/10-yard-dumpster-rental">10 Yard</Link></td>
                                     <td>$349</td>
                                 </tr>
                                 <tr>
                                     <td>Tree removal, full-yard overhaul, storm debris</td>
-                                    <td><Link href="/services/15-yard-dumpster">15 Yard</Link></td>
+                                    <td><Link href="/sizes/15-yard-dumpster-rental">15 Yard</Link></td>
                                     <td>$399</td>
                                 </tr>
                                 <tr>
                                     <td>Lot clearing, major landscaping demo, multiple trees</td>
-                                    <td><Link href="/services/20-yard-dumpster">20 Yard</Link></td>
+                                    <td><Link href="/sizes/20-yard-dumpster-rental">20 Yard</Link></td>
                                     <td>$449</td>
                                 </tr>
                             </tbody>

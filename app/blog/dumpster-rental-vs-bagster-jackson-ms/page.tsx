@@ -51,7 +51,7 @@ export default function DumpsterVsBagster() {
                         <ul>
                             <li><strong>Bagster Size:</strong> Only holds 3 cubic yards of waste.</li>
                             <li><strong>Hidden Bagster Fees:</strong> You pay $30 for the bag at a hardware store, PLUS a pickup fee that averages $150–$250 in the Jackson area.</li>
-                            <li><strong>Dumpster Value:</strong> A <Link href="/blog/10-yard-dumpster-rental-jackson-ms">10-yard roll-off dumpster</Link> holds <strong>three times</strong> the volume (10 cubic yards) for a flat rate, making it significantly cheaper per cubic yard of waste.</li>
+                            <li><strong>Dumpster Value:</strong> A <Link href="/sizes/10-yard-dumpster-rental">10-yard roll-off dumpster</Link> holds <strong>three times</strong> the volume (10 cubic yards) for a flat rate, making it significantly cheaper per cubic yard of waste.</li>
                             <li><strong>Placement Rules:</strong> Bagsters have incredibly strict placement requirements and cannot be picked up if placed under wires or tree branches. Dumpsters are driveway-friendly.</li>
                         </ul>
                     </div>
@@ -89,7 +89,7 @@ export default function DumpsterVsBagster() {
                             If your project generates more than 3 yards of waste, you will have to buy a second Bagster and pay a SECOND pickup fee. At that point, you are spending $400 to $500 for a mere 6 yards of disposal capacity.
                         </p>
                         <p>
-                            In contrast, a <strong>10-yard roll-off dumpster from Mid South Dumpster Rentals starts at just <Link href="/services">$349 for a 1-day rental</Link></strong>. This container holds 10 cubic yards of debris—more than three times the capacity of a Bagster—for less money. If you are doing a medium-sized project, a <Link href="/blog/15-yard-dumpster-rental-jackson-ms">15-yard dumpster</Link> offers even more value.
+                            In contrast, a <strong>10-yard roll-off dumpster from Mid South Dumpster Rentals starts at just <Link href="/services">$349 for a 1-day rental</Link></strong>. This container holds 10 cubic yards of debris—more than three times the capacity of a Bagster—for less money. If you are doing a medium-sized project, a <Link href="/sizes/15-yard-dumpster-rental">15-yard dumpster</Link> offers even more value.
                         </p>
 
                         <h2>Placement Requirements and Hassles</h2>

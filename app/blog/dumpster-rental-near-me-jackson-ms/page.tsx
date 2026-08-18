@@ -92,17 +92,17 @@ export default function BlogPost() {
                             We offer three roll-off dumpster sizes to fit any project in the Jackson metro area:
                         </p>
 
-                        <h3><Link href="/services/10-yard-dumpster">10-Yard Dumpster</Link> &mdash; from $349</h3>
+                        <h3><Link href="/sizes/10-yard-dumpster-rental">10-Yard Dumpster</Link> &mdash; from $349</h3>
                         <p>
                             Ideal for: garage cleanouts, small bathroom remodels, single-room renovations, attic decluttering. Includes 1 ton (2,000 lbs) weight allowance. Fits easily in most residential driveways.
                         </p>
 
-                        <h3><Link href="/services/15-yard-dumpster">15-Yard Dumpster</Link> &mdash; from $399 <em>(Most Popular)</em></h3>
+                        <h3><Link href="/sizes/15-yard-dumpster-rental">15-Yard Dumpster</Link> &mdash; from $399 <em>(Most Popular)</em></h3>
                         <p>
                             Ideal for: home renovations, roofing debris, estate cleanouts, full garage cleanouts, multiple-room remodels. Includes 2 tons (4,000 lbs) weight allowance. This is our most-rented size in the Jackson area.
                         </p>
 
-                        <h3><Link href="/services/20-yard-dumpster">20-Yard Dumpster</Link> &mdash; from $449</h3>
+                        <h3><Link href="/sizes/20-yard-dumpster-rental">20-Yard Dumpster</Link> &mdash; from $449</h3>
                         <p>
                             Ideal for: large home renovations, new construction, commercial site cleanups, major demolition. Includes 3 tons (6,000 lbs) weight allowance with a strict 3-ton maximum.
                         </p>

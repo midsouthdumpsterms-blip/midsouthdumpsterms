@@ -91,7 +91,7 @@ const nextConfig = {
                         value: [
                             "default-src 'self'",
                             // GA, GTM, SurvCart, Google Ads, and inline scripts
-                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://embed.survcart.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://cdn.jsdelivr.net",
+                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://embed.survcart.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://va.vercel-scripts.com https://cdn.jsdelivr.net",
                             // Inline styles needed for Next.js, Google Fonts, SurvCart
                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://embed.survcart.com",
                             "font-src 'self' https://fonts.gstatic.com",
@@ -99,8 +99,10 @@ const nextConfig = {
                             "img-src 'self' data: blob: https:",
                             // GA telemetry, Google Ads telemetry + self API calls
                             "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://ad.doubleclick.net https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.google.com",
-                            // Survcart booking iframe (book-online page)
-                            "frame-src https://embed.survcart.com",
+                            // Survcart booking iframe (book-online page) and the
+                            // Google Maps embed on /contact - the map was silently
+                            // blocked by CSP until google.com was allowed here.
+                            "frame-src https://embed.survcart.com https://www.google.com https://maps.google.com",
                             // Revenue dashboard uses srcDoc iframe — needs 'self' frame-src
                             "frame-ancestors 'none'",
                         ].join('; '),

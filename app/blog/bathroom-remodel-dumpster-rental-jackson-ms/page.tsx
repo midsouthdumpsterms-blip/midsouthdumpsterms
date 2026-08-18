@@ -234,7 +234,7 @@ export default function BathroomRemodelDumpster() {
 
                         <h2>Serving All of Central Mississippi</h2>
                         <p>
-                            We deliver to <Link href="/blog/dumpster-rental-jackson-ms">Jackson</Link>, <Link href="/blog/dumpster-rental-brandon-ms">Brandon</Link>, <Link href="/blog/dumpster-rental-ridgeland-ms">Ridgeland</Link>, <Link href="/blog/dumpster-rental-clinton-ms">Clinton</Link>, <Link href="/blog/dumpster-rental-madison-ms">Madison</Link>, <Link href="/blog/dumpster-rental-flowood-ms">Flowood</Link>, <Link href="/blog/dumpster-rental-pearl-ms">Pearl</Link>, <Link href="/blog/dumpster-rental-byram-ms">Byram</Link>, and throughout Hinds, Madison, and Rankin counties. We&apos;re a local, owner-operated business — not a national chain — so you get real customer service and a driver who knows your neighborhood.
+                            We deliver to <Link href="/service-areas/jackson">Jackson</Link>, <Link href="/service-areas/brandon">Brandon</Link>, <Link href="/service-areas/ridgeland">Ridgeland</Link>, <Link href="/service-areas/clinton">Clinton</Link>, <Link href="/service-areas/madison">Madison</Link>, <Link href="/service-areas/flowood">Flowood</Link>, <Link href="/service-areas/pearl">Pearl</Link>, <Link href="/service-areas/byram">Byram</Link>, and throughout Hinds, Madison, and Rankin counties. We&apos;re a local, owner-operated business — not a national chain — so you get real customer service and a driver who knows your neighborhood.
                         </p>
 
                         <h2>Frequently Asked Questions</h2>
