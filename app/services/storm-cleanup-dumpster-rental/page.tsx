@@ -8,9 +8,9 @@ import styles from '../services.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/storm-cleanup-dumpster-rental' },
-    title: 'Storm Cleanup Dumpster Rental Jackson MS | Emergency Debris Removal',
+    title: 'Storm Cleanup Dumpster Rental Jackson MS',
     description:
-        'Storm cleanup dumpster rental in Jackson MS. Emergency roll-off containers for hurricane, tornado, hail & wind damage debris removal. Same-day delivery available 7 days a week. Call 601-316-7891.',
+        'Emergency roll-off containers for tornado, hurricane, hail and wind damage debris in Central MS. Same-day delivery. Invoices your adjuster accepts.',
     openGraph: {
         title: 'Storm Cleanup Dumpster Rental Jackson MS',
         description: 'Emergency dumpster rental for storm damage cleanup in Central MS. Same-day delivery for hurricane, tornado, and severe weather debris.',

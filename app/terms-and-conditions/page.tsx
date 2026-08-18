@@ -4,7 +4,8 @@ import Link from 'next/link'
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/terms-and-conditions' },
     title: 'Terms and Conditions',
-    description: 'Terms and Conditions for Mid South Dumpster Rentals, LLC. Read our service terms, SMS messaging terms, and rental policies.',
+    description:
+        'The terms governing use of the Mid South Dumpster Rentals website and the booking of roll-off dumpster rentals in Central Mississippi.',
 }
 
 export default function TermsPage() {

@@ -20,6 +20,7 @@ const serviceLinks = [
     { href: '/services/roofing-dumpster-rental', label: 'Roofing' },
     { href: '/services/estate-cleanout-dumpster-rental', label: 'Estate Cleanout' },
     { href: '/services/roll-off-dumpster-rental', label: 'Roll-Off' },
+    { href: '/services/debris-removal', label: 'Debris Removal' },
     { href: '/services/yard-waste-dumpster-rental', label: 'Yard Waste' },
     { href: '/services/same-day-dumpster-rental', label: 'Same-Day' },
     { href: '/services/storm-cleanup-dumpster-rental', label: 'Storm Cleanup' },

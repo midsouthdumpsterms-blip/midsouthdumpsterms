@@ -9,9 +9,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/jackson' },
-    title: 'Dumpster Rentals Jackson MS | Same-Day Service',
+    title: 'Dumpster Rental Jackson MS | Same-Day',
     description:
-        'Serving Fondren, Belhaven & Northeast Jackson with 10-20 yard dumpsters. Same-day delivery, flat-rate pricing. Perfect for home renovations & construction. Call 601-316-7891.',
+        'Roll-off dumpster rental in Jackson, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Belhaven, Fondren and Northeast Jackson.',
     openGraph: {
         title: 'Dumpster Rentals in Jackson, MS',
         description: 'Serving Fondren, Belhaven & Northeast Jackson with same-day dumpster delivery.',

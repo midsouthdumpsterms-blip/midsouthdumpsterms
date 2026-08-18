@@ -9,9 +9,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/raymond' },
-    title: 'Roll Off Dumpster Rental Raymond MS | Hinds County',
+    title: 'Dumpster Rental Raymond MS | Same-Day',
     description:
-        'Roll off dumpster rental in Raymond, MS and Hinds County. 10, 15 & 20-yard dumpsters with same-day delivery to Raymond and surrounding rural communities. Flat-rate pricing from $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Raymond, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Raymond and western Hinds County.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Raymond MS | Hinds County',
         description: 'Locally owned roll off dumpster rental serving Raymond & all of Hinds County. Same-day delivery, flat-rate pricing, no hidden fees.',

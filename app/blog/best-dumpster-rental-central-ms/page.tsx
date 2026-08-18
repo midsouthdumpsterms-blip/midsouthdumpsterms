@@ -6,9 +6,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/best-dumpster-rental-central-ms' },
-    title: 'Best Dumpster Rental in Central Mississippi | 2026 Guide',
+    title: 'Best Dumpster Rental in Central MS (2026)',
     description:
-        'Looking for the best dumpster rental in Central MS? Mid South Dumpster Rentals offers flat-rate pricing from $349, same-day delivery 7 days a week, and serves Jackson, Brandon, Madison, and the entire tri-county area.',
+        'How to compare dumpster companies in Central Mississippi: pricing structure, weight allowances, hidden fees and delivery windows.',
     openGraph: {
         title: 'Best Dumpster Rental in Central Mississippi | 2026 Guide',
         description:

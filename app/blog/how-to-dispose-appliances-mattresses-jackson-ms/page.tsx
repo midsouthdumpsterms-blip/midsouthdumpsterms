@@ -7,8 +7,9 @@ import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/how-to-dispose-appliances-mattresses-jackson-ms' },
-    title: 'How to Dispose of Appliances & Mattresses in Jackson MS',
-    description: 'Looking to get rid of an old mattress or refrigerator in Jackson, MS? Learn the local rules, costs, and easiest ways to dispose of large, bulky items.',
+    title: 'Disposing of Appliances & Mattresses MS',
+    description:
+        'Local rules and real costs for getting rid of an old mattress, fridge or washer in Jackson MS, including what a dumpster will take.',
     openGraph: {
         title: 'How to Dispose of Appliances & Mattresses in Jackson MS',
         description: 'Learn the local rules, costs, and easiest ways to dispose of large, bulky items like mattresses and appliances in Jackson, Mississippi.',

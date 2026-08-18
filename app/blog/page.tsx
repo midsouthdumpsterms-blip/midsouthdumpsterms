@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog' },
     title: 'Dumpster Rental Tips & Guides | Jackson MS',
     description:
-        'Expert dumpster rental guides for Jackson, Rankin, Hinds & Madison County MS. Learn what to throw away, how to choose a size, pricing tips, and more.',
+        'Practical guides on dumpster sizing, pricing, weight limits, permits and cleanouts for homeowners and contractors across Central Mississippi.',
     openGraph: {
         title: 'Dumpster Rental Tips & Local Guides',
         description: 'Expert dumpster rental guides for Central Mississippi homeowners and contractors.',

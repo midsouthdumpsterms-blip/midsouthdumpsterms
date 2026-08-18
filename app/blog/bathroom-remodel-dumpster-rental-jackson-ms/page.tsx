@@ -6,8 +6,9 @@ import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/bathroom-remodel-dumpster-rental-jackson-ms' },
-    title: 'Bathroom Remodel Dumpster Rental in Jackson, MS',
-    description: 'Planning a bathroom renovation in Central Mississippi? Find out what size dumpster you need for a full gut-out, tile removal, vanity swap, and more. Flat-rate pricing from $349.',
+    title: 'Bathroom Remodel Dumpster Size Guide',
+    description:
+        'What size dumpster a bathroom remodel needs in Central MS, from a vanity swap to a full gut. Tile and cast iron weigh more than you think.',
     openGraph: {
         title: 'Bathroom Remodel Dumpster Rental in Jackson, MS',
         description: 'The complete guide to renting a dumpster for your bathroom remodel in Central Mississippi. Sizes, costs, and tips.',

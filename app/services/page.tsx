@@ -9,9 +9,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services' },
-    title: { absolute: 'Roll Off Dumpster Rental Jackson MS | Prices from $349 | Mid South' },
+    title: 'Dumpster Rental Prices Jackson MS',
     description:
-        'Roll off dumpster rental in Jackson, MS. 10-yard from $349 · 15-yard from $399 · 20-yard from $449. Same-day delivery, no hidden fees. Serving Jackson, Brandon, Madison & all of Central MS. Call 601-316-7891.',
+        'Roll-off dumpster prices in Jackson MS: 10-yard $349, 15-yard $399, 20-yard $449. Delivery, pickup and disposal included. Same-day service available.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Prices Jackson MS | Mid South',
         description: 'Roll off dumpster rental in Jackson MS — 10, 15 & 20-yard containers from $349. Same-day delivery. No hidden fees.',
@@ -130,6 +130,42 @@ export default function Services() {
                     </div>
                     <p className="text-center" style={{ marginTop: 'var(--spacing-xl)', fontSize: '1.125rem' }}>
                         Not sure which size to pick? Check out our <Link href="/blog/how-to-choose-dumpster-size" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Dumpster Sizing Guide</Link>.
+                    </p>
+                </div>
+            </section>
+
+            <section style={{ background: 'var(--color-gray-50)', padding: 'var(--spacing-2xl) 0' }}>
+                <div className="container">
+                    <h2 className="text-center">Dumpster Rental Services We Offer</h2>
+                    <p className="text-center" style={{ marginBottom: 'var(--spacing-xl)' }}>
+                        Same containers, same flat-rate pricing — pick the page that matches your project for sizing advice and specifics.
+                    </p>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.25rem' }}>
+                        {[
+                            { href: '/services/residential-dumpster-rental', name: 'Residential Dumpster Rental', desc: 'Driveway-friendly containers for homeowners tackling cleanouts and remodels.' },
+                            { href: '/services/commercial-dumpster-rental', name: 'Commercial Dumpster Rental', desc: 'Retail, office and property-management waste with scheduled swap-outs.' },
+                            { href: '/services/construction-dumpster-rental', name: 'Construction Dumpster Rental', desc: 'Job-site containers for framing, drywall and general C&D debris.' },
+                            { href: '/services/demolition-dumpster-rental', name: 'Demolition Dumpster Rental', desc: 'Heavy loads from sheds, decks, garages and interior tear-outs.' },
+                            { href: '/services/roofing-dumpster-rental', name: 'Roofing Dumpster Rental', desc: 'Shingle tear-off containers placed close to the drop zone.' },
+                            { href: '/services/estate-cleanout-dumpster-rental', name: 'Estate Cleanout Dumpsters', desc: 'Whole-property clearing on a timeline that respects the family.' },
+                            { href: '/services/roll-off-dumpster-rental', name: 'Roll-Off Dumpster Rental', desc: 'The core service — 10, 15 and 20-yard roll-offs across Central MS.' },
+                            { href: '/services/debris-removal', name: 'Debris Removal', desc: 'Construction, storm, yard and household debris hauled to a licensed facility.' },
+                            { href: '/services/yard-waste-dumpster-rental', name: 'Yard Waste Dumpster Rental', desc: 'Brush, limbs, sod and landscaping debris from clearing work.' },
+                            { href: '/services/same-day-dumpster-rental', name: 'Same-Day Dumpster Rental', desc: 'Call before noon, seven days a week, and we deliver that day.' },
+                            { href: '/services/storm-cleanup-dumpster-rental', name: 'Storm Cleanup Dumpster Rental', desc: 'Emergency containers after tornado, hurricane, hail and wind damage.' },
+                        ].map((item) => (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                style={{ display: 'block', background: 'white', borderRadius: 'var(--radius-lg)', padding: '1.4rem', boxShadow: 'var(--shadow-sm)', textDecoration: 'none', color: 'inherit' }}
+                            >
+                                <h3 style={{ fontSize: '1.05rem', marginBottom: '0.4rem', color: 'var(--color-primary)' }}>{item.name}</h3>
+                                <p style={{ color: 'var(--color-gray-600)', fontSize: '0.92rem', margin: 0 }}>{item.desc}</p>
+                            </Link>
+                        ))}
+                    </div>
+                    <p className="text-center" style={{ marginTop: 'var(--spacing-xl)' }}>
+                        Need us in a specific town? <Link href="/service-areas">See all service areas across Hinds, Madison and Rankin counties</Link>.
                     </p>
                 </div>
             </section>

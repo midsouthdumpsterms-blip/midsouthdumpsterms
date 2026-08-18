@@ -9,9 +9,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/florence' },
-    title: 'Roll Off Dumpster Rental Florence MS | Rankin County',
+    title: 'Dumpster Rental Florence MS | Same-Day',
     description:
-        'Roll off dumpster rental in Florence, MS and Rankin County. 10, 15 & 20-yard dumpsters with same-day delivery to all Florence neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Florence, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Florence and the Highway 49 corridor.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Florence MS | Rankin County',
         description: 'Locally owned roll off dumpster rental serving Florence & all of Rankin County. Same-day delivery, flat-rate pricing, no hidden fees.',

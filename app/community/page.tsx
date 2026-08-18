@@ -4,9 +4,9 @@ import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/community' },
-    title: 'Community | Jackson, MS',
+    title: 'Community | Mid South Dumpster Rentals',
     description:
-        'Mid South Dumpster Rentals is rooted in Jackson, MS. Our owner has lived in the greater Jackson area for years and believes in showing up for the community — not just doing business in it.',
+        'We are rooted in the greater Jackson area. Here is how Mid South Dumpster Rentals shows up for the Central Mississippi community beyond the job.',
     openGraph: {
         type: 'website',
         locale: 'en_US',

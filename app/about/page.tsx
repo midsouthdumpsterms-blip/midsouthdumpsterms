@@ -7,9 +7,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/about' },
-    title: 'About Us | Jackson, MS Local Dumpster Company',
+    title: 'About Us | Locally Owned in Jackson MS',
     description:
-        'Mid South Dumpster Rentals is a locally-owned, licensed & insured dumpster rental company in Jackson, MS. Serving the entire Central Mississippi tri-county area (Hinds, Madison, Rankin) with 10, 15, and 20-yard roll-off dumpsters. Same-day delivery 7 days a week.',
+        'Mid South Dumpster Rentals is a licensed, insured, locally owned roll-off company serving Hinds, Madison and Rankin counties seven days a week.',
 }
 
 export default function About() {

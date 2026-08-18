@@ -6,9 +6,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/home-renovation-dumpster-guide-central-ms' },
-    title: 'Dumpster Rental for Home Renovations in Central MS | Complete Guide',
+    title: 'Home Renovation Dumpster Guide | MS',
     description:
-        'Planning a home renovation in Jackson, Madison, or Brandon MS? Learn how to choose the right dumpster size, manage debris, and save money on your remodeling project.',
+        'Sizing, placement, timing and cost for renovation debris in Jackson, Madison and Brandon. A full walkthrough for Central MS homeowners.',
 }
 
 export default function BlogPost() {

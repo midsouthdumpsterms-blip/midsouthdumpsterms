@@ -8,9 +8,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/bolton' },
-    title: 'Roll Off Dumpster Rental Bolton MS | Hinds County',
+    title: 'Dumpster Rental Bolton MS | Same-Day',
     description:
-        'Roll off dumpster rental in Bolton, MS (ZIP 39041). 10, 15 & 20-yard dumpsters with same-day delivery to Bolton and surrounding Hinds County communities. Flat-rate pricing from $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Bolton, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Bolton and western Hinds County.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Bolton MS | Hinds County',
         description: 'Locally owned roll off dumpster rental serving Bolton & all of Hinds County. Same-day delivery, flat-rate pricing from $349, no hidden fees.',

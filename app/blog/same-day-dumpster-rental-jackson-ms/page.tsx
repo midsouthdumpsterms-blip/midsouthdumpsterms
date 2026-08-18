@@ -6,9 +6,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/same-day-dumpster-rental-jackson-ms' },
-    title: 'Same-Day Dumpster Rental in Jackson, MS',
+    title: 'Same-Day Dumpster Rental Jackson MS',
     description:
-        'Need a dumpster today in Jackson, MS? Mid South Dumpster Rentals offers same-day roll-off dumpster delivery across Central Mississippi. Call 601-316-7891 — we deliver 7 days a week.',
+        'How same-day dumpster delivery works in Jackson MS, what the noon cutoff means, and when same-day availability gets tight.',
 }
 
 export default function BlogPost() {

@@ -7,8 +7,9 @@ import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/do-i-need-a-permit-dumpster-jackson-ms' },
-    title: 'Do I Need a Permit for a Dumpster in Jackson MS?',
-    description: 'Find out if you need a right-of-way permit to place a roll-off dumpster on the street in Jackson, Byram, Clinton, or Brandon, Mississippi.',
+    title: 'Do I Need a Dumpster Permit in Jackson MS?',
+    description:
+        'When a right-of-way permit is required to place a roll-off on the street in Jackson, Byram, Clinton and Brandon, and when it is not.',
     openGraph: {
         title: 'Do I Need a Permit for a Dumpster in Jackson MS?',
         description: 'Find out if you need a right-of-way permit to place a roll-off dumpster on the street in Jackson, MS.',

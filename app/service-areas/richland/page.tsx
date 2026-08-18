@@ -9,9 +9,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/richland' },
-    title: 'Roll Off Dumpster Rental Richland MS | Rankin County',
+    title: 'Dumpster Rental Richland MS | Same-Day',
     description:
-        'Roll off dumpster rental in Richland, MS and Rankin County. 10, 15 & 20-yard dumpsters with same-day delivery to all Richland neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Richland, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Richland and the Highway 49 corridor.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Richland MS | Rankin County',
         description: 'Locally owned roll off dumpster rental serving Richland & all of Rankin County. Same-day delivery, flat-rate pricing, no hidden fees.',

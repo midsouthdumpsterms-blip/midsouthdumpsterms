@@ -9,9 +9,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/terry' },
-    title: 'Roll Off Dumpster Rental Terry MS | Hinds County',
+    title: 'Dumpster Rental Terry MS | Same-Day',
     description:
-        'Roll off dumpster rental in Terry, MS and Hinds County. 10, 15 & 20-yard dumpsters with same-day delivery to all Terry neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Terry, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Terry and rural south Hinds County.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Terry MS | Hinds County',
         description: 'Locally owned roll off dumpster rental serving Terry & all of Hinds County. Same-day delivery, flat-rate pricing, no hidden fees.',

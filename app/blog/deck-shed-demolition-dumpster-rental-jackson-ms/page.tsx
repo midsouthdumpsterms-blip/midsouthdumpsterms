@@ -6,8 +6,9 @@ import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/deck-shed-demolition-dumpster-rental-jackson-ms' },
-    title: 'Deck & Shed Demolition Dumpster Rental in Jackson, MS',
-    description: 'Tearing down a deck, shed, or backyard structure in Central Mississippi? Learn what size dumpster you need, what to expect, and how Mid South makes cleanup easy. Flat-rate pricing from $349.',
+    title: 'Deck & Shed Demolition Dumpster Guide',
+    description:
+        'Tearing down a deck or shed in Central MS? What size container you need, how to break it down, and what the debris actually weighs.',
     openGraph: {
         title: 'Deck & Shed Demolition Dumpster Rental in Jackson, MS',
         description: 'Renting a dumpster for deck or shed demolition in Central MS. Size guide, tips, and flat-rate pricing.',

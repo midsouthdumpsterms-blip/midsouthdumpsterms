@@ -6,9 +6,9 @@ import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, inj
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/sizes/20-yard-dumpster-rental' },
-    title: '20 Yard Dumpster Rental Jackson MS',
+    title: '20 Yard Dumpster Rental Jackson MS | $449',
     description:
-        '20 yard dumpster rental in Jackson MS from $449. 14ft x 7.5ft x 6.5ft container holds 8 pickup truck loads. Our largest size — ideal for major renovations, full home cleanouts & construction projects. Same-day delivery. Call 601-316-7891.',
+        '20-yard dumpster rental in Jackson MS from $449. Holds about 8 pickup loads, 3 tons included. Built for roof tear-offs and whole-home cleanouts.',
     openGraph: {
         title: '20 Yard Dumpster Rental Jackson MS',
         description: '20 yard roll-off dumpster in Central MS from $449. Our largest size for major projects. Same-day delivery, flat-rate pricing.',

@@ -4,7 +4,8 @@ import Link from 'next/link'
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/privacy-policy' },
     title: 'Privacy Policy',
-    description: 'Privacy Policy for Mid South Dumpster Rentals, LLC. Learn how we collect, use, and protect your personal information.',
+    description:
+        'How Mid South Dumpster Rentals, LLC collects, uses, stores and protects the personal information you share when booking a dumpster rental.',
 }
 
 export default function PrivacyPolicyPage() {

@@ -6,8 +6,9 @@ import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-weight-limits-jackson-ms' },
-    title: 'Dumpster Weight Limits Explained: Avoid Overage Fees in Jackson, MS',
-    description: 'Confused by dumpster weight limits? Learn how tons vs. yards work, which debris is heaviest, and how to avoid costly overage fees in Central Mississippi. Clear guide from Mid South Dumpster Rentals.',
+    title: 'Dumpster Weight Limits & Overage Fees',
+    description:
+        'Yards measure volume, tons measure weight, and overage fees come from the second one. How to stay under the limit in Central MS.',
     openGraph: {
         title: 'Dumpster Weight Limits Explained: Avoid Overage Fees in Jackson, MS',
         description: 'A practical guide to dumpster weight limits, heavy debris, and avoiding overage fees in Central Mississippi.',

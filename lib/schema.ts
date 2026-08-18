@@ -35,15 +35,7 @@ export interface LocalBusinessSchema {
     }[];
     priceRange?: string;
     areaServed?: string[] | object[];
-    aggregateRating?: {
-        '@type': string;
-        ratingValue: string;
-        reviewCount: string;
-        bestRating: string;
-        worstRating: string;
-    };
     hasOfferCatalog?: object;
-    review?: object[];
 }
 
 export function generateLocalBusinessSchema(): LocalBusinessSchema {
@@ -111,13 +103,6 @@ export function generateLocalBusinessSchema(): LocalBusinessSchema {
             { '@type': 'City', name: 'Florence', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
             { '@type': 'City', name: 'Richland', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
         ],
-        aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: '5.0',
-            reviewCount: '30',
-            bestRating: '5',
-            worstRating: '1',
-        },
         hasOfferCatalog: {
             '@type': 'OfferCatalog',
             name: 'Roll-Off Dumpster Rentals — All Sizes & Rental Periods',
@@ -217,20 +202,6 @@ export function generateLocalBusinessSchema(): LocalBusinessSchema {
                 },
             ],
         },
-        review: [
-            {
-                '@type': 'Review',
-                reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-                author: { '@type': 'Person', name: 'Jackson MS Customer' },
-                reviewBody: 'Mid South Dumpster Rentals delivered the same day I called. Price was exactly what they quoted — no surprise fees. Will definitely use them again for my next project.',
-            },
-            {
-                '@type': 'Review',
-                reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-                author: { '@type': 'Person', name: 'Brandon MS Contractor' },
-                reviewBody: 'Best dumpster rental service in Central Mississippi. They showed up on time, picked up on time, and the flat-rate pricing made budgeting easy for my construction project.',
-            },
-        ],
     };
 }
 

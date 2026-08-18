@@ -74,16 +74,17 @@ export default function Footer() {
                     </div>
 
                     <div className={styles.footerCol}>
-                        <h4>More Services</h4>
+                        <h4>Dumpster Sizes</h4>
                         <ul>
-                            <li><Link href="/debris-removal-jackson-ms">Debris Removal Jackson</Link></li>
-                            <li><Link href="/debris-removal-brandon-ms">Debris Removal Brandon</Link></li>
-                            <li><Link href="/debris-removal-madison-ms">Debris Removal Madison</Link></li>
-                            <li><Link href="/debris-removal-clinton-ms">Debris Removal Clinton</Link></li>
-                            <li><Link href="/waste-disposal-jackson-ms">Waste Disposal Jackson</Link></li>
-                            <li><Link href="/waste-disposal-brandon-ms">Waste Disposal Brandon</Link></li>
-                            <li><Link href="/waste-disposal-madison-ms">Waste Disposal Madison</Link></li>
-                            <li><Link href="/waste-disposal-clinton-ms">Waste Disposal Clinton</Link></li>
+                            <li><Link href="/sizes/10-yard-dumpster-rental">10 Yard Dumpster</Link></li>
+                            <li><Link href="/sizes/15-yard-dumpster-rental">15 Yard Dumpster</Link></li>
+                            <li><Link href="/sizes/20-yard-dumpster-rental">20 Yard Dumpster</Link></li>
+                            <li><Link href="/sizes">Compare All Sizes</Link></li>
+                            <li><Link href="/services/debris-removal">Debris Removal</Link></li>
+                            <li><Link href="/services/demolition-dumpster-rental">Demolition</Link></li>
+                            <li><Link href="/services/roofing-dumpster-rental">Roofing</Link></li>
+                            <li><Link href="/services/estate-cleanout-dumpster-rental">Estate Cleanout</Link></li>
+                            <li><Link href="/services/storm-cleanup-dumpster-rental">Storm Cleanup</Link></li>
                         </ul>
                     </div>
 

@@ -5,9 +5,9 @@ import styles from './faq.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/faq' },
-    title: 'Dumpster Rental FAQ Jackson MS | Pricing, Sizes & Policies',
+    title: 'Dumpster Rental FAQ | Jackson MS',
     description:
-        'Answers to the most common dumpster rental questions in Jackson, MS. Pricing for all sizes and rental periods, weight limits, what you can throw away, fees, and more. Call 601-316-7891.',
+        'Straight answers on dumpster pricing, sizes, weight limits, permits, prohibited items and delivery in Jackson MS. Still stuck? Call 601-316-7891.',
     openGraph: {
         title: 'Dumpster Rental FAQ',
         description: 'Complete pricing, weight limits, fees, and policies for dumpster rentals in Central Mississippi.',

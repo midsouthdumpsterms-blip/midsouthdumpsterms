@@ -6,9 +6,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-prices-jackson-ms' },
-    title: 'Dumpster Rental Prices in Jackson MS | 2026 Cost Guide',
+    title: 'Dumpster Rental Prices Jackson MS (2026)',
     description:
-        'Complete guide to dumpster rental prices in Jackson, Mississippi. Compare 10, 15, and 20-yard dumpster costs from Mid South Dumpster Rentals. Flat-rate pricing starts at $349 with no hidden fees. Updated March 2026.',
+        'Real dumpster rental prices in Jackson MS by size and rental period, plus the fees that catch people out. Updated for 2026.',
 }
 
 export default function BlogPost() {

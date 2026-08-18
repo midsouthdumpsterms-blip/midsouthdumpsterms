@@ -9,9 +9,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/canton' },
-    title: 'Roll Off Dumpster Rental Canton MS | Madison County',
+    title: 'Dumpster Rental Canton MS | Same-Day',
     description:
-        'Roll off dumpster rental in Canton, MS and Madison County. 10, 15 & 20-yard dumpsters with same-day delivery to all Canton neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Canton, MS from $349. 10, 15 and 20-yard containers, same-day delivery to downtown Canton and the historic district.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Canton MS | Madison County',
         description: 'Locally owned roll off dumpster rental serving Canton & all of Madison County. Same-day delivery, flat-rate pricing, no hidden fees.',

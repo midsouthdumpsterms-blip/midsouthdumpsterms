@@ -6,9 +6,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas' },
-    title: { absolute: 'Dumpster Rental Near Me | Jackson MS & Central Mississippi | Mid South' },
+    title: 'Dumpster Rental Near Me | Central MS Cities',
     description:
-        'Same-day roll off dumpster rentals across Hinds, Madison & Rankin Counties — Jackson, Brandon, Clinton, Madison, Pearl, Ridgeland & 14 more cities. From $349. Call 601-316-7891.',
+        'Same-day roll-off dumpster delivery across Hinds, Madison and Rankin counties, from Jackson and Brandon to Flora and Terry. Flat rates from $349.',
     openGraph: {
         title: 'Dumpster Rental Near Me | Mid South Dumpster Rentals',
         description: 'Same-day roll off dumpster rentals across Hinds, Madison & Rankin Counties in Central MS. From $349.',

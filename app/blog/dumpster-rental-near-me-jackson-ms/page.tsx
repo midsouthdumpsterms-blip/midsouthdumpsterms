@@ -6,8 +6,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-near-me-jackson-ms' },
-    title: 'Dumpster Rental Near Me in Jackson, MS',
-    description: 'Searching for dumpster rental near me in Jackson, MS? Mid South offers affordable roll-off dumpsters with same-day delivery and flat rates. Book online or call 601-316-7891.',
+    title: 'Dumpster Rental Near Me in Jackson MS',
+    description:
+        'What "near me" actually means for dumpster delivery in Jackson MS: coverage, timing, and how local routing affects your price.',
     openGraph: {
         title: 'Dumpster Rental Near Me in Jackson, MS',
         description: 'Same-day roll-off dumpster delivery in Jackson and all of Central Mississippi. Flat-rate pricing from $349. No hidden fees.',

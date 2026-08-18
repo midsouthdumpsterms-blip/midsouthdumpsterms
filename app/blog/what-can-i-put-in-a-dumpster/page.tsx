@@ -6,7 +6,8 @@ import styles from '../blog-post.module.css'
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/what-can-i-put-in-a-dumpster' },
     title: 'What Can I Put in a Dumpster?',
-    description: 'Confused about what you can and cannot throw in a roll-off dumpster? Check out our complete guide to permitted and prohibited items in Mississippi.',
+    description:
+        'A complete list of what a roll-off dumpster will and will not take in Mississippi, plus where the prohibited items actually go.',
     openGraph: {
         title: 'What Can I Put in a Dumpster?',
         description: 'Complete guide to what you can throw in a roll-off dumpster in Mississippi.',

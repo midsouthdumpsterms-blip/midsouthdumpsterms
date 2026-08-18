@@ -17,6 +17,31 @@ function fireEvent(eventName: string, params: Record<string, any> = {}) {
     }
 }
 
+// ─── Google Ads Conversions ───────────────────────────────────────────────────
+
+/**
+ * Reports a conversion to Google Ads.
+ *
+ * GA4 events alone do not reach Ads unless the key event is imported, and even
+ * then attribution is coarse. Firing the Ads conversion directly is what makes
+ * per-keyword and per-search-term conversion data appear.
+ *
+ * Set these in the environment (Vercel > Settings > Environment Variables):
+ *   NEXT_PUBLIC_ADS_CONVERSION_ID     e.g. AW-123456789
+ *   NEXT_PUBLIC_ADS_LABEL_PHONE       conversion label for the phone-call action
+ *   NEXT_PUBLIC_ADS_LABEL_BOOKING     conversion label for the booking action
+ */
+function fireAdsConversion(label: string | undefined, value: number) {
+    const id = process.env.NEXT_PUBLIC_ADS_CONVERSION_ID
+    if (!id || !label) return
+    if (typeof window === 'undefined' || !window.gtag) return
+    window.gtag('event', 'conversion', {
+        send_to: `${id}/${label}`,
+        value,
+        currency: 'USD',
+    })
+}
+
 // ─── Conversion Events ────────────────────────────────────────────────────────
 
 export function trackBookingClick(buttonLabel: string, location: string) {
@@ -27,6 +52,8 @@ export function trackBookingClick(buttonLabel: string, location: string) {
         value: 1,
     })
     track('Booking Initiated', { label: buttonLabel, location })
+    // Average booking value — used so Ads can bid toward revenue, not raw clicks.
+    fireAdsConversion(process.env.NEXT_PUBLIC_ADS_LABEL_BOOKING, 400)
 }
 
 export function trackPhoneClick(location: string) {
@@ -37,6 +64,7 @@ export function trackPhoneClick(location: string) {
         value: 1,
     })
     track('Call Initiated', { location })
+    fireAdsConversion(process.env.NEXT_PUBLIC_ADS_LABEL_PHONE, 400)
 }
 
 // ─── FAQ Engagement ───────────────────────────────────────────────────────────

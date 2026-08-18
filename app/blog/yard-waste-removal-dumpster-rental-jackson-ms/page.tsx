@@ -6,9 +6,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/yard-waste-removal-dumpster-rental-jackson-ms' },
-    title: 'Yard Waste Removal & Dumpster Rental Jackson MS | Brush, Limbs, Debris',
+    title: 'Yard Waste Removal Dumpsters Jackson MS',
     description:
-        'Need yard waste removal in Jackson, MS? Mid South Dumpster Rentals offers affordable roll-off dumpsters for brush, tree limbs, landscaping debris, and large yard cleanups. Call 601-316-7891.',
+        'Brush, limbs, sod and landscaping debris in Jackson MS. What a yard-waste load weighs and which container size handles it.',
     openGraph: {
         title: 'Yard Waste Removal & Dumpster Rental Jackson MS',
         description: 'Roll-off dumpsters for yard waste, brush piles, tree debris, and landscaping projects across Central Mississippi. Same-day delivery available.',

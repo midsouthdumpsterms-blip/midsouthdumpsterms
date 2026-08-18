@@ -5,8 +5,9 @@ import styles from './gallery.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/gallery' },
-    title: 'Project Gallery | Dumpster Rentals in Jackson, MS & Surrounding Areas',
-    description: 'See our dumpsters in action! Photos of residential and commercial dumpster rentals in Jackson, Madison, Brandon, Pearl, and more. Clean, reliable, and driveway-safe.',
+    title: 'Project Gallery | Dumpsters in Central MS',
+    description:
+        'Real deliveries across Jackson, Madison, Brandon and Pearl. See how our roll-off containers sit on a driveway before you book one for your project.',
 }
 
 const galleryImages = [

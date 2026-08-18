@@ -21,8 +21,10 @@ const inter = Inter({
 export const metadata: Metadata = {
     metadataBase: new URL('https://midsouthdumpsterms.com'),
     title: {
-        default: 'Dumpster Rental Jackson MS | From $349 | Same-Day Delivery',
-        template: '%s | Mid South Dumpster Rentals',
+        default: 'Dumpster Rental Jackson MS | From $349 Same-Day',
+        // Short suffix: the long form pushed nearly every page title past
+        // Google's ~60-character display limit, truncating the useful part.
+        template: '%s | Mid South',
     },
     description:
         "Jackson's local dumpster rental company. 10, 15 & 20-yard roll-offs from $349. Same-day delivery available 7 days a week. Serving Central MS. Call 601-316-7891.",
@@ -102,7 +104,10 @@ export default function RootLayout({
             </head>
             <body className={inter.variable}>
                 {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
-                    <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+                    <GoogleAnalytics
+                        measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+                        adsConversionId={process.env.NEXT_PUBLIC_ADS_CONVERSION_ID}
+                    />
                 )}
                 {/* SurvCart — loads globally so Book Now popup works on every page */}
                 {/* eslint-disable-next-line @next/next/no-page-custom-font */}

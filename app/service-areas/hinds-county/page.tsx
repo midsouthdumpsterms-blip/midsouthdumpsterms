@@ -8,9 +8,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/hinds-county' },
-    title: 'Roll Off Dumpster Rental Hinds County MS',
+    title: 'Dumpster Rental Hinds County MS',
     description:
-        'Roll off dumpster rental serving all of Hinds County, MS. 10, 15 & 20-yard dumpsters with same-day delivery to Jackson, Clinton, Byram, Terry, Raymond & more. Flat-rate pricing, no hidden fees. Call 601-316-7891.',
+        'Roll-off dumpster rental throughout Hinds County, Mississippi. 10, 15 and 20-yard containers, same-day delivery, flat rates from $349.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Hinds County MS',
         description: 'Locally owned roll off dumpster rental serving all of Hinds County, MS. Same-day delivery, flat-rate pricing starting at $349.',

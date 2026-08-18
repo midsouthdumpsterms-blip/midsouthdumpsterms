@@ -7,8 +7,9 @@ import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/spring-cleaning-checklist-central-ms' },
-    title: 'Spring Cleaning Checklist for Central MS Homeowners',
-    description: 'Get your home ready for spring with our comprehensive cleaning checklist for Jackson, Madison, and Brandon homeowners. Plus, find out how renting a dumpster makes cleanouts a breeze.',
+    title: 'Spring Cleaning Checklist | Central MS',
+    description:
+        'A room-by-room spring cleaning checklist for Jackson, Madison and Brandon homeowners, plus when a dumpster is worth renting.',
     openGraph: {
         title: 'Spring Cleaning Checklist for Central MS Homeowners',
         description: 'Get your Central Mississippi home ready for the season with our ultimate spring cleaning checklist.',

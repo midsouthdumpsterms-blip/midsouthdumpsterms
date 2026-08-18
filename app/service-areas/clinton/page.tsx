@@ -9,9 +9,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/clinton' },
-    title: 'Roll Off Dumpster Rental Clinton MS | Hinds County',
+    title: 'Dumpster Rental Clinton MS | Same-Day',
     description:
-        'Roll off dumpster rental in Clinton, MS and Hinds County. 10, 15 & 20-yard dumpsters with same-day delivery. Flat-rate pricing starting at $349 — delivery, pickup & disposal included. Call 601-316-7891.',
+        'Roll-off dumpster rental in Clinton, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Clinton and the Mississippi College area.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Clinton MS | Hinds County',
         description: 'Local roll off dumpster rental in Clinton, MS. Same-day delivery, flat-rate pricing, no hidden fees. Serving all of Hinds County.',

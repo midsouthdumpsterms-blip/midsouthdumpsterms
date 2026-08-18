@@ -6,9 +6,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/estate-cleanout-dumpster-rental-central-ms' },
-    title: 'Estate Cleanout Dumpster Rental in Central Mississippi',
+    title: 'Estate Cleanout Dumpsters in Central MS',
     description:
-        'Handling an estate cleanout in Jackson, Brandon, or Central MS? Mid South Dumpster Rentals makes the process easier with flexible roll-off dumpster rentals. Locally owned, fast delivery. Call 601-316-7891.',
+        'How to plan an estate cleanout in Central Mississippi: sizing, sorting, timing and keeping the process manageable for the family.',
 }
 
 export default function BlogPost() {

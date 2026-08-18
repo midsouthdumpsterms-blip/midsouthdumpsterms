@@ -2,8 +2,9 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-terms' },
-    title: 'Rental Agreement',
-    description: 'Read the full dumpster rental agreement for Mid South Dumpster Rentals, LLC. Covers permitted materials, weight limits, fees, liability, and payment terms.',
+    title: 'Dumpster Rental Agreement | Service Terms',
+    description:
+        'The full rental agreement: permitted and prohibited materials, weight limits, overage and extension fees, liability, and payment terms.',
     robots: { index: true, follow: true },
 }
 

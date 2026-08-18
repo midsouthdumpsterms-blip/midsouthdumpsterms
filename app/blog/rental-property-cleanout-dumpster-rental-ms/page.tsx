@@ -6,9 +6,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/rental-property-cleanout-dumpster-rental-ms' },
-    title: 'Rental Property & Foreclosure Cleanout Dumpsters in Mississippi',
+    title: 'Rental Property Cleanout Dumpsters MS',
     description:
-        'Property managers and landlords in Central Mississippi — get fast, reliable roll-off dumpster service for rental property turnover, foreclosure cleanouts, and eviction cleanup. Call 601-316-7891.',
+        'Turnover, eviction and foreclosure cleanouts for Mississippi landlords and property managers. Fast placement between tenants.',
 }
 
 export default function BlogPost() {

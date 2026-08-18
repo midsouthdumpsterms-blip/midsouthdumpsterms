@@ -9,9 +9,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/brandon' },
-    title: 'Roll Off Dumpster Rental Brandon MS | Rankin County',
+    title: 'Dumpster Rental Brandon MS | Same-Day',
     description:
-        'Roll off dumpster rental in Brandon, MS and Rankin County. 10, 15 & 20-yard dumpsters with same-day delivery to Crossgates, Castlewoods & all Brandon neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Brandon, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Crossgates, Castlewoods and the Reservoir.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Brandon MS | Rankin County',
         description: 'Locally owned roll off dumpster rental serving Brandon & all of Rankin County. Same-day delivery, flat-rate pricing, no hidden fees.',

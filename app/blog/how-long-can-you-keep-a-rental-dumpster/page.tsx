@@ -6,9 +6,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/how-long-can-you-keep-a-rental-dumpster' },
-    title: 'How Long Can You Keep a Rental Dumpster?',
+    title: 'How Long Can You Keep a Dumpster?',
     description:
-        'Wondering how long you can keep a rental dumpster in Central Mississippi? Mid South Dumpster Rentals explains standard rental periods, extensions, and what you need to know about overage fees. Call 601-316-7891.',
+        'Standard dumpster rental periods in Central MS, how extensions are priced, and when paying for another day beats rushing the job.',
 }
 
 export default function BlogPost() {

@@ -6,9 +6,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/contractor-dumpster-rental-jackson-ms' },
-    title: 'Contractor Dumpster Rental Jackson MS | Roll-Off for Job Sites',
+    title: 'Contractor Dumpster Rental Jackson MS',
     description:
-        'Reliable roll-off dumpster rental for contractors in Jackson, MS. Mid South Dumpster Rentals offers same-day delivery, flexible scheduling, and flat-rate pricing for construction, roofing, and remodeling projects. Call 601-316-7891.',
+        'Roll-off service built around contractor schedules in Jackson MS: fast swaps, flexible pickup and flat pricing you can bid against.',
     openGraph: {
         title: 'Contractor Dumpster Rental Jackson MS',
         description: 'Same-day roll-off delivery for contractors across Central Mississippi. Flat-rate pricing, no hidden fees, 7 days a week.',

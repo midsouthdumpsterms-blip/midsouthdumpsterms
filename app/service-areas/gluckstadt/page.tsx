@@ -9,9 +9,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/gluckstadt' },
-    title: 'Roll Off Dumpster Rental Gluckstadt MS | Madison County',
+    title: 'Dumpster Rental Gluckstadt MS | Same-Day',
     description:
-        'Roll off dumpster rental in Gluckstadt, MS and Madison County. 10, 15 & 20-yard dumpsters with same-day delivery to all Gluckstadt neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Gluckstadt, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Gluckstadt and the Highway 51 corridor.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Gluckstadt MS | Madison County',
         description: 'Locally owned roll off dumpster rental serving Gluckstadt & all of Madison County. Same-day delivery, flat-rate pricing, no hidden fees.',

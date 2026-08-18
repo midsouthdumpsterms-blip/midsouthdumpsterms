@@ -7,8 +7,9 @@ import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-vs-bagster-jackson-ms' },
-    title: 'Dumpster Rental vs. Bagster: Which is Cheaper in Jackson?',
-    description: 'Thinking about buying a Waste Management Bagster from Lowe\'s or Home Depot? We break down the true costs to show you why renting a small roll-off dumpster is often cheaper.',
+    title: 'Dumpster Rental vs Bagster in Jackson MS',
+    description:
+        'A Bagster looks cheaper until you add the pickup fee and the 3,300 lb limit. Here is the honest cost comparison for Jackson MS.',
     openGraph: {
         title: 'Dumpster Rental vs. Bagster: Which is Cheaper in Jackson?',
         description: 'Read our true cost breakdown of a Bagster vs a local roll-off dumpster rental in Central MS.',

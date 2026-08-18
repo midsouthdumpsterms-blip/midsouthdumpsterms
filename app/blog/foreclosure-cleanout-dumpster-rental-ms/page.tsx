@@ -6,9 +6,9 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/foreclosure-cleanout-dumpster-rental-ms' },
-    title: 'Foreclosure Cleanout Dumpster Rental Mississippi | REO & Bank-Owned',
+    title: 'Foreclosure Cleanout Dumpsters | REO MS',
     description:
-        'Need a dumpster for a foreclosure cleanout in Central Mississippi? Mid South Dumpster Rentals offers fast, affordable roll-off dumpsters for bank-owned, REO, and estate properties. Call 601-316-7891.',
+        'Roll-off containers for REO, bank-owned and eviction cleanouts across Mississippi. Fast turnaround for property preservation crews.',
     openGraph: {
         title: 'Foreclosure Cleanout Dumpster Rental Mississippi',
         description: 'Roll-off dumpsters for foreclosure cleanouts, REO properties, and bank-owned homes across Central Mississippi. Flat-rate pricing, same-day delivery.',
