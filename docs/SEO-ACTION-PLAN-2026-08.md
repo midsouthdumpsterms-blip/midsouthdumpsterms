@@ -1,6 +1,6 @@
 # SEO overhaul — August 2026
 
-Branch: `seo-overhaul-2026-08` (two commits, not yet pushed)
+Branch: `seo-overhaul-2026-08` (pushed; 7 commits ahead of main, not yet merged)
 
 Baseline from the 2026-08-17 GSC coverage export and the GA4 / Google Ads
 exports for Jan–Aug 2026.
