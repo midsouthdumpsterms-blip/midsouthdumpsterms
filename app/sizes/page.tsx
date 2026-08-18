@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import BookingButton from '@/components/BookingButton'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
-import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import { generateOfferCatalogSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/sizes' },
@@ -73,6 +73,7 @@ export default function SizesPage() {
 
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(generateOfferCatalogSchema()) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
 
             <section style={{ background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)', color: 'white', padding: '4rem 0', textAlign: 'center' }}>

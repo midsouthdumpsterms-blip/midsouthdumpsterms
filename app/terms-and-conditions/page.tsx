@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -17,9 +18,16 @@ export const metadata: Metadata = {
 }
 
 export default function TermsPage() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://midsouthdumpsterms.com' },
+        { name: 'Terms and Conditions', url: 'https://midsouthdumpsterms.com/terms-and-conditions' },
+    ])
+
     const lastUpdated = 'April 4, 2026'
 
     return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
         <div style={{ background: 'white', minHeight: '80vh' }}>
             <div style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', padding: '3rem 1rem', textAlign: 'center', color: 'white' }}>
                 <div className="container">
@@ -118,5 +126,6 @@ export default function TermsPage() {
                 </div>
             </div>
         </div>
+        </>
     )
 }

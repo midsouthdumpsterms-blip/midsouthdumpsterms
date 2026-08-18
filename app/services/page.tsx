@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import BookingButton from '@/components/BookingButton'
-import { generateServiceSchema, injectSchema } from '@/lib/schema'
+import { generateOfferCatalogSchema, generateServiceSchema, injectSchema, generateBreadcrumbSchema } from '@/lib/schema'
 import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import styles from './services.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
@@ -53,6 +53,11 @@ const prohibitedItems = [
 ]
 
 export default function Services() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://midsouthdumpsterms.com' },
+        { name: 'Services', url: 'https://midsouthdumpsterms.com/services' },
+    ])
+
     const serviceSchema = generateServiceSchema(
         'Dumpster Rental Service',
         'Roll-off dumpster rentals for residential, commercial, and construction projects in Central Mississippi. Available in 10, 15, and 20-yard sizes.',
@@ -72,6 +77,8 @@ export default function Services() {
 
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(generateOfferCatalogSchema()) }} />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }}

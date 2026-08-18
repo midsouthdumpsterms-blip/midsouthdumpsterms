@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import BookingButton from '@/components/BookingButton'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
-import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
+import { generateOfferCatalogSchema, generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/sizes/10-yard-dumpster-rental' },
@@ -43,6 +43,7 @@ export default function TenYardDumpsterPage() {
 
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(generateOfferCatalogSchema()) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />

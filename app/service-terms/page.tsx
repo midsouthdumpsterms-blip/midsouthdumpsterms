@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-terms' },
@@ -30,7 +31,14 @@ const warningBoxStyle = {
 }
 
 export default function RentalAgreementPage() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://midsouthdumpsterms.com' },
+        { name: 'Rental Agreement', url: 'https://midsouthdumpsterms.com/service-terms' },
+    ])
+
     return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
         <div style={{ background: 'white', minHeight: '80vh' }}>
             {/* Hero */}
             <div style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', padding: '3rem 1rem', textAlign: 'center', color: 'white' }}>
@@ -184,5 +192,6 @@ export default function RentalAgreementPage() {
                 </div>
             </div>
         </div>
+        </>
     )
 }

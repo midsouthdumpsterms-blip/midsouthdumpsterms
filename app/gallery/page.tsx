@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './gallery.module.css'
@@ -117,6 +118,11 @@ const galleryImages = [
 ]
 
 export default function GalleryPage() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://midsouthdumpsterms.com' },
+        { name: 'Gallery', url: 'https://midsouthdumpsterms.com/gallery' },
+    ])
+
     // Generate Schema
     const schema = {
         "@context": "https://schema.org",
@@ -134,6 +140,8 @@ export default function GalleryPage() {
     }
 
     return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
         <div className={styles.container}>
             <script
                 type="application/ld+json"
@@ -180,5 +188,6 @@ export default function GalleryPage() {
                 </Link>
             </div>
         </div>
+        </>
     )
 }

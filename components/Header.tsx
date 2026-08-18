@@ -42,6 +42,8 @@ const serviceAreaLinks = [
     { href: '/service-areas/raymond', label: 'Raymond' },
     { href: '/service-areas/flora', label: 'Flora' },
     { href: '/service-areas/gluckstadt', label: 'Gluckstadt' },
+    { href: '/service-areas/pelahatchie', label: 'Pelahatchie' },
+    { href: '/service-areas/bolton', label: 'Bolton' },
 ]
 
 export default function Header() {

@@ -69,6 +69,9 @@ export default function Footer() {
                             <li><Link href="/service-areas/ridgeland">Ridgeland</Link></li>
                             <li><Link href="/service-areas/flowood">Flowood</Link></li>
                             <li><Link href="/service-areas/raymond">Raymond</Link></li>
+                            <li><Link href="/service-areas/hinds-county">Hinds County</Link></li>
+                            <li><Link href="/service-areas/madison-county">Madison County</Link></li>
+                            <li><Link href="/service-areas/rankin-county">Rankin County</Link></li>
                             <li><Link href="/service-areas">View All Cities →</Link></li>
                         </ul>
                     </div>
@@ -112,6 +115,28 @@ export default function Footer() {
                             <PaymentMethods />
                         </div>
                     </div>
+                </div>
+
+                <div className={styles.guidesStrip}>
+                    <h4>Popular Guides</h4>
+                    <ul>
+                        {[
+                            { href: '/blog/dumpster-rental-prices-jackson-ms', label: 'Dumpster Prices in Jackson' },
+                            { href: '/blog/how-to-choose-dumpster-size', label: 'Choosing a Dumpster Size' },
+                            { href: '/blog/dumpster-weight-limits-jackson-ms', label: 'Weight Limits & Overage Fees' },
+                            { href: '/blog/what-can-i-put-in-a-dumpster', label: 'What Can Go In a Dumpster' },
+                            { href: '/blog/do-i-need-a-permit-dumpster-jackson-ms', label: 'Do I Need a Permit?' },
+                            { href: '/blog/how-long-can-you-keep-a-rental-dumpster', label: 'How Long Can I Keep It?' },
+                            { href: '/blog/home-renovation-dumpster-guide-central-ms', label: 'Home Renovation Guide' },
+                            { href: '/blog/bathroom-remodel-dumpster-rental-jackson-ms', label: 'Bathroom Remodel Guide' },
+                            { href: '/blog/deck-shed-demolition-dumpster-rental-jackson-ms', label: 'Deck & Shed Demolition' },
+                            { href: '/blog/spring-cleaning-checklist-central-ms', label: 'Spring Cleaning Checklist' },
+                            { href: '/blog/dumpster-rental-vs-junk-removal-jackson-ms', label: 'Dumpster vs. Junk Removal' },
+                            { href: '/gallery', label: 'Project Gallery' },
+                        ].map((item) => (
+                            <li key={item.href}><Link href={item.href}>{item.label}</Link></li>
+                        ))}
+                    </ul>
                 </div>
 
                 <div className={styles.footerBottom}>

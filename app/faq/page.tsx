@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import FaqAccordion from '@/components/FaqAccordion'
 import styles from './faq.module.css'
@@ -171,6 +172,11 @@ const faqs = [
 ]
 
 export default function FAQPage() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://midsouthdumpsterms.com' },
+        { name: 'FAQ', url: 'https://midsouthdumpsterms.com/faq' },
+    ])
+
     // FAQ schema — server-rendered so it's visible to all AI and search crawlers
     const faqSchema = {
         "@context": "https://schema.org",
@@ -186,6 +192,8 @@ export default function FAQPage() {
     }
 
     return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
         <div className={styles.container}>
             <script
                 type="application/ld+json"
@@ -212,5 +220,6 @@ export default function FAQPage() {
                 </Link>
             </div>
         </div>
+        </>
     )
 }
