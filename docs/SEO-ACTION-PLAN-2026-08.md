@@ -188,3 +188,100 @@ categories, service list and service area match the site exactly.
 
 Everything is on `seo-overhaul-2026-08`. `git checkout main` restores the
 previous state; individual changes can be reverted per commit.
+
+---
+
+## Second pass — 2026-08-17, later the same day
+
+A deeper audit of the post-fix build turned up more. All of the following is
+now done and on the branch.
+
+### Open Graph was broken on two thirds of the site
+52 of 78 pages emitted **no `og:image` at all**. Next.js replaces the parent
+`openGraph` object rather than merging it, so every page declaring its own
+`openGraph: { title, description, url }` silently dropped the inherited image.
+That was all 17 city pages, the 3 county hubs, most service pages, 14 blog
+posts and `/faq` — every share of them rendered as a bare grey link. All 78
+pages now carry an image and their own `og:title`. `lib/seo.ts` documents the
+merge behaviour so it does not regress.
+
+### Orphan pages
+- `/gallery` had **zero** inbound links from anywhere on the site.
+- Four blog posts had zero editorial inbound links, including the three
+  longest articles.
+- The three county hub pages were not in the header or footer.
+- Bolton and Pelahatchie were missing from the header dropdown while the other
+  15 cities were listed.
+
+Fixed with a Popular Guides strip in the footer, county hubs in the footer, and
+the two cities added to the nav. No page on the site is orphaned now.
+
+### Duplicate content, quantified
+Measured with 5-word shingles, header and footer stripped. Eight small-town
+city pages overlapped 30–41% while the median city pair was 14% — almost
+certainly the nine URLs GSC flags as "Duplicate without user-selected
+canonical". Each got ~170 words of genuinely local content. **Worst pair is now
+28%, median 12%.**
+
+### Blog hero images: three bugs in one
+Nine posts used a raw `<img>`, so the full 130–930 KB source JPEG was served
+instead of a `next/image` render; none had width/height, so each shifted the
+layout; and six referenced `styles.heroImage`, **which was never defined in the
+CSS module** — className resolved to `undefined` and the portrait 3:4 photos
+rendered completely unstyled and enormous. All nine converted, class defined.
+
+### Structured data
+- `LocalBusiness` now has a stable `@id`. Without one Google saw 78 unlinked
+  business nodes rather than one entity referenced 78 times.
+- The nine-Offer price list was inlined into that node, so it shipped in the
+  HTML of **all 78 pages including the privacy policy**. It is now its own node
+  on the five pages where pricing is the subject.
+- `Article.author` changed from `Organization` to a named `Person` (Andrew
+  Tyre, Founder, linked to `/about`).
+- Added the `BreadcrumbList` missing from `/services`, `/faq`, `/gallery` and
+  the three legal pages.
+
+### Other
+- Nine blog posts skipped H1 → H3 at the "Key Takeaways" box. Zero heading
+  skips remain.
+- Two posts were dated 2024, before the company was founded in 2025. Year
+  corrected. `dateModified` was deliberately **not** mass-stamped — claiming a
+  review date for posts nobody revised is a false freshness signal.
+- `/blog` was `force-dynamic`, hitting Postgres on every request including
+  every crawler hit. Now 10-minute ISR.
+- `PERFORMANCE.md` documented optimizations that were never in the code.
+  Rewritten to match reality.
+
+### Verified on the final build
+- 78/78 pages have `og:image` (was 26/78)
+- 77/77 sitemap URLs return 200
+- Full crawl of 79 pages: **zero** broken or redirecting internal links
+- Zero heading-level skips, zero images missing alt text or dimensions
+- Every title under 60 chars, every description under 158
+
+---
+
+## Still on you
+
+### Blog automation has been stalled since April
+Newest post is **2026-04-14**. The Vercel cron at `0 15 * * *` writes posts as
+`DRAFT`; they only go live when someone approves them in `/situationroom`.
+Four months of silence most likely means drafts piling up unapproved rather
+than a broken cron — but it could also be `CRON_SECRET` or the Claude API
+failing. Check the draft queue first.
+
+### The OG image still needs a 1200×630 export
+Every page now points at `public/images/og-image.jpg`, which is still 640×640.
+Square art gets cropped into the small preview treatment instead of the large
+link card. The brand artwork is saved at `public/images/brand-card-square.png`
+— it needs **re-laying-out** to 1.91:1, not just resizing, or the phone number
+and URL get cropped off. Replacing that one file upgrades every page at once.
+
+### Five blog PNGs are 0.9–1.1 MB
+Listed in `PERFORMANCE.md`. Delivered bytes are fine (`next/image` re-encodes
+them); this is build time and repo weight. Needs an image tool.
+
+### Three things I could not verify from here
+On the live domain, confirm `www.` 301s to non-www (not both resolving), that
+trailing-slash URLs canonicalize consistently, and that HTTP 301s to HTTPS. Any
+of these being wrong duplicates the entire URL space.
