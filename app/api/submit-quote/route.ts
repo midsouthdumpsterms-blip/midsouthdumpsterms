@@ -3,7 +3,12 @@ import { Resend } from 'resend'
 import twilio from 'twilio'
 import { saveLead, createLeadsTable } from '@/lib/db'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Resend throws from its constructor when the key is missing, which turns a
+// missing or rotated env var into a hard build failure for the whole site
+// rather than a failure of this one route. Construct it lazily instead.
+function getResend() {
+    return new Resend(process.env.RESEND_API_KEY)
+}
 
 const TIMELINE_LABELS: Record<string, string> = {
     'today': '🚀 Today (same-day)',
@@ -169,7 +174,7 @@ export async function POST(req: NextRequest) {
 
         // ── 1. Email notification to owner ──────────────────────────────────
         if (process.env.RESEND_API_KEY && notifyEmail) {
-            await resend.emails.send({
+            await getResend().emails.send({
                 from: 'Mid South Quotes <quotes@midsouthdumpsterms.com>',
                 to: [notifyEmail],
                 subject: `🚨 New Lead: ${name} · ${recommendedSize}-Yd · ${city}`,
@@ -179,7 +184,7 @@ export async function POST(req: NextRequest) {
 
         // ── 2. Email quote to customer (if they provided email) ──────────────
         if (process.env.RESEND_API_KEY && email?.includes('@')) {
-            await resend.emails.send({
+            await getResend().emails.send({
                 from: 'Mid South Dumpster Rentals <quotes@midsouthdumpsterms.com>',
                 to: [email],
                 subject: `Your ${recommendedSize}-Yard Dumpster Quote — ${quotedPrice ?? 'See details'}`,

@@ -6,9 +6,17 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/roofing-dumpster-rental-jackson-ms' },
-    title: 'Roofing Dumpster Rental Jackson MS | Same-Day Roll Off',
+    title: 'Roofing Dumpster Rental Jackson MS',
     description:
-        'Getting a new roof in Jackson, MS? Rent a roll off dumpster for roofing debris — shingles, decking, felt & more. Same-day delivery, flat-rate pricing from $399. Locally owned. Call 601-316-7891.',
+        'Renting a dumpster for a re-roof in Jackson MS: what size a tear-off needs, how shingle weight adds up, and what it costs.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Roofing Dumpster Rental Jackson MS',
+        description: 'Renting a dumpster for a re-roof in Jackson MS: what size a tear-off needs, how shingle weight adds up, and what it costs.',
+        url: 'https://midsouthdumpsterms.com/blog/roofing-dumpster-rental-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

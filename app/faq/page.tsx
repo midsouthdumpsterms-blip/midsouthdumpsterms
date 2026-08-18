@@ -1,17 +1,19 @@
 import { Metadata } from 'next'
+import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 import FaqAccordion from '@/components/FaqAccordion'
 import styles from './faq.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/faq' },
-    title: 'Dumpster Rental FAQ Jackson MS | Pricing, Sizes & Policies',
+    title: 'Dumpster Rental FAQ | Jackson MS',
     description:
-        'Answers to the most common dumpster rental questions in Jackson, MS. Pricing for all sizes and rental periods, weight limits, what you can throw away, fees, and more. Call 601-316-7891.',
+        'Straight answers on dumpster pricing, sizes, weight limits, permits, prohibited items and delivery in Jackson MS. Still stuck? Call 601-316-7891.',
     openGraph: {
         title: 'Dumpster Rental FAQ',
         description: 'Complete pricing, weight limits, fees, and policies for dumpster rentals in Central Mississippi.',
         url: 'https://midsouthdumpsterms.com/faq',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -170,6 +172,11 @@ const faqs = [
 ]
 
 export default function FAQPage() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://midsouthdumpsterms.com' },
+        { name: 'FAQ', url: 'https://midsouthdumpsterms.com/faq' },
+    ])
+
     // FAQ schema — server-rendered so it's visible to all AI and search crawlers
     const faqSchema = {
         "@context": "https://schema.org",
@@ -185,6 +192,8 @@ export default function FAQPage() {
     }
 
     return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
         <div className={styles.container}>
             <script
                 type="application/ld+json"
@@ -211,5 +220,6 @@ export default function FAQPage() {
                 </Link>
             </div>
         </div>
+        </>
     )
 }

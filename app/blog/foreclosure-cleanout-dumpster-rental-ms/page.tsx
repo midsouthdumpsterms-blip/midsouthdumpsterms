@@ -6,13 +6,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/foreclosure-cleanout-dumpster-rental-ms' },
-    title: 'Foreclosure Cleanout Dumpster Rental Mississippi | REO & Bank-Owned',
+    title: 'Foreclosure Cleanout Dumpsters | REO MS',
     description:
-        'Need a dumpster for a foreclosure cleanout in Central Mississippi? Mid South Dumpster Rentals offers fast, affordable roll-off dumpsters for bank-owned, REO, and estate properties. Call 601-316-7891.',
+        'Roll-off containers for REO, bank-owned and eviction cleanouts across Mississippi. Fast turnaround for property preservation crews.',
     openGraph: {
         title: 'Foreclosure Cleanout Dumpster Rental Mississippi',
         description: 'Roll-off dumpsters for foreclosure cleanouts, REO properties, and bank-owned homes across Central Mississippi. Flat-rate pricing, same-day delivery.',
         url: 'https://midsouthdumpsterms.com/blog/foreclosure-cleanout-dumpster-rental-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -44,7 +45,7 @@ export default function BlogPost() {
         'Foreclosure Cleanout Dumpster Rental Mississippi | REO & Bank-Owned',
         'Need a dumpster for a foreclosure cleanout in Central Mississippi? Mid South offers fast, affordable roll-off dumpsters for bank-owned, REO, and estate properties.',
         '2026-03-25',
-        'https://midsouthdumpsterms.com/opengraph-image.jpg',
+        'https://midsouthdumpsterms.com/images/og-image.jpg',
         '2026-03-25'
     )
     const faqSchema = generateFAQSchema(faqs)
@@ -105,17 +106,17 @@ export default function BlogPost() {
                             <tbody>
                                 <tr>
                                     <td>Light cleanout — some furniture and personal items</td>
-                                    <td><Link href="/services/10-yard-dumpster">10 Yard</Link></td>
+                                    <td><Link href="/sizes/10-yard-dumpster-rental">10 Yard</Link></td>
                                     <td>$349</td>
                                 </tr>
                                 <tr>
                                     <td>Full-house cleanout — furniture, appliances, carpet, debris</td>
-                                    <td><Link href="/services/15-yard-dumpster">15 Yard</Link></td>
+                                    <td><Link href="/sizes/15-yard-dumpster-rental">15 Yard</Link></td>
                                     <td>$399</td>
                                 </tr>
                                 <tr>
                                     <td>Hoarder-level or demo-required — everything must go plus renovation debris</td>
-                                    <td><Link href="/services/20-yard-dumpster">20 Yard</Link></td>
+                                    <td><Link href="/sizes/20-yard-dumpster-rental">20 Yard</Link></td>
                                     <td>$449</td>
                                 </tr>
                             </tbody>

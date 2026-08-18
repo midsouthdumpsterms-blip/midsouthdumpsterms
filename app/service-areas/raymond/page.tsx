@@ -9,13 +9,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/raymond' },
-    title: 'Roll Off Dumpster Rental Raymond MS | Hinds County',
+    title: 'Dumpster Rental Raymond MS | Same-Day',
     description:
-        'Roll off dumpster rental in Raymond, MS and Hinds County. 10, 15 & 20-yard dumpsters with same-day delivery to Raymond and surrounding rural communities. Flat-rate pricing from $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Raymond, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Raymond and western Hinds County.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Raymond MS | Hinds County',
         description: 'Locally owned roll off dumpster rental serving Raymond & all of Hinds County. Same-day delivery, flat-rate pricing, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/raymond',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -162,6 +163,22 @@ export default function RaymondPage() {
                     <p style={{ marginTop: '1rem' }}>
                         Raymond is located in <Link href="/service-areas/hinds-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Hinds County</Link> — see all Hinds County cities we serve.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Dumpster Delivery in Raymond — Local Notes</h2>
+                    <p>Raymond is the Hinds County seat and home to the main Hinds Community College campus, which gives the town a mix you do not see elsewhere in the county: historic properties around the courthouse square, a steady rhythm of rental turnovers driven by the academic calendar, and rural acreage spreading out west of town.</p>
+                    <p>The rental turnover work has its own timing. Landlords clearing units between tenants generally need a container fast and only for a day or two, and they need it gone before the next move-in. Tell us the deadline when you book and we will schedule the pickup around it rather than leaving it to a standard rental window.</p>
+                    <p>Older properties near the square can throw up the same problem as any historic area — plaster, lath and old tile weigh far more than modern renovation debris, so size by weight rather than by how full the container looks. Delivery from our yard runs out Highway 18 or I-20 and is comfortably inside same-day range.</p>
+                    <p><strong>What we most often haul out of Raymond:</strong></p>
+                    <ul className={styles.projectsList}>
+                        <li>Rental and student-housing turnovers</li>
+                        <li>Historic property renovation debris</li>
+                        <li>Rural acreage and estate cleanouts</li>
+                        <li>Yard waste, brush and storm debris</li>
+                    </ul>
                 </div>
             </section>
 

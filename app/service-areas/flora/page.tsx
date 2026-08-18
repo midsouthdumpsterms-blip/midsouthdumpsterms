@@ -9,13 +9,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/flora' },
-    title: 'Roll Off Dumpster Rental Flora MS | Madison County',
+    title: 'Dumpster Rental Flora MS | Same-Day',
     description:
-        'Roll off dumpster rental in Flora, MS and Madison County. 10, 15 & 20-yard dumpsters with same-day delivery to all Flora neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Flora, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Flora and the surrounding Madison County acreage.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Flora MS | Madison County',
         description: 'Locally owned roll off dumpster rental serving Flora & all of Madison County. Same-day delivery, flat-rate pricing, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/flora',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -147,11 +148,27 @@ export default function FloraPage() {
                         Flora's rural character and growing mix of residential and agricultural properties makes it a unique corner of Madison County. We're proud to serve this community with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Madison County customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
-                        <strong>Planning a rental?</strong> Read our guide on <Link href="/blog/dumpster-rental-madison-ms">dumpster rentals in Madison County</Link> for more local tips and advice on sizing.
+                        <strong>Planning a rental?</strong> Read our guide on <Link href="/service-areas/madison">dumpster rentals in Madison County</Link> for more local tips and advice on sizing.
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Flora is part of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Dumpster Delivery in Flora — Local Notes</h2>
+                    <p>Flora sits in the rural north-west corner of Madison County, and most of what we haul out of it reflects that. Land clearing brush, barn and outbuilding tear-downs, fence lines, and acreage cleanouts make up far more of the work here than kitchen remodels do. Those loads are bulky rather than heavy, which usually means a 20-yard is the right call even when the debris does not look like much stacked in a pile.</p>
+                    <p>Placement is the thing worth planning here. A lot of Flora properties are set well back from the road down a long gravel or dirt drive, and a loaded roll-off truck is heavy enough to rut soft ground badly after rain. If your drive is gravel, narrow, or crosses a culvert, tell us when you book and we will either set the container closer to the road or schedule around wet weather.</p>
+                    <p>The run up Highway 49 from our yard in west Jackson takes a little longer than a delivery inside the metro, so same-day in Flora is realistic but tighter. Calling in the morning rather than at noon makes it far more likely we can get to you the same day.</p>
+                    <p><strong>What we most often haul out of Flora:</strong></p>
+                    <ul className={styles.projectsList}>
+                        <li>Land clearing, brush and fence-line debris</li>
+                        <li>Barn, shed and outbuilding demolition</li>
+                        <li>Rural estate and acreage cleanouts</li>
+                        <li>Storm debris after wind events</li>
+                    </ul>
                 </div>
             </section>
 

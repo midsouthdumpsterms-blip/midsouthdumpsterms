@@ -6,9 +6,17 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/garage-cleanout-dumpster-rental-central-ms' },
-    title: 'Garage Cleanout Dumpster Rental in Central Mississippi',
+    title: 'Garage Cleanout Dumpster Rental Guide',
     description:
-        'Cleaning out your garage in Jackson, Brandon, or Central MS? A 10 or 15-yard dumpster rental is the fastest way to get it done. Same-day delivery available. Call Mid South at 601-316-7891.',
+        'A 10 or 15-yard container clears most garages in a weekend. What fits, what does not, and how to work through it efficiently.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Garage Cleanout Dumpster Rental Guide',
+        description: 'A 10 or 15-yard container clears most garages in a weekend. What fits, what does not, and how to work through it efficiently.',
+        url: 'https://midsouthdumpsterms.com/blog/garage-cleanout-dumpster-rental-central-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

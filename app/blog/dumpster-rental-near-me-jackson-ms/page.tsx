@@ -6,12 +6,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-near-me-jackson-ms' },
-    title: 'Dumpster Rental Near Me in Jackson, MS',
-    description: 'Searching for dumpster rental near me in Jackson, MS? Mid South offers affordable roll-off dumpsters with same-day delivery and flat rates. Book online or call 601-316-7891.',
+    title: 'Dumpster Rental Near Me in Jackson MS',
+    description:
+        'What "near me" actually means for dumpster delivery in Jackson MS: coverage, timing, and how local routing affects your price.',
     openGraph: {
         title: 'Dumpster Rental Near Me in Jackson, MS',
         description: 'Same-day roll-off dumpster delivery in Jackson and all of Central Mississippi. Flat-rate pricing from $349. No hidden fees.',
         url: 'https://midsouthdumpsterms.com/blog/dumpster-rental-near-me-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -43,7 +45,7 @@ export default function BlogPost() {
         'Dumpster Rental Near Me in Jackson, MS | Mid South',
         'Searching for dumpster rental near me in Jackson, MS? Mid South offers same-day roll-off dumpster delivery with flat-rate pricing and no hidden fees.',
         '2026-03-04',
-        'https://midsouthdumpsterms.com/opengraph-image.jpg',
+        'https://midsouthdumpsterms.com/images/og-image.jpg',
         '2026-03-04'
     )
     const faqSchema = generateFAQSchema(faqs)
@@ -91,17 +93,17 @@ export default function BlogPost() {
                             We offer three roll-off dumpster sizes to fit any project in the Jackson metro area:
                         </p>
 
-                        <h3><Link href="/services/10-yard-dumpster">10-Yard Dumpster</Link> &mdash; from $349</h3>
+                        <h3><Link href="/sizes/10-yard-dumpster-rental">10-Yard Dumpster</Link> &mdash; from $349</h3>
                         <p>
                             Ideal for: garage cleanouts, small bathroom remodels, single-room renovations, attic decluttering. Includes 1 ton (2,000 lbs) weight allowance. Fits easily in most residential driveways.
                         </p>
 
-                        <h3><Link href="/services/15-yard-dumpster">15-Yard Dumpster</Link> &mdash; from $399 <em>(Most Popular)</em></h3>
+                        <h3><Link href="/sizes/15-yard-dumpster-rental">15-Yard Dumpster</Link> &mdash; from $399 <em>(Most Popular)</em></h3>
                         <p>
                             Ideal for: home renovations, roofing debris, estate cleanouts, full garage cleanouts, multiple-room remodels. Includes 2 tons (4,000 lbs) weight allowance. This is our most-rented size in the Jackson area.
                         </p>
 
-                        <h3><Link href="/services/20-yard-dumpster">20-Yard Dumpster</Link> &mdash; from $449</h3>
+                        <h3><Link href="/sizes/20-yard-dumpster-rental">20-Yard Dumpster</Link> &mdash; from $449</h3>
                         <p>
                             Ideal for: large home renovations, new construction, commercial site cleanups, major demolition. Includes 3 tons (6,000 lbs) weight allowance with a strict 3-ton maximum.
                         </p>

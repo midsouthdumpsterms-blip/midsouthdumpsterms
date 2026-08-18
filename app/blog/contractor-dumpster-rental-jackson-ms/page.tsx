@@ -6,13 +6,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/contractor-dumpster-rental-jackson-ms' },
-    title: 'Contractor Dumpster Rental Jackson MS | Roll-Off for Job Sites',
+    title: 'Contractor Dumpster Rental Jackson MS',
     description:
-        'Reliable roll-off dumpster rental for contractors in Jackson, MS. Mid South Dumpster Rentals offers same-day delivery, flexible scheduling, and flat-rate pricing for construction, roofing, and remodeling projects. Call 601-316-7891.',
+        'Roll-off service built around contractor schedules in Jackson MS: fast swaps, flexible pickup and flat pricing you can bid against.',
     openGraph: {
         title: 'Contractor Dumpster Rental Jackson MS',
         description: 'Same-day roll-off delivery for contractors across Central Mississippi. Flat-rate pricing, no hidden fees, 7 days a week.',
         url: 'https://midsouthdumpsterms.com/blog/contractor-dumpster-rental-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -44,7 +45,7 @@ export default function BlogPost() {
         'Contractor Dumpster Rental Jackson MS | Roll-Off for Job Sites',
         'Reliable roll-off dumpster rental for contractors in Jackson, MS. Same-day delivery, flexible scheduling, and flat-rate pricing for construction, roofing, and remodeling projects.',
         '2026-03-22',
-        'https://midsouthdumpsterms.com/opengraph-image.jpg',
+        'https://midsouthdumpsterms.com/images/og-image.jpg',
         '2026-03-22'
     )
     const faqSchema = generateFAQSchema(faqs)
@@ -105,17 +106,17 @@ export default function BlogPost() {
                             <tbody>
                                 <tr>
                                     <td>Bathroom remodel, small interior demo</td>
-                                    <td><Link href="/services/10-yard-dumpster">10 Yard</Link></td>
+                                    <td><Link href="/sizes/10-yard-dumpster-rental">10 Yard</Link></td>
                                     <td>$349</td>
                                 </tr>
                                 <tr>
                                     <td>Roof tear-off, kitchen gut, multi-room reno</td>
-                                    <td><Link href="/services/15-yard-dumpster">15 Yard</Link></td>
+                                    <td><Link href="/sizes/15-yard-dumpster-rental">15 Yard</Link></td>
                                     <td>$399</td>
                                 </tr>
                                 <tr>
                                     <td>New construction, full-house demo, commercial</td>
-                                    <td><Link href="/services/20-yard-dumpster">20 Yard</Link></td>
+                                    <td><Link href="/sizes/20-yard-dumpster-rental">20 Yard</Link></td>
                                     <td>$449</td>
                                 </tr>
                             </tbody>

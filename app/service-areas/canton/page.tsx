@@ -9,13 +9,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/canton' },
-    title: 'Roll Off Dumpster Rental Canton MS | Madison County',
+    title: 'Dumpster Rental Canton MS | Same-Day',
     description:
-        'Roll off dumpster rental in Canton, MS and Madison County. 10, 15 & 20-yard dumpsters with same-day delivery to all Canton neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Canton, MS from $349. 10, 15 and 20-yard containers, same-day delivery to downtown Canton and the historic district.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Canton MS | Madison County',
         description: 'Locally owned roll off dumpster rental serving Canton & all of Madison County. Same-day delivery, flat-rate pricing, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/canton',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -147,11 +148,27 @@ export default function CantonPage() {
                         Canton's rich history as a Civil War-era city and its growing community make it a unique and vibrant place in Central Mississippi. We're proud to serve Canton with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other customers in Madison County.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
-                        <strong>Planning a rental?</strong> Read our guide on <Link href="/blog/dumpster-rental-madison-ms">dumpster rentals in Madison County</Link> for more local tips and advice on sizing.
+                        <strong>Planning a rental?</strong> Read our guide on <Link href="/service-areas/madison">dumpster rentals in Madison County</Link> for more local tips and advice on sizing.
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Canton is part of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Dumpster Delivery in Canton — Local Notes</h2>
+                    <p>Canton is the Madison County seat, and its older housing stock changes what size container makes sense. Renovations in and around the historic district turn up plaster and lath, old tile, and dimensional lumber — all of it considerably heavier than the drywall and modern framing that comes out of a newer house. A 15-yard of plaster can hit its weight allowance while it still looks half empty, so we usually recommend sizing by weight rather than by volume on these jobs.</p>
+                    <p>The older streets near the square are narrower than the newer parts of the county, and some have limited room to set a container without encroaching on the roadway. If the only workable spot is the street rather than a driveway, you will need to clear that with the city first — placement on a public right-of-way is the one situation that normally requires a permit anywhere in Central Mississippi.</p>
+                    <p>Canton also generates a steady stream of commercial and industrial work along the interstate corridor east of town. Those jobs are typically 20-yard containers on a swap schedule rather than single drops.</p>
+                    <p><strong>What we most often haul out of Canton:</strong></p>
+                    <ul className={styles.projectsList}>
+                        <li>Historic-home renovation debris (plaster, lath, old tile)</li>
+                        <li>Downtown commercial and retail tear-outs</li>
+                        <li>Industrial and warehouse cleanouts</li>
+                        <li>Estate and probate property clearing</li>
+                    </ul>
                 </div>
             </section>
 

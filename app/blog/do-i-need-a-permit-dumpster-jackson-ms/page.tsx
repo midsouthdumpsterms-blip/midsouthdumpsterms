@@ -7,12 +7,14 @@ import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/do-i-need-a-permit-dumpster-jackson-ms' },
-    title: 'Do I Need a Permit for a Dumpster in Jackson MS?',
-    description: 'Find out if you need a right-of-way permit to place a roll-off dumpster on the street in Jackson, Byram, Clinton, or Brandon, Mississippi.',
+    title: 'Do I Need a Dumpster Permit in Jackson MS?',
+    description:
+        'When a right-of-way permit is required to place a roll-off on the street in Jackson, Byram, Clinton and Brandon, and when it is not.',
     openGraph: {
         title: 'Do I Need a Permit for a Dumpster in Jackson MS?',
         description: 'Find out if you need a right-of-way permit to place a roll-off dumpster on the street in Jackson, MS.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -46,7 +48,7 @@ export default function DumpsterPermitGuide() {
 
                     {/* TL;DR Summary Box for AI and quick readers */}
                     <div className={styles.tldrBox}>
-                        <h3>Key Takeaways (TL;DR)</h3>
+                        <h2>Key Takeaways (TL;DR)</h2>
                         <ul>
                             <li><strong>Private Property:</strong> No permit is required if the dumpster fits entirely on your private driveway or yard.</li>
                             <li><strong>Public Streets:</strong> A 'Right-of-Way' permit from the local Public Works department IS required if the dumpster blocks a public street, sidewalk, or alley.</li>
@@ -55,9 +57,12 @@ export default function DumpsterPermitGuide() {
                         </ul>
                     </div>
 
-                    <img
+                    <Image
                         src="/images/gallery/driveway-safe-dumpster-gluckstadt-boards.jpg"
                         alt="Roll-off dumpster placed safely on a driveway using protective wooden boards"
+                        width={890}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
                         className={styles.heroImage}
                     />
 
@@ -74,7 +79,7 @@ export default function DumpsterPermitGuide() {
                             If you have enough space to place the dumpster entirely on your private property—such as your concrete driveway, a gravel parking pad, or even your side yard—<strong>you do not need a city permit.</strong>
                         </p>
                         <p>
-                            Many homeowners worry that a heavy steel dumpster will crack their driveway. At <strong>Mid South Dumpster Rentals</strong>, we mitigate this risk by employing "driveway-safe" delivery methods. We place thick wooden boards under the dumpster's steel rollers, ensuring the metal never actually scrapes or rests directly on your concrete. If your driveway can hold a heavy pickup truck, it can usually handle a <Link href="/blog/15-yard-dumpster-rental-jackson-ms">15-yard dumpster</Link> without issue.
+                            Many homeowners worry that a heavy steel dumpster will crack their driveway. At <strong>Mid South Dumpster Rentals</strong>, we mitigate this risk by employing "driveway-safe" delivery methods. We place thick wooden boards under the dumpster's steel rollers, ensuring the metal never actually scrapes or rests directly on your concrete. If your driveway can hold a heavy pickup truck, it can usually handle a <Link href="/sizes/15-yard-dumpster-rental">15-yard dumpster</Link> without issue.
                         </p>
 
                         <h3>A Quick Note on HOAs</h3>

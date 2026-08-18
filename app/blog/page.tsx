@@ -5,17 +5,22 @@ import styles from './blog.module.css'
 import { sql } from '@vercel/postgres'
 import localPostsData from '@/lib/blog-posts.json'
 
-export const dynamic = 'force-dynamic' // Always show fresh database content
+// Revalidate rather than force-dynamic: the listing was querying Postgres on
+// every request, including every crawler hit, which made the content hub the
+// only slow page on an otherwise fully static site. Ten minutes is well inside
+// the cadence at which posts are actually published.
+export const revalidate = 600
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog' },
     title: 'Dumpster Rental Tips & Guides | Jackson MS',
     description:
-        'Expert dumpster rental guides for Jackson, Rankin, Hinds & Madison County MS. Learn what to throw away, how to choose a size, pricing tips, and more.',
+        'Practical guides on dumpster sizing, pricing, weight limits, permits and cleanouts for homeowners and contractors across Central Mississippi.',
     openGraph: {
         title: 'Dumpster Rental Tips & Local Guides',
         description: 'Expert dumpster rental guides for Central Mississippi homeowners and contractors.',
         url: 'https://midsouthdumpsterms.com/blog',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

@@ -1,12 +1,22 @@
 import type { Metadata } from 'next'
+import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './gallery.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/gallery' },
-    title: 'Project Gallery | Dumpster Rentals in Jackson, MS & Surrounding Areas',
-    description: 'See our dumpsters in action! Photos of residential and commercial dumpster rentals in Jackson, Madison, Brandon, Pearl, and more. Clean, reliable, and driveway-safe.',
+    title: 'Project Gallery | Dumpsters in Central MS',
+    description:
+        'Real deliveries across Jackson, Madison, Brandon and Pearl. See how our roll-off containers sit on a driveway before you book one for your project.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Project Gallery | Dumpsters in Central MS',
+        description: 'Real deliveries across Jackson, Madison, Brandon and Pearl. See how our roll-off containers sit on a driveway before you book one for your project.',
+        url: 'https://midsouthdumpsterms.com/gallery',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 const galleryImages = [
@@ -108,6 +118,11 @@ const galleryImages = [
 ]
 
 export default function GalleryPage() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://midsouthdumpsterms.com' },
+        { name: 'Gallery', url: 'https://midsouthdumpsterms.com/gallery' },
+    ])
+
     // Generate Schema
     const schema = {
         "@context": "https://schema.org",
@@ -125,6 +140,8 @@ export default function GalleryPage() {
     }
 
     return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
         <div className={styles.container}>
             <script
                 type="application/ld+json"
@@ -154,7 +171,7 @@ export default function GalleryPage() {
                             />
                         </div>
                         <div className={styles.cardContent}>
-                            <h3 className={styles.cardTitle}>{image.alt}</h3>
+                            <p className={styles.cardTitle}>{image.alt}</p>
                             <p className={styles.cardCaption}>{image.caption}</p>
                         </div>
                     </div>
@@ -171,5 +188,6 @@ export default function GalleryPage() {
                 </Link>
             </div>
         </div>
+        </>
     )
 }

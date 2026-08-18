@@ -1,16 +1,19 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-guide-for-home-renovations' },
-    title: 'Dumpster Rental Guide for Home Renovations',
-    description: 'Planning a home renovation? Learn how to choose the right dumpster size, where to place it, and how to save money on waste disposal.',
+    title: 'Dumpster Guide for Home Renovations',
+    description:
+        'How to size, place and schedule a dumpster for a home renovation so you are not paying for a second haul or a driveway repair.',
     openGraph: {
         title: 'Dumpster Rental Guide for Home Renovations',
         description: 'Essential guide for homeowners renting a dumpster for renovation projects.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -40,9 +43,12 @@ export default function HomeRenovationDumpsterGuide() {
                         <p className={styles.date}>Published on January 28, 2026</p>
                     </header>
 
-                    <img
+                    <Image
                         src="/images/real-dumpsters/dumpster-trailer-grey.jpg"
                         alt="Mid South Dumpster Rental delivery for home renovation"
+                        width={767}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
                         className={styles.heroImage}
                     />
 

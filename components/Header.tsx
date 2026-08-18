@@ -20,6 +20,7 @@ const serviceLinks = [
     { href: '/services/roofing-dumpster-rental', label: 'Roofing' },
     { href: '/services/estate-cleanout-dumpster-rental', label: 'Estate Cleanout' },
     { href: '/services/roll-off-dumpster-rental', label: 'Roll-Off' },
+    { href: '/services/debris-removal', label: 'Debris Removal' },
     { href: '/services/yard-waste-dumpster-rental', label: 'Yard Waste' },
     { href: '/services/same-day-dumpster-rental', label: 'Same-Day' },
     { href: '/services/storm-cleanup-dumpster-rental', label: 'Storm Cleanup' },
@@ -41,6 +42,8 @@ const serviceAreaLinks = [
     { href: '/service-areas/raymond', label: 'Raymond' },
     { href: '/service-areas/flora', label: 'Flora' },
     { href: '/service-areas/gluckstadt', label: 'Gluckstadt' },
+    { href: '/service-areas/pelahatchie', label: 'Pelahatchie' },
+    { href: '/service-areas/bolton', label: 'Bolton' },
 ]
 
 export default function Header() {

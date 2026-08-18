@@ -6,13 +6,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/yard-waste-removal-dumpster-rental-jackson-ms' },
-    title: 'Yard Waste Removal & Dumpster Rental Jackson MS | Brush, Limbs, Debris',
+    title: 'Yard Waste Removal Dumpsters Jackson MS',
     description:
-        'Need yard waste removal in Jackson, MS? Mid South Dumpster Rentals offers affordable roll-off dumpsters for brush, tree limbs, landscaping debris, and large yard cleanups. Call 601-316-7891.',
+        'Brush, limbs, sod and landscaping debris in Jackson MS. What a yard-waste load weighs and which container size handles it.',
     openGraph: {
         title: 'Yard Waste Removal & Dumpster Rental Jackson MS',
         description: 'Roll-off dumpsters for yard waste, brush piles, tree debris, and landscaping projects across Central Mississippi. Same-day delivery available.',
         url: 'https://midsouthdumpsterms.com/blog/yard-waste-removal-dumpster-rental-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -44,7 +45,7 @@ export default function BlogPost() {
         'Yard Waste Removal & Dumpster Rental Jackson MS | Brush, Limbs, Debris',
         'Need yard waste removal in Jackson, MS? Mid South Dumpster Rentals offers affordable roll-off dumpsters for brush, tree limbs, landscaping debris, and large yard cleanups.',
         '2026-03-28',
-        'https://midsouthdumpsterms.com/opengraph-image.jpg',
+        'https://midsouthdumpsterms.com/images/og-image.jpg',
         '2026-03-28'
     )
     const faqSchema = generateFAQSchema(faqs)
@@ -119,17 +120,17 @@ export default function BlogPost() {
                             <tbody>
                                 <tr>
                                     <td>Seasonal cleanup, brush pile, trimming debris</td>
-                                    <td><Link href="/services/10-yard-dumpster">10 Yard</Link></td>
+                                    <td><Link href="/sizes/10-yard-dumpster-rental">10 Yard</Link></td>
                                     <td>$349</td>
                                 </tr>
                                 <tr>
                                     <td>Tree removal, full-yard overhaul, storm debris</td>
-                                    <td><Link href="/services/15-yard-dumpster">15 Yard</Link></td>
+                                    <td><Link href="/sizes/15-yard-dumpster-rental">15 Yard</Link></td>
                                     <td>$399</td>
                                 </tr>
                                 <tr>
                                     <td>Lot clearing, major landscaping demo, multiple trees</td>
-                                    <td><Link href="/services/20-yard-dumpster">20 Yard</Link></td>
+                                    <td><Link href="/sizes/20-yard-dumpster-rental">20 Yard</Link></td>
                                     <td>$449</td>
                                 </tr>
                             </tbody>

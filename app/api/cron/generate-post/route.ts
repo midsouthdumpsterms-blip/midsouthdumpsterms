@@ -11,7 +11,12 @@ import { sanitizeHtml } from '@/lib/sanitize-html';
 // the original 60s comment assumed — set generously to absorb that variance.
 export const maxDuration = 180;
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Resend throws from its constructor when the key is missing, which turns a
+// missing or rotated env var into a hard build failure for the whole site
+// rather than a failure of this one route. Construct it lazily instead.
+function getResend() {
+    return new Resend(process.env.RESEND_API_KEY)
+}
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
 const TOPICS = [
@@ -231,7 +236,7 @@ Only use factual claims that come from the research notes above or the STRICT CO
 
     // 6. Send Approval Email via Resend
     const dashboardUrl = `https://midsouthdumpsterms.com/situationroom`;
-    const resendResult = await resend.emails.send({
+    const resendResult = await getResend().emails.send({
       from: 'Mid South Blog Bot <onboarding@resend.dev>', // Resend free tier requires this verified domain or onboarding address
       to: 'midsouthdumpsterms@gmail.com', // Updated to the correct registered email
       subject: `🚨 Action Required: New Blog Post Draft - ${selectedTopic || "Dumpster Rental"}`,

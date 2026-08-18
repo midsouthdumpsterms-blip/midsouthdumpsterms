@@ -2,17 +2,18 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import BookingButton from '@/components/BookingButton'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
-import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
+import { generateOfferCatalogSchema, generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/sizes/20-yard-dumpster-rental' },
-    title: '20 Yard Dumpster Rental Jackson MS',
+    title: '20 Yard Dumpster Rental Jackson MS | $449',
     description:
-        '20 yard dumpster rental in Jackson MS from $449. 14ft x 7.5ft x 6.5ft container holds 8 pickup truck loads. Our largest size — ideal for major renovations, full home cleanouts & construction projects. Same-day delivery. Call 601-316-7891.',
+        '20-yard dumpster rental in Jackson MS from $449. Holds about 8 pickup loads, 3 tons included. Built for roof tear-offs and whole-home cleanouts.',
     openGraph: {
         title: '20 Yard Dumpster Rental Jackson MS',
         description: '20 yard roll-off dumpster in Central MS from $449. Our largest size for major projects. Same-day delivery, flat-rate pricing.',
         url: 'https://midsouthdumpsterms.com/sizes/20-yard-dumpster-rental',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -42,6 +43,7 @@ export default function TwentyYardDumpsterPage() {
 
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(generateOfferCatalogSchema()) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(faqSchema) }} />

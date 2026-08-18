@@ -69,21 +69,25 @@ export default function Footer() {
                             <li><Link href="/service-areas/ridgeland">Ridgeland</Link></li>
                             <li><Link href="/service-areas/flowood">Flowood</Link></li>
                             <li><Link href="/service-areas/raymond">Raymond</Link></li>
+                            <li><Link href="/service-areas/hinds-county">Hinds County</Link></li>
+                            <li><Link href="/service-areas/madison-county">Madison County</Link></li>
+                            <li><Link href="/service-areas/rankin-county">Rankin County</Link></li>
                             <li><Link href="/service-areas">View All Cities →</Link></li>
                         </ul>
                     </div>
 
                     <div className={styles.footerCol}>
-                        <h4>More Services</h4>
+                        <h4>Dumpster Sizes</h4>
                         <ul>
-                            <li><Link href="/debris-removal-jackson-ms">Debris Removal Jackson</Link></li>
-                            <li><Link href="/debris-removal-brandon-ms">Debris Removal Brandon</Link></li>
-                            <li><Link href="/debris-removal-madison-ms">Debris Removal Madison</Link></li>
-                            <li><Link href="/debris-removal-clinton-ms">Debris Removal Clinton</Link></li>
-                            <li><Link href="/waste-disposal-jackson-ms">Waste Disposal Jackson</Link></li>
-                            <li><Link href="/waste-disposal-brandon-ms">Waste Disposal Brandon</Link></li>
-                            <li><Link href="/waste-disposal-madison-ms">Waste Disposal Madison</Link></li>
-                            <li><Link href="/waste-disposal-clinton-ms">Waste Disposal Clinton</Link></li>
+                            <li><Link href="/sizes/10-yard-dumpster-rental">10 Yard Dumpster</Link></li>
+                            <li><Link href="/sizes/15-yard-dumpster-rental">15 Yard Dumpster</Link></li>
+                            <li><Link href="/sizes/20-yard-dumpster-rental">20 Yard Dumpster</Link></li>
+                            <li><Link href="/sizes">Compare All Sizes</Link></li>
+                            <li><Link href="/services/debris-removal">Debris Removal</Link></li>
+                            <li><Link href="/services/demolition-dumpster-rental">Demolition</Link></li>
+                            <li><Link href="/services/roofing-dumpster-rental">Roofing</Link></li>
+                            <li><Link href="/services/estate-cleanout-dumpster-rental">Estate Cleanout</Link></li>
+                            <li><Link href="/services/storm-cleanup-dumpster-rental">Storm Cleanup</Link></li>
                         </ul>
                     </div>
 
@@ -111,6 +115,28 @@ export default function Footer() {
                             <PaymentMethods />
                         </div>
                     </div>
+                </div>
+
+                <div className={styles.guidesStrip}>
+                    <h4>Popular Guides</h4>
+                    <ul>
+                        {[
+                            { href: '/blog/dumpster-rental-prices-jackson-ms', label: 'Dumpster Prices in Jackson' },
+                            { href: '/blog/how-to-choose-dumpster-size', label: 'Choosing a Dumpster Size' },
+                            { href: '/blog/dumpster-weight-limits-jackson-ms', label: 'Weight Limits & Overage Fees' },
+                            { href: '/blog/what-can-i-put-in-a-dumpster', label: 'What Can Go In a Dumpster' },
+                            { href: '/blog/do-i-need-a-permit-dumpster-jackson-ms', label: 'Do I Need a Permit?' },
+                            { href: '/blog/how-long-can-you-keep-a-rental-dumpster', label: 'How Long Can I Keep It?' },
+                            { href: '/blog/home-renovation-dumpster-guide-central-ms', label: 'Home Renovation Guide' },
+                            { href: '/blog/bathroom-remodel-dumpster-rental-jackson-ms', label: 'Bathroom Remodel Guide' },
+                            { href: '/blog/deck-shed-demolition-dumpster-rental-jackson-ms', label: 'Deck & Shed Demolition' },
+                            { href: '/blog/spring-cleaning-checklist-central-ms', label: 'Spring Cleaning Checklist' },
+                            { href: '/blog/dumpster-rental-vs-junk-removal-jackson-ms', label: 'Dumpster vs. Junk Removal' },
+                            { href: '/gallery', label: 'Project Gallery' },
+                        ].map((item) => (
+                            <li key={item.href}><Link href={item.href}>{item.label}</Link></li>
+                        ))}
+                    </ul>
                 </div>
 
                 <div className={styles.footerBottom}>

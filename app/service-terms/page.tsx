@@ -1,10 +1,20 @@
 import { Metadata } from 'next'
+import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-terms' },
-    title: 'Rental Agreement',
-    description: 'Read the full dumpster rental agreement for Mid South Dumpster Rentals, LLC. Covers permitted materials, weight limits, fees, liability, and payment terms.',
+    title: 'Dumpster Rental Agreement | Service Terms',
+    description:
+        'The full rental agreement: permitted and prohibited materials, weight limits, overage and extension fees, liability, and payment terms.',
     robots: { index: true, follow: true },
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Dumpster Rental Agreement | Service Terms',
+        description: 'The full rental agreement: permitted and prohibited materials, weight limits, overage and extension fees, liability, and payment terms.',
+        url: 'https://midsouthdumpsterms.com/service-terms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 const h2Style = { color: 'var(--color-gray-900)', marginTop: '2rem', marginBottom: '0.5rem', fontSize: '1.2rem' }
@@ -21,7 +31,14 @@ const warningBoxStyle = {
 }
 
 export default function RentalAgreementPage() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://midsouthdumpsterms.com' },
+        { name: 'Rental Agreement', url: 'https://midsouthdumpsterms.com/service-terms' },
+    ])
+
     return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
         <div style={{ background: 'white', minHeight: '80vh' }}>
             {/* Hero */}
             <div style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', padding: '3rem 1rem', textAlign: 'center', color: 'white' }}>
@@ -175,5 +192,6 @@ export default function RentalAgreementPage() {
                 </div>
             </div>
         </div>
+        </>
     )
 }

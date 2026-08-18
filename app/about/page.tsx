@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import BookingButton from '@/components/BookingButton'
 import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from './about.module.css'
@@ -7,9 +8,17 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/about' },
-    title: 'About Us | Jackson, MS Local Dumpster Company',
+    title: 'About Us | Locally Owned in Jackson MS',
     description:
-        'Mid South Dumpster Rentals is a locally-owned, licensed & insured dumpster rental company in Jackson, MS. Serving the entire Central Mississippi tri-county area (Hinds, Madison, Rankin) with 10, 15, and 20-yard roll-off dumpsters. Same-day delivery 7 days a week.',
+        'Mid South Dumpster Rentals is a licensed, insured, locally owned roll-off company serving Hinds, Madison and Rankin counties seven days a week.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'About Us | Locally Owned in Jackson MS',
+        description: 'Mid South Dumpster Rentals is a licensed, insured, locally owned roll-off company serving Hinds, Madison and Rankin counties seven days a week.',
+        url: 'https://midsouthdumpsterms.com/about',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function About() {
@@ -62,8 +71,18 @@ export default function About() {
                                     </p>
                                 </div>
                                 <div style={{ flex: '0 0 250px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-md)', margin: '0 auto' }}>
-                                    {/* Placeholder for Andrew Tyre's photo */}
-                                    <img src="/images/andrew-tyre.png" alt="Andrew Tyre, Founder of Mid South Dumpster Rentals" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                                    {/* next/image so this is served as WebP/AVIF at the size
+                                        actually needed. As a raw <img> it shipped the full
+                                        549 KB PNG with no dimensions, so it also shifted the
+                                        layout as it loaded. */}
+                                    <Image
+                                        src="/images/andrew-tyre.png"
+                                        alt="Andrew Tyre, founder of Mid South Dumpster Rentals, Jackson MS"
+                                        width={250}
+                                        height={250}
+                                        sizes="250px"
+                                        style={{ width: '100%', height: 'auto', display: 'block' }}
+                                    />
                                 </div>
                             </div>
                         </div>

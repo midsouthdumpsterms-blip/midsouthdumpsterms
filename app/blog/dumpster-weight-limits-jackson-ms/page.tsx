@@ -1,17 +1,20 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-weight-limits-jackson-ms' },
-    title: 'Dumpster Weight Limits Explained: Avoid Overage Fees in Jackson, MS',
-    description: 'Confused by dumpster weight limits? Learn how tons vs. yards work, which debris is heaviest, and how to avoid costly overage fees in Central Mississippi. Clear guide from Mid South Dumpster Rentals.',
+    title: 'Dumpster Weight Limits & Overage Fees',
+    description:
+        'Yards measure volume, tons measure weight, and overage fees come from the second one. How to stay under the limit in Central MS.',
     openGraph: {
         title: 'Dumpster Weight Limits Explained: Avoid Overage Fees in Jackson, MS',
         description: 'A practical guide to dumpster weight limits, heavy debris, and avoiding overage fees in Central Mississippi.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -66,7 +69,7 @@ export default function DumpsterWeightLimits() {
 
                     {/* TL;DR Summary Box */}
                     <div className={styles.tldrBox}>
-                        <h3>Key Takeaways (TL;DR)</h3>
+                        <h2>Key Takeaways (TL;DR)</h2>
                         <ul>
                             <li><strong>Yards vs. Tons:</strong> &quot;Yards&quot; measures volume (space). &quot;Tons&quot; measures weight. A dumpster can fill up on volume OR hit its weight limit first — whichever comes first.</li>
                             <li><strong>Tile, Concrete &amp; Shingles Are Heavy:</strong> These materials are 3–8x denser than regular household junk. A small amount goes a long way toward your weight cap.</li>
@@ -75,10 +78,13 @@ export default function DumpsterWeightLimits() {
                         </ul>
                     </div>
 
-                    <img
+                    <Image
                         src="/images/gallery/large-dumpster-rental-projects-waste.jpg"
                         alt="Large roll-off dumpster filled with construction debris on a Central Mississippi project site"
-                        style={{ width: '100%', borderRadius: '8px', marginBottom: '2rem' }}
+                        width={768}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
+                        className={styles.heroImage}
                     />
 
                     <div className={styles.content}>

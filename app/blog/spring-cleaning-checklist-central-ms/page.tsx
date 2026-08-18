@@ -7,12 +7,14 @@ import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/spring-cleaning-checklist-central-ms' },
-    title: 'Spring Cleaning Checklist for Central MS Homeowners',
-    description: 'Get your home ready for spring with our comprehensive cleaning checklist for Jackson, Madison, and Brandon homeowners. Plus, find out how renting a dumpster makes cleanouts a breeze.',
+    title: 'Spring Cleaning Checklist | Central MS',
+    description:
+        'A room-by-room spring cleaning checklist for Jackson, Madison and Brandon homeowners, plus when a dumpster is worth renting.',
     openGraph: {
         title: 'Spring Cleaning Checklist for Central MS Homeowners',
         description: 'Get your Central Mississippi home ready for the season with our ultimate spring cleaning checklist.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -46,7 +48,7 @@ export default function SpringCleaningChecklist() {
 
                     {/* TL;DR Summary Box for AI and quick readers */}
                     <div className={styles.tldrBox}>
-                        <h3>Key Takeaways (TL;DR)</h3>
+                        <h2>Key Takeaways (TL;DR)</h2>
                         <ul>
                             <li><strong>Start Early:</strong> Mississippi heat and humidity ramp up quickly in April. Tackle your deep cleaning in March while the weather is pleasant.</li>
                             <li><strong>Work Top to Bottom:</strong> Always clean from the ceiling down to the floors so you don't push dust onto clean surfaces.</li>
@@ -55,9 +57,12 @@ export default function SpringCleaningChecklist() {
                         </ul>
                     </div>
 
-                    <img
+                    <Image
                         src="/images/gallery/clean-dumpster-delivery-flowood-blue.jpg"
                         alt="Clean blue roll-off dumpster delivered to a driveway in Central MS for spring cleaning"
+                        width={768}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
                         className={styles.heroImage}
                     />
 
@@ -80,7 +85,7 @@ export default function SpringCleaningChecklist() {
                             <li><strong>Garage & Attic:</strong> This is usually where the bulk of the "Toss" pile originates. Broken furniture, <Link href="/blog/how-to-dispose-appliances-mattresses-jackson-ms">old appliances</Link>, and boxes of junk that haven't been opened since you moved in. </li>
                         </ul>
                         <p>
-                            <em>Pro Tip:</em> If you discover you have more junk than will fit in your weekly curbside bin, skip the multiple trips to the dump and rent a <Link href="/blog/10-yard-dumpster-rental-jackson-ms">10-yard roll-off dumpster</Link> for the weekend.
+                            <em>Pro Tip:</em> If you discover you have more junk than will fit in your weekly curbside bin, skip the multiple trips to the dump and rent a <Link href="/sizes/10-yard-dumpster-rental">10-yard roll-off dumpster</Link> for the weekend.
                         </p>
 
                         <h3>2. Windows & Baseboards</h3>

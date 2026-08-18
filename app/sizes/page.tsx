@@ -2,17 +2,18 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import BookingButton from '@/components/BookingButton'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
-import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
+import { generateOfferCatalogSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/sizes' },
-    title: 'Dumpster Sizes & Pricing | 10, 15 & 20 Yard',
+    title: 'Dumpster Sizes: 10, 15 & 20 Yard | Jackson MS',
     description:
-        'Compare 10, 15, and 20-yard dumpster sizes in Central Mississippi. See exact dimensions, weight limits, pricing, and which size is right for your project. Same-day delivery available. Call 601-316-7891.',
+        'Compare 10, 15 and 20-yard roll-off dumpsters: dimensions, weight limits, truck-load capacity and price. Find the right size before you book.',
     openGraph: {
         title: 'Dumpster Sizes & Pricing',
         description: 'Compare 10, 15, and 20-yard roll-off dumpster sizes — dimensions, pricing, capacity, and which is right for your project.',
         url: 'https://midsouthdumpsterms.com/sizes',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -72,6 +73,7 @@ export default function SizesPage() {
 
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(generateOfferCatalogSchema()) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
 
             <section style={{ background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)', color: 'white', padding: '4rem 0', textAlign: 'center' }}>

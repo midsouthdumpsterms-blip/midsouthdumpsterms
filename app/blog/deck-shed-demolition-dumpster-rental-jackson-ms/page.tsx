@@ -1,17 +1,20 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/deck-shed-demolition-dumpster-rental-jackson-ms' },
-    title: 'Deck & Shed Demolition Dumpster Rental in Jackson, MS',
-    description: 'Tearing down a deck, shed, or backyard structure in Central Mississippi? Learn what size dumpster you need, what to expect, and how Mid South makes cleanup easy. Flat-rate pricing from $349.',
+    title: 'Deck & Shed Demolition Dumpster Guide',
+    description:
+        'Tearing down a deck or shed in Central MS? What size container you need, how to break it down, and what the debris actually weighs.',
     openGraph: {
         title: 'Deck & Shed Demolition Dumpster Rental in Jackson, MS',
         description: 'Renting a dumpster for deck or shed demolition in Central MS. Size guide, tips, and flat-rate pricing.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -67,7 +70,7 @@ export default function DeckShedDemolitionDumpster() {
 
                     {/* TL;DR Summary Box */}
                     <div className={styles.tldrBox}>
-                        <h3>Key Takeaways (TL;DR)</h3>
+                        <h2>Key Takeaways (TL;DR)</h2>
                         <ul>
                             <li><strong>Right-Size It:</strong> A 15-yard dumpster handles most residential decks and standard sheds. Go 20-yard for large structures or combined projects.</li>
                             <li><strong>Order Before You Swing:</strong> Have the dumpster on-site <em>before</em> demo day so you can load as you tear down — don't let debris pile up in your yard.</li>
@@ -76,10 +79,13 @@ export default function DeckShedDemolitionDumpster() {
                         </ul>
                     </div>
 
-                    <img
+                    <Image
                         src="/images/gallery/home-renovation-dumpster-terry-backyard.jpg"
                         alt="Dumpster in a Central Mississippi backyard next to a deck demolition project"
-                        style={{ width: '100%', borderRadius: '8px', marginBottom: '2rem' }}
+                        width={763}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
+                        className={styles.heroImage}
                     />
 
                     <div className={styles.content}>
@@ -197,7 +203,7 @@ export default function DeckShedDemolitionDumpster() {
 
                         <h2>Serving Jackson, Brandon, Madison &amp; All of Central MS</h2>
                         <p>
-                            We deliver to every city in the Jackson metro area and across Hinds, Madison, and Rankin counties — including <Link href="/blog/dumpster-rental-brandon-ms">Brandon</Link>, <Link href="/blog/dumpster-rental-flowood-ms">Flowood</Link>, <Link href="/blog/dumpster-rental-clinton-ms">Clinton</Link>, <Link href="/blog/dumpster-rental-ridgeland-ms">Ridgeland</Link>, <Link href="/blog/dumpster-rental-madison-ms">Madison</Link>, and beyond. We&apos;re a local company — not a national chain — so you get real answers, flexible scheduling, and a crew that actually shows up on time.
+                            We deliver to every city in the Jackson metro area and across Hinds, Madison, and Rankin counties — including <Link href="/service-areas/brandon">Brandon</Link>, <Link href="/service-areas/flowood">Flowood</Link>, <Link href="/service-areas/clinton">Clinton</Link>, <Link href="/service-areas/ridgeland">Ridgeland</Link>, <Link href="/service-areas/madison">Madison</Link>, and beyond. We&apos;re a local company — not a national chain — so you get real answers, flexible scheduling, and a crew that actually shows up on time.
                         </p>
 
                         <h2>Frequently Asked Questions</h2>

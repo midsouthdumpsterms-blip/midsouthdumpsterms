@@ -131,3 +131,35 @@
         grid-template-columns: 1fr;
     }
 }
+/* Horizontal strip of guide links.
+   The blog was previously reachable only by paging through /blog, which left
+   the longest articles with no inbound links from anywhere on the site. */
+.guidesStrip {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.guidesStrip h4 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.guidesStrip ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+}
+
+.guidesStrip ul li a {
+    font-size: 0.875rem;
+    opacity: 0.82;
+    text-decoration: none;
+}
+
+.guidesStrip ul li a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}

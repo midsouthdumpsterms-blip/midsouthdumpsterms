@@ -8,13 +8,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/bolton' },
-    title: 'Roll Off Dumpster Rental Bolton MS | Hinds County',
+    title: 'Dumpster Rental Bolton MS | Same-Day',
     description:
-        'Roll off dumpster rental in Bolton, MS (ZIP 39041). 10, 15 & 20-yard dumpsters with same-day delivery to Bolton and surrounding Hinds County communities. Flat-rate pricing from $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Bolton, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Bolton and western Hinds County.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Bolton MS | Hinds County',
         description: 'Locally owned roll off dumpster rental serving Bolton & all of Hinds County. Same-day delivery, flat-rate pricing from $349, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/bolton',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -160,6 +161,22 @@ export default function BoltonPage() {
                     <p style={{ marginTop: '1rem' }}>
                         Bolton is located in <Link href="/service-areas/hinds-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Hinds County</Link> — see all Hinds County cities we serve.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Dumpster Delivery in Bolton — Local Notes</h2>
+                    <p>Bolton is a small town in western Hinds County along the I-20 corridor, and it is one of the more rural parts of our service area. Most of what we haul here is property cleanout material, outbuilding demolition and general accumulation off long-held family land rather than remodel or construction debris.</p>
+                    <p>Because Bolton is further west than the bulk of our routing, same-day delivery is possible but not something to count on the way you can inside the metro. Booking a day ahead makes scheduling materially easier for both of us, and it means we can put you on a run rather than making a special trip.</p>
+                    <p>Placement on rural Bolton properties is rarely a problem for space, but ground conditions matter. A loaded roll-off truck needs firm footing, so if the only approach is a soft or heavily rutted drive, let us know and we will find a spot nearer the road.</p>
+                    <p><strong>What we most often haul out of Bolton:</strong></p>
+                    <ul className={styles.projectsList}>
+                        <li>Property and estate cleanouts</li>
+                        <li>Outbuilding and shed demolition</li>
+                        <li>Brush, yard waste and storm debris</li>
+                        <li>Residential renovation debris</li>
+                    </ul>
                 </div>
             </section>
 

@@ -8,13 +8,14 @@ import styles from '../services.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/estate-cleanout-dumpster-rental' },
-    title: 'Estate Cleanout Dumpster Rental Jackson MS | Property Cleanout',
+    title: 'Estate Cleanout Dumpster Rental Jackson MS',
     description:
-        'Estate cleanout dumpster rental in Jackson MS and Central Mississippi. Roll-off containers for estate sales, foreclosure cleanouts, rental property turnovers & hoarding cleanup. Same-day delivery. Call 601-316-7891.',
+        'Roll-off dumpsters for estate sales, probate and foreclosure cleanouts in Central MS. Flexible rental periods so families are not rushed.',
     openGraph: {
         title: 'Estate Cleanout Dumpster Rental Jackson MS',
         description: 'Roll-off dumpsters for estate cleanouts, foreclosure cleanouts, and property turnovers in Central MS. Same-day delivery, flat-rate pricing.',
         url: 'https://midsouthdumpsterms.com/services/estate-cleanout-dumpster-rental',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

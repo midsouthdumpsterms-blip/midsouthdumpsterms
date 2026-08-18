@@ -10,11 +10,12 @@ export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/construction-dumpster-rental' },
     title: 'Construction Dumpster Rental Jackson MS',
     description:
-        'Construction dumpster rental in Jackson MS and Central Mississippi. Roll-off containers for roofing, demolition, remodeling & construction debris removal. Same-day delivery. Contractors welcome. Call 601-316-7891.',
+        'Job-site roll-off dumpsters in Jackson MS for framing, drywall and C&D debris. Same-day delivery seven days a week. Contractor rates from $349.',
     openGraph: {
         title: 'Construction Dumpster Rental Jackson MS',
         description: 'Roll-off dumpsters for construction & demo projects across Central MS. Roofing, remodeling, demolition debris. Same-day delivery.',
         url: 'https://midsouthdumpsterms.com/services/construction-dumpster-rental',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

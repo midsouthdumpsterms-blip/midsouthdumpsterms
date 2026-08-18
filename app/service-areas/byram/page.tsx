@@ -9,13 +9,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/byram' },
-    title: 'Roll Off Dumpster Rental Byram MS | Hinds County',
+    title: 'Dumpster Rental Byram MS | Same-Day',
     description:
-        'Roll off dumpster rental in Byram, MS and Hinds County. 10, 15 & 20-yard dumpsters with same-day delivery to Siwell Road, Lake Dockery & all Byram neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Byram, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Siwell Road, Lake Dockery and south Jackson.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Byram MS | Hinds County',
         description: 'Locally owned roll off dumpster rental serving Byram & all of Hinds County. Same-day delivery, flat-rate pricing, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/byram',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

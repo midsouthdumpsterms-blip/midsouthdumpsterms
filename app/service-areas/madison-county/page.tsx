@@ -8,13 +8,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/madison-county' },
-    title: 'Roll Off Dumpster Rental Madison County MS',
+    title: 'Dumpster Rental Madison County MS',
     description:
-        'Roll off dumpster rental serving all of Madison County, MS. 10, 15 & 20-yard dumpsters with same-day delivery to Madison, Ridgeland, Canton, Gluckstadt, Flora & more. Flat-rate pricing, no hidden fees. Call 601-316-7891.',
+        'Roll-off dumpster rental throughout Madison County, Mississippi. 10, 15 and 20-yard containers, same-day delivery, flat rates from $349.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Madison County MS',
         description: 'Locally owned roll off dumpster rental serving all of Madison County, MS. Same-day delivery, flat-rate pricing starting at $349.',
         url: 'https://midsouthdumpsterms.com/service-areas/madison-county',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

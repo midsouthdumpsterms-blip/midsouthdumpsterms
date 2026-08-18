@@ -1,16 +1,33 @@
 import { Metadata } from 'next'
+import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/privacy-policy' },
     title: 'Privacy Policy',
-    description: 'Privacy Policy for Mid South Dumpster Rentals, LLC. Learn how we collect, use, and protect your personal information.',
+    description:
+        'How Mid South Dumpster Rentals, LLC collects, uses, stores and protects the personal information you share when booking a dumpster rental.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Privacy Policy',
+        description: 'How Mid South Dumpster Rentals, LLC collects, uses, stores and protects the personal information you share when booking a dumpster rental.',
+        url: 'https://midsouthdumpsterms.com/privacy-policy',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function PrivacyPolicyPage() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: 'https://midsouthdumpsterms.com' },
+        { name: 'Privacy Policy', url: 'https://midsouthdumpsterms.com/privacy-policy' },
+    ])
+
     const lastUpdated = 'April 4, 2026'
 
     return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: injectSchema(breadcrumbSchema) }} />
         <div style={{ background: 'white', minHeight: '80vh' }}>
             <div style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', padding: '3rem 1rem', textAlign: 'center', color: 'white' }}>
                 <div className="container">
@@ -108,5 +125,6 @@ export default function PrivacyPolicyPage() {
                 </div>
             </div>
         </div>
+        </>
     )
 }

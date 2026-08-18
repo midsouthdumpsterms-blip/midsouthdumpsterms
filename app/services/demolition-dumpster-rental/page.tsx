@@ -8,13 +8,14 @@ import styles from '../services.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/demolition-dumpster-rental' },
-    title: 'Demolition Dumpster Rental Jackson MS | Tear-Down & Demo Debris',
+    title: 'Demolition Dumpster Rental Jackson MS',
     description:
-        'Demolition dumpster rental in Jackson MS and Central Mississippi. Roll-off containers for interior demo, tear-downs, gut jobs & renovation debris. Same-day delivery from $349. Call 601-316-7891.',
+        'Roll-off containers for interior demo, tear-downs and gut jobs across Central Mississippi. Heavy-debris sizing help included. From $349.',
     openGraph: {
         title: 'Demolition Dumpster Rental Jackson MS',
         description: 'Roll-off dumpsters for demolition and tear-down projects in Central MS. Interior demo, gut jobs, structural tear-downs. Same-day delivery.',
         url: 'https://midsouthdumpsterms.com/services/demolition-dumpster-rental',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

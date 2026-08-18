@@ -7,8 +7,17 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/contact' },
-    title: 'Contact Us | Jackson MS',
-    description: 'Get in touch with Mid South Dumpster Rentals for all your dumpster rental needs in Central Mississippi. Call 601-316-7891 or book online.',
+    title: 'Contact Mid South Dumpster Rentals',
+    description:
+        'Call 601-316-7891 or message us about roll-off dumpster rental in Jackson and Central Mississippi. Open 7AM-7PM, seven days a week.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Contact Mid South Dumpster Rentals',
+        description: 'Call 601-316-7891 or message us about roll-off dumpster rental in Jackson and Central Mississippi. Open 7AM-7PM, seven days a week.',
+        url: 'https://midsouthdumpsterms.com/contact',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function ContactPage() {

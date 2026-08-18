@@ -9,13 +9,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/ridgeland' },
-    title: 'Roll Off Dumpster Rental Ridgeland MS | Madison County',
+    title: 'Dumpster Rental Ridgeland MS | Same-Day',
     description:
-        'Roll off dumpster rental in Ridgeland, MS and Madison County. 10, 15 & 20-yard dumpsters with same-day delivery to Highland Colony, Bridgewater & more. Flat-rate pricing, no hidden fees. Call 601-316-7891.',
+        'Roll-off dumpster rental in Ridgeland, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Highland Colony, Bridgewater and County Line.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Ridgeland MS | Madison County',
         description: 'Local roll off dumpster rental serving Ridgeland & all of Madison County. Same-day delivery, flat-rate pricing starting at $349.',
         url: 'https://midsouthdumpsterms.com/service-areas/ridgeland',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

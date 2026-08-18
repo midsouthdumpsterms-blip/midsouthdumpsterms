@@ -6,9 +6,17 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/estate-cleanout-dumpster-rental-jackson-ms' },
-    title: 'Estate Cleanout Dumpster Rental Jackson MS',
+    title: 'Estate Cleanout Dumpster Rental Jackson',
     description:
-        'Need a dumpster for an estate cleanout in Jackson, MS? Mid South Dumpster Rentals delivers same-day roll off dumpsters throughout Jackson and Hinds County. Flat-rate pricing from $349. Call 601-316-7891.',
+        'Estate cleanout dumpsters delivered across Jackson and Hinds County. Flexible rental periods so nobody is rushed. From $349.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Estate Cleanout Dumpster Rental Jackson',
+        description: 'Estate cleanout dumpsters delivered across Jackson and Hinds County. Flexible rental periods so nobody is rushed. From $349.',
+        url: 'https://midsouthdumpsterms.com/blog/estate-cleanout-dumpster-rental-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

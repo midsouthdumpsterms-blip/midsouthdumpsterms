@@ -6,9 +6,17 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/spring-cleaning-dumpster-rental-central-ms' },
-    title: 'Spring Cleaning Dumpster Rental in Central Mississippi',
+    title: 'Spring Cleaning Dumpster Rental | MS',
     description:
-        'Spring cleaning in Jackson, Brandon, or Central MS? Rent a roll-off dumpster and get it all done in one weekend. Same-day delivery available. Call Mid South Dumpster Rentals at 601-316-7891.',
+        'Clear a whole spring cleanout in one weekend with a roll-off container. Sizing and scheduling advice for Central Mississippi.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Spring Cleaning Dumpster Rental | MS',
+        description: 'Clear a whole spring cleanout in one weekend with a roll-off container. Sizing and scheduling advice for Central Mississippi.',
+        url: 'https://midsouthdumpsterms.com/blog/spring-cleaning-dumpster-rental-central-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {

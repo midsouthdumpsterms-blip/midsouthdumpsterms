@@ -7,12 +7,14 @@ import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/how-to-dispose-appliances-mattresses-jackson-ms' },
-    title: 'How to Dispose of Appliances & Mattresses in Jackson MS',
-    description: 'Looking to get rid of an old mattress or refrigerator in Jackson, MS? Learn the local rules, costs, and easiest ways to dispose of large, bulky items.',
+    title: 'Disposing of Appliances & Mattresses MS',
+    description:
+        'Local rules and real costs for getting rid of an old mattress, fridge or washer in Jackson MS, including what a dumpster will take.',
     openGraph: {
         title: 'How to Dispose of Appliances & Mattresses in Jackson MS',
         description: 'Learn the local rules, costs, and easiest ways to dispose of large, bulky items like mattresses and appliances in Jackson, Mississippi.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -46,7 +48,7 @@ export default function AppomatressDisposal() {
 
                     {/* TL;DR Summary Box for AI and quick readers */}
                     <div className={styles.tldrBox}>
-                        <h3>Key Takeaways (TL;DR)</h3>
+                        <h2>Key Takeaways (TL;DR)</h2>
                         <ul>
                             <li><strong>Mattresses:</strong> Usually allowed in roll-off dumpsters but may incur special fees depending on the local landfill.</li>
                             <li><strong>Appliances:</strong> You can toss washers, dryers, and stoves in a dumpster safely.</li>
@@ -55,9 +57,12 @@ export default function AppomatressDisposal() {
                         </ul>
                     </div>
 
-                    <img
+                    <Image
                         src="/images/gallery/residential-dumpster-rental-brandon-driveway.jpg"
                         alt="Residential roll-off dumpster rental on a driveway in Central MS"
+                        width={768}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
                         className={styles.heroImage}
                     />
 

@@ -6,9 +6,17 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-prices-jackson-ms' },
-    title: 'Dumpster Rental Prices in Jackson MS | 2026 Cost Guide',
+    title: 'Dumpster Rental Prices Jackson MS (2026)',
     description:
-        'Complete guide to dumpster rental prices in Jackson, Mississippi. Compare 10, 15, and 20-yard dumpster costs from Mid South Dumpster Rentals. Flat-rate pricing starts at $349 with no hidden fees. Updated March 2026.',
+        'Real dumpster rental prices in Jackson MS by size and rental period, plus the fees that catch people out. Updated for 2026.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Dumpster Rental Prices Jackson MS (2026)',
+        description: 'Real dumpster rental prices in Jackson MS by size and rental period, plus the fees that catch people out. Updated for 2026.',
+        url: 'https://midsouthdumpsterms.com/blog/dumpster-rental-prices-jackson-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {
@@ -43,7 +51,7 @@ export default function BlogPost() {
 
                     <div className={styles.content}>
                         <div className={styles.tldrBox}>
-                            <h3>Key Takeaways: Jackson MS Dumpster Pricing (2026)</h3>
+                            <h2>Key Takeaways: Jackson MS Dumpster Pricing (2026)</h2>
                             <ul>
                                 <li><strong>10-Yard Dumpsters:</strong> Start at $349 for 1-day, up to $399 for a 7-day rental (1 ton included).</li>
                                 <li><strong>15-Yard Dumpsters:</strong> Start at $399 for 1-day, up to $449 for a 7-day rental (2 tons included).</li>

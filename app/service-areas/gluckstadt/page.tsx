@@ -9,13 +9,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/gluckstadt' },
-    title: 'Roll Off Dumpster Rental Gluckstadt MS | Madison County',
+    title: 'Dumpster Rental Gluckstadt MS | Same-Day',
     description:
-        'Roll off dumpster rental in Gluckstadt, MS and Madison County. 10, 15 & 20-yard dumpsters with same-day delivery to all Gluckstadt neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Gluckstadt, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Gluckstadt and the Highway 51 corridor.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Gluckstadt MS | Madison County',
         description: 'Locally owned roll off dumpster rental serving Gluckstadt & all of Madison County. Same-day delivery, flat-rate pricing, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/gluckstadt',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -147,11 +148,27 @@ export default function GluckstadtPage() {
                         Gluckstadt's explosive residential growth makes it one of the most active markets for home construction, remodeling, and cleanout work in Central Mississippi. We're proud to serve this booming community with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Madison County customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
-                        <strong>Planning a rental?</strong> Read our guide on <Link href="/blog/dumpster-rental-madison-ms">dumpster rentals in Madison County</Link> for more local tips and advice on sizing.
+                        <strong>Planning a rental?</strong> Read our guide on <Link href="/service-areas/madison">dumpster rentals in Madison County</Link> for more local tips and advice on sizing.
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Gluckstadt is part of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Dumpster Delivery in Gluckstadt — Local Notes</h2>
+                    <p>Gluckstadt is one of the fastest-growing parts of Madison County, and the debris profile shows it. A large share of what we haul here is new-construction waste — framing offcuts, sheathing, siding scrap, drywall, packaging and window crating — rather than the demolition and cleanout material that dominates the older parts of the metro.</p>
+                    <p>New-build sites have a specific problem worth flagging: the driveway is often freshly poured and still curing, or the only firm ground is the pad itself. We carry boards to spread the load under the container rails, but tell us at booking if the concrete is new so we can plan placement rather than discover it on arrival. Setting a container on green concrete is one of the few ways a dumpster rental turns into a repair bill.</p>
+                    <p>Builders working multiple lots here often want a container swapped rather than picked up. We can run swaps on a standing schedule so a crew is never waiting on an empty — call and we will set it up rather than booking each one separately.</p>
+                    <p><strong>What we most often haul out of Gluckstadt:</strong></p>
+                    <ul className={styles.projectsList}>
+                        <li>New-construction framing and drywall waste</li>
+                        <li>Siding, roofing and window packaging</li>
+                        <li>Job-site container swaps for builders</li>
+                        <li>Landscaping debris on new lots</li>
+                    </ul>
                 </div>
             </section>
 

@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Resend throws from its constructor when the key is missing, which turns a
+// missing or rotated env var into a hard build failure for the whole site
+// rather than a failure of this one route. Construct it lazily instead.
+function getResend() {
+    return new Resend(process.env.RESEND_API_KEY)
+}
 const LEAD_NOTIFY_EMAIL = process.env.NOTIFICATION_EMAIL ?? 'midsouthdumpsterms@gmail.com'
 
 const ALLOWED_ORIGINS = [
@@ -115,7 +120,7 @@ export async function POST(request: NextRequest) {
 
         const cityPart = lead.address.split(',')[1]?.trim() || lead.address
 
-        await resend.emails.send({
+        await getResend().emails.send({
             from: 'Mid South Chatbot <quotes@midsouthdumpsterms.com>',
             to: [LEAD_NOTIFY_EMAIL],
             subject: `🔔 New Chat Lead: ${lead.name} · ${sizeLabel} · ${cityPart}`,

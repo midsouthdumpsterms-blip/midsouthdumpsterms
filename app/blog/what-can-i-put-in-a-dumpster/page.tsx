@@ -1,16 +1,19 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from '../blog-post.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/what-can-i-put-in-a-dumpster' },
     title: 'What Can I Put in a Dumpster?',
-    description: 'Confused about what you can and cannot throw in a roll-off dumpster? Check out our complete guide to permitted and prohibited items in Mississippi.',
+    description:
+        'A complete list of what a roll-off dumpster will and will not take in Mississippi, plus where the prohibited items actually go.',
     openGraph: {
         title: 'What Can I Put in a Dumpster?',
         description: 'Complete guide to what you can throw in a roll-off dumpster in Mississippi.',
         type: 'article',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -40,9 +43,12 @@ export default function WhatCanIPutInADumpster() {
                         <p className={styles.date}>Published on February 3, 2026</p>
                     </header>
 
-                    <img
+                    <Image
                         src="/images/blog/what-can-i-put-in-dumpster.jpg"
                         alt="Dumpster filled with household debris"
+                        width={1024}
+                        height={1024}
+                        sizes="(max-width: 640px) 100vw, 480px"
                         className={styles.heroImage}
                     />
 

@@ -9,13 +9,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/brandon' },
-    title: 'Roll Off Dumpster Rental Brandon MS | Rankin County',
+    title: 'Dumpster Rental Brandon MS | Same-Day',
     description:
-        'Roll off dumpster rental in Brandon, MS and Rankin County. 10, 15 & 20-yard dumpsters with same-day delivery to Crossgates, Castlewoods & all Brandon neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Brandon, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Crossgates, Castlewoods and the Reservoir.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Brandon MS | Rankin County',
         description: 'Locally owned roll off dumpster rental serving Brandon & all of Rankin County. Same-day delivery, flat-rate pricing, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/brandon',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -151,7 +152,7 @@ export default function BrandonPage() {
                         Brandon&apos;s thriving community and expanding development make it one of the metro area&apos;s most desirable locations for home improvement and construction. We&apos;re proud to serve Rankin County with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Brandon customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
-                        <strong>Planning a rental?</strong> Read our guide on <Link href="/blog/dumpster-rental-brandon-ms">Dumpster Rentals in Brandon, MS</Link> for more local tips and advice on sizing.
+                        <strong>Planning a rental?</strong> Read our guide on <Link href="/service-areas/brandon">Dumpster Rentals in Brandon, MS</Link> for more local tips and advice on sizing.
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Brandon is the seat of <Link href="/service-areas/rankin-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Rankin County</Link> — view all Rankin County cities we serve.

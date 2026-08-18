@@ -9,13 +9,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/pearl' },
-    title: 'Roll Off Dumpster Rental Pearl MS | Same-Day Service',
+    title: 'Dumpster Rental Pearl MS | Same-Day',
     description:
-        'Roll off dumpster rental in Pearl, MS starting at $349. 10, 15 & 20-yard dumpsters with same-day delivery to Westside, Parkbridge, Airport Road & all Pearl neighborhoods. Flat-rate pricing. Call 601-316-7891.',
+        'Roll-off dumpster rental in Pearl, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Westside, Parkbridge and Airport Road.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Pearl, MS',
         description: 'Same-day roll off dumpster rental in Pearl, MS. Flat-rate pricing from $349, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/pearl',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 

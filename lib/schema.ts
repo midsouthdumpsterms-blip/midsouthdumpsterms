@@ -1,8 +1,18 @@
 // Schema Markup Utilities for SEO
 
+/**
+ * Stable identifier for the business entity.
+ *
+ * The LocalBusiness node is emitted on every page. Without an @id, Google sees
+ * 78 unlinked business nodes instead of one entity referenced 78 times, and
+ * other nodes (Service.provider, Offer.seller) cannot point at it.
+ */
+export const BUSINESS_ID = 'https://midsouthdumpsterms.com/#business'
+
 export interface LocalBusinessSchema {
     '@context': string;
     '@type': string | string[];
+    '@id': string;
     name: string;
     description: string;
     slogan?: string;
@@ -35,21 +45,13 @@ export interface LocalBusinessSchema {
     }[];
     priceRange?: string;
     areaServed?: string[] | object[];
-    aggregateRating?: {
-        '@type': string;
-        ratingValue: string;
-        reviewCount: string;
-        bestRating: string;
-        worstRating: string;
-    };
-    hasOfferCatalog?: object;
-    review?: object[];
 }
 
 export function generateLocalBusinessSchema(): LocalBusinessSchema {
     return {
         '@context': 'https://schema.org',
         '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
+        '@id': BUSINESS_ID,
         name: 'Mid South Dumpster Rentals, LLC',
         description: 'Locally-owned dumpster rental company serving Central Mississippi. Offering 10, 15, and 20-yard roll-off dumpsters with same-day delivery available 7 days a week. Flat-rate pricing starting at $349 with no hidden fees.',
         slogan: 'Same-Day Dumpster Delivery, 7 Days a Week',
@@ -111,127 +113,119 @@ export function generateLocalBusinessSchema(): LocalBusinessSchema {
             { '@type': 'City', name: 'Florence', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
             { '@type': 'City', name: 'Richland', containedInPlace: { '@type': 'State', name: 'Mississippi' } },
         ],
-        aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: '5.0',
-            reviewCount: '30',
-            bestRating: '5',
-            worstRating: '1',
-        },
-        hasOfferCatalog: {
-            '@type': 'OfferCatalog',
-            name: 'Roll-Off Dumpster Rentals — All Sizes & Rental Periods',
-            itemListElement: [
-                // ── 10-YARD: all durations ──
-                {
-                    '@type': 'Offer',
-                    name: '10-Yard Dumpster — 1-Day Rental',
-                    description: '10-yard roll-off dumpster, 1-day rental. Includes 1 ton (2,000 lbs). Ideal for small cleanouts, garage cleanup, minor renovations, and yard debris. Overage: $55/ton (prorated).',
-                    price: '349',
-                    priceCurrency: 'USD',
-                    priceSpecification: { '@type': 'UnitPriceSpecification', price: '349', priceCurrency: 'USD', unitText: '1-day rental' },
-                    eligibleRegion: { '@type': 'State', name: 'Mississippi' },
-                    seller: { '@type': 'LocalBusiness', name: 'Mid South Dumpster Rentals, LLC' },
-                },
-                {
-                    '@type': 'Offer',
-                    name: '10-Yard Dumpster — 3-Day Rental',
-                    description: '10-yard roll-off dumpster, 3-day rental. Includes 1 ton (2,000 lbs). Price is $379 for 3 days. Overage: $55/ton (prorated).',
-                    price: '379',
-                    priceCurrency: 'USD',
-                    priceSpecification: { '@type': 'UnitPriceSpecification', price: '379', priceCurrency: 'USD', unitText: '3-day rental' },
-                    eligibleRegion: { '@type': 'State', name: 'Mississippi' },
-                    seller: { '@type': 'LocalBusiness', name: 'Mid South Dumpster Rentals, LLC' },
-                },
-                {
-                    '@type': 'Offer',
-                    name: '10-Yard Dumpster — 7-Day Rental',
-                    description: '10-yard roll-off dumpster, 7-day rental. Includes 1 ton (2,000 lbs). Price is $399 for 7 days. Overage: $55/ton (prorated). Extended rental: $50/day after 7 days.',
-                    price: '399',
-                    priceCurrency: 'USD',
-                    priceSpecification: { '@type': 'UnitPriceSpecification', price: '399', priceCurrency: 'USD', unitText: '7-day rental' },
-                    eligibleRegion: { '@type': 'State', name: 'Mississippi' },
-                    seller: { '@type': 'LocalBusiness', name: 'Mid South Dumpster Rentals, LLC' },
-                },
-                // ── 15-YARD: all durations ──
-                {
-                    '@type': 'Offer',
-                    name: '15-Yard Dumpster — 1-Day Rental',
-                    description: '15-yard roll-off dumpster (most popular size), 1-day rental. Includes 2 tons (4,000 lbs). Ideal for home renovations, roofing, estate cleanouts, and medium construction. Overage: $55/ton (prorated).',
-                    price: '399',
-                    priceCurrency: 'USD',
-                    priceSpecification: { '@type': 'UnitPriceSpecification', price: '399', priceCurrency: 'USD', unitText: '1-day rental' },
-                    eligibleRegion: { '@type': 'State', name: 'Mississippi' },
-                    seller: { '@type': 'LocalBusiness', name: 'Mid South Dumpster Rentals, LLC' },
-                },
-                {
-                    '@type': 'Offer',
-                    name: '15-Yard Dumpster — 3-Day Rental',
-                    description: '15-yard roll-off dumpster, 3-day rental. Includes 2 tons (4,000 lbs). Price is $429 for 3 days. Overage: $55/ton (prorated).',
-                    price: '429',
-                    priceCurrency: 'USD',
-                    priceSpecification: { '@type': 'UnitPriceSpecification', price: '429', priceCurrency: 'USD', unitText: '3-day rental' },
-                    eligibleRegion: { '@type': 'State', name: 'Mississippi' },
-                    seller: { '@type': 'LocalBusiness', name: 'Mid South Dumpster Rentals, LLC' },
-                },
-                {
-                    '@type': 'Offer',
-                    name: '15-Yard Dumpster — 7-Day Rental',
-                    description: '15-yard roll-off dumpster, 7-day rental. Includes 2 tons (4,000 lbs). Price is $449 for 7 days. Extended rental: $50/day after 7 days.',
-                    price: '449',
-                    priceCurrency: 'USD',
-                    priceSpecification: { '@type': 'UnitPriceSpecification', price: '449', priceCurrency: 'USD', unitText: '7-day rental' },
-                    eligibleRegion: { '@type': 'State', name: 'Mississippi' },
-                    seller: { '@type': 'LocalBusiness', name: 'Mid South Dumpster Rentals, LLC' },
-                },
-                // ── 20-YARD: all durations ──
-                {
-                    '@type': 'Offer',
-                    name: '20-Yard Dumpster — 1-Day Rental',
-                    description: '20-yard roll-off dumpster, 1-day rental. Includes 3 tons (6,000 lbs). Hard weight cap at 6,000 lbs — no overage allowed. Ideal for large renovations, new construction, major demolition, and commercial projects.',
-                    price: '449',
-                    priceCurrency: 'USD',
-                    priceSpecification: { '@type': 'UnitPriceSpecification', price: '449', priceCurrency: 'USD', unitText: '1-day rental' },
-                    eligibleRegion: { '@type': 'State', name: 'Mississippi' },
-                    seller: { '@type': 'LocalBusiness', name: 'Mid South Dumpster Rentals, LLC' },
-                },
-                {
-                    '@type': 'Offer',
-                    name: '20-Yard Dumpster — 3-Day Rental',
-                    description: '20-yard roll-off dumpster, 3-day rental. Price is $479 for 3 days. Includes 3 tons (6,000 lbs). Hard weight cap — no overage allowed.',
-                    price: '479',
-                    priceCurrency: 'USD',
-                    priceSpecification: { '@type': 'UnitPriceSpecification', price: '479', priceCurrency: 'USD', unitText: '3-day rental' },
-                    eligibleRegion: { '@type': 'State', name: 'Mississippi' },
-                    seller: { '@type': 'LocalBusiness', name: 'Mid South Dumpster Rentals, LLC' },
-                },
-                {
-                    '@type': 'Offer',
-                    name: '20-Yard Dumpster — 7-Day Rental',
-                    description: '20-yard roll-off dumpster, 7-day rental. Price is $499 for 7 days. Includes 3 tons (6,000 lbs). Hard weight cap at 6,000 lbs — no overage allowed. Extended rental: $50/day after 7 days.',
-                    price: '499',
-                    priceCurrency: 'USD',
-                    priceSpecification: { '@type': 'UnitPriceSpecification', price: '499', priceCurrency: 'USD', unitText: '7-day rental' },
-                    eligibleRegion: { '@type': 'State', name: 'Mississippi' },
-                    seller: { '@type': 'LocalBusiness', name: 'Mid South Dumpster Rentals, LLC' },
-                },
-            ],
-        },
-        review: [
+    };
+}
+
+/**
+ * The full rental price list.
+ *
+ * This used to be inlined into the LocalBusiness node, which meant all nine
+ * Offer objects shipped in the HTML of all 78 pages -- including the privacy
+ * policy. Emit it only where pricing is the subject of the page.
+ */
+export function generateOfferCatalogSchema(): object {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'OfferCatalog',
+        '@id': 'https://midsouthdumpsterms.com/#pricing',
+        provider: { '@id': BUSINESS_ID },
+        name: 'Roll-Off Dumpster Rentals — All Sizes & Rental Periods',
+        itemListElement: [
+            // ── 10-YARD: all durations ──
             {
-                '@type': 'Review',
-                reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-                author: { '@type': 'Person', name: 'Jackson MS Customer' },
-                reviewBody: 'Mid South Dumpster Rentals delivered the same day I called. Price was exactly what they quoted — no surprise fees. Will definitely use them again for my next project.',
+                '@type': 'Offer',
+                name: '10-Yard Dumpster — 1-Day Rental',
+                description: '10-yard roll-off dumpster, 1-day rental. Includes 1 ton (2,000 lbs). Ideal for small cleanouts, garage cleanup, minor renovations, and yard debris. Overage: $55/ton (prorated).',
+                price: '349',
+                priceCurrency: 'USD',
+                priceSpecification: { '@type': 'UnitPriceSpecification', price: '349', priceCurrency: 'USD', unitText: '1-day rental' },
+                eligibleRegion: { '@type': 'State', name: 'Mississippi' },
+                seller: { '@id': BUSINESS_ID },
             },
             {
-                '@type': 'Review',
-                reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-                author: { '@type': 'Person', name: 'Brandon MS Contractor' },
-                reviewBody: 'Best dumpster rental service in Central Mississippi. They showed up on time, picked up on time, and the flat-rate pricing made budgeting easy for my construction project.',
+                '@type': 'Offer',
+                name: '10-Yard Dumpster — 3-Day Rental',
+                description: '10-yard roll-off dumpster, 3-day rental. Includes 1 ton (2,000 lbs). Price is $379 for 3 days. Overage: $55/ton (prorated).',
+                price: '379',
+                priceCurrency: 'USD',
+                priceSpecification: { '@type': 'UnitPriceSpecification', price: '379', priceCurrency: 'USD', unitText: '3-day rental' },
+                eligibleRegion: { '@type': 'State', name: 'Mississippi' },
+                seller: { '@id': BUSINESS_ID },
+            },
+            {
+                '@type': 'Offer',
+                name: '10-Yard Dumpster — 7-Day Rental',
+                description: '10-yard roll-off dumpster, 7-day rental. Includes 1 ton (2,000 lbs). Price is $399 for 7 days. Overage: $55/ton (prorated). Extended rental: $50/day after 7 days.',
+                price: '399',
+                priceCurrency: 'USD',
+                priceSpecification: { '@type': 'UnitPriceSpecification', price: '399', priceCurrency: 'USD', unitText: '7-day rental' },
+                eligibleRegion: { '@type': 'State', name: 'Mississippi' },
+                seller: { '@id': BUSINESS_ID },
+            },
+            // ── 15-YARD: all durations ──
+            {
+                '@type': 'Offer',
+                name: '15-Yard Dumpster — 1-Day Rental',
+                description: '15-yard roll-off dumpster (most popular size), 1-day rental. Includes 2 tons (4,000 lbs). Ideal for home renovations, roofing, estate cleanouts, and medium construction. Overage: $55/ton (prorated).',
+                price: '399',
+                priceCurrency: 'USD',
+                priceSpecification: { '@type': 'UnitPriceSpecification', price: '399', priceCurrency: 'USD', unitText: '1-day rental' },
+                eligibleRegion: { '@type': 'State', name: 'Mississippi' },
+                seller: { '@id': BUSINESS_ID },
+            },
+            {
+                '@type': 'Offer',
+                name: '15-Yard Dumpster — 3-Day Rental',
+                description: '15-yard roll-off dumpster, 3-day rental. Includes 2 tons (4,000 lbs). Price is $429 for 3 days. Overage: $55/ton (prorated).',
+                price: '429',
+                priceCurrency: 'USD',
+                priceSpecification: { '@type': 'UnitPriceSpecification', price: '429', priceCurrency: 'USD', unitText: '3-day rental' },
+                eligibleRegion: { '@type': 'State', name: 'Mississippi' },
+                seller: { '@id': BUSINESS_ID },
+            },
+            {
+                '@type': 'Offer',
+                name: '15-Yard Dumpster — 7-Day Rental',
+                description: '15-yard roll-off dumpster, 7-day rental. Includes 2 tons (4,000 lbs). Price is $449 for 7 days. Extended rental: $50/day after 7 days.',
+                price: '449',
+                priceCurrency: 'USD',
+                priceSpecification: { '@type': 'UnitPriceSpecification', price: '449', priceCurrency: 'USD', unitText: '7-day rental' },
+                eligibleRegion: { '@type': 'State', name: 'Mississippi' },
+                seller: { '@id': BUSINESS_ID },
+            },
+            // ── 20-YARD: all durations ──
+            {
+                '@type': 'Offer',
+                name: '20-Yard Dumpster — 1-Day Rental',
+                description: '20-yard roll-off dumpster, 1-day rental. Includes 3 tons (6,000 lbs). Hard weight cap at 6,000 lbs — no overage allowed. Ideal for large renovations, new construction, major demolition, and commercial projects.',
+                price: '449',
+                priceCurrency: 'USD',
+                priceSpecification: { '@type': 'UnitPriceSpecification', price: '449', priceCurrency: 'USD', unitText: '1-day rental' },
+                eligibleRegion: { '@type': 'State', name: 'Mississippi' },
+                seller: { '@id': BUSINESS_ID },
+            },
+            {
+                '@type': 'Offer',
+                name: '20-Yard Dumpster — 3-Day Rental',
+                description: '20-yard roll-off dumpster, 3-day rental. Price is $479 for 3 days. Includes 3 tons (6,000 lbs). Hard weight cap — no overage allowed.',
+                price: '479',
+                priceCurrency: 'USD',
+                priceSpecification: { '@type': 'UnitPriceSpecification', price: '479', priceCurrency: 'USD', unitText: '3-day rental' },
+                eligibleRegion: { '@type': 'State', name: 'Mississippi' },
+                seller: { '@id': BUSINESS_ID },
+            },
+            {
+                '@type': 'Offer',
+                name: '20-Yard Dumpster — 7-Day Rental',
+                description: '20-yard roll-off dumpster, 7-day rental. Price is $499 for 7 days. Includes 3 tons (6,000 lbs). Hard weight cap at 6,000 lbs — no overage allowed. Extended rental: $50/day after 7 days.',
+                price: '499',
+                priceCurrency: 'USD',
+                priceSpecification: { '@type': 'UnitPriceSpecification', price: '499', priceCurrency: 'USD', unitText: '7-day rental' },
+                eligibleRegion: { '@type': 'State', name: 'Mississippi' },
+                seller: { '@id': BUSINESS_ID },
             },
         ],
-    };
+    }
 }
 
 export interface ServiceSchema {
@@ -240,6 +234,7 @@ export interface ServiceSchema {
     serviceType: string;
     provider: {
         '@type': string;
+        '@id': string;
         name: string;
     };
     areaServed: string | object[];
@@ -288,6 +283,7 @@ export function generateServiceSchema(
         serviceType,
         provider: {
             '@type': 'LocalBusiness',
+            '@id': BUSINESS_ID,
             name: 'Mid South Dumpster Rentals, LLC',
         },
         areaServed,
@@ -334,14 +330,8 @@ export interface ArticleSchema {
     '@type': string;
     headline: string;
     description: string;
-    author: {
-        '@type': string;
-        name: string;
-    };
-    publisher: {
-        '@type': string;
-        name: string;
-    };
+    author: object;
+    publisher: object;
     datePublished: string;
     dateModified?: string;
     image?: string;
@@ -360,14 +350,17 @@ export function generateArticleSchema(
         headline,
         description,
         image: image || 'https://midsouthdumpsterms.com/opengraph-image.jpg',
+        // A named human author is a stronger authorship signal than the company
+        // name for a local service blog, and Andrew is already the face of the
+        // About page.
         author: {
-            '@type': 'Organization',
-            name: 'Mid South Dumpster Rentals, LLC',
+            '@type': 'Person',
+            name: 'Andrew Tyre',
+            jobTitle: 'Founder',
+            url: 'https://midsouthdumpsterms.com/about',
+            worksFor: { '@id': BUSINESS_ID },
         },
-        publisher: {
-            '@type': 'Organization',
-            name: 'Mid South Dumpster Rentals, LLC',
-        },
+        publisher: { '@id': BUSINESS_ID },
         datePublished,
         dateModified: dateModified || datePublished,
     };

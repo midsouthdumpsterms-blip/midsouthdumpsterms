@@ -9,13 +9,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/madison' },
-    title: 'Roll Off Dumpster Rental Madison MS | Madison County',
+    title: 'Dumpster Rental Madison MS | Same-Day',
     description:
-        'Roll off dumpster rental in Madison, MS and Madison County. 10, 15 & 20-yard dumpsters with same-day delivery to Reunion, Lake Caroline, Annandale & more. Flat-rate pricing, no hidden fees. Call 601-316-7891.',
+        'Roll-off dumpster rental in Madison, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Reunion, Lake Caroline and Annandale.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Madison MS | Madison County',
         description: 'Local roll off dumpster rental serving Madison, MS & all of Madison County. Same-day delivery, flat-rate pricing starting at $349.',
         url: 'https://midsouthdumpsterms.com/service-areas/madison',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -151,7 +152,7 @@ export default function MadisonPage() {
                         From residential cleanouts to large commercial builds in Madison&apos;s growing business corridors, Mid South Dumpster Rentals is Madison County&apos;s trusted local roll off dumpster provider. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Madison customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
-                        <strong>Want to learn more?</strong> Check out our complete guide on <Link href="/blog/dumpster-rental-madison-ms">Dumpster Rental in Madison, MS</Link>.
+                        <strong>Want to learn more?</strong> Check out our complete guide on <Link href="/service-areas/madison">Dumpster Rental in Madison, MS</Link>.
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Madison is the heart of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.

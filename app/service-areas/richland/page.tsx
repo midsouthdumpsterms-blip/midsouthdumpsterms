@@ -9,13 +9,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/richland' },
-    title: 'Roll Off Dumpster Rental Richland MS | Rankin County',
+    title: 'Dumpster Rental Richland MS | Same-Day',
     description:
-        'Roll off dumpster rental in Richland, MS and Rankin County. 10, 15 & 20-yard dumpsters with same-day delivery to all Richland neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Richland, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Richland and the Highway 49 corridor.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Richland MS | Rankin County',
         description: 'Locally owned roll off dumpster rental serving Richland & all of Rankin County. Same-day delivery, flat-rate pricing, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/richland',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -156,6 +157,22 @@ export default function RichlandPage() {
                     <p style={{ marginTop: '1rem' }}>
                         Richland is part of <Link href="/service-areas/rankin-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Rankin County</Link> — view all Rankin County cities we serve.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Dumpster Delivery in Richland — Local Notes</h2>
+                    <p>Richland sits where Highway 49 meets the I-20 corridor, and it has more light industrial and commercial activity per square mile than most of the towns we serve. Shop cleanouts, warehouse clear-downs, tenant turnovers in commercial space and contractor job-site debris make up a large share of the work here alongside ordinary residential jobs.</p>
+                    <p>Commercial placement in Richland is usually easy — there is room to work on most of these lots — but it does mean thinking about truck traffic. If the container is going somewhere a delivery vehicle or forklift also needs to move through, tell us and we will place it out of the path rather than in the most convenient spot for us.</p>
+                    <p>Richland is one of the quickest runs from our yard, which makes it a reliable same-day area. It is also close enough that a second container on the same day is usually workable if a job turns out bigger than expected.</p>
+                    <p><strong>What we most often haul out of Richland:</strong></p>
+                    <ul className={styles.projectsList}>
+                        <li>Shop, warehouse and light industrial cleanouts</li>
+                        <li>Commercial tenant turnovers</li>
+                        <li>Contractor job-site debris</li>
+                        <li>Residential renovations and cleanouts</li>
+                    </ul>
                 </div>
             </section>
 

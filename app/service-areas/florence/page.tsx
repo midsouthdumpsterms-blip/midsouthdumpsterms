@@ -9,13 +9,14 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/florence' },
-    title: 'Roll Off Dumpster Rental Florence MS | Rankin County',
+    title: 'Dumpster Rental Florence MS | Same-Day',
     description:
-        'Roll off dumpster rental in Florence, MS and Rankin County. 10, 15 & 20-yard dumpsters with same-day delivery to all Florence neighborhoods. Flat-rate pricing starting at $349. Call 601-316-7891.',
+        'Roll-off dumpster rental in Florence, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Florence and the Highway 49 corridor.',
     openGraph: {
         title: 'Roll Off Dumpster Rental Florence MS | Rankin County',
         description: 'Locally owned roll off dumpster rental serving Florence & all of Rankin County. Same-day delivery, flat-rate pricing, no hidden fees.',
         url: 'https://midsouthdumpsterms.com/service-areas/florence',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
 }
 
@@ -152,6 +153,22 @@ export default function FlorencePage() {
                     <p style={{ marginTop: '1rem' }}>
                         Florence is part of <Link href="/service-areas/rankin-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Rankin County</Link> — view all Rankin County cities we serve.
                     </p>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container">
+                    <h2>Dumpster Delivery in Florence — Local Notes</h2>
+                    <p>Florence sits along the Highway 49 corridor in Rankin County, where subdivisions give way to acreage fairly quickly. That mix means we see two very different kinds of job here: standard residential remodels and cleanouts in town, and land clearing, barn tear-downs and brush disposal on the properties outside it.</p>
+                    <p>Brush and tree debris is the load that most often gets underestimated in this part of the county. Green wood is heavy and it does not stack efficiently, so a pile that looks like one container is frequently two. If you are clearing after a storm or taking down trees, describe the pile over the phone and we will size it with you rather than guessing.</p>
+                    <p>Delivery down Highway 49 from our yard is straightforward and Florence is comfortably inside same-day range when you call before noon. Rural addresses are fine — just flag gates, cattle guards, or soft ground when you book.</p>
+                    <p><strong>What we most often haul out of Florence:</strong></p>
+                    <ul className={styles.projectsList}>
+                        <li>Land clearing, brush and tree debris</li>
+                        <li>Barn and outbuilding demolition</li>
+                        <li>Residential remodel and cleanout waste</li>
+                        <li>Storm damage cleanup</li>
+                    </ul>
                 </div>
             </section>
 

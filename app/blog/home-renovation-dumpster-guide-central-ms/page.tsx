@@ -6,16 +6,24 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/home-renovation-dumpster-guide-central-ms' },
-    title: 'Dumpster Rental for Home Renovations in Central MS | Complete Guide',
+    title: 'Home Renovation Dumpster Guide | MS',
     description:
-        'Planning a home renovation in Jackson, Madison, or Brandon MS? Learn how to choose the right dumpster size, manage debris, and save money on your remodeling project.',
+        'Sizing, placement, timing and cost for renovation debris in Jackson, Madison and Brandon. A full walkthrough for Central MS homeowners.',
+    openGraph: {
+        type: 'website',
+        siteName: 'Mid South Dumpster Rentals',
+        title: 'Home Renovation Dumpster Guide | MS',
+        description: 'Sizing, placement, timing and cost for renovation debris in Jackson, Madison and Brandon. A full walkthrough for Central MS homeowners.',
+        url: 'https://midsouthdumpsterms.com/blog/home-renovation-dumpster-guide-central-ms',
+        images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
+    },
 }
 
 export default function BlogPost() {
     const articleSchema = generateArticleSchema(
         'Dumpster Rental for Home Renovations in Central MS',
         'Complete guide to managing debris during home renovations in Central Mississippi.',
-        '2024-02-05'
+        '2026-02-05'
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
