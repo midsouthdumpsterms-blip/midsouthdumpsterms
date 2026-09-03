@@ -4,6 +4,11 @@ import { generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from './blog.module.css'
 import { sql } from '@vercel/postgres'
 import localPostsData from '@/lib/blog-posts.json'
+import retiredPosts from '@/lib/retired-posts.json'
+
+// Retired database posts still exist in Postgres but 301 elsewhere, so they
+// must not appear in the listing either.
+const RETIRED_SLUGS = new Set(retiredPosts.map((p) => p.from))
 
 // Revalidate rather than force-dynamic: the listing was querying Postgres on
 // every request, including every crawler hit, which made the content hub the
@@ -47,7 +52,9 @@ async function getDbBlogPosts(): Promise<UnifiedPost[]> {
             ORDER BY published_at DESC
         `;
         
-        return rows.map(row => ({
+        return rows
+            .filter(row => !RETIRED_SLUGS.has(row.slug))
+            .map(row => ({
             slug: row.slug,
             title: row.title,
             excerpt: row.excerpt,

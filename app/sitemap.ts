@@ -1,6 +1,11 @@
 import { MetadataRoute } from 'next'
 import { sql } from '@vercel/postgres'
 import routeList from '@/lib/route-list.json'
+import retiredPosts from '@/lib/retired-posts.json'
+
+// Slugs that now 301 elsewhere. Advertising a redirecting URL in the sitemap
+// is exactly what produced the "Page with redirect" bucket in Search Console.
+const RETIRED_SLUGS = new Set(retiredPosts.map((p) => p.from))
 
 const baseUrl = 'https://midsouthdumpsterms.com'
 
@@ -50,6 +55,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     try {
         const { rows } = await sql`SELECT slug, published_at FROM blog_posts WHERE status = 'PUBLISHED'`
         dbBlogUrls = rows
+            .filter((post) => !RETIRED_SLUGS.has(post.slug))
             .map((post) => ({
                 url: `${baseUrl}/blog/${post.slug}`,
                 lastModified: new Date(post.published_at),

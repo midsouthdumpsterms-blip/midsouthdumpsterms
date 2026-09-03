@@ -197,3 +197,39 @@
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
 }
+
+/* Contextual links out to the money pages, appended to every database-authored
+   post. Defined here rather than inline so the class actually resolves --
+   .gallerySection below had the same undefined-className problem as
+   .heroImage did. */
+.related {
+    margin-top: var(--spacing-3xl);
+    padding: var(--spacing-xl);
+    background: var(--color-gray-50);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-md);
+}
+
+.related h3 {
+    margin: 0 0 var(--spacing-md);
+    font-size: 1.125rem;
+}
+
+.related ul {
+    margin: 0;
+    padding-left: var(--spacing-lg);
+}
+
+.related li {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.related a {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.gallerySection {
+    margin-top: var(--spacing-3xl);
+}

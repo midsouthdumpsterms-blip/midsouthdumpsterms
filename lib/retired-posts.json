@@ -1,0 +1,42 @@
+[
+  {
+    "from": "how-to-choose-the-right-dumpster-size-for-a-home-remodel-in-jackson-ms",
+    "to": "/blog/how-to-choose-dumpster-size",
+    "reason": "Duplicates the static sizing guide, which is better written and better linked."
+  },
+  {
+    "from": "how-to-rent-a-dumpster-for-storm-cleanup-in-central-ms",
+    "to": "/blog/storm-cleanup-dumpster-rental-jackson-ms",
+    "reason": "Duplicates the static storm-cleanup post."
+  },
+  {
+    "from": "how-to-safely-dispose-of-appliances-and-mattresses-in-central-ms",
+    "to": "/blog/how-to-dispose-appliances-mattresses-jackson-ms",
+    "reason": "Duplicates the static appliance/mattress disposal post."
+  },
+  {
+    "from": "same-day-dumpster-rentals-in-jackson-ms-what-you-need-to-know",
+    "to": "/services/same-day-dumpster-rental",
+    "reason": "Third page competing for same-day intent. Points straight at the money page to avoid a redirect chain."
+  },
+  {
+    "from": "spring-cleaning-checklist-for-jackson-homeowners-getting-the-most-out-of-your-dumpster",
+    "to": "/blog/spring-cleaning-checklist-central-ms",
+    "reason": "Duplicates the static spring-cleaning checklist."
+  },
+  {
+    "from": "the-ultimate-guide-to-estate-cleanouts-and-dumpster-rentals-in-ms",
+    "to": "/services/estate-cleanout-dumpster-rental",
+    "reason": "Fourth page on estate cleanouts. Points at the money page directly."
+  },
+  {
+    "from": "understanding-dumpster-weight-limits-and-overage-fees-in-mississippi",
+    "to": "/blog/dumpster-weight-limits-jackson-ms",
+    "reason": "Duplicates the static weight-limits post."
+  },
+  {
+    "from": "what-items-are-prohibited-in-roll-off-dumpsters-in-rankin-county",
+    "to": "/blog/what-can-i-put-in-a-dumpster",
+    "reason": "Duplicates the static prohibited-items post."
+  }
+]

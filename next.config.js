@@ -1,3 +1,5 @@
+const retiredPosts = require('./lib/retired-posts.json')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
@@ -45,6 +47,17 @@ const nextConfig = {
                 destination: '/book-online',
                 permanent: true,
             },
+            // Nine posts written by the blog automation live in Postgres and
+            // render through /blog/[slug]. Eight of them duplicated a static
+            // post that was already better written and better linked, so they
+            // were competing with our own content. Each 301s to the page that
+            // should have been ranking all along; the mapping and the reason
+            // for each live in lib/retired-posts.json.
+            ...retiredPosts.map((post) => ({
+                source: `/blog/${post.from}`,
+                destination: post.to,
+                permanent: true,
+            })),
             // Consolidate duplicate city blog posts into their service-area page equivalents
             ...[
                 'brandon', 'byram', 'canton', 'clinton', 'flora', 'florence',

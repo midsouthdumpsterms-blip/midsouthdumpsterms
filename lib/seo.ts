@@ -53,3 +53,51 @@ export function twitterBase({ title, description }: Omit<OgInput, 'path'>): Meta
         images: [OG_IMAGE.url],
     }
 }
+
+/**
+ * The suffix `metadata.title.template` appends to every page title
+ * ("%s | Mid South"). Anything generated at runtime has to budget for it or
+ * it gets cut off in the SERP.
+ */
+export const TITLE_SUFFIX = ' | Mid South'
+export const TITLE_MAX = 60
+export const DESCRIPTION_MAX = 158
+
+/**
+ * Trim to a word boundary without leaving a dangling comma or dash.
+ *
+ * Titles get no ellipsis — a truncated title should still read as a title.
+ * Descriptions get one, because a sentence that stops mid-thought without any
+ * mark looks like a bug rather than a summary.
+ */
+function trimToWord(text: string, max: number): string {
+    const t = text.replace(/\s+/g, ' ').trim()
+    if (t.length <= max) return t
+    const cut = t.slice(0, max)
+    const lastSpace = cut.lastIndexOf(' ')
+    // Only honour the word boundary if it isn't throwing away most of the string.
+    const body = lastSpace > max * 0.5 ? cut.slice(0, lastSpace) : cut
+    return body.replace(/[\s,;:.–—-]+$/, '')
+}
+
+/**
+ * Fit a title inside Google's ~60-character display limit *including* the
+ * template suffix. Database-authored posts routinely arrive at 66–99
+ * characters, which is what pushed all nine of them past the cutoff.
+ */
+export function fitTitle(title: string, max: number = TITLE_MAX): string {
+    return trimToWord(title, Math.max(10, max - TITLE_SUFFIX.length))
+}
+
+/**
+ * Fit a meta description to 158 characters, preferring to end on a complete
+ * sentence when one lands in the last third of the budget.
+ */
+export function fitDescription(text: string, max: number = DESCRIPTION_MAX): string {
+    const t = (text || '').replace(/\s+/g, ' ').trim()
+    if (t.length <= max) return t
+    const window = t.slice(0, max)
+    const lastStop = Math.max(window.lastIndexOf('. '), window.lastIndexOf('! '), window.lastIndexOf('? '))
+    if (lastStop > max * 0.6) return window.slice(0, lastStop + 1)
+    return trimToWord(t, max - 1) + '…'
+}
