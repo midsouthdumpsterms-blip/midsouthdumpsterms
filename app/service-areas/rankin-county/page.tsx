@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
-import DumpsterSizeCard from '@/components/DumpsterSizeCard'
+import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
@@ -81,11 +81,40 @@ export default function RankinCountyPage() {
             <section>
                 <div className="container">
                     <h2 className="text-center">Roll Off Dumpster Sizes Available in Rankin County</h2>
-                    <div className={styles.sizesGrid}>
-                        <DumpsterSizeCard size="10" capacity="4 Pickup Truck Loads" weight="1 Ton Included" pricing={{ '1 Day': '$349', '3 Day': '$379', '7 Day': '$399' }} idealFor={['Small Cleanouts', 'Garage Cleanup', 'Minor Renovations', 'Yard Debris']} />
-                        <DumpsterSizeCard size="15" capacity="6 Pickup Truck Loads" weight="2 Tons Included" pricing={{ '1 Day': '$399', '3 Day': '$429', '7 Day': '$449' }} idealFor={['Home Renovations', 'Roofing Projects', 'Estate Cleanouts', 'Medium Construction']} popular />
-                        <DumpsterSizeCard size="20" capacity="8 Pickup Truck Loads" weight="3 Tons Included" pricing={{ '1 Day': '$449', '3 Day': '$479', '7 Day': '$499' }} idealFor={['Large Renovations', 'New Construction', 'Major Demolition', 'Commercial Projects']} />
-                    </div>
+                    <PriceSummary place="Rankin County" />
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>What Makes Rankin County Different</h2>
+                    <p>
+                        Rankin County is defined by water and by commercial growth. The Ross Barnett
+                        Reservoir runs along its northern edge, and Flowood has become one of the busiest
+                        medical and retail corridors in Central Mississippi. Those two facts account for
+                        most of what we haul here.
+                    </p>
+                    <p>
+                        Reservoir-adjacent property in Brandon and along the Spillway means mature trees,
+                        wooded lots and a great deal of vegetation. After severe weather this county
+                        generates more storm debris than Hinds or Madison &mdash; limbs, downed pine,
+                        fencing. Vegetation is deceptively heavy once it is wet, so storm loads should be
+                        sized on weight rather than the volume they appear to occupy.
+                    </p>
+                    <p>
+                        Ground conditions matter more here too. Low-lying lots near the reservoir and along
+                        the Pearl River hold water, and a loaded roll-off truck on saturated ground leaves
+                        ruts or gets stuck outright. If your property drains slowly, put the container on
+                        the drive rather than the lawn and tell us if the approach is soft.
+                    </p>
+                    <p>
+                        On the commercial side, Flowood and Pearl bring retail refits, medical-office
+                        fit-outs and tenant turnovers. See{' '}
+                        <Link href="/services/storm-cleanup-dumpster-rental">storm cleanup dumpster rental</Link>{' '}
+                        for post-weather sizing, or{' '}
+                        <Link href="/services/yard-waste-dumpster-rental">yard waste dumpster rental</Link>{' '}
+                        for routine vegetation work.
+                    </p>
                 </div>
             </section>
 

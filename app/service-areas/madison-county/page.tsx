@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
-import DumpsterSizeCard from '@/components/DumpsterSizeCard'
+import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
@@ -81,11 +81,41 @@ export default function MadisonCountyPage() {
             <section>
                 <div className="container">
                     <h2 className="text-center">Roll Off Dumpster Sizes Available in Madison County</h2>
-                    <div className={styles.sizesGrid}>
-                        <DumpsterSizeCard size="10" capacity="4 Pickup Truck Loads" weight="1 Ton Included" pricing={{ '1 Day': '$349', '3 Day': '$379', '7 Day': '$399' }} idealFor={['Small Cleanouts', 'Garage Cleanup', 'Minor Renovations', 'Yard Debris']} />
-                        <DumpsterSizeCard size="15" capacity="6 Pickup Truck Loads" weight="2 Tons Included" pricing={{ '1 Day': '$399', '3 Day': '$429', '7 Day': '$449' }} idealFor={['Home Renovations', 'Roofing Projects', 'Estate Cleanouts', 'Medium Construction']} popular />
-                        <DumpsterSizeCard size="20" capacity="8 Pickup Truck Loads" weight="3 Tons Included" pricing={{ '1 Day': '$449', '3 Day': '$479', '7 Day': '$499' }} idealFor={['Large Renovations', 'New Construction', 'Major Demolition', 'Commercial Projects']} />
-                    </div>
+                    <PriceSummary place="Madison County" />
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>What Makes Madison County Different</h2>
+                    <p>
+                        Madison County is the fastest-growing county in Mississippi, and nearly everything
+                        we haul here reflects that. Where Hinds County work is dominated by clearing out
+                        old houses, Madison County work is dominated by building new ones and fitting out
+                        the ones just finished.
+                    </p>
+                    <p>
+                        That changes the container. New-construction debris &mdash; framing offcuts,
+                        drywall, packaging, siding &mdash; is bulky and light, so you run out of volume
+                        long before you run out of weight. The 20-yard is the default here, where a 15
+                        would do the same job in an older neighborhood.
+                    </p>
+                    <p>
+                        The other Madison County specific is covenants. Reunion, Annandale, Providence and
+                        the newer Gluckstadt subdivisions all sit under active HOAs, and a good number
+                        restrict how long a container may sit in a driveway, where it can be placed, or
+                        require notice before delivery. An HOA rule is separate from and additional to
+                        anything the city or county requires. Check yours before you book a 7-day rental
+                        &mdash; it is the single most common surprise we run into in this county.
+                    </p>
+                    <p>
+                        Canton adds a different kind of demand again: the Nissan plant and its supplier
+                        base mean commercial and industrial clearances alongside the residential work. See{' '}
+                        <Link href="/services/construction-dumpster-rental">construction dumpster rental</Link>{' '}
+                        for job-site sizing, or{' '}
+                        <Link href="/services/commercial-dumpster-rental">commercial dumpster rental</Link>{' '}
+                        for refits and turnovers.
+                    </p>
                 </div>
             </section>
 

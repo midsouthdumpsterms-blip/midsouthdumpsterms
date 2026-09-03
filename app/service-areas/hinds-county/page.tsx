@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
-import DumpsterSizeCard from '@/components/DumpsterSizeCard'
+import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
@@ -81,11 +81,39 @@ export default function HindsCountyPage() {
             <section>
                 <div className="container">
                     <h2 className="text-center">Roll Off Dumpster Sizes Available in Hinds County</h2>
-                    <div className={styles.sizesGrid}>
-                        <DumpsterSizeCard size="10" capacity="4 Pickup Truck Loads" weight="1 Ton Included" pricing={{ '1 Day': '$349', '3 Day': '$379', '7 Day': '$399' }} idealFor={['Small Cleanouts', 'Garage Cleanup', 'Minor Renovations', 'Yard Debris']} />
-                        <DumpsterSizeCard size="15" capacity="6 Pickup Truck Loads" weight="2 Tons Included" pricing={{ '1 Day': '$399', '3 Day': '$429', '7 Day': '$449' }} idealFor={['Home Renovations', 'Roofing Projects', 'Estate Cleanouts', 'Medium Construction']} popular />
-                        <DumpsterSizeCard size="20" capacity="8 Pickup Truck Loads" weight="3 Tons Included" pricing={{ '1 Day': '$449', '3 Day': '$479', '7 Day': '$499' }} idealFor={['Large Renovations', 'New Construction', 'Major Demolition', 'Commercial Projects']} />
-                    </div>
+                    <PriceSummary place="Hinds County" />
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>What Makes Hinds County Different</h2>
+                    <p>
+                        Hinds County is the one with the state capital in it, and that shapes almost every
+                        job we run here. Roughly a quarter of Mississippi&rsquo;s population lives inside
+                        the Jackson metro, and the housing stock skews old &mdash; Belhaven and Fondren
+                        date to the early 1900s, and much of West and South Jackson is pre-war.
+                    </p>
+                    <p>
+                        Three practical consequences. Placement is tighter than anywhere else we serve:
+                        narrow driveways, short setbacks and a mature oak canopy that sits below the
+                        clearance a roll-off truck needs. Estate and probate cleanouts are a far larger
+                        share of the work here than in the newer counties, because the homes have been
+                        held by the same families for decades. And downtown jobs frequently have no
+                        private ground at all, which puts the container on the street and brings a City of
+                        Jackson permit into play.
+                    </p>
+                    <p>
+                        Outside the city the county changes character completely. Raymond, Bolton, Utica
+                        and Edwards are rural, with long drives, open lots and easy placement &mdash; and
+                        with Hinds Community College in Raymond, a steady flow of rental turnovers.
+                    </p>
+                    <p>
+                        Detail on capital-city deliveries is on the{' '}
+                        <Link href="/service-areas/jackson">Jackson delivery page</Link>, and{' '}
+                        <Link href="/services/estate-cleanout-dumpster-rental">estate cleanout dumpster rental</Link>{' '}
+                        covers the sizing and the sequence for a probate clearance.
+                    </p>
                 </div>
             </section>
 

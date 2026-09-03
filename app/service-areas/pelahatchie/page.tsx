@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
-import DumpsterSizeCard from '@/components/DumpsterSizeCard'
+import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
@@ -81,11 +81,7 @@ export default function PelahatchePage() {
             <section>
                 <div className="container">
                     <h2 className="text-center">Dumpster Sizes Available in Pelahatchie</h2>
-                    <div className={styles.sizesGrid}>
-                        <DumpsterSizeCard size="10" capacity="4 Pickup Truck Loads" weight="1 Ton Included" pricing={{ '1 Day': '$349', '3 Day': '$379', '7 Day': '$399' }} idealFor={['Small Cleanouts', 'Garage Cleanup', 'Minor Renovations', 'Yard Debris']} />
-                        <DumpsterSizeCard size="15" capacity="6 Pickup Truck Loads" weight="2 Tons Included" pricing={{ '1 Day': '$399', '3 Day': '$429', '7 Day': '$449' }} idealFor={['Home Renovations', 'Roofing Projects', 'Estate Cleanouts', 'Farm Cleanouts']} popular />
-                        <DumpsterSizeCard size="20" capacity="8 Pickup Truck Loads" weight="3 Tons Included" pricing={{ '1 Day': '$449', '3 Day': '$479', '7 Day': '$499' }} idealFor={['Large Renovations', 'New Construction', 'Major Demolition', 'Commercial Projects']} />
-                    </div>
+                    <PriceSummary place="Pelahatchie" />
                 </div>
             </section>
 
