@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/bathroom-remodel-dumpster-rental-jackson-ms' },
@@ -263,6 +264,8 @@ export default function BathroomRemodelDumpster() {
                         <p>
                             Mid South charges flat-rate pricing starting at <strong>$349 for a 1-day 10-yard rental</strong>. A 7-day 10-yard rental is $399. A 15-yard for a full week is $449. There are no hidden fees — that price covers delivery, pickup, and disposal. See our <Link href="/blog/dumpster-rental-prices-jackson-ms">full pricing guide</Link>.
                         </p>
+
+                        <RelatedGuides slug="bathroom-remodel-dumpster-rental-jackson-ms" />
 
                         <div className={styles.cta}>
                             <h3>Ready to Start Your Renovation?</h3>

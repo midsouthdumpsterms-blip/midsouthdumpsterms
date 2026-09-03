@@ -3,6 +3,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/how-long-can-you-keep-a-rental-dumpster' },
@@ -87,6 +88,8 @@ export default function BlogPost() {
                         <p>
                             At Mid South Dumpster Rentals, we pride ourselves on our flexibility and incredible customer service. We will work with you to ensure you have the container you need for the exact amount of time you need it.
                         </p>
+
+                        <RelatedGuides slug="how-long-can-you-keep-a-rental-dumpster" />
 
                         <div className={styles.cta}>
                             <h3>Ready to Schedule Your Drop-off?</h3>

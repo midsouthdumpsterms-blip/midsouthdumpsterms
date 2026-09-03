@@ -3,6 +3,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/home-renovation-dumpster-guide-central-ms' },
@@ -306,6 +307,8 @@ export default function BlogPost() {
                         <p>
                             Usually not if the dumpster is on your property. If it needs to be on the street, check with your local city office. We can help guide you through the process.
                         </p>
+
+                        <RelatedGuides slug="home-renovation-dumpster-guide-central-ms" />
 
                         <div className={styles.cta}>
                             <h3>Ready to Start Your Renovation?</h3>

@@ -3,6 +3,7 @@ import { generateArticleSchema, generateFAQSchema, generateBreadcrumbSchema, inj
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/yard-waste-removal-dumpster-rental-jackson-ms' },
@@ -206,6 +207,8 @@ export default function BlogPost() {
                                 </div>
                             ))}
                         </div>
+
+                        <RelatedGuides slug="yard-waste-removal-dumpster-rental-jackson-ms" />
 
                         <div className={styles.cta}>
                             <h3>Ready to Clear Your Yard?</h3>

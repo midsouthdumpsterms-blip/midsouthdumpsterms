@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-weight-limits-jackson-ms' },
@@ -284,6 +285,8 @@ export default function DumpsterWeightLimits() {
                         <p>
                             For projects that are primarily heavy debris (concrete, tile, brick), we typically recommend the <Link href="/blog/dumpster-rental-prices-jackson-ms">15-yard dumpster</Link> with its 4,000 lb allowance. For very large heavy-debris projects, call us and we&apos;ll work through the math with you.
                         </p>
+
+                        <RelatedGuides slug="dumpster-weight-limits-jackson-ms" />
 
                         <div className={styles.cta}>
                             <h3>Not Sure What Size You Need?</h3>

@@ -1,0 +1,31 @@
+.wrap {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: var(--color-gray-50);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-md);
+}
+
+.heading {
+    margin: 0 0 var(--spacing-md);
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-gray-600);
+}
+
+.list {
+    margin: 0;
+    padding-left: var(--spacing-lg);
+}
+
+.list li {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.65;
+    color: var(--color-gray-600);
+}
+
+.list a {
+    color: var(--color-primary);
+    font-weight: 600;
+}

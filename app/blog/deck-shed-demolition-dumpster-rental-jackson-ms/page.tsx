@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/deck-shed-demolition-dumpster-rental-jackson-ms' },
@@ -227,6 +228,8 @@ export default function DeckShedDemolitionDumpster() {
                         <p>
                             We offer <Link href="/services/same-day-dumpster-rental">same-day dumpster delivery</Link> across Central Mississippi when you call or book online early in the day. We schedule delivery 7 days a week.
                         </p>
+
+                        <RelatedGuides slug="deck-shed-demolition-dumpster-rental-jackson-ms" />
 
                         <div className={styles.cta}>
                             <h3>Ready to Tear It Down?</h3>

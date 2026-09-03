@@ -3,6 +3,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/roofing-contractor-dumpster-rental-jackson-ms' },
@@ -149,6 +150,8 @@ export default function BlogPost() {
                         <h2>Serving Roofing Crews Across Central Mississippi</h2>
                         <p>We deliver to job sites throughout the metro area and beyond: Jackson, Brandon, Madison, Ridgeland, Clinton, Flowood, Pearl, Byram, Richland, Gluckstadt, Flora, Florence, Canton, and Terry.</p>
                         <p>Need a dumpster at a job site in a city not listed? Give us a call — we&apos;ll let you know if we can make it work.</p>
+
+                        <RelatedGuides slug="roofing-contractor-dumpster-rental-jackson-ms" />
 
                         <div className={styles.cta}>
                             <h3>Ready to Order for Your Next Roofing Job?</h3>

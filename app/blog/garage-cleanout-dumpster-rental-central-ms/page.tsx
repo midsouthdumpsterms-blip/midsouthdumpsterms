@@ -3,6 +3,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/garage-cleanout-dumpster-rental-central-ms' },
@@ -134,6 +135,8 @@ export default function BlogPost() {
                         <p>
                             We deliver garage cleanout dumpsters to Jackson, Brandon, Clinton, Madison, Ridgeland, Flowood, Pearl, Byram, Richland, Gluckstadt, Flora, Florence, Canton, Terry, and surrounding Central Mississippi communities.
                         </p>
+
+                        <RelatedGuides slug="garage-cleanout-dumpster-rental-central-ms" />
 
                         <div className={styles.cta}>
                             <h3>Ready to Finally Clean Out That Garage?</h3>

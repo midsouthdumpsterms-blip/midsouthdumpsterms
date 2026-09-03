@@ -3,6 +3,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/storm-cleanup-dumpster-rental-jackson-ms' },
@@ -135,6 +136,8 @@ export default function BlogPost() {
                         <p>
                             We know storm cleanup is stressful. Our team is locally based in Jackson, which means we can move fast. Call <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> and let us know what you&apos;re dealing with — we&apos;ll get a dumpster to you as quickly as possible. We&apos;re available 7 days a week, 7AM–7PM.
                         </p>
+
+                        <RelatedGuides slug="storm-cleanup-dumpster-rental-jackson-ms" />
 
                         <div className={styles.cta}>
                             <h3>Ready to Start Cleaning Up?</h3>

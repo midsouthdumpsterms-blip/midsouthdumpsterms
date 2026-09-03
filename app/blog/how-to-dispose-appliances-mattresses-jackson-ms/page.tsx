@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/how-to-dispose-appliances-mattresses-jackson-ms' },
@@ -114,6 +115,8 @@ export default function AppomatressDisposal() {
                         <p>
                             However, if you are doing a <Link href="/blog/garage-cleanout-dumpster-rental-central-ms">garage cleanout</Link>, moving, or remodeling a home, adding those bulky items into a roll-off dumpster is the most efficient choice.
                         </p>
+
+                        <RelatedGuides slug="how-to-dispose-appliances-mattresses-jackson-ms" />
 
                         <div className={styles.cta}>
                             <h3>Need a Dumpster for a Cleanout?</h3>

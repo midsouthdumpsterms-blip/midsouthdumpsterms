@@ -3,6 +3,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/how-to-choose-dumpster-size' },
@@ -147,6 +148,8 @@ export default function BlogPost() {
                         <p>
                             If you're uncertain about which size to choose, we're here to help! Call us at <TrackedPhoneLink location="Page CTA">601-316-7891</TrackedPhoneLink> and describe your project. We'll recommend the perfect dumpster size based on our years of experience.
                         </p>
+
+                        <RelatedGuides slug="how-to-choose-dumpster-size" />
 
                         <div className={styles.cta}>
                             <h3>Ready to Book?</h3>

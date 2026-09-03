@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/do-i-need-a-permit-dumpster-jackson-ms' },
@@ -111,6 +112,8 @@ export default function DumpsterPermitGuide() {
                         <p>
                             Because Mid South Dumpster Rentals utilizes medium-duty trucks and perfectly sized 10-yard and 15-yard containers, our drivers can maneuver into tight residential spaces that massive garbage trucks cannot. A 10-yard dumpster has a footprint similar to a standard minivan, making it easy to tuck into a driveway without blocking your garage.
                         </p>
+
+                        <RelatedGuides slug="do-i-need-a-permit-dumpster-jackson-ms" />
 
                         <div className={styles.cta}>
                             <h3>Not sure if it will fit?</h3>

@@ -3,6 +3,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-vs-junk-removal-jackson-ms' },
@@ -174,6 +175,8 @@ export default function BlogPost() {
                         <p>
                             If you&apos;re cleaning out a garage, doing a renovation, handling an estate, or tackling anything larger than a couple of items — rent a dumpster. You&apos;ll save money and have the flexibility to work through the project on your own schedule. Mid South Dumpster Rentals delivers across all of Central Mississippi with same-day availability and transparent flat-rate pricing.
                         </p>
+
+                        <RelatedGuides slug="dumpster-rental-vs-junk-removal-jackson-ms" />
 
                         <div className={styles.cta}>
                             <h3>Ready to Rent a Dumpster?</h3>

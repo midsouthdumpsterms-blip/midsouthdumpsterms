@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-rental-vs-bagster-jackson-ms' },
@@ -117,6 +118,8 @@ export default function DumpsterVsBagster() {
                         <p>
                             For virtually any residential project—from tearing down a small shed, cleaning out an attic, or remodeling a kitchen—<strong>renting a local roll-off dumpster provides significantly more value, speed, and convenience.</strong> When you reach out to a local company like Mid South Dumpster Rentals, you aren't fighting with a national call center. You get clear, flat-rate pricing and same-day delivery right here in Jackson, MS.
                         </p>
+
+                        <RelatedGuides slug="dumpster-rental-vs-bagster-jackson-ms" />
 
                         <div className={styles.cta}>
                             <h3>Skip the Bag and Rent a Bin</h3>

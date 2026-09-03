@@ -3,6 +3,7 @@ import { generateArticleSchema, generateFAQSchema, generateBreadcrumbSchema, inj
 import Link from 'next/link'
 import styles from '../blog-post.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/best-dumpster-rental-central-ms' },
@@ -211,6 +212,8 @@ export default function BlogPost() {
                                 </div>
                             ))}
                         </div>
+
+                        <RelatedGuides slug="best-dumpster-rental-central-ms" />
 
                         <div className={styles.cta}>
                             <h3>Ready to Book a Dumpster in Central MS?</h3>

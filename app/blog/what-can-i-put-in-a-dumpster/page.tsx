@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import styles from '../blog-post.module.css'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/what-can-i-put-in-a-dumpster' },
@@ -103,6 +104,8 @@ export default function WhatCanIPutInADumpster() {
 
                         <h3>Dumpster vs Junk Removal</h3>
                         <p>If you only have a few prohibited items, you might consider hiring a junk removal service for those specific items, while using a dumpster for the bulk of the permitted debris. Read our full comparison of <Link href="/blog/dumpster-rental-vs-junk-removal-jackson-ms">Dumpster Rental vs. Junk Removal</Link>.</p>
+
+                        <RelatedGuides slug="what-can-i-put-in-a-dumpster" />
 
                         <div className={styles.cta}>
                             <h3>Ready to rent your dumpster?</h3>

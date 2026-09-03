@@ -53,6 +53,7 @@ export default function Footer() {
                             <li><Link href="/services/roll-off-dumpster-rental">Roll-Off</Link></li>
                             <li><Link href="/services/yard-waste-dumpster-rental">Yard Waste</Link></li>
                             <li><Link href="/services/same-day-dumpster-rental">Same-Day</Link></li>
+                            <li><Link href="/book-online">Book Online</Link></li>
                             <li><Link href="/about">About Us</Link></li>
                             <li><Link href="/blog">Blog</Link></li>
                         </ul>
@@ -62,6 +63,8 @@ export default function Footer() {
                         <h4>Service Areas</h4>
                         <ul>
                             <li><Link href="/service-areas/jackson">Jackson</Link></li>
+                            <li><Link href="/service-areas/jackson/same-day-dumpster-rental">Jackson Same-Day</Link></li>
+                            <li><Link href="/service-areas/jackson/roll-off-dumpster-rental">Jackson Roll-Off</Link></li>
                             <li><Link href="/service-areas/brandon">Brandon</Link></li>
                             <li><Link href="/service-areas/madison">Madison</Link></li>
                             <li><Link href="/service-areas/clinton">Clinton</Link></li>

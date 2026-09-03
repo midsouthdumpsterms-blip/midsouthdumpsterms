@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { generateArticleSchema, generateBreadcrumbSchema, injectSchema } from '@/lib/schema'
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/spring-cleaning-checklist-central-ms' },
@@ -120,6 +121,8 @@ export default function SpringCleaningChecklist() {
                         <p>
                             Instead of bagging everything up and leaving it on the curb for weeks at a time (hoping the city will take it), a simple weekend dumpster rental makes the job easy. You toss everything into the bin as you work, and when the weekend is over, we haul it all away.
                         </p>
+
+                        <RelatedGuides slug="spring-cleaning-checklist-central-ms" />
 
                         <div className={styles.cta}>
                             <h3>Get Ready for Spring!</h3>
