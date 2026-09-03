@@ -349,7 +349,9 @@ export function generateArticleSchema(
         '@type': 'Article',
         headline,
         description,
-        image: image || 'https://midsouthdumpsterms.com/opengraph-image.jpg',
+        // /opengraph-image.jpg has never existed on this site. Every Article
+        // node that fell back to it pointed Google at a 404.
+        image: image || 'https://midsouthdumpsterms.com/images/og-image.jpg',
         // A named human author is a stronger authorship signal than the company
         // name for a local service blog, and Andrew is already the face of the
         // About page.
