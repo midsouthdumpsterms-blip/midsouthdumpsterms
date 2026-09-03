@@ -171,6 +171,55 @@ export default function CantonPage() {
                 </div>
             </section>
 
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>Canton Is Two Different Jobs</h2>
+                    <p>
+                        Canton is the Madison County seat and the oldest town we serve regularly, and the
+                        work here splits cleanly in two. Around the Canton Square and the historic
+                        district the housing stock is old &mdash; deep-set homes, narrow drives, mature
+                        trees over them. Out along the interstate corridor east of town it is industrial:
+                        the Nissan plant and the supplier base around it, where the containers are bigger
+                        and the schedules are tighter.
+                    </p>
+                    <p>
+                        Those want different things from us. A historic-district cleanout usually takes a
+                        10 or 15-yard, because a 20 often will not place under the tree canopy or fit the
+                        drive. A plant-corridor job is almost always a 20-yard, frequently more than one,
+                        and the question is turnaround rather than size.
+                    </p>
+
+                    <h2>Getting a Container to Canton</h2>
+                    <p>
+                        Canton sits north of the metro at ZIP 39046, up I-55 from our yard in West
+                        Jackson. It is a longer run than a delivery inside the Jackson city limits, so
+                        calling early matters more here than it does closer in &mdash; before noon puts you
+                        comfortably in same-day range, and there is no distance surcharge for the drive.
+                    </p>
+                    <p>
+                        For the commercial and industrial work east of town, tell us on the call whether
+                        the site has a height bar at the entrance, a gate code, or restricted hours. Those
+                        three things account for nearly every commercial delivery that has to be
+                        rescheduled &mdash; see{' '}
+                        <Link href="/services/commercial-dumpster-rental">commercial dumpster rental</Link>.
+                    </p>
+
+                    <h2>Permits in Canton</h2>
+                    <p>
+                        On your own driveway, yard or lot, no permit applies. If the container has to sit
+                        on a public street or right-of-way &mdash; which comes up more often around the
+                        Square than anywhere else in Canton, because several of those properties have no
+                        usable private ground &mdash; contact the City of Canton to confirm the current
+                        process and lead time before you book. It is not a same-day path.
+                    </p>
+                    <p>
+                        Not sure what size? <Link href="/sizes">Compare all three containers</Link>, or see{' '}
+                        <Link href="/services/estate-cleanout-dumpster-rental">estate cleanout dumpster rental</Link>{' '}
+                        for the older properties around the historic district.
+                    </p>
+                </div>
+            </section>
+
             <FaqSection faqs={faqs} title="Frequently Asked Questions: Canton Dumpster Rentals" background />
             <section className={styles.ctaSection}>
                 <div className="container text-center">

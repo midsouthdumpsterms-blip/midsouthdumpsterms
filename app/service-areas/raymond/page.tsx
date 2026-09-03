@@ -181,6 +181,69 @@ export default function RaymondPage() {
                 </div>
             </section>
 
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>The College Changes What Raymond Needs</h2>
+                    <p>
+                        Raymond has fewer than 2,000 residents on paper, but Hinds Community College sits
+                        here and enrols several times that number on the Raymond campus. That single fact
+                        shapes most of what we haul out of town.
+                    </p>
+                    <p>
+                        It means a rental market far larger than the population suggests, and it means the
+                        work is seasonal in a way it is not anywhere else we serve. Turnovers cluster
+                        around the end of terms &mdash; a landlord clearing a student let has days, not
+                        weeks, and usually wants a 15-yard on the drive and gone again inside three. If you
+                        manage property near the campus corridor, book the container when you book the
+                        cleaners rather than after they finish.
+                    </p>
+
+                    <h2>The Rest of Raymond Is Rural</h2>
+                    <p>
+                        Away from the campus and the courthouse, Raymond is farmland and large lots, and
+                        the jobs change completely: farmstead clearances, outbuilding tear-downs, land
+                        clearing and estate work on properties that have been in the same family for
+                        generations.
+                    </p>
+                    <ul className={styles.projectsList}>
+                        <li>
+                            <strong>Downtown and the historic courthouse district.</strong> Older
+                            commercial stock and period homes on tighter lots. Deep-set drives and mature
+                            trees mean overhead clearance decides the container size more often than width
+                            does.
+                        </li>
+                        <li>
+                            <strong>Dry Grove Road, Ratliff Road and Ranger Road.</strong> Rural
+                            residential and farm properties. Long approaches are fine; what matters is
+                            whether a loaded truck can turn around, and whether the ground holds after rain.
+                        </li>
+                        <li>
+                            <strong>Parsons Road and the deeper rural addresses.</strong> Older structures
+                            and land-clearing work. Tell us on the call if there is a cattle gate, a
+                            low-hanging limb run, or a bridge or culvert on the approach.
+                        </li>
+                        <li>
+                            <strong>Appleridge and Lakewood Drive.</strong> Conventional residential
+                            placement on standard driveways.
+                        </li>
+                    </ul>
+
+                    <h2>Permits and Sizing</h2>
+                    <p>
+                        On private property &mdash; which is nearly every Raymond delivery &mdash; no
+                        permit applies. For a public street or right-of-way, contact the City of Raymond
+                        first; it is not a same-day path.
+                    </p>
+                    <p>
+                        For farmstead and estate work see{' '}
+                        <Link href="/services/estate-cleanout-dumpster-rental">estate cleanout dumpster rental</Link>,
+                        for outbuilding tear-downs see{' '}
+                        <Link href="/services/demolition-dumpster-rental">demolition dumpster rental</Link>, or{' '}
+                        <Link href="/sizes">compare all three container sizes</Link>.
+                    </p>
+                </div>
+            </section>
+
             <FaqSection faqs={faqs} title="Frequently Asked Questions: Raymond Dumpster Rentals" background />
             <section style={{ padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">

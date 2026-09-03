@@ -175,6 +175,65 @@ export default function RichlandPage() {
                 </div>
             </section>
 
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>Richland Runs on US-49</h2>
+                    <p>
+                        Richland sits where US-49 meets the I-20 corridor, which makes it one of the
+                        quickest runs we make and one of the most industrial places we serve. The Richland
+                        Industrial Park and the logistics and distribution operations along US-49 generate
+                        a different kind of work from the residential streets a few blocks away.
+                    </p>
+                    <p>
+                        On the commercial side that means larger containers, faster turnarounds and
+                        swap-outs booked in advance rather than called in. On the residential side &mdash;
+                        Richland Hills, Richland East, Sylvan Hills, Monterey Woods, Southwind, West Wind
+                        and Bradford Place &mdash; it is conventional driveway placement with roofing and
+                        cleanout work leading the way.
+                    </p>
+
+                    <h2>Placement Notes for Richland</h2>
+                    <ul className={styles.projectsList}>
+                        <li>
+                            <strong>The US-49 and Industrial Park corridor.</strong> Plenty of room, but
+                            check for height bars at yard entrances and confirm whether the site needs a
+                            driver check-in. Loading-dock and service-yard placements can have a tight
+                            turning radius.
+                        </li>
+                        <li>
+                            <strong>Wise Road and the central Richland corridor.</strong> Mixed
+                            residential and commercial frontage; straightforward drops, but the road
+                            carries traffic, so we would rather place on private ground than at the curb.
+                        </li>
+                        <li>
+                            <strong>Greenfield Road and the Rankin County border.</strong> Larger lots and
+                            easier approaches. Ground can be soft after heavy rain &mdash; keep the
+                            container on the drive.
+                        </li>
+                        <li>
+                            <strong>The established residential streets.</strong> Standard two-car
+                            driveways take a 10 or 15-yard without blocking the garage. Clear the drive
+                            before we arrive.
+                        </li>
+                    </ul>
+
+                    <h2>Permits in Richland</h2>
+                    <p>
+                        Private property needs no permit, and that covers nearly every Richland delivery.
+                        For a container on a public street or right-of-way, contact the City of Richland
+                        first to confirm what is required and how long it takes &mdash; start it before the
+                        project rather than during it.
+                    </p>
+                    <p>
+                        Job-site sizing and swap-outs are covered on{' '}
+                        <Link href="/services/construction-dumpster-rental">construction dumpster rental</Link>;
+                        for the industrial-corridor work see{' '}
+                        <Link href="/services/commercial-dumpster-rental">commercial dumpster rental</Link>,
+                        or <Link href="/sizes">compare container sizes</Link>.
+                    </p>
+                </div>
+            </section>
+
             <FaqSection faqs={faqs} title="Frequently Asked Questions: Richland Dumpster Rentals" background />
             <section style={{ padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">

@@ -171,6 +171,51 @@ export default function FlorencePage() {
                 </div>
             </section>
 
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>Florence: Subdivisions, Then Acreage</h2>
+                    <p>
+                        Florence sits along the Highway 49 corridor in southern Rankin County, and it is
+                        one of the faster-growing parts of our service area. What makes it distinctive is
+                        how quickly the subdivisions give way to acreage &mdash; Bienville Estates, South
+                        Haven and Florence Pines look like any suburban delivery, and then a few minutes
+                        further out you are on a long gravel drive with a farm gate.
+                    </p>
+                    <p>
+                        Both are routine for us, but they need different information at booking. In the
+                        subdivisions the question is driveway clearance. On the rural addresses it is
+                        ground condition and turning room &mdash; tell us if the approach is gravel, if it
+                        softens after rain, and whether a truck can turn around at the house.
+                    </p>
+
+                    <h2>Delivery Timing to Florence</h2>
+                    <p>
+                        The run down Highway 49 from our yard is straightforward and Florence is
+                        comfortably inside same-day range when you call before noon. There is no distance
+                        surcharge for southern Rankin County; the flat rate is the same as it is in town.
+                    </p>
+                    <p>
+                        Because Florence has a lot of new residential construction, a fair share of what we
+                        haul here is build debris rather than household contents &mdash; bulky and light,
+                        so volume runs out well before weight. That usually points to the 20-yard. See{' '}
+                        <Link href="/services/construction-dumpster-rental">construction dumpster rental</Link>{' '}
+                        for job-site sizing.
+                    </p>
+
+                    <h2>Permits in Florence</h2>
+                    <p>
+                        No permit is required on your own driveway, yard or land. If the only option is the
+                        public street or right-of-way, contact the Town of Florence to confirm the current
+                        requirements and lead time before booking the container.
+                    </p>
+                    <p>
+                        Unsure on size? <Link href="/sizes">Compare all three</Link>, or see{' '}
+                        <Link href="/services/residential-dumpster-rental">residential dumpster rental</Link>{' '}
+                        for sizing by what you are actually clearing.
+                    </p>
+                </div>
+            </section>
+
             <FaqSection faqs={faqs} title="Frequently Asked Questions: Florence Dumpster Rentals" background />
             <section className={styles.ctaSection}>
                 <div className="container text-center">

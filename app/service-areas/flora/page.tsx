@@ -171,6 +171,50 @@ export default function FloraPage() {
                 </div>
             </section>
 
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>Flora Is a Longer Run &mdash; Call Earlier</h2>
+                    <p>
+                        Flora sits in western Madison County at ZIP 39071, up Highway 49 from our yard in
+                        West Jackson. It is a longer drive than a delivery inside the metro, so same-day is
+                        realistic in Flora but tighter than it is closer in. Calling in the morning rather
+                        than at lunchtime makes a real difference here. There is no distance surcharge for
+                        the run.
+                    </p>
+                    <p>
+                        Most of what we haul out of Flora comes off larger properties &mdash; multi-acre
+                        lots, older farmhouses, outbuildings and land clearing, along with the residential
+                        work in the town itself and around Farmington Hills. Because the lots are big,
+                        placement is usually the easy part; access and ground condition are what matter.
+                    </p>
+
+                    <h2>Rural Delivery Notes</h2>
+                    <ul className={styles.projectsList}>
+                        <li>
+                            <strong>Gravel and dirt approaches are routine.</strong> Tell us if yours holds
+                            water &mdash; Madison County ground west of the highway can stay soft for days
+                            after heavy rain.
+                        </li>
+                        <li>
+                            <strong>Turning room matters more than driveway width.</strong> If a loaded
+                            truck cannot turn at the house we need to know before we route it.
+                        </li>
+                        <li>
+                            <strong>Estate and land-clearing work runs large.</strong> For a multi-acre
+                            clearance or an old farmhouse, take the 20-yard and plan on 7 days rather than
+                            trying to squeeze it into a 15 over a weekend.
+                        </li>
+                    </ul>
+                    <p>
+                        No permit is needed on your own land. For a public street or right-of-way, contact
+                        the Town of Flora first. See{' '}
+                        <Link href="/services/estate-cleanout-dumpster-rental">estate cleanout dumpster rental</Link>{' '}
+                        for property clearances, or{' '}
+                        <Link href="/sizes">compare container sizes</Link>.
+                    </p>
+                </div>
+            </section>
+
             <FaqSection faqs={faqs} title="Frequently Asked Questions: Flora Dumpster Rentals" background />
             <section className={styles.ctaSection}>
                 <div className="container text-center">

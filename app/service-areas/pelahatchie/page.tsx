@@ -162,6 +162,47 @@ export default function PelahatchePage() {
                 </div>
             </section>
 
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>Reservoir Shoreline and Rural Rankin</h2>
+                    <p>
+                        Pelahatchie is a small historic town in eastern Rankin County at ZIP 39145, founded
+                        in 1850 and named after Pelahatchie Creek. There are no large subdivisions here
+                        &mdash; the town is defined by its historic downtown, the Ross Barnett Reservoir
+                        shoreline, and rural residential property spreading east.
+                    </p>
+                    <p>
+                        That shapes the work in two ways. Around the Pelahatchie Shore Park corridor and
+                        the Lake Road and Jellystone Park area, the lots are wooded and the debris is
+                        heavily vegetative &mdash; limbs, brush and storm damage rather than construction
+                        waste. Wet vegetation is far heavier than it looks, so those loads should be sized
+                        on weight rather than the volume they appear to take up.
+                    </p>
+                    <p>
+                        Ground condition matters here more than almost anywhere else we serve. Low-lying
+                        shoreline lots hold water, and a loaded roll-off truck on saturated ground leaves
+                        ruts or gets stuck outright. Put the container on a drive or a firm pad where you
+                        can, and tell us if the approach is soft.
+                    </p>
+
+                    <h2>Distance and Timing</h2>
+                    <p>
+                        Pelahatchie is about 30 miles east of Jackson, and the flat rate is identical to
+                        what we charge in town &mdash; no distance surcharge. It is a longer run, so
+                        booking in the morning gives you the best chance of same-day; later in the day we
+                        will usually offer first thing the next morning rather than promise something the
+                        routing cannot support.
+                    </p>
+                    <p>
+                        For post-weather work see{' '}
+                        <Link href="/services/storm-cleanup-dumpster-rental">storm cleanup dumpster rental</Link>,
+                        for routine clearing see{' '}
+                        <Link href="/services/yard-waste-dumpster-rental">yard waste dumpster rental</Link>, or{' '}
+                        <Link href="/sizes">compare all three sizes</Link>.
+                    </p>
+                </div>
+            </section>
+
             <FaqSection faqs={faqs} title="Frequently Asked Questions: Pelahatchie Dumpster Rentals" background />
             <section className={styles.ctaSection}>
                 <div className="container text-center">

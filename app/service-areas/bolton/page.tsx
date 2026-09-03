@@ -179,6 +179,48 @@ export default function BoltonPage() {
                 </div>
             </section>
 
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>Small Town, Big Properties</h2>
+                    <p>
+                        Bolton is a small historic town in western Hinds County at ZIP 39041, off the I-20
+                        corridor. There are no large subdivisions &mdash; it is a historic downtown and
+                        rural roads spreading out across farmland, and the jobs reflect that. Farm and
+                        estate work, outbuilding clearances, older structures and land clearing make up
+                        most of what we haul out of here.
+                    </p>
+                    <p>
+                        The container is rarely the constraint on a Bolton job; the approach is. Long
+                        gravel drives, farm gates, cattle guards and limb runs over the track are all
+                        normal, and all worth mentioning when you book. We need roughly 60 feet of straight
+                        run to set a container down and about 23 feet of vertical clearance to raise the
+                        bed.
+                    </p>
+
+                    <h2>Delivery and Timing</h2>
+                    <p>
+                        Bolton is a straightforward run west on I-20 and well inside our service area, at
+                        the same flat rate we charge anywhere else &mdash; no distance surcharge. It is a
+                        longer drive than an in-town delivery, so an early call gives you the best chance
+                        of same-day.
+                    </p>
+                    <p>
+                        For a farmstead or estate clearance, take the larger container and the longer
+                        rental. These jobs almost always produce more than people expect, and a second
+                        delivery to a rural address costs a day. See{' '}
+                        <Link href="/services/estate-cleanout-dumpster-rental">estate cleanout dumpster rental</Link>,{' '}
+                        <Link href="/services/demolition-dumpster-rental">demolition dumpster rental</Link>{' '}
+                        for outbuildings, or{' '}
+                        <Link href="/sizes">compare all three sizes</Link>.
+                    </p>
+                    <p>
+                        No permit is required on private land, which covers effectively every Bolton
+                        delivery. For anything on a public road or right-of-way, check with the Town of
+                        Bolton or Hinds County first.
+                    </p>
+                </div>
+            </section>
+
             <FaqSection faqs={faqs} title="Frequently Asked Questions: Bolton Dumpster Rentals" background />
             <section className={styles.ctaSection}>
                 <div className="container text-center">

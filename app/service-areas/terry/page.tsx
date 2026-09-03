@@ -171,6 +171,47 @@ export default function TerryPage() {
                 </div>
             </section>
 
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>Terry Is a Short Run Down I-55</h2>
+                    <p>
+                        Terry sits at ZIP 39170 in southern Hinds County along the Highway 27 and I-55
+                        corridor. The interstate run from our yard in West Jackson is quick, which makes
+                        Terry one of the easier same-day calls in the southern half of the county &mdash;
+                        book before noon and there is a good chance of a container the same afternoon.
+                    </p>
+                    <p>
+                        The work here divides between in-town residential jobs and rural property cleanups
+                        further out. In the Town of Terry and around Terry Pines it is conventional
+                        driveway placement. Along Highway 49 South and the rural roads it is farmhouse
+                        renovations, outbuilding clearances and land work on much larger lots.
+                    </p>
+
+                    <h2>What to Tell Us When You Book</h2>
+                    <ul className={styles.projectsList}>
+                        <li>
+                            <strong>If the address is rural,</strong> whether the drive is gravel and
+                            whether it softens after rain. A loaded roll-off truck on a saturated approach
+                            is how trucks get stuck and drives get rutted.
+                        </li>
+                        <li>
+                            <strong>Whether a truck can turn around</strong> at the property, or whether we
+                            will need to back a long way in.
+                        </li>
+                        <li>
+                            <strong>Any gates, cattle guards or low limb runs</strong> on the approach. We
+                            need roughly 23 feet of vertical clearance to complete a drop.
+                        </li>
+                    </ul>
+                    <p>
+                        No permit is required on private property. If a container has to go on a public
+                        street or right-of-way, check with the Town of Terry before booking. For sizing,{' '}
+                        <Link href="/sizes">compare all three containers</Link> or see{' '}
+                        <Link href="/services/residential-dumpster-rental">residential dumpster rental</Link>.
+                    </p>
+                </div>
+            </section>
+
             <FaqSection faqs={faqs} title="Frequently Asked Questions: Terry Dumpster Rentals" background />
             <section className={styles.ctaSection}>
                 <div className="container text-center">
