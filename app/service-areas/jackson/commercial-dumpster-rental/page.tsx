@@ -10,7 +10,7 @@ import styles from '../../city.module.css'
 const PATH = '/service-areas/jackson/commercial-dumpster-rental'
 const TITLE = 'Commercial Dumpster Rental Jackson MS'
 const DESCRIPTION =
-    'Project roll-offs for Jackson businesses and property managers: parking-lot placement, tenant turnovers, retail refits and office cleanouts. Flat rates from $349.'
+    'Project roll-offs for Jackson businesses and property managers: parking-lot placement, tenant turnovers, retail refits and office cleanouts.'
 
 export const metadata: Metadata = {
     alternates: { canonical: `${SITE_URL}${PATH}` },

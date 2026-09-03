@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     // neighborhood, which driveway, which permit.
     title: 'Jackson MS Dumpster Delivery by Neighborhood',
     description:
-        'Where we drop roll-offs in Jackson: Belhaven, Fondren, Eastover, South and West Jackson. Driveway clearances, street-placement permits and same-day delivery windows.',
+        'Where we drop roll-offs in Jackson: Belhaven, Fondren, Eastover, South and West Jackson. Driveway clearances, permits and same-day delivery windows.',
     openGraph: {
         title: 'Dumpster Delivery Across Jackson, MS',
         description: 'Neighborhood-by-neighborhood delivery, driveway clearances and City of Jackson permit rules for roll-off dumpsters.',

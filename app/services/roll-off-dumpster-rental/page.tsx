@@ -8,11 +8,11 @@ import styles from '../services.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/roll-off-dumpster-rental' },
-    title: 'Roll-Off Dumpster Rental Jackson MS',
+    title: 'Roll-Off Dumpster Rental Central MS',
     description:
         'Roll-off dumpster rental across Jackson and Central Mississippi. 10, 15 and 20-yard containers, same-day delivery, flat rates from $349.',
     openGraph: {
-        title: 'Roll-Off Dumpster Rental Jackson MS',
+        title: 'Roll-Off Dumpster Rental in Central Mississippi',
         description: '10, 15 & 20-yard roll-off dumpsters in Central Mississippi. Residential, commercial & construction use. Same-day delivery from $349.',
         url: 'https://midsouthdumpsterms.com/services/roll-off-dumpster-rental',
         images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],

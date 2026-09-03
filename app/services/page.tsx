@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     // and was the third page on the site chasing "dumpster rental Jackson MS".
     title: 'Dumpster Rental Services in Central MS',
     description:
-        'Every dumpster service we run in Central Mississippi: roll-off, construction, residential, commercial, roofing, demolition, estate cleanout, storm cleanup and more.',
+        'Every dumpster service we run in Central Mississippi: roll-off, construction, residential, commercial, roofing, demolition, cleanouts and storm cleanup.',
     openGraph: {
         title: 'Dumpster Rental Services in Central Mississippi',
         description: 'Roll-off, construction, residential, commercial, roofing and cleanout dumpster services across the Jackson metro.',

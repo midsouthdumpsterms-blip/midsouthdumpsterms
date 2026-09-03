@@ -10,7 +10,7 @@ import styles from '../../city.module.css'
 const PATH = '/service-areas/jackson/roll-off-dumpster-rental'
 const TITLE = 'Roll-Off Dumpster Rental in Jackson MS'
 const DESCRIPTION =
-    'How roll-off delivery works in Jackson: the 60 feet of clearance we need, driveway protection, what a roll-off is versus a front-load, and flat rates from $349.'
+    'How roll-off delivery works in Jackson: the clearance we need, driveway protection, and what a roll-off is versus a front-load. From $349.'
 
 export const metadata: Metadata = {
     alternates: { canonical: `${SITE_URL}${PATH}` },

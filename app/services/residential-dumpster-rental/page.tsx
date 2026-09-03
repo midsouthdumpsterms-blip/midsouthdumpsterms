@@ -8,11 +8,11 @@ import styles from '../services.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/residential-dumpster-rental' },
-    title: 'Residential Dumpster Rental Jackson MS',
+    title: 'Residential Dumpster Rental Central MS',
     description:
         'Driveway-safe roll-off dumpsters for Jackson MS homeowners. 10, 15 and 20-yard containers for cleanouts, remodels and yard waste. From $349.',
     openGraph: {
-        title: 'Residential Dumpster Rental Jackson MS',
+        title: 'Residential Dumpster Rental in Central Mississippi',
         description: 'Roll-off dumpsters for home projects across Central MS — garage cleanouts, renovations, yard waste & more. Same-day delivery from $349.',
         url: 'https://midsouthdumpsterms.com/services/residential-dumpster-rental',
         images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],

@@ -8,11 +8,11 @@ import styles from '../services.module.css'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/same-day-dumpster-rental' },
-    title: 'Same-Day Dumpster Rental Jackson MS',
+    title: 'Same-Day Dumpster Rental Central MS',
     description:
         'Need a dumpster today in Central Mississippi? Call before noon, seven days a week, and we deliver the same day. Flat rates from $349.',
     openGraph: {
-        title: 'Same-Day Dumpster Rental Jackson MS',
+        title: 'Same-Day Dumpster Rental in Central Mississippi',
         description: 'Same-day roll-off dumpster delivery in Central MS — call before noon. 10, 15 & 20-yard containers. 7 days a week.',
         url: 'https://midsouthdumpsterms.com/services/same-day-dumpster-rental',
         images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
