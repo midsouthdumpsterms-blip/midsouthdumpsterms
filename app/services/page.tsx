@@ -9,12 +9,15 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services' },
-    title: 'Dumpster Rental Prices Jackson MS',
+    // This page is a directory of the eleven service pages, not the price list
+    // -- /sizes is. The old title claimed "Prices", disagreed with its own H1,
+    // and was the third page on the site chasing "dumpster rental Jackson MS".
+    title: 'Dumpster Rental Services in Central MS',
     description:
-        'Roll-off dumpster prices in Jackson MS: 10-yard $349, 15-yard $399, 20-yard $449. Delivery, pickup and disposal included. Same-day service available.',
+        'Every dumpster service we run in Central Mississippi: roll-off, construction, residential, commercial, roofing, demolition, estate cleanout, storm cleanup and more.',
     openGraph: {
-        title: 'Roll Off Dumpster Rental Prices Jackson MS | Mid South',
-        description: 'Roll off dumpster rental in Jackson MS — 10, 15 & 20-yard containers from $349. Same-day delivery. No hidden fees.',
+        title: 'Dumpster Rental Services in Central Mississippi',
+        description: 'Roll-off, construction, residential, commercial, roofing and cleanout dumpster services across the Jackson metro.',
         url: 'https://midsouthdumpsterms.com/services',
         images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },
@@ -86,9 +89,9 @@ export default function Services() {
 
             <section className={styles.heroSection}>
                 <div className="container">
-                    <h1>Roll Off Dumpster Rental in Jackson, MS</h1>
+                    <h1>Dumpster Rental Services in Central Mississippi</h1>
                     <p className={styles.heroSubtext}>
-                        Same-day roll off dumpster rental for residential, commercial, and construction projects — flat-rate pricing from $349, no hidden fees
+                        Eleven services, one flat-rate price list. Residential, commercial and construction roll-offs from $349 &mdash; delivered across the Jackson metro, seven days a week.
                     </p>
                 </div>
             </section>

@@ -111,6 +111,96 @@ export default function RoofingDumpsterRentalPage() {
                 </div>
             </section>
 
+            {/*
+                Folded in from /blog/roofing-dumpster-rental-jackson-ms, which
+                carried a byte-identical title to this page and was the better
+                article of the two. Sizing by roof area and the loading advice
+                were the parts this page did not have.
+            */}
+            <section>
+                <div className="container container-narrow">
+                    <h2>Sizing a Roofing Dumpster by Roof Area</h2>
+                    <p>
+                        Shingles are among the heaviest debris we haul. A single square &mdash; 100 square
+                        feet of 3-tab asphalt &mdash; weighs roughly 230 to 350 lbs, so a 20-square tear-off
+                        runs 4,000 to 6,000 lbs before you add decking or felt. A 15-yard container can
+                        reach its weight limit before it looks half full. Size on weight, not volume.
+                    </p>
+                    <div style={{ overflowX: 'auto', margin: 'var(--spacing-lg) 0' }}>
+                        <table className={styles.dataTable}>
+                            <thead>
+                                <tr>
+                                    <th>Roof size or situation</th>
+                                    <th>Recommended size</th>
+                                    <th>From</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Up to 1,500 sq ft, single shingle layer</td>
+                                    <td>15 yard (2 tons included)</td>
+                                    <td>$399</td>
+                                </tr>
+                                <tr>
+                                    <td>1,500&ndash;2,500 sq ft, or a double layer</td>
+                                    <td>20 yard (3 tons included)</td>
+                                    <td>$449</td>
+                                </tr>
+                                <tr>
+                                    <td>Large home, or roofing plus decking replacement</td>
+                                    <td>20 yard &mdash; call to discuss</td>
+                                    <td>$449+</td>
+                                </tr>
+                                <tr>
+                                    <td>Partial repair, flat-roof patch, flashing only</td>
+                                    <td>10 yard (1 ton included)</td>
+                                    <td>$349</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>
+                        Two or more layers of shingles is common in older Jackson neighborhoods &mdash;
+                        Belhaven, Fondren and the pre-war housing stock in West Jackson especially. A
+                        double layer generates close to twice the weight, so take the 20-yard. If you are
+                        not sure what is up there, call{' '}
+                        <TrackedPhoneLink location="Roofing Sizing Section">601-316-7891</TrackedPhoneLink>{' '}
+                        and we will size it with you.
+                    </p>
+                </div>
+            </section>
+
+            <section style={{ background: 'var(--color-gray-50)', padding: 'var(--spacing-2xl) 0' }}>
+                <div className="container container-narrow">
+                    <h2>Getting the Most Out of a Roofing Dumpster</h2>
+                    <ul style={{ lineHeight: 1.9 }}>
+                        <li>
+                            <strong>Place it close to the roofline.</strong> The shorter the throw, the
+                            faster the tear-off. Tell us which elevation the crew is starting on and we
+                            will spot the container there.
+                        </li>
+                        <li>
+                            <strong>Load shingles first.</strong> Heavy material on the bottom keeps the
+                            center of gravity low and the container stable while it is being loaded.
+                        </li>
+                        <li>
+                            <strong>Keep wet debris out.</strong> Waterlogged material adds weight fast.
+                            Separate roofing debris from anything that has been sitting in the rain.
+                        </li>
+                        <li>
+                            <strong>Book three to seven days.</strong> Most residential re-roofs in the
+                            Jackson metro run one to three days. The longer window costs $30 to $50 more
+                            and takes the schedule pressure off your crew.
+                        </li>
+                        <li>
+                            <strong>Test before you tear off a pre-1980 roof.</strong> Asbestos-containing
+                            shingles turn up in older Jackson homes and we cannot accept them. Have them
+                            tested first &mdash; call us and we will point you to a local lab.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
             <section style={{ background: 'var(--color-gray-50)', padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">
                     <div className="grid grid-2">
@@ -139,7 +229,7 @@ export default function RoofingDumpsterRentalPage() {
                                 We work with roofing contractors daily and understand the urgency of roofing projects — especially after storm damage. Our 1-day rental rate is designed for quick tear-off-and-replace jobs.
                             </p>
                             <p style={{ color: 'var(--color-gray-600)', marginTop: '1rem' }}>
-                                Read our detailed <Link href="/blog/roofing-dumpster-rental-jackson-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>roofing dumpster rental guide</Link> and our <Link href="/blog/roofing-contractor-dumpster-rental-jackson-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>guide for roofing contractors</Link>.
+                                Working a job in the capital? See <Link href="/service-areas/jackson" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>dumpster delivery across Jackson</Link>, or read our <Link href="/blog/roofing-contractor-dumpster-rental-jackson-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>guide for roofing contractors</Link>.
                             </p>
                         </div>
                     </div>

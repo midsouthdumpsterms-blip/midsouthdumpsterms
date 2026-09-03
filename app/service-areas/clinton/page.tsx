@@ -153,7 +153,7 @@ export default function ClintonPage() {
                         Clinton&apos;s family-friendly neighborhoods and active development make it one of Hinds County&apos;s most in-demand service areas. We&apos;re proud to support Clinton residents with professional roll off dumpster rentals backed by 5-star service. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other local customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
-                        <strong>Cleaning out a house?</strong> Read our comprehensive guide on <Link href="/blog/estate-cleanout-dumpster-rental-central-ms">Renting a Dumpster for Estate Cleanouts in Central MS</Link>.
+                        <strong>Cleaning out a house?</strong> See how we handle <Link href="/services/estate-cleanout-dumpster-rental">estate cleanout dumpster rental across Central Mississippi</Link>.
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Clinton is located in <Link href="/service-areas/hinds-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Hinds County</Link> — see all Hinds County cities we serve.

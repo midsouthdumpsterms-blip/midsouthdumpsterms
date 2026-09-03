@@ -183,7 +183,7 @@ export default function DeckShedDemolitionDumpster() {
                         <h2>Pro Tips for a Smooth Demo Day</h2>
                         <h3>1. Order the Dumpster Before Demo Day</h3>
                         <p>
-                            This is the most common mistake homeowners make. Don&apos;t start tearing down the deck and then call for a dumpster. Order it first, schedule delivery for the morning of demo day, and start loading as you go. Mid South offers <Link href="/blog/same-day-dumpster-rental-jackson-ms">same-day delivery</Link> across Central MS when you call early.
+                            This is the most common mistake homeowners make. Don&apos;t start tearing down the deck and then call for a dumpster. Order it first, schedule delivery for the morning of demo day, and start loading as you go. Mid South offers <Link href="/services/same-day-dumpster-rental">same-day delivery</Link> across Central MS when you call early.
                         </p>
 
                         <h3>2. Break Down Lumber Into Manageable Pieces</h3>
@@ -225,7 +225,7 @@ export default function DeckShedDemolitionDumpster() {
 
                         <h3>How soon can I get a dumpster delivered?</h3>
                         <p>
-                            We offer <Link href="/blog/same-day-dumpster-rental-jackson-ms">same-day dumpster delivery</Link> across Central Mississippi when you call or book online early in the day. We schedule delivery 7 days a week.
+                            We offer <Link href="/services/same-day-dumpster-rental">same-day dumpster delivery</Link> across Central Mississippi when you call or book online early in the day. We schedule delivery 7 days a week.
                         </p>
 
                         <div className={styles.cta}>

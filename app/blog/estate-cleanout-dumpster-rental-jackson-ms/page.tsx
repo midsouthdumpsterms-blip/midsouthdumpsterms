@@ -129,7 +129,7 @@ export default function BlogPost() {
                             We deliver roll off dumpsters throughout the entire Jackson metro area for estate cleanouts. Whether the property is in <strong>Fondren</strong>, <strong>Belhaven</strong>, <strong>Eastover</strong>, <strong>North Jackson</strong>, <strong>South Jackson</strong>, <strong>West Jackson</strong>, or any other Jackson neighborhood, we&apos;ll get a dumpster there — typically same-day if you call before noon.
                         </p>
                         <p>
-                            We also serve the greater Jackson area including Clinton, Byram, Terry, Raymond, and all of Hinds County. For Brandon or Madison area estate cleanouts, see our <Link href="/blog/estate-cleanout-dumpster-rental-central-ms">Central MS estate cleanout guide</Link>.
+                            We also serve the greater Jackson area including Clinton, Byram, Terry, Raymond, and all of Hinds County. For Brandon or Madison area cleanouts, see our <Link href="/services/estate-cleanout-dumpster-rental">estate cleanout dumpster service</Link>.
                         </p>
 
                         <h2>Pricing for Estate Cleanout Dumpster Rental in Jackson, MS</h2>

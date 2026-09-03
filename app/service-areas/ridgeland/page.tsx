@@ -110,7 +110,7 @@ export default function RidgelandPage() {
                         </div>
                         <div>
                             <h2>Perfect For Any Ridgeland Project</h2>
-                            <p>Whether you're renovating a home along Highland Colony Parkway, <Link href="/blog/estate-cleanout-dumpster-rental-central-ms" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>clearing out an estate</Link>, or running a roofing job off the Old Canton Road corridor near I-55, we have the right roll off dumpster for your project.</p>
+                            <p>Whether you're renovating a home along Highland Colony Parkway, <Link href="/services/estate-cleanout-dumpster-rental" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>clearing out an estate</Link>, or running a roofing job off the Old Canton Road corridor near I-55, we have the right roll off dumpster for your project.</p>
                             <p><strong>Common uses in Ridgeland, MS:</strong></p>
                             <ul className={styles.projectsList}>
                                 <li>Home renovations and remodeling</li>

@@ -234,7 +234,7 @@ export default function BathroomRemodelDumpster() {
                             Order your dumpster to arrive the morning of demo day — not the night before, and definitely not after you&apos;ve already started ripping things out. Having the bin there from the start means debris goes straight into the dumpster, not piled in your driveway, hallway, or guest bedroom.
                         </p>
                         <p>
-                            Mid South offers <Link href="/blog/same-day-dumpster-rental-jackson-ms">same-day delivery across Central Mississippi</Link> when you call early. We&apos;re available 7 days a week, including weekends — because most homeowners tackle remodels on weekends.
+                            Mid South offers <Link href="/services/same-day-dumpster-rental">same-day delivery across Central Mississippi</Link> when you call early. We&apos;re available 7 days a week, including weekends — because most homeowners tackle remodels on weekends.
                         </p>
 
                         <h2>Serving All of Central Mississippi</h2>

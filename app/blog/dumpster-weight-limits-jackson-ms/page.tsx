@@ -228,7 +228,7 @@ export default function DumpsterWeightLimits() {
 
                         <h3>Example 3: Roofing a 1,500 sq ft Home</h3>
                         <p>
-                            Old asphalt shingles weigh about 2–4 lbs per square foot. A complete tear-off on a 1,500 sq ft home generates <strong>3,000–6,000 lbs</strong> of shingles alone. This is why roofing jobs almost always use our 15-yard or 20-yard dumpster. See our <Link href="/blog/roofing-dumpster-rental-jackson-ms">roofing dumpster guide</Link> for more detail.
+                            Old asphalt shingles weigh about 2–4 lbs per square foot. A complete tear-off on a 1,500 sq ft home generates <strong>3,000–6,000 lbs</strong> of shingles alone. This is why roofing jobs almost always use our 15-yard or 20-yard dumpster. See <Link href="/services/roofing-dumpster-rental">roofing dumpster rental</Link> for sizing by roof area.
                         </p>
 
                         <h2>How to Avoid Overage Fees: Our Best Tips</h2>

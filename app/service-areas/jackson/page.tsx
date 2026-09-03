@@ -9,12 +9,16 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/jackson' },
-    title: 'Dumpster Rental Jackson MS | Same-Day',
+    // The homepage owns "dumpster rental Jackson MS". This page had a nearly
+    // identical title and was splitting the 10,648 impressions that query
+    // carries. It now targets the intent the homepage cannot serve: which
+    // neighborhood, which driveway, which permit.
+    title: 'Jackson MS Dumpster Delivery by Neighborhood',
     description:
-        'Roll-off dumpster rental in Jackson, MS from $349. 10, 15 and 20-yard containers, same-day delivery to Belhaven, Fondren and Northeast Jackson.',
+        'Where we drop roll-offs in Jackson: Belhaven, Fondren, Eastover, South and West Jackson. Driveway clearances, street-placement permits and same-day delivery windows.',
     openGraph: {
-        title: 'Dumpster Rentals in Jackson, MS',
-        description: 'Serving Fondren, Belhaven & Northeast Jackson with same-day dumpster delivery.',
+        title: 'Dumpster Delivery Across Jackson, MS',
+        description: 'Neighborhood-by-neighborhood delivery, driveway clearances and City of Jackson permit rules for roll-off dumpsters.',
         url: 'https://midsouthdumpsterms.com/service-areas/jackson',
         images: [{ url: 'https://midsouthdumpsterms.com/images/og-image.jpg', width: 1200, height: 630, alt: 'Mid South Dumpster Rentals - roll-off dumpster rental in Jackson, MS' }],
     },

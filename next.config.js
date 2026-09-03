@@ -58,6 +58,28 @@ const nextConfig = {
                 destination: post.to,
                 permanent: true,
             })),
+            // Three blog posts were fighting their own service page for the same
+            // query: /blog/roofing-... and /blog/same-day-... carried titles
+            // byte-identical to the service pages, and
+            // /blog/estate-cleanout-...-central-ms shared an H1 with one. The
+            // posts were the better-written half of each pair, so their unique
+            // sections were merged up into the service page before retirement
+            // rather than discarded.
+            {
+                source: '/blog/roofing-dumpster-rental-jackson-ms',
+                destination: '/services/roofing-dumpster-rental',
+                permanent: true,
+            },
+            {
+                source: '/blog/same-day-dumpster-rental-jackson-ms',
+                destination: '/services/same-day-dumpster-rental',
+                permanent: true,
+            },
+            {
+                source: '/blog/estate-cleanout-dumpster-rental-central-ms',
+                destination: '/services/estate-cleanout-dumpster-rental',
+                permanent: true,
+            },
             // Consolidate duplicate city blog posts into their service-area page equivalents
             ...[
                 'brandon', 'byram', 'canton', 'clinton', 'flora', 'florence',

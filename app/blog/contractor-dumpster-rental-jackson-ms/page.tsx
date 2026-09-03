@@ -129,7 +129,7 @@ export default function BlogPost() {
 
                         <h3>Roofing Contractors</h3>
                         <p>
-                            A standard residential roof tear-off in Jackson typically produces 2–4 tons of old shingles, underlayment, and flashing. Our <Link href="/blog/roofing-dumpster-rental-jackson-ms">15-yard dumpster</Link> is the most popular choice for single-layer tear-offs, while the 20-yard handles multi-layer or larger commercial roofs. We can have the dumpster on-site before your crew arrives and pick it up the same day the job wraps.
+                            A standard residential roof tear-off in Jackson typically produces 2–4 tons of old shingles, underlayment, and flashing. Our <Link href="/services/roofing-dumpster-rental">15-yard roofing dumpster</Link> is the most popular choice for single-layer tear-offs, while the 20-yard handles multi-layer or larger commercial roofs. We can have the dumpster on-site before your crew arrives and pick it up the same day the job wraps.
                         </p>
 
                         <h3>General Contractors &amp; Remodelers</h3>

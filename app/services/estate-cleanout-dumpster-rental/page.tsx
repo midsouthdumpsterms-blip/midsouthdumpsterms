@@ -113,6 +113,86 @@ export default function EstateCleanoutDumpsterRentalPage() {
                 </div>
             </section>
 
+            {/*
+                Folded in from /blog/estate-cleanout-dumpster-rental-central-ms,
+                which carried this page's exact H1. Sizing by home size and the
+                two tips nobody else gives -- check the drawers, call the
+                nonprofits -- were what that post had and this page did not.
+            */}
+            <section>
+                <div className="container container-narrow">
+                    <h2>Sizing a Cleanout Dumpster by Home Size</h2>
+                    <p>
+                        Estate cleanouts almost always generate more than families expect. Decades of
+                        accumulation fills a container faster than a renovation does, because it is
+                        bulky rather than heavy &mdash; furniture, boxes, mattresses and closet contents.
+                    </p>
+                    <div style={{ overflowX: 'auto', margin: 'var(--spacing-lg) 0' }}>
+                        <table className={styles.dataTable}>
+                            <thead>
+                                <tr>
+                                    <th>Home or situation</th>
+                                    <th>Recommended size</th>
+                                    <th>From</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Partial cleanout, one or two rooms</td>
+                                    <td>10 yard</td>
+                                    <td>$349</td>
+                                </tr>
+                                <tr>
+                                    <td>Average three-bedroom home</td>
+                                    <td>15 yard</td>
+                                    <td>$399</td>
+                                </tr>
+                                <tr>
+                                    <td>Large home, full house, or heavy contents</td>
+                                    <td>20 yard</td>
+                                    <td>$449</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>
+                        When you are between two sizes, take the larger one. A second container costs a
+                        second delivery fee and stalls the work for a day; the price gap between sizes is
+                        $50.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <div className="container container-narrow">
+                    <h2>Before the Container Arrives</h2>
+                    <ul style={{ lineHeight: 1.9 }}>
+                        <li>
+                            <strong>Go through the drawers and boxes first.</strong> Deeds, insurance
+                            policies, savings bonds, military records and photographs turn up in furniture
+                            that looks empty. This is the one step families tell us they wish they had not
+                            rushed &mdash; and it cannot be undone once the container is hauled.
+                        </li>
+                        <li>
+                            <strong>Call the nonprofits before you load.</strong> Habitat for Humanity
+                            ReStore in the Jackson metro, local churches and area thrift stores will often
+                            collect usable furniture and working appliances at no charge. It reduces what
+                            you pay to throw away and the pickup is usually within a few days.
+                        </li>
+                        <li>
+                            <strong>Work one room at a time.</strong> Room by room is easier to track
+                            across several days than working by category, and it makes it obvious what is
+                            still left to do when family members rotate in and out.
+                        </li>
+                        <li>
+                            <strong>Set aside what cannot go in.</strong> Refrigerators and freezers,
+                            HVAC units, televisions and electronics, paint, chemicals and medications all
+                            need separate disposal. Everything else on a typical estate cleanout is fine.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
             <section style={{ background: 'var(--color-gray-50)', padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">
                     <div className="grid grid-2">

@@ -110,3 +110,39 @@
         grid-template-columns: 1fr;
     }
 }
+/* Shared table for the sizing/pricing grids folded in from the blog posts.
+   Defined here because a className that resolves to undefined renders the
+   table completely unstyled -- the bug .heroImage shipped with for months. */
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    min-width: 480px;
+}
+
+.dataTable thead {
+    background: var(--color-primary);
+    color: white;
+}
+
+.dataTable th,
+.dataTable td {
+    padding: var(--spacing-md) var(--spacing-lg);
+    text-align: left;
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.dataTable th {
+    font-weight: 600;
+}
+
+.dataTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.dataTable tbody tr:hover {
+    background: var(--color-gray-50);
+}

@@ -136,6 +136,62 @@ export default function SameDayDumpsterRentalPage() {
                 </div>
             </section>
 
+            {/*
+                Folded in from /blog/same-day-dumpster-rental-jackson-ms, which
+                shared this page's exact title. The booking tactics and the
+                owner-operator argument were the parts worth keeping, and they
+                are the parts a national competitor cannot copy.
+            */}
+            <section>
+                <div className="container container-narrow">
+                    <h2>How to Actually Get a Container Today</h2>
+                    <ul style={{ lineHeight: 1.9 }}>
+                        <li>
+                            <strong>Call early.</strong> Same-day slots fill in the order they come in.
+                            Calling at 7AM gives you the best odds; by mid-afternoon it depends entirely
+                            on where the trucks already are.
+                        </li>
+                        <li>
+                            <strong>Call, do not book online.</strong> The booking form is built for
+                            scheduled deliveries. For today, phone us &mdash; we can confirm a real ETA
+                            against the day's routing while you are on the line.
+                        </li>
+                        <li>
+                            <strong>Have the spot picked.</strong> Driveway, side yard or job site, and
+                            roughly 60 feet of straight clearance to drop and pull. Knowing this before
+                            we arrive is usually the difference between a ten-minute drop and a reschedule.
+                        </li>
+                        <li>
+                            <strong>Have payment ready.</strong> We take payment at booking so a driver
+                            can be dispatched immediately rather than waiting on a callback.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section style={{ background: 'var(--color-gray-50)', padding: 'var(--spacing-2xl) 0' }}>
+                <div className="container container-narrow">
+                    <h2>No Rush Fee, and Why We Can Do That</h2>
+                    <p>
+                        Same-day costs the same as a delivery booked three weeks out. The flat rate is the
+                        flat rate: $349 for a 10-yard, $399 for a 15-yard, $449 for a 20-yard, all
+                        including delivery, pickup and disposal.
+                    </p>
+                    <p>
+                        Most national dumpster brands run their booking out of an out-of-state call center
+                        and subcontract the actual haul to whichever local operator has a truck free. That
+                        is why they quote lead times in days and why nobody can tell you when the driver
+                        will arrive. We are based in Jackson and we own the trucks. When you call, you
+                        reach the people who control the schedule &mdash; which is the entire reason
+                        same-day is possible at all.
+                    </p>
+                    <p>
+                        See <Link href="/sizes" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>all three container sizes and what fits in each</Link>, or{' '}
+                        <Link href="/service-areas/jackson" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>check delivery details for your Jackson neighborhood</Link>.
+                    </p>
+                </div>
+            </section>
+
             <section className={styles.ctaSection}>
                 <div className="container text-center">
                     <h2>Need a Dumpster Today?</h2>
@@ -148,9 +204,6 @@ export default function SameDayDumpsterRentalPage() {
                         </TrackedPhoneLink>
                         <BookingButton label="Book Online" location="Same-Day CTA" />
                     </div>
-                    <p style={{ marginTop: '1rem', opacity: 0.8, fontSize: '0.9rem' }}>
-                        <Link href="/blog/same-day-dumpster-rental-jackson-ms" style={{ color: 'white', textDecoration: 'underline' }}>Learn more about our same-day service</Link>
-                    </p>
                 </div>
             </section>
         </>
