@@ -91,7 +91,7 @@ export default function MadisonPage() {
 
             <section className={styles.contentSection}>
                 <div className="container">
-                    <div className="grid grid-2">
+                    <div>
                         <div>
                             <h2>Why Choose Mid South for Madison Dumpster Rental?</h2>
                             <p>We're a locally owned Central Mississippi company. When you call us, you reach the owner directly — not a national call center. Our roll off dumpsters serve Madison's finest communities with the same care and professionalism that residents there expect.</p>
@@ -105,20 +105,6 @@ export default function MadisonPage() {
                                 <li>✓ 5-star rated on Google</li>
                                 <li>✓ Licensed & insured</li>
                             </ul>
-                        </div>
-                        <div>
-                            <h2>Perfect For Any Madison Project</h2>
-                            <p>Whether you're renovating a home in Reunion, clearing out an estate in Lake Caroline, managing a construction project in Annandale or Providence, we have the right roll off dumpster for your Madison project.</p>
-                            <p><strong>Common roll off dumpster uses in Madison, MS:</strong></p>
-                            <ul className={styles.projectsList}>
-                                <li>Home renovations and remodeling</li>
-                                <li>Roofing tear-offs and replacements</li>
-                                <li>Construction and demolition debris</li>
-                                <li>Estate and foreclosure cleanouts</li>
-                                <li>Yard waste and storm cleanup</li>
-                                <li>Commercial contractor projects</li>
-                            </ul>
-
                         </div>
                     </div>
                 </div>
@@ -155,6 +141,75 @@ export default function MadisonPage() {
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Madison is the heart of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.
+                    </p>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>Delivering into Madison</h2>
+                    <p>
+                        Madison sits north of the metro in ZIP 39110, up the I-55 corridor from our yard
+                        in West Jackson &mdash; a straightforward run outside of rush hour. Call before
+                        noon and it is comfortably same-day, at the same flat rate we charge in town. We
+                        own the trucks and dispatch them ourselves, so the delivery window you get on the
+                        phone is one we can actually keep.
+                    </p>
+
+                    <h2>What Makes Madison Different to Work In</h2>
+                    <p>
+                        Madison County is the fastest-growing county in Mississippi, and the work here
+                        looks nothing like a cleanout in an older Jackson neighborhood. Most of what we
+                        haul out of Madison is new construction and fit-out debris rather than decades of
+                        accumulated household contents.
+                    </p>
+                    <p>
+                        That changes the container. Framing offcuts, drywall, packaging and siding are
+                        bulky and light, so you run out of volume long before you approach the weight
+                        allowance. The 20-yard is the sensible default here where a 15 would do the same
+                        job in an older part of the metro.
+                    </p>
+                    <ul className={styles.projectsList}>
+                        <li>
+                            <strong>Reunion and Annandale.</strong> Golf-course communities with covenants
+                            that commonly restrict how long a container may sit in a driveway and where it
+                            may be placed. Check yours before booking a 7-day rental &mdash; this is the
+                            most frequent surprise we run into in Madison.
+                        </li>
+                        <li>
+                            <strong>Lost Rabbit.</strong> Reservoir-side, tightly planned, and short on
+                            maneuvering room. Tell us if the drop has to happen off a narrow lane so we can
+                            route the right truck.
+                        </li>
+                        <li>
+                            <strong>Lake Caroline.</strong> Larger lots and longer drives, so placement is
+                            easy &mdash; but the ground near the water holds moisture. Keep the container
+                            on the drive rather than the lawn after heavy rain.
+                        </li>
+                        <li>
+                            <strong>Colony Park and the Township.</strong> Commercial and mixed-use fit-outs
+                            rather than household work. Lot access, height bars and trading hours matter more
+                            than driveway width here &mdash; see{' '}
+                            <Link href="/services/commercial-dumpster-rental">commercial dumpster rental</Link>.
+                        </li>
+                    </ul>
+
+                    <h2>Permits and HOA Rules in Madison</h2>
+                    <p>
+                        On your own driveway or lot, no permit applies. If the container has to sit on a
+                        public street or right-of-way, contact the City of Madison to confirm the current
+                        process and lead time before you book &mdash; it is not a same-day path.
+                    </p>
+                    <p>
+                        In Madison specifically, the association rules bite more often than the city ones.
+                        An HOA restriction is separate from and additional to anything the city requires,
+                        and several of the larger communities here have them. Two minutes with your
+                        covenant document before booking saves a great deal of trouble.
+                    </p>
+                    <p>
+                        Sizing help is on <Link href="/sizes">our size comparison</Link>, and{' '}
+                        <Link href="/services/construction-dumpster-rental">construction dumpster rental</Link>{' '}
+                        covers job-site sizing and same-day swap-outs for builders working the corridor.
                     </p>
                 </div>
             </section>

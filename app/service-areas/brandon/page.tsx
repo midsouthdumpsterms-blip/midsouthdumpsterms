@@ -91,7 +91,7 @@ export default function BrandonPage() {
 
             <section className={styles.contentSection}>
                 <div className="container">
-                    <div className="grid grid-2">
+                    <div>
                         <div>
                             <h2>Why Choose Mid South for Brandon Dumpster Rental?</h2>
                             <p>We're a locally owned Central Mississippi company. We own our trucks and do our own deliveries — no third-party brokers. Rankin County customers get fast, reliable roll off dumpster service backed by our 5-star reputation.</p>
@@ -104,19 +104,6 @@ export default function BrandonPage() {
                                 <li>✓ Open 7 days a week, 7AM – 7PM</li>
                                 <li>✓ 5-star rated on Google</li>
                                 <li>✓ Licensed & insured</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2>Perfect For Any Brandon Project</h2>
-                            <p>Whether you're renovating a home in Crossgates, clearing an estate in Winner's Circle, managing a construction project in Reservoir Point, or working a roofing job near the Rankin County Courthouse area, we have the right roll off dumpster for your needs.</p>
-                            <p><strong>Common roll off dumpster uses in Brandon, MS:</strong></p>
-                            <ul className={styles.projectsList}>
-                                <li>Home renovations and remodeling</li>
-                                <li>Roofing tear-offs and replacements</li>
-                                <li>Construction and demolition debris</li>
-                                <li>Estate and foreclosure cleanouts</li>
-                                <li>Yard waste and storm cleanup</li>
-                                <li>Commercial contractor projects</li>
                             </ul>
                         </div>
                     </div>
@@ -155,6 +142,102 @@ export default function BrandonPage() {
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Brandon is the seat of <Link href="/service-areas/rankin-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Rankin County</Link> — view all Rankin County cities we serve.
+                    </p>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>Getting a Container Out to Brandon</h2>
+                    <p>
+                        Brandon is a straight run east from our yard on John R Lynch Street in West
+                        Jackson &mdash; out I-20, roughly half an hour depending on how the interstate is
+                        moving. That matters because we are dispatching our own trucks rather than
+                        brokering the job to whoever has one free, which is what most of the national
+                        names advertising in Rankin County are doing.
+                    </p>
+                    <p>
+                        Call before noon and a Brandon address is comfortably same-day. After about 2PM
+                        we will normally book you first thing the next morning rather than promise
+                        something the routing cannot support. There is no distance surcharge for
+                        crossing into Rankin County &mdash; the flat rate is the flat rate.
+                    </p>
+
+                    <h2>Placement Across Brandon&rsquo;s Subdivisions</h2>
+                    <p>
+                        Brandon is newer than Jackson and the lots are generally bigger, so the container
+                        almost always fits. What catches people out here is access rather than space.
+                    </p>
+                    <ul className={styles.projectsList}>
+                        <li>
+                            <strong>Castlewoods.</strong> Gated, and the single most common reason a
+                            Brandon delivery has to be rescheduled is a locked gate with nobody on site.
+                            Give us the code or arrange access when you book, not when the driver calls
+                            from the entrance.
+                        </li>
+                        <li>
+                            <strong>Crossgates.</strong> One of the older and more established
+                            subdivisions, so the tree canopy over the driveways is taller than in the
+                            newer developments. We need roughly 23 feet of vertical clearance to raise the
+                            bed and complete a drop; if your drive is under mature oaks, a 10 or 15-yard
+                            places where a 20 may not.
+                        </li>
+                        <li>
+                            <strong>Winner&rsquo;s Circle and Reservoir Point.</strong> Close to the Ross
+                            Barnett Reservoir, where the ground holds water. A loaded roll-off truck on
+                            saturated lawn leaves ruts or gets stuck outright &mdash; put the container on
+                            the drive and tell us if the approach is soft.
+                        </li>
+                        <li>
+                            <strong>The Highway 471 and Airport Road corridor.</strong> New construction,
+                            open lots, easy placement. The debris here is bulky and light &mdash; framing
+                            offcuts, drywall, packaging &mdash; so you run out of volume long before
+                            weight and the 20-yard is usually the right call.
+                        </li>
+                        <li>
+                            <strong>Downtown Brandon and the courthouse area.</strong> Older stock, tighter
+                            lots, and occasionally no private ground at all. If the container has to sit on
+                            the street, that is a permit question &mdash; see below.
+                        </li>
+                    </ul>
+
+                    <h2>Permits: City of Brandon or Unincorporated Rankin County?</h2>
+                    <p>
+                        The rule turns on one question, same as anywhere: whose ground is the container
+                        standing on? On your own driveway, yard or lot, no permit applies, and that covers
+                        the large majority of Brandon deliveries.
+                    </p>
+                    <p>
+                        If it has to go on a public street or right-of-way, you need permission &mdash; and
+                        in Rankin County the authority depends on which side of the city line you are on.
+                        Inside Brandon city limits that is the City of Brandon; on an address in
+                        unincorporated Rankin County it is the county. Contact whichever applies to confirm
+                        the current process and lead time before you book the container, because it is not
+                        a same-day path and we cannot file it for you. If your neighborhood has an HOA,
+                        check its rules as well &mdash; those are separate from, and additional to,
+                        anything the city requires.
+                    </p>
+
+                    <h2>What We Haul Most in Rankin County</h2>
+                    <p>
+                        Storm and vegetation debris is a bigger share of the work in Brandon than in Hinds
+                        or Madison, because of the Reservoir and the wooded lots along the Spillway. Wet
+                        vegetation is deceptively heavy, so size those loads on weight rather than the
+                        volume they appear to take up &mdash; see{' '}
+                        <Link href="/services/storm-cleanup-dumpster-rental">storm cleanup dumpster rental</Link>{' '}
+                        for the sizing, or{' '}
+                        <Link href="/services/yard-waste-dumpster-rental">yard waste dumpster rental</Link>{' '}
+                        for routine clearing.
+                    </p>
+                    <p>
+                        Otherwise it is the usual mix:{' '}
+                        <Link href="/services/roofing-dumpster-rental">roofing tear-offs</Link>,{' '}
+                        <Link href="/services/residential-dumpster-rental">residential cleanouts</Link>,{' '}
+                        <Link href="/services/construction-dumpster-rental">construction and demolition</Link>{' '}
+                        along the 471 corridor, and{' '}
+                        <Link href="/services/estate-cleanout-dumpster-rental">estate cleanouts</Link> in
+                        the established neighborhoods. Not sure which size?{' '}
+                        <Link href="/sizes">Compare all three</Link>.
                     </p>
                 </div>
             </section>

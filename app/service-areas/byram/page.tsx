@@ -91,7 +91,7 @@ export default function ByramPage() {
 
             <section className={styles.contentSection}>
                 <div className="container">
-                    <div className="grid grid-2">
+                    <div>
                         <div>
                             <h2>Why Choose Mid South for Byram Dumpster Rental?</h2>
                             <p>We're a locally owned Central Mississippi company. We own our trucks and handle every delivery ourselves — no third-party brokers or dispatch centers. Byram customers along the Siwell Road corridor get fast, dependable roll off dumpster service backed by our 5-star reputation.</p>
@@ -105,20 +105,6 @@ export default function ByramPage() {
                                 <li>✓ 5-star rated on Google</li>
                                 <li>✓ Licensed & insured</li>
                             </ul>
-                        </div>
-                        <div>
-                            <h2>Perfect For Any Byram Project</h2>
-                            <p>Whether you're <Link href="/blog/dumpster-rental-guide-for-home-renovations" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>renovating a home</Link> in Byramdale Estates, clearing an estate near Lake Dockery, managing a construction project along the Siwell Road corridor, or handling a roofing job in one of Byram's growing subdivisions, we have the right roll off dumpster for your needs.</p>
-                            <p><strong>Common roll off dumpster uses in Byram, MS:</strong></p>
-                            <ul className={styles.projectsList}>
-                                <li>Home renovations and remodeling</li>
-                                <li>Roofing tear-offs and replacements</li>
-                                <li>Construction and demolition debris</li>
-                                <li>Estate and foreclosure cleanouts</li>
-                                <li>Yard waste and storm cleanup</li>
-                                <li>Commercial contractor projects</li>
-                            </ul>
-
                         </div>
                     </div>
                 </div>
@@ -156,6 +142,60 @@ export default function ByramPage() {
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Byram is located in <Link href="/service-areas/hinds-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Hinds County</Link> — see all Hinds County cities we serve.
+                    </p>
+                </div>
+            </section>
+
+            <section className={styles.contentSection}>
+                <div className="container container-narrow">
+                    <h2>Byram Is One of Our Shortest Runs</h2>
+                    <p>
+                        Byram sits in southern Hinds County at ZIP 39272, just down I-55 from our yard on
+                        John R Lynch Street. It is one of the quickest deliveries we make, which makes it
+                        one of the easiest same-day bookings on our map &mdash; call before noon and it is
+                        rarely a problem.
+                    </p>
+
+                    <h2>Placement Around Byram</h2>
+                    <p>
+                        Byram is a mix of lake communities, established subdivisions and semi-rural lots,
+                        and the placement question changes across them:
+                    </p>
+                    <ul className={styles.projectsList}>
+                        <li>
+                            <strong>Lake Dockery and Lake Ridgelea.</strong> Waterside lots with mature
+                            trees and, in places, steep or curving drives. Overhead clearance is the usual
+                            constraint rather than width &mdash; we need about 23 feet to raise the bed.
+                        </li>
+                        <li>
+                            <strong>Byramdale Estates and Byram Estates.</strong> Established residential
+                            with conventional driveways. Straightforward placements; just clear the drive
+                            before we arrive.
+                        </li>
+                        <li>
+                            <strong>Brannan Ridge and Summerwind.</strong> Newer development, wider
+                            approaches, easy drops.
+                        </li>
+                        <li>
+                            <strong>Elton Woods, Willow Wood and the Siwell Road corridor.</strong> Larger
+                            and semi-rural lots where a long gravel drive is common. Firm ground matters
+                            more than space here, particularly after heavy rain.
+                        </li>
+                    </ul>
+
+                    <h2>Permits in Byram</h2>
+                    <p>
+                        On private property &mdash; your driveway, yard or lot &mdash; no permit is
+                        required, which covers nearly every Byram delivery. If the only option is the
+                        public street or right-of-way, contact the City of Byram before you book to confirm
+                        what is needed and how long it takes. It is not a same-day process, so start it
+                        before the project rather than during it.
+                    </p>
+                    <p>
+                        Not sure what size you need? <Link href="/sizes">Compare all three containers</Link>,
+                        or see{' '}
+                        <Link href="/services/residential-dumpster-rental">residential dumpster rental</Link>{' '}
+                        for sizing by what you are actually clearing.
                     </p>
                 </div>
             </section>
