@@ -46,8 +46,8 @@ export default function BrandonPage() {
             answer: "Yes! We regularly deliver roll off dumpsters to Crossgates, Castlewoods, Shiloh, and all other subdivisions throughout Brandon and Rankin County. Our trucks are designed to safely navigate residential streets without damaging driveways."
         },
         {
-            question: "What items are not allowed in your dumpsters in Brandon?",
-            answer: "For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking."
+            question: 'Which Brandon subdivisions do you deliver to?',
+            answer: 'All of them. We are in Crossgates, Castlewoods, Shiloh and Shiloh Crossing, Castle Woods and Bellegrove, and the Gardens of Manship most weeks, along with the Highway 471 and Highway 80 East corridors across ZIPs 39042, 39043 and 39047. If your subdivision is gated \u2014 Castlewoods in particular \u2014 give us the gate code when you book, because a locked gate with nobody on site is the single most common reason a Rankin County delivery has to be rescheduled. See our FAQ page for what we cannot accept.'
         },
         {
             question: "Do you serve all of Rankin County, MS?",
@@ -151,7 +151,7 @@ export default function BrandonPage() {
                         Brandon&apos;s thriving community and expanding development make it one of the metro area&apos;s most desirable locations for home improvement and construction. We&apos;re proud to serve Rankin County with professional roll off dumpster rentals. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Brandon customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
-                        <strong>Planning a rental?</strong> Read our guide on <Link href="/service-areas/brandon">Dumpster Rentals in Brandon, MS</Link> for more local tips and advice on sizing.
+                        <strong>Planning a rental?</strong> Compare <Link href="/sizes">all three container sizes and prices</Link>, or read our <Link href="/blog/how-to-choose-dumpster-size">guide to choosing the right dumpster size</Link>.
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Brandon is the seat of <Link href="/service-areas/rankin-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Rankin County</Link> — view all Rankin County cities we serve.

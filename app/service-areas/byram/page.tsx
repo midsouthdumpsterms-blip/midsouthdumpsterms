@@ -46,8 +46,8 @@ export default function ByramPage() {
             answer: "Yes! We regularly deliver roll off dumpsters to neighborhoods throughout the Siwell Road corridor including Lake Dockery, Byramdale Estates, Brannan Ridge, and all surrounding communities. Our trucks are designed to safely navigate residential streets without damaging driveways."
         },
         {
-            question: "What items are not allowed in your dumpsters in Byram?",
-            answer: "For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking."
+            question: 'Which Byram neighborhoods do you serve?',
+            answer: 'We deliver throughout Byram in ZIP 39272, including Lake Dockery and Lake Ridgelea, Byramdale Estates and Byram Estates, Brannan Ridge and Summerwind, and Elton Woods and Willow Wood. Byram sits in southern Hinds County just off I-55, so it is a short run from our West Jackson yard and comfortably same-day when you call before noon. Our FAQ page lists the items we cannot take.'
         },
         {
             question: "Do you serve all of Hinds County, MS?",

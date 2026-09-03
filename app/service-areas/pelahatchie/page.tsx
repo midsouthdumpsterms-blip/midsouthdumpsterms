@@ -49,8 +49,8 @@ export default function PelahatchePage() {
             answer: 'You only need a permit if placing the dumpster on a public street. If placed on private property or your driveway, no permit is required. Contact the Town of Pelahatchie or Rankin County for specific regulations.',
         },
         {
-            question: 'What items are not allowed in your dumpsters in Pelahatchie?',
-            answer: 'For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you\'re unsure about, call us before booking.',
+            question: 'Is there an extra charge for delivering to Pelahatchie?',
+            answer: 'No. Pelahatchie is about 30 miles east of Jackson in eastern Rankin County at ZIP 39145, and the flat rate is identical to what we charge in town \u2014 no distance surcharge. We deliver to the larger lots near the Ross Barnett Reservoir and Pelahatchie Shore Park as well as in the town itself; long rural driveways are not a problem. What we cannot accept is listed on the FAQ page.',
         },
         {
             question: 'How quickly can you deliver a dumpster to Pelahatchie, MS?',

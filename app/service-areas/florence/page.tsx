@@ -46,8 +46,8 @@ export default function FlorencePage() {
             answer: "You only need a permit if placing the dumpster on a public street or right-of-way in Florence. If placed in your private driveway or on private property, no permit is required. Contact Florence Town Hall for specific street placement regulations."
         },
         {
-            question: "What items are not allowed in your dumpsters in Florence?",
-            answer: "For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking."
+            question: 'Do you deliver to Florence and southern Rankin County?',
+            answer: 'Yes. Florence sits at ZIP 39073 in southern Rankin County along the Highway 49 corridor, and it is one of the faster-growing parts of our service area. Same-day delivery is available when you call before noon, at the same flat rate we charge everywhere else. See our FAQ page for what we cannot accept.'
         },
         {
             question: "Do you serve all of Rankin County, MS?",

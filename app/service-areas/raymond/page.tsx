@@ -50,8 +50,8 @@ export default function RaymondPage() {
             answer: 'You only need a permit if placing the dumpster on a public street in Raymond. If placed on private property or your driveway, no permit is required. Contact the Town of Raymond or Hinds County for specific regulations.',
         },
         {
-            question: 'What items are not allowed in your dumpsters in Raymond?',
-            answer: 'For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you\'re unsure about, call us before booking.',
+            question: 'Which parts of Raymond do you cover?',
+            answer: 'All of Raymond and the surrounding western Hinds County area at ZIP 39154 \u2014 the historic downtown and courthouse district, the Hinds Community College campus area, and the properties out toward the Battle of Raymond site. Student-rental turnovers around the college are a steady part of our work here, and those usually take a 15-yard. Prohibited items are listed on our FAQ page.',
         },
         {
             question: 'How quickly can you deliver a dumpster to Raymond, MS?',

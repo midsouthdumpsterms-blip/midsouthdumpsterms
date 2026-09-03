@@ -31,8 +31,8 @@ const faqs = [
         answer: 'Our flat-rate pricing for Ridgeland includes delivery, pickup, and disposal with no hidden fees. A 10-yard roll off dumpster starts at $349, a 15-yard at $399, and a 20-yard at $449. Extended rentals are available at $50/day.',
     },
     {
-        question: 'What is prohibited from a Ridgeland dumpster rental?',
-        answer: 'Hazardous materials, wet paint, tires, batteries, and appliances containing Freon are strictly prohibited for environmental safety. Standard household junk, lumber, roofing shingles, and yard debris are all accepted.',
+        question: 'Which Ridgeland neighborhoods do you deliver to?',
+        answer: 'We cover all of Ridgeland in ZIP 39157, including Bridgewater, Ashbrooke, Northbay and Cypress Lake, Greenbrook and Dinsmor, the Township at Colony Park, and Old Town Ridgeland along the Highway 51 corridor. A good number of these are HOA neighborhoods, so check your association rules on container placement and rental length before you book. Our FAQ page lists the items we cannot take.',
     },
     {
         question: 'Do you serve all of Madison County, MS?',

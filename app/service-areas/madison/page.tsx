@@ -151,7 +151,7 @@ export default function MadisonPage() {
                         From residential cleanouts to large commercial builds in Madison&apos;s growing business corridors, Mid South Dumpster Rentals is Madison County&apos;s trusted local roll off dumpster provider. <a href="https://maps.app.goo.gl/kHUeHwhx8FYcUqDfA" target="_blank" rel="noopener noreferrer">See our Google reviews</a> to hear from other Madison customers.
                     </p>
                     <p style={{ marginTop: '1.5rem' }}>
-                        <strong>Want to learn more?</strong> Check out our complete guide on <Link href="/service-areas/madison">Dumpster Rental in Madison, MS</Link>.
+                        <strong>Want to learn more?</strong> Check out our complete guide on <Link href="/sizes">compare dumpster sizes and pricing</Link>.
                     </p>
                     <p style={{ marginTop: '1rem' }}>
                         Madison is the heart of <Link href="/service-areas/madison-county" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Madison County</Link> — view all Madison County cities we serve.

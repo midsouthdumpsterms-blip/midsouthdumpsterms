@@ -49,8 +49,8 @@ export default function BoltonPage() {
             answer: 'You only need a permit if placing the dumpster on a public street in Bolton. If placed on private property or your driveway, no permit is required. Contact Hinds County for specific regulations.',
         },
         {
-            question: 'What items are not allowed in your dumpsters in Bolton?',
-            answer: 'For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you\'re unsure about, call us before booking.',
+            question: 'Is there a delivery charge for coming out to Bolton?',
+            answer: 'No. Bolton sits in western Hinds County at ZIP 39041, off the I-20 corridor, and our flat rate is the same there as it is in the middle of Jackson \u2014 delivery, pickup and disposal included, with no distance or fuel surcharge. Rural properties and long gravel drives are routine for us; just tell us about the approach when you book. Prohibited items are listed on our FAQ page.',
         },
         {
             question: 'How quickly can you deliver a dumpster to Bolton, MS?',

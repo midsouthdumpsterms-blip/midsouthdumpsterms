@@ -46,8 +46,8 @@ export default function GluckstadtPage() {
             answer: "Yes! We regularly deliver roll off dumpsters to communities throughout the Gluckstadt area including Bellegrove, Reunion, Bridgewater, and all neighborhoods along the Highway 463 corridor. Our trucks safely navigate residential streets without damaging driveways."
         },
         {
-            question: "What items are not allowed in your dumpsters in Gluckstadt?",
-            answer: "For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking."
+            question: 'Do you deliver to the newer Gluckstadt subdivisions?',
+            answer: 'Yes. Gluckstadt is in northern Madison County at ZIP 39110, and most of what we haul there is new-construction debris \u2014 framing offcuts, drywall, packaging and siding. That is bulky rather than heavy, so you usually run out of volume before weight and the 20-yard is the sensible default. Check your HOA rules before booking a 7-day rental; several of the newer developments limit how long a container may sit in a driveway. Our FAQ page lists the items we cannot take.'
         },
         {
             question: "Do you serve all of Madison County, MS?",

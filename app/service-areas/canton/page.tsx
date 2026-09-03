@@ -46,8 +46,8 @@ export default function CantonPage() {
             answer: "You only need a permit if placing the dumpster on a public street or right-of-way in Canton. If placed in your private driveway, no permit is required. Contact Canton Public Works for street placement regulations."
         },
         {
-            question: "What items are not allowed in your dumpsters in Canton?",
-            answer: "For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking."
+            question: 'Do you deliver to Canton and the surrounding Madison County area?',
+            answer: 'Yes. Canton is the Madison County seat at ZIP 39046 and we run there regularly, including the properties out toward the Nissan plant and its supplier base. The flat rate is the same as anywhere else we serve \u2014 there is no travel surcharge for northern Madison County. What we cannot accept is listed on the FAQ page.'
         },
         {
             question: "Do you serve all of Madison County, MS?",

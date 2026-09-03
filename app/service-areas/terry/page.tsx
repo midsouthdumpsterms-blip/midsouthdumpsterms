@@ -46,8 +46,8 @@ export default function TerryPage() {
             answer: "You only need a permit if placing the dumpster on a public street or right-of-way in Terry. If placed in your private driveway or on private property, no permit is required. Contact the Town of Terry for specific street placement regulations."
         },
         {
-            question: "What items are not allowed in your dumpsters in Terry?",
-            answer: "For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking."
+            question: 'Do you deliver to Terry and southern Hinds County?',
+            answer: 'Yes. Terry is at ZIP 39170 in southern Hinds County along the Highway 27 and I-55 corridor, and it is an easy run from our West Jackson yard. Rural properties with long drives are routine; the flat rate applies with no distance surcharge. What we cannot accept is listed on the FAQ page.'
         },
         {
             question: "Do you serve all of Hinds County, MS?",

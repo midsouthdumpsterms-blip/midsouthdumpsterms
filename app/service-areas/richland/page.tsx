@@ -46,8 +46,8 @@ export default function RichlandPage() {
             answer: "You only need a permit if placing the dumpster on a public street or right-of-way in Richland. If placed in your private driveway, no permit is required. Contact Richland City Hall for specific street placement regulations."
         },
         {
-            question: "What items are not allowed in your dumpsters in Richland?",
-            answer: "For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking."
+            question: 'Which Richland neighborhoods do you serve?',
+            answer: 'We deliver across Richland in ZIP 39218, including Richland Hills and Richland East, Sylvan Hills and Monterey Woods, Southwind and West Wind, and Bradford Place. Richland sits where Highway 49 meets the I-20 corridor in Rankin County, which makes it one of the quicker runs from our yard and an easy same-day booking. See our FAQ page for what we cannot accept.'
         },
         {
             question: "Do you serve all of Rankin County, MS?",

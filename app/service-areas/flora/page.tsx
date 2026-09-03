@@ -46,8 +46,8 @@ export default function FloraPage() {
             answer: "You only need a permit if placing the dumpster on a public street or right-of-way in Flora. If placed in your private driveway or on private property, no permit is required. Contact the Town of Flora for specific street placement regulations."
         },
         {
-            question: "What items are not allowed in your dumpsters in Flora?",
-            answer: "For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking."
+            question: 'Do you deliver out to Flora?',
+            answer: 'Yes. Flora is in western Madison County at ZIP 39071, and rural delivery is routine for us \u2014 long drives, open lots and gravel approaches are all fine. Because the lots out there tend to be larger, placement is usually easier in Flora than in town; the one thing to watch is soft ground after heavy rain. Prohibited items are listed on our FAQ page.'
         },
         {
             question: "Do you serve all of Madison County, MS?",
