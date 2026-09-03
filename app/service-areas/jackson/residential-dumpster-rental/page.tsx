@@ -6,6 +6,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import { SITE_URL, ogBase, twitterBase } from '@/lib/seo'
 import styles from '../../city.module.css'
+import FaqSection from '@/components/FaqSection'
 
 const PATH = '/service-areas/jackson/residential-dumpster-rental'
 const TITLE = 'Residential Dumpster Rental Jackson MS'
@@ -232,17 +233,7 @@ export default function JacksonResidentialPage() {
                 </div>
             </section>
 
-            <section className={styles.contentSection} style={{ background: 'var(--color-gray-50)' }}>
-                <div className="container container-narrow">
-                    <h2>Residential Rental FAQ &mdash; Jackson</h2>
-                    {faqs.map((faq) => (
-                        <div key={faq.question} style={{ marginBottom: 'var(--spacing-lg)' }}>
-                            <h3 style={{ fontSize: '1.05rem', marginBottom: '0.5rem' }}>{faq.question}</h3>
-                            <p style={{ color: 'var(--color-gray-600)' }}>{faq.answer}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
+            <FaqSection faqs={faqs} title="Residential Dumpster FAQ — Jackson" background />
 
             <section className={styles.ctaSection}>
                 <div className="container text-center">

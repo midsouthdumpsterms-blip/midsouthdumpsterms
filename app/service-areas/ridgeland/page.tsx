@@ -6,6 +6,7 @@ import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/ridgeland' },
@@ -154,20 +155,6 @@ export default function RidgelandPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection} style={{ padding: 'var(--spacing-3xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
-                <div className="container container-narrow">
-                    <h2 className="text-center">Ridgeland Dumpster Rental FAQs</h2>
-                    <div className={styles.faqList}>
-                        {faqs.map((faq, index) => (
-                            <div key={index} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-xl)' }}>
-                                <h3 style={{ fontSize: '1.25rem', marginBottom: 'var(--spacing-sm)' }}>{faq.question}</h3>
-                                <p>{faq.answer}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             <section style={{ padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">
                     <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)', maxHeight: '480px' }}>
@@ -184,6 +171,8 @@ export default function RidgelandPage() {
                     </p>
                 </div>
             </section>
+
+            <FaqSection faqs={faqs} title="Ridgeland Dumpster Rental FAQ" background />
 
             <section className={styles.ctaSection}>
                 <div className="container text-center">

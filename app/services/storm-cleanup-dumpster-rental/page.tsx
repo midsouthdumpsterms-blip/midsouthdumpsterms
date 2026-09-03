@@ -5,6 +5,7 @@ import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import styles from '../services.module.css'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/storm-cleanup-dumpster-rental' },
@@ -37,7 +38,7 @@ export default function StormCleanupDumpsterRentalPage() {
         { name: 'Storm Cleanup Dumpster Rental', url: 'https://midsouthdumpsterms.com/services/storm-cleanup-dumpster-rental' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: 'How fast can you deliver a dumpster after a storm?',
             answer: 'Same-day delivery is available when you call before noon, 7 days a week. After major storms, demand spikes quickly — we recommend calling as soon as you can assess your damage to secure a container. Call 601-316-7891.',
@@ -54,7 +55,17 @@ export default function StormCleanupDumpsterRentalPage() {
             question: 'Do you work with insurance companies on storm cleanup?',
             answer: 'We provide detailed invoices that include delivery date, pickup date, dumpster size, and total cost — exactly what insurance adjusters need for your claim. We recommend saving your invoice and photos of the debris for your insurance file.',
         },
-    ])
+        {
+            question: 'Do you work with insurance companies?',
+            answer: 'We provide detailed invoices with all information adjusters need. Save your invoice and document the debris with photos.',
+        },
+        {
+            question: 'What if I need multiple dumpsters?',
+            answer: 'We can deliver multiple containers for large storm cleanup projects. Call us at 601-316-7891 to discuss your specific situation.',
+        },
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -151,24 +162,7 @@ export default function StormCleanupDumpsterRentalPage() {
                 </div>
             </section>
 
-            <section>
-                <div className="container container-narrow">
-                    <h2 className="text-center">Storm Cleanup Dumpster FAQ</h2>
-                    <div style={{ marginTop: 'var(--spacing-xl)' }}>
-                        {[
-                            { q: 'How fast can you deliver a dumpster after a storm?', a: 'Same-day delivery when you call before noon. After major storms, we recommend calling as early as possible to secure availability.' },
-                            { q: 'What storm debris can I put in the dumpster?', a: 'Tree branches, roofing shingles, siding, fencing, water-damaged materials, wet carpet, broken glass, and general storm debris. No hazardous materials or standing water.' },
-                            { q: 'Do you work with insurance companies?', a: 'We provide detailed invoices with all information adjusters need. Save your invoice and document the debris with photos.' },
-                            { q: 'What if I need multiple dumpsters?', a: 'We can deliver multiple containers for large storm cleanup projects. Call us at 601-316-7891 to discuss your specific situation.' },
-                        ].map((faq) => (
-                            <div key={faq.q} style={{ borderBottom: '1px solid var(--color-gray-200)', padding: 'var(--spacing-lg) 0' }}>
-                                <h3 style={{ fontSize: '1.05rem', marginBottom: '0.5rem' }}>{faq.q}</h3>
-                                <p style={{ color: 'var(--color-gray-600)', margin: 0 }}>{faq.a}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <FaqSection faqs={faqs} title="Storm Cleanup Dumpster FAQ" background />
 
             <section className={styles.ctaSection}>
                 <div className="container text-center">

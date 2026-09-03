@@ -5,6 +5,7 @@ import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import styles from '../services.module.css'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/demolition-dumpster-rental' },
@@ -37,7 +38,7 @@ export default function DemolitionDumpsterRentalPage() {
         { name: 'Demolition Dumpster Rental', url: 'https://midsouthdumpsterms.com/services/demolition-dumpster-rental' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: 'What size dumpster do I need for a demolition project?',
             answer: 'For small demo jobs like a single bathroom gut, a 10-yard dumpster works well. For kitchen or multi-room demos, the 15-yard is our most popular choice. For full structural tear-downs, whole-house guts, or commercial demolition, the 20-yard handles the volume best.',
@@ -54,7 +55,9 @@ export default function DemolitionDumpsterRentalPage() {
             question: 'How much does a demolition dumpster rental cost in Jackson MS?',
             answer: 'Our flat-rate pricing starts at $349 for a 10-yard dumpster (1-day rental). The 15-yard starts at $399, and the 20-yard starts at $449. All prices include delivery, pickup, and disposal with no hidden fees.',
         },
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -148,24 +151,7 @@ export default function DemolitionDumpsterRentalPage() {
                 </div>
             </section>
 
-            <section>
-                <div className="container container-narrow">
-                    <h2 className="text-center">Demolition Dumpster Rental FAQ</h2>
-                    <div style={{ marginTop: 'var(--spacing-xl)' }}>
-                        {[
-                            { q: 'What size dumpster do I need for a demolition project?', a: 'For small demo jobs like a single bathroom gut, a 10-yard dumpster works well. For kitchen or multi-room demos, the 15-yard is our most popular choice. For full structural tear-downs, whole-house guts, or commercial demolition, the 20-yard handles the volume best.' },
-                            { q: 'What demolition debris can I put in the dumpster?', a: 'You can dispose of drywall, lumber, framing, flooring, tile, carpet, insulation, windows, doors, trim, cabinetry, PVC pipe, and general demolition debris. We do not accept concrete, brick, cinderblock, dirt, hazardous materials, or asbestos.' },
-                            { q: 'Can I get a demolition dumpster delivered the same day?', a: 'Yes! Same-day delivery is available 7 days a week when you call before noon. Call us at 601-316-7891 or book online.' },
-                            { q: 'How much does a demolition dumpster rental cost in Jackson MS?', a: 'Flat-rate pricing starts at $349 for a 10-yard (1-day). 15-yard from $399, 20-yard from $449. All prices include delivery, pickup, and disposal.' },
-                        ].map((faq) => (
-                            <div key={faq.q} style={{ borderBottom: '1px solid var(--color-gray-200)', padding: 'var(--spacing-lg) 0' }}>
-                                <h3 style={{ fontSize: '1.05rem', marginBottom: '0.5rem' }}>{faq.q}</h3>
-                                <p style={{ color: 'var(--color-gray-600)', margin: 0 }}>{faq.a}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <FaqSection faqs={faqs} title="Demolition Dumpster Rental FAQ" background />
 
             <section className={styles.ctaSection}>
                 <div className="container text-center">

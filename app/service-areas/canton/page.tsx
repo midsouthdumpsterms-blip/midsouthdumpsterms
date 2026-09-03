@@ -6,6 +6,7 @@ import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/canton' },
@@ -35,7 +36,7 @@ export default function CantonPage() {
         { name: 'Canton', url: 'https://midsouthdumpsterms.com/service-areas/canton' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: "How much does it cost to rent a roll off dumpster in Canton, MS?",
             answer: "Our roll off dumpster rentals in Canton start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size) with no hidden fees."
@@ -56,7 +57,9 @@ export default function CantonPage() {
             question: "How quickly can you deliver a roll off dumpster to Canton, MS?",
             answer: "We offer same-day and next-day roll off dumpster delivery in Canton and Madison County. Call us before noon at 601-316-7891 and we can typically deliver the same day, 7 days a week."
         }
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -168,26 +171,7 @@ export default function CantonPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection}>
-                <div className="container">
-                    <h2 className="text-center">Frequently Asked Questions: Canton Dumpster Rentals</h2>
-                    <div className={styles.faqGrid}>
-                        <div className={styles.faqItem}>
-                            <h3>How much does it cost to rent a dumpster in Canton, MS?</h3>
-                            <p>Our dumpster rentals in Canton start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size).</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>Do I need a permit for a dumpster in Canton?</h3>
-                            <p>You only need a permit if placing the dumpster on a public street in Canton. Placing it in your private driveway requires no permit. Contact Canton Public Works for specific street placement rules.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>What items are not allowed in your dumpsters in Canton?</h3>
-                            <p>For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <FaqSection faqs={faqs} title="Frequently Asked Questions: Canton Dumpster Rentals" background />
             <section className={styles.ctaSection}>
                 <div className="container text-center">
                     <h2>Ready to Rent a Dumpster in Canton?</h2>

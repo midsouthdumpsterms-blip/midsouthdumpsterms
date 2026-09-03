@@ -5,6 +5,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, inj
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
 import RelatedGuides from '@/components/RelatedGuides'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/deck-shed-demolition-dumpster-rental-jackson-ms' },
@@ -33,7 +34,7 @@ export default function DeckShedDemolitionDumpster() {
         { name: 'Deck & Shed Demolition Dumpster Rental Jackson MS', url: 'https://midsouthdumpsterms.com/blog/deck-shed-demolition-dumpster-rental-jackson-ms' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: 'What size dumpster do I need to demolish a deck in Jackson, MS?',
             answer: 'A 15-yard dumpster handles most residential deck tear-downs (up to about 400 sq ft). For larger decks or if you\'re also removing a shed, a 20-yard dumpster gives you the extra room. Mid South Dumpster Rentals can help you choose based on your project scope — call 601-316-7891.',
@@ -50,7 +51,9 @@ export default function DeckShedDemolitionDumpster() {
             question: 'Do I need a permit to demo a shed or deck in Jackson or Rankin County?',
             answer: 'In most cases, demolishing an existing deck or detached shed on your own property does not require a permit in Jackson, Madison, or Rankin County. However, rules vary by municipality. We always recommend confirming with your local building department before starting any demo work.',
         },
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -228,6 +231,8 @@ export default function DeckShedDemolitionDumpster() {
                         <p>
                             We offer <Link href="/services/same-day-dumpster-rental">same-day dumpster delivery</Link> across Central Mississippi when you call or book online early in the day. We schedule delivery 7 days a week.
                         </p>
+
+                        <FaqSection faqs={faqs} title="Deck & Shed Demolition FAQ" bare />
 
                         <RelatedGuides slug="deck-shed-demolition-dumpster-rental-jackson-ms" />
 

@@ -5,6 +5,7 @@ import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import styles from '../services.module.css'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/estate-cleanout-dumpster-rental' },
@@ -37,7 +38,7 @@ export default function EstateCleanoutDumpsterRentalPage() {
         { name: 'Estate Cleanout Dumpster Rental', url: 'https://midsouthdumpsterms.com/services/estate-cleanout-dumpster-rental' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: 'What size dumpster do I need for an estate cleanout?',
             answer: 'For most estate cleanouts, the 15-yard or 20-yard dumpster is ideal. A 15-yard holds about 6 pickup truck loads — enough for 2-3 rooms of furniture, boxes, and household items. If the home is fully furnished or has accumulated decades of belongings, the 20-yard gives you more room to work without worrying about overfilling.',
@@ -54,7 +55,21 @@ export default function EstateCleanoutDumpsterRentalPage() {
             question: 'Do you offer dumpsters for foreclosure cleanouts?',
             answer: 'Yes! We work with property managers, real estate agents, and banks regularly for foreclosure cleanouts and rental property turnovers. Same-day delivery is available, and our flat-rate pricing makes budgeting easy.',
         },
-    ])
+        {
+            question: 'How long can I keep the dumpster?',
+            answer: 'We offer 1-day, 3-day, and 7-day rentals. Extended rentals are available for $50/day. Most estate cleanouts take 3-7 days.',
+        },
+        {
+            question: 'Do you offer foreclosure cleanout dumpsters?',
+            answer: 'Yes! We work with property managers, agents, and banks regularly. Same-day delivery and flat-rate pricing make foreclosure cleanouts easy to budget.',
+        },
+        {
+            question: 'Can I put a mattress in the dumpster?',
+            answer: 'Yes — mattresses, box springs, furniture, and household items are all accepted.',
+        },
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -231,24 +246,7 @@ export default function EstateCleanoutDumpsterRentalPage() {
                 </div>
             </section>
 
-            <section>
-                <div className="container container-narrow">
-                    <h2 className="text-center">Estate Cleanout Dumpster Rental FAQ</h2>
-                    <div style={{ marginTop: 'var(--spacing-xl)' }}>
-                        {[
-                            { q: 'What size dumpster do I need for an estate cleanout?', a: 'For most homes, the 15-yard or 20-yard is ideal. A 15-yard holds about 6 pickup truck loads. The 20-yard gives extra room for large estates or homes with decades of accumulated belongings.' },
-                            { q: 'How long can I keep the dumpster?', a: 'We offer 1-day, 3-day, and 7-day rentals. Extended rentals are available for $50/day. Most estate cleanouts take 3-7 days.' },
-                            { q: 'Do you offer foreclosure cleanout dumpsters?', a: 'Yes! We work with property managers, agents, and banks regularly. Same-day delivery and flat-rate pricing make foreclosure cleanouts easy to budget.' },
-                            { q: 'Can I put a mattress in the dumpster?', a: 'Yes — mattresses, box springs, furniture, and household items are all accepted.' },
-                        ].map((faq) => (
-                            <div key={faq.q} style={{ borderBottom: '1px solid var(--color-gray-200)', padding: 'var(--spacing-lg) 0' }}>
-                                <h3 style={{ fontSize: '1.05rem', marginBottom: '0.5rem' }}>{faq.q}</h3>
-                                <p style={{ color: 'var(--color-gray-600)', margin: 0 }}>{faq.a}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <FaqSection faqs={faqs} title="Estate Cleanout Dumpster FAQ" background />
 
             <section className={styles.ctaSection}>
                 <div className="container text-center">

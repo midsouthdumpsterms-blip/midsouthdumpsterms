@@ -6,6 +6,7 @@ import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/raymond' },
@@ -35,7 +36,7 @@ export default function RaymondPage() {
         { name: 'Raymond', url: 'https://midsouthdumpsterms.com/service-areas/raymond' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: 'How much does it cost to rent a roll off dumpster in Raymond, MS?',
             answer: 'Our roll off dumpster rentals in Raymond start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size) with no hidden fees.',
@@ -56,7 +57,9 @@ export default function RaymondPage() {
             question: 'How quickly can you deliver a dumpster to Raymond, MS?',
             answer: 'We offer same-day and next-day roll off dumpster delivery in Raymond. Call us before noon at 601-316-7891 and we can typically deliver the same day, 7 days a week. Raymond is less than 30 minutes from our operating area.',
         },
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -178,26 +181,7 @@ export default function RaymondPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection}>
-                <div className="container">
-                    <h2 className="text-center">Frequently Asked Questions: Raymond Dumpster Rentals</h2>
-                    <div className={styles.faqGrid}>
-                        <div className={styles.faqItem}>
-                            <h3>How much does it cost to rent a dumpster in Raymond, MS?</h3>
-                            <p>Our dumpster rentals in Raymond start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size).</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>Do you deliver to rural properties outside of Raymond?</h3>
-                            <p>Yes! We serve Raymond and all surrounding rural Hinds County properties. Long driveways, rural roads, and farm properties are no problem — we just need enough clearance for the truck to back in safely.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>What items are not allowed in your dumpsters in Raymond?</h3>
-                            <p>We cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. Call us if you have specific items you&apos;re unsure about.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <FaqSection faqs={faqs} title="Frequently Asked Questions: Raymond Dumpster Rentals" background />
             <section style={{ padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">
                     <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)', maxHeight: '480px' }}>

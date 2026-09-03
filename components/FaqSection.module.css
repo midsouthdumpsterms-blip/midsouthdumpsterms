@@ -1,0 +1,54 @@
+.section {
+    padding: var(--spacing-2xl) 0;
+}
+
+.sectionTinted {
+    padding: var(--spacing-2xl) 0;
+    background: var(--color-gray-50);
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+@media (min-width: 820px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.item {
+    background: white;
+    border: 1px solid var(--color-gray-200);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.question {
+    margin: 0 0 var(--spacing-sm);
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.answer {
+    margin: 0;
+    color: var(--color-gray-600);
+    line-height: 1.65;
+}
+
+/* In-article variant: no full-width section, sits in the post's text column. */
+.bare {
+    margin: var(--spacing-2xl) 0;
+}
+
+.bare .grid {
+    grid-template-columns: 1fr;
+}

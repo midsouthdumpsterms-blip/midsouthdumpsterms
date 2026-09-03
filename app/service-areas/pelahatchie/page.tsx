@@ -5,6 +5,7 @@ import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/pelahatchie' },
@@ -34,7 +35,7 @@ export default function PelahatchePage() {
         { name: 'Pelahatchie', url: 'https://midsouthdumpsterms.com/service-areas/pelahatchie' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: 'How much does it cost to rent a roll off dumpster in Pelahatchie, MS?',
             answer: 'Our roll off dumpster rentals in Pelahatchie start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. All prices include drop-off, pick-up, and a standard weight allowance with no hidden fees.',
@@ -55,7 +56,9 @@ export default function PelahatchePage() {
             question: 'How quickly can you deliver a dumpster to Pelahatchie, MS?',
             answer: 'We offer same-day and next-day roll off dumpster delivery in Pelahatchie. Call us before noon at 601-316-7891 and we can typically deliver the same day, 7 days a week. Pelahatchie is about 30 miles east of Jackson — well within our service area.',
         },
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -159,26 +162,7 @@ export default function PelahatchePage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection}>
-                <div className="container">
-                    <h2 className="text-center">Frequently Asked Questions: Pelahatchie Dumpster Rentals</h2>
-                    <div className={styles.faqGrid}>
-                        <div className={styles.faqItem}>
-                            <h3>How much does it cost to rent a dumpster in Pelahatchie, MS?</h3>
-                            <p>Our dumpster rentals in Pelahatchie start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size).</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>Do you deliver to rural properties outside of Pelahatchie?</h3>
-                            <p>Yes! We serve Pelahatchie and all surrounding rural Rankin County properties. Long driveways, rural roads, and larger rural lots near the reservoir are no problem — we just need enough clearance for the truck to back in safely.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>What items are not allowed in your dumpsters in Pelahatchie?</h3>
-                            <p>We cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. Call us if you have specific items you&apos;re unsure about.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <FaqSection faqs={faqs} title="Frequently Asked Questions: Pelahatchie Dumpster Rentals" background />
             <section className={styles.ctaSection}>
                 <div className="container text-center">
                     <h2>Ready to Rent a Dumpster in Pelahatchie?</h2>

@@ -6,6 +6,7 @@ import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/madison' },
@@ -35,7 +36,7 @@ export default function MadisonPage() {
         { name: 'Madison', url: 'https://midsouthdumpsterms.com/service-areas/madison' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: "Do I need a permit to rent a dumpster in Madison, MS?",
             answer: "If you place the dumpster on your private property, such as your driveway in Reunion or Annandale, you typically do not need a permit. However, if the dumpster must be placed on a public street or right-of-way, a permit from the City of Madison may be required. We can help guide you through this process."
@@ -56,7 +57,9 @@ export default function MadisonPage() {
             question: "Do you serve all of Madison County, MS?",
             answer: "Yes! We provide roll off dumpster rental throughout all of Madison County including Madison, Ridgeland, Canton, Gluckstadt, Flora, Pocahontas, and surrounding communities. Same-day delivery is available when you call before noon."
         }
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -156,26 +159,7 @@ export default function MadisonPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection}>
-                <div className="container">
-                    <h2 className="text-center">Frequently Asked Questions: Madison Dumpster Rentals</h2>
-                    <div className={styles.faqGrid}>
-                        <div className={styles.faqItem}>
-                            <h3>Do I need a permit to rent a dumpster in Madison, MS?</h3>
-                            <p>If you place the dumpster on your private property, such as your driveway in Reunion or Annandale, you typically do not need a permit. However, if the dumpster must be placed on a public street or right-of-way, a permit from the City of Madison may be required. We can help guide you through this process.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>How quickly can you deliver a roll-off dumpster to Madison?</h3>
-                            <p>We offer same-day and next-day dumpster delivery throughout Madison and Madison County. Call us early in the day to secure a same-day drop-off for your project.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>What roll-off dumpster sizes are available in Madison?</h3>
-                            <p>We provide 10-yard, 15-yard, and 20-yard roll-off dumpsters in Madison. Our 20-yard dumpsters are our most popular size for home renovations and estate cleanouts in the area.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <FaqSection faqs={faqs} title="Frequently Asked Questions: Madison Dumpster Rentals" background />
             <section style={{ padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">
                     <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>

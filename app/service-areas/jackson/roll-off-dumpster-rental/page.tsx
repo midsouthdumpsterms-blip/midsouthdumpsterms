@@ -6,6 +6,7 @@ import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import { SITE_URL, ogBase, twitterBase } from '@/lib/seo'
 import styles from '../../city.module.css'
+import FaqSection from '@/components/FaqSection'
 
 const PATH = '/service-areas/jackson/roll-off-dumpster-rental'
 const TITLE = 'Roll-Off Dumpster Rental in Jackson MS'
@@ -231,17 +232,7 @@ export default function JacksonRollOffPage() {
                 </div>
             </section>
 
-            <section className={styles.contentSection} style={{ background: 'var(--color-gray-50)' }}>
-                <div className="container container-narrow">
-                    <h2>Roll-Off Rental FAQ &mdash; Jackson</h2>
-                    {faqs.map((faq) => (
-                        <div key={faq.question} style={{ marginBottom: 'var(--spacing-lg)' }}>
-                            <h3 style={{ fontSize: '1.05rem', marginBottom: '0.5rem' }}>{faq.question}</h3>
-                            <p style={{ color: 'var(--color-gray-600)' }}>{faq.answer}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
+            <FaqSection faqs={faqs} title="Roll-Off Dumpster FAQ — Jackson" background />
 
             <section className={styles.ctaSection}>
                 <div className="container text-center">

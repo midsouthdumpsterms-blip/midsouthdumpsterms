@@ -5,6 +5,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, inj
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
 import RelatedGuides from '@/components/RelatedGuides'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/bathroom-remodel-dumpster-rental-jackson-ms' },
@@ -33,7 +34,7 @@ export default function BathroomRemodelDumpster() {
         { name: 'Bathroom Remodel Dumpster Rental Jackson MS', url: 'https://midsouthdumpsterms.com/blog/bathroom-remodel-dumpster-rental-jackson-ms' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: 'What size dumpster do I need for a bathroom remodel in Jackson, MS?',
             answer: 'For a typical single bathroom remodel — demo\'ing tile, vanity, tub, and drywall — a 10-yard dumpster is usually sufficient. For a master bath gut-out, multiple bathroom renovations, or if you\'re also removing flooring from adjacent rooms, a 15-yard dumpster gives you more room. Mid South offers both starting at $349.',
@@ -50,7 +51,9 @@ export default function BathroomRemodelDumpster() {
             question: 'How long can I keep the dumpster during my bathroom renovation?',
             answer: 'Mid South offers 1-day, 3-day, and 7-day rental periods. Most bathroom remodels use a 3-day or 7-day rental. If you need more time, extended rentals are available for $50/day beyond your initial period.',
         },
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -264,6 +267,8 @@ export default function BathroomRemodelDumpster() {
                         <p>
                             Mid South charges flat-rate pricing starting at <strong>$349 for a 1-day 10-yard rental</strong>. A 7-day 10-yard rental is $399. A 15-yard for a full week is $449. There are no hidden fees — that price covers delivery, pickup, and disposal. See our <Link href="/blog/dumpster-rental-prices-jackson-ms">full pricing guide</Link>.
                         </p>
+
+                        <FaqSection faqs={faqs} title="Bathroom Remodel Dumpster FAQ" bare />
 
                         <RelatedGuides slug="bathroom-remodel-dumpster-rental-jackson-ms" />
 

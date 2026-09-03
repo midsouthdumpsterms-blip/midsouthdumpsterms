@@ -5,6 +5,7 @@ import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/rankin-county' },
@@ -34,7 +35,7 @@ export default function RankinCountyPage() {
         { name: 'Rankin County', url: 'https://midsouthdumpsterms.com/service-areas/rankin-county' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: 'Do you provide roll off dumpster rental throughout all of Rankin County, MS?',
             answer: 'Yes! Mid South Dumpster Rentals serves all of Rankin County including Brandon, Pearl, Flowood, Richland, Florence, Pelahatchie, Brandon, and surrounding communities. We own our trucks and do every delivery ourselves.',
@@ -55,7 +56,9 @@ export default function RankinCountyPage() {
             question: 'What cities in Rankin County do you serve?',
             answer: 'We serve the entire Rankin County area including Brandon, Pearl, Flowood, Richland, Florence, Pelahatchie, Ludlow, Sandhill, and surrounding communities. Call us at 601-316-7891 if you have questions about your specific location.',
         },
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -186,40 +189,7 @@ export default function RankinCountyPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection} style={{ padding: 'var(--spacing-3xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
-                <div className="container container-narrow">
-                    <h2 className="text-center">Rankin County Dumpster Rental FAQs</h2>
-                    <div className={styles.faqList}>
-                        {[
-                            {
-                                question: 'Do you provide roll off dumpster rental throughout all of Rankin County, MS?',
-                                answer: 'Yes! Mid South Dumpster Rentals serves all of Rankin County including Brandon, Pearl, Flowood, Richland, Florence, Pelahatchie, and surrounding communities. We own our trucks and do every delivery ourselves.',
-                            },
-                            {
-                                question: 'How much does roll off dumpster rental cost in Rankin County, MS?',
-                                answer: 'Our roll off dumpster rentals in Rankin County start at $349 for a 10-yard container, $399 for a 15-yard, and $449 for a 20-yard. All prices include delivery, pickup, and disposal with no hidden fees.',
-                            },
-                            {
-                                question: 'Can I get same-day dumpster delivery in Rankin County?',
-                                answer: 'Yes! We offer same-day roll off dumpster delivery throughout Rankin County when you call before noon at 601-316-7891. We deliver 7 days a week, 7AM–7PM.',
-                            },
-                            {
-                                question: 'Do I need a permit for a dumpster in Rankin County?',
-                                answer: 'If the dumpster is placed on your private property or driveway, no permit is typically needed. If it must be placed on a public street or right-of-way, check with your local city hall. We can help guide you through the process.',
-                            },
-                            {
-                                question: 'What cities in Rankin County do you serve?',
-                                answer: 'We serve the entire Rankin County area including Brandon, Pearl, Flowood, Richland, Florence, Pelahatchie, Ludlow, Sandhill, and surrounding communities.',
-                            },
-                        ].map((faq, index) => (
-                            <div key={index} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-xl)' }}>
-                                <h3 style={{ fontSize: '1.25rem', marginBottom: 'var(--spacing-sm)' }}>{faq.question}</h3>
-                                <p>{faq.answer}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <FaqSection faqs={faqs} title="Rankin County Dumpster Rental FAQ" background />
 
             <section className={styles.ctaSection}>
                 <div className="container text-center">

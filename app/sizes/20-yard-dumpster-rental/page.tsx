@@ -3,6 +3,7 @@ import Link from 'next/link'
 import BookingButton from '@/components/BookingButton'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateOfferCatalogSchema, generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/sizes/20-yard-dumpster-rental' },
@@ -33,13 +34,34 @@ export default function TwentyYardDumpsterPage() {
         { name: 'Dumpster Sizes', url: 'https://midsouthdumpsterms.com/sizes' },
         { name: '20 Yard Dumpster Rental', url: 'https://midsouthdumpsterms.com/sizes/20-yard-dumpster-rental' },
     ])
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         { question: 'How much does a 20 yard dumpster rental cost in Jackson, MS?', answer: 'A 20 yard dumpster rental from Mid South starts at $449 for 1 day, $479 for 3 days, and $499 for 7 days. All prices include delivery, pickup, and up to 3 tons of disposal.' },
         { question: 'What are the dimensions of the 20 yard dumpster?', answer: 'Our 20 yard dumpster is 14 feet long, 7.5 feet wide, and 6.5 feet high. The taller 6.5-foot walls provide maximum volume for large debris loads.' },
         { question: 'How many pickup truck loads fit in a 20 yard dumpster?', answer: 'A 20 yard dumpster holds approximately 8 standard pickup truck loads of debris.' },
         { question: 'What is a 20 yard dumpster used for?', answer: 'A 20 yard dumpster is best for large projects: whole-home cleanouts, major renovations, new construction, large roofing projects, commercial projects, and multi-room demolition jobs.' },
         { question: 'What is the weight limit on a 20 yard dumpster?', answer: 'Our 20 yard dumpster includes 3 tons (6,000 lbs) of disposal. Overage is billed at $75/ton. This is our highest weight allowance and covers most heavy project debris without overages.' },
-    ])
+        {
+            question: 'Is a 20 yard dumpster the right choice for a full home renovation?',
+            answer: 'Yes — for multi-room or whole-home renovations, the 20 yard is the right call. The 3-ton weight limit handles heavy renovation debris without overage fees, and the volume covers most projects without needing a second haul.',
+        },
+        {
+            question: 'Does a 20 yard dumpster fit in a standard driveway?',
+            answer: 'Yes. At 14ft long x 7.5ft wide, it fits in most driveways. The taller walls (6.5ft) mean we need good overhead clearance — let us know about any low-hanging trees or lines.',
+        },
+        {
+            question: 'How is the 20 yard different from the 15 yard?',
+            answer: 'The 20 yard has the same footprint as the 15 yard (14ft x 7.5ft) but is 2.5 feet taller, giving you 33% more volume. It also includes a 3-ton weight limit vs. 2 tons, making it better suited for heavier debris.',
+        },
+        {
+            question: 'What\'s the weight limit on the 20 yard?',
+            answer: 'Our 20 yard includes 3 tons (6,000 lbs). Overage is $75/ton. This is our highest included weight allowance and covers most heavy residential and commercial debris without surprises.',
+        },
+        {
+            question: 'Can I get same-day delivery on a 20 yard?',
+            answer: 'Yes — call 601-316-7891 before noon and we can typically deliver the same day across Central Mississippi, subject to availability.',
+        },
+    ]
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -247,26 +269,6 @@ export default function TwentyYardDumpsterPage() {
             </section>
 
             {/* FAQ */}
-            <section style={{ padding: 'var(--spacing-2xl) 0' }}>
-                <div className="container" style={{ maxWidth: '720px' }}>
-                    <h2 className="text-center">20 Yard Dumpster FAQs</h2>
-                    <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                        {[
-                            { q: 'Is a 20 yard dumpster the right choice for a full home renovation?', a: 'Yes — for multi-room or whole-home renovations, the 20 yard is the right call. The 3-ton weight limit handles heavy renovation debris without overage fees, and the volume covers most projects without needing a second haul.' },
-                            { q: 'Does a 20 yard dumpster fit in a standard driveway?', a: 'Yes. At 14ft long x 7.5ft wide, it fits in most driveways. The taller walls (6.5ft) mean we need good overhead clearance — let us know about any low-hanging trees or lines.' },
-                            { q: 'How is the 20 yard different from the 15 yard?', a: 'The 20 yard has the same footprint as the 15 yard (14ft x 7.5ft) but is 2.5 feet taller, giving you 33% more volume. It also includes a 3-ton weight limit vs. 2 tons, making it better suited for heavier debris.' },
-                            { q: 'What\'s the weight limit on the 20 yard?', a: 'Our 20 yard includes 3 tons (6,000 lbs). Overage is $75/ton. This is our highest included weight allowance and covers most heavy residential and commercial debris without surprises.' },
-                            { q: 'Can I get same-day delivery on a 20 yard?', a: 'Yes — call 601-316-7891 before noon and we can typically deliver the same day across Central Mississippi, subject to availability.' },
-                        ].map((item) => (
-                            <div key={item.q} style={{ background: 'var(--color-gray-50)', borderRadius: 'var(--radius-lg)', padding: '1.25rem 1.5rem' }}>
-                                <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem', color: 'var(--color-gray-800)' }}>{item.q}</h3>
-                                <p style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem', margin: 0 }}>{item.a}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Other sizes */}
             <section style={{ background: 'var(--color-gray-50)', padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">
@@ -296,6 +298,8 @@ export default function TwentyYardDumpsterPage() {
                     </p>
                 </div>
             </section>
+
+            <FaqSection faqs={faqs} title="20 Yard Dumpster FAQ" background />
 
             {/* CTA */}
             <section style={{ background: 'var(--color-primary)', color: 'white', padding: 'var(--spacing-2xl) 0', textAlign: 'center' }}>

@@ -6,6 +6,7 @@ import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/jackson' },
@@ -317,18 +318,7 @@ export default function JacksonPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection}>
-                <div className="container container-narrow">
-                    <h2 className="text-center">Jackson Dumpster Rental FAQ</h2>
-                    {faqs.map((faq) => (
-                        <div key={faq.question} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-lg)' }}>
-                            <h3>{faq.question}</h3>
-                            <p>{faq.answer}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
+            <FaqSection faqs={faqs} title="Jackson Dumpster Rental FAQ" background />
             <section className={styles.ctaSection}>
                 <div className="container text-center">
                     <h2>Ready to Rent a Dumpster in Jackson?</h2>

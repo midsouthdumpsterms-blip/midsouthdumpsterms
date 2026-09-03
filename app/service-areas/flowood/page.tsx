@@ -6,6 +6,7 @@ import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/flowood' },
@@ -35,7 +36,7 @@ export default function FlowoodPage() {
         { name: 'Flowood', url: 'https://midsouthdumpsterms.com/service-areas/flowood' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: 'How much does roll off dumpster rental cost in Flowood, MS?',
             answer: 'Our flat-rate prices in Flowood start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard. All prices include delivery, pickup, and disposal. No hidden fees.'
@@ -56,7 +57,9 @@ export default function FlowoodPage() {
             question: 'What size dumpster is best for a commercial renovation in Flowood?',
             answer: 'For commercial renovations along Lakeland Drive or in Flowood business parks, we typically recommend a 20-yard dumpster. Call us at 601-316-7891 and we can help size your project correctly.'
         },
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -156,34 +159,7 @@ export default function FlowoodPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection}>
-                <div className="container">
-                    <h2 className="text-center">Frequently Asked Questions: Flowood Dumpster Rentals</h2>
-                    <div className={styles.faqGrid}>
-                        <div className={styles.faqItem}>
-                            <h3>How much does roll off dumpster rental cost in Flowood, MS?</h3>
-                            <p>Our flat-rate prices in Flowood start at $349 for a 10-yard, $399 for a 15-yard, and $449 for a 20-yard. All prices include delivery, pickup, and disposal — no hidden fees.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>Can you place a dumpster on my driveway in Flowood?</h3>
-                            <p>Yes — we specialize in residential driveway delivery. We use protective boards to prevent damage to concrete or asphalt in neighborhoods like Laurelwood and Kensington.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>Do you offer same-day dumpster delivery in Flowood?</h3>
-                            <p>Yes! Call before noon at 601-316-7891 for same-day roll off dumpster delivery. We deliver throughout Flowood and Rankin County 7 days a week, 7AM–7PM.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>Do I need a permit for a dumpster in Flowood?</h3>
-                            <p>For driveway or private property placement, no permit is needed. For street placement, contact the City of Flowood for requirements.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>What size dumpster is best for commercial work in Flowood?</h3>
-                            <p>For commercial renovations along Lakeland Drive or in Flowood business parks, we typically recommend a 20-yard. Call us and we'll help you size it correctly.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <FaqSection faqs={faqs} title="Frequently Asked Questions: Flowood Dumpster Rentals" background />
             <section style={{ padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">
                     <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>

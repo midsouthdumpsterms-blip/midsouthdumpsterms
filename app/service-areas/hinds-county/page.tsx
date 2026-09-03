@@ -5,6 +5,7 @@ import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/hinds-county' },
@@ -34,7 +35,7 @@ export default function HindsCountyPage() {
         { name: 'Hinds County', url: 'https://midsouthdumpsterms.com/service-areas/hinds-county' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: 'Do you provide roll off dumpster rental throughout all of Hinds County, MS?',
             answer: 'Yes! Mid South Dumpster Rentals serves all of Hinds County including Jackson, Clinton, Byram, Terry, Raymond, Bolton, Edwards, and surrounding communities. We own our trucks and handle every delivery ourselves.',
@@ -55,7 +56,9 @@ export default function HindsCountyPage() {
             question: 'What cities in Hinds County do you serve?',
             answer: 'We serve the entire Hinds County area including Jackson, Clinton, Byram, Terry, Raymond, Bolton, Edwards, Utica, and surrounding communities. Call us at 601-316-7891 if you have questions about your specific location.',
         },
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -185,40 +188,7 @@ export default function HindsCountyPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection} style={{ padding: 'var(--spacing-3xl) 0', backgroundColor: 'var(--color-gray-50)' }}>
-                <div className="container container-narrow">
-                    <h2 className="text-center">Hinds County Dumpster Rental FAQs</h2>
-                    <div className={styles.faqList}>
-                        {[
-                            {
-                                question: 'Do you provide roll off dumpster rental throughout all of Hinds County, MS?',
-                                answer: 'Yes! Mid South Dumpster Rentals serves all of Hinds County including Jackson, Clinton, Byram, Terry, Raymond, Bolton, Edwards, and surrounding communities. We own our trucks and handle every delivery ourselves.',
-                            },
-                            {
-                                question: 'How much does roll off dumpster rental cost in Hinds County, MS?',
-                                answer: 'Our roll off dumpster rentals in Hinds County start at $349 for a 10-yard container, $399 for a 15-yard, and $449 for a 20-yard. All prices are flat-rate and include delivery, pickup, and disposal with no hidden fees.',
-                            },
-                            {
-                                question: 'Can I get same-day dumpster delivery in Hinds County?',
-                                answer: 'Yes! We offer same-day roll off dumpster delivery throughout Hinds County when you call before noon at 601-316-7891. We deliver 7 days a week, 7AM–7PM.',
-                            },
-                            {
-                                question: 'Do I need a permit for a dumpster in Hinds County?',
-                                answer: 'If placing the dumpster on your private driveway or property, no permit is typically needed. For placement on a public street in Jackson or another Hinds County city, a permit may be required. We can help guide you through the process.',
-                            },
-                            {
-                                question: 'What cities in Hinds County do you serve?',
-                                answer: 'We serve the entire Hinds County area including Jackson, Clinton, Byram, Terry, Raymond, Bolton, Edwards, Utica, and surrounding communities.',
-                            },
-                        ].map((faq, index) => (
-                            <div key={index} className={styles.faqItem} style={{ marginBottom: 'var(--spacing-xl)' }}>
-                                <h3 style={{ fontSize: '1.25rem', marginBottom: 'var(--spacing-sm)' }}>{faq.question}</h3>
-                                <p>{faq.answer}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <FaqSection faqs={faqs} title="Hinds County Dumpster Rental FAQ" background />
 
             <section className={styles.ctaSection}>
                 <div className="container text-center">

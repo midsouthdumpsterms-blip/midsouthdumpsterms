@@ -6,6 +6,7 @@ import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/pearl' },
@@ -35,7 +36,7 @@ export default function PearlPage() {
         { name: 'Pearl', url: 'https://midsouthdumpsterms.com/service-areas/pearl' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: 'How much does roll off dumpster rental cost in Pearl, MS?',
             answer: 'Our flat-rate prices in Pearl start at $349 for a 10-yard dumpster (1-day), $399 for a 15-yard, and $449 for a 20-yard. All prices include delivery, pickup, and disposal. No hidden fees — ever.'
@@ -56,7 +57,9 @@ export default function PearlPage() {
             question: 'Can I put construction debris in a rented dumpster in Pearl?',
             answer: 'Yes — we accept wood, drywall, roofing shingles, carpet, concrete, and most construction debris. Prohibited items include hazardous materials, wet paint, tires, and appliances with Freon.'
         },
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -157,34 +160,7 @@ export default function PearlPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection}>
-                <div className="container">
-                    <h2 className="text-center">Frequently Asked Questions: Pearl Dumpster Rentals</h2>
-                    <div className={styles.faqGrid}>
-                        <div className={styles.faqItem}>
-                            <h3>How much does roll off dumpster rental cost in Pearl, MS?</h3>
-                            <p>Our flat-rate prices in Pearl start at $349 for a 10-yard dumpster, $399 for a 15-yard, and $449 for a 20-yard. All prices include delivery, pickup, and disposal — no hidden fees.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>Can I get same-day dumpster delivery in Pearl?</h3>
-                            <p>Yes! We offer same-day roll off dumpster delivery throughout Pearl when you call before noon at 601-316-7891. We deliver 7 days a week, 7AM–7PM.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>Do I need a permit to rent a dumpster in Pearl, MS?</h3>
-                            <p>If you place the dumpster on your private driveway or property, no permit is required. For street placement in Pearl, contact the City of Pearl for permit requirements.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>What size dumpster do I need for a roofing project in Pearl?</h3>
-                            <p>A 10-yard handles most single-layer roof tear-offs. For larger roofs or multi-layer shingles, the 15-yard is usually better. Call us and we'll help you size it.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>Can I put construction debris in my Pearl dumpster?</h3>
-                            <p>Yes — wood, drywall, roofing shingles, carpet, and most construction debris are all accepted. Prohibited items include hazardous materials, wet paint, tires, and appliances with Freon.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <FaqSection faqs={faqs} title="Frequently Asked Questions: Pearl Dumpster Rentals" background />
             <section style={{ padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">
                     <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>

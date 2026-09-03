@@ -6,6 +6,7 @@ import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/gluckstadt' },
@@ -35,7 +36,7 @@ export default function GluckstadtPage() {
         { name: 'Gluckstadt', url: 'https://midsouthdumpsterms.com/service-areas/gluckstadt' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: "How much does it cost to rent a roll off dumpster in Gluckstadt, MS?",
             answer: "Our roll off dumpster rentals in Gluckstadt start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size) with no hidden fees."
@@ -56,7 +57,9 @@ export default function GluckstadtPage() {
             question: "How quickly can you deliver a roll off dumpster to Gluckstadt, MS?",
             answer: "We offer same-day and next-day roll off dumpster delivery in Gluckstadt and Madison County. Call us before noon at 601-316-7891 and we can typically deliver the same day, 7 days a week."
         }
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -168,26 +171,7 @@ export default function GluckstadtPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection}>
-                <div className="container">
-                    <h2 className="text-center">Frequently Asked Questions: Gluckstadt Dumpster Rentals</h2>
-                    <div className={styles.faqGrid}>
-                        <div className={styles.faqItem}>
-                            <h3>How much does it cost to rent a dumpster in Gluckstadt, MS?</h3>
-                            <p>Our dumpster rentals in Gluckstadt start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size).</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>Can you deliver to new construction neighborhoods in Gluckstadt?</h3>
-                            <p>Yes! We work with many builders and homeowners in Gluckstadt's growing neighborhoods like Reunion, Bridgewater, and Bellegrove. We can schedule deliveries around your construction timeline and regularly service active job sites.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>What items are not allowed in your dumpsters in Gluckstadt?</h3>
-                            <p>For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <FaqSection faqs={faqs} title="Frequently Asked Questions: Gluckstadt Dumpster Rentals" background />
             <section className={styles.ctaSection}>
                 <div className="container text-center">
                     <h2>Ready to Rent a Dumpster in Gluckstadt?</h2>

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import BookingButton from '@/components/BookingButton'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateOfferCatalogSchema, generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/sizes/15-yard-dumpster-rental' },
@@ -33,13 +34,34 @@ export default function FifteenYardDumpsterPage() {
         { name: 'Dumpster Sizes', url: 'https://midsouthdumpsterms.com/sizes' },
         { name: '15 Yard Dumpster Rental', url: 'https://midsouthdumpsterms.com/sizes/15-yard-dumpster-rental' },
     ])
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         { question: 'How much does a 15 yard dumpster rental cost in Jackson, MS?', answer: 'A 15 yard dumpster rental from Mid South starts at $399 for 1 day, $429 for 3 days, and $449 for 7 days. All prices include delivery, pickup, and up to 2 tons of disposal.' },
         { question: 'What are the dimensions of the 15 yard dumpster?', answer: 'Our 15 yard dumpster is 14 feet long, 7.5 feet wide, and 4 feet high. The lower 4-foot wall height makes it easy to toss debris over the side without lifting items as high.' },
         { question: 'How many pickup truck loads fit in a 15 yard dumpster?', answer: 'A 15 yard dumpster holds approximately 6 standard pickup truck loads of debris.' },
         { question: 'Is a 15 yard dumpster good for roofing?', answer: 'Yes — a 15 yard dumpster is the most popular size for roofing projects in Central Mississippi. It handles a standard residential roof tear-off comfortably, including shingles, underlayment, and flashing.' },
         { question: 'Why is the 15 yard your most popular size?', answer: 'The 15 yard hits the sweet spot for most residential and contractor projects. It\'s large enough for most home renovations, roofing, and estate cleanouts, while still fitting comfortably in a standard driveway. The 2-ton weight allowance also covers most debris types without overage fees.' },
-    ])
+        {
+            question: 'Is a 15 yard dumpster big enough for a roofing project?',
+            answer: 'Yes — a 15 yard is the most common size for residential roofing in Central MS. It handles a standard single-story shingle tear-off with room to spare. For multi-story or large roofs, consider a 20 yard.',
+        },
+        {
+            question: 'Can I put heavy materials in a 15 yard?',
+            answer: 'Yes, up to 2 tons (4,000 lbs). Keep in mind that heavy materials like roofing shingles or lumber are denser than they look — don\'t overfill visually without thinking about weight. Overages are billed at $75/ton.',
+        },
+        {
+            question: 'Does a 15 yard fit in a standard driveway?',
+            answer: 'Yes. At 14ft long x 7.5ft wide, it fits in most residential driveways. Having 60+ feet of clear driveway length makes delivery easiest.',
+        },
+        {
+            question: 'How is a 15 yard different from a 10 yard?',
+            answer: 'The 15 yard is 14ft long (vs. 10ft), holds 6 truck loads instead of 4, has a 2-ton limit vs. 1-ton, and costs only $50 more starting. For most projects, the 15 yard is the better value.',
+        },
+        {
+            question: 'Can I get same-day delivery of a 15 yard?',
+            answer: 'Yes — call 601-316-7891 before noon and we can typically deliver the same day throughout Central Mississippi.',
+        },
+    ]
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -244,26 +266,6 @@ export default function FifteenYardDumpsterPage() {
             </section>
 
             {/* FAQ */}
-            <section style={{ padding: 'var(--spacing-2xl) 0' }}>
-                <div className="container" style={{ maxWidth: '720px' }}>
-                    <h2 className="text-center">15 Yard Dumpster FAQs</h2>
-                    <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                        {[
-                            { q: 'Is a 15 yard dumpster big enough for a roofing project?', a: 'Yes — a 15 yard is the most common size for residential roofing in Central MS. It handles a standard single-story shingle tear-off with room to spare. For multi-story or large roofs, consider a 20 yard.' },
-                            { q: 'Can I put heavy materials in a 15 yard?', a: 'Yes, up to 2 tons (4,000 lbs). Keep in mind that heavy materials like roofing shingles or lumber are denser than they look — don\'t overfill visually without thinking about weight. Overages are billed at $75/ton.' },
-                            { q: 'Does a 15 yard fit in a standard driveway?', a: 'Yes. At 14ft long x 7.5ft wide, it fits in most residential driveways. Having 60+ feet of clear driveway length makes delivery easiest.' },
-                            { q: 'How is a 15 yard different from a 10 yard?', a: 'The 15 yard is 14ft long (vs. 10ft), holds 6 truck loads instead of 4, has a 2-ton limit vs. 1-ton, and costs only $50 more starting. For most projects, the 15 yard is the better value.' },
-                            { q: 'Can I get same-day delivery of a 15 yard?', a: 'Yes — call 601-316-7891 before noon and we can typically deliver the same day throughout Central Mississippi.' },
-                        ].map((item) => (
-                            <div key={item.q} style={{ background: 'var(--color-gray-50)', borderRadius: 'var(--radius-lg)', padding: '1.25rem 1.5rem' }}>
-                                <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem', color: 'var(--color-gray-800)' }}>{item.q}</h3>
-                                <p style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem', margin: 0 }}>{item.a}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Other sizes */}
             <section style={{ background: 'var(--color-gray-50)', padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">
@@ -293,6 +295,8 @@ export default function FifteenYardDumpsterPage() {
                     </p>
                 </div>
             </section>
+
+            <FaqSection faqs={faqs} title="15 Yard Dumpster FAQ" background />
 
             {/* CTA */}
             <section style={{ background: 'var(--color-primary)', color: 'white', padding: 'var(--spacing-2xl) 0', textAlign: 'center' }}>

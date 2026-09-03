@@ -3,6 +3,7 @@ import Link from 'next/link'
 import BookingButton from '@/components/BookingButton'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateOfferCatalogSchema, generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/sizes/10-yard-dumpster-rental' },
@@ -33,13 +34,30 @@ export default function TenYardDumpsterPage() {
         { name: 'Dumpster Sizes', url: 'https://midsouthdumpsterms.com/sizes' },
         { name: '10 Yard Dumpster Rental', url: 'https://midsouthdumpsterms.com/sizes/10-yard-dumpster-rental' },
     ])
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         { question: 'How much does a 10 yard dumpster rental cost in Jackson, MS?', answer: 'A 10 yard dumpster rental from Mid South starts at $349 for 1 day, $379 for 3 days, and $399 for 7 days. All prices include delivery, pickup, and up to 1 ton of disposal. No hidden fees.' },
         { question: 'What are the dimensions of the 10 yard dumpster?', answer: 'Our 10 yard dumpster is 10 feet long, 7.5 feet wide, and 5 feet high. It fits comfortably in most residential driveways.' },
         { question: 'How many pickup truck loads fit in a 10 yard dumpster?', answer: 'A 10 yard dumpster holds approximately 4 standard pickup truck loads of debris.' },
         { question: 'What is a 10 yard dumpster good for?', answer: 'A 10 yard dumpster is ideal for small garage cleanouts, bathroom remodels, minor roofing projects, yard debris removal, and estate cleanouts with light materials.' },
         { question: 'Will a 10 yard dumpster fit in my driveway?', answer: 'Yes — at 10 feet long and 7.5 feet wide, our 10 yard containers fit in most standard driveways. We recommend having about 60 feet of clear access for our truck to back in safely.' },
-    ])
+        {
+            question: 'How heavy can my load be?',
+            answer: 'The limit is 1 ton (2,000 lbs). If you\'re loading heavy materials like shingles, keep that in mind — you can hit the weight limit before visually filling the container. Overages are $75/ton.',
+        },
+        {
+            question: 'Do I need to be home for delivery?',
+            answer: 'No — as long as your driveway is clear and you\'ve told us where to place it, we can drop off and pick up without you present.',
+        },
+        {
+            question: 'Can I get same-day delivery?',
+            answer: 'Yes. Call 601-316-7891 before noon and we can typically deliver the same day across Central Mississippi.',
+        },
+        {
+            question: 'What if I need more space than I thought?',
+            answer: 'Call us — if we haven\'t picked up yet, we can sometimes swap to a 15 or 20 yard instead. Or we can schedule a second haul.',
+        },
+    ]
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -238,26 +256,6 @@ export default function TenYardDumpsterPage() {
             </section>
 
             {/* FAQ */}
-            <section style={{ padding: 'var(--spacing-2xl) 0' }}>
-                <div className="container" style={{ maxWidth: '720px' }}>
-                    <h2 className="text-center">10 Yard Dumpster FAQs</h2>
-                    <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                        {[
-                            { q: 'Will a 10 yard dumpster fit in my driveway?', a: 'Yes — at 10ft long x 7.5ft wide, it fits in most standard residential driveways with ease. This is our most driveway-friendly size.' },
-                            { q: 'How heavy can my load be?', a: 'The limit is 1 ton (2,000 lbs). If you\'re loading heavy materials like shingles, keep that in mind — you can hit the weight limit before visually filling the container. Overages are $75/ton.' },
-                            { q: 'Do I need to be home for delivery?', a: 'No — as long as your driveway is clear and you\'ve told us where to place it, we can drop off and pick up without you present.' },
-                            { q: 'Can I get same-day delivery?', a: 'Yes. Call 601-316-7891 before noon and we can typically deliver the same day across Central Mississippi.' },
-                            { q: 'What if I need more space than I thought?', a: 'Call us — if we haven\'t picked up yet, we can sometimes swap to a 15 or 20 yard instead. Or we can schedule a second haul.' },
-                        ].map((item) => (
-                            <div key={item.q} style={{ background: 'var(--color-gray-50)', borderRadius: 'var(--radius-lg)', padding: '1.25rem 1.5rem' }}>
-                                <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem', color: 'var(--color-gray-800)' }}>{item.q}</h3>
-                                <p style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem', margin: 0 }}>{item.a}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Other sizes */}
             <section style={{ background: 'var(--color-gray-50)', padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">
@@ -287,6 +285,8 @@ export default function TenYardDumpsterPage() {
                     </p>
                 </div>
             </section>
+
+            <FaqSection faqs={faqs} title="10 Yard Dumpster FAQ" background />
 
             {/* CTA */}
             <section style={{ background: 'var(--color-primary)', color: 'white', padding: 'var(--spacing-2xl) 0', textAlign: 'center' }}>

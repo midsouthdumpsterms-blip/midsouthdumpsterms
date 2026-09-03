@@ -5,6 +5,7 @@ import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import styles from '../services.module.css'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/debris-removal' },
@@ -263,19 +264,7 @@ export default function DebrisRemovalPage() {
                 </div>
             </section>
 
-            <section style={{ background: 'var(--color-gray-50)', padding: 'var(--spacing-2xl) 0' }}>
-                <div className="container container-narrow">
-                    <h2 className="text-center">Debris Removal FAQ</h2>
-                    <div style={{ marginTop: 'var(--spacing-xl)' }}>
-                        {faqs.map((faq) => (
-                            <div key={faq.question} style={{ borderBottom: '1px solid var(--color-gray-200)', padding: 'var(--spacing-lg) 0' }}>
-                                <h3 style={{ fontSize: '1.05rem', marginBottom: '0.5rem' }}>{faq.question}</h3>
-                                <p style={{ color: 'var(--color-gray-600)', margin: 0 }}>{faq.answer}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <FaqSection faqs={faqs} title="Debris Removal FAQ" background />
 
             <section className={styles.ctaSection}>
                 <div className="container text-center">

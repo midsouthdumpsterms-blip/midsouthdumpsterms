@@ -5,6 +5,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, inj
 import BookingButton from '@/components/BookingButton'
 import styles from '../blog-post.module.css'
 import RelatedGuides from '@/components/RelatedGuides'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/blog/dumpster-weight-limits-jackson-ms' },
@@ -33,7 +34,7 @@ export default function DumpsterWeightLimits() {
         { name: 'Dumpster Weight Limits Explained', url: 'https://midsouthdumpsterms.com/blog/dumpster-weight-limits-jackson-ms' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: 'What is the weight limit for a 10-yard dumpster from Mid South?',
             answer: 'Our 10-yard dumpster includes a 1-ton (2,000 lb) weight allowance. Overages are charged at $55 per ton (prorated). This size is best for light residential debris — furniture, household junk, wood. For heavy materials like tile, concrete, or roofing shingles, consider the 15-yard.',
@@ -50,7 +51,9 @@ export default function DumpsterWeightLimits() {
             question: 'Can I put concrete or dirt in a dumpster?',
             answer: 'Yes, concrete and dirt are accepted in our roll-off dumpsters, but they are extremely heavy. Even a small amount of concrete or soil can push you over the weight limit. If you need to dispose of concrete, dirt, or gravel, call us — we\'ll advise on the right size and help you avoid overage fees.',
         },
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -285,6 +288,8 @@ export default function DumpsterWeightLimits() {
                         <p>
                             For projects that are primarily heavy debris (concrete, tile, brick), we typically recommend the <Link href="/blog/dumpster-rental-prices-jackson-ms">15-yard dumpster</Link> with its 4,000 lb allowance. For very large heavy-debris projects, call us and we&apos;ll work through the math with you.
                         </p>
+
+                        <FaqSection faqs={faqs} title="Dumpster Weight Limit FAQ" bare />
 
                         <RelatedGuides slug="dumpster-weight-limits-jackson-ms" />
 

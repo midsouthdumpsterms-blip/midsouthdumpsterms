@@ -6,6 +6,7 @@ import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/brandon' },
@@ -35,7 +36,7 @@ export default function BrandonPage() {
         { name: 'Brandon', url: 'https://midsouthdumpsterms.com/service-areas/brandon' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: "How much does it cost to rent a roll off dumpster in Brandon, MS?",
             answer: "Our roll off dumpster rentals in Brandon start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size) with no hidden fees."
@@ -56,7 +57,9 @@ export default function BrandonPage() {
             question: "How quickly can you deliver a roll off dumpster to Brandon, MS?",
             answer: "We offer same-day and next-day roll off dumpster delivery in Brandon and Rankin County. Call us before noon at 601-316-7891 and we can typically deliver the same day, 7 days a week."
         }
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -156,26 +159,7 @@ export default function BrandonPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection}>
-                <div className="container">
-                    <h2 className="text-center">Frequently Asked Questions: Brandon Dumpster Rentals</h2>
-                    <div className={styles.faqGrid}>
-                        <div className={styles.faqItem}>
-                            <h3>How much does it cost to rent a dumpster in Brandon, MS?</h3>
-                            <p>Our dumpster rentals in Brandon start at $349 for a 10-yard container for a 1-day rental. A 15-yard is $399, and a 20-yard is $449. This includes drop-off, pick-up, and a standard weight allowance (1 to 3 tons depending on size).</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>Can you deliver a dumpster to my neighborhood in Crossgates?</h3>
-                            <p>Yes! We regularly deliver roll-off dumpsters to Crossgates, Castlewoods, Shiloh, and all other subdivisions throughout Brandon and Rankin County. Our trucks are designed to safely navigate residential streets.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>What items are not allowed in your dumpsters in Brandon?</h3>
-                            <p>For safety and environmental reasons, we cannot accept hazardous materials, wet paint, tires, batteries, oil, chemicals, or appliances containing Freon. If you have specific items you are unsure about, just give us a call before booking.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <FaqSection faqs={faqs} title="Frequently Asked Questions: Brandon Dumpster Rentals" background />
             <section style={{ padding: 'var(--spacing-2xl) 0' }}>
                 <div className="container">
                     <div style={{ maxWidth: '760px', margin: '0 auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>

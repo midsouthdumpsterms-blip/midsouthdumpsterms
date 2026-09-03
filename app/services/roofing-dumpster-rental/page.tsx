@@ -5,6 +5,7 @@ import DumpsterSizeCard from '@/components/DumpsterSizeCard'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
 import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema, injectSchema } from '@/lib/schema'
 import styles from '../services.module.css'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/services/roofing-dumpster-rental' },
@@ -37,7 +38,7 @@ export default function RoofingDumpsterRentalPage() {
         { name: 'Roofing Dumpster Rental', url: 'https://midsouthdumpsterms.com/services/roofing-dumpster-rental' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: 'What size dumpster do I need for a roofing job?',
             answer: 'For a standard residential roof tear-off (up to 2,000 sq ft), the 15-yard dumpster is the most popular choice — it holds about 6 pickup truck loads and includes 2 tons. For larger homes or commercial roofs, the 20-yard handles more volume. Our 10-yard works for small repairs or flat roofing patches.',
@@ -54,7 +55,13 @@ export default function RoofingDumpsterRentalPage() {
             question: 'How much does a roofing dumpster cost in Jackson MS?',
             answer: 'Our flat-rate pricing starts at $349 for a 10-yard (1-day). The 15-yard (most popular for roofing) starts at $399, and the 20-yard starts at $449. Prices include delivery, pickup, and disposal. Overage is $55/ton for 10 and 15-yard containers.',
         },
-    ])
+        {
+            question: 'How heavy is roofing debris?',
+            answer: 'Roofing shingles are deceptively heavy. A standard 20-square residential tear-off generates 4,000–6,000 lbs of debris. Our 15-yard includes 2 tons and the 20-yard includes 3 tons.',
+        },
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -236,24 +243,7 @@ export default function RoofingDumpsterRentalPage() {
                 </div>
             </section>
 
-            <section>
-                <div className="container container-narrow">
-                    <h2 className="text-center">Roofing Dumpster Rental FAQ</h2>
-                    <div style={{ marginTop: 'var(--spacing-xl)' }}>
-                        {[
-                            { q: 'What size dumpster do I need for a roofing job?', a: 'For a standard residential tear-off (up to 2,000 sq ft), the 15-yard is most popular. For larger homes or multi-layer tear-offs, go with the 20-yard.' },
-                            { q: 'Can I put roofing shingles in a regular dumpster?', a: 'Yes! Asphalt shingles, underlayment, flashing, nails, tar paper, and wood decking are all accepted. We do not accept asbestos-containing materials.' },
-                            { q: 'How quickly can you deliver a roofing dumpster?', a: 'Same-day delivery is available 7 days a week when you call before noon.' },
-                            { q: 'How heavy is roofing debris?', a: 'Roofing shingles are deceptively heavy. A standard 20-square residential tear-off generates 4,000–6,000 lbs of debris. Our 15-yard includes 2 tons and the 20-yard includes 3 tons.' },
-                        ].map((faq) => (
-                            <div key={faq.q} style={{ borderBottom: '1px solid var(--color-gray-200)', padding: 'var(--spacing-lg) 0' }}>
-                                <h3 style={{ fontSize: '1.05rem', marginBottom: '0.5rem' }}>{faq.q}</h3>
-                                <p style={{ color: 'var(--color-gray-600)', margin: 0 }}>{faq.a}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <FaqSection faqs={faqs} title="Roofing Dumpster Rental FAQ" background />
 
             <section className={styles.ctaSection}>
                 <div className="container text-center">

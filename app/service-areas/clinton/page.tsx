@@ -6,6 +6,7 @@ import PriceSummary from '@/components/PriceSummary'
 import BookingButton from '@/components/BookingButton'
 import styles from '../city.module.css'
 import TrackedPhoneLink from '@/components/TrackedPhoneLink'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://midsouthdumpsterms.com/service-areas/clinton' },
@@ -35,7 +36,7 @@ export default function ClintonPage() {
         { name: 'Clinton', url: 'https://midsouthdumpsterms.com/service-areas/clinton' },
     ])
 
-    const faqSchema = generateFAQSchema([
+    const faqs = [
         {
             question: "Do you provide same-day dumpster rentals in Clinton, MS?",
             answer: "Yes! Mid South Dumpster Rentals is locally owned and operates in Hinds County every day. Call before noon at 601-316-7891 and we can typically provide same-day roll off dumpster delivery to Clinton."
@@ -56,7 +57,9 @@ export default function ClintonPage() {
             question: "Do you serve all of Hinds County, MS?",
             answer: "Yes, we serve all of Hinds County including Clinton, Jackson, Byram, Raymond, Terry, Bolton, and Edwards. We're Central Mississippi's locally owned roll off dumpster rental company."
         }
-    ])
+    ]
+
+    const faqSchema = generateFAQSchema(faqs)
 
     return (
         <>
@@ -174,26 +177,7 @@ export default function ClintonPage() {
                 </div>
             </section>
 
-            <section className={styles.faqSection}>
-                <div className="container">
-                    <h2 className="text-center">Frequently Asked Questions: Clinton Dumpster Rentals</h2>
-                    <div className={styles.faqGrid}>
-                        <div className={styles.faqItem}>
-                            <h3>Do you provide same-day dumpster rentals in Clinton, MS?</h3>
-                            <p>Yes! Mid South Dumpster Rentals is locally owned and operates in Hinds County every day. If you call early, we can typically provide same-day roll-off delivery to Clinton.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>How do I protect my driveway when renting a dumpster in Clinton?</h3>
-                            <p>We know your property is an investment. Our professional drivers are trained in precision placement. We can carefully position the dumpster on wooden boards so that the heavy steel wheels never scrape or damage your driveway.</p>
-                        </div>
-                        <div className={styles.faqItem}>
-                            <h3>Are there things I can't put in my rental dumpster in Clinton?</h3>
-                            <p>Standard household junk, lumber, and yard debris are totally fine. However, we cannot accept hazardous waste, items containing Freon (like refrigerators), wet paint, tires, or batteries. Give us a call if you are unsure about an item.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <FaqSection faqs={faqs} title="Frequently Asked Questions: Clinton Dumpster Rentals" background />
             <section className={styles.ctaSection}>
                 <div className="container text-center">
                     <h2>Ready to Rent a Dumpster in Clinton?</h2>
